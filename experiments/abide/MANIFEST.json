@@ -1,0 +1,13 @@
+{
+ "files": 407,
+ "checksums": "SHA256SUMS (shasum -a 256 -c SHA256SUMS) and SHA256SUMS.json",
+ "bytes": 112523243,
+ "not_included": [
+  "data/Outputs (CC200 time series, ANTs thickness): fetched by code/download.py",
+  "data/papers: fetched; not redistributed",
+  "data/repronim_simple2: fetched at pinned commits",
+  "literature_review/pdfs*/ and any literature_review PDF: paper PDFs not redistributed (hashes in literature_review/pdf_sha256.json)",
+  "data/abstractatlas: fetched by content hash",
+  "data/derived: regenerated (connectivity cache, Oxigraph store, view dumps, PyNIDM output)"
+ ]
+}

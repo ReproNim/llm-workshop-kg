@@ -1,0 +1,97 @@
+{
+  "source_id": "S-054",
+  "pmid": "local_0709116d",
+  "doi": "10.3389/fninf.2021.635657",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2,3: resting-state fMRI (ABIDE-I, NYU site) diagnostic classification (ASD vs TC) using a deep CNN (DarkASDNet).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {"text": "Our model’s outcomes unveil that our proposed method established state-of-the-art accuracy of 94.70% to classify ASD vs. TC in ABIDE-I, NYU dataset.", "section": "abstract", "claim": "Main predictive claim: 94.70% accuracy classifying ASD vs TC in the ABIDE-I NYU subset.", "relevance_score": 1.0},
+    {"text": "In our experiments, we used ABIDE-I data processed through the Connectome Computation System (CCS) (Craddock et al., 2013).", "section": "methods", "claim": "Preprocessing pipeline used is CCS.", "relevance_score": 0.8},
+    {"text": "Among the 17 sites, we endeavor with the CCS-NYU (New York University Langone Medical Center) site.", "section": "methods", "claim": "Analysis restricted to the single NYU site of ABIDE-I.", "relevance_score": 0.8},
+    {"text": "TABLE 2 | NYU phenotypic data information for ABIDE-I database.\nTotal subjects\nASD\nTC\nFemale\nMale\nAge range (Years)\nAverage age (SD)\nADOS score (SD)\nASD\nTC\n184\n79\n105\n35\n149", "section": "table", "claim": "Analysed NYU cohort: 184 total subjects, 79 ASD, 105 TC.", "relevance_score": 0.9},
+    {"text": "data are selected from the ﬁlt_global preprocessing stratagem, which is band-pass ﬁltered (0.01–0.1 Hz) and spatially registered using a nonlinear method to MNI152 template space", "section": "methods", "claim": "Specific CCS preprocessing strategy used (filt_global).", "relevance_score": 0.6},
+    {"text": "The original 3D fMRI data has 73 slices per volume according to the data description of ABIDE-I. In our experiments, from the 73 slices, we contemplated the last 50 slices because of the precise sketches of the brain images.", "section": "methods", "claim": "3D volumes were converted to 2D slices (last 50 of 73) for the CNN input.", "relevance_score": 0.6},
+    {"text": "After testing our model for ASD classiﬁcation, we have achieved the highest accuracy of 94.7%, the precision of 94.5%, recall of 92.5%, f1-score of 95%, and the AUC score 94.703%.", "section": "results", "claim": "Main performance results: accuracy 94.7%, precision 94.5%, recall 92.5%, F1 95%, AUC 94.703%.", "relevance_score": 1.0},
+    {"text": "The raw data supporting the conclusions of this article will be made available by the authors, without undue reservation.", "section": "discussion", "claim": "Data availability statement: available on request from the authors.", "relevance_score": 0.4}
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Low", "support": "Table 2 reports the exact NYU-site cohort: 184 total, 79 ASD, 105 TC, with age and ADOS score ranges."},
+      {"domain": "Predictors", "judgment": "Low", "support": "\"we used ABIDE-I data processed through the Connectome Computation System (CCS)\" with filt_global strategy specified; no atlas/ROI parcellation used since the model takes 2D slice images directly."},
+      {"domain": "Outcome", "judgment": "Unclear", "support": "ASD/TC labels are taken from the ABIDE-I NYU phenotype file; the diagnostic instrument/criteria used by the site are not described in this paper."},
+      {"domain": "Analysis", "judgment": "High", "support": "No train/test split, cross-validation scheme, or held-out evaluation procedure is described anywhere in the text; a single accuracy figure (94.7%) is reported with no uncertainty estimate, and 3D volumes were sliced into 2D images per subject with no statement that slices from the same subject were kept together across any split."}
+    ],
+    "overall": "High",
+    "summary": "Cohort and pipeline well specified, but the paper never states how data were partitioned into train/test sets or whether subject-level separation was maintained when splitting per-slice 2D images, and reports a single-split accuracy with no cross-validation or confidence interval."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "79",
+    "n_controls": "105",
+    "data_types": "resting-state fMRI (3D volumes converted to 2D slice images)",
+    "feature_extraction_tools": "Connectome Computation System (CCS), filt_global strategy, via the Preprocessed Connectomes Project",
+    "specific_features": "Raw 2D slice images (last 50 of 73 slices per volume) after slice-time correction and min-max normalization; no ROI/connectivity feature extraction or atlas used",
+    "model_category": "Deep convolutional neural network",
+    "specific_algorithms": "DarkASDNet (modified Darknet-19 architecture, 20 convolutional + 6 max-pooling layers), compared against VGG16, MobileNetV2 and SVM baselines",
+    "validation_methodology": "Not reported — no train/test split, cross-validation scheme, or held-out evaluation procedure is described",
+    "performance_metrics": "Accuracy, precision, recall, F1-score, ROC curve, AUC",
+    "key_performance_results": "Accuracy 94.7%, precision 94.5%, recall 92.5%, F1-score 95%, AUC score 94.703%",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "Partly — data availability statement says raw data will be made available by the authors on request; no participant list or analysis code repository found in text",
+    "custom_fields": {
+      "RQ1": "ABIDE-I, single site (NYU), 184 subjects (79 ASD, 105 TC); no additional QC/exclusion rule beyond selecting the NYU site reported. | quote: \"TABLE 2 | NYU phenotypic data information for ABIDE-I database.\nTotal subjects\nASD\nTC\nFemale\nMale\nAge range (Years)\nAverage age (SD)\nADOS score (SD)\nASD\nTC\n184\n79\n105\n35\n149\"",
+      "RQ2": "CCS (Connectome Computation System) pipeline, filt_global preprocessing strategy; no ROI atlas/parcellation — raw 2D slice images used directly as CNN input. | quote: \"In our experiments, we used ABIDE-I data processed through the Connectome Computation System (CCS) (Craddock et al., 2013).\"",
+      "RQ3": "predictive — deep CNN (DarkASDNet) binary classification of ASD vs. TC from fMRI slice images. | quote: \"we considered 3D fMRI data to predict binary classiﬁcation between ASD and typical control (TC)\"",
+      "RQ4": "No validation methodology (train/test split or cross-validation scheme) is described in the text; a single accuracy/precision/recall/F1/AUC result is reported without stated held-out procedure. | quote: \"After testing our model for ASD classiﬁcation, we have achieved the highest accuracy of 94.7%, the precision of 94.5%, recall of 92.5%, f1-score of 95%, and the AUC score 94.703%.\"",
+      "RQ5": "DarkASDNet achieved accuracy 94.7%, precision 94.5%, recall 92.5%, F1-score 95%, and AUC 94.703% classifying ASD vs TC on the ABIDE-I NYU subset, reported as outperforming compared state-of-the-art methods on average. | quote: \"Our model’s outcomes unveil that our proposed method established state-of-the-art accuracy of 94.70% to classify ASD vs. TC in ABIDE-I, NYU dataset.\"",
+      "RQ6": "partly — exact N and site (NYU, 79 ASD/105 TC) are given in Table 2, but no participant ID list and no explicit additional exclusion rule beyond site selection is reported. | quote: \"Among the 17 sites, we endeavor with the CCS-NYU (New York University Langone Medical Center) site.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly | quote: \"TABLE 2 | NYU phenotypic data information for ABIDE-I database.\nTotal subjects\nASD\nTC\nFemale\nMale\nAge range (Years)\nAverage age (SD)\nADOS score (SD)\nASD\nTC\n184\n79\n105\n35\n149\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion metric or threshold reported; only standard CCS preprocessing steps (motion realignment) are listed in Table 3",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"In our experiments, we used ABIDE-I data processed through the Connectome Computation System (CCS) (Craddock et al., 2013).\"",
+      "CL4 Atlas/parcellation reported?": "No — no ROI atlas/parcellation is used; the model is trained on raw slice images",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — no train/test split or fold procedure is described at all, so leakage control cannot be assessed",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — single-site (NYU only) analysis; no multi-site handling applicable or reported",
+      "CL7 Code and/or participant list available?": "Partly | quote: \"The raw data supporting the conclusions of this article will be made available by the authors, without undue reservation.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"we used ABIDE-I data processed through the Connectome Computation System (CCS) (Craddock et al., 2013)\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {"rating": "Partial", "notes": "N and site reported (CL1 partly); no motion/QC rule given (CL2 no).", "overall_concern": "Some"},
+    "domain_2_predictors_features": {"rating": "Partial", "notes": "Pipeline (CCS, filt_global) reported (CL3 yes) but no atlas/parcellation used or applicable (CL4 no).", "overall_concern": "Some"},
+    "domain_3_outcome_diagnosis": {"rating": "Unclear", "notes": "Diagnosis taken from ABIDE-I NYU phenotype file; instrument/criteria not described in this paper.", "overall_concern": "Some"},
+    "domain_4_bias_transparency": {"rating": "No", "notes": "No train/test split or CV scheme reported (CL5 unassessable), single-site so no site handling needed (CL6 n/a), data availability only on request (CL7 partly).", "overall_concern": "High"}
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction study; ABIDE I, NYU site only, 184 subjects (79 ASD, 105 TC)",
+    "methods": "CCS-preprocessed (filt_global) resting-state fMRI 3D volumes converted into 2D slice images, classified with a modified Darknet-19 CNN (DarkASDNet)",
+    "outcomes": "DarkASDNet achieved accuracy 94.7%, precision 94.5%, recall 92.5%, F1-score 95%, AUC 94.703%, reported as outperforming VGG16, MobileNetV2, SVM and several literature benchmarks on the NYU subset",
+    "key_limitations": "No train/test split or cross-validation methodology described; single-site analysis limits generalisability; data available only on author request, no code repository found",
+    "relevance_notes": "Single-site (NYU) ABIDE-I subset with an explicit N and phenotype table, but the prediction pipeline lacks a stated validation scheme, limiting confidence in the reported accuracy.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fninf.2021.635657",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Single ABIDE-I site (NYU), 184 subjects total (79 ASD, 105 TC); no further stated exclusion beyond site selection",
+    "n_by_dx": {"ASD": 79, "TD": 105, "total": 184},
+    "sites": "NYU (New York University Langone Medical Center)",
+    "pipeline": "CCS (Connectome Computation System), filt_global strategy",
+    "atlas": "",
+    "claim_type": "predictive",
+    "finding": "DarkASDNet (modified Darknet-19 CNN) classified ASD vs TC with accuracy 94.7%, precision 94.5%, recall 92.5%, F1-score 95%, AUC 94.703%, on the ABIDE-I NYU subset",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "Among the 17 sites, we endeavor with the CCS-NYU (New York University Langone Medical Center) site.",
+      "TABLE 2 | NYU phenotypic data information for ABIDE-I database.\nTotal subjects\nASD\nTC\nFemale\nMale\nAge range (Years)\nAverage age (SD)\nADOS score (SD)\nASD\nTC\n184\n79\n105\n35\n149",
+      "After testing our model for ASD classiﬁcation, we have achieved the highest accuracy of 94.7%, the precision of 94.5%, recall of 92.5%, f1-score of 95%, and the AUC score 94.703%."
+    ]
+  }
+}

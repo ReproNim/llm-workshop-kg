@@ -1,0 +1,53 @@
+@prefix slr: <https://w3id.org/slr-ontology/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <urn:repronim-talk:abide-review:> .
+
+ex:intake-session a slr:PreWorkflowSession, prov:Activity ;
+    slr:session_id ex:intake-session ;
+    slr:session_type "protocol_definition" ;
+    slr:session_date "2026-10-15T16:00:23Z"^^xsd:dateTime ;
+    slr:decisions_locked "scope", "corpus_size", "execution_path", "appraisal_instrument" ;
+    slr:resulting_configuration_uri <file:protocol.json> ;
+    slr:user_inputs ex:ui-scope, ex:ui-corpus, ex:ui-execution, ex:ui-appraisal ;
+    prov:wasAssociatedWith ex:speaker, ex:orchestrating-agent ;
+    dcterms:description "Pivotal decisions asked as structured questions (Claude Code AskUserQuestion); all other protocol fields drafted by the agent from protocol_intake.md defaults." .
+
+ex:speaker a prov:Agent, prov:Person ; dcterms:title "Review owner (talk speaker)" .
+ex:orchestrating-agent a prov:Agent, prov:SoftwareAgent ; dcterms:title "Claude Code orchestrating agent (drafted protocol, presented options)" .
+
+ex:ui-scope a slr:UserInput, prov:Entity ;
+    slr:input_id ex:ui-scope ; slr:input_type "elicitation_response" ;
+    slr:question_asked "Which ABIDE releases should the SynthScholar review cover?" ;
+    slr:options_presented "ABIDE I only (Recommended)", "ABIDE I and II" ;
+    slr:input_value "ABIDE I and II" ;
+    slr:captured_at_time "2026-10-15T16:00:23Z"^^xsd:dateTime ;
+    slr:influences <file:protocol.json#pico_population>, <file:protocol.json#inclusion_criteria> ;
+    prov:wasAttributedTo ex:speaker .
+
+ex:ui-corpus a slr:UserInput, prov:Entity ;
+    slr:input_id ex:ui-corpus ; slr:input_type "elicitation_response" ;
+    slr:question_asked "How large a corpus should the review screen?" ;
+    slr:options_presented "~40 open-access, most-cited (Recommended)", "~100 open-access", "All matching works" ;
+    slr:input_value "~100 open-access" ;
+    slr:captured_at_time "2026-10-15T16:00:23Z"^^xsd:dateTime ;
+    slr:influences <file:search/selection_rule.md> ;
+    prov:wasAttributedTo ex:speaker .
+
+ex:ui-execution a slr:UserInput, prov:Entity ;
+    slr:input_id ex:ui-execution ; slr:input_type "elicitation_response" ;
+    slr:question_asked "How should the review stages (screening, charting, appraisal) be executed?" ;
+    slr:options_presented "Agent-authored, skill exporters (Recommended)", "SynthScholar pipeline via OpenRouter" ;
+    slr:input_value "Agent-authored, skill exporters (Recommended)" ;
+    slr:captured_at_time "2026-10-15T16:00:23Z"^^xsd:dateTime ;
+    prov:wasAttributedTo ex:speaker .
+
+ex:ui-appraisal a slr:UserInput, prov:Entity ;
+    slr:input_id ex:ui-appraisal ; slr:input_type "elicitation_response" ;
+    slr:question_asked "Which appraisal instrument fits this corpus?" ;
+    slr:options_presented "PROBAST + reporting checklist (Recommended)", "Reporting checklist only", "None" ;
+    slr:input_value "PROBAST + reporting checklist (Recommended)" ;
+    slr:captured_at_time "2026-10-15T16:00:23Z"^^xsd:dateTime ;
+    slr:influences <file:protocol.json#appraisal_domains>, <file:protocol.json#charting_questions> ;
+    prov:wasAttributedTo ex:speaker .

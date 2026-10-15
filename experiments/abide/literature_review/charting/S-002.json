@@ -1,0 +1,210 @@
+{
+  "source_id": "S-002",
+  "pmid": "local_7fdaac96",
+  "doi": "10.1016/j.neuroimage.2016.10.045",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2/3: analyses ABIDE resting-state fMRI data explicitly and reports a diagnostic prediction (ASD vs TC classification) analysis.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "It compiles a dataset of 1112 R-fMRI par- ticipants by gathering data from 17 diﬀerent sites. Af- ter preprocessing, we selected 871 to meet quality criteria for MRI and phenotypic information.",
+      "section": "methods",
+      "claim": "The analysed cohort is 871 of 1112 ABIDE I participants from 17 sites, selected after a quality-control step.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "all participants (871 individuals, 727 males and 144 fe- males, 6 to 64 years old) is the full set of individuals that passed QA",
+      "section": "methods",
+      "claim": "Cohort demographics for the full analysed subsample (871 individuals, 727 male / 144 female, ages 6-64).",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Data were selected based on the results of quality visual in- spection by three human experts",
+      "section": "methods",
+      "claim": "QC rule was expert visual inspection of preprocessed data rather than a numeric motion threshold.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "We speciﬁcally used the data processed with the Conﬁgurable Pipeline for the Analysis of Connectomes [34] (C-PAC).",
+      "section": "methods",
+      "claim": "Preprocessing pipeline used was C-PAC via the Preprocessed Connectomes Project.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Note that the ROI were all deﬁned on the training set to avoid possible overﬁtting.",
+      "section": "methods",
+      "claim": "Atlas/ROI estimation was confined to the training fold, an explicit leakage-control measure.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "This validation with a leave-one- site-out cross-validation strategy reduces the risk of over- ﬁtting data from a single site",
+      "section": "methods",
+      "claim": "Inter-site evaluation used leave-one-site-out cross-validation.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "For inter-site prediction, the highest accuracy obtained on the whole dataset is 66.8% (see Table 2) which ex- ceeds previously published ABIDE ﬁndings [53, 13, 54] and chance at 53.7%",
+      "section": "results",
+      "claim": "Best inter-site (leave-site-out) classification accuracy on the full 871-subject ABIDE sample was 66.8%, above chance (53.7%).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "the best predicting pipeline is MSDL, tangent space embedding and l2-regularized classi- ﬁers (SVC-l2 and ridge classiﬁer)",
+      "section": "results",
+      "claim": "Best-performing pipeline combination: MSDL atlas, tangent-space connectivity embedding, l2-regularized classifiers.",
+      "relevance_score": 0.8
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Low", "support": "871 of 1112 ABIDE I participants from 17 sites retained after QA; demographics (sex, age range) and per-site/per-subsample N reported in Table A2."},
+      {"domain": "Predictors", "judgment": "Low", "support": "Multiple atlas/parcellation and connectivity-estimation options systematically compared and reported (Harvard-Oxford, Yeo, ICA, MSDL, K-Means, Ward; correlation, partial correlation, tangent embedding)."},
+      {"domain": "Outcome", "judgment": "Unclear", "support": "Paper states diagnosis vs typical control (TC) status was used but does not specify the diagnostic instrument/criteria underlying ABIDE's phenotypic label beyond noting diagnostic/assessment protocols vary across sites."},
+      {"domain": "Analysis", "judgment": "Low", "support": "ROIs defined on the training set only, hyperparameters tuned via nested cross-validation, and primary evaluation used leave-one-site-out CV rather than pooled random splits."}
+    ],
+    "overall": "Low",
+    "summary": "Well-controlled predictive ABIDE I study with explicit leakage control (training-set-only atlas estimation, nested CV) and site-aware evaluation (leave-one-site-out); main uncertainty is the unspecified diagnostic-label source."
+  },
+  "charting": {
+    "source_id": "S-002",
+    "title": "Deriving reproducible biomarkers from multi-site resting-state data: An Autism-based example",
+    "authors": "Abraham A; Milham M; Di Martino A; Craddock RC; Samaras D; Thirion B; Varoquaux G",
+    "year": "2016",
+    "journal_conference": "NeuroImage",
+    "doi": "10.1016/j.neuroimage.2016.10.045",
+    "database_retrieved": "unpaywall",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state (eyes open/closed, varies by site)",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "403",
+    "age_mean_sd": "",
+    "age_range": "6 to 64 years",
+    "gender_distribution": "727 males, 144 females (full 871-subject sample)",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "468",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "Precomputed MSDL atlas released at a project URL (MSDL_ABIDE.zip); built on the publicly available Preprocessed Connectomes Project C-PAC release",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity (region-pair connectome)",
+    "specific_features": "Connectome edge weights; atlases compared: Harvard-Oxford, Yeo, ICA, MSDL, K-Means, Ward; connectivity measures: correlation, partial correlation, tangent embedding",
+    "feature_extraction_tools": "Preprocessed Connectomes Project C-PAC; Nilearn, scikit-learn 0.17.1",
+    "feature_importance_reported": "Yes",
+    "importance_method": "Classifier weight inspection (discriminative connection weights)",
+    "top_features_identified": "Default Mode Network, pareto-insular network, and semantic ROI connections distinguishing ASD from TC",
+    "feature_change_direction": "",
+    "model_category": "Linear classifier",
+    "specific_algorithms": "l2-regularized SVC (SVC-l2) and ridge classifier",
+    "validation_methodology": "Leave-one-site-out cross-validation (inter-site) and intra-site cross-validation, with nested cross-validation for hyperparameter selection; ROI/atlas estimation confined to the training set",
+    "performance_metrics": "Accuracy, specificity, sensitivity",
+    "key_performance_results": "Best inter-site accuracy 66.8% (chance 53.7%) on the full 871-subject sample using MSDL + tangent embedding + l2-regularized classifier; abstract reports 67% prediction accuracy, exceeding previously published ABIDE results (60%)",
+    "summary_key_findings": "A systematic comparison of ABIDE R-fMRI pipeline choices (atlas, connectivity measure, classifier) shows MSDL + tangent-space embedding + l2-regularized classifiers give the best inter-site prediction accuracy (66.8%, full 871-subject sample), with accuracy improving as more training subjects are included.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "predictive | ABIDE I, 871 of 1112 participants (403 ASD, 468 TC) from 17 sites, selected after visual QA of MRI and phenotypic information. | quote: \"Af- ter preprocessing, we selected 871 to meet quality criteria for MRI and phenotypic information.\"",
+      "RQ2": "C-PAC (Preprocessed Connectomes Project); atlases compared: Harvard-Oxford, Yeo, ICA, MSDL, K-Means, Ward. | quote: \"We speciﬁcally used the data processed with the Conﬁgurable Pipeline for the Analysis of Connectomes [34] (C-PAC).\"",
+      "RQ3": "predictive — diagnostic classification of ASD vs typical control (TC). | quote: \"Discriminating between ASD and TC individuals is a supervised-learning task.\"",
+      "RQ4": "Leave-one-site-out cross-validation for inter-site evaluation, intra-site CV also reported, nested CV for hyperparameters, ROI estimation confined to training folds. | quote: \"Note that the ROI were all deﬁned on the training set to avoid possible overﬁtting.\"",
+      "RQ5": "Best inter-site accuracy 66.8% (chance 53.7%) with MSDL + tangent embedding + l2-regularized classifier; abstract reports up to 67%. | quote: \"the highest accuracy obtained on the whole dataset is 66.8% (see Table 2) which ex- ceeds previously published ABIDE ﬁndings [53, 13, 54] and chance at 53.7%\"",
+      "RQ6": "partly — per-site/per-subsample participant counts given (Table A2) but no explicit released participant-ID list in the text. | quote: \"Table A2: Count of subjects per site and per subsamples.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"Total 403 468 356 413 292 337 198 222 107 119 Table A2: Count of subjects per site and per subsamples.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly | quote: \"Data were selected based on the results of quality visual in- spection by three human experts\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"We speciﬁcally used the data processed with the Conﬁgurable Pipeline for the Analysis of Connectomes [34] (C-PAC).\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"We considered the following predeﬁned atlases: Har- vard Oxford [40]\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Yes | quote: \"Note that the ROI were all deﬁned on the training set to avoid possible overﬁtting.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes | quote: \"This validation with a leave-one- site-out cross-validation strategy reduces the risk of over- ﬁtting data from a single site\"",
+      "CL7 Code and/or participant list available?": "Partly | quote: \"http://team.inria.fr/parietal/files/2015/07/MSDL_ABIDE. zip\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"an application to the Autism Brain Imaging Data Exchange (ABIDE) database, a large (N=871) multi-site autism dataset.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-002",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {"item_text": "CL1 Cohort definition reported?", "rating": "Yes", "notes": "871 of 1112 from 17 sites; per-site/per-subsample N by diagnosis in Table A2."},
+        {"item_text": "CL2 Motion/QC rule reported?", "rating": "Partial", "notes": "QC was expert visual inspection, not a quantitative threshold."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {"item_text": "CL3 Pipeline and version reported?", "rating": "Yes", "notes": "C-PAC via Preprocessed Connectomes Project; software versions listed (python 2.7, scikit-learn 0.17.1, nilearn 0.1.5)."},
+        {"item_text": "CL4 Atlas/parcellation reported?", "rating": "Yes", "notes": "Six atlas/parcellation strategies compared and described in detail."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {"item_text": "Diagnosis source and label definition", "rating": "Unclear", "notes": "Paper notes diagnostic/assessment protocols vary across sites but does not state the specific instrument used for the ASD/TC label."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {"item_text": "CL5 Leakage control reported?", "rating": "Yes", "notes": "ROI/atlas estimation confined to training set; nested CV for hyperparameters."},
+        {"item_text": "CL6 Site handling reported?", "rating": "Yes", "notes": "Leave-one-site-out CV as primary evaluation."},
+        {"item_text": "CL7 Code/participant list available?", "rating": "Partial", "notes": "Precomputed atlas file shared at a project URL; no general code repository link found in text."}
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-002",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I; 871 of 1112 participants (403 ASD, 468 TC) from 17 sites, after QA; subsamples of varying homogeneity also analysed (e.g. 736, 639, 420, 226 participants)",
+    "methods": "C-PAC-preprocessed ABIDE I data; systematic comparison of 6 atlas/parcellation methods x 3 connectivity measures x classifiers (SVC, ridge); leave-one-site-out and intra-site cross-validation with nested CV for hyperparameters and training-set-only ROI estimation",
+    "outcomes": "Best inter-site accuracy 66.8% (chance 53.7%) with MSDL atlas, tangent-space embedding, l2-regularized classifiers; accuracy increases with training sample size; discriminative connections implicate Default Mode Network, pareto-insular and semantic ROI networks",
+    "key_limitations": "Diagnostic label source/criteria not detailed; heterogeneous site protocols; computationally very costly pipeline comparison (reported ~10 CPU-years without grid parallelization)",
+    "relevance_notes": "Methodological benchmark paper establishing which PCP/C-PAC pipeline + atlas + classifier choices work best on the full ABIDE I release, directly informing which pipeline/atlas combinations recur in later ABIDE classification work",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1016/j.neuroimage.2016.10.045",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "871 of 1112 ABIDE I participants from 17 sites who passed quality assurance on MRI and phenotypic information; nested subsamples also defined by site size, handedness, sex and age restrictions",
+    "n_by_dx": {"ASD": 403, "TD": 468, "total": 871},
+    "sites": "17",
+    "pipeline": "C-PAC (Preprocessed Connectomes Project)",
+    "atlas": "Compared: Harvard-Oxford, Yeo, ICA, MSDL, K-Means, Ward (MSDL performed best)",
+    "claim_type": "predictive",
+    "finding": "Best inter-site (leave-one-site-out) classification accuracy of 66.8% (chance 53.7%) distinguishing ASD from typical controls using MSDL atlas, tangent-space connectivity embedding and l2-regularized classifiers.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "It compiles a dataset of 1112 R-fMRI par- ticipants by gathering data from 17 diﬀerent sites. Af- ter preprocessing, we selected 871 to meet quality criteria for MRI and phenotypic information.",
+      "For inter-site prediction, the highest accuracy obtained on the whole dataset is 66.8% (see Table 2) which ex- ceeds previously published ABIDE ﬁndings [53, 13, 54] and chance at 53.7%",
+      "Note that the ROI were all deﬁned on the training set to avoid possible overﬁtting."
+    ]
+  }
+}

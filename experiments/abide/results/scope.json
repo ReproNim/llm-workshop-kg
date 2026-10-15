@@ -1,0 +1,174 @@
+{
+ "by_scope": {
+  "pond:lab": 9,
+  "pond:analyst": 10,
+  "pond:site": 1,
+  "lake": 63
+ },
+ "promotion_candidates": [
+  {
+   "candidate": "claim_AB_C1",
+   "item": "ex:paper/abraham2017/AB_C1",
+   "target": "literature KG (e.g. BR-KG, AbstractAtlas)",
+   "status": "candidate",
+   "gates": {
+    "generality": "pass",
+    "review": "pass",
+    "consent_and_deidentification": "pass",
+    "licence": "unknown",
+    "persistent_identifier_and_version": "pass",
+    "provenance_retained": "pass"
+   },
+   "unmet": [
+    "licence"
+   ]
+  },
+  {
+   "candidate": "claim_AB_C2",
+   "item": "ex:paper/abraham2017/AB_C2",
+   "target": "literature KG (e.g. BR-KG, AbstractAtlas)",
+   "status": "candidate",
+   "gates": {
+    "generality": "pass",
+    "review": "pass",
+    "consent_and_deidentification": "pass",
+    "licence": "unknown",
+    "persistent_identifier_and_version": "pass",
+    "provenance_retained": "pass"
+   },
+   "unmet": [
+    "licence"
+   ]
+  },
+  {
+   "candidate": "claim_DM_C1",
+   "item": "ex:paper/dimartino2014/DM_C1",
+   "target": "literature KG (e.g. BR-KG, AbstractAtlas)",
+   "status": "candidate",
+   "gates": {
+    "generality": "pass",
+    "review": "pass",
+    "consent_and_deidentification": "pass",
+    "licence": "unknown",
+    "persistent_identifier_and_version": "pass",
+    "provenance_retained": "pass"
+   },
+   "unmet": [
+    "licence"
+   ]
+  },
+  {
+   "candidate": "cohort_abraham_reconstruction",
+   "item": "ex:cohort/abraham2017_reconstructed",
+   "target": "literature KG / ABIDE dataset record",
+   "status": "blocked",
+   "gates": {
+    "generality": "fail",
+    "review": "unknown",
+    "consent_and_deidentification": "pass",
+    "licence": "pass",
+    "persistent_identifier_and_version": "fail",
+    "provenance_retained": "pass"
+   },
+   "unmet": [
+    "generality",
+    "review",
+    "persistent_identifier_and_version"
+   ]
+  },
+  {
+   "candidate": "motion_rule_v2",
+   "item": "ex:rule/motion_v2",
+   "target": "consortium QC guideline",
+   "status": "candidate",
+   "gates": {
+    "generality": "fail",
+    "review": "pass",
+    "consent_and_deidentification": "pass",
+    "licence": "unknown",
+    "persistent_identifier_and_version": "fail",
+    "provenance_retained": "pass"
+   },
+   "unmet": [
+    "generality",
+    "licence",
+    "persistent_identifier_and_version"
+   ]
+  },
+  {
+   "candidate": "skill_graph_build",
+   "item": "ex:skill/abide_graph_build",
+   "target": "ReproNim/skills (0 skills at pinned commit)",
+   "status": "candidate",
+   "gates": {
+    "generality": "fail",
+    "review": "unknown",
+    "consent_and_deidentification": "pass",
+    "licence": "unknown",
+    "persistent_identifier_and_version": "fail",
+    "provenance_retained": "pass"
+   },
+   "unmet": [
+    "generality",
+    "review",
+    "licence",
+    "persistent_identifier_and_version"
+   ]
+  },
+  {
+   "candidate": "variable_cc200_mean_fisher_z",
+   "item": "ex:variable/cc200_mean_fisher_z",
+   "target": "NIDM-Terms / InterLex",
+   "status": "candidate",
+   "gates": {
+    "generality": "unknown",
+    "review": "unknown",
+    "consent_and_deidentification": "pass",
+    "licence": "unknown",
+    "persistent_identifier_and_version": "fail",
+    "provenance_retained": "pass"
+   },
+   "unmet": [
+    "generality",
+    "review",
+    "licence",
+    "persistent_identifier_and_version"
+   ]
+  },
+  {
+   "candidate": "variable_qc_raters",
+   "item": "ex:variable/qc_func_rater_2",
+   "target": "NIDM-Terms / InterLex",
+   "status": "candidate",
+   "gates": {
+    "generality": "pass",
+    "review": "unknown",
+    "consent_and_deidentification": "pass",
+    "licence": "unknown",
+    "persistent_identifier_and_version": "fail",
+    "provenance_retained": "pass"
+   },
+   "unmet": [
+    "review",
+    "licence",
+    "persistent_identifier_and_version"
+   ]
+  }
+ ],
+ "n_adoptions": 3,
+ "n_revisions": 2,
+ "fd_sweep_0.15": {
+  "overall_excluded_fraction": 0.1794871794871795,
+  "site_min": 0.0,
+  "site_max": 0.875,
+  "site_median": 0.188470066518847,
+  "site_max_name": "CMU",
+  "n_sites_over_50pct_excluded": 1,
+  "n_sites": 20,
+  "dx_excluded_fraction": {
+   "ASD": 0.23,
+   "TD": 0.1354
+  }
+ },
+ "triples": 663
+}

@@ -1,0 +1,281 @@
+{
+  "source_id": "S-080",
+  "pmid": "local_30f8d927",
+  "doi": "10.1186/s13229-024-00616-2",
+  "screening": {
+    "decision": "include",
+    "reason": "Analyses ABIDE-I resting-state functional connectivity (vertex-wise, C-PAC pipeline) for a group-difference (ASD vs NT) analysis; meets inclusion 2-3.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "We studied 211 males from three sites of the ABIDE-I dataset comprising 103 participants with an ASD diagnosis (mean ± SD age = 20.8 ± 8.1 years) and 108 neurotypical controls (NT, 19.2 ± 7.2 years).",
+      "section": "abstract",
+      "claim": "Cohort was 211 males (103 ASD, 108 NT) from three ABIDE-I sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Compared to NT, ASD participants presented with widespread reductions in CD, generally indicating shorter average connection length and thus suggesting reduced long-range connectivity but increased short-range connections.",
+      "section": "abstract",
+      "claim": "Main finding: ASD shows widespread connectivity-distance reductions, implying relatively reduced long-range and increased short-range connectivity.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "included imaging and  clinical data from three different sites that included data  from > = 10 ASD and NT respectively, i.e., University of  Pittsburgh School of Medicine (PITT), New York Univer­ sity Langone Medical Center (NYU), and University of  Utah School of Medicine (USM).",
+      "section": "methods",
+      "claim": "Three ABIDE-I sites were used: PITT, NYU, USM.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "After excluding cases with high  head motion (cutoff: >2SD over mean framewise dis­ placement, n = 10), we obtained a sample size of n = 211  (103/108 ASD/NT).",
+      "section": "methods",
+      "claim": "A motion-based exclusion rule (>2 SD above mean FD) removed 10 subjects to reach n=211.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "based on  the configurable pipeline for the analysis of connectomes  (C-PAC) (https://fcp-indi.github.io/) [83], including slice- time and head motion correction, skull stripping and  intensity normalization.",
+      "section": "methods",
+      "claim": "Preprocessing used the C-PAC pipeline.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Subjects with a mean framewise displacement  (FD) > 0.3 mm in rs-fMRI (two SD from the mean across  all subjects) were excluded (n = 9).",
+      "section": "methods",
+      "claim": "An additional rs-fMRI-specific FD>0.3mm exclusion removed 9 subjects.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Data were harmo­ nized for site effects while preserving effects of age and  ASD diagnosis using ComBat [86]",
+      "section": "methods",
+      "claim": "Site effects were handled using ComBat harmonization.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Effect sizes dif­ fered across seven intrinsic functional networks [21],  with higher effects towards transmodal compared to  sensory/motor networks and peak reductions in CD in  the limbic network (Cohen's d=-0.159, Fig.  3A).",
+      "section": "results",
+      "claim": "Peak effect size for CD reduction was in the limbic network (Cohen's d = -0.159).",
+      "relevance_score": 0.8
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "Site, N, ADOS-based diagnosis and motion exclusion thresholds explicitly stated."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Table 1 gives age, IQ, ADOS by group; three named sites."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "C-PAC pipeline with motion correction, CompCor, band-pass filter, no-GSR with GSR control analysis described in detail."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Low",
+        "support": "In-person diagnostic interview using ADOS described."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Age, head motion and site included as covariates/handled via ComBat; study restricted to males due to ABIDE-I female sparsity."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "ComBat harmonization for site; motion exclusion thresholds applied; model CDi = ß0+ß1*Age+ß2*Diagnosis+ß3*Head Motion."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Connectivity distance derived from vertex-wise FC and geodesic distance mapping, a previously published approach."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "Random field theory correction and FDR correction described for vertex-wise and cluster-wise tests."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Well-documented cohort, pipeline, confound handling (ComBat, motion exclusion) and multiple-comparison correction for this associational analysis; main limitation is restriction to males and 3 of 17 ABIDE-I sites, explicitly acknowledged."
+  },
+  "charting": {
+    "source_id": "S-080",
+    "title": "Contracted functional connectivity profiles in autism",
+    "authors": "",
+    "year": "2024",
+    "journal_conference": "Molecular Autism",
+    "doi": "10.1186/s13229-024-00616-2",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder (ADOS-confirmed)",
+    "diagnosis_assessment": "In-person diagnostic interview using the Autism Diagnostic Observation Schedule (ADOS)",
+    "n_disordered": "103",
+    "age_mean_sd": "20.842 (8.112)",
+    "age_range": "",
+    "gender_distribution": "211 males only (small female sample in ABIDE-I release excluded)",
+    "comorbidities_included_excluded": "Subjects with genetic disorders associated with ASD excluded; comorbidities not otherwise examined (noted as limitation)",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "yes",
+    "healthy_status_confirmed": "NT controls had no history of psychiatric disease",
+    "n_controls": "108",
+    "age_mean_sd_controls": "19.220 (7.103)",
+    "age_range_controls": "",
+    "gender_distribution_controls": "male only",
+    "age_matched": "",
+    "gender_matched": "yes (male only)",
+    "neurodevelopmentally_typical": "yes",
+    "data_types": "resting-state fMRI, T1-weighted structural MRI",
+    "tasks_performed": "",
+    "equipment_tools": "3T Siemens scanners (site-specific protocols)",
+    "new_dataset_contributed": "no",
+    "dataset_openly_available": "No datasets were generated or analysed during the current study (reuses public ABIDE-I data); no new participant list or code release statement found",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "ABIDE data collected per local IRB and released anonymized per HIPAA",
+    "feature_types": "functional connectivity",
+    "specific_features": "Vertex-wise intra-hemispheric functional connectivity combined with cortical surface geodesic distance to derive connectivity distance (CD)",
+    "feature_extraction_tools": "C-PAC pipeline; Connectome Workbench; HCP pipelines; Conte69 surface template",
+    "feature_importance_reported": "",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "Widespread reductions in connectivity distance (CD) in ASD vs NT, peaking in transmodal/paralimbic systems and the limbic intrinsic network",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "ASD showed widespread reductions in connectivity distance relative to NT, concentrated in heteromodal/paralimbic transmodal cortex, interpreted as relatively shorter long-range and more short-range connectivity; CD reductions correlated with IQ but not with age or ADOS severity.",
+    "features_associated_disorder": "Reduced connectivity distance (shorter average functional connection length) in transmodal/paralimbic cortex, peak effect in the limbic network (Cohen's d=-0.159)",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE-I, n=211 (103 ASD/108 NT) from 3 sites (PITT, NYU, USM); males only; excluded on >2SD mean FD (n=10) and rs-fMRI FD>0.3mm (n=9). | quote: \"After excluding cases with high  head motion (cutoff: >2SD over mean framewise dis­ placement, n = 10), we obtained a sample size of n = 211  (103/108 ASD/NT).\"",
+      "RQ2": "C-PAC pipeline (slice-time/motion correction, CompCor, band-pass 0.01-0.1Hz, no GSR); surface-based Conte69 template, no standard ROI atlas. | quote: \"based on  the configurable pipeline for the analysis of connectomes  (C-PAC) (https://fcp-indi.github.io/) [83]\"",
+      "RQ3": "associational — group-difference analysis of ASD vs NT connectivity distance, with brain-behavior correlations. | quote: \"Compared to NT, ASD participants presented with widespread reductions in CD\"",
+      "RQ4": "Vertex-wise two-tailed t-tests via BrainStat with random field theory correction; cluster-wise correlations FDR-corrected (q<0.05); ComBat site harmonization used instead of leave-site-out. | quote: \"group differences between ASD and NT were  assessed in vertex-wise two-tailed Student’s t-tests using  the BrainStat toolbox\"",
+      "RQ5": "Widespread CD reductions in ASD, peak effect in limbic network (Cohen's d=-0.159); positive correlation of CD to IQ, no significant correlation with age or ADOS. | quote: \"peak reductions in CD in  the limbic network (Cohen’s d=-0.159, Fig.  3A)\"",
+      "RQ6": "no — exact cohort-definition rules (sites, motion thresholds, ADOS/male-only criteria) are given but no participant ID list or code repository is provided. | quote: \"No datasets were generated or analysed during the current study.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — three sites, N by diagnosis, male-only restriction and exclusion criteria stated. | quote: \"We studied 211 males from three sites of the ABIDE-I dataset comprising 103 participants with an ASD  diagnosis\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes — two explicit FD-based exclusion thresholds given. | quote: \"Subjects with a mean framewise displacement  (FD) > 0.3 mm in rs-fMRI (two SD from the mean across  all subjects) were excluded (n = 9).\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — pipeline (C-PAC) named with processing steps but no explicit version number. | quote: \"based on  the configurable pipeline for the analysis of connectomes  (C-PAC)\"",
+      "CL4 Atlas/parcellation reported?": "Partly — surface template (Conte69, HCP pipelines) specified but not a standard ROI atlas; connectivity computed vertex-wise. | quote: \"We resampled data to  the Conte69 surface template [79]\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — study is not a predictive/ML analysis, no train/test split or feature selection described.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — ComBat harmonization applied for site effects, validated against a surface-based linear model control. | quote: \"Data were harmo­ nized for site effects while preserving effects of age and  ASD diagnosis using ComBat [86]\"",
+      "CL7 Code and/or participant list available?": "No — data availability statement reports no new datasets or code release. | quote: \"No datasets were generated or analysed during the current study.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-080",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "Sites, N by diagnosis, exclusion criteria stated."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Yes",
+          "notes": "Two FD-based thresholds given."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported",
+          "rating": "Partial",
+          "notes": "C-PAC named, no version number."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Partial",
+          "notes": "Surface template given, not a standard ROI atlas."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Yes",
+          "notes": "ADOS-based in-person diagnostic interview."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "N/A",
+          "notes": "Not a predictive/ML study."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "Yes",
+          "notes": "ComBat harmonization."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "No",
+          "notes": "No data/code availability beyond public ABIDE."
+        }
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-080",
+    "study_design_sample_dataset": "Group-difference (associational) analysis; ABIDE-I; n=211 males (103 ASD, 108 NT) from PITT, NYU, USM.",
+    "methods": "C-PAC-preprocessed rs-fMRI mapped to Conte69 cortical surface; vertex-wise functional connectivity combined with geodesic distance to derive connectivity distance (CD); ComBat site harmonization; vertex-wise t-tests with random field theory correction.",
+    "outcomes": "Widespread CD reductions in ASD vs NT concentrated in transmodal/paralimbic cortex, peak effect in the limbic intrinsic network (Cohen's d=-0.159); CD correlated positively with IQ but not age or ADOS severity.",
+    "key_limitations": "Restricted to 3 of 17 ABIDE-I sites and to males only; cross-sectional; heterogeneity in autism limits generalizability (authors' own limitation).",
+    "relevance_notes": "Demonstrates a novel connectivity-distance (geodesic-weighted FC) derivative of ABIDE-I rs-fMRI, with explicit, reconstructible site/exclusion rules but no participant list.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1186/s13229-024-00616-2",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Three ABIDE-I sites (PITT, NYU, USM), males only, ADOS-confirmed ASD, excluded for high head motion (>2SD mean FD, n=10) and rs-fMRI FD>0.3mm (n=9); final n=211 (103 ASD/108 NT).",
+    "n_by_dx": {
+      "ASD": 103,
+      "TD": 108,
+      "total": 211
+    },
+    "sites": "3 (PITT, NYU, USM)",
+    "pipeline": "C-PAC (slice-time/motion correction, CompCor, band-pass 0.01-0.1Hz, no GSR; ComBat site harmonization)",
+    "atlas": "Conte69 surface template (vertex-wise, no ROI atlas)",
+    "claim_type": "associational",
+    "finding": "ASD showed widespread reductions in connectivity distance (shorter average functional connection length) vs NT, peaking in transmodal/paralimbic cortex and the limbic intrinsic network (Cohen's d=-0.159).",
+    "reconstructible": "yes — exact rules",
+    "evidence_quotes": [
+      "We studied 211 males from three sites of the ABIDE-I dataset comprising 103 participants with an ASD  diagnosis (mean ± SD age = 20.8 ± 8.1 years) and 108 neurotypical controls (NT, 19.2 ± 7.2 years).",
+      "Compared to NT, ASD participants presented with widespread reductions in CD, generally indicating  shorter average connection length and thus suggesting reduced long-range connectivity but increased short- range connections."
+    ]
+  }
+}

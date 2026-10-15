@@ -1,0 +1,40 @@
+{
+  "date_searched": "2026-10-15",
+  "searches": [
+    {
+      "release_seed": "ABIDE I",
+      "seed_work": "W2167868121",
+      "subset": "all",
+      "query": "https://api.openalex.org/works?filter=cites:W2167868121,title_and_abstract.search:ABIDE",
+      "date_searched": "2026-10-15",
+      "records_identified": 598,
+      "records_downloaded": 598
+    },
+    {
+      "release_seed": "ABIDE II",
+      "seed_work": "W2590651237",
+      "subset": "all",
+      "query": "https://api.openalex.org/works?filter=cites:W2590651237,title_and_abstract.search:ABIDE",
+      "date_searched": "2026-10-15",
+      "records_identified": 174,
+      "records_downloaded": 174
+    },
+    {
+      "release_seed": "Abraham 2017 (graph seed)",
+      "seed_work": "W2522924024",
+      "subset": "all",
+      "query": "https://api.openalex.org/works?filter=cites:W2522924024,title_and_abstract.search:ABIDE",
+      "date_searched": "2026-10-15",
+      "records_identified": 220,
+      "records_downloaded": 220
+    }
+  ],
+  "total_identified": 992,
+  "other_sources": [
+    "10.1038/mp.2013.78",
+    "10.1038/sdata.2017.10"
+  ],
+  "after_dedup": 726,
+  "duplicates_removed": 266,
+  "open_access": 416
+}

@@ -1,0 +1,13 @@
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX schema: <http://schema.org/>
+SELECT ?item ?label ?level ?access ?egress ?reason ?policy WHERE { GRAPH <urn:repronim:abide:graph/scope> {
+  ?item ex:knowledgeScope <urn:repronim:abide:scope/pond> ; ex:accessLevel ?access .
+  OPTIONAL { ?item ex:pondLevel ?level }
+  OPTIONAL { ?item rdfs:label ?label }
+  OPTIONAL { ?item ex:hasSensitivityProfile ?p . ?p ex:egressPermitted ?egress ; ex:egressReason ?reason }
+  OPTIONAL { ?item ex:promotionPolicy ?policy }
+} } ORDER BY ?level ?item

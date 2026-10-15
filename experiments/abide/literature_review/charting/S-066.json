@@ -1,0 +1,101 @@
+{
+  "source_id": "S-066",
+  "pmid": "local_6fb7c550",
+  "doi": "10.1038/s41398-024-02972-2",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2,3: resting-state fMRI (plus phenotypic/QC modalities) diagnostic prediction (ASD vs TC) on two ABIDE I-derived multimodal benchmarks using a graph-learning deep model.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {"text": "We apply DeepASD to the benchmarking Autism Brain Imaging Data Exchange (ABIDE) data with four modalities.", "section": "abstract", "claim": "DeepASD is evaluated on ABIDE data with four modalities.", "relevance_score": 0.7},
+    {"text": "The dataset includes 871 subjects\n(468 TC and 403 ASD subjects). We follow (Parisot, 2017) [19] for\nthe dataset settings and preprocessing.", "section": "methods", "claim": "ABIDE A cohort: 871 subjects, 403 ASD, 468 TC, following Parisot 2017 setup.", "relevance_score": 1.0},
+    {"text": "ABIDE B, encompassing\n949 subjects, adheres to the settings outlined by (Wang, 2020)\n[10]. This cohort includes 419 individuals diagnosed with ASD and\n530 TC subjects.", "section": "methods", "claim": "ABIDE B cohort: 949 subjects, 419 ASD, 530 TC, following Wang 2020 setup.", "relevance_score": 1.0},
+    {"text": "The dataset integrates three brain atlases (CC200,\nAAL - Automated Anatomical Labeling, and DOS - Dosenbach160)", "section": "methods", "claim": "ABIDE B fMRI features are derived from three atlases: CC200, AAL, Dosenbach160.", "relevance_score": 0.7},
+    {"text": "For a fair comparison, all data are preprocessed using the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC) based on the preprocessed fMRI datasets [22].", "section": "methods", "claim": "Preprocessing pipeline is C-PAC via the Preprocessed Connectomes Project.", "relevance_score": 0.8},
+    {"text": "we performed a 10-\nfold stratiﬁed cross-validation strategy on the two datasets.", "section": "methods", "claim": "Validation: 10-fold stratified cross-validation.", "relevance_score": 0.8},
+    {"text": "All experiments were conducted with a 10-fold cross-validation to divide the dataset into training and test sets, with 10% of the training set randomly selected as the validation set. Ultimately, the training, validation, and test sets were non-overlapping.", "section": "methods", "claim": "Train/validation/test sets were kept non-overlapping within the 10-fold CV scheme.", "relevance_score": 0.8},
+    {"text": "The model achieved the following performance metrics, presented in mean ± standard deviation format, on the ABIDE A dataset: accuracy (ACC) of 87.38 ± 2.87%, area under curve (AUC) of 92.76 ± 4.00%, speciﬁcity (SEN) of 88.35 ± 6.83%, and sensitivity (SPE) of 86.51 ± 8.41%.", "section": "results", "claim": "Main ABIDE A result: accuracy 87.38%, AUC 92.76%.", "relevance_score": 1.0},
+    {"text": "showing an improvement of 13.25% in\naccuracy, 7.69% in AUC-ROC, and 17.10% in speciﬁcity.", "section": "abstract", "claim": "DeepASD improves over baselines by 13.25% accuracy, 7.69% AUC-ROC, 17.10% specificity.", "relevance_score": 0.8},
+    {"text": "In the population-gcn [19] study, the construction of patient-patient relational graphs was based on demographic information, speciﬁcally sex and site.", "section": "discussion", "claim": "Site is used as a demographic feature for patient-graph construction in a cited baseline approach (population-GCN), contextualising how site information is incorporated.", "relevance_score": 0.5},
+    {"text": "The ABIDE dataset is available from ref. [21], and the preprocessed dataset ABIDE A and ABIDE B are provided with the paper.", "section": "discussion", "claim": "Data availability: ABIDE A/B preprocessed datasets provided with the paper.", "relevance_score": 0.5},
+    {"text": "An interactive code base for DeepASD implementation is available at https:// codeocean.com/capsule/6043886/tree.", "section": "discussion", "claim": "Analysis code publicly available via Code Ocean.", "relevance_score": 0.6}
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Low", "support": "Both cohorts fully specified: \"The dataset includes 871 subjects (468 TC and 403 ASD subjects)\" and \"This cohort includes 419 individuals diagnosed with ASD and 530 TC subjects\" (ABIDE B), each tied to a named published preprocessing/selection protocol (Parisot 2017 / Wang 2020)."},
+      {"domain": "Predictors", "judgment": "Low", "support": "\"all data are preprocessed using the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC)\" and three named atlases (CC200, AAL, Dosenbach160) for ABIDE B."},
+      {"domain": "Outcome", "judgment": "Unclear", "support": "ASD/TC labels taken from the ABIDE phenotype file via the cited prior preprocessing protocols; the specific diagnostic instrument/criteria are not elaborated in this paper."},
+      {"domain": "Analysis", "judgment": "Low", "support": "\"we performed a 10-\nfold stratiﬁed cross-validation strategy\" with \"training, validation, and test sets were non-overlapping\", and performance reported as mean±SD across folds with a two-sample t-test versus baselines; site is used only as a demographic feature within the graph-construction model rather than ignored, though no leave-site-out evaluation is reported."}
+    ],
+    "overall": "Low",
+    "summary": "Well-specified cohorts (both following previously published ABIDE A/B protocols), pipeline, atlases, and a leakage-aware stratified 10-fold CV with non-overlapping splits; residual concern is that site is used as a model feature rather than evaluated with a leave-site-out design, and the diagnostic label source is not elaborated."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "403",
+    "n_controls": "468",
+    "data_types": "resting-state fMRI, phenotypic/demographic data, anatomical and functional QC metrics",
+    "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (C-PAC), via the Preprocessed Connectomes Project",
+    "specific_features": "fMRI connection networks (ABIDE A, following Parisot 2017 CC200-based setup); CC200, AAL and Dosenbach160 atlas-based connectivity plus demographic data (ABIDE B, following Wang 2020)",
+    "model_category": "Graph neural network (multimodal adversarial-regularized graph learning)",
+    "specific_algorithms": "DeepASD (multimodal adversarial-regularized encoder + adaptive patient similarity graphs + GNN classifier), compared against 8 baselines including population-GCN, AIMAFE and other multimodal/deep models",
+    "validation_methodology": "10-fold stratified cross-validation with non-overlapping train/validation/test splits; two-sample t-test for significance versus baselines",
+    "performance_metrics": "Accuracy, AUC-ROC, sensitivity, specificity",
+    "key_performance_results": "ABIDE A: accuracy 87.38±2.87%, AUC 92.76±4.00%, sensitivity 86.51±8.41%, specificity 88.35±6.83%; ABIDE B: accuracy 88.09±2.92%, AUC 93.59±2.45%, sensitivity 88.49±4.73%, specificity 87.58±3.68%; improvement over best baseline of 13.25% accuracy, 7.69% AUC-ROC, 17.10% specificity",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "Yes — preprocessed ABIDE A/B datasets provided with the paper, analysis code at https://codeocean.com/capsule/6043886/tree",
+    "custom_fields": {
+      "RQ1": "Two ABIDE I-derived multimodal cohorts: ABIDE A (871 subjects, 403 ASD/468 TC, following Parisot 2017) and ABIDE B (949 subjects, 419 ASD/530 TC, following Wang 2020); both inherit the selection/QC rules of those prior published protocols rather than defining a new one. | quote: \"The dataset includes 871 subjects\n(468 TC and 403 ASD subjects). We follow (Parisot, 2017) [19] for\nthe dataset settings and preprocessing.\"",
+      "RQ2": "C-PAC pipeline; ABIDE A uses CC200-based fMRI connection networks (Parisot 2017 setup), ABIDE B uses three atlases — CC200, AAL, Dosenbach160. | quote: \"The dataset integrates three brain atlases (CC200,\nAAL - Automated Anatomical Labeling, and DOS - Dosenbach160)\"",
+      "RQ3": "predictive — multimodal graph-learning classification of ASD vs TC. | quote: \"DeepASD, an end-to-end trainable regularized graph learning method for ASD prediction\"",
+      "RQ4": "10-fold stratified cross-validation with non-overlapping train/validation/test splits per fold; significance assessed with an independent two-sample t-test against baselines; site is incorporated as a demographic feature within the graph-construction step of a cited baseline (population-GCN) rather than via leave-site-out evaluation. | quote: \"we performed a 10-\nfold stratiﬁed cross-validation strategy on the two datasets.\"",
+      "RQ5": "DeepASD achieved accuracy 87.38±2.87%/AUC 92.76±4.00% on ABIDE A and accuracy 88.09±2.92%/AUC 93.59±2.45% on ABIDE B, outperforming 8 baselines by 13.25% accuracy, 7.69% AUC-ROC and 17.10% specificity; ablation showed the fMRI modality was the single most informative, with auxiliary modalities (phenotype, QC metrics, other atlases) further improving performance. | quote: \"The model achieved the following performance metrics, presented in mean ± standard deviation format, on the ABIDE A dataset: accuracy (ACC) of 87.38 ± 2.87%, area under curve (AUC) of 92.76 ± 4.00%, speciﬁcity (SEN) of 88.35 ± 6.83%, and sensitivity (SPE) of 86.51 ± 8.41%.\"",
+      "RQ6": "yes — exact rules — both cohorts follow fully specified, previously published selection/preprocessing protocols (Parisot 2017 for ABIDE A; Wang 2020 for ABIDE B), and the preprocessed datasets and analysis code are released with the paper. | quote: \"The ABIDE dataset is available from ref. [21], and the preprocessed dataset ABIDE A and ABIDE B are provided with the paper.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"This cohort includes 419 individuals diagnosed with ASD and\n530 TC subjects.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — automated anatomical and functional QC metrics are used as model input modalities themselves, but no explicit motion/FD exclusion threshold is stated in this paper (inherited from the cited Parisot 2017 / Wang 2020 protocols)",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"For a fair comparison, all data are preprocessed using the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC) based on the preprocessed fMRI datasets [22].\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"The dataset integrates three brain atlases (CC200,\nAAL - Automated Anatomical Labeling, and DOS - Dosenbach160)\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Yes | quote: \"All experiments were conducted with a 10-fold cross-validation to divide the dataset into training and test sets, with 10% of the training set randomly selected as the validation set. Ultimately, the training, validation, and test sets were non-overlapping.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly | quote: \"In the population-gcn [19] study, the construction of patient-patient relational graphs was based on demographic information, speciﬁcally sex and site.\"",
+      "CL7 Code and/or participant list available?": "Yes — code | quote: \"An interactive code base for DeepASD implementation is available at https:// codeocean.com/capsule/6043886/tree.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"We apply DeepASD to the benchmarking Autism Brain Imaging Data Exchange (ABIDE) data with four modalities.\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {"rating": "Yes", "notes": "Both cohort Ns and diagnostic splits fully reported, each tied to a named prior protocol (CL1 yes); QC metrics used as features but no explicit motion threshold stated (CL2 partly).", "overall_concern": "Low"},
+    "domain_2_predictors_features": {"rating": "Yes", "notes": "C-PAC pipeline and three atlases (CC200, AAL, Dosenbach160) both reported.", "overall_concern": "Low"},
+    "domain_3_outcome_diagnosis": {"rating": "Unclear", "notes": "Diagnosis inherited from ABIDE phenotype files via cited prior protocols; instrument/criteria not elaborated in this paper.", "overall_concern": "Some"},
+    "domain_4_bias_transparency": {"rating": "Yes", "notes": "CL5 yes (non-overlapping stratified CV splits); CL6 partly (site used as a feature, not leave-site-out); CL7 yes (code and preprocessed data released).", "overall_concern": "Low"}
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction study; two ABIDE I-derived multimodal benchmarks, ABIDE A (871 subjects: 403 ASD, 468 TC) and ABIDE B (949 subjects: 419 ASD, 530 TC)",
+    "methods": "C-PAC-preprocessed resting-state fMRI connectivity (CC200/AAL/Dosenbach160 atlases) combined with phenotypic and QC modalities, classified with a multimodal adversarial-regularized graph learning model (DeepASD) using patient similarity graphs and a GNN classifier; evaluated with 10-fold stratified, non-overlapping cross-validation",
+    "outcomes": "DeepASD outperformed 8 state-of-the-art baselines (accuracy 87.38% / AUC 92.76% on ABIDE A; accuracy 88.09% / AUC 93.59% on ABIDE B), an improvement of 13.25% accuracy, 7.69% AUC-ROC and 17.10% specificity over the best baseline; ablation confirmed fMRI as the most informative single modality, with other modalities adding further gains",
+    "key_limitations": "Diagnostic label source/instrument not elaborated; site is incorporated as a demographic feature for graph construction rather than evaluated with a leave-site-out scheme despite the known multi-site heterogeneity of ABIDE",
+    "relevance_notes": "Both cohorts are explicitly reconstructible by citation to previously published preprocessing protocols (Parisot 2017, Wang 2020), and both preprocessed datasets plus analysis code are released with the paper.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1038/s41398-024-02972-2",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "ABIDE A (871 subjects, 403 ASD/468 TC, following Parisot 2017 setup) and ABIDE B (949 subjects, 419 ASD/530 TC, following Wang 2020 setup)",
+    "n_by_dx": {"ASD": 403, "TD": 468, "total": 871},
+    "sites": "",
+    "pipeline": "C-PAC (Configurable Pipeline for the Analysis of Connectomes)",
+    "atlas": "CC200 (ABIDE A); CC200, AAL, Dosenbach160 (ABIDE B)",
+    "claim_type": "predictive",
+    "finding": "DeepASD multimodal adversarial-regularized graph learning model classified ASD vs TC with accuracy 87.38±2.87% and AUC 92.76±4.00% on ABIDE A (88.09±2.92%/93.59±2.45% on ABIDE B), outperforming 8 baselines by 13.25% accuracy, 7.69% AUC-ROC and 17.10% specificity",
+    "reconstructible": "yes — exact rules",
+    "evidence_quotes": [
+      "The dataset includes 871 subjects\n(468 TC and 403 ASD subjects). We follow (Parisot, 2017) [19] for\nthe dataset settings and preprocessing.",
+      "The model achieved the following performance metrics, presented in mean ± standard deviation format, on the ABIDE A dataset: accuracy (ACC) of 87.38 ± 2.87%, area under curve (AUC) of 92.76 ± 4.00%, speciﬁcity (SEN) of 88.35 ± 6.83%, and sensitivity (SPE) of 86.51 ± 8.41%.",
+      "The ABIDE dataset is available from ref. [21], and the preprocessed dataset ABIDE A and ABIDE B are provided with the paper."
+    ]
+  }
+}

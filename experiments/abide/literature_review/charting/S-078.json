@@ -1,0 +1,284 @@
+{
+  "source_id": "S-078",
+  "pmid": "local_ef705029",
+  "doi": "10.3389/fnins.2017.00125",
+  "screening": {
+    "decision": "include",
+    "reason": "Applies a novel network-detection method to single-site ABIDE (University of Michigan) resting-state fMRI functional connectivity to identify ASD-related latent/abnormal connectivity networks, validated with SVM leave-one-out classification; satisfies inclusion 1-4.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The publicly available data set comprises data from 48 people with ASD and 65 TCs, with no signi\ufb01cant di\ufb00erences in demographics between the two groups.",
+      "section": "methods",
+      "claim": "Cohort: 48 ASD and 65 TC, no significant demographic differences.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "The data set was collected at the University of Michigan, one of the ABIDE data collection sites",
+      "section": "methods",
+      "claim": "Data collected at University of Michigan, a single ABIDE site.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "TCs were excluded for those who received a score of 10 or higher on the Social Communication Questionnaire 14 or a score of 6 or higher on the Obsessive/Compulsive subscale of the Spence Children\u2019s Anxiety Scale (SCAS) 16.",
+      "section": "methods",
+      "claim": "TC exclusion criteria based on SCQ and SCAS scores, per ABIDE project rules.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "we performed preprocessing based on the Con\ufb01gurable Pipeline for the Analysis of Connectomes",
+      "section": "methods",
+      "claim": "Preprocessing used the C-PAC pipeline.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Using automated anatomical labeling (AAL), we then used the \ufb01rst 90 regions of interest (ROIs) as nodes",
+      "section": "methods",
+      "claim": "AAL atlas, first 90 ROIs used as network nodes.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The leave-one-out cross-validation results show that the accuracy rates are 89 and 84% correspondingly.",
+      "section": "results",
+      "claim": "SVM leave-one-out cross-validation using detected subnetwork features achieved 89% (RBF kernel) and 84% (linear kernel) accuracy.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "We further validate the detected subnetwork features by performing classi\ufb01cation analysis. We employ the support vector machine with radial basis function kernel and linear kernel as our classi\ufb01er.",
+      "section": "results",
+      "claim": "Detected subnetwork features were validated via SVM classification analysis.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "we only utilize a subset of ABIDE data base, and we plan to compare results from di\ufb00erent study sites and perform meta-analysis in future work.",
+      "section": "discussion",
+      "claim": "Study acknowledges it uses only a single-site subset of ABIDE and plans multi-site/meta-analytic comparison in future work.",
+      "relevance_score": 0.7
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "The publicly available data set comprises data from 48 people with ASD and 65 TCs, with no signi\ufb01cant di\ufb00erences in demographics between the two groups. TCs were excluded for those who received a score of 10 or higher on the Social Communication Questionnaire 14 or a score of 6 or higher on the Obsessive/Compulsive subscale of the Spence Children\u2019s Anxiety Scale (SCAS) 16."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "The data set was collected at the University of Michigan, one of the ABIDE data collection sites Age, sex and IQ comparisons reported with no significant group differences."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "we performed preprocessing based on the Con\ufb01gurable Pipeline for the Analysis of Connectomes (C-PAC, http://fcp-indi.github.io). The images were slice-time and motion corrected."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "Relies on the ABIDE site's own ASD diagnosis; TC inclusion/exclusion criteria (SCQ, SCAS) described, but ASD diagnostic instrument not specified in this paper."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Age and sex compared between groups (Wilcoxon, chi-square) with no significant difference; single-site design removes between-site variance but limits generalisability."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Unclear",
+        "support": "Six motion parameters, WM and CSF signals regressed; no explicit motion-threshold exclusion rule or ComBat (single site, so site handling not applicable)."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Pearson correlation functional connectivity between AAL ROIs, Fisher Z-transformed, a standard approach."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "High",
+        "support": "We further validate the detected subnetwork features by performing classi\ufb01cation analysis. We employ the support vector machine with radial basis function kernel and linear kernel as our classi\ufb01er. The classification features (detected abnormal subnetworks) were identified using the full case-control sample before being validated with leave-one-out cross-validation, risking optimistic performance estimates from feature-selection leakage."
+      }
+    ],
+    "overall": "High",
+    "summary": "Well-described single-site ABIDE cohort and C-PAC/AAL pipeline, but the subnetwork features used for LOOCV classification were derived from network-detection analysis of the full sample rather than from training folds only, a feature-selection leakage risk; single-site design also limits site generalisability (acknowledged by the authors)."
+  },
+  "charting": {
+    "source_id": "S-078",
+    "title": "Latent and Abnormal Functional Connectivity Circuits in Autism Spectrum Disorder",
+    "authors": "",
+    "year": "2017",
+    "journal_conference": "Frontiers in Neuroscience",
+    "doi": "10.3389/fnins.2017.00125",
+    "database_retrieved": "ABIDE I",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "Apply a novel statistical network-detection method to identify latent and abnormal functional connectivity circuits distinguishing ASD from typical controls in single-site ABIDE resting-state fMRI data.",
+    "study_design": "Both",
+    "duration_frequency": "",
+    "subject_model": "Human",
+    "task_type": "Resting-state",
+    "study_setting": "Single site (University of Michigan, ABIDE I)",
+    "country_region": "United States",
+    "disorder_diagnosis": "Autism spectrum disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "48",
+    "age_mean_sd": "13.85 (sd=2.31)",
+    "age_range": "9.2-18.6",
+    "gender_distribution": "39 of 48 male",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "TCs were excluded for those who received a score of 10 or higher on the Social Communication Questionnaire 14 or a score of 6 or higher on the Obsessive/Compulsive subscale of the Spence Children\u2019s Anxiety Scale (SCAS) 16.",
+    "n_controls": "65",
+    "age_mean_sd_controls": "15.03 (sd=3.66)",
+    "age_range_controls": "8.2-28.8",
+    "gender_distribution_controls": "49 of 65 male",
+    "age_matched": "No significant difference (Wilcoxon rank sum, p>0.05)",
+    "gender_matched": "No significant difference (Pearson chi-square, p>0.05)",
+    "neurodevelopmentally_typical": "Typical controls (TCs) were included by the criteria that either verbal or non-verbal IQ was \u226585 and were aged at least 7 years",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "Yes (HIPAA identifiers and facial information removed per ABIDE release process)",
+    "feature_types": "Pairwise functional connectivity (Pearson correlation, Fisher Z) between AAL ROIs",
+    "specific_features": "Correlation matrix over the first 90 AAL regions; latent/abnormal subnetworks identified by a novel statistical graph detection algorithm",
+    "feature_extraction_tools": "C-PAC",
+    "feature_importance_reported": "Yes",
+    "importance_method": "Novel network-detection/testing algorithm identifying differentially-expressed edges/subnetworks",
+    "top_features_identified": "Two abnormal connectivity subnetworks, one overlapping left middle temporal gyrus/precuneus; second showing k-partite topology linked to emotion/empathy regions",
+    "feature_change_direction": "",
+    "model_category": "Support vector machine",
+    "specific_algorithms": "SVM (RBF and linear kernels) classification using detected subnetwork features",
+    "validation_methodology": "Leave-one-out cross-validation",
+    "performance_metrics": "Classification accuracy",
+    "key_performance_results": "The leave-one-out cross-validation results show that the accuracy rates are 89 and 84% correspondingly.",
+    "summary_key_findings": "A novel network-detection method identified latent and abnormal ASD-related functional connectivity subnetworks (involving middle temporal gyrus/precuneus and emotion/empathy-related regions) in single-site ABIDE data; SVM classification using these subnetwork features achieved 89% (RBF) and 84% (linear kernel) leave-one-out cross-validated accuracy.",
+    "features_associated_disorder": "Abnormal connectivity subnetworks involving left middle temporal gyrus, precuneus, and regions implicated in emotion/empathy processing",
+    "future_directions_recommended": "we only utilize a subset of ABIDE data base, and we plan to compare results from di\ufb00erent study sites and perform meta-analysis in future work.",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "Single ABIDE I site (University of Michigan), 48 ASD and 65 TC, no significant age/sex differences; TC inclusion/exclusion per ABIDE project criteria (IQ>=85, age>=7, SCQ<10, SCAS OC<6) | quote: \"The publicly available data set comprises data from 48 people with ASD and 65 TCs, with no signi\ufb01cant di\ufb00erences in demographics between the two groups.\"",
+      "RQ2": "C-PAC pipeline; AAL atlas, first 90 ROIs as network nodes | quote: \"Using automated anatomical labeling (AAL), we then used the \ufb01rst 90 regions of interest (ROIs) as nodes\"",
+      "RQ3": "both \u2014 network detection of case-control connectivity differences plus SVM classification validation | quote: \"We further validate the detected subnetwork features by performing classi\ufb01cation analysis. We employ the support vector machine with radial basis function kernel and linear kernel as our classi\ufb01er.\"",
+      "RQ4": "Novel statistical graph network-detection/testing algorithm applied to the full sample to identify abnormal subnetworks, then SVM (RBF/linear) with leave-one-out cross-validation used to validate classification accuracy; single site, so no site covariate/leave-site-out needed | quote: \"The leave-one-out cross-validation results show that the accuracy rates are 89 and 84% correspondingly.\"",
+      "RQ5": "Two abnormal connectivity subnetworks identified (middle temporal gyrus/precuneus; emotion/empathy-related k-partite network); SVM LOOCV accuracy 89% (RBF) / 84% (linear) | quote: \"The leave-one-out cross-validation results show that the accuracy rates are 89 and 84% correspondingly.\"",
+      "RQ6": "yes \u2014 exact rules \u2014 single-site cohort with explicit numeric TC inclusion/exclusion criteria from the ABIDE project are given, though no individual participant list is published in this paper | quote: \"TCs were excluded for those who received a score of 10 or higher on the Social Communication Questionnaire 14 or a score of 6 or higher on the Obsessive/Compulsive subscale of the Spence Children\u2019s Anxiety Scale (SCAS) 16.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"The publicly available data set comprises data from 48 people with ASD and 65 TCs, with no signi\ufb01cant di\ufb00erences in demographics between the two groups.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No | quote: \"\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"we performed preprocessing based on the Con\ufb01gurable Pipeline for the Analysis of Connectomes\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"Using automated anatomical labeling (AAL), we then used the \ufb01rst 90 regions of interest (ROIs) as nodes\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No | quote: \"We further validate the detected subnetwork features by performing classi\ufb01cation analysis. We employ the support vector machine with radial basis function kernel and linear kernel as our classi\ufb01er.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "N/A | quote: \"The data set was collected at the University of Michigan, one of the ABIDE data collection sites\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The data set was collected at the University of Michigan, one of the ABIDE data collection sites\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-078",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Yes",
+          "notes": "quote: \"The publicly available data set comprises data from 48 people with ASD and 65 TCs, with no signi\ufb01cant di\ufb00erences in demographics between the two groups.\""
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "No",
+          "notes": "No numeric motion/FD threshold reported; only that motion parameters were regressed."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported?",
+          "rating": "Yes",
+          "notes": "C-PAC pipeline described."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "Yes",
+          "notes": "AAL, first 90 ROIs."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "TC inclusion/exclusion criteria specified, but the ASD diagnostic instrument itself is not named in this paper."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "No",
+          "notes": "Subnetwork features used for SVM classification were identified from the full-sample network-detection analysis before leave-one-out cross-validation, a feature-selection leakage risk."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "N/A",
+          "notes": "Single-site study (University of Michigan); site handling not applicable."
+        },
+        {
+          "item_text": "CL7 Code and/or participant list available?",
+          "rating": "No",
+          "notes": "No code or participant-list availability statement found."
+        }
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-078",
+    "study_design_sample_dataset": "Both associational (network detection) and predictive (SVM validation); single-site ABIDE I (University of Michigan), 48 ASD / 65 TC",
+    "methods": "C-PAC preprocessing, AAL atlas (90 ROIs), Pearson correlation + Fisher Z functional connectivity, a novel statistical graph network-detection/testing algorithm to identify abnormal subnetworks, SVM (RBF/linear) leave-one-out cross-validation using the detected subnetwork features.",
+    "outcomes": "Two abnormal connectivity subnetworks identified (middle temporal gyrus/precuneus; emotion/empathy-linked k-partite network); SVM classification using these features achieved 89% (RBF) and 84% (linear) leave-one-out accuracy.",
+    "key_limitations": "Single ABIDE site only (acknowledged by authors as future work to extend to multiple sites/meta-analysis); classification features derived from full-sample network detection prior to cross-validation, risking leakage; no numeric motion-QC threshold reported.",
+    "relevance_notes": "Demonstrates a novel subnetwork-detection method on a well-characterised single ABIDE site, illustrating both an associational discovery step and a predictive validation step, useful as a methodological contrast to multi-site ABIDE classification studies.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2017.00125",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "The publicly available data set comprises data from 48 people with ASD and 65 TCs, with no signi\ufb01cant di\ufb00erences in demographics between the two groups. The data set was collected at the University of Michigan, one of the ABIDE data collection sites",
+    "n_by_dx": {
+      "ASD": 48,
+      "TD": 65,
+      "total": 113
+    },
+    "sites": "1 (University of Michigan)",
+    "pipeline": "C-PAC",
+    "atlas": "AAL (first 90 ROIs)",
+    "claim_type": "both",
+    "finding": "The leave-one-out cross-validation results show that the accuracy rates are 89 and 84% correspondingly.",
+    "reconstructible": "yes \u2014 exact rules",
+    "evidence_quotes": [
+      "The publicly available data set comprises data from 48 people with ASD and 65 TCs, with no signi\ufb01cant di\ufb00erences in demographics between the two groups.",
+      "The data set was collected at the University of Michigan, one of the ABIDE data collection sites",
+      "TCs were excluded for those who received a score of 10 or higher on the Social Communication Questionnaire 14 or a score of 6 or higher on the Obsessive/Compulsive subscale of the Spence Children\u2019s Anxiety Scale (SCAS) 16.",
+      "The leave-one-out cross-validation results show that the accuracy rates are 89 and 84% correspondingly.",
+      "We further validate the detected subnetwork features by performing classi\ufb01cation analysis. We employ the support vector machine with radial basis function kernel and linear kernel as our classi\ufb01er."
+    ]
+  }
+}

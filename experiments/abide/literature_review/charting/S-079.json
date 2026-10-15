@@ -1,0 +1,26 @@
+{
+  "source_id": "S-079",
+  "pmid": "local_a479f63a",
+  "doi": "10.3390/brainsci10060364",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: uses only structural (T1-weighted) morphological MRI features from ABIDE (cortical thickness, surface area, volumes via FreeSurfer) for brain-age prediction; no resting-state functional MRI analysis is performed.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.3390/brainsci10060364",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "",
+    "evidence_quotes": []
+  }
+}

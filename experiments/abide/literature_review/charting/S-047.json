@@ -1,0 +1,275 @@
+{
+  "source_id": "S-047",
+  "pmid": "local_af69918d",
+  "doi": "10.1038/srep37422",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2/3: analyses raw ABIDE resting-state fMRI scans explicitly (extracting head-motion micro-movement time series rather than BOLD connectivity) and reports a group-difference analysis between ASD and typical control participants; not a registration/motion-correction method benchmark (Exclusion 4 does not apply) since an explicit autism-vs-control comparison is the paper's main claim.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "In the current study, ABIDE sites were included that (i) deposited raw \nresting-state functional Magnetic Resonance Imaging (MRI) scans (i.e., no motion correction or “scru",
+      "section": "methods",
+      "claim": "Only ABIDE sites depositing raw (uncorrected) resting-state scans were included, since the study's outcome is the head-motion signal itself.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Seven of 16 ABIDE sites met these overall inclusion criteria: University of Michigan, Sample 1 \nand Sample 2 (“UM_1” and “UM_2”, respectively), University of Utah School of Medicine (“USM”), New York \nUniversity Langone Medical Center (“NYU”), University of California, Los Angeles, Sample 1 (“UCLA_1”), Olin, \nInstitute of Living at Hartford Hospital (“OLIN”), and University of Pittsburgh School of Medicine (“PITT”).",
+      "section": "methods",
+      "claim": "Seven ABIDE I sites met inclusion criteria: UM_1, UM_2, USM, NYU, UCLA_1, OLIN, PITT.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Datasets from a total of 605 participants were analyzed, including 304 individuals with Autism Spectrum \nDisorder (ASD) and 301 typically developing controls (CT).",
+      "section": "results",
+      "claim": "Analysed ABIDE cohort: 605 participants (304 ASD, 301 typical controls) from 7 sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We \nfind excess noise and randomness in the ASD cases, suggesting an uncertain motor-feedback signal.",
+      "section": "abstract",
+      "claim": "Main finding: excess noise-to-signal ratio and randomness in head micro-movements for ASD cases relative to controls.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "In ASD, deleterious patterns of noise are consistently exacerbated \nwith the presence of secondary (comorbid) neuropsychiatric diagnoses, lower verbal and performance \nintelligence, and autism severity.",
+      "section": "abstract",
+      "claim": "Noise patterns in ASD worsen with comorbid diagnoses, lower IQ, and greater autism severity.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Importantly, such patterns in ASD are present whether or not the \nparticipant takes psychotropic medication.",
+      "section": "abstract",
+      "claim": "The ASD motor-noise signature is independent of psychotropic medication status.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "The output with the six motion parameters (3 translations in x, y, z directions, \nand 3 rotations: pitch (about x-axis), roll (about y-axis), and yaw (about z-axis)) is recor",
+      "section": "methods",
+      "claim": "Head-motion parameters were estimated via SPM8 realignment (6 rigid-body parameters) rather than a connectivity pipeline.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "Explicit site-level inclusion rules (raw uncorrected scans, >=8 min scan duration, >=15 ASD individuals), yielding 7 of 16 ABIDE sites and 605 participants (304 ASD, 301 CT)."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Per-site N by diagnosis reported (e.g. UM_1: NASD=55, NCT=55); age groups, comorbidity and medication-class tables reported."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "SPM8 realignment-based estimation of 6 rigid-body motion parameters fully described as the analysis 'pipeline' (since motion itself, not BOLD connectivity, is the outcome)."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "ASD/CT group membership drawn from the ABIDE phenotypic file; ADOS mentioned as available but the paper does not restate the diagnostic criteria used to assign ASD status."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Age-group stratification (G1-G5), site-level breakdowns, comorbidity and medication class are all explicitly examined as potential confounders/modifiers."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "Separate analyses performed by site, age group, medication status (naive vs. 2+ vs. 3+ medications) and comorbidity status rather than pooling uncritically."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Outcome is a validated stochastic (Gamma-distribution noise-to-signal ratio) characterisation of micro-movement waveforms, methodologically detailed."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Unclear",
+        "support": "Non-parametric distributional analyses (K-S tests) and confidence-interval comparisons are used extensively, but explicit correction for the large number of site x age x medication subgroup comparisons is not clearly described."
+      }
+    ],
+    "overall": "Low",
+    "summary": "A methodologically unusual but well-specified associational ABIDE study that repurposes raw resting-state fMRI head-motion time series as the outcome of interest, with explicit site-level inclusion criteria and per-site/per-subgroup N, though diagnostic-instrument detail and multiple-comparisons correction are less explicit."
+  },
+  "charting": {
+    "source_id": "S-047",
+    "title": "Motor noise is rich signal in autism research and pharmacological treatments",
+    "authors": "Torres EB; Denisova K",
+    "year": "2016",
+    "journal_conference": "Scientific Reports",
+    "doi": "10.1038/srep37422",
+    "database_retrieved": "unpaywall",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state (raw, uncorrected scans)",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "304",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "79 ASD participants had comorbidity data (NYU site); 41 of these had one or more comorbid diagnoses",
+    "medications_therapies": "Medication class recorded and analysed (medication-naive vs. 2+ vs. 3+ medications)",
+    "severity_levels": "Autism severity examined as a modifier of noise patterns",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "301",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI (head-motion parameter time series, not BOLD connectivity)",
+    "tasks_performed": "",
+    "equipment_tools": "Siemens 3 Tesla MR scanners (site-dependent)",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "head micro-movement kinematics (linear and angular speed)",
+    "specific_features": "Noise-to-signal ratio and Gamma-distribution shape/scale parameters of linear and angular head-motion speed, derived from SPM8 realignment parameters",
+    "feature_extraction_tools": "SPM8 (realign/estimate-reslice) applied to raw, uncorrected resting-state scans",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "Increased noise-to-signal ratio and randomness of head micro-movements in ASD vs. controls",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "Non-parametric (distributional) statistical comparisons (e.g. Kolmogorov-Smirnov tests) across sites, age groups and medication subgroups",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "Analysing raw (uncorrected) resting-state fMRI head-motion time series from 605 ABIDE I participants (304 ASD, 301 controls) across 7 sites, this study finds significantly excess noise and randomness in head micro-movements for ASD participants, worsening with comorbid diagnoses, lower IQ and greater autism severity, and present regardless of psychotropic medication status.",
+    "features_associated_disorder": "Head micro-movement noise-to-signal ratio (linear and angular speed)",
+    "future_directions_recommended": "",
+    "reviewer_notes": "This paper treats head motion extracted from resting-state fMRI scans as the biological signal of interest (not a nuisance to regress out), which is an unusual use of ABIDE rs-fMRI data relative to connectivity-based studies in this corpus.",
+    "custom_fields": {
+      "RQ1": "associational | ABIDE I, 605 participants (304 ASD, 301 typical controls) from 7 of 16 ABIDE sites (UM_1, UM_2, USM, NYU, UCLA_1, OLIN, PITT) meeting raw-scan, scan-duration and minimum-N inclusion criteria. | quote: \"Datasets from a total of 605 participants were analyzed, including 304 individuals with Autism Spectrum  Disorder (ASD) and 301 typically developing controls (CT).\"",
+      "RQ2": "No connectivity pipeline/atlas used; SPM8 realignment applied to raw scans to extract 6 rigid-body head-motion parameters, which are themselves the analysed signal. | quote: \"The output with the six motion parameters (3 translations in x, y, z directions,  and 3 rotations: pitch (about x-axis), roll (about y-axis), and yaw (about z-axis)) is recor\"",
+      "RQ3": "associational — group difference in head-motion noise-to-signal ratio between ASD and typical controls. | quote: \"We  find excess noise and randomness in the ASD cases, suggesting an uncertain motor-feedback signal.\"",
+      "RQ4": "Non-parametric distributional (Gamma-fit, Kolmogorov-Smirnov) comparisons across sites, age groups and medication subgroups. | quote: \"Table 4 of the supplementary material reports the number of participants per class\"",
+      "RQ5": "Excess noise and randomness in head micro-movements in ASD vs. controls, exacerbated by comorbidity, lower IQ, and autism severity, independent of medication status. | quote: \"We  find excess noise and randomness in the ASD cases, suggesting an uncertain motor-feedback signal.\"",
+      "RQ6": "partly — exact site-level inclusion rules and per-site N by diagnosis reported, but no participant-ID list. | quote: \"Seven of 16 ABIDE sites met these overall inclusion criteria: University of Michigan, Sample 1  and Sample 2 (“UM_1” and “UM_2”, respectively), University of Utah School of Medicine (“USM”), New York  University Langone Medical Center (“NYU”), University of California, Los Angeles, Sample 1 (“UCLA_1”), Olin,  Institute of Living at Hartford Hospital (“OLIN”), and University of Pittsburgh School of Medicine (“PITT”).\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"Datasets from a total of 605 participants were analyzed, including 304 individuals with Autism Spectrum  Disorder (ASD) and 301 typically developing controls (CT).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes | quote: \"In the current study, ABIDE sites were included that (i) deposited raw  resting-state functional Magnetic Resonance Imaging (MRI) scans (i.e., no motion correction or “scru\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly | quote: \"The output with the six motion parameters (3 translations in x, y, z directions,  and 3 rotations: pitch (about x-axis), roll (about y-axis), and yaw (about z-axis)) is recor\"",
+      "CL4 Atlas/parcellation reported?": "No | quote: \"We  find excess noise and randomness in the ASD cases, suggesting an uncertain motor-feedback signal.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "N/A | quote: \"We  find excess noise and randomness in the ASD cases, suggesting an uncertain motor-feedback signal.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes | quote: \"Note that these group differences held independently for NYU, UCLA_1,  OLIN, and PITT sites and are presented for both linear speed (LS) and angular speed (AS) micro-movements\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"Datasets from a total of 605 participants were analyzed, including 304 individuals with Autism Spectrum  Disorder (ASD) and 301 typically developing controls (CT).\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"These included individuals with  autism spectrum disorders (ASD) and healthy-controls in shared data from the Autism Brain Imaging  Data Exchange (ABIDE) and the Attention-Deficit Hyperactivity Disorder (ADHD-200) databases.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-047",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Yes",
+          "notes": "605 participants (304 ASD, 301 CT) from 7 of 16 ABIDE sites with explicit site-level inclusion criteria."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "Yes",
+          "notes": "Sites selected specifically for depositing raw, uncorrected/unscrubbed scans, since motion itself is the outcome of interest."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Pipeline and version reported?",
+          "rating": "Partial",
+          "notes": "SPM8 realignment described for extracting motion parameters, but no standard connectivity-preprocessing pipeline is used or needed for this outcome."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "No",
+          "notes": "No ROI atlas used; outcome is head-motion kinematics, not regional connectivity."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "ASD/CT labels drawn from the ABIDE phenotypic file; specific diagnostic instrument/criteria not restated in this paper."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "N/A",
+          "notes": "Associational group-comparison study, not a predictive/classification analysis."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "Yes",
+          "notes": "Results replicated independently across multiple sites (NYU, UCLA_1, OLIN, PITT) rather than pooled without site-level checks."
+        },
+        {
+          "item_text": "CL7 Code/participant list available?",
+          "rating": "No",
+          "notes": "No code repository or participant-ID list found; only per-site aggregate N reported."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-047",
+    "study_design_sample_dataset": "Group-difference (associational); ABIDE I; 605 participants (304 ASD, 301 typically developing controls) from 7 of 16 sites (UM_1, UM_2, USM, NYU, UCLA_1, OLIN, PITT) with raw, uncorrected resting-state scans",
+    "methods": "SPM8 realignment used to extract 6 rigid-body head-motion parameters from raw resting-state scans; Gamma-distribution noise-to-signal ratio and shape/scale parameters computed for linear and angular micro-movement speed; non-parametric distributional comparisons across sites, age groups, comorbidity and medication subgroups",
+    "outcomes": "ASD participants show significantly excess noise-to-signal ratio and randomness in head micro-movements relative to controls, consistently across sites, worsening with comorbidity, lower IQ, and greater autism severity, and present regardless of medication status",
+    "key_limitations": "Diagnostic instrument/criteria for ASD/CT labels not restated; explicit multiple-comparisons correction across the many site x age x medication subgroup tests not clearly described; medication dosage and treatment duration data unavailable",
+    "relevance_notes": "An unconventional ABIDE analysis that repurposes head-motion time series (typically treated as a nuisance to regress out) as the primary biological signal, with explicit, reconstructible per-site inclusion criteria and N",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1038/srep37422",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "605 participants (304 ASD, 301 typically developing controls) from 7 of 16 ABIDE sites (UM_1, UM_2, USM, NYU, UCLA_1, OLIN, PITT) selected for depositing raw, uncorrected resting-state scans of at least 8 minutes with at least 15 ASD individuals per site",
+    "n_by_dx": {
+      "ASD": 304,
+      "TD": 301,
+      "total": 605
+    },
+    "sites": "7 (UM_1, UM_2, USM, NYU, UCLA_1, OLIN, PITT)",
+    "pipeline": "SPM8 realignment (motion-parameter extraction only; no connectivity pipeline)",
+    "atlas": "",
+    "claim_type": "associational",
+    "finding": "ASD participants show significantly excess noise-to-signal ratio and randomness in head micro-movements extracted from raw resting-state fMRI scans, relative to typical controls, independent of medication status.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "Datasets from a total of 605 participants were analyzed, including 304 individuals with Autism Spectrum \nDisorder (ASD) and 301 typically developing controls (CT).",
+      "We \nfind excess noise and randomness in the ASD cases, suggesting an uncertain motor-feedback signal."
+    ]
+  }
+}

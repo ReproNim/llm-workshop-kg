@@ -1,0 +1,94 @@
+{
+  "title": "Use of ABIDE I and II resting-state data in autism connectivity and diagnostic-prediction studies",
+  "objective": "Characterise how published studies use the Autism Brain Imaging Data Exchange (ABIDE I and ABIDE II) resting-state fMRI releases: which subsets and quality-control rules define the analysed cohorts, which preprocessing pipelines and parcellations are used, whether the main claim is associational (group difference) or predictive (diagnostic classification/regression), how it is evaluated, what is found, and whether the analysed cohort can be reconstructed from released files, so that each publication can be linked to the dataset subset it used in a knowledge graph.",
+  "pico_population": "Participants from ABIDE I and/or ABIDE II (autistic individuals and typically developing controls, all ages, all contributing sites) whose resting-state fMRI data were analysed",
+  "pico_intervention": "Analysis of ABIDE resting-state functional connectivity (raw or preprocessed releases, e.g. the Preprocessed Connectomes Project) for group-difference testing or diagnostic prediction",
+  "pico_comparison": "Autistic participants versus typically developing controls (or across-site / held-out-site evaluation for prediction studies)",
+  "pico_outcome": "Reported cohort composition and selection rules; connectivity group differences (direction, networks, effect size); diagnostic prediction performance (accuracy, AUC, sensitivity/specificity with confidence intervals); reproducibility information (code, participant lists)",
+  "inclusion_criteria": "(1) Primary research article or data descriptor (peer-reviewed journal or conference paper, or preprint); (2) analyses resting-state fMRI data from ABIDE I and/or ABIDE II (stated explicitly in the methods); (3) reports either a group-difference analysis between autism and control groups or a diagnostic prediction/classification analysis, or describes the ABIDE release itself; (4) full text in English available open access.",
+  "exclusion_criteria": "(1) Reviews, meta-analyses, editorials, commentaries, theses and protocols without original ABIDE analysis; (2) studies that only cite ABIDE without analysing its data; (3) studies using only structural MRI, DTI or phenotypic data from ABIDE with no resting-state functional analysis; (4) studies whose ABIDE analysis is limited to software benchmarking with no autism-vs-control analysis (e.g. registration or motion-correction method tests); (5) non-English full text; (6) full text not openly accessible.",
+  "research_questions": [
+    {
+      "question_id": "RQ1",
+      "question": "Which ABIDE release(s) and subset (N by diagnosis, sites, QC/exclusion rule) were analysed?",
+      "theme": "Cohort",
+      "short_title": "Release, subset and QC rule"
+    },
+    {
+      "question_id": "RQ2",
+      "question": "Which preprocessing pipeline (e.g. Preprocessed Connectomes Project CPAC/DPARSF/NIAK/CCS, strategy) and atlas/parcellation were used?",
+      "theme": "Processing",
+      "short_title": "Pipeline and parcellation"
+    },
+    {
+      "question_id": "RQ3",
+      "question": "Is the main claim associational (group difference) or predictive (classification/regression)?",
+      "theme": "Claim",
+      "short_title": "Claim type"
+    },
+    {
+      "question_id": "RQ4",
+      "question": "How was the claim evaluated (statistical model and correction; CV scheme; held-out sites)?",
+      "theme": "Claim",
+      "short_title": "Evaluation"
+    },
+    {
+      "question_id": "RQ5",
+      "question": "What is the direction and scope of the main finding (e.g. hypo/hyper-connectivity, which networks; accuracy/AUC with CI)?",
+      "theme": "Claim",
+      "short_title": "Main finding"
+    },
+    {
+      "question_id": "RQ6",
+      "question": "Can the analysed cohort be reconstructed from released files (participant list or exact rules published)?",
+      "theme": "Reproducibility",
+      "short_title": "Cohort reconstructibility"
+    }
+  ],
+  "databases": [
+    "openalex"
+  ],
+  "date_range_start": "2012-01-01",
+  "date_range_end": "2026-10-15",
+  "max_hops": 0,
+  "rob_tool": "JBI Critical Appraisal",
+  "charting_questions": [
+    "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?",
+    "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?",
+    "CL3 Preprocessing pipeline and version reported?",
+    "CL4 Atlas/parcellation reported?",
+    "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?",
+    "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?",
+    "CL7 Code and/or participant list available?",
+    "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions"
+  ],
+  "grouping_dimension": "study_design",
+  "default_group_questions": [
+    "Which ABIDE release and subset sizes are typical in this group?",
+    "Which pipelines and parcellations recur?",
+    "How is site handled, and how often is leakage control reported?",
+    "How often can the analysed cohort be reconstructed from released files?"
+  ],
+  "per_group_questions": {},
+  "appraisal_domains": [
+    "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+    "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+    "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+    "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)"
+  ],
+  "target_audience": "academic journal",
+  "word_count_target": 6000,
+  "citation_style": "APA 7",
+  "section_output_formats": {},
+  "registration_number": "",
+  "protocol_url": "",
+  "funding_sources": "",
+  "competing_interests": "None declared",
+  "evidence_chunk_chars": 12000,
+  "evidence_chunk_overlap": 400,
+  "evidence_max_chars": 0,
+  "evidence_spans_per_article": 8,
+  "article_text_budget": 16000,
+  "article_concurrency": 5,
+  "max_articles": null
+}

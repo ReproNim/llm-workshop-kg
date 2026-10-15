@@ -1,0 +1,29 @@
+{
+  "source_id": "S-061",
+  "pmid": "local_a6b25111",
+  "doi": "10.1176/appi.ajp.20220194",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: analysis is based entirely on T1-weighted structural brain images (a deep-learning sex-prediction classifier pretrained on UK Biobank, transferred and validated on ABIDE I+II, tested on EU-AIMS/LEAP); no resting-state functional connectivity analysis of ABIDE data is reported.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1176/appi.ajp.20220194",
+    "dataset": "ABIDE I+II",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": 1412},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "Using a novel deep learning framework trained to predict biological sex based on T1-weighted structural brain images, the authors compared sex prediction model perfor- mance across neurotypical and autistic males and females.",
+      "transfer learning and validation, with the ABIDE data sets (1,412individuals,5–56yearsofage)"
+    ]
+  }
+}

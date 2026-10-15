@@ -1,0 +1,32 @@
+{
+  "source_id": "S-037",
+  "pmid": "local_c1bec0af",
+  "doi": "10.1186/s13229-015-0042-z",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: ABIDE data used only for a structural-MRI (voxel-based morphometry grey-matter) sex-difference analysis; no resting-state functional analysis of ABIDE data is reported (the companion behavioural analysis uses NDAR, a separate non-ABIDE dataset).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1186/s13229-015-0042-z",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {
+      "ASD": null,
+      "TD": null,
+      "total": null
+    },
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "We combined voxel-based morphometry (VBM) [38] with univariate and multivariate pattern analysis (MVPA) [39] to determine GM regions that differ be- tween girls and boys with ASD."
+    ]
+  }
+}

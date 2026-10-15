@@ -1,0 +1,32 @@
+{
+  "source_id": "S-057",
+  "pmid": "local_edf0b397",
+  "doi": "10.1371/journal.pone.0153331",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: ABIDE analysis is limited to structural MRI (FreeSurfer morphometry) classification of ASD subgroups; no resting-state functional data or analysis is used.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1371/journal.pone.0153331",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {
+      "ASD": null,
+      "TD": null,
+      "total": null
+    },
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "Morphometric features from struc- tural MRIs (sMRIs) of 734 males (ASD: 361, controls: 373) of ABIDE were derived using FreeSurfer."
+    ]
+  }
+}

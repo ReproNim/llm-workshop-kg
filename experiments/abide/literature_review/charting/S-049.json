@@ -1,0 +1,225 @@
+{
+  "source_id": "S-049",
+  "pmid": "local_57c41fd4",
+  "doi": "10.1109/tpami.2024.3442811",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports an ASD-vs-HC classification analysis on the ABIDE dataset with functional-connectivity findings (DMN/SMN/DAN/FPN), satisfying Inclusion 2-3, although ABIDE cohort size, pipeline and atlas are not explicitly reported (see charting notes)",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "Validation on two datasets, ADNI and ABIDE, demonstrates that DGCL surpasses traditional methods and other deep\nlearning models in predicting disease development stages.",
+      "section": "abstract",
+      "claim": "The proposed diffusion-based graph contrastive learning model is validated on both ADNI and ABIDE for disease classification.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "And the largest dataset for autism research comes\nfrom Autism Brain Imaging Data Exchange (ABIDE) [11].",
+      "section": "methods",
+      "claim": "ABIDE is used as the autism dataset in this study.",
+      "relevance_score": 0.4
+    },
+    {
+      "text": "For ASD, the ROIs of the dataset can be divided into\neight functional subnetworks: cerebellum and subcortical\nstructure (CB), visual network (VN), somatic motor network\n(SMN), dorsal attention network (DAN), ventral attention\nnetwork (VAN), edge network (LN), frontoparietal network\n(FPN), and default mode network (DMN).",
+      "section": "results",
+      "claim": "The ABIDE ROIs analysed for ASD are grouped into eight functional subnetworks.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Specifically,\nthe attention score in the SMN region is high, indicating that\nconnectivity plays a crucial role in ASD prediction in SMN.",
+      "section": "results",
+      "claim": "Functional connectivity in the somatomotor network (SMN) was most important for predicting ASD.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "In addition, attention scores were higher in the\nDMN, DAN, and FPN regions (highlighted in the red box),\nindicating that functional connectivity between DMN and\nDAN, as well as between DMN and FPN, is also crucial for\npredicting ASD",
+      "section": "results",
+      "claim": "Functional connectivity involving the DMN, dorsal attention network and frontoparietal network also contributed strongly to ASD prediction.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "ABIDE \nPANDA \n7.25 × 102 \n0.64 \ntechnician-dependent \nDGCL \n2.19 × 100 \n0.71 \nhighly-automated",
+      "section": "table",
+      "claim": "On ABIDE, the proposed DGCL brain-network construction had higher reliability (ICC 0.71) and lower construction time than the PANDA baseline (ICC 0.64).",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "Five-fold \ncross-validation is used to evaluate the performance of the \nmodel.",
+      "section": "methods",
+      "claim": "Model performance was evaluated with five-fold cross-validation.",
+      "relevance_score": 0.5
+    },
+    {
+      "text": "our work has two main limitations: one is that the proposed\nmodel still cannot explain the pathogenesis of the detected\nabnormal brain connections; the other is that the dataset\nused in the current study is relatively small.",
+      "section": "discussion",
+      "claim": "Authors note interpretability and small dataset size as limitations.",
+      "relevance_score": 0.4
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Unclear",
+        "support": "ABIDE is named as the autism dataset but no cohort N, sites, release (ABIDE I vs II), or exclusion/QC rule for the ABIDE subsample is reported in the available text (only ADNI's N=349 and Table 1 breakdown are given)."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Unclear",
+        "support": "A detailed DTI/PANDA preprocessing pipeline and AAL-90 atlas are described for ADNI, and PANDA is also used as the comparison baseline for ABIDE (Table 6), but no equivalent preprocessing/atlas statement for the ABIDE data itself is given, and it is unclear whether ABIDE connectivity was derived from resting-state fMRI or structural data."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD vs HC label used; diagnostic instrument/source not stated anywhere in the available text."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "Five-fold cross-validation is stated generically for \"the model\" but a full performance table (accuracy/AUC/sensitivity/specificity) is given only for the ADNI AD/NC/EMCI/LMCI classes (Table 5); no equivalent numeric ASD classification table is present in the extracted text, and no site-handling or leakage-control statement specific to ABIDE is given."
+      }
+    ],
+    "overall": "High",
+    "summary": "ABIDE is used as a secondary validation dataset; the paper reports qualitative network findings (SMN, DMN, DAN, FPN implicated in ASD) and a reliability-metric table versus a PANDA baseline, but does not report the ABIDE cohort's N, sites, release, diagnosis source, preprocessing pipeline/atlas, or a numeric classification-performance table for ASD in the available text."
+  },
+  "charting": {
+    "source_id": "S-049",
+    "title": "A New Brain Network Construction Paradigm for Brain Disorder via Diffusion-Based Graph Contrastive Learning",
+    "authors": "",
+    "year": "2024",
+    "journal_conference": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "doi": "10.1109/tpami.2024.3442811",
+    "database_retrieved": "",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder (ASD) vs Healthy Control (HC)",
+    "diagnosis_assessment": "",
+    "n_disordered": "",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "functional connectivity (modality/resting-state status for the ABIDE subset not explicitly stated)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity; brain network graphs over functional subnetworks (CB, VN, SMN, DAN, VAN, LN, FPN, DMN)",
+    "specific_features": "ROI-level attention scores over eight functional subnetworks; atlas/parcellation for the ABIDE experiment not explicitly stated (AAL-90 atlas is stated only for the ADNI/DTI experiment)",
+    "feature_extraction_tools": "PANDA toolbox used as the comparison baseline for brain-network construction on ABIDE; the proposed DGCL (diffusion-based brain-region alignment module + graph-contrastive brain-network optimization module) used as the main method; ABIDE-specific preprocessing pipeline not otherwise described",
+    "feature_importance_reported": "Yes",
+    "importance_method": "ROI attention/cue-vector scores from the learned brain-network matrix",
+    "top_features_identified": "Somatomotor network (SMN) connectivity, and DMN-DAN / DMN-FPN connectivity",
+    "feature_change_direction": "Higher attention/importance scores in SMN, DMN, DAN and FPN regions for ASD prediction (direction of connectivity change, e.g. hypo/hyperconnectivity, not stated)",
+    "model_category": "Diffusion-based generative brain-network construction (Dual U-Net denoising/registration) + graph convolutional network classifier with graph-contrastive brain-network optimization",
+    "specific_algorithms": "DGCL: Brain Region Alignment Module (BRAM, DDPM-based) and Brain Network Optimization Module (BNOM, GCN-based graph contrastive learning), compared against a PANDA-constructed network + GCN/MLP baseline",
+    "validation_methodology": "Five-fold cross-validation (stated generically for \"the model\"; no ABIDE-specific validation detail given)",
+    "performance_metrics": "Accuracy (ACC), sensitivity (SEN), specificity (SPE), AUC (metrics defined for the overall evaluation; ICC reliability also reported for ABIDE network construction)",
+    "key_performance_results": "No numeric ASD classification accuracy/AUC table is given in the extracted text (only qualitative statement that \"the classification performance of the proposed model on two datasets is comprehensively better\"); for ABIDE, network-construction reliability (ICC) was 0.71 for the proposed method versus 0.64 for PANDA",
+    "summary_key_findings": "On the ABIDE dataset, the proposed diffusion-based graph contrastive network identified SMN, DMN, DAN and FPN connectivity as most important for ASD prediction, and produced more reliable (higher ICC) and faster brain-network reconstructions than the PANDA toolbox; a quantitative ASD classification accuracy/AUC table analogous to the ADNI results is not present in the extracted text.",
+    "features_associated_disorder": "Functional connectivity in the somatomotor network (SMN); connectivity between DMN and DAN; connectivity between DMN and FPN",
+    "future_directions_recommended": "Plan to use other deep learning methods to analyze fMRI data and study brain function further; validate on larger datasets such as UK Biobank",
+    "reviewer_notes": "ABIDE release (I vs II), cohort N, sites, QC rule, diagnosis source, preprocessing pipeline and atlas are not explicitly reported in the extracted full text; disorder_cohort was defaulted to ABIDE I as the paper does not specify the release.",
+    "custom_fields": {
+      "RQ1": "predictive | ABIDE release, N, sites and exclusion/QC rule are not reported in the available text; only the autism dataset's existence and ASD-vs-HC classification results are described. | quote: \"And the largest dataset for autism research comes\nfrom Autism Brain Imaging Data Exchange (ABIDE) [11].\"",
+      "RQ2": "Not reported for the ABIDE experiment specifically; PANDA toolbox is used as the comparison baseline for ABIDE network construction, but the pipeline/atlas used for the proposed method's own ABIDE preprocessing is not described. | quote: \"ABIDE \nPANDA \n7.25 × 102 \n0.64 \ntechnician-dependent \nDGCL \n2.19 × 100 \n0.71 \nhighly-automated\"",
+      "RQ3": "predictive — ASD vs HC classification using a diffusion-based graph contrastive learning model | quote: \"Fig. 9. Subnetwork patterns of autism spectrum disorder. The red box\nclearly indicates the difference between HC (left) and ASD (right).\"",
+      "RQ4": "Five-fold cross-validation is stated generically for the model; no ABIDE-specific leakage-control, site-handling or leave-site-out statement is given. | quote: \"Five-fold \ncross-validation is used to evaluate the performance of the \nmodel.\"",
+      "RQ5": "Functional connectivity in SMN, and between DMN-DAN and DMN-FPN, identified as most important for ASD prediction; no numeric accuracy/AUC value specific to the ASD/ABIDE classification is given in the extracted text. | quote: \"the\nattention score in the SMN region is high, indicating that\nconnectivity plays a crucial role in ASD prediction in SMN.\"",
+      "RQ6": "no | quote: \"And the largest dataset for autism research comes\nfrom Autism Brain Imaging Data Exchange (ABIDE) [11].\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "No | quote: \"And the largest dataset for autism research comes\nfrom Autism Brain Imaging Data Exchange (ABIDE) [11].\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No | quote: \"And the largest dataset for autism research comes\nfrom Autism Brain Imaging Data Exchange (ABIDE) [11].\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — PANDA named only as the comparison baseline for ABIDE network construction, not as the proposed method's own ABIDE preprocessing | quote: \"ABIDE \nPANDA \n7.25 × 102 \n0.64 \ntechnician-dependent \nDGCL \n2.19 × 100 \n0.71 \nhighly-automated\"",
+      "CL4 Atlas/parcellation reported?": "Partly — eight functional subnetworks (CB, VN, SMN, DAN, VAN, LN, FPN, DMN) named for the ASD analysis, but the specific ROI atlas is not stated for ABIDE | quote: \"For ASD, the ROIs of the dataset can be divided into\neight functional subnetworks: cerebellum and subcortical\nstructure (CB), visual network (VN), somatic motor network\n(SMN), dorsal attention network (DAN), ventral attention\nnetwork (VAN), edge network (LN), frontoparietal network\n(FPN), and default mode network (DMN).\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No | quote: \"Five-fold \ncross-validation is used to evaluate the performance of the \nmodel.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No | quote: \"And the largest dataset for autism research comes\nfrom Autism Brain Imaging Data Exchange (ABIDE) [11].\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"And the largest dataset for autism research comes\nfrom Autism Brain Imaging Data Exchange (ABIDE) [11].\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Validation on two datasets, ADNI and ABIDE, demonstrates that DGCL surpasses traditional methods and other deep\nlearning models in predicting disease development stages.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-049",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {"item_text": "CL1 Cohort definition reported?", "rating": "No", "notes": "No N, sites, or exclusion rule given for the ABIDE subsample."},
+        {"item_text": "CL2 Motion/QC rule reported?", "rating": "No", "notes": "Not mentioned for ABIDE."}
+      ],
+      "overall_concern": "High"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {"item_text": "CL3 Preprocessing pipeline and version reported?", "rating": "Partial", "notes": "PANDA named only as a comparison baseline for ABIDE network construction."},
+        {"item_text": "CL4 Atlas/parcellation reported?", "rating": "Partial", "notes": "Eight functional subnetworks named; specific parcellation atlas for ABIDE not stated."}
+      ],
+      "overall_concern": "High"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {"item_text": "Diagnosis source and label definition reported?", "rating": "No", "notes": "ASD vs HC label used without a stated diagnostic instrument/source."}
+      ],
+      "overall_concern": "High"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {"item_text": "CL5 Leakage control reported?", "rating": "No", "notes": "Not described."},
+        {"item_text": "CL6 Site handling reported?", "rating": "No", "notes": "Not mentioned."},
+        {"item_text": "CL7 Code and/or participant list available?", "rating": "No", "notes": "Not stated."}
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-049",
+    "study_design_sample_dataset": "Diagnostic prediction (ASD vs HC); ABIDE used as a secondary validation dataset alongside ADNI; release, N and sites not reported in available text",
+    "methods": "Diffusion-based generative brain-network construction (Brain Region Alignment Module, a DDPM-based registration network) combined with a graph-contrastive Brain Network Optimization Module (GCN-based), compared against brain networks built with the PANDA toolbox; five-fold cross-validation stated generically for the model.",
+    "outcomes": "ROI attention scores identified somatomotor network (SMN) connectivity and DMN-DAN/DMN-FPN connectivity as most important for ASD prediction; on ABIDE the proposed method's constructed networks had higher reliability (ICC 0.71 vs 0.64) and much lower construction time than PANDA; no numeric ASD classification accuracy/AUC table is present in the extracted text.",
+    "key_limitations": "ABIDE cohort N, sites, release, diagnosis source, preprocessing pipeline and atlas are not reported; no quantitative ASD classification performance table (unlike the detailed ADNI 5-fold results in Table 5); authors note the model cannot explain pathogenesis and the dataset used is relatively small.",
+    "relevance_notes": "Illustrates a predictive deep-learning paper where ABIDE is a secondary, thinly-documented validation dataset; useful as a negative example for cohort/pipeline reporting completeness in the knowledge graph.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1109/tpami.2024.3442811",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Not reported in available text; ABIDE release, N and sites not stated",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "PANDA toolbox used as comparison baseline for ABIDE brain-network construction; proposed method's own ABIDE preprocessing pipeline not described",
+    "atlas": "Eight functional subnetworks (CB, VN, SMN, DAN, VAN, LN, FPN, DMN) named; specific ROI parcellation not stated",
+    "claim_type": "predictive",
+    "finding": "SMN connectivity and DMN-DAN/DMN-FPN connectivity were the most important features for ASD prediction; the proposed method produced more reliable (ICC 0.71 vs 0.64) brain-network reconstructions on ABIDE than the PANDA baseline, with no numeric ASD classification accuracy/AUC reported in the extracted text.",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "For ASD, the ROIs of the dataset can be divided into\neight functional subnetworks: cerebellum and subcortical\nstructure (CB), visual network (VN), somatic motor network\n(SMN), dorsal attention network (DAN), ventral attention\nnetwork (VAN), edge network (LN), frontoparietal network\n(FPN), and default mode network (DMN).",
+      "ABIDE \nPANDA \n7.25 × 102 \n0.64 \ntechnician-dependent \nDGCL \n2.19 × 100 \n0.71 \nhighly-automated"
+    ]
+  }
+}

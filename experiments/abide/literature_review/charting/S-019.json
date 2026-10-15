@@ -1,0 +1,209 @@
+{
+  "source_id": "S-019",
+  "pmid": "local_e9fef0b1",
+  "doi": "10.1016/j.media.2018.06.001",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2/3: analyses ABIDE resting-state fMRI connectivity explicitly and reports a diagnostic prediction (ASD vs control classification via GCN) analysis.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "We select the same set of 871 subjects used by Abraham et al. (2017) that met the imaging quality and phenotypic information criteria, comprising 403 individuals with ASD and 468 healthy controls. These subjects were regrouped based on location into 20 imaging sites.",
+      "section": "methods",
+      "claim": "Cohort is the same 871-subject ABIDE I subset (403 ASD, 468 controls) as Abraham et al. 2017, from 20 sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "we use the same preprocessing pipeline, the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC) (Craddock et al., 2013), which involves skull striping, slice timing correction, motion correction, global mean intensity normalisation, nuisance signal regression, band-pass ﬁltering (0.01- 0.1Hz)",
+      "section": "methods",
+      "claim": "Preprocessing used C-PAC (skull stripping, motion correction, nuisance regression, band-pass filtering 0.01-0.1Hz).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "the mean time series for a set of regions extracted from the Harvard Oxford (HO) atlas (Desikan et al., 2006) were computed and normalised to zero mean and unit variance",
+      "section": "methods",
+      "claim": "Harvard-Oxford atlas used for ROI time-series extraction and connectivity feature construction.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "We evaluate our model on both the ADNI and ABIDE databases using a 10-fold stratiﬁed cross validation strategy.",
+      "section": "methods",
+      "claim": "Evaluation used 10-fold stratified cross-validation (not leave-site-out).",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "We focus our attention to the phenotypic graph (using default phenotypic measures), which corresponds to the graph constructed taking into account SEX and SITE information, weighted by the feature correlation similarity.",
+      "section": "results",
+      "claim": "The best-performing population graph uses sex and site as phenotypic edge-weighting measures alongside imaging feature similarity.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "In Parisot et al. (2017), we used a ridge classiﬁer to perform Recursive Feature Elimination (RFE) with a ﬁxed number of features C. It is an iterative process, where each iteration trains the ridge classiﬁer on the training set with the current feature vector.",
+      "section": "methods",
+      "claim": "Feature selection (RFE) was trained on the training set within the cross-validation scheme.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "The best average performance is achieved for K = 4 with accuracy 70.4% and AUC 0.75.",
+      "section": "results",
+      "claim": "Best GCN classification result on ABIDE: 70.4% accuracy, AUC 0.75, with a K=4 Chebyshev polynomial order on the phenotypic graph.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Our experiments suggest that an accuracy of approx. 70% could be an intrinsic limitation of the whole dataset.",
+      "section": "discussion",
+      "claim": "Authors interpret the ~70% accuracy ceiling as a possible intrinsic limitation of the heterogeneous multi-site ABIDE dataset.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Low", "support": "Reuses the well-documented 871-subject (403 ASD/468 control), 20-site ABIDE I subset from Abraham et al. 2017."},
+      {"domain": "Predictors", "judgment": "Low", "support": "Harvard-Oxford atlas, C-PAC pipeline, and multiple feature-selection strategies (RFE, PCA, MLP, autoencoder) explicitly described and compared."},
+      {"domain": "Outcome", "judgment": "Unclear", "support": "Diagnostic label (ASD vs control) inherited from ABIDE phenotypic file; no specific diagnostic instrument/criteria stated in this paper."},
+      {"domain": "Analysis", "judgment": "High", "support": "Evaluation uses 10-fold stratified CV (not site-held-out) despite site being a known confound, and the GCN is semi-supervised/transductive: unlabelled test-node imaging features and phenotypic edges are present in the graph during training, even though RFE itself is fit on training folds only."}
+    ],
+    "overall": "Unclear",
+    "summary": "Methodologically transparent predictive GCN study on a well-characterised ABIDE subset, but site-stratified (not site-held-out) CV and transductive graph construction leave open whether reported accuracy generalises to unseen sites."
+  },
+  "charting": {
+    "source_id": "S-019",
+    "title": "Disease prediction using graph convolutional networks: Application to Autism Spectrum Disorder and Alzheimer's disease",
+    "authors": "Parisot S; Ktena SI; Ferrante E; Lee M; Guerrero R; Glocker B; Rueckert D",
+    "year": "2018",
+    "journal_conference": "Medical Image Analysis",
+    "doi": "10.1016/j.media.2018.06.001",
+    "database_retrieved": "unpaywall",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "403",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "468",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI; non-imaging phenotypic measures (sex, site, age)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "Yes — model implementation publicly available at https://github.com/parisots/population-gcn",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity (Harvard-Oxford ROI correlation matrix)",
+    "specific_features": "Fisher-transformed Pearson correlation connectivity vector over Harvard-Oxford ROIs; population graph edges weighted by phenotypic similarity (sex, site)",
+    "feature_extraction_tools": "C-PAC (Preprocessed Connectomes Project)",
+    "feature_importance_reported": "Yes",
+    "importance_method": "Comparison of feature selection strategies: RFE (ridge classifier), PCA, MLP, autoencoder",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Graph Convolutional Network (semi-supervised, transductive)",
+    "specific_algorithms": "Spectral Graph Convolutional Network (Chebyshev polynomial filters), compared to ridge classifier, random forest, MLP",
+    "validation_methodology": "10-fold stratified cross-validation; RFE feature selection trained on the training set per fold",
+    "performance_metrics": "Accuracy, Area Under Curve (AUC)",
+    "key_performance_results": "Best ABIDE result: 70.4% accuracy and AUC 0.75 (K=4, phenotypic graph using sex and site); abstract reports 70.4% for ABIDE and 80.0% for ADNI",
+    "summary_key_findings": "A graph convolutional network that represents the ABIDE population as a sparse graph (imaging features as node features, sex/site-weighted edges) achieves 70.4% accuracy / 0.75 AUC on the same 871-subject ABIDE I cohort used by Abraham et al. 2017, exceeding ridge/random-forest/MLP baselines on the same features.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "predictive | Same ABIDE I 871-subject subset (403 ASD, 468 controls) as Abraham et al. 2017, from 20 sites. | quote: \"We select the same set of 871 subjects used by Abraham et al. (2017) that met the imaging quality and phenotypic information criteria, comprising 403 individuals with ASD and 468 healthy controls.\"",
+      "RQ2": "C-PAC pipeline; Harvard-Oxford (HO) atlas. | quote: \"the mean time series for a set of regions extracted from the Harvard Oxford (HO) atlas (Desikan et al., 2006) were computed\"",
+      "RQ3": "predictive — ASD vs control classification via graph convolutional network. | quote: \"With the ABIDE database, we aim to separate healthy controls from patients suﬀering from ASD.\"",
+      "RQ4": "10-fold stratified cross-validation (not leave-site-out); RFE feature selection fit on the training set each fold. | quote: \"We evaluate our model on both the ADNI and ABIDE databases using a 10-fold stratiﬁed cross validation strategy.\"",
+      "RQ5": "Best accuracy 70.4%, AUC 0.75 using a phenotypic (sex+site) population graph with K=4. | quote: \"The best average performance is achieved for K = 4 with accuracy 70.4% and AUC 0.75.\"",
+      "RQ6": "partly — exact cohort rule stated as reuse of Abraham et al. 2017's published 871-subject subset, but no independent participant-ID list given here. | quote: \"We select the same set of 871 subjects used by Abraham et al. (2017) that met the imaging quality and phenotypic information criteria\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"comprising 403 individuals with ASD and 468 healthy controls\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No | quote: \"we use the same preprocessing pipeline, the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC) (Craddock et al., 2013)\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"we use the same preprocessing pipeline, the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC) (Craddock et al., 2013)\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"the mean time series for a set of regions extracted from the Harvard Oxford (HO) atlas (Desikan et al., 2006) were computed\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Partly | quote: \"each iteration trains the ridge classiﬁer on the training set with the current feature vector\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly | quote: \"the phenotypic graph (using default phenotypic measures), which corresponds to the graph constructed taking into account SEX and SITE information\"",
+      "CL7 Code and/or participant list available?": "Yes | quote: \"The model implementation is publicly available at https://github.com/parisots/population-gcn.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The ABIDE database (Di Martino et al., 2014) aggregates data from diﬀerent international acquisition sites and openly shares neuroimaging (functional MRI) and phenotypic data of 1112 subjects\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-019",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {"item_text": "CL1 Cohort definition reported?", "rating": "Yes", "notes": "Reuses Abraham et al. 2017's documented 871-subject (403/468), 20-site ABIDE I subset."},
+        {"item_text": "CL2 Motion/QC rule reported?", "rating": "No", "notes": "QC criteria referred to by citation to Abraham et al. 2017 rather than restated."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {"item_text": "CL3 Pipeline and version reported?", "rating": "Yes", "notes": "C-PAC pipeline steps listed (motion correction, nuisance regression, band-pass filter 0.01-0.1Hz)."},
+        {"item_text": "CL4 Atlas/parcellation reported?", "rating": "Yes", "notes": "Harvard-Oxford atlas used for all ROI time series."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {"item_text": "Diagnosis source and label definition", "rating": "Unclear", "notes": "Labels inherited from ABIDE phenotypic file without restating the diagnostic instrument."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {"item_text": "CL5 Leakage control reported?", "rating": "Partial", "notes": "RFE trained on training set, but the GCN is transductive and sees unlabelled test-node features/edges during training."},
+        {"item_text": "CL6 Site handling reported?", "rating": "Partial", "notes": "Site used as a phenotypic edge feature but CV is stratified, not leave-site-out."},
+        {"item_text": "CL7 Code/participant list available?", "rating": "Yes", "notes": "Public GitHub repository for the model implementation."}
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-019",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I; 871 subjects (403 ASD, 468 controls) from 20 sites, same subset as Abraham et al. 2017",
+    "methods": "C-PAC-preprocessed Harvard-Oxford ROI connectivity features; population graph with phenotypic (sex, site) edge weighting; spectral graph convolutional network with Chebyshev filters; feature selection via RFE/PCA/MLP/autoencoder compared; 10-fold stratified CV",
+    "outcomes": "Best result 70.4% accuracy / 0.75 AUC (K=4, phenotypic graph), exceeding ridge, random forest and MLP baselines; authors suggest ~70% may be an intrinsic ceiling for this heterogeneous dataset",
+    "key_limitations": "CV is stratified by class, not by site, despite known inter-site heterogeneity; the GCN's transductive design includes test-node imaging/phenotypic features in the graph during training",
+    "relevance_notes": "A widely cited graph-based ABIDE classification method reusing the exact Abraham et al. 2017 cohort, pipeline and atlas, useful for linking methodological lineage within the dataset-publication graph",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1016/j.media.2018.06.001",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Same 871-subject ABIDE I subset as Abraham et al. 2017 (403 ASD, 468 controls) regrouped into 20 imaging sites",
+    "n_by_dx": {"ASD": 403, "TD": 468, "total": 871},
+    "sites": "20",
+    "pipeline": "C-PAC (Preprocessed Connectomes Project)",
+    "atlas": "Harvard-Oxford (HO)",
+    "claim_type": "predictive",
+    "finding": "A spectral graph convolutional network over a sex/site-weighted population graph achieves 70.4% accuracy and 0.75 AUC classifying ASD vs control on the 871-subject ABIDE I cohort.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "We select the same set of 871 subjects used by Abraham et al. (2017) that met the imaging quality and phenotypic information criteria, comprising 403 individuals with ASD and 468 healthy controls.",
+      "The best average performance is achieved for K = 4 with accuracy 70.4% and AUC 0.75."
+    ]
+  }
+}

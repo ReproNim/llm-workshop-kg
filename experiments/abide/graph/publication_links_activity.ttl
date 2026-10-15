@@ -1,0 +1,31 @@
+@prefix ex: <urn:repronim:abide:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:repronim:abide:snapshot/publication_links/abide/20261015T154446Z> a prov:Entity,
+        ex:PublicationLinkSnapshot ;
+    prov:generatedAtTime "2026-10-15T15:44:46+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh_publications/20261015T154446Z> ;
+    ex:abstractSource <https://aadata.cirrusscience.org/dd1a1a8d88f7f505128733bf789c6a3fa4f48ed62e546bebfab2453587b0149f/ohbm2026.parquet> ;
+    ex:abstractsLinked 35 ;
+    ex:abstractsUsesDataStated 17 ;
+    ex:openalexCiting_abraham2017_mentioningABIDE 220 ;
+    ex:openalexCiting_dimartino2014_mentioningABIDE 598 ;
+    ex:openalexQuery <https://api.openalex.org/works?filter=cites%3AW2167868121%2Ctitle_and_abstract.search%3AABIDE&per_page=50&sort=cited_by_count%3Adesc>,
+        <https://api.openalex.org/works?filter=cites%3AW2522924024%2Ctitle_and_abstract.search%3AABIDE&per_page=50&sort=cited_by_count%3Adesc> ;
+    ex:snapshotOf <urn:repronim:abide:dataset/abide_i> .
+
+<urn:repronim:abide:snapshot/publication_links/cnp_ds000030/20261015T154446Z> a prov:Entity,
+        ex:PublicationLinkSnapshot ;
+    prov:generatedAtTime "2026-10-15T15:44:46+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh_publications/20261015T154446Z> ;
+    ex:abstractSource <https://aadata.cirrusscience.org/dd1a1a8d88f7f505128733bf789c6a3fa4f48ed62e546bebfab2453587b0149f/ohbm2026.parquet> ;
+    ex:abstractsLinked 9 ;
+    ex:abstractsUsesDataStated 3 ;
+    ex:snapshotOf <urn:repronim:abide:dataset/ds000030> .
+
+<urn:repronim:abide:activity/refresh_publications/20261015T154446Z> a prov:Activity,
+        ex:RefreshActivity ;
+    ex:script "code/publications.py --refresh" ;
+    ex:scriptSha256 "ca85eb3cf6a2e8ca9a637c1f567240200f9d9d434bce1ad26490b5717990ffdb" .
+

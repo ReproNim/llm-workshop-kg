@@ -1,0 +1,231 @@
+{
+  "source_id": "S-052",
+  "pmid": "local_f732b266",
+  "doi": "10.5607/en.2020.29.1.27",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a diagnostic classification analysis of ASD vs TC using resting-state fMRI connectivity from ABIDE with the CC200 atlas (Inclusion 2, 3)",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "With cross-validation strategy, our proposed method resulted in a mean classification ac-\ncuracy of 72.2% (sensitivity=68.6%, specificity=75.4%).",
+      "section": "abstract",
+      "claim": "Proposed Extra-Trees attention + SVM method achieved 72.2% accuracy (sensitivity 68.6%, specificity 75.4%) classifying ASD vs TC.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "We successfully downloaded a dataset \nof 1102 subjects from the Preprocessed Connectomes Project, \nand then excluded subjects whose imaging data shows some miss-\ning. Finally, data of 506 ASD individuals and 548 controls was \nincluded in our study.",
+      "section": "methods",
+      "claim": "Cohort was 506 ASD and 548 control subjects retained after excluding subjects with missing imaging data from the 1102-subject ABIDE Preprocessed Connectomes Project download.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "There was no difference in the age, sex and FD between \ncases and controls (p>0.05).",
+      "section": "methods",
+      "claim": "Age, sex and mean framewise displacement did not differ significantly between ASD and control groups.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "The rs-fMRI data utilized in this study was preprocessed with \nthe Configurable Pipeline for the Analysis of Conenectomes (C-\nPAC). The preprocessing procedure covers the operation of slice \ntime and motion corrected, as well as voxel intensity normalized.",
+      "section": "methods",
+      "claim": "Data were preprocessed with the C-PAC pipeline (slice timing, motion correction, intensity normalization, nuisance regression, band-pass filtering, ANTs normalization to MNI152).",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "Finally, the 1935 top features were selected to \nperform the differentiation between individuals with ASD and TC \nvia the SVM classifier. \nTo ensure the reliability of experimental result, we utilized 10-\nfold cross-validation to measure the accuracy of predicted label.",
+      "section": "methods",
+      "claim": "Feature selection (top 1935 connectivity features via Extra-Trees attention) is described before the 10-fold cross-validation step, with only hyper-parameters set via nested cross-validation.",
+      "relevance_score": 0.75
+    },
+    {
+      "text": "For the challenges of site-related \nvariability, we also performed an intra-site prediction based on the \nstratified shuffle split cross-validation.",
+      "section": "methods",
+      "claim": "Site-related variability was examined via an intra-site stratified shuffle-split cross-validation in addition to the pooled 10-fold CV.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Inte-\ngrated simulation results revealed that the mean score on accuracy, \nsensitivity, and specificity are 72.2%, 68.8%, and 75.4% respectively.",
+      "section": "results",
+      "claim": "10-fold cross-validation results: 72.2% accuracy, 68.8% sensitivity, 75.4% specificity.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "For the intra-site cross validation, the \nhighest accuracy resulted in 71.2%, and the mean classification \naccuracy was 67.7% (sensitivity=66.3%, specificity=68.9%) with a \nrange of accuracy of 64.0% to 71.2% in individual folds.",
+      "section": "results",
+      "claim": "Intra-site cross-validation gave a mean accuracy of 67.7% (range 64.0-71.2% across folds), somewhat lower than the pooled 10-fold result.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "manifested lower correlation between the anterior and posterior default mode network (DMN) in autis-\ntic individuals than controls.",
+      "section": "abstract",
+      "claim": "Autistic individuals showed lower (hypo-) correlation between anterior and posterior DMN than controls.",
+      "relevance_score": 0.85
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Unclear",
+        "support": "N by diagnosis (506 ASD/548 TC) and site count (17) reported, but the only exclusion rule stated is \"excluded subjects whose imaging data shows some missing\" with no motion/QC threshold."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "C-PAC pipeline with nuisance regression, band-pass filtering and ANTs normalization is described, and CC200 atlas connectivity is the feature basis."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD vs TC labels used without stating the diagnostic instrument/source."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "The top 1935 features are described as selected before the 10-fold CV procedure is introduced, suggesting feature selection may not have been confined to training folds; the pooled 10-fold CV does not account for site, though a separate intra-site stratified shuffle-split analysis was also run (lower accuracy, 67.7%, suggesting some site-driven inflation in the pooled result)."
+      }
+    ],
+    "overall": "High",
+    "summary": "Cohort size, sites and pipeline (C-PAC, CC200) are well reported, but the exclusion rule is minimal (missing data only, no motion threshold), diagnosis source is not stated, and the description of feature selection preceding cross-validation raises a leakage concern; a supplementary intra-site evaluation showed lower accuracy than the pooled 10-fold result, consistent with some site leakage in the main result."
+  },
+  "charting": {
+    "source_id": "S-052",
+    "title": "Attentional Connectivity-based Prediction of Autism Using Heterogeneous rs-fMRI Data from CC200 Atlas",
+    "authors": "",
+    "year": "2020",
+    "journal_conference": "Experimental Neurobiology",
+    "doi": "10.5607/en.2020.29.1.27",
+    "database_retrieved": "",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder (ASD) vs Typical Control (TC)",
+    "diagnosis_assessment": "",
+    "n_disordered": "506",
+    "age_mean_sd": "16.59 ± 8.05 years",
+    "age_range": "",
+    "gender_distribution": "446 male, 60 female",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "548",
+    "age_mean_sd_controls": "16.86 ± 7.55 years",
+    "age_range_controls": "",
+    "gender_distribution_controls": "453 male, 95 female",
+    "age_matched": "No significant difference in age between groups (p>0.05)",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity",
+    "specific_features": "Pairwise functional connectivity from CC200 atlas ROIs; top 1935 connectivity features selected via an Extra-Trees attention mechanism",
+    "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (C-PAC); CC200 atlas (Preprocessed Connectomes Project)",
+    "feature_importance_reported": "Yes",
+    "importance_method": "Extra-Trees-based attention mechanism (feature importance/attention vector over connectivity features)",
+    "top_features_identified": "Connections involving regions implicated in social cognition and interaction; anterior-posterior default mode network (DMN) connections",
+    "feature_change_direction": "Lower correlation between anterior and posterior DMN in autistic individuals than controls",
+    "model_category": "Feature-selection (Extra-Trees attention) + linear SVM classifier",
+    "specific_algorithms": "Extra-Trees attention mechanism for feature selection, linear Support Vector Machine (SVM) classifier",
+    "validation_methodology": "10-fold cross-validation (hyperparameters set via nested cross-validation), plus a supplementary intra-site stratified shuffle-split cross-validation (80/20 train/test) to examine site effects",
+    "performance_metrics": "Accuracy, sensitivity, specificity",
+    "key_performance_results": "Pooled 10-fold CV: accuracy 72.2%, sensitivity 68.6-68.8%, specificity 75.4%; intra-site stratified shuffle-split CV: mean accuracy 67.7% (range 64.0-71.2%), sensitivity 66.3%, specificity 68.9%",
+    "summary_key_findings": "An Extra-Trees attention mechanism combined with a linear SVM classified ASD vs TC from ABIDE rs-fMRI CC200 connectivity with 72.2% accuracy (68.6% sensitivity, 75.4% specificity) in pooled 10-fold CV, exceeding prior comparable work by about 2% precision and 3.2% specificity; informative connections involved social-cognition regions and showed reduced anterior-posterior DMN correlation in autism; accuracy dropped to 67.7% under an intra-site evaluation.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "predictive | ABIDE Preprocessed Connectomes Project release (consistent with ABIDE I's ~1112-subject pool); 1102 subjects downloaded, excluded those with missing imaging data, final N = 506 ASD / 548 TC across 17 sites | quote: \"We successfully downloaded a dataset \nof 1102 subjects from the Preprocessed Connectomes Project, \nand then excluded subjects whose imaging data shows some miss-\ning. Finally, data of 506 ASD individuals and 548 controls was \nincluded in our study.\"",
+      "RQ2": "C-PAC pipeline (Preprocessed Connectomes Project), CC200 atlas | quote: \"The rs-fMRI data utilized in this study was preprocessed with \nthe Configurable Pipeline for the Analysis of Conenectomes (C-\nPAC).\"",
+      "RQ3": "predictive — ASD vs TC classification | quote: \"Discrimination between ASD and TC subjects could be modeled \nas a supervised learning task.\"",
+      "RQ4": "10-fold cross-validation with nested CV for hyperparameters; feature selection (top 1935 features) described prior to the CV split; a separate intra-site stratified shuffle-split CV was run to probe site effects (not leave-site-out) | quote: \"we utilized 10-\nfold cross-validation to measure the accuracy of predicted label. \nAny hyper-parameter operated in the method was internally set \nin the nested cross-validation.\"",
+      "RQ5": "72.2% accuracy (sensitivity 68.6-68.8%, specificity 75.4%) classifying ASD vs TC; key finding of reduced anterior-posterior DMN correlation and social-cognition-region involvement in autism | quote: \"our proposed method resulted in a mean classification ac-\ncuracy of 72.2% (sensitivity=68.6%, specificity=75.4%).\"",
+      "RQ6": "no | quote: \"We successfully downloaded a dataset \nof 1102 subjects from the Preprocessed Connectomes Project, \nand then excluded subjects whose imaging data shows some miss-\ning.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — resulting N by diagnosis given, exclusion limited to \"imaging data shows some missing\" with no further rule | quote: \"Finally, data of 506 ASD individuals and 548 controls was \nincluded in our study.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — mean FD reported and compared between groups, but no exclusion threshold stated | quote: \"There was no difference in the age, sex and FD between \ncases and controls (p>0.05).\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — C-PAC named, no version | quote: \"The rs-fMRI data utilized in this study was preprocessed with \nthe Configurable Pipeline for the Analysis of Conenectomes (C-\nPAC).\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"taking the study object of brain connectivity measured with the resting-state functional \nmagnetic resonance imaging (fMRI) data of CC200 atlas.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No | quote: \"Finally, the 1935 top features were selected to \nperform the differentiation between individuals with ASD and TC \nvia the SVM classifier. \nTo ensure the reliability of experimental result, we utilized 10-\nfold cross-validation to measure the accuracy of predicted label.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly — an intra-site stratified shuffle-split cross-validation was performed to probe site effects, but this is not a leave-site-out design and no site covariate/harmonisation is used in the main pooled result | quote: \"For the challenges of site-related \nvariability, we also performed an intra-site prediction based on the \nstratified shuffle split cross-validation.\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"For more details with the \npreprocessed data, please see http://preprocessed-connectomes-\nproject.org/abide/.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"our study was carried out on the heterogeneous \nrs-fMRI data from ABIDE.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-052",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {"item_text": "CL1 Cohort definition reported?", "rating": "Partial", "notes": "N by diagnosis given; exclusion limited to missing imaging data."},
+        {"item_text": "CL2 Motion/QC rule reported?", "rating": "Partial", "notes": "Mean FD compared between groups but no exclusion threshold."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {"item_text": "CL3 Preprocessing pipeline and version reported?", "rating": "Partial", "notes": "C-PAC named, no version."},
+        {"item_text": "CL4 Atlas/parcellation reported?", "rating": "Yes", "notes": "CC200 atlas."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {"item_text": "Diagnosis source and label definition reported?", "rating": "No", "notes": "ASD vs TC label used without stating diagnostic instrument/source."}
+      ],
+      "overall_concern": "High"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {"item_text": "CL5 Leakage control reported?", "rating": "No", "notes": "Feature selection (top 1935 features) described before the CV-split description."},
+        {"item_text": "CL6 Site handling reported?", "rating": "Partial", "notes": "Intra-site stratified shuffle-split CV reported as a supplementary check, not leave-site-out; main result is pooled CV."},
+        {"item_text": "CL7 Code and/or participant list available?", "rating": "No", "notes": "Not stated."}
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-052",
+    "study_design_sample_dataset": "Diagnostic prediction (ASD vs TC); ABIDE Preprocessed Connectomes Project release (ABIDE I), 506 ASD/548 TC across 17 sites",
+    "methods": "C-PAC-preprocessed rs-fMRI parcellated with the CC200 atlas; an Extra-Trees attention mechanism selected the top 1935 connectivity features, classified with a linear SVM; evaluated with pooled 10-fold cross-validation (nested CV for hyperparameters) and a supplementary intra-site stratified shuffle-split cross-validation.",
+    "outcomes": "72.2% accuracy (68.6-68.8% sensitivity, 75.4% specificity) in pooled 10-fold CV, versus 67.7% mean accuracy (66.3% sensitivity, 68.9% specificity) under the intra-site evaluation; informative connections implicated social-cognition regions and reduced anterior-posterior DMN correlation in autism.",
+    "key_limitations": "Exclusion rule limited to missing imaging data with no motion/QC threshold; diagnosis source not reported; feature selection appears to precede the cross-validation split, raising a leakage concern; pooled-CV accuracy exceeds the site-stratified accuracy, consistent with some site leakage.",
+    "relevance_notes": "A CC200/C-PAC predictive study with a clearly reported N and pipeline but an apparent feature-selection leakage gap and only a partial (non-leave-site-out) site-handling check.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.5607/en.2020.29.1.27",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "1102 subjects downloaded from the Preprocessed Connectomes Project, excluded those with missing imaging data, final N = 506 ASD / 548 TC across 17 sites",
+    "n_by_dx": {"ASD": 506, "TD": 548, "total": 1054},
+    "sites": "17",
+    "pipeline": "C-PAC (Configurable Pipeline for the Analysis of Connectomes)",
+    "atlas": "CC200",
+    "claim_type": "predictive",
+    "finding": "Extra-Trees attention feature selection with a linear SVM classified ASD vs TC with 72.2% accuracy (sensitivity 68.6%, specificity 75.4%) under pooled 10-fold cross-validation, implicating social-cognition regions and reduced anterior-posterior DMN connectivity in autism.",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "We successfully downloaded a dataset \nof 1102 subjects from the Preprocessed Connectomes Project, \nand then excluded subjects whose imaging data shows some miss-\ning. Finally, data of 506 ASD individuals and 548 controls was \nincluded in our study.",
+      "With cross-validation strategy, our proposed method resulted in a mean classification ac-\ncuracy of 72.2% (sensitivity=68.6%, specificity=75.4%)."
+    ]
+  }
+}

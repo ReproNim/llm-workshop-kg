@@ -1,0 +1,473 @@
+{
+ "fetched_at": "2026-10-15T15:11:09+00:00",
+ "repos": {
+  "FCP-INDI/C-PAC": {
+   "archived": false,
+   "commit": "96db8b0b65ab1d5f55fb3b895855af34d72c17e4",
+   "default_branch": "main",
+   "github_description": "Configurable Pipeline for the Analysis of Connectomes",
+   "language": "Python",
+   "license": "LGPL-3.0",
+   "owner_login": "FCP-INDI"
+  },
+  "NIDM-Terms/terms": {
+   "archived": false,
+   "commit": "51c82a81af84900ec1412211e4bb315eb1bb97ad",
+   "default_branch": "master",
+   "github_description": "Repository for collaboration on NIDM terminologies",
+   "language": "Python",
+   "license": null,
+   "owner_login": "NIDM-Terms"
+  },
+  "RDFLib/pySHACL": {
+   "archived": false,
+   "commit": "469cca7a22a078b36c167c1e8dadecf5e5ec6c75",
+   "default_branch": "master",
+   "github_description": "A Python validator for SHACL",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "owner_login": "RDFLib"
+  },
+  "RDFLib/rdflib": {
+   "archived": false,
+   "commit": "9099a782e5ed38ee11a41aaad2c1071a3b89437a",
+   "default_branch": "main",
+   "github_description": "RDFLib is a Python library for working with RDF, a simple yet powerful language for representing information.",
+   "language": "Python",
+   "license": "BSD-3-Clause",
+   "owner_login": "RDFLib"
+  },
+  "ReproNim/FAIR_neuroimaging_with_NIDM": {
+   "archived": false,
+   "commit": "fc13c66c1747255bb1efda7d748723fe5d989c79",
+   "default_branch": "master",
+   "github_description": "FAIR neuroimaging with the Neuroimaging Data Model and PyNIDM",
+   "language": "Shell",
+   "license": null,
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/OpenNeuroDerivatives-NIDM": {
+   "archived": false,
+   "commit": "9121a3e5673f4c68f40159d1dd65510d70ab78d5",
+   "default_branch": "master",
+   "github_description": null,
+   "language": "Dockerfile",
+   "license": null,
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/ReproInventory": {
+   "archived": false,
+   "commit": "06d6e3bf50e9e2298763c9a0f7dec29a1764541d",
+   "default_branch": "main",
+   "github_description": "A repo for developing the ReproNim inventory of training resources.",
+   "language": "TypeScript",
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/ants-nidm_bidsapp": {
+   "archived": false,
+   "commit": "25c7a29340c968edd5677e590af50715206b3ecf",
+   "default_branch": "main",
+   "github_description": "A BIDS App for ANTs-based brain segmentation with NIDM outputs.",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/ants_seg_to_nidm": {
+   "archived": false,
+   "commit": "97e6257b0827a0e6bcc78c179f83168c83397f39",
+   "default_branch": "master",
+   "github_description": "ANTS-based structural segmentation exporter to NIDM",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/babs-demo-ohbm2025": {
+   "archived": false,
+   "commit": "b4ac4f63acf5e8ce6209f07283bd73f3e9df3975",
+   "default_branch": "main",
+   "github_description": "A demo for OHBM 2025 educational course on BABS",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/containers": {
+   "archived": false,
+   "commit": "69c11f98218bfc93b9ed3dace3fb19cbef3f6cf2",
+   "default_branch": "master",
+   "github_description": "Containers \"distribution\" for reproducible neuroimaging",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/freesurfer-nidm_bidsapp": {
+   "archived": false,
+   "commit": "f80755be15959545bbdc5d2f018dec934be4ce18",
+   "default_branch": "main",
+   "github_description": "A BIDS App implementation for FreeSurfer that provides standardized surface reconstruction and morphometric analysis with NIDM output.",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/fsl_seg_to_nidm": {
+   "archived": false,
+   "commit": "54f91ec7c5c10837d1970bcbd2e39add6a5a3530",
+   "default_branch": "master",
+   "github_description": "Converts structural segmentation outputs from FSL's FIRST and FAST tool to NIDM",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/module-FAIR-data": {
+   "archived": false,
+   "commit": "f95145ea0d9f385643749422bc24baa0204c167e",
+   "default_branch": "gh-pages",
+   "github_description": null,
+   "language": "JavaScript",
+   "license": "NOASSERTION",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/module-dataprocessing": {
+   "archived": false,
+   "commit": "a91e88faa8eaf71e4aa48de47a47b9352bd46314",
+   "default_branch": "gh-pages",
+   "github_description": "A module for reproducible data processing",
+   "language": "JavaScript",
+   "license": "NOASSERTION",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/module-intro": {
+   "archived": false,
+   "commit": "4e755b9b2ccd8c1697e9cb9fbfb0403386ee1d84",
+   "default_branch": "gh-pages",
+   "github_description": "Module i: An Introduction to Reproducible Neuroimaging training module",
+   "language": "JavaScript",
+   "license": "NOASSERTION",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/module-reproducible-basics": {
+   "archived": false,
+   "commit": "b6ed82761e10d0930467e3d5c701a4da99f9af2e",
+   "default_branch": "gh-pages",
+   "github_description": "Module 0: Reproducible Basics",
+   "language": "JavaScript",
+   "license": "NOASSERTION",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/module-stats": {
+   "archived": false,
+   "commit": "ccef0fa1d23d0023db4cbbfc1e3091037df77f3b",
+   "default_branch": "gh-pages",
+   "github_description": "The statistics for reproducible neuroimaging",
+   "language": "Jupyter Notebook",
+   "license": "NOASSERTION",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/mriqc-nidm_bidsapp": {
+   "archived": false,
+   "commit": "79f782635d41b8ebfc6f1ddb23acdd32cac56af8",
+   "default_branch": "main",
+   "github_description": "A BIDS App that runs MRIQC quality control on neuroimaging data and converts the outputs to NIDM (Neuroimaging Data Model) format for improved interoperability and integration with existing analysis provenance graphs.",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/neurodocker": {
+   "archived": false,
+   "commit": "2087a0e1cfef91312ba2feb069bab5fe83a5c110",
+   "default_branch": "master",
+   "github_description": "Generate custom Docker and Singularity images, and minimize existing containers",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/reproin": {
+   "archived": false,
+   "commit": "2f3d6a6db272d615ce3b243184131050603cfcd8",
+   "default_branch": "master",
+   "github_description": "A setup for automatic generation of shareable, version-controlled BIDS datasets from MR scanners",
+   "language": "Shell",
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/reproman": {
+   "archived": false,
+   "commit": "328cc57c11661f022a8d18dc40e2f5e0555541d6",
+   "default_branch": "master",
+   "github_description": "ReproMan (AKA NICEMAN, AKA ReproNim TRD3)",
+   "language": "Python",
+   "license": "NOASSERTION",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/reproschema": {
+   "archived": false,
+   "commit": "ac35394773e66e2aab8a3d26e4acce1fabb1ce63",
+   "default_branch": "main",
+   "github_description": "A standardized form generation and data collection schema to harmonize results by design across projects.",
+   "language": "Python",
+   "license": "NOASSERTION",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/reproschema-library": {
+   "archived": false,
+   "commit": "3de0133fd131087c94d8ce5f09df4636f529a9c8",
+   "default_branch": "main",
+   "github_description": null,
+   "language": "Python",
+   "license": "Apache-2.0",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/reproschema-py": {
+   "archived": false,
+   "commit": "ffa345afbf25ce6cdf829945b71c181d4aeacd7d",
+   "default_branch": "main",
+   "github_description": null,
+   "language": "Python",
+   "license": "Apache-2.0",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/reproschema-ui": {
+   "archived": false,
+   "commit": "562c4bbe8a51ff98e9ec5cc3e3bb8fd21467f0e7",
+   "default_branch": "main",
+   "github_description": "UI to render ReproSchema based protocols and assessments.",
+   "language": "Vue",
+   "license": "NOASSERTION",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/reproseed": {
+   "archived": false,
+   "commit": "1ba8815bcfd45039b622b3b2508d583537ca281b",
+   "default_branch": "master",
+   "github_description": "A POSIX shell script to assist in guaranteeing reproducible non-deterministic computation(s)",
+   "language": "Shell",
+   "license": "Unlicense",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/reprostim": {
+   "archived": false,
+   "commit": "aa82b86f3a7b5acea653bf5dbe5e71c648baa9ce",
+   "default_branch": "master",
+   "github_description": "Automated capture of audio-visual stimuli into BIDS datasets",
+   "language": "Python",
+   "license": null,
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/reprozip": {
+   "archived": false,
+   "commit": "e88219b1bf1da0f7c5b0b4f96e115c1eb4ec9154",
+   "default_branch": "master",
+   "github_description": "ReproZip is a tool that simplifies the process of creating reproducible experiments from command-line executions, a frequently-used common denominator in computational science.",
+   "language": "Python",
+   "license": "BSD-3-Clause",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/segstats_jsonld": {
+   "archived": false,
+   "commit": "de217d09fb6246fa7677306cb3b19cd05dd1bbc4",
+   "default_branch": "master",
+   "github_description": "Script to Export Freesurfer-based Parcellation/Segmentation Stats and Provenance as JSON-LD and NIDM",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/simple2_NIDM_examples": {
+   "archived": false,
+   "commit": "e0dff17629bd5031e246c05ff4bed174597552a2",
+   "default_branch": "master",
+   "github_description": "ReproNim simple2 NIDM files for ABIDE/ADHD200 available from datalad",
+   "language": "Shell",
+   "license": null,
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/simple2_bidsapp_babs": {
+   "archived": false,
+   "commit": "24f4c7afcb59a4e24c02e6fb0a1b05f3e00dd74c",
+   "default_branch": "main",
+   "github_description": "test freesurfer_bidsapp with babs",
+   "language": "Shell",
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/simple_workflow": {
+   "archived": false,
+   "commit": "225f1dc06fb734ad86afb1d074b5ae2692d8b9c3",
+   "default_branch": "master",
+   "github_description": "A very simple, re-executable neuroimaging publication (code)",
+   "language": "Python",
+   "license": "NOASSERTION",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/skills": {
+   "archived": false,
+   "commit": "faef6c04ccf5976ecfa019a717270f382e7014b9",
+   "default_branch": "main",
+   "github_description": "skills for repronim tools",
+   "language": null,
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/stuff2NIDM": {
+   "archived": false,
+   "commit": "c609c8a01e8b6ed4d98bacc3e9f0f8907ba1cdcb",
+   "default_branch": "main",
+   "github_description": "Repo for the process of adding \"stuff\" (ie the results of fmriprep, etc. processing) to the NIDM graph.",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "ReproNim"
+  },
+  "ReproNim/testkraken": {
+   "archived": false,
+   "commit": "d2410997e3ab230e99278649e6ef8b8daee00667",
+   "default_branch": "master",
+   "github_description": "Generalized regression testing of scientific workflows",
+   "language": "Python",
+   "license": null,
+   "owner_login": "ReproNim"
+  },
+  "incf-nidash/NIDM-Experiment-COB": {
+   "archived": false,
+   "commit": "4e24603d218e068021b92341fd6cf445c027f604",
+   "default_branch": "main",
+   "github_description": null,
+   "language": "Python",
+   "license": null,
+   "owner_login": "incf-nidash"
+  },
+  "incf-nidash/PyNIDM": {
+   "archived": false,
+   "commit": "74793553f2ef0884602c4383fe8dbe8c74e3dcb8",
+   "default_branch": "master",
+   "github_description": null,
+   "language": "Python",
+   "license": "NOASSERTION",
+   "owner_login": "incf-nidash"
+  },
+  "incf-nidash/bids-ld": {
+   "archived": false,
+   "commit": "a413386cf7cac2dea15103440c04cf939e5853d0",
+   "default_branch": "master",
+   "github_description": null,
+   "language": null,
+   "license": "MIT",
+   "owner_login": "incf-nidash"
+  },
+  "incf-nidash/nidm-experiment": {
+   "archived": false,
+   "commit": "7ec1c44de69020cbf2f78542815ad59ca6e74421",
+   "default_branch": "main",
+   "github_description": "This repository contains the terms used in nidm-experiment and the code to create the term-resolution and term-schema webpages.",
+   "language": "Python",
+   "license": null,
+   "owner_login": "incf-nidash"
+  },
+  "incf-nidash/nidm-specs": {
+   "archived": false,
+   "commit": "b568043b81e75110d63b994c00aa17275a5f4614",
+   "default_branch": "master",
+   "github_description": "Neuroimaging Data Model (NIDM): describing neuroimaging data and provenance",
+   "language": "Python",
+   "license": "NOASSERTION",
+   "owner_login": "incf-nidash"
+  },
+  "incf-nidash/nidmresults": {
+   "archived": false,
+   "commit": "a3c3bee3aabef14d0889540e04522d3349fe4c28",
+   "default_branch": "main",
+   "github_description": "Read/Write NIDM-Results in Python",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "incf-nidash"
+  },
+  "incf-nidash/nidmresults-fsl": {
+   "archived": false,
+   "commit": "18c07ab33dffeb6c9367c7873d8f6c975d78b717",
+   "default_branch": "master",
+   "github_description": "A python library to export FSL's feat results to NIDM-Results",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "incf-nidash"
+  },
+  "lmcinnes/umap": {
+   "archived": false,
+   "commit": "7a39d04186a8d20fe38b0146f36119b0c6d23a50",
+   "default_branch": "master",
+   "github_description": "Uniform Manifold Approximation and Projection",
+   "language": "Python",
+   "license": "BSD-3-Clause",
+   "owner_login": "lmcinnes"
+  },
+  "neurobagel/api": {
+   "archived": false,
+   "commit": "f49e7622889834ac1f71939defb24e6ae02dd9be",
+   "default_branch": "main",
+   "github_description": null,
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "neurobagel"
+  },
+  "neurobagel/bagel-cli": {
+   "archived": false,
+   "commit": "68443b3a145a7bfe31407c84348cd3d556ac1e6e",
+   "default_branch": "main",
+   "github_description": "Command line tool for Neurobagel data parsing and annotation",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "neurobagel"
+  },
+  "neurobagel/federation-api": {
+   "archived": false,
+   "commit": "f961c7f03371179b1f66cb1331a6b81b1b1c30cb",
+   "default_branch": "main",
+   "github_description": "REST API for query federation over multiple Neurobagel graph databases",
+   "language": "Python",
+   "license": "MIT",
+   "owner_login": "neurobagel"
+  },
+  "neurobagel/query-tool": {
+   "archived": false,
+   "commit": "257e103ebd44ed4f387d6406123832a60470a98e",
+   "default_branch": "main",
+   "github_description": "User interface for searching across Neurobagel graph",
+   "language": "TypeScript",
+   "license": "MIT",
+   "owner_login": "neurobagel"
+  },
+  "nilearn/nilearn": {
+   "archived": false,
+   "commit": "cf91993d617bf5bb052bd3017cfa05246f7d8213",
+   "default_branch": "main",
+   "github_description": "Machine learning for NeuroImaging in Python",
+   "language": "Python",
+   "license": "BSD-3-Clause",
+   "owner_login": "nilearn"
+  },
+  "oxigraph/oxigraph": {
+   "archived": false,
+   "commit": "2283f42a7eb4ae40330a9c9ce7ee9585ff72daee",
+   "default_branch": "main",
+   "github_description": "SPARQL graph database",
+   "language": "Rust",
+   "license": "Apache-2.0",
+   "owner_login": "oxigraph"
+  },
+  "scikit-learn/scikit-learn": {
+   "archived": false,
+   "commit": "d0e22aee7bbef7b310a2f08227c214ff6df9a526",
+   "default_branch": "main",
+   "github_description": "scikit-learn: machine learning in Python",
+   "language": "Python",
+   "license": "BSD-3-Clause",
+   "owner_login": "scikit-learn"
+  },
+  "sensein/agent_skills": {
+   "archived": false,
+   "commit": "dde54251a5a70f55d0b9bbbaab0dd21013b1bbfc",
+   "default_branch": "main",
+   "github_description": "Reusable skills, tools, and workflows for building capable AI agents.",
+   "language": "Python",
+   "license": "Apache-2.0",
+   "owner_login": "sensein"
+  }
+ }
+}

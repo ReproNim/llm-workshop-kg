@@ -1,0 +1,160 @@
+{
+  "source_id": "S-062",
+  "pmid": "local_81234492",
+  "doi": "10.3389/fpsyt.2019.00620",
+  "screening": {
+    "decision": "include",
+    "reason": "Meets inclusion 2/3: analyses ABIDE I resting-state fMRI functional connectivity for both group-difference (over/under-connectivity) and SVM diagnostic classification.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "we selected a \nsubgroup of 190 subjects (102 with ASD and 88 TD) according to the following criteria: male \nchildren (age range: 6.5–13 years); rs-fMRI data acquired with open eyes; data from the \nUniversity sites that provided the largest number of scans (KKI, NYU, UCLA, UM).",
+      "section": "abstract",
+      "claim": "Cohort was a 190-subject (102 ASD, 88 TD) subset of ABIDE I selected by age, sex, eye status and site.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "We analyzed the preprocessed data available on the ABIDE \npreprocessed homepage (29, 30), using the Configurable Pipeline \nfor the Analysis of Connectomes (CPAC) (31), that includes slice-\ntiming, motion correction, intensity normalization, nuisance \nsignal removal (e.g. tissue signals, low-frequency drifts), and \nregistrations.",
+      "section": "methods",
+      "claim": "Preprocessing used the Preprocessed Connectomes Project CPAC pipeline.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Both anatomical and functional atlases were chosen to derive the \nFC measures; in particular, we chose Harvard-Oxford (HO) and \nAutomatic Anatomical Labeling (AAL) as anatomical templates \nand Craddock-200 (CC) as functional templates to extract time \nseries from brain regions",
+      "section": "methods",
+      "claim": "Four atlases (AAL, HO, CC, Power) were compared for the connectivity analysis.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "a leave-site out cross-validation scheme was performed: \neach training set was composed by all the sites except one, that \nwas left out for validation.",
+      "section": "methods",
+      "claim": "Classification used a leave-one-site-out cross-validation scheme.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The mean L-SVM classification performance, \nin terms of the area under the ROC curve (AUC), was 0.75 ± 0.05. The highest performance \nwas obtained using data from KKI, NYU and UCLA sites in training and data from UM as testing \nset (AUC = 0.83).",
+      "section": "abstract",
+      "claim": "Leave-one-site-out SVM classification reached mean AUC 0.75 ± 0.05, best fold AUC 0.83.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Specifically, stronger functional connectivity (FC) in ASD with respect to TD \ninvolve (p < 0.001) the angular gyrus with the precuneus in the right (R) hemisphere, and the \nR frontal operculum cortex with the pars opercularis of the left (L) inferior frontal gyrus.",
+      "section": "abstract",
+      "claim": "ASD showed hyper-connectivity between right angular gyrus-precuneus (DMN) and right frontal operculum-left IFG pars opercularis.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "implementation of the HO atlas. The binary classification \nresults between subjects with ASD and controls in a leave-one-\nsite-out cross-validation scheme achieved an average accuracy \nof 0.71 ± 0.06 and an average AUC of 0.75  ± 0.05.",
+      "section": "results",
+      "claim": "Best atlas (HO) gave leave-one-site-out accuracy 0.71 ± 0.06 and AUC 0.75 ± 0.05.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "DATA AVAILABILITY\nPublicly available datasets were analyzed in this study. This data \ncan be found here: http://fcon_1000.projects.nitrc.org/indi/abide/",
+      "section": "methods",
+      "claim": "Data availability statement points only to the general ABIDE repository, not a specific participant list for this subsample.",
+      "relevance_score": 0.5
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Low", "support": "Explicit, stepwise selection criteria (age 6.5-13, male, eyes open, four most-populated sites) with resulting N by diagnosis given: \"we selected a subgroup of 190 subjects (102 with ASD and 88 TD) according to the following criteria\""},
+      {"domain": "Predictors", "judgment": "Low", "support": "Named pipeline (CPAC) and four named atlases (AAL, HO, CC, Power) with feature counts per atlas reported in Table 4."},
+      {"domain": "Outcome", "judgment": "Low", "support": "ASD/TD diagnosis is the ABIDE phenotypic diagnosis (DSM-5-based, ADOS Gotham scores reported), independent of the imaging predictor."},
+      {"domain": "Analysis", "judgment": "Low", "support": "Leave-one-site-out cross-validation used throughout, whole-brain features without a tuned feature-selection step, and fixed default SVM hyperparameter to avoid a leakage-prone nested search: \"a leave-site out cross-validation scheme was performed: each training set was composed by all the sites except one, that was left out for validation.\""}
+      ],
+    "overall": "Low",
+    "summary": "Well-documented cohort-definition, pipeline, atlas choice and leave-one-site-out evaluation with no evident leakage; the main limitation is that only four of the larger ABIDE I sites are used and no held-out replication cohort is reported."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Both",
+    "n_disordered": "102",
+    "n_controls": "88",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (CPAC), via the ABIDE Preprocessed Connectomes Project",
+    "specific_features": "Pearson-correlation (Fisher z-transformed) functional connectivity using AAL, Harvard-Oxford (HO), Craddock-200 (CC) and Power atlases",
+    "model_category": "Linear-kernel Support Vector Machine (L-SVM)",
+    "specific_algorithms": "Linear SVM classification, compared across AAL/HO/CC/Power parcellations",
+    "validation_methodology": "Leave-one-site-out cross-validation across KKI, NYU, UCLA, UM",
+    "performance_metrics": "AUC, accuracy, sensitivity, specificity",
+    "key_performance_results": "Best atlas (HO): mean leave-one-site-out AUC 0.75 ± 0.05, accuracy 0.71 ± 0.06; best fold (train KKI/NYU/UCLA, test UM) AUC 0.83",
+    "features_associated_disorder": "Stronger (hyper-) connectivity in ASD between right angular gyrus and right precuneus (DMN), and between right frontal operculum and left IFG pars opercularis; weaker (hypo-) connections also reported (e.g. intra-hemispheric right temporal fusiform)",
+    "feature_change_direction": "Mixed hyper- and hypo-connectivity, varying by connection",
+    "dataset_openly_available": "No study-specific participant list or code; only the general ABIDE repository link is given",
+    "custom_fields": {
+      "RQ1": "ABIDE I, a selected subgroup of 190 subjects (102 ASD, 88 TD) from four sites (KKI, NYU, UCLA, UM), restricted to male children aged 6.5-13 years with eyes-open rs-fMRI. | quote: \"we selected a subgroup of 190 subjects (102 with ASD and 88 TD) according to the following criteria: male children (age range: 6.5–13 years); rs-fMRI data acquired with open eyes; data from the University sites that provided the largest number of scans (KKI, NYU, UCLA, UM).\"",
+      "RQ2": "ABIDE Preprocessed Connectomes Project CPAC pipeline; four atlases compared (AAL, Harvard-Oxford, Craddock-200, Power). | quote: \"using the Configurable Pipeline for the Analysis of Connectomes (CPAC) (31), that includes slice- timing, motion correction, intensity normalization, nuisance signal removal\"",
+      "RQ3": "both — reports both group-difference (over/under-connectivity via permutation test) and diagnostic classification (linear SVM). | quote: \"A permutation test was conducted to identify over-connectivity and under-connectivity alterations in the ASD group.\"",
+      "RQ4": "Leave-one-site-out cross-validation for classification; permutation testing with significance thresholds (p<0.01, 0.005, 0.001) for connectivity differences. | quote: \"a leave-site out cross-validation scheme was performed: each training set was composed by all the sites except one, that was left out for validation.\"",
+      "RQ5": "Hyper-connectivity in ASD between right angular gyrus-precuneus (DMN) and right frontal operculum-left IFG; best leave-one-site-out classification AUC 0.75±0.05 (HO atlas), best single fold AUC 0.83. | quote: \"The mean L-SVM classification performance, in terms of the area under the ROC curve (AUC), was 0.75 ± 0.05.\"",
+      "RQ6": "partly — exact numeric selection rules (age, sex, eye status, site) are given but no participant-ID list, and the data-availability statement only links to the general ABIDE repository. | quote: \"Publicly available datasets were analyzed in this study. This data can be found here: http://fcon_1000.projects.nitrc.org/indi/abide/\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — stepwise selection criteria and resulting N (102 ASD/88 TD) are given. | quote: \"we selected a subgroup of 190 subjects (102 with ASD and 88 TD) according to the following criteria\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — motion correction is named as a CPAC preprocessing step but no specific motion metric or threshold for subject exclusion is given. | quote: \"using the Configurable Pipeline for the Analysis of Connectomes (CPAC) (31), that includes slice- timing, motion correction, intensity normalization, nuisance signal removal\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — CPAC named with the specific processing strategies used. | quote: \"using the Configurable Pipeline for the Analysis of Connectomes (CPAC) (31)\"",
+      "CL4 Atlas/parcellation reported?": "Yes — four named atlases (AAL, HO, CC, Power). | quote: \"we chose Harvard-Oxford (HO) and Automatic Anatomical Labeling (AAL) as anatomical templates and Craddock-200 (CC) as functional templates\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Partly — no feature selection was used (avoiding that leakage route) and the SVM C hyperparameter was fixed rather than tuned to avoid a nested-CV leak, but this is stated as a design choice rather than an explicit leakage-control procedure. | quote: \"to avoid running optimization of hyperparameters, which would have required and additional nested cross validation\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — leave-one-site-out cross-validation across the four sites. | quote: \"a leave-site out cross-validation scheme was performed: each training set was composed by all the sites except one, that was left out for validation.\"",
+      "CL7 Code and/or participant list available?": "No — data-availability statement only links to the general ABIDE repository, no study-specific participant list or code repository. | quote: \"Publicly available datasets were analyzed in this study. This data can be found here: http://fcon_1000.projects.nitrc.org/indi/abide/\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"We analyzed the preprocessed data available on the ABIDE preprocessed homepage\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "items": [
+        {"item": "CL1", "rating": "Yes", "support": "Explicit stepwise selection criteria and resulting N by diagnosis."},
+        {"item": "CL2", "rating": "Partial", "support": "Motion correction named as a pipeline step but no subject-level motion threshold given."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_predictors_features": {
+      "items": [
+        {"item": "CL3", "rating": "Yes", "support": "CPAC pipeline and processing strategies named."},
+        {"item": "CL4", "rating": "Yes", "support": "Four named atlases compared."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_outcome_labels": {
+      "items": [
+        {"item": "diagnosis source", "rating": "Yes", "support": "ASD/TD is the ABIDE phenotypic diagnosis; ADOS Gotham total/severity scores reported per site."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "items": [
+        {"item": "CL5", "rating": "Partial", "support": "No tuned feature selection (reduces leakage risk) but no explicit leakage-control statement."},
+        {"item": "CL6", "rating": "Yes", "support": "Leave-one-site-out cross-validation reported."},
+        {"item": "CL7", "rating": "No", "support": "No study-specific participant list or code; only the general ABIDE link given."}
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Both (group-difference + diagnostic prediction); ABIDE I subset of 190 male children (102 ASD, 88 TD), ages 6.5-13, from KKI, NYU, UCLA and UM.",
+    "methods": "CPAC-preprocessed rs-fMRI; functional connectivity under AAL, HO, CC and Power atlases; permutation testing for group differences; linear-SVM classification with leave-one-site-out cross-validation.",
+    "outcomes": "Best atlas (HO): leave-one-site-out mean AUC 0.75±0.05, accuracy 0.71±0.06, best fold AUC 0.83; hyper-connectivity in ASD between right angular gyrus-precuneus and right frontal operculum-left IFG, plus weaker connections elsewhere.",
+    "key_limitations": "Restricted to male children at four sites; no study-specific participant list published; feature selection not attempted so no leakage-control procedure was needed or described in detail.",
+    "relevance_notes": "A methodologically thorough ABIDE I subset analysis combining connectivity group-difference findings with a properly site-cross-validated SVM classifier; selection rule is exact enough to approximate reconstruction but no ID list is given.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fpsyt.2019.00620",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Male children aged 6.5-13 years, rs-fMRI acquired with open eyes, from the four most-populated sites (KKI, NYU, UCLA, UM); 190 subjects (102 ASD, 88 TD).",
+    "n_by_dx": {"ASD": 102, "TD": 88, "total": 190},
+    "sites": "KKI, NYU, UCLA, UM",
+    "pipeline": "CPAC (Configurable Pipeline for the Analysis of Connectomes), ABIDE Preprocessed Connectomes Project",
+    "atlas": "AAL, Harvard-Oxford, Craddock-200, Power",
+    "claim_type": "both",
+    "finding": "Leave-one-site-out linear-SVM classification achieved mean AUC 0.75±0.05 (HO atlas, accuracy 0.71±0.06); ASD showed hyper-connectivity between right angular gyrus-precuneus and right frontal operculum-left IFG, and weaker connections elsewhere.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "we selected a \nsubgroup of 190 subjects (102 with ASD and 88 TD) according to the following criteria: male \nchildren (age range: 6.5–13 years); rs-fMRI data acquired with open eyes; data from the \nUniversity sites that provided the largest number of scans (KKI, NYU, UCLA, UM).",
+      "The mean L-SVM classification performance, \nin terms of the area under the ROC curve (AUC), was 0.75 ± 0.05."
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX schema: <http://schema.org/>
+SELECT ?pub ?status ?title (GROUP_CONCAT(DISTINCT STR(?dataset); separator=" ") AS ?datasets) (COUNT(DISTINCT ?c) AS ?nClaims)
+WHERE { GRAPH <urn:repronim:abide:graph/publications> {
+  VALUES ?dataset { <urn:repronim:abide:dataset/abide> <urn:repronim:abide:dataset/abide_i> <urn:repronim:abide:dataset/abide_ii> }
+  ?link a ex:DatasetPublicationLink ; ex:dataset ?dataset ; ex:status ?status ; ex:publication ?pub .
+  OPTIONAL { ?pub dct:title ?title }
+  OPTIONAL { ?c ex:statedIn ?pub ; a ex:AbstractClaim }
+} } GROUP BY ?pub ?status ?title ORDER BY ?status DESC(?nClaims) ?pub

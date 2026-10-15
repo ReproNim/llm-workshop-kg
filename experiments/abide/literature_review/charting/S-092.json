@@ -1,0 +1,255 @@
+{
+  "source_id": "S-092",
+  "pmid": "local_6d8e3dc5",
+  "doi": "10.1016/j.dcn.2019.100747",
+  "screening": {
+    "decision": "include",
+    "reason": "Analyses ABIDE-II resting-state fMRI functional connectivity to build cross-validated connectome-based predictive models (CPM) of behavioral regulation scores in children with and without ASD, and reports explicit ASD-vs-TD group differences in those scores; satisfies inclusion 2-3.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "Using data  8  from two sites of the ABIDE II dataset comprising 276 children with and without ASD (8-13 years),  9  we identified functional brain networks whose FC predicted individual differences in two, of three,  10  behavioral regu",
+      "section": "abstract",
+      "claim": "Final cohort: 276 children (ASD and TD) aged 8-13 from two ABIDE II sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Scores for all three subscales of behavioral regulation were significantly higher in \n6 \nchildren with ASD than for TD children in all analyzed samples",
+      "section": "results",
+      "claim": "ASD children scored significantly higher (worse) than TD on all three behavioral-regulation subscales.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Twenty-six participants had excessive head motion on their fMRI scan (>4 mm maximum absolute \n20 \ndisplacement).",
+      "section": "methods",
+      "claim": "A quantitative motion-exclusion threshold (>4mm maximum absolute displacement) removed 26 participants.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "A functionally defined atlas, consisting of 268 cortical and subcortical regions-of-interest (‘nodes’)",
+      "section": "methods",
+      "claim": "Used the Shen 268-node functional atlas for connectivity nodes.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Significant models were built using negative edges for inhibition (rs=.23, p=0.0001) and shifting \n2 \n(rs=.19, p=0.001), using leave-one-out prediction (N-1 at every iteration).",
+      "section": "results",
+      "claim": "Leave-one-out CPM significantly predicted inhibition (rs=.23) and shifting (rs=.19) scores from FC, but not emotion control.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The FC model of inhibition was significant by permutation testing \n5 \n(rs=.23, p=0.037), while the FC model of shifting fell just shy of significance (rs=.19, p=0.067).",
+      "section": "results",
+      "claim": "Permutation testing confirmed significance for the inhibition model; the shifting model was borderline (p=0.067).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "inhibition revolved around edges in the somato-motor, visual and cerebellar \n7 \nnetworks and was more posterior, while shifting appeared more focused on edges around the \n8 \nfrontoparietal and dorsal attention networks and was more anterior.",
+      "section": "results",
+      "claim": "Inhibition and shifting predictive networks involved distinct brain network sets (posterior somato-motor/visual/cerebellar vs anterior frontoparietal/dorsal attention).",
+      "relevance_score": 0.7
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "Two named ABIDE-II sites, N by site/diagnosis given in Table 1, clear inclusion/exclusion criteria (neurological/psychiatric history, incomplete behavioral data, outlier/inconsistency scores)."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "Shen 268-node functional atlas, FC profiles with motion- and site-masked edges, clearly described preprocessing (FSL/AFNI steps listed)."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Low",
+        "support": "BRIEF behavioral regulation subscale scores and SRS used as outcome; outlier/inconsistency exclusion criteria applied."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Low",
+        "support": "Leave-one-out and split-half cross-validation with permutation testing (5000 iterations) to assess significance properly; motion and site effects regressed from edges before modelling, reducing feature-selection leakage."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Well-documented two-site ABIDE-II CPM study with quantitative motion threshold, named atlas, and leave-one-out plus permutation-based validation; a methodologically strong predictive-modelling example."
+  },
+  "charting": {
+    "source_id": "S-092",
+    "title": "Building functional connectivity neuromarkers of behavioral self-regulation across children with and without Autism Spectrum Disorder",
+    "authors": "",
+    "year": "2019",
+    "journal_conference": "Developmental Cognitive Neuroscience",
+    "doi": "10.1016/j.dcn.2019.100747",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE II)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Both",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "Georgetown University (GU) and Kennedy Krieger Institute (KK) ABIDE-II sites",
+    "country_region": "United States",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "85",
+    "age_mean_sd": "10.7 (1.5)",
+    "age_range": "8-13 years",
+    "gender_distribution": "66 male / 19 female (combined sample ASD)",
+    "comorbidities_included_excluded": "Excluded: history of neurological or psychiatric disorders (psychiatric exclusion applied to TD group only), MRI contraindications, other medical problems preventing participation",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "yes",
+    "healthy_status_confirmed": "TD group screened for absence of psychiatric disorder history",
+    "n_controls": "191",
+    "age_mean_sd_controls": "10.4 (1.3)",
+    "age_range_controls": "8-13 years",
+    "gender_distribution_controls": "116 male / 75 female (combined sample TD)",
+    "age_matched": "yes",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "yes",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "no",
+    "dataset_openly_available": "Uses public ABIDE-II GU and KK sites; CPM analysis code (MATLAB, BioImage Suite) is a general public toolbox (www.nitrc.org/projects/bioimagesuite), not a study-specific participant-list/code release",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity",
+    "specific_features": "268x268 Pearson correlation (Fisher z) functional connectivity matrix among Shen 268-node functional atlas ROIs, edges masked for motion/site association before modelling",
+    "feature_extraction_tools": "FSL and AFNI preprocessing (MCFLIRT motion correction, skull-stripping, 6mm FWHM smoothing); Shen 268-node atlas; Connectome Predictive Modelling (CPM, BioImage Suite, MATLAB)",
+    "feature_importance_reported": "yes",
+    "importance_method": "CPM edge selection (positive/negative predictive edge networks)",
+    "top_features_identified": "Inhibition model: somato-motor, visual and cerebellar network edges; Shifting model: frontoparietal and dorsal attention network edges; both involved DMN and temporal-lobe edges",
+    "feature_change_direction": "",
+    "model_category": "Connectome-based predictive model (linear regression on selected FC edges)",
+    "specific_algorithms": "Connectome Predictive Modelling (CPM) with positive/negative edge selection",
+    "validation_methodology": "Leave-one-out cross-validation and split-half cross-validation, with permutation testing (5000 iterations) for significance",
+    "performance_metrics": "Spearman correlation (rs) between predicted and observed scores",
+    "key_performance_results": "Inhibition: rs=.23 (leave-one-out), permutation p=0.037; Shifting: rs=.19 (leave-one-out), permutation p=0.067 (not significant); Emotion control: rs<.05, not significant",
+    "summary_key_findings": "In 276 children (85 ASD, 191 TD) from two ABIDE-II sites, CPM models built on resting-state FC significantly predicted individual differences in inhibition and (at trend level) shifting behavioral-regulation scores via leave-one-out cross-validation, with distinct predictive brain networks for each subdomain, but did not significantly predict emotion control; ASD children scored significantly worse than TD on all three BRIEF subscales.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE-II, two sites (GU n=82, KK n=194 before exclusion); final combined n=276 (85 ASD/191 TD), ages 8-13; excluded for missing behavioral data (n=9), behavioral outliers (>3SD) or inconsistency (>7), and >4mm maximum absolute head-motion displacement (26 participants). | quote: \"Twenty-six participants had excessive head motion on their fMRI scan (>4 mm maximum absolute \n20 \ndisplacement).\"",
+      "RQ2": "FSL/AFNI preprocessing (deobliquing, motion correction via MCFLIRT, skull-stripping, 6mm FWHM smoothing); Shen 268-node functional atlas for connectivity ROIs. | quote: \"A functionally defined atlas, consisting of 268 cortical and subcortical regions-of-interest (‘nodes’)\"",
+      "RQ3": "both — an explicit ASD-vs-TD group-difference test on behavioral-regulation scores, and a predictive (regression) connectome-based model (CPM) of those scores from resting-state FC. | quote: \"Scores for all three subscales of behavioral regulation were significantly higher in \n6 \nchildren with ASD than for TD children in all analyzed samples\"",
+      "RQ4": "CPM edge selection (motion/site-masked), with leave-one-out cross-validation (N-1 per iteration) and split-half cross-validation; significance assessed by permutation testing (5000 shuffles) rather than parametric r-to-p conversion. | quote: \"a leave-one-out cross-validation to evaluate the potential of models to predict  14  an unseen participant’s score\"",
+      "RQ5": "FC-based CPM significantly predicted inhibition (rs=.23, permutation p=0.037) and (at trend level) shifting (rs=.19, p=0.067) but not emotion control; inhibition networks were posterior (somato-motor/visual/cerebellar), shifting networks anterior (frontoparietal/dorsal attention). | quote: \"Significant models were built using negative edges for inhibition (rs=.23, p=0.0001) and shifting \n2 \n(rs=.19, p=0.001), using leave-one-out prediction (N-1 at every iteration).\"",
+      "RQ6": "partly — exact inclusion/exclusion rules and motion threshold are given in detail, but no specific participant ID list or study-specific code repository is provided (CPM toolbox is a general public resource).",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — detailed inclusion/exclusion criteria and N by site and diagnosis given (Table 1). | quote: \"Twenty-six participants had excessive head motion on their fMRI scan (>4 mm maximum absolute \n20 \ndisplacement).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes — explicit quantitative threshold (>4mm maximum absolute displacement). | quote: \"Twenty-six participants had excessive head motion on their fMRI scan (>4 mm maximum absolute \n20 \ndisplacement).\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — FSL and AFNI functions are named and steps detailed, but no single pipeline name/version (e.g. C-PAC/DPARSF) is given. | quote: \"Data preprocessing was done using functions from FSL [54] and AFNI [55]; the specific functions are  17  denoted in brackets.\"",
+      "CL4 Atlas/parcellation reported?": "Yes — Shen 268-node functional atlas. | quote: \"A functionally defined atlas, consisting of 268 cortical and subcortical regions-of-interest (‘nodes’)\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Yes — edges associated with motion or differing between sites were masked out before CPM modelling, and leave-one-out cross-validation rebuilds the model excluding the test participant at every iteration. | quote: \"a leave-one-out cross-validation to evaluate the potential of models to predict  14  an unseen participant’s score, where N-1 participants are used to build the predictive model\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly — edges differing significantly between sites (t-test) were masked out of the FC profile rather than a formal harmonisation (e.g. ComBat) or leave-site-out evaluation.",
+      "CL7 Code and/or participant list available?": "Partly — the general CPM toolbox (BioImage Suite, MATLAB) is publicly available, but no study-specific participant ID list or analysis-code repository is given.",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-092",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "Detailed inclusion/exclusion criteria and N by site/diagnosis."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Yes",
+          "notes": "Quantitative >4mm threshold."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported",
+          "rating": "Partial",
+          "notes": "FSL/AFNI steps listed, no single named pipeline."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "Shen 268-node atlas."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Partial",
+          "notes": "ABIDE-II diagnostic classification used; outcome of interest is behavioral regulation score, not diagnosis, with diagnosis treated as covariate."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "Yes",
+          "notes": "Leave-one-out CV rebuilds model each iteration; motion/site-confounded edges masked."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "Partial",
+          "notes": "Site-differing edges masked, not formal harmonisation or leave-site-out."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "Partial",
+          "notes": "General CPM toolbox public; no study-specific list/code."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-092",
+    "study_design_sample_dataset": "Both (group-difference + predictive/regression); ABIDE-II, GU and KK sites; n=276 (85 ASD / 191 TD), ages 8-13.",
+    "methods": "FSL/AFNI preprocessing; Shen 268-node functional atlas; CPM with motion/site-masked edges; leave-one-out and split-half cross-validation with permutation testing for behavioral-regulation score prediction.",
+    "outcomes": "ASD scored significantly worse than TD on all BRIEF subscales; FC-based CPM significantly predicted inhibition (rs=.23) and, at trend level, shifting (rs=.19), but not emotion control, with distinct predictive network topographies for each subdomain.",
+    "key_limitations": "Shifting model did not survive permutation testing at the conventional threshold; no formal site harmonisation (ComBat) or leave-site-out evaluation; no study-specific code/participant list release beyond the general CPM toolbox.",
+    "relevance_notes": "A rigorous two-site ABIDE-II CPM example combining explicit motion thresholds, a named atlas, and leakage-aware leave-one-out/permutation validation — useful methodological benchmark for the knowledge graph.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1016/j.dcn.2019.100747",
+    "dataset": "ABIDE II",
+    "relation": "uses-data",
+    "cohort_description": "Two ABIDE-II sites (Georgetown University, Kennedy Krieger Institute); children aged 8-13 with BRIEF and resting-state fMRI; excluded for missing behavioral data, behavioral outliers/inconsistency, and >4mm maximum absolute head motion; final n=276 (85 ASD/191 TD).",
+    "n_by_dx": {
+      "ASD": 85,
+      "TD": 191,
+      "total": 276
+    },
+    "sites": "2 (Georgetown University, Kennedy Krieger Institute)",
+    "pipeline": "FSL + AFNI (MCFLIRT motion correction, skull-stripping, 6mm FWHM smoothing)",
+    "atlas": "Shen 268-node functional atlas",
+    "claim_type": "both",
+    "finding": "Leave-one-out CPM significantly predicted inhibition (rs=.23, permutation p=0.037) and, at trend level, shifting (rs=.19, p=0.067) BRIEF behavioral-regulation scores from resting-state FC, with distinct predictive networks (posterior somato-motor/visual/cerebellar for inhibition, anterior frontoparietal/dorsal attention for shifting); emotion control was not predicted; ASD scored significantly worse than TD on all three BRIEF subscales.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "Using data  8  from two sites of the ABIDE II dataset comprising 276 children with and without ASD (8-13 years),  9  we identified functional brain networks whose FC predicted individual differences in two, of three,  10  behavioral regu",
+      "Significant models were built using negative edges for inhibition (rs=.23, p=0.0001) and shifting \n2 \n(rs=.19, p=0.001), using leave-one-out prediction (N-1 at every iteration)."
+    ]
+  }
+}

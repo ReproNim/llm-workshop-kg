@@ -1,0 +1,32 @@
+{
+  "source_id": "S-048",
+  "pmid": "local_ed2212cf",
+  "doi": "10.3389/fnins.2021.674055",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: uses only structural T1-weighted MRI morphological features from ABIDE I, no resting-state functional analysis; additionally the cohort is restricted to typically-developing individuals only (no ASD group, no autism-vs-control analysis, no diagnostic prediction of autism) \u2014 the task is brain-age regression, not an ASD-relevant claim.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2021.674055",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {
+      "ASD": null,
+      "TD": null,
+      "total": null
+    },
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "we selected T = 378 T1-weighted MRI publicly available scans of a cohort of typically-developing individuals from the Autism Brain Imaging Data Exchange (ABIDE I) collected from 17 international sites."
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "source_id": "S-050",
+  "pmid": "local_e42c13c3",
+  "doi": "10.3389/fnins.2020.629630",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: classifies ASD using structural MRI (sMRI)-derived individual morphological covariance brain networks from ABIDE; no resting-state functional connectivity analysis is performed",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2020.629630",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": []
+  }
+}

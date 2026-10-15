@@ -1,0 +1,17 @@
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ilx: <http://uri.interlex.org/>
+PREFIX ncit: <http://ncitt.ncit.nih.gov/>
+SELECT ?g ?ID (SAMPLE(?age) AS ?Age) (SAMPLE(?sex) AS ?Sex) (SAMPLE(?dx) AS ?DX) (SAMPLE(?fiq) AS ?FIQ) WHERE {
+  GRAPH ?g {
+    ?agent ndar:src_subject_id ?ID .
+    OPTIONAL {
+      ?act prov:qualifiedAssociation ?as . ?as prov:agent ?agent . ?ent prov:wasGeneratedBy ?act .
+      OPTIONAL { ?ent ?am ?age . ?am a nidm:PersonalDataElement ; nidm:isAbout ilx:ilx_0100400 }
+      OPTIONAL { ?ent ?sm ?sex . ?sm a nidm:PersonalDataElement ; nidm:isAbout <http://uri.interlex.org/base/ilx_0101292> }
+      OPTIONAL { ?ent ?dm ?dx . ?dm a nidm:PersonalDataElement ; nidm:isAbout ncit:Diagnosis }
+      OPTIONAL { ?ent ?fm ?fiq . ?fm a nidm:PersonalDataElement ; nidm:isAbout <http://uri.interlex.org/base/ilx_0739365> }
+    }
+  }
+} GROUP BY ?g ?ID

@@ -1,0 +1,281 @@
+{
+  "source_id": "S-082",
+  "pmid": "local_a7654842",
+  "doi": "10.3389/fnins.2022.987248",
+  "screening": {
+    "decision": "include",
+    "reason": "Analyses resting-state fMRI from the KKI site of ABIDE II for an ASD-vs-control effective connectivity (group-difference) analysis; meets inclusion 2-3.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The subjects were 42 autistic children and 127 age-matched normal children from the ABIDE II dataset.",
+      "section": "abstract",
+      "claim": "Final analysed cohort was 42 ASD and 127 TC children from ABIDE II.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We used the KKI dataset in this study. The KKI dataset collected from 211 children aged 8 to 13 years, including 56 children with ASD and 155 children in the typical controls (TC) group.",
+      "section": "methods",
+      "claim": "Source was the KKI site of ABIDE II, originally 211 children (56 ASD/155 TC) before exclusions.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "a total of 14 children with ASD and 28 TC children were excluded, and the final sample included 42 children with ASD and 127 TC children.",
+      "section": "methods",
+      "claim": "14 ASD and 28 TC children were excluded (poor normalization, excessive motion, non-convergence of spDCM), leaving 42 ASD/127 TC.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Then 24 ROIs corresponding to 7 brain networks were selected using the AAL standard brain template provided by the Montreal Neurological Institute (MNI).",
+      "section": "methods",
+      "claim": "24 spherical ROIs across 7 networks were defined using the AAL atlas.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Data processing was performed with the GRETNA toolbox (v2.0.0) (Wang et al., 2015) based on SPM12.",
+      "section": "methods",
+      "claim": "Preprocessing pipeline was GRETNA v2.0.0 (based on SPM12).",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Compared with healthy controls, children with ASD showed decreased effective connectivity among some large- scale brain networks. These brain networks included VN, DMN, cerebellum, SMN, and FPN.",
+      "section": "results",
+      "claim": "Main finding: ASD children showed decreased (hypo) effective connectivity involving VN, DMN, cerebellum, SMN and FPN relative to TC.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "we also found signiﬁcant negative correlation\nbetween the strength of the effective connectivity from right angular\ngyrus (ANG_R) of DMN to left precentral gyrus (PreCG_L) of SMN and",
+      "section": "results",
+      "claim": "Effective connectivity from DMN (ANG_R) to SMN (PreCG_L) negatively correlated with a clinical ADOS score.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "ADOS-G or ADOS-2 module 4 stereotyped behaviors and restricted interest\ntotal (ADOS",
+      "section": "results",
+      "claim": "The correlated clinical score was the ADOS stereotyped-behavior/restricted-interest total.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "IQ cutoff (WISC full scale IQ > 80) and medical/neurological exclusion criteria stated for the KKI/ABIDE II site."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Single site (KKI), age range 8-13, N by group before and after exclusion given, demographic Table 1 referenced."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "GRETNA v2.0.0/SPM12 preprocessing steps (slice timing, realignment, normalization, smoothing) explicitly described."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "ADOS scores used for correlation but the diagnostic instrument establishing case status is not explicitly restated in this report beyond citing the ABIDE II KKI dataset."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Unclear",
+        "support": "Groups age-matched and single-site (no cross-site confound), but sex/IQ matching and motion covariate handling in the spDCM/PEB model are not detailed beyond an exclusion threshold for 'excessive' motion that is not quantified."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Unclear",
+        "support": "Children with poor normalization/excessive head motion were excluded, but no explicit FD threshold value is reported."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Effective connectivity estimated with spectral DCM and second-level PEB, an established and described analysis pipeline."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Unclear",
+        "support": "PEB group-level inference and correlation analyses reported, but explicit multiple-comparison correction method for the connectivity/clinical correlations is not detailed in the sections read."
+      }
+    ],
+    "overall": "Unclear",
+    "summary": "Single-site (KKI/ABIDE II) group-difference study with well-described cohort and preprocessing, but motion threshold and multiple-comparison correction for behavioral correlations are not fully quantified."
+  },
+  "charting": {
+    "source_id": "S-082",
+    "title": "Attenuated effective connectivity of large-scale brain networks in children with autism spectrum disorders",
+    "authors": "",
+    "year": "2022",
+    "journal_conference": "Frontiers in Neuroscience",
+    "doi": "10.3389/fnins.2022.987248",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE II)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "Kennedy Krieger Institute (KKI) site",
+    "country_region": "United States",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "42",
+    "age_mean_sd": "",
+    "age_range": "8-13 years",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "Excluded: definite neurological disease, severe chronic illness, severe visual impairment, alcohol/drug dependence; WISC-IV/V full-scale IQ > 80 required",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "127",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "8-13 years",
+    "gender_distribution_controls": "",
+    "age_matched": "yes",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "yes",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "no",
+    "dataset_openly_available": "No new dataset; data availability statement says contributions are in article/supplementary material, inquiries to corresponding authors (no participant list/code link found)",
+    "dataset_available_request": "yes (via corresponding authors, per statement)",
+    "sensitive_data_anonymized": "",
+    "feature_types": "effective connectivity",
+    "specific_features": "Spectral dynamic causal modelling (spDCM) effective connectivity among 24 AAL-template ROIs spanning 7 large-scale networks (VN, DMN, cerebellum, SMN, AN, SN, FPN)",
+    "feature_extraction_tools": "GRETNA v2.0.0 (SPM12) preprocessing; Group ICA of fMRI Toolbox (GIFT) for network identification; AAL atlas for ROI definition",
+    "feature_importance_reported": "",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "Decreased (attenuated) effective connectivity in ASD vs TC among VN, DMN, cerebellum, SMN and FPN; negative correlation between DMN(ANG_R)->SMN(PreCG_L) connectivity and ADOS stereotyped-behavior scores",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "In 42 ASD and 127 TC children from the ABIDE II KKI site, SMN acted as a hub network in both groups; ASD children showed decreased effective connectivity among VN, DMN, cerebellum, SMN and FPN relative to TC, and DMN-to-SMN connectivity correlated negatively with ADOS stereotyped-behavior scores.",
+    "features_associated_disorder": "Attenuated effective connectivity among VN, DMN, cerebellum, SMN and FPN in ASD",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE II, KKI site only: 211 children originally (56 ASD/155 TC, ages 8-13), 14 ASD and 28 TC excluded for poor normalization/excessive motion/spDCM non-convergence, final n=42 ASD/127 TC. | quote: \"a total of 14 children with ASD and 28 TC children were excluded, and the ﬁnal sample included 42 children with ASD and 127 TC children.\"",
+      "RQ2": "GRETNA v2.0.0 (SPM12-based) preprocessing (slice timing, realignment, MNI normalization, 6mm FWHM smoothing); AAL atlas, 24 spherical (6mm radius) ROIs across 7 networks. | quote: \"Data processing was performed with the GRETNA toolbox (v2.0.0) (Wang et al., 2015) based on SPM12.\"",
+      "RQ3": "associational — group-difference analysis of effective connectivity between ASD and TC, plus brain-behavior correlation. | quote: \"Compared with healthy controls, children with ASD showed decreased effective connectivity among some large- scale brain networks.\"",
+      "RQ4": "Spectral dynamic causal modelling (spDCM) per subject, second-level group analysis via Parametric Empirical Bayes (PEB); single site (KKI), no cross-site or leave-site-out evaluation (single site study). | quote: \"Parametric empirical Bayesian (PEB) was used to perform second-level group analysis\"",
+      "RQ5": "ASD children showed decreased effective connectivity among VN, DMN, cerebellum, SMN and FPN vs TC; DMN(ANG_R)-to-SMN(PreCG_L) connectivity correlated negatively with ADOS stereotyped-behavior scores. | quote: \"children with ASD showed decreased effective connectivity among some large- scale brain networks. These brain networks included VN, DMN, cerebellum, SMN, and FPN.\"",
+      "RQ6": "partly — exact exclusion/QC rules given qualitatively (poor normalization, excessive motion, non-convergence) but no quantitative motion threshold or participant ID list is provided. | quote: \"Some children were excluded from analysis after preprocessing due to poor normalization and excessive head motion.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — IQ cutoff, medical exclusion criteria, and N before/after exclusion by group are reported. | quote: \"a total of 14 children with ASD and 28 TC children were excluded, and the ﬁnal sample included 42 children with ASD and 127 TC children.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — motion-based exclusion is mentioned qualitatively (\"excessive head motion\") without a quantitative FD threshold. | quote: \"Some children were excluded from analysis after preprocessing due to poor normalization and excessive head motion.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — GRETNA v2.0.0 (SPM12) with explicit preprocessing steps. | quote: \"Data processing was performed with the GRETNA toolbox (v2.0.0) (Wang et al., 2015) based on SPM12.\"",
+      "CL4 Atlas/parcellation reported?": "Yes — AAL standard brain template used to define 24 ROIs. | quote: \"Then 24 ROIs corresponding to 7 brain networks were selected using the AAL standard brain template provided by the Montreal Neurological Institute (MNI).\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not a predictive/ML study; no train/test or feature-selection leakage issue applies.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — single-site (KKI) study; no multi-site harmonisation or leave-site-out evaluation needed or reported.",
+      "CL7 Code and/or participant list available?": "Partly — data availability statement says data are in the article/supplementary material and further inquiries can be directed to corresponding authors; no explicit code repository or participant ID list link. | quote: \"The original contributions presented in this study are included in the article/supplementary material, further inquiries can be directed to the corresponding authors.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-082",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "N before/after exclusion and inclusion IQ/medical criteria given."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Partial",
+          "notes": "Qualitative motion exclusion only, no quantitative threshold."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported",
+          "rating": "Yes",
+          "notes": "GRETNA v2.0.0/SPM12 detailed."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "AAL atlas, 24 ROIs."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "Relies on ABIDE II/KKI case status; diagnostic instrument not restated explicitly in sections read."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "N/A",
+          "notes": "Not a predictive/ML study."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "N/A",
+          "notes": "Single-site study."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "Partial",
+          "notes": "Data available on request; no explicit repository link."
+        }
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-082",
+    "study_design_sample_dataset": "Group-difference (associational); ABIDE II, KKI site only; n=42 ASD / 127 TC (ages 8-13), after excluding 14 ASD/28 TC.",
+    "methods": "GRETNA v2.0.0 (SPM12) preprocessing; group ICA (GIFT) to identify 7 large-scale networks; 24 AAL-template ROIs; spectral DCM effective connectivity with PEB second-level group analysis.",
+    "outcomes": "ASD children showed decreased effective connectivity among VN, DMN, cerebellum, SMN and FPN vs TC; DMN(ANG_R)-to-SMN(PreCG_L) connectivity negatively correlated with ADOS stereotyped-behavior scores.",
+    "key_limitations": "Single site (KKI); no quantitative motion threshold reported; diagnostic-label source not restated in the analysed sections.",
+    "relevance_notes": "Demonstrates effective-connectivity (spDCM/PEB) analysis of the KKI subset of ABIDE II with AAL-based ROI definition.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2022.987248",
+    "dataset": "ABIDE II",
+    "relation": "uses-data",
+    "cohort_description": "KKI site of ABIDE II; children aged 8-13 with WISC full-scale IQ>80, excluding neurological/chronic illness/substance dependence cases; 211 originally (56 ASD/155 TC), 14 ASD and 28 TC excluded for poor normalization, excessive motion or spDCM non-convergence, final n=42 ASD/127 TC.",
+    "n_by_dx": {
+      "ASD": 42,
+      "TD": 127,
+      "total": 169
+    },
+    "sites": "1 (KKI)",
+    "pipeline": "GRETNA v2.0.0 (SPM12-based)",
+    "atlas": "AAL (24 spherical ROIs across 7 large-scale networks)",
+    "claim_type": "associational",
+    "finding": "ASD children showed decreased (attenuated) effective connectivity among VN, DMN, cerebellum, SMN and FPN relative to TC, with DMN(ANG_R)-to-SMN(PreCG_L) connectivity negatively correlated with ADOS stereotyped-behavior scores.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "The subjects were 42 autistic children and 127 age-matched normal children from the ABIDE II dataset.",
+      "Compared with healthy controls, children with ASD showed decreased effective connectivity among some large- scale brain networks. These brain networks included VN, DMN, cerebellum, SMN, and FPN."
+    ]
+  }
+}

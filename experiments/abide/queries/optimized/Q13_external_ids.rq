@@ -1,0 +1,8 @@
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT ?g ?person WHERE { GRAPH <urn:repronim:abide:graph/core> { <urn:repronim:abide:participant/MaxMun_c_0051332> ndar:src_subject_id ?id } GRAPH ?g { ?person ndar:src_subject_id ?id }
+        FILTER (?g != <urn:repronim:abide:graph/core> && ?g != <urn:repronim:abide:graph/core_v1>) }

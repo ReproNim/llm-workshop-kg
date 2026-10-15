@@ -1,0 +1,32 @@
+{
+  "source_id": "S-085",
+  "pmid": "local_e61bf7a0",
+  "doi": "10.1007/978-3-031-16452-1_66",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3/4: uses only T1-weighted structural MRI from ABIDE as a federated-learning harmonisation benchmark for age prediction; no resting-state fMRI and no autism-vs-control analysis is performed.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1007/978-3-031-16452-1_66",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "",
+    "n_by_dx": {
+      "ASD": null,
+      "TD": null,
+      "total": null
+    },
+    "sites": "4 (Trinity, NYU, UCLA, Yale)",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "",
+    "evidence_quotes": [
+      "For our experiments we use data from the ABIDE dataset5 [4], for the task\nof age prediction, using T1 MR images as X and the ages as the labels y."
+    ]
+  }
+}

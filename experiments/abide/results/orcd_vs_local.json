@@ -1,0 +1,25 @@
+{
+ "status": "not compared: ORCD outputs could not be retrieved",
+ "orcd_job": "Slurm 25939932 (orcd/run_graph.sbatch, STEPS=graph, RDFLIB_TIMEOUT=600)",
+ "remote_dir": "orcd:~/orcd/scratch/repronim-talk/ABIDE_Collaboration_Experiment/",
+ "fetch_attempts": [
+  {
+   "when": "2026-10-15T18:41Z",
+   "command": "scp -r orcd:.../{ORCD_DONE.json,abide-kg-graph-25939932.out,abide-kg-graph-25939932.err,rebuild_time.txt,results}",
+   "result": "Permission denied (keyboard-interactive); no live SSH ControlMaster (socket absent)"
+  },
+  {
+   "when": "2026-10-15T18:42Z",
+   "command": "same",
+   "result": "Permission denied (keyboard-interactive)"
+  }
+ ],
+ "policy": "stopped after two failed logins (each failure can count toward the Duo lockout); no further ssh attempted",
+ "matched": [],
+ "differed": {},
+ "missing_on_orcd": [],
+ "missing_locally": [],
+ "local_key_numbers": "results/key_numbers.json",
+ "n_local_key_numbers": 218,
+ "how_to_complete": "after re-authenticating (OnDemand key / Duo), fetch the files above into a directory D and run: uv run python code/key_numbers.py --compare D/results/key_numbers.json --rtol 0.01"
+}

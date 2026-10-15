@@ -1,0 +1,85 @@
+{
+ "store": "data/derived/oxigraph_store",
+ "view_sha256": "df8aa9916a089acefd12dc990696e2327d94e4429dc64a7f6d4539665a5616a3",
+ "load_seconds": {
+  "urn:repronim:abide:graph/core": 1.07,
+  "urn:repronim:abide:graph/core_v1": 1.02,
+  "urn:repronim:abide:graph/extension": 0.01,
+  "urn:repronim:abide:graph/embedding": 0.0,
+  "urn:repronim:abide:graph/link": 0.03,
+  "urn:repronim:abide:graph/resources": 0.01,
+  "urn:repronim:abide:graph/resource_activity": 0.01,
+  "urn:repronim:abide:graph/scope": 0.01,
+  "urn:repronim:abide:graph/publications": 0.02,
+  "urn:repronim:abide:graph/publication_links_activity": 0.01,
+  "urn:repronim:abide:graph/pynidm_phenotype": 0.34,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/CMU_a/nidm.ttl": 0.03,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/CMU_b/nidm.ttl": 0.03,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Caltech/nidm.ttl": 0.08,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/KKI/nidm.ttl": 0.1,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Leuven_1/nidm.ttl": 0.06,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Leuven_2/nidm.ttl": 0.07,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_a/nidm.ttl": 0.04,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_b/nidm.ttl": 0.01,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl": 0.03,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_d/nidm.ttl": 0.03,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/NYU/nidm.ttl": 0.43,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/OHSU/nidm.ttl": 0.07,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Olin/nidm.ttl": 0.08,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Pitt/nidm.ttl": 0.13,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/SBL/nidm.ttl": 0.07,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/SDSU/nidm.ttl": 0.11,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Stanford/nidm.ttl": 0.08,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Trinity/nidm.ttl": 0.11,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/UCLA_1/nidm.ttl": 0.16,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/UCLA_2/nidm.ttl": 0.06,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/UM_1/nidm.ttl": 0.25,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/UM_2/nidm.ttl": 0.08,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/USM/nidm.ttl": 0.06,
+  "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Yale/nidm.ttl": 0.12,
+  "urn:repronim:simple2:cde_tools/ants_cde.ttl": 0.01,
+  "urn:repronim:simple2:cde_tools/fs_cde.ttl": 0.13,
+  "urn:repronim:simple2:cde_tools/fsl_cde.ttl": 0.01
+ },
+ "views": {
+  "type_closure": {
+   "quads": 5792,
+   "seconds": 0.57,
+   "inputs": [
+    "simple2:*"
+   ],
+   "update": "queries/views/type_closure.ru"
+  },
+  "volume_measures": {
+   "quads": 2475,
+   "seconds": 0.04,
+   "inputs": [
+    "simple2:*",
+    "view/type_closure"
+   ],
+   "update": "queries/views/volume_measures.ru"
+  },
+  "volumes": {
+   "quads": 1413702,
+   "seconds": 27.73,
+   "inputs": [
+    "simple2:*",
+    "core",
+    "view/volume_measures"
+   ],
+   "update": "queries/views/volumes.ru"
+  },
+  "phenotype_matrix": {
+   "quads": 8800,
+   "seconds": 0.26,
+   "inputs": [
+    "core"
+   ],
+   "update": "queries/views/phenotype_matrix.ru"
+  }
+ },
+ "quads": 2879187,
+ "build_seconds": 50.8,
+ "pyoxigraph": "0.5.11",
+ "n_named_graphs": 43
+}

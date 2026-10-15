@@ -1,0 +1,213 @@
+{
+  "source_id": "S-034",
+  "pmid": "local_e610c0fe",
+  "doi": "10.1109/icassp.2019.8683547",
+  "screening": {
+    "decision": "include",
+    "reason": "Analyses ABIDE resting-state fMRI connectivity to classify ASD vs typical control subjects (Inclusion 2, 3)",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The ABIDE dataset: We present our results on the Autism\nBrain Imaging Data Exchange (ABIDE) dataset [4] that con-\ntains resting state fMRI data (rs-fMRI) for 1112 patients, as\npart of the preprocessed connectomes project",
+      "section": "methods",
+      "claim": "Study uses the ABIDE preprocessed-connectomes-project resting-state fMRI release of 1112 subjects.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We follow the same preprocessing pipeline (C-PAC)\nand atlases (Harvard-Oxford) as described in [16], in order\nto facilitate easy comparison – this resulted in a dataset with\n872 of the initial 1112 patients available, from 20 different\nsites.",
+      "section": "methods",
+      "claim": "Analysed cohort was 872 of 1112 ABIDE I subjects from 20 sites, preprocessed with C-PAC and parcellated with the Harvard-Oxford atlas.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "The task is to diagnose a patient as being of two classes\n– Autism Spectrum Disorder (ASD) or Typical Control (TC).",
+      "section": "methods",
+      "claim": "Main claim is diagnostic classification of ASD vs typical control.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "We use the same 10-fold cross validation as in\n[7] of the ABIDE dataset, using their publicly released code",
+      "section": "methods",
+      "claim": "Evaluation used 10-fold cross-validation, following a prior published split/code.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "We\nout perform recent state of the art method [7] for ASD classiﬁ-\ncation by nearly 1.5 percentage points, without any additional\ninformation, and using the exact same training protocol",
+      "section": "results",
+      "claim": "Proposed bootstrapped G-CNN outperformed the prior state-of-the-art G-CNN method by about 1.5 percentage points in accuracy.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Population Graph\nPredictive Model\nAccuracy\n-\nLinear SVM[16]\n66.8\nG\nG-CNN [7]\n69.50\nProposed\n70.86\nNaïve Graph\nG-CNN [7]\n66.93\nProposed\n67.85\nNoisy G\nG-CNN [7]\n66.35\nProposed\n67.39",
+      "section": "table",
+      "claim": "Classification accuracy on ABIDE: Linear SVM 66.8%, baseline G-CNN 69.50-66.93-66.35% across graph conditions, proposed bootstrapped approach 70.86-67.85-67.39%.",
+      "relevance_score": 1.0
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Unclear",
+        "support": "Cohort size and sites reported (\"872 of the initial 1112 patients available, from 20 different sites\") but no inclusion/exclusion or QC rule stated for which 872 were retained."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "Pipeline (C-PAC) and atlas (Harvard-Oxford) are named and matched to a prior paper for comparability."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD vs TC label used without stating the diagnostic instrument/source for the label."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "10-fold cross-validation reported with a single accuracy per condition and no uncertainty interval; no leakage-control or site-handling statement; site is not a covariate and CV is pooled across the 20 sites."
+      }
+    ],
+    "overall": "High",
+    "summary": "Pipeline and atlas are reported and the 872/1112 analysed subset and site count are stated, but the QC rule for the subset, the diagnostic label source, and leakage/site-handling in the 10-fold CV are not reported, and only single-split accuracies without uncertainty are given."
+  },
+  "charting": {
+    "source_id": "S-034",
+    "title": "Bootstrapping Graph Convolutional Neural Networks for Autism Spectrum Disorder Classification",
+    "authors": "",
+    "year": "2019",
+    "journal_conference": "ICASSP 2019",
+    "doi": "10.1109/icassp.2019.8683547",
+    "database_retrieved": "",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder (ASD) vs Typical Control (TC)",
+    "diagnosis_assessment": "",
+    "n_disordered": "",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity",
+    "specific_features": "ROI mean time series, Harvard-Oxford atlas (111 ROIs)",
+    "feature_extraction_tools": "C-PAC (Configurable Pipeline for the Analysis of Connectomes)",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Graph convolutional neural network (ensemble/bootstrapped population graph)",
+    "specific_algorithms": "Bootstrapped ensemble of graph convolutional neural networks (G-CNN), compared to linear SVM and single G-CNN",
+    "validation_methodology": "10-fold cross-validation (same folds/code as prior published study)",
+    "performance_metrics": "Classification accuracy",
+    "key_performance_results": "Proposed bootstrapped G-CNN accuracy 70.86% (graph G), 67.85% (naive graph), 67.39% (noisy graph), versus baseline G-CNN 69.50%/66.93%/66.35% and linear SVM 66.8%",
+    "summary_key_findings": "A bootstrapped ensemble of graph convolutional networks improves ABIDE ASD-vs-TC classification accuracy by about 1.5 percentage points over a prior G-CNN method and is more robust to noisy or naive population graphs.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "predictive | ABIDE I preprocessed-connectomes-project release, 872 of 1112 subjects analysed, 20 sites; no explicit QC/exclusion rule stated for the subset. | quote: \"this resulted in a dataset with\n872 of the initial 1112 patients available, from 20 different\nsites.\"",
+      "RQ2": "C-PAC pipeline, Harvard-Oxford atlas (111 ROIs) | quote: \"We follow the same preprocessing pipeline (C-PAC)\nand atlases (Harvard-Oxford) as described in [16]\"",
+      "RQ3": "predictive — ASD vs typical control classification using graph convolutional networks | quote: \"The task is to diagnose a patient as being of two classes\n– Autism Spectrum Disorder (ASD) or Typical Control (TC).\"",
+      "RQ4": "10-fold cross-validation matching a prior published split; no leave-site-out or site covariate reported | quote: \"We use the same 10-fold cross validation as in\n[7] of the ABIDE dataset, using their publicly released code\"",
+      "RQ5": "Classification accuracy up to 70.86% with the proposed bootstrapped G-CNN versus 69.50% for the prior G-CNN baseline and 66.8% for linear SVM | quote: \"Proposed\n70.86\"",
+      "RQ6": "no | quote: \"this resulted in a dataset with\n872 of the initial 1112 patients available, from 20 different\nsites.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — resulting N (872 of 1112) and site count given, but no inclusion/exclusion rule or N by diagnosis stated | quote: \"this resulted in a dataset with\n872 of the initial 1112 patients available, from 20 different\nsites.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No | quote: \"The pre-\nprocessing includes slice-timing correction, motion correc-\ntion, and intensity normalization, depending on the pipeline\nused.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — pipeline named, no version | quote: \"We follow the same preprocessing pipeline (C-PAC)\nand atlases (Harvard-Oxford) as described in [16]\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"and atlases (Harvard-Oxford) as described in [16]\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No | quote: \"We use the same 10-fold cross validation as in\n[7] of the ABIDE dataset, using their publicly released code\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No | quote: \"from 20 different\nsites.\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"3https://github.com/parisots/population-gcn\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"We present our results on the Autism\nBrain Imaging Data Exchange (ABIDE) dataset [4]\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-034",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {"item_text": "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?", "rating": "Partial", "notes": "N (872/1112) and 20 sites reported; no exclusion rule or N by diagnosis."},
+        {"item_text": "CL2 Motion/QC rule reported (metric and threshold)?", "rating": "No", "notes": "Only generic mention of motion correction as part of preprocessing, no QC metric/threshold."}
+      ],
+      "overall_concern": "High"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {"item_text": "CL3 Preprocessing pipeline and version reported?", "rating": "Partial", "notes": "C-PAC named, no version."},
+        {"item_text": "CL4 Atlas/parcellation reported?", "rating": "Yes", "notes": "Harvard-Oxford atlas, 111 ROIs."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {"item_text": "Diagnosis source and label definition reported?", "rating": "No", "notes": "ASD vs TC label used without stating diagnostic instrument/source."}
+      ],
+      "overall_concern": "High"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {"item_text": "CL5 Leakage control reported?", "rating": "No", "notes": "Not described."},
+        {"item_text": "CL6 Site handling reported?", "rating": "No", "notes": "Pooled 10-fold CV across 20 sites with no site covariate or leave-site-out."},
+        {"item_text": "CL7 Code and/or participant list available?", "rating": "No", "notes": "Only a prior paper's code (baseline G-CNN) is linked, not this paper's own artifacts."}
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-034",
+    "study_design_sample_dataset": "Diagnostic prediction (ASD vs TC); ABIDE I preprocessed-connectomes-project release; 872 of 1112 subjects, 20 sites",
+    "methods": "C-PAC-preprocessed rs-fMRI parcellated with Harvard-Oxford atlas (111 ROIs); population-graph convolutional neural network ensemble (bootstrapped G-CNN) trained with edge dropout and compared against a single G-CNN and linear SVM baseline; 10-fold cross-validation matching a prior study's splits and code.",
+    "outcomes": "Bootstrapped G-CNN reached 70.86% accuracy (graph condition), outperforming the baseline G-CNN (69.50%) and linear SVM (66.8%), with improved robustness (67.85%/67.39%) under naive or noisy population graphs versus baseline (66.93%/66.35%).",
+    "key_limitations": "No stated motion/QC threshold, no diagnosis-source statement, no leakage or site-handling description, single-split accuracy without confidence intervals.",
+    "relevance_notes": "Demonstrates a predictive, ABIDE-I-only, CPAC/Harvard-Oxford population-graph classification approach; cohort subset is a fixed N (872/1112) without a published selection rule.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1109/icassp.2019.8683547",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "872 of 1112 ABIDE preprocessed-connectomes-project subjects, 20 sites; selection rule not stated",
+    "n_by_dx": {"ASD": null, "TD": null, "total": 872},
+    "sites": "20",
+    "pipeline": "C-PAC",
+    "atlas": "Harvard-Oxford",
+    "claim_type": "predictive",
+    "finding": "Bootstrapped ensemble G-CNN achieved 70.86% accuracy classifying ASD vs TC, exceeding a prior G-CNN baseline (69.50%) and linear SVM (66.8%) under 10-fold cross-validation.",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "this resulted in a dataset with\n872 of the initial 1112 patients available, from 20 different\nsites.",
+      "Proposed\n70.86"
+    ]
+  }
+}

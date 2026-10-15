@@ -1,0 +1,502 @@
+{
+ "id": "Q5",
+ "question": "After Analyst A's QC revision, which of Analyst B's results must be reassessed, and which actually changed after recomputation?",
+ "date": "2026-10-15",
+ "client": "Claude Code 2.1.282 subagent (model sonnet)",
+ "tool_calls": [
+  {
+   "seq": 1,
+   "tool": "kg_search_datasets",
+   "arguments": {
+    "text": "ABIDE",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"dataset_id\":\"ds:manual:abide\",\"title\":\"ABIDE (I & II)\",\"tasks\":[\"resting state\",\"reading span task\"],\"modalities\":[\"MRI\"],\"n_subjects\":2226,\"species\":[\"human\"],\"kg_id\":\"4:61f2a6e6-9289-4db3-a996-562b57f61fe1:489281\"},{\"dataset_id\":\"4:61f2a6e6-9289-4db3-a996-562b57f61fe1:497343\",\"title\":\"abide1: CMU_b\",...",
+   "response_chars": 1700,
+   "ok": true,
+   "note": "Located the single ABIDE dataset node (ds:manual:abide, n=2226) plus per-site sub-entries; no per-paper or per-QC-threshold entries."
+  },
+  {
+   "seq": 2,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Abraham 2017 leave-site-out cross-validation ABIDE classification",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"ds:manual:abide\",...},{\"kg_id\":\"neurostore_task:9v27HG2q3b9a:fmri:1\",\"label\":\"Cross Out\",\"node_type\":\"Task\",...},{\"kg_id\":\"neurostore_task:cz6dejs6d4N4:fmri:0\",\"label\":\"Multi-site fMRI classification\",\"node_type\":\"Task\",...},{\"kg_id\":\"pmid:22245259\",\"label\":\"Using multivariate linear SVM analysis and leave-one-out cross-validation...MS patients.\",\"node_type\":\"Publication\",...",
+   "response_chars": 1550,
+   "ok": true,
+   "note": "No hit for the Abraham et al. 2017 NeuroImage paper itself; closest matches are an unrelated MS-classification publication and a generic 'Multi-site fMRI classification' Task node."
+  },
+  {
+   "seq": 3,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "motion quality control framewise displacement ABIDE threshold",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"concept:framewise_displacement\",\"label\":\"Framewise Displacement\",\"node_type\":\"Concept\",\"score\":32.9},{\"kg_id\":\"ds:manual:abide\",...},{\"kg_id\":\"method_motion_confounds\",\"label\":\"Head motion can bias fMRI connectivity and activation results\",\"node_type\":\"Concept\",...}...",
+   "response_chars": 1350,
+   "ok": true,
+   "note": "A generic 'Framewise Displacement' concept and a 'Head motion can bias fMRI connectivity' concept exist, but neither is linked to any ABIDE-specific QC-threshold value or to a classification-result node."
+  },
+  {
+   "seq": 4,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "10.1016/j.neuroimage.2016.10.045 Abraham Machine learning capability pipeline ABIDE",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"region:visual_sensory_network\",...},{\"kg_id\":\"atlas:msdl:13\",\"label\":\"Basal\",\"node_type\":\"BrainRegion\",...}, ... (all MSDL atlas region nodes, unrelated)",
+   "response_chars": 900,
+   "ok": true,
+   "note": "DOI-text search returned only MSDL atlas region names (spurious term overlap), confirming the Abraham et al. 2017 paper is not present as a node by DOI or title."
+  },
+  {
+   "seq": 5,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "10.1038/mp.2013.78 Di Martino autism brain imaging data exchange intrinsic functional",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"ds:manual:prime_de\",\"label\":\"PRIME-DE (PRIMate Data Exchange)\",...},{\"kg_id\":\"neurostore_task:XC2yE7QVPwso:fmri:0\",\"label\":\"Intrinsic Functional Connectivity\",\"node_type\":\"Task\",...},{\"kg_id\":\"trm_51d6fe3f3942f\",\"label\":\"autism spectrum quotient\",...",
+   "response_chars": 1300,
+   "ok": true,
+   "note": "DOI-text search for Di Martino et al. 2014 Mol Psychiatry (the original ABIDE paper) returned no matching Publication node either -- only loosely related ASD/intrinsic-connectivity concepts."
+  },
+  {
+   "seq": 6,
+   "tool": "kg_multihop_qa",
+   "arguments": {
+    "question": "If motion QC threshold in ABIDE is tightened from mean FD < 0.2mm to a stricter threshold, which classification/prediction results (e.g. leave-site-out cross-validation diagnosis prediction accuracy) must be reassessed because of changed sample/subject exclusion?",
+    "max_hops": 3
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"kg_query_timeout\",\"message\":\"kg_multihop_qa produced a degraded result (mcp_timeout) but degraded responses are disabled by default. Re-run with allow_degraded=True.\",\"degraded_reason\":\"mcp_timeout\",\"query_time_s\":45,\"execution_trace\":[\"kg_query_started\",\"kg_timeout\",\"kg_degraded_blocked\"]}",
+   "response_chars": 320,
+   "ok": false,
+   "note": "Full 3-hop, detailed question timed out at 45s and was blocked (degraded result withheld by default)."
+  },
+  {
+   "seq": 7,
+   "tool": "kg_neighbors",
+   "arguments": {
+    "kg_id": "ds:manual:abide",
+    "direction": "both",
+    "limit": 25
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"consortium:abide\",\"label\":\"ABIDE\",\"node_type\":\"Consortium\",\"relation\":\"PART_OF\"...},{\"kg_id\":\"ONVOC_0000184\",\"label\":\"Down Syndrome\",\"node_type\":\"Concept\",\"relation\":\"ABOUT\"...},{\"kg_id\":\"modality:mri\",\"label\":\"MRI\",\"node_type\":\"Modality\",\"relation\":\"HAS_MODALITY\"...},{\"kg_id\":\"repo:nitrc_/_indi\",\"label\":\"NITRC / INDI\",\"node_type\":\"Repository\",\"relation\":\"HOSTED_AT\"...},{\"kg_id\":\"species:human\",...},{\"kg_id\":\"trm_4c40d168898db\",\"label\":\"reading span task\",...},{\"kg_id\":\"task__resting_state\",\"label\":\"resting state\",...",
+   "response_chars": 5200,
+   "ok": true,
+   "note": "Direct neighbors of the ABIDE dataset node are only metadata (consortium, modality, repository, species, task labels) -- no edges to any Publication, CV-result, QC-threshold, or Analyst-B-style finding node."
+  },
+  {
+   "seq": 8,
+   "tool": "kg_verify_hypothesis",
+   "arguments": {
+    "hypothesis": "Tightening the mean framewise displacement (FD) motion QC threshold in ABIDE I (e.g., from <0.2mm to a stricter cutoff) changes the subject sample and therefore requires reassessment of leave-site-out cross-validated diagnosis classification accuracy, and the site-stratified CV estimate changes after recomputation on the stricter-QC sample.",
+    "entity_hints": [
+     "ABIDE",
+     "leave-site-out cross-validation",
+     "framewise displacement",
+     "motion QC",
+     "diagnosis classification"
+    ],
+    "hypothesis_budget_seconds": 60,
+    "max_evidence": 30
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"{neo4j_code: Neo.ClientError.Procedure.ProcedureCallFailed} ... org.apache.lucene.search.IndexSearcher$TooManyNestedClauses: Query contains too many nested clauses; maxClauseCount is set to 1024 ...\"}",
+   "response_chars": 420,
+   "ok": false,
+   "note": "Long, detailed hypothesis text overflowed the full-text search index (too many clauses) and failed server-side."
+  },
+  {
+   "seq": 9,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Abraham multisite classification pipeline standardized data-sharing in machine learning for psychiatry",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"trm_4a3fd79d0af5a\",\"label\":\"resource sharing\",...},{\"kg_id\":\"neurostore_task:5ruepv4WPDn4:fmri:0\",\"label\":\"Predictive Modeling in Psychiatry\",\"node_type\":\"Task\",...},{\"kg_id\":\"ds:manual:nspn\",\"label\":\"NSPN (NeuroScience in Psychiatry Network)\",...",
+   "response_chars": 1200,
+   "ok": true,
+   "note": "Still no match to the Abraham et al. 2017 paper; nearest hits are a generic 'Predictive Modeling in Psychiatry' task and unrelated datasets."
+  },
+  {
+   "seq": 10,
+   "tool": "kg_verify_hypothesis",
+   "arguments": {
+    "hypothesis": "Stricter motion QC changes leave-site-out CV diagnosis accuracy in ABIDE",
+    "entity_hints": [
+     "ABIDE",
+     "motion QC",
+     "leave-site-out"
+    ],
+    "max_evidence": 15,
+    "max_paths": 15
+   },
+   "response_truncated": "{\"ok\":true,\"result\":{\"hypothesis\":\"Stricter motion QC changes leave-site-out CV diagnosis accuracy in ABIDE\",\"status\":\"ok\",\"verdict\":\"insufficient_evidence\",\"confidence\":0,...,\"summary\":{\"n_seed_entities\":20,\"n_candidate_publications\":0,\"n_supporting\":0,\"n_conflicting\":0,\"n_uncertain\":0,\"n_neutral\":0,...},\"entity_expansions\":[{\"entity\":{\"kg_id\":\"ds:manual:abide\",...},\"direct_publication_count\":0,...},{\"entity\":{\"kg_id\":\"trm_557b48aeb7d58\",\"label\":\"motion detection\"...},\"direct_publication_count\":0,...}]}}",
+   "response_chars": 7800,
+   "ok": true,
+   "note": "Shorter hypothesis ran successfully. Verdict='insufficient_evidence', confidence=0: ABIDE dataset node has direct_publication_count=0 in the KG, and the closest resolvable 'motion' entity was the irrelevant Cognitive-Atlas concept 'motion detection' (visual-motion perception, not head-motion QC). Zero supporting/conflicting/uncertain evidence of any kind."
+  },
+  {
+   "seq": 11,
+   "tool": "kg_multihop_qa",
+   "arguments": {
+    "question": "What ABIDE connectivity classification results depend on motion QC / mean FD exclusion threshold?",
+    "max_hops": 2,
+    "allow_degraded": true
+   },
+   "response_truncated": "{\"ok\":true,\"result\":{\"summary\":{...,\"n_paths\":50,...},\"answer\":\"Found 50 path(s) within 2 hops around ABIDE (I & II), semantic classification task, motion detection; shortest path length is 1. Example path: ABIDE (I & II) -> Down Syndrome.\",\"top_paths\":[{...,\"start_node_id\":\"ds:manual:abide\",\"end_node_id\":\"ONVOC_0000184\"(Down Syndrome)},{...,\"end_node_id\":\"repo:nitrc_/_indi\"},{...,\"end_node_id\":\"species:human\"}],...}}",
+   "response_chars": 6400,
+   "ok": true,
+   "note": "All 50 returned paths from ABIDE within 2 hops are generic dataset metadata (Down Syndrome ontology tag, hosting repository, species=human) -- none touch motion QC, FD thresholds, classification accuracy, or CV results. Confirms the KG has no modeled link between QC decisions and downstream ML-result nodes for ABIDE."
+  },
+  {
+   "seq": 12,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Di Martino",
+    "node_types": [
+     "Publication"
+    ],
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"10.1093/scan/nsr051\",\"label\":\"The balance between feeling and knowing...\",...},{\"kg_id\":\"10.1016/j.biopsych.2011.08.013\",\"label\":\"Dimensional brain-behavior relationships in children with attention-deficit/hyperactivity disorder.\",...},{\"kg_id\":\"10.1016/j.biopsych.2010.10.029\",\"label\":\"Aberrant striatal functional connectivity in children with autism.\",...}",
+   "response_chars": 1900,
+   "ok": true,
+   "note": "Restricting to Publication nodes and searching 'Di Martino' surfaces several plausible Di-Martino-authored papers (INDI/intrinsic-connectivity line of work) but NOT the target Di Martino et al. 2014 Mol Psychiatry ABIDE paper (doi:10.1038/mp.2013.78) itself -- that DOI is absent from the KG."
+  },
+  {
+   "seq": 13,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Abraham",
+    "node_types": [
+     "Publication"
+    ],
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"10.1016/j.brainres.2008.07.084\",\"label\":\"Thinking about the future versus the past in personal and non-personal contexts.\",\"score\":4.07},{\"kg_id\":\"10.1016/j.neuropsychologia.2018.05.004\",\"label\":\"Creative conceptual expansion...\",\"score\":3.9},...",
+   "response_chars": 1400,
+   "ok": true,
+   "note": "Low relevance scores (<5) and unrelated topics (creativity, BPD, future-thinking) confirm the Abraham et al. 2017 NeuroImage ABIDE/leave-site-out paper (doi:10.1016/j.neuroimage.2016.10.045) is not a node in the KG at all."
+  }
+ ],
+ "final_answer": "BR could not answer this question from its own knowledge graph. BR holds a single ABIDE dataset node (ds:manual:abide, n=2226, CPAC/MRI, ASD vs control) whose only edges are generic metadata (consortium, modality=MRI, species=human, hosting repository, task labels) -- direct_publication_count=0 for that node, and neither the Di Martino et al. 2014 (doi:10.1038/mp.2013.78) nor the Abraham et al. 2017 (doi:10.1016/j.neuroimage.2016.10.045) paper exists as a node by DOI, title, or author search. Consequently BR has no representation of 'Analyst A', 'Analyst B', a leave-site-out CV diagnosis-classification result, a mean-FD motion-QC threshold, or any dependency edge between a QC choice and a downstream ML result for ABIDE. kg_verify_hypothesis on the QC->CV-result claim returned verdict='insufficient_evidence', confidence=0, with 0 supporting/conflicting/neutral evidence items. kg_multihop_qa over the ABIDE node (2 hops, 50 paths) surfaced only irrelevant metadata paths (e.g. ABIDE -> 'Down Syndrome' ontology tag, ABIDE -> hosting repository). BR therefore cannot say which of Analyst B's specific results (e.g., overall diagnosis accuracy, per-site accuracy, feature-importance maps) must be reassessed after Analyst A's QC revision, nor which actually changed after recomputation -- it has no record of this scenario, these analysts, or these specific published results at all.",
+ "evidence": [
+  {
+   "claim": "ABIDE dataset node exists with n=2226 subjects, MRI, ASD vs control, but zero linked publications",
+   "source": "kg_search_datasets / kg_neighbors on ds:manual:abide"
+  },
+  {
+   "claim": "Hypothesis that stricter motion QC changes leave-site-out CV diagnosis accuracy in ABIDE is unsupported by any KG evidence (verdict=insufficient_evidence, confidence=0, 0 publications)",
+   "source": "kg_verify_hypothesis run on 'Stricter motion QC changes leave-site-out CV diagnosis accuracy in ABIDE'"
+  },
+  {
+   "claim": "No path within 2 hops of the ABIDE node touches motion QC, FD thresholds, or classification-accuracy results",
+   "source": "kg_multihop_qa 'What ABIDE connectivity classification results depend on motion QC / mean FD exclusion threshold?'"
+  },
+  {
+   "claim": "Di Martino et al. 2014 (doi:10.1038/mp.2013.78) and Abraham et al. 2017 (doi:10.1016/j.neuroimage.2016.10.045) are absent from the KG as Publication nodes",
+   "source": "kg_search_nodes queries by DOI text and by author name, restricted to node_types=['Publication']"
+  }
+ ],
+ "br_limitations": "BR-KG has no node for either source paper (Di Martino 2014 or Abraham 2017), no participant-level or analyst-level data (no 'Analyst A'/'Analyst B' concept, no phenotype rows, no per-subject mean-FD values), no modeled dependency between a QC threshold change and any downstream classification/CV result, and no record of a recomputation or before/after comparison for this scenario. A long/specific kg_verify_hypothesis query also failed outright (Lucene 'too many nested clauses' error) and a long kg_multihop_qa question timed out (degraded result withheld), showing operational fragility on detailed natural-language questions in addition to the coverage gap. In short: BR could not provide any of what Q5 actually asks for.",
+ "confidence": "high",
+ "computation_phase": {
+  "source": "NOT BR output. Computation run by the operating agent on ORCD (MIT Engaging, partition pi_satra). BR returned only the NITRC landing page; the fcp-indi S3 paths are the operator's prior knowledge.",
+  "scripts": "jobs/ (abide_compute.py, abide_compute.sbatch)",
+  "jobs": {
+   "25932392": "FAILED (NaN correlations from constant ROIs)",
+   "25932776": "COMPLETED 1m57s, but connectivity used only 49/200 CC200 ROIs (ROIs constant in any subject were dropped) -> results_49roi_superseded_job25932776.json",
+   "25933294": "TIMEOUT at 2h (200-ROI rerun with constant-ROI subjects excluded); no output",
+   "rerun": "staged (6h, 8 CPU, folds parallel) but NOT submitted: ORCD login refused (Duo session expired), stopped after 2 failed logins per rule"
+  },
+  "data": {
+   "phenotype": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Phenotypic_V1_0b_preprocessed1.csv",
+   "roi_template": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/rois_cc200/{fid}_rois_cc200.1D"
+  },
+  "answer": "Every per-site LOSO result and the aggregate must be reassessed: tightened QC removes test participants from all 20 sites and training participants from every fold. PRELIMINARY (49-ROI) recomputation: all 20 site accuracies changed; CMU fold disappears (all 11 test participants excluded); mean site accuracy 0.635 -> 0.655, pooled 0.629 -> 0.638.",
+  "valid": "PRELIMINARY: 49/200 ROIs; 200-ROI rerun pending",
+  "detail": {
+   "sites_with_test_participants_excluded": [
+    "CALTECH",
+    "CMU",
+    "KKI",
+    "LEUVEN_1",
+    "LEUVEN_2",
+    "MAX_MUN",
+    "NYU",
+    "OHSU",
+    "OLIN",
+    "PITT",
+    "SBL",
+    "SDSU",
+    "STANFORD",
+    "TRINITY",
+    "UCLA_1",
+    "UCLA_2",
+    "UM_1",
+    "UM_2",
+    "USM",
+    "YALE"
+   ],
+   "note": "every fold's training set loses excluded participants, so every per-site result and the aggregate are in scope for reassessment",
+   "sites_whose_accuracy_changed": {
+    "CALTECH": {
+     "before": 0.6667,
+     "after": 0.5
+    },
+    "CMU": {
+     "before": 0.7273,
+     "after": null
+    },
+    "KKI": {
+     "before": 0.6364,
+     "after": 0.6111
+    },
+    "LEUVEN_1": {
+     "before": 0.5,
+     "after": 0.5217
+    },
+    "LEUVEN_2": {
+     "before": 0.6786,
+     "after": 0.65
+    },
+    "MAX_MUN": {
+     "before": 0.587,
+     "after": 0.5172
+    },
+    "NYU": {
+     "before": 0.6221,
+     "after": 0.6301
+    },
+    "OHSU": {
+     "before": 0.56,
+     "after": 0.6667
+    },
+    "OLIN": {
+     "before": 0.6429,
+     "after": 0.7778
+    },
+    "PITT": {
+     "before": 0.58,
+     "after": 0.5882
+    },
+    "SBL": {
+     "before": 0.6154,
+     "after": 1.0
+    },
+    "SDSU": {
+     "before": 0.7037,
+     "after": 0.7619
+    },
+    "STANFORD": {
+     "before": 0.48,
+     "after": 0.5714
+    },
+    "TRINITY": {
+     "before": 0.6136,
+     "after": 0.7273
+    },
+    "UCLA_1": {
+     "before": 0.6562,
+     "after": 0.6591
+    },
+    "UCLA_2": {
+     "before": 0.7143,
+     "after": 0.5
+    },
+    "UM_1": {
+     "before": 0.5581,
+     "after": 0.5574
+    },
+    "UM_2": {
+     "before": 0.7647,
+     "after": 0.8929
+    },
+    "USM": {
+     "before": 0.7313,
+     "after": 0.6176
+    },
+    "YALE": {
+     "before": 0.6585,
+     "after": 0.6923
+    }
+   },
+   "aggregate_before_after": [
+    0.6348,
+    0.6549
+   ]
+  },
+  "B_original": {
+   "per_site": {
+    "CALTECH": {
+     "n_test": 15,
+     "accuracy": 0.6667
+    },
+    "CMU": {
+     "n_test": 11,
+     "accuracy": 0.7273
+    },
+    "KKI": {
+     "n_test": 33,
+     "accuracy": 0.6364
+    },
+    "LEUVEN_1": {
+     "n_test": 28,
+     "accuracy": 0.5
+    },
+    "LEUVEN_2": {
+     "n_test": 28,
+     "accuracy": 0.6786
+    },
+    "MAX_MUN": {
+     "n_test": 46,
+     "accuracy": 0.587
+    },
+    "NYU": {
+     "n_test": 172,
+     "accuracy": 0.6221
+    },
+    "OHSU": {
+     "n_test": 25,
+     "accuracy": 0.56
+    },
+    "OLIN": {
+     "n_test": 28,
+     "accuracy": 0.6429
+    },
+    "PITT": {
+     "n_test": 50,
+     "accuracy": 0.58
+    },
+    "SBL": {
+     "n_test": 26,
+     "accuracy": 0.6154
+    },
+    "SDSU": {
+     "n_test": 27,
+     "accuracy": 0.7037
+    },
+    "STANFORD": {
+     "n_test": 25,
+     "accuracy": 0.48
+    },
+    "TRINITY": {
+     "n_test": 44,
+     "accuracy": 0.6136
+    },
+    "UCLA_1": {
+     "n_test": 64,
+     "accuracy": 0.6562
+    },
+    "UCLA_2": {
+     "n_test": 21,
+     "accuracy": 0.7143
+    },
+    "UM_1": {
+     "n_test": 86,
+     "accuracy": 0.5581
+    },
+    "UM_2": {
+     "n_test": 34,
+     "accuracy": 0.7647
+    },
+    "USM": {
+     "n_test": 67,
+     "accuracy": 0.7313
+    },
+    "YALE": {
+     "n_test": 41,
+     "accuracy": 0.6585
+    }
+   },
+   "mean_site_accuracy": 0.6348,
+   "pooled_accuracy": 0.6292
+  },
+  "B_revised": {
+   "per_site": {
+    "CALTECH": {
+     "n_test": 12,
+     "accuracy": 0.5
+    },
+    "KKI": {
+     "n_test": 18,
+     "accuracy": 0.6111
+    },
+    "LEUVEN_1": {
+     "n_test": 23,
+     "accuracy": 0.5217
+    },
+    "LEUVEN_2": {
+     "n_test": 20,
+     "accuracy": 0.65
+    },
+    "MAX_MUN": {
+     "n_test": 29,
+     "accuracy": 0.5172
+    },
+    "NYU": {
+     "n_test": 146,
+     "accuracy": 0.6301
+    },
+    "OHSU": {
+     "n_test": 18,
+     "accuracy": 0.6667
+    },
+    "OLIN": {
+     "n_test": 9,
+     "accuracy": 0.7778
+    },
+    "PITT": {
+     "n_test": 17,
+     "accuracy": 0.5882
+    },
+    "SBL": {
+     "n_test": 3,
+     "accuracy": 1.0
+    },
+    "SDSU": {
+     "n_test": 21,
+     "accuracy": 0.7619
+    },
+    "STANFORD": {
+     "n_test": 21,
+     "accuracy": 0.5714
+    },
+    "TRINITY": {
+     "n_test": 33,
+     "accuracy": 0.7273
+    },
+    "UCLA_1": {
+     "n_test": 44,
+     "accuracy": 0.6591
+    },
+    "UCLA_2": {
+     "n_test": 8,
+     "accuracy": 0.5
+    },
+    "UM_1": {
+     "n_test": 61,
+     "accuracy": 0.5574
+    },
+    "UM_2": {
+     "n_test": 28,
+     "accuracy": 0.8929
+    },
+    "USM": {
+     "n_test": 34,
+     "accuracy": 0.6176
+    },
+    "YALE": {
+     "n_test": 26,
+     "accuracy": 0.6923
+    }
+   },
+   "mean_site_accuracy": 0.6549,
+   "pooled_accuracy": 0.6375
+  }
+ }
+}

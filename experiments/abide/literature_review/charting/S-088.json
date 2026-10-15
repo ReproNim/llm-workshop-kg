@@ -1,0 +1,269 @@
+{
+  "source_id": "S-088",
+  "pmid": "local_c998fc64",
+  "doi": "10.3389/fnint.2020.00023",
+  "screening": {
+    "decision": "include",
+    "reason": "Analyses involuntary head-motion signatures derived from ABIDE I/II resting-state fMRI acquisitions in an explicit ASD-vs-TD group-difference (age-stratified) analysis; satisfies inclusion 2-3 (not a motion-correction method benchmark — the comparison itself is the autism-vs-control finding).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "This study includes all sites publicly available through ABIDE I and ABIDE II. They were comprised of 1,127 TD and 1,017 ASD.",
+      "section": "methods",
+      "claim": "Cohort was the full publicly available ABIDE I+II release: 1,127 TD and 1,017 ASD, stratified by age.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We find significant shifts in statistical features of typical\nlevels of involuntary head motions for different age groups.",
+      "section": "abstract",
+      "claim": "Involuntary head-motion statistics (NSR, Gamma parameters) shift significantly across age groups in TD.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "The results suggest that the levels of random involuntary\nmotor noise are elevated in autism across age groups.",
+      "section": "abstract",
+      "claim": "Main finding: random involuntary motor noise (head micro-motion) is elevated in ASD relative to TD across age groups.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The comparisons of the age-groups with ASD also show shifting\nstatistical signatures across ages (Figure 5) and they were\nsignificant at the 0.05 level for all comparisons in the NSR.",
+      "section": "results",
+      "claim": "ASD age-group comparisons showed significant (p<0.05) shifts in the noise-to-signal ratio (NSR) of head motion across all age-group comparisons.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The ABIDE data is publicly available. We have uploaded to ABIDE the indexes of the participants included in the current study.",
+      "section": "methods",
+      "claim": "Participant indices for this study were uploaded to ABIDE, enabling cohort reconstruction.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "All methods and data types generated to produce the ﬁgures will be made available through Github, https://github.\ncom/torreselizabeth/Frontiers-Paper.",
+      "section": "methods",
+      "claim": "Analysis code was made available on GitHub.",
+      "relevance_score": 0.5
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "All ABIDE I/II sites used, N by diagnosis (1127 TD/1017 ASD) and age-group stratification stated; participant indices uploaded to ABIDE."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Multi-site (all ABIDE I/II sites), age-group breakdown by decade-scale bins given in Table 1."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Unclear",
+        "support": "Head motion (linear/angular speed) is derived from the standard rs-fMRI motion-correction/realignment step rather than connectivity; no named preprocessing pipeline/version is given for the underlying rs-fMRI data beyond the motion-parameter extraction itself."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "ASD/TD labels taken from ABIDE phenotypic files; the diagnostic instrument is not restated in this paper."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Age is the primary stratification variable and the focus of the study; ABIDE's own age/sex matching is invoked, though site is pooled across all sites without a site covariate."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Unclear",
+        "support": "Bootstrapped resampling (n=25 per subgroup, 100 subgroups) used to standardize group sizes, but no explicit site-effect adjustment."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Unclear",
+        "support": "Outcome is a kinematic (Gamma-distributed noise-to-signal ratio of head motion) rather than a connectivity metric; validity for this specific construct is argued via prior work but is a departure from standard connectivity outcomes."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Unclear",
+        "support": "Kruskal-Wallis non-parametric ANOVA with pairwise group comparisons at p<0.05/0.01 is used; explicit multiple-comparison correction across all pairwise age-group tests is not detailed in the sections read."
+      }
+    ],
+    "overall": "Unclear",
+    "summary": "A well-specified, fully public, pan-ABIDE cohort with reconstructible participant indices, but the outcome is head-motion kinematics rather than functional connectivity, and multiple-comparison handling across many pairwise age-group tests is not fully detailed."
+  },
+  "charting": {
+    "source_id": "S-088",
+    "title": "Age-Dependent Statistical Changes of Involuntary Head Motion Signatures Across Autism and Controls of the ABIDE Repository",
+    "authors": "",
+    "year": "2020",
+    "journal_conference": "Frontiers in Integrative Neuroscience",
+    "doi": "10.3389/fnint.2020.00023",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "1017",
+    "age_mean_sd": "",
+    "age_range": "stratified into bins: <=5, 6-10, 11-15, 16-20, 21-25, 26-30, 31-40, 41-65 years",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "1127",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "same age bins as ASD group",
+    "gender_distribution_controls": "",
+    "age_matched": "yes (ABIDE age-matched groups used)",
+    "gender_matched": "ABIDE described as sex-matched",
+    "neurodevelopmentally_typical": "yes",
+    "data_types": "resting-state fMRI (head-motion/realignment parameters)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "no",
+    "dataset_openly_available": "Yes — participant indices uploaded to ABIDE, and analysis code/figures available on GitHub",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "head-motion kinematics",
+    "specific_features": "Linear and angular head-motion speed derived from rs-fMRI realignment; noise-to-signal ratio (NSR) and Gamma probability density function parameters of micro-movement spikes (MMS)",
+    "feature_extraction_tools": "Custom stochastic/Gamma-distribution analysis of head displacement/rotation parameters (no named connectivity pipeline)",
+    "feature_importance_reported": "",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "Elevated random involuntary motor noise (higher NSR) in ASD vs TD across age groups; both groups show age-dependent shifts but ASD shifts are non-uniform",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "Kruskal-Wallis non-parametric ANOVA for pairwise age-group comparisons",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "Using all publicly available ABIDE I/II sites (1,017 ASD, 1,127 TD), stochastic (Gamma-distribution) signatures of involuntary head motion during resting-state fMRI shift significantly with age in TD, and ASD participants show significantly different, non-uniform age-dependent shifts, with overall elevated random involuntary motor noise relative to age-matched TD.",
+    "features_associated_disorder": "Elevated noise-to-signal ratio (involuntary motor noise) in head motion during resting-state scanning, differing non-uniformly by age in ASD vs TD",
+    "future_directions_recommended": "Use of age-appropriate statistical models for dynamically changing self-generated signals in ASD research",
+    "reviewer_notes": "Outcome is head-motion kinematics, not functional connectivity; included per protocol inclusion criteria since it is a resting-state-fMRI-derived autism-vs-control group-difference analysis, not a motion-correction method benchmark.",
+    "custom_fields": {
+      "RQ1": "ABIDE I+II, all publicly available sites; N=1,017 ASD and 1,127 TD, age-stratified into 8 bins; no additional QC exclusion beyond the full public release. | quote: \"This study includes all sites publicly available through ABIDE I and ABIDE II. They were comprised of 1,127 TD and 1,017 ASD.\"",
+      "RQ2": "No connectivity pipeline/atlas used; head-motion (linear/angular speed) parameters derived directly from rs-fMRI realignment, analyzed via custom Gamma-distribution/stochastic signature methods.",
+      "RQ3": "associational — group-difference analysis of involuntary head-motion statistics between ASD and TD, stratified and compared by age group. | quote: \"The results suggest that the levels of random involuntary\nmotor noise are elevated in autism across age groups.\"",
+      "RQ4": "Bootstrapped resampling (100 subgroups of n=25) to standardize group sizes; Kruskal-Wallis non-parametric ANOVA for pairwise age-group comparisons (p<0.05/0.01); all ABIDE sites pooled, no leave-site-out evaluation (not a predictive study). | quote: \"The comparisons of the age-groups with ASD also show shifting\nstatistical signatures across ages (Figure 5) and they were\nsignificant at the 0.05 level for all comparisons in the NSR.\"",
+      "RQ5": "Random involuntary motor noise (NSR of head motion) is elevated in ASD vs TD across age groups, with non-uniform age-dependent shifts in ASD vs. a smooth downward trend with age in TD. | quote: \"The results suggest that the levels of random involuntary\nmotor noise are elevated in autism across age groups.\"",
+      "RQ6": "yes — participant list: participant indices for the analysed cohort were uploaded to ABIDE and analysis code shared on GitHub. | quote: \"We have uploaded to ABIDE the indexes of the participants included in the current study.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — all public ABIDE I/II sites used, with N by diagnosis and age-group breakdown given. | quote: \"This study includes all sites publicly available through ABIDE I and ABIDE II. They were comprised of 1,127 TD and 1,017 ASD.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — motion itself is the outcome variable of interest; no separate motion-based exclusion/QC threshold is applied to the fMRI data.",
+      "CL3 Preprocessing pipeline and version reported?": "No — no named fMRI preprocessing pipeline/version is reported; only the custom motion-signature extraction/analysis method is described.",
+      "CL4 Atlas/parcellation reported?": "No — not applicable; analysis is based on head-motion kinematics, not ROI connectivity.",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not a predictive/ML study.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — all sites pooled without a stated site covariate or harmonisation; no leave-site-out evaluation (associational, not predictive).",
+      "CL7 Code and/or participant list available?": "Yes — participant indices uploaded to ABIDE and analysis code shared on GitHub. | quote: \"All methods and data types generated to produce the ﬁgures will be made available through Github, https://github.\ncom/torreselizabeth/Frontiers-Paper.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-088",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "Full ABIDE I/II N by diagnosis and age bins given."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "No",
+          "notes": "Motion is the outcome, not a QC exclusion criterion."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported",
+          "rating": "No",
+          "notes": "No named pipeline."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "N/A",
+          "notes": "Not a connectivity analysis."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "ABIDE phenotypic labels used, instrument not restated."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "N/A",
+          "notes": "Not predictive."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "No",
+          "notes": "All sites pooled, no covariate/harmonisation stated."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "Yes",
+          "notes": "Participant indices on ABIDE, code on GitHub."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-088",
+    "study_design_sample_dataset": "Group-difference (associational), age-stratified; ABIDE I+II, all public sites; n=1,017 ASD / 1,127 TD.",
+    "methods": "Linear/angular head-motion speed extracted from rs-fMRI realignment parameters; bootstrapped resampling (100 subgroups of n=25); Gamma-distribution stochastic-signature analysis (NSR, MMS); Kruskal-Wallis pairwise age-group comparisons.",
+    "outcomes": "Involuntary head-motion statistics shift significantly with age in TD; ASD shows significantly different, non-uniform age-dependent shifts and overall elevated involuntary motor noise relative to age-matched TD.",
+    "key_limitations": "Outcome is head-motion kinematics rather than functional connectivity; no named preprocessing pipeline for the underlying rs-fMRI; multiple-comparison correction across many pairwise tests not fully detailed; site pooled without explicit harmonisation.",
+    "relevance_notes": "Fully reconstructible cohort (participant indices uploaded to ABIDE, code on GitHub) spanning the whole public ABIDE I+II release, useful as a QC/motion covariate reference for other connectivity studies in the knowledge graph.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnint.2020.00023",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "All publicly available ABIDE I and ABIDE II sites, stratified into 8 age bins; N=1,017 ASD, 1,127 TD; participant indices uploaded to ABIDE.",
+    "n_by_dx": {
+      "ASD": 1017,
+      "TD": 1127,
+      "total": 2144
+    },
+    "sites": "all ABIDE I+II sites (number not stated as a single figure in text read)",
+    "pipeline": "none (custom head-motion kinematic extraction from rs-fMRI realignment, no connectivity pipeline)",
+    "atlas": "",
+    "claim_type": "associational",
+    "finding": "ASD participants show significantly elevated, age-dependent and non-uniform involuntary head-motion noise (NSR) relative to age-matched typically developing controls across the ABIDE I+II repository.",
+    "reconstructible": "yes — participant list",
+    "evidence_quotes": [
+      "This study includes all sites publicly available through ABIDE I and ABIDE II. They were comprised of 1,127 TD and 1,017 ASD.",
+      "The results suggest that the levels of random involuntary\nmotor noise are elevated in autism across age groups."
+    ]
+  }
+}

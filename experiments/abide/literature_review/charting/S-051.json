@@ -1,0 +1,29 @@
+{
+  "source_id": "S-051",
+  "pmid": "local_39ca03e3",
+  "doi": "10.1016/j.media.2023.102799",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: uses only T1-weighted structural MRI scans from ABIDE (for a VAE-GAN image-harmonization method, with a structural-radiomic-feature ASD classification as an application test), with no resting-state functional analysis.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1016/j.media.2023.102799",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "",
+    "evidence_quotes": [
+      "In our study, we only worked with anatomical T1-weighted images.",
+      "In total, 621 T1-weighted scans (309 patients and 312 controls) were collected."
+    ]
+  }
+}

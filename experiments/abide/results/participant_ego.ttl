@@ -1,0 +1,268 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <urn:repronim:abide:variable/> .
+@prefix ns2: <urn:repronim:abide:> .
+@prefix ns3: <http://purl.org/nidash/nidm#> .
+@prefix ns4: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions#> .
+@prefix ns5: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix ns6: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:repronim:abide:cohort/A_v1> a prov:Collection,
+        prov:Entity,
+        ns2:Cohort ;
+    rdfs:label "Cohort A v1" ;
+    prov:wasGeneratedBy <urn:repronim:abide:select/A_v1> ;
+    ns2:n 441 .
+
+<urn:repronim:abide:cohort/B_v2> a prov:Collection,
+        prov:Entity,
+        ns2:Cohort ;
+    rdfs:label "Cohort B v2" ;
+    prov:wasGeneratedBy <urn:repronim:abide:select/B_v2> ;
+    prov:wasRevisionOf <urn:repronim:abide:cohort/B_v1> ;
+    ns2:n 704 .
+
+<urn:repronim:abide:cohort/abraham2017_reconstructed> a prov:Collection,
+        prov:Entity,
+        ns2:Cohort ;
+    rdfs:label "Abraham 2017 cohort (reconstructed)" ;
+    ns2:n 873 ;
+    ns2:reconstructionStatus "reconstructed with rater QC only; 873 vs 871 reported; membership unverified" ;
+    ns2:selectedUsing <urn:repronim:abide:rule/rater_qc> .
+
+<urn:repronim:abide:connectivity/MaxMun_c_0051332> a ns3:DerivativeObject,
+        prov:Entity ;
+    ns4:sha256 "6282fca418ea78520ab7929eb29d67a7a32539c9c44f29e18933b958e7a7a5f8" ;
+    prov:wasDerivedFrom <urn:repronim:abide:timeseries/MaxMun_c_0051332> ;
+    prov:wasGeneratedBy <urn:repronim:abide:connectivity_activity/MaxMun_c_0051332> ;
+    ns2:meanFisherZ 2.621454e-01 ;
+    ns2:participant <urn:repronim:abide:participant/MaxMun_c_0051332> ;
+    ns1:cc200_mean_fisher_z 2.621454e-01 .
+
+<urn:repronim:abide:fold/B_v1/MAX_MUN> a prov:Activity,
+        ns2:Fold ;
+    rdfs:label "B v1 hold out MAX_MUN" ;
+    dcterms:isPartOf <urn:repronim:abide:analysis/B_v1> ;
+    ns2:heldOutSite "MAX_MUN" .
+
+<urn:repronim:abide:fold/B_v2/MAX_MUN> a prov:Activity,
+        ns2:Fold ;
+    rdfs:label "B v2 hold out MAX_MUN" ;
+    dcterms:isPartOf <urn:repronim:abide:analysis/B_v2> ;
+    ns2:heldOutSite "MAX_MUN" .
+
+<urn:repronim:abide:idp/MaxMun_c_0051332/roi_thickness> a ns3:DerivativeObject,
+        prov:Entity ;
+    rdfs:label "MaxMun_c_0051332 ANTs ROI thickness" ;
+    ns4:sha256 "0a429d84040ea8af38623c52bef993b17442151ced021584385f828941f43d4d" ;
+    prov:atLocation <https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/ants/roi_thickness/MaxMun_c_0051332_roi_thickness.txt> ;
+    prov:wasDerivedFrom <urn:repronim:abide:raw/MaxMun_c_0051332/T1w> ;
+    prov:wasGeneratedBy <urn:repronim:abide:ants_thickness/MaxMun_c_0051332> ;
+    ns2:meanCorticalThickness 2.720584e+00 ;
+    ns2:participant <urn:repronim:abide:participant/MaxMun_c_0051332> ;
+    ns2:summaryDefinition "mean of ANTs ROI means for labels >= 1000 (cortical DKT labels)" ;
+    ns1:ants_mean_cortical_thickness 2.720584e+00 .
+
+<urn:repronim:abide:record/MaxMun_c_0051332> a <http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#assessment-instrument>,
+        ns3:AcquisitionObject,
+        prov:Entity ;
+    prov:wasDerivedFrom <urn:repronim:abide:resource/phenotype_csv> ;
+    prov:wasGeneratedBy <urn:repronim:abide:acquisition/MaxMun_c_0051332/phenotype> ;
+    ns2:missingVariable ns1:ADI_RRB_TOTAL_C,
+        ns1:ADI_R_ONSET_TOTAL_D,
+        ns1:ADI_R_RSRCH_RELIABLE,
+        ns1:ADI_R_SOCIAL_TOTAL_A,
+        ns1:ADI_R_VERBAL_TOTAL_BV,
+        ns1:ADOS_COMM,
+        ns1:ADOS_GOTHAM_RRB,
+        ns1:ADOS_GOTHAM_SEVERITY,
+        ns1:ADOS_GOTHAM_SOCAFFECT,
+        ns1:ADOS_GOTHAM_TOTAL,
+        ns1:ADOS_MODULE,
+        ns1:ADOS_RSRCH_RELIABLE,
+        ns1:ADOS_SOCIAL,
+        ns1:ADOS_STEREO_BEHAV,
+        ns1:ADOS_TOTAL,
+        ns1:AGE_AT_MPRAGE,
+        ns1:AQ_TOTAL,
+        ns1:BMI,
+        ns1:COMORBIDITY,
+        ns1:HANDEDNESS_SCORES,
+        ns1:MEDICATION_NAME,
+        ns1:OFF_STIMULANTS_AT_SCAN,
+        ns1:SCQ_TOTAL,
+        ns1:SRS_AWARENESS,
+        ns1:SRS_COGNITION,
+        ns1:SRS_COMMUNICATION,
+        ns1:SRS_MANNERISMS,
+        ns1:SRS_MOTIVATION,
+        ns1:SRS_RAW_TOTAL,
+        ns1:SRS_VERSION,
+        ns1:VINELAND_ABC_STANDARD,
+        ns1:VINELAND_COMMUNICATION_STANDARD,
+        ns1:VINELAND_COMMUNITY_V_SCALED,
+        ns1:VINELAND_COPING_V_SCALED,
+        ns1:VINELAND_DAILYLVNG_STANDARD,
+        ns1:VINELAND_DOMESTIC_V_SCALED,
+        ns1:VINELAND_EXPRESSIVE_V_SCALED,
+        ns1:VINELAND_INFORMANT,
+        ns1:VINELAND_INTERPERSONAL_V_SCALED,
+        ns1:VINELAND_PERSONAL_V_SCALED,
+        ns1:VINELAND_PLAY_V_SCALED,
+        ns1:VINELAND_RECEPTIVE_V_SCALED,
+        ns1:VINELAND_SOCIAL_STANDARD,
+        ns1:VINELAND_SUM_SCORES,
+        ns1:VINELAND_WRITTEN_V_SCALED,
+        ns1:VIQ,
+        ns1:VIQ_TEST_TYPE,
+        ns1:WISC_IV_BLK_DSN_SCALED,
+        ns1:WISC_IV_CODING_SCALED,
+        ns1:WISC_IV_DIGIT_SPAN_SCALED,
+        ns1:WISC_IV_INFO_SCALED,
+        ns1:WISC_IV_LET_NUM_SCALED,
+        ns1:WISC_IV_MATRIX_SCALED,
+        ns1:WISC_IV_PIC_CON_SCALED,
+        ns1:WISC_IV_PRI,
+        ns1:WISC_IV_PSI,
+        ns1:WISC_IV_SIM_SCALED,
+        ns1:WISC_IV_SYM_SCALED,
+        ns1:WISC_IV_VCI,
+        ns1:WISC_IV_VOCAB_SCALED,
+        ns1:WISC_IV_WMI,
+        ns1:qc_anat_notes_rater_2,
+        ns1:qc_anat_notes_rater_3,
+        ns1:qc_func_notes_rater_3,
+        ns1:qc_notes_rater_1 ;
+    ns2:participant <urn:repronim:abide:participant/MaxMun_c_0051332> ;
+    ns2:sourceRow 1003 ;
+    ns1:AGE_AT_SCAN 2.3e+01 ;
+    ns1:CURRENT_MED_STATUS 0e+00 ;
+    ns1:DSM_IV_TR 0e+00 ;
+    ns1:DX_GROUP 2e+00 ;
+    ns1:EYE_STATUS_AT_SCAN 2e+00 ;
+    ns1:FILE_ID "MaxMun_c_0051332" ;
+    ns1:FIQ 1.25e+02 ;
+    ns1:FIQ_TEST_TYPE "WST" ;
+    ns1:HANDEDNESS_CATEGORY "R" ;
+    ns1:PIQ 1.26e+02 ;
+    ns1:PIQ_TEST_TYPE "RAVENS" ;
+    ns1:SEX 1e+00 ;
+    ns1:SITE_ID "MAX_MUN" ;
+    ns1:SUB_ID 5.1332e+04 ;
+    ns1:SUB_IN_SMP 1e+00 ;
+    ns1:anat_cnr 8.896032e+00 ;
+    ns1:anat_efc 8.374629e-01 ;
+    ns1:anat_fber 3.791943e+02 ;
+    ns1:anat_fwhm 3.224878e+00 ;
+    ns1:anat_qi1 9.108072e-02 ;
+    ns1:anat_snr 3.102507e+01 ;
+    ns1:func_dvars 1.023302e+00 ;
+    ns1:func_efc 6.339326e-01 ;
+    ns1:func_fber 5.291712e+01 ;
+    ns1:func_fwhm 1.7499e+00 ;
+    ns1:func_gsr 7.083806e-02 ;
+    ns1:func_mean_fd 6.442546e-02 ;
+    ns1:func_num_fd 8e+00 ;
+    ns1:func_outlier 2.174333e-03 ;
+    ns1:func_perc_fd 6.61157e+00 ;
+    ns1:func_quality 1.847e-02 ;
+    ns1:qc_anat_rater_2 "OK" ;
+    ns1:qc_anat_rater_3 "OK" ;
+    ns1:qc_func_notes_rater_2 "ic-cerebellum" ;
+    ns1:qc_func_rater_2 "maybe" ;
+    ns1:qc_func_rater_3 "OK" ;
+    ns1:qc_rater_1 "OK" ;
+    ns1:subject 5.1332e+04 .
+
+<urn:repronim:abide:acquisition/MaxMun_c_0051332/T1w> a ns3:Acquisition,
+        prov:Activity ;
+    dcterms:isPartOf <urn:repronim:abide:session/MaxMun_c_0051332> ;
+    prov:qualifiedAssociation <urn:repronim:abide:association/MaxMun_c_0051332/T1w> ;
+    prov:wasAssociatedWith <urn:repronim:abide:participant/MaxMun_c_0051332> .
+
+<urn:repronim:abide:acquisition/MaxMun_c_0051332/phenotype> a <http://neurolog.unice.fr/ontoneurolog/v3.0/instrument.owl#instrument-based-assessment>,
+        ns3:Acquisition,
+        prov:Activity ;
+    dcterms:isPartOf <urn:repronim:abide:session/MaxMun_c_0051332> ;
+    prov:qualifiedAssociation <urn:repronim:abide:association/MaxMun_c_0051332/phenotype> ;
+    prov:wasAssociatedWith <urn:repronim:abide:participant/MaxMun_c_0051332> .
+
+<urn:repronim:abide:acquisition/MaxMun_c_0051332/rest> a ns3:Acquisition,
+        prov:Activity ;
+    dcterms:isPartOf <urn:repronim:abide:session/MaxMun_c_0051332> ;
+    prov:qualifiedAssociation <urn:repronim:abide:association/MaxMun_c_0051332/rest> ;
+    prov:wasAssociatedWith <urn:repronim:abide:participant/MaxMun_c_0051332> .
+
+<urn:repronim:abide:ants_thickness/MaxMun_c_0051332> a ns3:Derivative,
+        prov:Activity ;
+    dcterms:isPartOf ns2:project ;
+    prov:qualifiedAssociation <urn:repronim:abide:association/MaxMun_c_0051332/ants_subject>,
+        <urn:repronim:abide:association/MaxMun_c_0051332/ants_tool> ;
+    prov:wasAssociatedWith <urn:repronim:abide:participant/MaxMun_c_0051332>,
+        <urn:repronim:abide:software/ants> .
+
+<urn:repronim:abide:cohort/B_v1> a prov:Collection,
+        prov:Entity,
+        ns2:Cohort ;
+    rdfs:label "Cohort B v1" ;
+    prov:wasGeneratedBy <urn:repronim:abide:select/B_v1> ;
+    ns2:n 767 .
+
+<urn:repronim:abide:preprocess/MaxMun_c_0051332> a ns3:Derivative,
+        prov:Activity ;
+    rdfs:label "C-PAC filt_noglobal MaxMun_c_0051332" ;
+    dcterms:isPartOf ns2:project ;
+    prov:qualifiedAssociation <urn:repronim:abide:association/MaxMun_c_0051332/cpac_subject>,
+        <urn:repronim:abide:association/MaxMun_c_0051332/cpac_tool> ;
+    prov:wasAssociatedWith <urn:repronim:abide:participant/MaxMun_c_0051332>,
+        <urn:repronim:abide:software/cpac> ;
+    ns2:executionRecord "output of the ABIDE Preprocessed release; per-run logs not retrieved" .
+
+<urn:repronim:abide:raw/MaxMun_c_0051332/T1w> a ns3:AcquisitionObject,
+        prov:Entity ;
+    rdfs:label "MaxMun_c_0051332 T1w" ;
+    ns3:hadAcquisitionModality ns3:MagneticResonanceImaging ;
+    ns3:hadImageContrastType ns3:T1Weighted ;
+    ns3:hadImageUsageType ns3:Anatomical ;
+    ns5:filename "bids::sub-0051332/anat/sub-0051332_T1w.nii.gz" ;
+    prov:Location "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/RawDataBIDS/MaxMun_c/sub-0051332/anat/sub-0051332_T1w.nii.gz" ;
+    prov:atLocation <https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/RawDataBIDS/MaxMun_c/sub-0051332/anat/sub-0051332_T1w.nii.gz> ;
+    prov:wasGeneratedBy <urn:repronim:abide:acquisition/MaxMun_c_0051332/T1w> ;
+    ns2:contentRetrieved false ;
+    ns2:participant <urn:repronim:abide:participant/MaxMun_c_0051332> .
+
+<urn:repronim:abide:raw/MaxMun_c_0051332/rest> a ns3:AcquisitionObject,
+        prov:Entity ;
+    rdfs:label "MaxMun_c_0051332 rest" ;
+    ns3:Task "rest" ;
+    ns3:hadAcquisitionModality ns3:MagneticResonanceImaging ;
+    ns3:hadImageContrastType ns3:T2StarWeighted ;
+    ns3:hadImageUsageType ns3:Functional ;
+    ns5:filename "bids::sub-0051332/func/sub-0051332_task-rest_run-1_bold.nii.gz" ;
+    prov:Location "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/RawDataBIDS/MaxMun_c/sub-0051332/func/sub-0051332_task-rest_run-1_bold.nii.gz" ;
+    prov:atLocation <https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/RawDataBIDS/MaxMun_c/sub-0051332/func/sub-0051332_task-rest_run-1_bold.nii.gz> ;
+    prov:wasGeneratedBy <urn:repronim:abide:acquisition/MaxMun_c_0051332/rest> ;
+    ns2:contentRetrieved false ;
+    ns2:participant <urn:repronim:abide:participant/MaxMun_c_0051332> .
+
+<urn:repronim:abide:timeseries/MaxMun_c_0051332> a ns3:DerivativeObject,
+        prov:Entity ;
+    rdfs:label "MaxMun_c_0051332 CC200 time series" ;
+    ns4:sha256 "a5b1b91a013f32bbab5635ac9d6c8cbca4db26ec8b476b7dec08867fca337acb" ;
+    prov:atLocation <https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/rois_cc200/MaxMun_c_0051332_rois_cc200.1D> ;
+    prov:wasDerivedFrom <urn:repronim:abide:raw/MaxMun_c_0051332/rest> ;
+    prov:wasGeneratedBy <urn:repronim:abide:preprocess/MaxMun_c_0051332> ;
+    ns2:fullRoiCoverage true ;
+    ns2:nTimepoints 116 ;
+    ns2:nZeroVarianceRois 0 ;
+    ns2:participant <urn:repronim:abide:participant/MaxMun_c_0051332> .
+
+<urn:repronim:abide:participant/MaxMun_c_0051332> a prov:Agent,
+        prov:Person ;
+    rdfs:label "MaxMun_c_0051332" ;
+    ns6:src_subject_id "51332" ;
+    ns2:site "MAX_MUN" ;
+    ns2:subId 51332 .
+

@@ -1,0 +1,160 @@
+{
+  "source_id": "S-072",
+  "pmid": "local_88791905",
+  "doi": "10.48550/arxiv.1712.08041",
+  "screening": {
+    "decision": "include",
+    "reason": "Meets inclusion 2/3: analyses ABIDE resting-state fMRI dynamic functional-connectivity variability for both a group-difference finding and ASD vs control classification.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "openalex_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "We limited ourselves to\nacquisitions with repetition time of 2s (sites NYU, SDSU, UM, USM). This\nresulted in a dataset of 147 subjects with ASD and 146 healthy controls.",
+      "section": "methods",
+      "claim": "Cohort restricted to four ABIDE sites with TR=2s: 147 ASD, 146 healthy controls.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "The pre-processed acquisitions are\navailable as part of the Pre-processed Connectome Project (http://preprocessed- connectomes-project.org/abide/, C-PAC pipeline).",
+      "section": "methods",
+      "claim": "Data were preprocessed via the Preprocessed Connectomes Project, CPAC pipeline.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "We\nextracted rsfMRI time series using a 200-region parcellation CC200[?], estimated\nsubject-wise time-resolved connectivity matrices with windows lengths ranging\nfrom 10 to 20 volumes (20-40s) and calculated node variability.",
+      "section": "methods",
+      "claim": "Dynamic functional connectivity was computed with sliding-window correlations over the CC200 atlas.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "For inter-site, we employed a leave-\none-out-site approach that involved training the classiﬁer on all the sites\nexcept the one left out for testing.",
+      "section": "methods",
+      "claim": "Inter-site evaluation used a leave-one-site-out approach.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Our analysis revealed that pa-\ntients diagnosed with autism spectrum disorder (ASD) show increased\nFC variability in several brain regions that are associated with low FC\nvariability in the typical brain.",
+      "section": "abstract",
+      "claim": "ASD patients showed increased dynamic FC variability in regions that are low-variability in typical controls.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "We then used the enhanced FC variability\nof brain regions as features for training machine learning models for ASD\nclassiﬁcation and achieved 65%",
+      "section": "abstract",
+      "claim": "Node-variability features gave up to 65% classification accuracy.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Table 1 summarizes the performance of diﬀerent\nclassiﬁers on intra-site ASD prediction. The accuracy achieved by all classiﬁers\nis comparable and is around 60%. The sensitivity varies between 60 to 65%. The\nspeciﬁcity is ˜60% for SVM and MLP, whereas RF and NB produce slightly lower\nspeciﬁcity.",
+      "section": "results",
+      "claim": "Intra-site 5-fold CV: accuracy ~60%, sensitivity 60-65%, specificity ~60% (SVM, MLP).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The results on inter-site classiﬁcation are presented in Table 3. Whereas\nthe classiﬁcation accuracy using MLP is ˜62% for all sites, the speciﬁcity and\nsensitivity vary across sites, consistent with the results shown in Figure 1b.",
+      "section": "results",
+      "claim": "Leave-one-site-out classification accuracy using MLP was ~62% across sites.",
+      "relevance_score": 0.9
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Unclear", "support": "N by diagnosis and site restriction (TR=2s sites only) are given, but no motion/QC exclusion rule beyond the TR filter is reported: \"We limited ourselves to acquisitions with repetition time of 2s (sites NYU, SDSU, UM, USM). This resulted in a dataset of 147 subjects with ASD and 146 healthy controls.\""},
+      {"domain": "Predictors", "judgment": "Low", "support": "CPAC pipeline and CC200 atlas with sliding-window dynamic connectivity clearly described."},
+      {"domain": "Outcome", "judgment": "Low", "support": "ASD/control labels are the ABIDE phenotypic diagnosis, independent of the connectivity-derived predictors."},
+      {"domain": "Analysis", "judgment": "Unclear", "support": "Both intra-site 5-fold cross-validation (pooled across sites) and a leave-one-site-out inter-site evaluation are reported; the intra-site pooled scenario does not control for site, but the leave-one-site-out scenario does, and no leakage-control statement is given for the node-selection step based on \"a positive group-level diﬀerence across the three big sites (NYU, UM, and USM)\" used to pick features."}
+    ],
+    "overall": "Unclear",
+    "summary": "Cohort and pipeline/atlas are reasonably well described; the study reports both a pooled intra-site 5-fold CV (no site control) and a leave-one-site-out inter-site evaluation (site controlled), with a possible leakage route where a feature subset is chosen using group differences across the same sites used later for training/testing."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Both",
+    "n_disordered": "147",
+    "n_controls": "146",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Preprocessed Connectomes Project, CPAC (C-PAC) pipeline",
+    "specific_features": "Sliding-window dynamic functional connectivity (node variability) and static node strength, using the CC200 atlas",
+    "model_category": "Classical machine learning",
+    "specific_algorithms": "Support Vector Machine, Random Forest, Naive Bayes, Multilayer Perceptron",
+    "validation_methodology": "Intra-site 5-fold cross-validation (pooled and site-balanced variants) and inter-site leave-one-site-out cross-validation",
+    "performance_metrics": "Accuracy, sensitivity, specificity",
+    "key_performance_results": "Up to 65% accuracy using node-variability features; intra-site 5-fold CV ~60% accuracy, 60-65% sensitivity, ~60% specificity (SVM, MLP); inter-site leave-one-site-out MLP accuracy ~62%",
+    "features_associated_disorder": "Brain regions with low FC variability in typical controls show increased FC variability in ASD",
+    "feature_change_direction": "Increased (hyper-variability) dynamic functional connectivity in ASD relative to controls",
+    "dataset_openly_available": "No code repository or participant-list availability statement found; data referenced via the Preprocessed Connectomes Project public resource",
+    "custom_fields": {
+      "RQ1": "ABIDE, restricted to the four sites with repetition time 2s (NYU, SDSU, UM, USM): 147 ASD and 146 healthy controls; no further exclusion rule described. | quote: \"We limited ourselves to acquisitions with repetition time of 2s (sites NYU, SDSU, UM, USM). This resulted in a dataset of 147 subjects with ASD and 146 healthy controls.\"",
+      "RQ2": "Preprocessed Connectomes Project CPAC pipeline; CC200 atlas, 200-region parcellation. | quote: \"We extracted rsfMRI time series using a 200-region parcellation CC200[?], estimated subject-wise time-resolved connectivity matrices with windows lengths ranging from 10 to 20 volumes (20-40s) and calculated node variability.\"",
+      "RQ3": "both — reports a group-difference finding (increased FC variability in ASD) and machine-learning classification of ASD vs control. | quote: \"pa- tients diagnosed with autism spectrum disorder (ASD) show increased FC variability in several brain regions that are associated with low FC variability in the typical brain.\"",
+      "RQ4": "Intra-site 5-fold cross-validation (pooled and site-balanced) and inter-site leave-one-site-out cross-validation; accuracy, sensitivity and specificity reported; no statistical correction stated. | quote: \"For inter-site, we employed a leave- one-out-site approach that involved training the classiﬁer on all the sites except the one left out for testing.\"",
+      "RQ5": "ASD patients show increased dynamic FC variability in regions of low variability in controls; classification reached up to 65% accuracy (intra-site) and ~62% accuracy (inter-site, leave-one-site-out, MLP); no CI reported. | quote: \"achieved 65%\"",
+      "RQ6": "no — only aggregate N and site names are given; no participant-ID list or code repository. | quote: \"This resulted in a dataset of 147 subjects with ASD and 146 healthy controls.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis and the TR=2s site restriction are given, but no further inclusion/exclusion criteria are described. | quote: \"This resulted in a dataset of 147 subjects with ASD and 146 healthy controls.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion metric or QC threshold is reported beyond the repetition-time restriction. | quote: \"We limited ourselves to acquisitions with repetition time of 2s (sites NYU, SDSU, UM, USM).\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — the CPAC pipeline is named via the Preprocessed Connectomes Project, but no version or specific strategy is detailed. | quote: \"The pre-processed acquisitions are available as part of the Pre-processed Connectome Project (http://preprocessed- connectomes-project.org/abide/, C-PAC pipeline).\"",
+      "CL4 Atlas/parcellation reported?": "Yes — CC200, 200-region parcellation. | quote: \"We extracted rsfMRI time series using a 200-region parcellation CC200[?]\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — node-subset feature selection is based on group differences computed across the same sites used for training/testing, with no stated train/test separation for that selection step. | quote: \"nodes that show variability <0.9 in typical subjects and experience a positive group-level diﬀerence across the three big sites (NYU, UM, and USM)\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — both a site-balanced intra-site variant and a leave-one-site-out inter-site evaluation are reported. | quote: \"For inter-site, we employed a leave- one-out-site approach that involved training the classiﬁer on all the sites except the one left out for testing.\"",
+      "CL7 Code and/or participant list available?": "No — no code repository or participant-list availability statement found. | quote: \"The pre-processed acquisitions are available as part of the Pre-processed Connectome Project (http://preprocessed- connectomes-project.org/abide/, C-PAC pipeline).\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The dataset analyzed in the study is the Autism Brain Imaging Data Exchange (ABIDE)[?], a large, publicly available dataset of rsfMRI acquisitions of subjects diagnosed with ASD and healthy controls.\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "items": [
+        {"item": "CL1", "rating": "Partial", "support": "N by diagnosis and site restriction given, no further exclusion rule."},
+        {"item": "CL2", "rating": "No", "support": "No motion/QC threshold reported."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_predictors_features": {
+      "items": [
+        {"item": "CL3", "rating": "Partial", "support": "CPAC pipeline named via Preprocessed Connectomes Project, no version/strategy detail."},
+        {"item": "CL4", "rating": "Yes", "support": "CC200 atlas named."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_outcome_labels": {
+      "items": [
+        {"item": "diagnosis source", "rating": "Unclear", "support": "ASD/control labels are the ABIDE phenotypic diagnosis; this paper does not restate diagnostic criteria."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "items": [
+        {"item": "CL5", "rating": "No", "support": "Node-subset selection used group differences across the same evaluation sites with no stated train/test separation."},
+        {"item": "CL6", "rating": "Yes", "support": "Leave-one-site-out inter-site evaluation reported alongside the pooled intra-site variant."},
+        {"item": "CL7", "rating": "No", "support": "No code or participant-list availability statement."}
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Both (group-difference + diagnostic prediction); ABIDE, four TR=2s sites (NYU, SDSU, UM, USM), 147 ASD and 146 healthy controls.",
+    "methods": "CPAC-preprocessed rs-fMRI; CC200 atlas sliding-window dynamic functional connectivity (node variability) and static node strength; SVM/RF/NB/MLP classifiers with intra-site 5-fold CV and inter-site leave-one-site-out evaluation.",
+    "outcomes": "ASD showed increased FC variability in regions of otherwise-low variability in controls; classification reached up to 65% accuracy (intra-site) and ~62% accuracy (inter-site leave-one-site-out, MLP).",
+    "key_limitations": "No motion/QC threshold beyond a TR restriction; possible feature-selection leakage from choosing nodes by cross-site group differences; no code or participant-list availability.",
+    "relevance_notes": "An early dynamic-FC approach to ABIDE combining a group-difference finding with both pooled and leave-one-site-out classification evaluation.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.48550/arxiv.1712.08041",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "ABIDE acquisitions restricted to repetition time 2s at four sites (NYU, SDSU, UM, USM): 147 ASD, 146 healthy controls.",
+    "n_by_dx": {"ASD": 147, "TD": 146, "total": 293},
+    "sites": "NYU, SDSU, UM, USM",
+    "pipeline": "Preprocessed Connectomes Project, CPAC",
+    "atlas": "CC200",
+    "claim_type": "both",
+    "finding": "ASD patients show increased dynamic FC variability in regions of low variability in typical controls; node-variability-based classifiers reached up to 65% accuracy (intra-site) and ~62% accuracy (inter-site leave-one-site-out, MLP).",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "We limited ourselves to\nacquisitions with repetition time of 2s (sites NYU, SDSU, UM, USM). This\nresulted in a dataset of 147 subjects with ASD and 146 healthy controls.",
+      "pa- tients diagnosed with autism spectrum disorder (ASD) show increased\nFC variability in several brain regions that are associated with low FC\nvariability in the typical brain."
+    ]
+  }
+}

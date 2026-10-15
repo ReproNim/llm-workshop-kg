@@ -1,0 +1,29 @@
+{
+  "source_id": "S-065",
+  "pmid": "local_a48387a3",
+  "doi": "10.3389/fnins.2021.756868",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: classification uses only structural MR images (individual-level morphological/structural covariance networks derived from T1-weighted images) aggregated across 17 ABIDE sites; no resting-state functional connectivity analysis is performed.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2021.756868",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": 518, "TD": 567, "total": 1085},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "In this study, we proposed a self-attention deep learning framework based on the transformer model on structural MR images from the ABIDE consortium to classify ASD patients from normal controls and simultaneously identify the structural biomarkers.",
+      "In our work, the structural MR images we used were aggregated from all 17 international sites, which contain 518 ASD patients and 567 age-matched normal controls (ages 7–64 years, median 14.7 years across groups)."
+    ]
+  }
+}

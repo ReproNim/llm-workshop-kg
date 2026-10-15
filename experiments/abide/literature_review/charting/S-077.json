@@ -1,0 +1,225 @@
+{
+  "source_id": "S-077",
+  "pmid": "local_4a3d6782",
+  "doi": "10.1007/s12559-023-10224-6",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a graph convolutional network diagnostic classification of ASD vs healthy controls using resting-state fMRI connectivity from ABIDE (Inclusion 2, 3)",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The Autism Brain Imaging Data Ex-\nchange (ABIDE)1 [39] initiative aggregates resting-state\nfunctional magnetic resonance imaging (rs-fMRI) and phe-\nnotypic data of 1112 subjects from various international\nbrain imaging laboratories. We select a set of 871 subjects,\nconsisting of 403 ASD patients and 468 healthy controls\n(HCs).",
+      "section": "methods",
+      "claim": "Cohort was 871 of 1112 ABIDE subjects (403 ASD, 468 HC).",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "For preprocessing of\nthe ABIDE dataset, we use the Configurable Pipeline for the\nAnalysis of Connectomes (C-PAC) [41], which includes skull\nstripping, slice timing correction, motion correction, global\nmean intensity normalization, nuisance signal regression, band-\npass filtering (0.01-0.1Hz), and registration of fMRI images to a\nstandard anatomical space. Then, the mean timeseries for a set\nof cortical and subcortical regions of interest (ROIs) extracted\nfrom the Har",
+      "section": "methods",
+      "claim": "ABIDE data preprocessed with C-PAC and parcellated with the Harvard-Oxford atlas.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "For the edge weights of the population graph\non the ABIDE datset, we incorporate the subject’s gender, age\nand acquisition site as as phenotypic measures.",
+      "section": "methods",
+      "claim": "Site, age and gender are used as phenotypic edge-weight features in the population graph used for node classification.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "We use a stratified 10-fold cross-validation strategy.",
+      "section": "methods",
+      "claim": "Model evaluated with stratified 10-fold cross-validation.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "GCN [15]\n64.63\n72.23\n64.63\n86.33\n64.63\n26.64\n30.16",
+      "section": "table",
+      "claim": "Baseline GCN achieved 64.63% accuracy / 72.23% AUC on ABIDE.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "AN-GCN (Ours)\n96.91\n96.86\n97.16\n96.91\n97.00\n93.76\n93.86",
+      "section": "table",
+      "claim": "The proposed AN-GCN achieved 96.91% accuracy and 96.86% AUC on ABIDE, far exceeding all baselines (best baseline DS-MML: 87.62% accuracy, 92.00% AUC).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "the results show that our model outperforms all the base-\nline methods on the ABIDE dataset, achieving relative improve-\nments of 50.33%, 34.10%, 50.33%, 12.25% and 50.33% over\nGCN in terms of accuracy, AUC, F1-score, recall and precision,\nrespectively.",
+      "section": "results",
+      "claim": "AN-GCN improved relative accuracy by 50.33% over the baseline GCN on ABIDE.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Hence, we take the upper triangular\npart and vectorize it to obtain a feature vector whose dimension\nis then further reduced using recursive feature elimination via a\nridge classifier.",
+      "section": "methods",
+      "claim": "Connectivity feature vectors are dimensionality-reduced via recursive feature elimination with a ridge classifier before the 10-fold CV procedure is described, with no statement that this is confined to training folds.",
+      "relevance_score": 0.7
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "N by diagnosis (403 ASD/468 HC of 871 selected from 1112) is reported, though the exact selection/exclusion rule for the 871 is not detailed beyond \"we select a set of 871 subjects\"."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "C-PAC pipeline and Harvard-Oxford atlas are described in detail, with Fisher z-transformed Pearson correlation connectivity features."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD vs HC labels used without stating the diagnostic instrument/source."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "Recursive feature elimination via a ridge classifier is described prior to the cross-validation section with no statement that it is confined to training folds; the population graph is built transductively using phenotypic data (including site) from all subjects before node classification; site is used as a graph-edge similarity feature rather than being held out or corrected for, and no leave-site-out evaluation is reported. The reported accuracy (96.91%) is far above both the baselines in this paper (best baseline 87.62%) and most published ABIDE benchmarks, consistent with a leakage-driven inflation."
+      }
+    ],
+    "overall": "High",
+    "summary": "Cohort size and pipeline/atlas are well reported, but feature reduction (recursive feature elimination) appears to precede the stratified 10-fold cross-validation with no stated leakage control, the transductive population graph is built using all subjects' phenotypic data (including site) before fold assignment, and no leave-site-out check is reported; the resulting accuracy (96.91%) is implausibly high relative to the paper's own baselines and the published ABIDE literature, consistent with a leakage-driven result."
+  },
+  "charting": {
+    "source_id": "S-077",
+    "title": "Classification of Developmental and Brain Disorders via Graph Convolutional Aggregation",
+    "authors": "",
+    "year": "2023",
+    "journal_conference": "Cognitive Computation",
+    "doi": "10.1007/s12559-023-10224-6",
+    "database_retrieved": "",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder (ASD) vs healthy control (HC)",
+    "diagnosis_assessment": "",
+    "n_disordered": "403",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "468",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity; phenotypic (gender, age, acquisition site used as graph edge weights)",
+    "specific_features": "Fisher z-transformed Pearson correlation connectivity matrices over Harvard-Oxford atlas ROIs; recursive-feature-elimination-reduced upper-triangular connectivity vector; population graph edges weighted by gender, age and acquisition site",
+    "feature_extraction_tools": "C-PAC (Configurable Pipeline for the Analysis of Connectomes); Harvard-Oxford atlas",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Graph convolutional network (population-graph node classification) with attention/skip-connection aggregation",
+    "specific_algorithms": "AN-GCN (proposed), compared against Logistic Regression, Gradient Boosting, GCN, InceptionGCN, EV-GCN, LGL, HI-GCN, MMGL, DeepGCN, DS-MML",
+    "validation_methodology": "Stratified 10-fold cross-validation; hyperparameters set via grid search with cross-validation on the training set",
+    "performance_metrics": "Accuracy, AUC, F1-score, Recall, Precision, Cohen's kappa, Matthews Correlation Coefficient",
+    "key_performance_results": "AN-GCN: 96.91% accuracy, 96.86% AUC, 97.16% F1, 96.91% recall, 97.00% precision on ABIDE, versus the strongest baseline DS-MML (87.62% accuracy, 92.00% AUC) and baseline GCN (64.63% accuracy, 72.23% AUC); a relative improvement of 50.33% in accuracy over GCN",
+    "summary_key_findings": "A population-graph GCN with skip connections and identity mapping (AN-GCN) classified ASD vs HC on 871 ABIDE subjects (403 ASD/468 HC) with 96.91% accuracy and 96.86% AUC, substantially exceeding all compared baselines including a strong recent method (DS-MML, 87.62% accuracy); feature reduction (recursive feature elimination) is described prior to the cross-validation step and site/age/gender are embedded directly as population-graph edge weights, raising a leakage/inflation concern given this result is far above both the paper's own baselines and typical published ABIDE benchmarks.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "Reported 96.91% accuracy is markedly higher than the paper's own strongest baseline (87.62%) and most published ABIDE classification results, consistent with the leakage risk noted (feature elimination preceding CV; transductive population graph using site/age/gender from all subjects).",
+    "custom_fields": {
+      "RQ1": "predictive | ABIDE (consistent with ABIDE I's 1112-subject pool); 871 of 1112 subjects selected (403 ASD, 468 HC); exact exclusion rule for the selected 871 not detailed | quote: \"We select a set of 871 subjects,\nconsisting of 403 ASD patients and 468 healthy controls\n(HCs).\"",
+      "RQ2": "C-PAC pipeline, Harvard-Oxford atlas | quote: \"For preprocessing of\nthe ABIDE dataset, we use the Configurable Pipeline for the\nAnalysis of Connectomes (C-PAC) [41]\"",
+      "RQ3": "predictive — ASD vs HC node classification on a population graph | quote: \"the aim is to separate\nASD subjects from healthy controls.\"",
+      "RQ4": "Stratified 10-fold cross-validation with grid-search hyperparameter tuning on the training set; feature reduction (recursive feature elimination) described before the CV section; site used as a population-graph edge-weight feature rather than a covariate or leave-site-out split | quote: \"We use a stratified 10-fold cross-validation strategy.\"",
+      "RQ5": "AN-GCN achieved 96.91% accuracy and 96.86% AUC on ABIDE, a 50.33% relative accuracy improvement over baseline GCN (64.63%) and above the strongest baseline DS-MML (87.62%) | quote: \"AN-GCN (Ours)\n96.91\n96.86\n97.16\n96.91\n97.00\n93.76\n93.86\"",
+      "RQ6": "no | quote: \"We select a set of 871 subjects,\nconsisting of 403 ASD patients and 468 healthy controls\n(HCs).\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — resulting N by diagnosis given, no explicit exclusion rule | quote: \"We select a set of 871 subjects,\nconsisting of 403 ASD patients and 468 healthy controls\n(HCs).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No | quote: \"which includes skull\nstripping, slice timing correction, motion correction, global\nmean intensity normalization, nuisance signal regression, band-\npass filtering (0.01-0.1Hz)\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — C-PAC named, no version | quote: \"we use the Configurable Pipeline for the\nAnalysis of Connectomes (C-PAC) [41]\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"the mean timeseries for a set\nof cortical and subcortical regions of interest (ROIs) extracted\nfrom the Har\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No | quote: \"Hence, we take the upper triangular\npart and vectorize it to obtain a feature vector whose dimension\nis then further reduced using recursive feature elimination via a\nridge classifier.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly — site is used directly as a phenotypic edge-weight feature in the population graph, not corrected for or used in a leave-site-out split | quote: \"For the edge weights of the population graph\non the ABIDE datset, we incorporate the subject’s gender, age\nand acquisition site as as phenotypic measures.\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"We select a set of 871 subjects,\nconsisting of 403 ASD patients and 468 healthy controls\n(HCs).\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The Autism Brain Imaging Data Ex-\nchange (ABIDE)1 [39] initiative aggregates resting-state\nfunctional magnetic resonance imaging (rs-fMRI) and phe-\nnotypic data of 1112 subjects\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-077",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {"item_text": "CL1 Cohort definition reported?", "rating": "Partial", "notes": "N by diagnosis given (403/468 of 871/1112), no exclusion rule."},
+        {"item_text": "CL2 Motion/QC rule reported?", "rating": "No", "notes": "Generic motion correction mentioned, no threshold."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {"item_text": "CL3 Preprocessing pipeline and version reported?", "rating": "Partial", "notes": "C-PAC named, no version."},
+        {"item_text": "CL4 Atlas/parcellation reported?", "rating": "Yes", "notes": "Harvard-Oxford atlas."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {"item_text": "Diagnosis source and label definition reported?", "rating": "No", "notes": "ASD vs HC label used without stating diagnostic instrument/source."}
+      ],
+      "overall_concern": "High"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {"item_text": "CL5 Leakage control reported?", "rating": "No", "notes": "Feature elimination described prior to CV, no training-fold restriction stated."},
+        {"item_text": "CL6 Site handling reported?", "rating": "Partial", "notes": "Site used as a graph-edge feature in a transductive population graph, not as a covariate or leave-site-out split."},
+        {"item_text": "CL7 Code and/or participant list available?", "rating": "No", "notes": "Not stated."}
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-077",
+    "study_design_sample_dataset": "Diagnostic prediction (ASD vs HC); ABIDE (consistent with ABIDE I), 871 of 1112 subjects (403 ASD, 468 HC)",
+    "methods": "C-PAC-preprocessed rs-fMRI parcellated with the Harvard-Oxford atlas; Fisher z-transformed Pearson connectivity, dimensionality-reduced via recursive feature elimination; a transductive population graph (nodes = imaging features, edges weighted by gender/age/acquisition site) classified with a proposed attention/skip-connection GCN (AN-GCN), evaluated with stratified 10-fold cross-validation against several GCN-based baselines.",
+    "outcomes": "AN-GCN achieved 96.91% accuracy and 96.86% AUC on ABIDE, far exceeding the strongest compared baseline (DS-MML, 87.62% accuracy, 92.00% AUC) and the basic GCN baseline (64.63% accuracy).",
+    "key_limitations": "No diagnosis-source statement; feature elimination appears to precede the CV split; site/age/gender used directly as population-graph edge weights rather than controlled for, with no leave-site-out evaluation; the very high accuracy is substantially above the paper's own baselines and typical ABIDE benchmarks, suggesting possible leakage/inflation.",
+    "relevance_notes": "Illustrates a predictive, transductive population-graph GCN approach on ABIDE with a pipeline/atlas clearly reported but validation design raising leakage concerns given an unusually high accuracy.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1007/s12559-023-10224-6",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "871 of 1112 ABIDE subjects selected (403 ASD, 468 HC); exact selection rule not detailed",
+    "n_by_dx": {"ASD": 403, "TD": 468, "total": 871},
+    "sites": "",
+    "pipeline": "C-PAC",
+    "atlas": "Harvard-Oxford",
+    "claim_type": "predictive",
+    "finding": "AN-GCN, a population-graph GCN with skip connections, classified ASD vs HC with 96.91% accuracy and 96.86% AUC, exceeding all compared baselines (strongest baseline DS-MML: 87.62% accuracy).",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "We select a set of 871 subjects,\nconsisting of 403 ASD patients and 468 healthy controls\n(HCs).",
+      "AN-GCN (Ours)\n96.91\n96.86\n97.16\n96.91\n97.00\n93.76\n93.86"
+    ]
+  }
+}

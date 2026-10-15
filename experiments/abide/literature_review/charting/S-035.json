@@ -1,0 +1,29 @@
+{
+  "source_id": "S-035",
+  "pmid": "local_78ccf8ba",
+  "doi": "10.1080/08839514.2021.2004655",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: uses only structural MRI (T1-weighted corpus callosum and intracranial brain volume features) from ABIDE-I, with no resting-state functional connectivity analysis.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "openalex_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1080/08839514.2021.2004655",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "",
+    "evidence_quotes": [
+      "This study is performed using structural MRI (s-MRI) scans from Autism Brain Imaging Data Ex- change (ABIDE-I) dataset (http://fcon_1000.projects.nitrc.org/indi/abide/abide_I.html).",
+      "Corpus callosum and intracranial brain volume data is obtained from T1-weighted MRI scans."
+    ]
+  }
+}

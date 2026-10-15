@@ -1,0 +1,4 @@
+# TEMPLATE ONLY (not installed). ORCD scrontab entry: weekly snapshot on a small CPU allocation.
+# Install with: scrontab -e   (then paste the two lines below, adjusting the path)
+#SCRON -p mit_normal -t 00:20:00 --mem=2G -c 1 -J abide-kg-refresh
+17 6 * * 1 cd $HOME/orcd/scratch/repronim-talk/ABIDE_Collaboration_Experiment && PATH=$HOME/.local/bin:$PATH uv run --frozen python code/refresh_activity.py --min-interval-minutes 1440

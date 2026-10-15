@@ -1,0 +1,148 @@
+{
+  "source_id": "S-069",
+  "pmid": "local_7424ae8d",
+  "doi": "10.35377/saucis.04.01.879735",
+  "screening": {
+    "decision": "include",
+    "reason": "Meets inclusion 2/3: analyses ABIDE I resting-state fMRI connectivity to classify ASD vs typical control with RNN/LSTM/CNN deep-learning models.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "we used the same 871 samples from the ABIDE 1 data set [23], [24], [25]. Of the 871 subjects, 403 patients were ASD and 468 were TC patients.",
+      "section": "methods",
+      "claim": "Cohort was a commonly-used 871-subject ABIDE I subset: 403 ASD, 468 TC.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "In this study, we used multiscale functional brain parcels. Brain parcels were created using a method known as the bootstrap analysis of stable clusters called BASC [32]. Scales were selected using a data- based method called MSTEPS [33]. There are different scales in this method. In this study, the scale is set to 122.",
+      "section": "methods",
+      "claim": "Parcellation used the BASC atlas at scale 122, selected via MSTEPS.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "An edge between a pair of ROIs is usually weighted with the Pearson correlation coefficient (PCC).",
+      "section": "methods",
+      "claim": "Functional connectivity edges were defined using the Pearson correlation coefficient.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method. The main purpose of this process is to use each data for both training and testing.",
+      "section": "methods",
+      "claim": "Evaluation used 10-fold cross-validation (no site-based split mentioned).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Table 2 Average classification performances \nMETHOD \nACC \nSENS \nSPEC \nRNN \n74.74 \n72.95 \n76.28",
+      "section": "table",
+      "claim": "Best model (RNN) achieved 10-fold CV accuracy 74.74%, sensitivity 72.95%, specificity 76.28%.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Table 2 shows the average classification performances obtained by 10-fold cross-validation tests. When the classification results are examined, it is seen that the highest performance value is provided by RNN with 74.74%.",
+      "section": "results",
+      "claim": "RNN was the best-performing model at 74.74% accuracy.",
+      "relevance_score": 0.9
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Unclear", "support": "N by diagnosis given (403 ASD/468 TC) by reusing a commonly-cited 871-subject subset, but no inclusion/exclusion rule or motion/QC threshold specific to this paper is reported: \"we used the same 871 samples from the ABIDE 1 data set [23], [24], [25]. Of the 871 subjects, 403 patients were ASD and 468 were TC patients.\""},
+      {"domain": "Predictors", "judgment": "Low", "support": "Atlas (BASC, scale 122 via MSTEPS) and connectivity measure (PCC) are clearly specified."},
+      {"domain": "Outcome", "judgment": "Low", "support": "ASD/TC labels are the ABIDE phenotypic diagnosis, independent of the connectivity-derived predictors."},
+      {"domain": "Analysis", "judgment": "High", "support": "10-fold cross-validation is pooled across sites with no site handling, leave-site-out evaluation, or leakage-control statement for any preprocessing/feature steps: \"Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method.\""}
+    ],
+    "overall": "High",
+    "summary": "Cohort and atlas are specified, but no motion/QC rule, no site handling (pooled 10-fold CV), and no leakage-control or code/participant-list availability statement."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "403",
+    "n_controls": "468",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "",
+    "specific_features": "Pearson correlation coefficient functional connectivity using the BASC atlas (scale 122, selected via MSTEPS)",
+    "model_category": "Deep learning (recurrent and convolutional neural networks)",
+    "specific_algorithms": "RNN, BiRNN, LSTM, BiLSTM, CNN, CNN-RNN, CNN-BiRNN",
+    "validation_methodology": "10-fold cross-validation (pooled across sites; no leave-site-out)",
+    "performance_metrics": "Accuracy (ACC), sensitivity (SENS), specificity (SPEC)",
+    "key_performance_results": "Best model RNN: accuracy 74.74%, sensitivity 72.95%, specificity 76.28% (10-fold CV average)",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "No statement on code or participant-list availability found",
+    "custom_fields": {
+      "RQ1": "ABIDE I, the same commonly-used 871-subject subset (403 ASD, 468 TC); no study-specific exclusion/QC rule is described beyond reusing this subset. | quote: \"we used the same 871 samples from the ABIDE 1 data set [23], [24], [25]. Of the 871 subjects, 403 patients were ASD and 468 were TC patients.\"",
+      "RQ2": "No named preprocessing pipeline (e.g. CPAC/DPARSF); connectivity derived using the BASC atlas (scale 122 via MSTEPS) and Pearson correlation. | quote: \"we used multiscale functional brain parcels. Brain parcels were created using a method known as the bootstrap analysis of stable clusters called BASC [32].\"",
+      "RQ3": "predictive — RNN/LSTM/CNN and hybrid models classify ASD vs TC from functional connectivity. | quote: \"The long short-term memory network (LSTM), convolutional neural network (CNN) , and hybrid models are used together for the classification process.\"",
+      "RQ4": "10-fold cross-validation, pooled across sites, no site covariate or leave-site-out evaluation, no statistical correction reported. | quote: \"Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method.\"",
+      "RQ5": "Best model (RNN) reached 74.74% accuracy, 72.95% sensitivity, 76.28% specificity on 10-fold CV; no AUC or CI reported. | quote: \"the highest performance value is provided by RNN with 74.74%.\"",
+      "RQ6": "no — reuses a commonly-cited ABIDE I subset (871 subjects) referenced to prior papers, with no participant-ID list or exact exclusion rule of its own. | quote: \"we used the same 871 samples from the ABIDE 1 data set [23], [24], [25].\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis given (403 ASD/468 TC) but defined only by reuse of a prior subset, with no exclusion rule of its own. | quote: \"Of the 871 subjects, 403 patients were ASD and 468 were TC patients.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion metric or QC threshold is reported. | quote: \"Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method.\"",
+      "CL3 Preprocessing pipeline and version reported?": "No — no named preprocessing pipeline (e.g. CPAC/DPARSF) or version is given. | quote: \"we used multiscale functional brain parcels. Brain parcels were created using a method known as the bootstrap analysis of stable clusters called BASC [32].\"",
+      "CL4 Atlas/parcellation reported?": "Yes — BASC atlas at scale 122, selected via MSTEPS. | quote: \"In this study, the scale is set to 122.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — no statement that any preprocessing or feature step was confined to the training folds. | quote: \"Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method. The main purpose of this process is to use each data for both training and testing.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — 10-fold cross-validation is pooled across subjects with no site covariate or leave-site-out evaluation. | quote: \"Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method.\"",
+      "CL7 Code and/or participant list available?": "No — no code repository or participant-list availability statement found. | quote: \"we used the same 871 samples from the ABIDE 1 data set [23], [24], [25].\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Within the study's scope, ASD and healthy individuals were distinguished on 871 samples obtained from the ABIDE I data set.\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "items": [
+        {"item": "CL1", "rating": "Partial", "support": "N by diagnosis given but defined by reusing a prior subset with no new exclusion rule."},
+        {"item": "CL2", "rating": "No", "support": "No motion/QC rule reported."}
+      ],
+      "overall_concern": "High"
+    },
+    "domain_2_predictors_features": {
+      "items": [
+        {"item": "CL3", "rating": "No", "support": "No named preprocessing pipeline given."},
+        {"item": "CL4", "rating": "Yes", "support": "BASC atlas at scale 122 named."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_outcome_labels": {
+      "items": [
+        {"item": "diagnosis source", "rating": "Unclear", "support": "ASD/TC labels are the ABIDE phenotypic diagnosis; diagnostic criteria not restated here."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "items": [
+        {"item": "CL5", "rating": "No", "support": "No leakage-control statement for the 10-fold procedure."},
+        {"item": "CL6", "rating": "No", "support": "Pooled 10-fold CV, no site handling or leave-site-out."},
+        {"item": "CL7", "rating": "No", "support": "No code or participant-list availability statement."}
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I, a commonly-cited 871-subject subset (403 ASD, 468 TC), sites not itemised.",
+    "methods": "BASC-atlas (scale 122) functional connectivity via Pearson correlation; RNN, BiRNN, LSTM, BiLSTM, CNN and CNN-hybrid classifiers evaluated with 10-fold cross-validation.",
+    "outcomes": "Best model (RNN): accuracy 74.74%, sensitivity 72.95%, specificity 76.28%, comparable to or better than several prior published results on the same subset (Table 3 comparison).",
+    "key_limitations": "No preprocessing pipeline named, no motion/QC rule, pooled 10-fold CV with no site handling, no leakage-control statement, and no code or participant-list availability.",
+    "relevance_notes": "Uses the same widely-reused 871-subject ABIDE I subset as several prior studies, enabling direct accuracy comparison, but adds no new reproducibility information.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.35377/saucis.04.01.879735",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "A commonly-cited ABIDE I subset of 871 subjects (403 ASD, 468 TC), reused from prior published studies.",
+    "n_by_dx": {"ASD": 403, "TD": 468, "total": 871},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "BASC (scale 122, via MSTEPS)",
+    "claim_type": "predictive",
+    "finding": "RNN achieved the best 10-fold cross-validation performance: accuracy 74.74%, sensitivity 72.95%, specificity 76.28%.",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "we used the same 871 samples from the ABIDE 1 data set [23], [24], [25]. Of the 871 subjects, 403 patients were ASD and 468 were TC patients.",
+      "the highest performance value is provided by RNN with 74.74%."
+    ]
+  }
+}

@@ -1,0 +1,819 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <urn:repronim:abide:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:repronim:abide:adoption/mni152_fsl_template> a prov:Activity,
+        ex:Adoption ;
+    prov:used <urn:repronim:abide:resource/mni152_fsl> ;
+    ex:localDeviation "not MNI152NLin2009cAsym (the fMRIPrep default used in the CNP example)" ;
+    ex:localParameters "anatomical registration at 2 mm, functional at 3 mm, ANTs" ;
+    ex:localRevalidation "not re-validated here: preprocessing taken as released" ;
+    ex:pinnedVersion "FSL 5.0 MNI152_T1_2mm (C-PAC pipeline_config.yml)" .
+
+<urn:repronim:abide:adoption/nidm_linkml_schema> a prov:Activity,
+        ex:Adoption ;
+    prov:used <urn:repronim:abide:resource/pynidm> ;
+    ex:localDeviation "13 classes and 191 properties declared in graph/abide_extension.ttl" ;
+    ex:localParameters "open and closed SHACL generated with linkml gen-shacl 1.12.1" ;
+    ex:localRevalidation "core graph: 11491 open-shape results; PyNIDM's own csv2nidm output: 134; simple2 Caltech: 114" ;
+    ex:pinnedVersion "PyNIDM v4.5.5 (74793553f2ef0884602c4383fe8dbe8c74e3dcb8), schema 0.1.0" .
+
+<urn:repronim:abide:adoption/simple2_nidm> a prov:Activity,
+        ex:Adoption ;
+    prov:used <urn:repronim:abide:resource/simple2_nidm_examples> ;
+    ex:localParameters "loaded unmodified as 27 named graphs" ;
+    ex:localRevalidation "identity join 1112/1112 with 0 field conflicts; shipped query output reproduced 12907/12907" ;
+    ex:pinnedVersion "commit e0dff17629bd5031e246c05ff4bed174597552a2" .
+
+<urn:repronim:abide:claim/A_v1> ex:accessLevel "public" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/analyst_pond_records> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "analyst" .
+
+<urn:repronim:abide:claim/A_v2> ex:accessLevel "public" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/analyst_pond_records> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "analyst" .
+
+<urn:repronim:abide:claim/B_v1> ex:accessLevel "public" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/analyst_pond_records> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "analyst" .
+
+<urn:repronim:abide:claim/B_v2> ex:accessLevel "public" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/analyst_pond_records> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "analyst" .
+
+<urn:repronim:abide:cohort/A_v1> ex:accessLevel "public" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/analyst_pond_records> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "analyst" .
+
+<urn:repronim:abide:cohort/A_v2> ex:accessLevel "public" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/analyst_pond_records> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "analyst" .
+
+<urn:repronim:abide:cohort/B_v1> ex:accessLevel "public" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/analyst_pond_records> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "analyst" .
+
+<urn:repronim:abide:cohort/B_v2> ex:accessLevel "public" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/analyst_pond_records> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "analyst" .
+
+<urn:repronim:abide:illustrative/study_only_record> a ex:IllustrativeRecord ;
+    rdfs:label "ILLUSTRATIVE study-only record (not real data)" ;
+    ex:accessLevel "restricted" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/illustrative_study_only> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "site" .
+
+<urn:repronim:abide:paper/abraham2017/AB_C3> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+ex:participantRecords a ex:RecordFamily ;
+    rdfs:label "ABIDE participant-level phenotype records, scan pointers, time series and IDPs (1,112 participants)" ;
+    ex:accessLevel "public" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/abide_public_release> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:lakeCopy <http://preprocessed-connectomes-project.org/abide/> ;
+    ex:memberPattern "urn:repronim:abide:record/*, participant/*, timeseries/*, connectivity/*, idp/*" ;
+    ex:pondLevel "lab" ;
+    ex:promotionPolicy "never-promote: the lake already holds the authoritative public release; link to it instead of copying" .
+
+<urn:repronim:abide:resource/abide-preprocessed> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/abide-raw-bids> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/abraham2017> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/ants-nidm_bidsapp> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/babs-demo-ohbm2025> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/containers> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/cpac> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/dimartino2014> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/fair_neuroimaging_with_nidm> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/freesurfer-nidm_bidsapp> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/fsl_seg_to_nidm> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/module-FAIR-data> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/module-dataprocessing> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/module-intro> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/module-reproducible-basics> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/module-stats> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/mriqc-nidm_bidsapp> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/neurobagel-api> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/neurobagel-bagel-cli> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/neurobagel-federation-api> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/neurobagel-query-tool> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/neurodocker> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/nidm-experiment> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/nidm-experiment-cob> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/nidm-specs> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/nidm-terms> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/nidmresults> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/nidmresults-fsl> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/nilearn> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/openneuroderivatives-nidm> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/pyoxigraph> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/pyshacl> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/rdflib> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/reproin> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/reproinventory> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/reprolake> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/reproman> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/repronim-pond-lake-tutorial> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/repronim-skills> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/reproschema> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/reproschema-library> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/reproschema-py> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/reproschema-ui> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/reproseed> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/reprostim> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/reprozip> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/scikit-learn> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/segstats_jsonld> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/sensein-agent-skills> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/simple2_bidsapp_babs> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/simple_workflow> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/stuff2nidm> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/testkraken> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/umap-learn> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:review/A_reviews_B_v1> ex:accessLevel "public" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/analyst_pond_records> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "analyst" .
+
+<urn:repronim:abide:review/B_reviews_A_v1> ex:accessLevel "public" ;
+    ex:hasSensitivityProfile <urn:repronim:abide:sensitivity/analyst_pond_records> ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "analyst" .
+
+<urn:repronim:abide:revision/ants_cde_relabel> a prov:Activity,
+        ex:Revision ;
+    rdfs:comment "ANTs CDE labels changed (CSF Volume (mm^3), GVol (mm^3), WVol (mm^3) -> CSFVOL (mm^3), GMVOL (mm^3), WMVOL (mm^3)); the shipped simple2_query_output.csv is a stale local copy" ;
+    prov:used <urn:repronim:abide:resource/ants_seg_to_nidm> ;
+    ex:flags <https://github.com/ReproNim/simple2_NIDM_examples/blob/e0dff17629bd5031e246c05ff4bed174597552a2/queries/simple2_query_output.csv> .
+
+<urn:repronim:abide:revision/bids_ld_dormant> a prov:Activity,
+        ex:DeprecationFlag ;
+    rdfs:comment "latest activity snapshot: no pushes since 2019; do not adopt without checking for a successor" ;
+    prov:used <urn:repronim:abide:resource/bids-ld> .
+
+<urn:repronim:abide:rule/coverage> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "lab" .
+
+<urn:repronim:abide:rule/fiq_range> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "lab" .
+
+<urn:repronim:abide:rule/motion_v1> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "lab" .
+
+<urn:repronim:abide:rule/rater_qc> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "lab" .
+
+<urn:repronim:abide:rule/site_min> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "lab" .
+
+<urn:repronim:abide:cohort/abraham2017_reconstructed> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "lab" .
+
+<urn:repronim:abide:paper/abraham2017/AB_C1> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:paper/abraham2017/AB_C2> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:paper/dimartino2014/DM_C1> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:promotion/claim_AB_C1/gate/consent_and_deidentification> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C1> ;
+    ex:evidence "claim-level statement; no participant data" ;
+    ex:gateType "consent_and_deidentification" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_AB_C1/gate/generality> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C1> ;
+    ex:evidence "published, peer-reviewed claim with stated cohort scope" ;
+    ex:gateType "generality" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_AB_C1/gate/licence> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C1> ;
+    ex:evidence "article licence not recorded; quote length kept short" ;
+    ex:gateType "licence" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:promotion/claim_AB_C1/gate/persistent_identifier_and_version> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C1> ;
+    ex:evidence "DOI recorded; Abraham quotes from arXiv v1, journal text not compared" ;
+    ex:gateType "persistent_identifier_and_version" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_AB_C1/gate/provenance_retained> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C1> ;
+    ex:evidence "quote, locator, character offset and source hash recorded" ;
+    ex:gateType "provenance_retained" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_AB_C1/gate/review> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C1> ;
+    ex:evidence "journal peer review; extraction checked verbatim against source text (paper_extraction.json)" ;
+    ex:gateType "review" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_AB_C2/gate/consent_and_deidentification> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C2> ;
+    ex:evidence "claim-level statement; no participant data" ;
+    ex:gateType "consent_and_deidentification" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_AB_C2/gate/generality> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C2> ;
+    ex:evidence "published, peer-reviewed claim with stated cohort scope" ;
+    ex:gateType "generality" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_AB_C2/gate/licence> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C2> ;
+    ex:evidence "article licence not recorded; quote length kept short" ;
+    ex:gateType "licence" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:promotion/claim_AB_C2/gate/persistent_identifier_and_version> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C2> ;
+    ex:evidence "DOI recorded; Abraham quotes from arXiv v1, journal text not compared" ;
+    ex:gateType "persistent_identifier_and_version" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_AB_C2/gate/provenance_retained> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C2> ;
+    ex:evidence "quote, locator, character offset and source hash recorded" ;
+    ex:gateType "provenance_retained" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_AB_C2/gate/review> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_AB_C2> ;
+    ex:evidence "journal peer review; extraction checked verbatim against source text (paper_extraction.json)" ;
+    ex:gateType "review" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_DM_C1/gate/consent_and_deidentification> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_DM_C1> ;
+    ex:evidence "claim-level statement; no participant data" ;
+    ex:gateType "consent_and_deidentification" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_DM_C1/gate/generality> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_DM_C1> ;
+    ex:evidence "published, peer-reviewed claim with stated cohort scope" ;
+    ex:gateType "generality" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_DM_C1/gate/licence> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_DM_C1> ;
+    ex:evidence "article licence not recorded; quote length kept short" ;
+    ex:gateType "licence" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:promotion/claim_DM_C1/gate/persistent_identifier_and_version> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_DM_C1> ;
+    ex:evidence "DOI recorded; Europe PMC PMC4162310" ;
+    ex:gateType "persistent_identifier_and_version" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_DM_C1/gate/provenance_retained> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_DM_C1> ;
+    ex:evidence "quote, locator, character offset and source hash recorded" ;
+    ex:gateType "provenance_retained" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/claim_DM_C1/gate/review> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/claim_DM_C1> ;
+    ex:evidence "journal peer review; extraction checked verbatim against source text (paper_extraction.json)" ;
+    ex:gateType "review" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/consent_and_deidentification> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/cohort_abraham_reconstruction> ;
+    ex:evidence "cohort definition and pseudonymous FILE_IDs from a public de-identified release" ;
+    ex:gateType "consent_and_deidentification" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/generality> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/cohort_abraham_reconstruction> ;
+    ex:evidence "rater-QC rule reconstructs 873 participants vs 871 reported; membership unverified" ;
+    ex:gateType "generality" ;
+    ex:status "fail" .
+
+<urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/licence> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/cohort_abraham_reconstruction> ;
+    ex:evidence "ABIDE CC BY-NC-SA; definition is our text" ;
+    ex:gateType "licence" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/persistent_identifier_and_version> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/cohort_abraham_reconstruction> ;
+    ex:evidence "no persistent identifier minted for the cohort definition" ;
+    ex:gateType "persistent_identifier_and_version" ;
+    ex:status "fail" .
+
+<urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/provenance_retained> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/cohort_abraham_reconstruction> ;
+    ex:evidence "rule text and membership in graph" ;
+    ex:gateType "provenance_retained" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/review> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/cohort_abraham_reconstruction> ;
+    ex:evidence "no external review" ;
+    ex:gateType "review" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:promotion/motion_rule_v2/gate/consent_and_deidentification> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/motion_rule_v2> ;
+    ex:evidence "a rule, no participant data" ;
+    ex:gateType "consent_and_deidentification" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/motion_rule_v2/gate/generality> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/motion_rule_v2> ;
+    ex:evidence "FD<0.15 excludes 0%-88% per site (max CMU); 1 of 20 sites lose over half; excludes 23.0% of ASD vs 13.5% of TD, so the rule is site- and diagnosis-dependent (fd_sweep.json)" ;
+    ex:gateType "generality" ;
+    ex:status "fail" .
+
+<urn:repronim:abide:promotion/motion_rule_v2/gate/licence> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/motion_rule_v2> ;
+    ex:evidence "no licence chosen for local rules" ;
+    ex:gateType "licence" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:promotion/motion_rule_v2/gate/persistent_identifier_and_version> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/motion_rule_v2> ;
+    ex:evidence "versioned in this graph only (motion_v1 -> motion_v2)" ;
+    ex:gateType "persistent_identifier_and_version" ;
+    ex:status "fail" .
+
+<urn:repronim:abide:promotion/motion_rule_v2/gate/provenance_retained> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/motion_rule_v2> ;
+    ex:evidence "revision activity attributed to Analyst A" ;
+    ex:gateType "provenance_retained" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/motion_rule_v2/gate/review> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/motion_rule_v2> ;
+    ex:evidence "reviewed through revision_impact.json: 0 of 9 result families changed materially" ;
+    ex:gateType "review" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/skill_graph_build/gate/consent_and_deidentification> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/skill_graph_build> ;
+    ex:evidence "procedure only" ;
+    ex:gateType "consent_and_deidentification" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/skill_graph_build/gate/generality> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/skill_graph_build> ;
+    ex:evidence "tested on ABIDE only" ;
+    ex:gateType "generality" ;
+    ex:status "fail" .
+
+<urn:repronim:abide:promotion/skill_graph_build/gate/licence> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/skill_graph_build> ;
+    ex:evidence "" ;
+    ex:gateType "licence" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:promotion/skill_graph_build/gate/persistent_identifier_and_version> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/skill_graph_build> ;
+    ex:evidence "not yet in a versioned repository" ;
+    ex:gateType "persistent_identifier_and_version" ;
+    ex:status "fail" .
+
+<urn:repronim:abide:promotion/skill_graph_build/gate/provenance_retained> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/skill_graph_build> ;
+    ex:evidence "rebuild.sh + uv.lock + hashes" ;
+    ex:gateType "provenance_retained" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/skill_graph_build/gate/review> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/skill_graph_build> ;
+    ex:evidence "" ;
+    ex:gateType "review" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/consent_and_deidentification> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z> ;
+    ex:evidence "term definition only" ;
+    ex:gateType "consent_and_deidentification" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/generality> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z> ;
+    ex:evidence "used in one dataset" ;
+    ex:gateType "generality" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/licence> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z> ;
+    ex:evidence "" ;
+    ex:gateType "licence" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/persistent_identifier_and_version> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z> ;
+    ex:evidence "local urn only; no InterLex/NIDM-Terms identifier; no isAbout concept found" ;
+    ex:gateType "persistent_identifier_and_version" ;
+    ex:status "fail" .
+
+<urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/provenance_retained> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z> ;
+    ex:evidence "DataElement records derivation and attributed software" ;
+    ex:gateType "provenance_retained" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/review> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z> ;
+    ex:evidence "no term review" ;
+    ex:gateType "review" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:promotion/variable_qc_raters/gate/consent_and_deidentification> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_qc_raters> ;
+    ex:evidence "term definition only" ;
+    ex:gateType "consent_and_deidentification" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/variable_qc_raters/gate/generality> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_qc_raters> ;
+    ex:evidence "same three-rater QC columns released for all 1,112 ABIDE participants" ;
+    ex:gateType "generality" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/variable_qc_raters/gate/licence> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_qc_raters> ;
+    ex:evidence "" ;
+    ex:gateType "licence" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:promotion/variable_qc_raters/gate/persistent_identifier_and_version> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_qc_raters> ;
+    ex:evidence "not in ReproNim's ABIDE term map (abide_phenotypic_v1_0b_vars_to_terms_v5.json); no isAbout" ;
+    ex:gateType "persistent_identifier_and_version" ;
+    ex:status "fail" .
+
+<urn:repronim:abide:promotion/variable_qc_raters/gate/provenance_retained> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_qc_raters> ;
+    ex:evidence "DataElement derived from the phenotype CSV with source row" ;
+    ex:gateType "provenance_retained" ;
+    ex:status "pass" .
+
+<urn:repronim:abide:promotion/variable_qc_raters/gate/review> a prov:Entity,
+        ex:GateAssessment ;
+    prov:wasGeneratedBy <urn:repronim:abide:promotion/variable_qc_raters> ;
+    ex:evidence "" ;
+    ex:gateType "review" ;
+    ex:status "unknown" .
+
+<urn:repronim:abide:resource/ants_seg_to_nidm> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/bids-ld> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/mni152_fsl> a ex:Template ;
+    rdfs:label "MNI152_T1 2 mm template as shipped with FSL 5.0" ;
+    ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/pynidm> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:resource/simple2_nidm_examples> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:rule/motion_v2> ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "lab" .
+
+<urn:repronim:abide:scope/consortium-federation> a ex:KnowledgeScope ;
+    rdfs:label "Federated ponds queried together (e.g. via Neurobagel)" .
+
+<urn:repronim:abide:sensitivity/abide_public_release> a ex:SensitivityProfile ;
+    dct:source <https://fcon_1000.projects.nitrc.org/indi/abide/abide_I.html> ;
+    ex:alreadyPublicRelease true ;
+    ex:consentScope "broad-sharing" ;
+    ex:containsDirectIdentifiers false ;
+    ex:containsQuasiIdentifiers true ;
+    ex:defaced "unknown (not stated on the ABIDE page; image content not in this graph)" ;
+    ex:egressPermitted "permitted" ;
+    ex:egressReason "no blocking attribute" ;
+    ex:licence "CC BY-NC-SA (ABIDE I page)" ;
+    ex:restrictedByAgreement false ;
+    ex:statement "In accordance with HIPAA guidelines and 1000 Functional Connectomes Project / INDI protocols, all datasets have been anonymized, with no protected health information included." .
+
+<urn:repronim:abide:sensitivity/illustrative_study_only> a ex:SensitivityProfile ;
+    ex:consentScope "study-only" ;
+    ex:containsDirectIdentifiers false ;
+    ex:containsQuasiIdentifiers true ;
+    ex:egressPermitted "not permitted" ;
+    ex:egressReason "consent scope is study-only, not broad-sharing; restricted by agreement; quasi-identifiers without aggregation to minimum cell size" ;
+    ex:illustrative true ;
+    ex:note "ILLUSTRATIVE flag only, used for the SHACL egress mutation test; no real record has this profile" ;
+    ex:restrictedByAgreement true .
+
+<urn:repronim:abide:skill/abide_graph_build> a ex:Procedure ;
+    rdfs:label "This experiment's rebuild.sh as a reusable procedure" ;
+    ex:accessLevel "public" ;
+    ex:knowledgeScope <urn:repronim:abide:scope/pond> ;
+    ex:pondLevel "lab" .
+
+<urn:repronim:abide:promotion/claim_AB_C1> a prov:Activity,
+        ex:PromotionCandidate ;
+    rdfs:comment "BR-KG (Brain Researcher knowledge graph) queried by a parallel session on 2026-10-15: one aggregate ABIDE node (2,226 subjects, ABIDE I+II); neither DOI 10.1038/mp.2013.78 nor 10.1016/j.neuroimage.2016.10.045 present. Relayed, not re-run here." ;
+    prov:used <urn:repronim:abide:paper/abraham2017/AB_C1> ;
+    ex:gate <urn:repronim:abide:promotion/claim_AB_C1/gate/consent_and_deidentification>,
+        <urn:repronim:abide:promotion/claim_AB_C1/gate/generality>,
+        <urn:repronim:abide:promotion/claim_AB_C1/gate/licence>,
+        <urn:repronim:abide:promotion/claim_AB_C1/gate/persistent_identifier_and_version>,
+        <urn:repronim:abide:promotion/claim_AB_C1/gate/provenance_retained>,
+        <urn:repronim:abide:promotion/claim_AB_C1/gate/review> ;
+    ex:promotionStatus "candidate" ;
+    ex:targetRegistry "literature KG (e.g. BR-KG, AbstractAtlas)" ;
+    ex:targetScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:promotion/claim_AB_C2> a prov:Activity,
+        ex:PromotionCandidate ;
+    rdfs:comment "BR-KG (Brain Researcher knowledge graph) queried by a parallel session on 2026-10-15: one aggregate ABIDE node (2,226 subjects, ABIDE I+II); neither DOI 10.1038/mp.2013.78 nor 10.1016/j.neuroimage.2016.10.045 present. Relayed, not re-run here." ;
+    prov:used <urn:repronim:abide:paper/abraham2017/AB_C2> ;
+    ex:gate <urn:repronim:abide:promotion/claim_AB_C2/gate/consent_and_deidentification>,
+        <urn:repronim:abide:promotion/claim_AB_C2/gate/generality>,
+        <urn:repronim:abide:promotion/claim_AB_C2/gate/licence>,
+        <urn:repronim:abide:promotion/claim_AB_C2/gate/persistent_identifier_and_version>,
+        <urn:repronim:abide:promotion/claim_AB_C2/gate/provenance_retained>,
+        <urn:repronim:abide:promotion/claim_AB_C2/gate/review> ;
+    ex:promotionStatus "candidate" ;
+    ex:targetRegistry "literature KG (e.g. BR-KG, AbstractAtlas)" ;
+    ex:targetScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:promotion/claim_DM_C1> a prov:Activity,
+        ex:PromotionCandidate ;
+    rdfs:comment "BR-KG (Brain Researcher knowledge graph) queried by a parallel session on 2026-10-15: one aggregate ABIDE node (2,226 subjects, ABIDE I+II); neither DOI 10.1038/mp.2013.78 nor 10.1016/j.neuroimage.2016.10.045 present. Relayed, not re-run here." ;
+    prov:used <urn:repronim:abide:paper/dimartino2014/DM_C1> ;
+    ex:gate <urn:repronim:abide:promotion/claim_DM_C1/gate/consent_and_deidentification>,
+        <urn:repronim:abide:promotion/claim_DM_C1/gate/generality>,
+        <urn:repronim:abide:promotion/claim_DM_C1/gate/licence>,
+        <urn:repronim:abide:promotion/claim_DM_C1/gate/persistent_identifier_and_version>,
+        <urn:repronim:abide:promotion/claim_DM_C1/gate/provenance_retained>,
+        <urn:repronim:abide:promotion/claim_DM_C1/gate/review> ;
+    ex:promotionStatus "candidate" ;
+    ex:targetRegistry "literature KG (e.g. BR-KG, AbstractAtlas)" ;
+    ex:targetScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:promotion/cohort_abraham_reconstruction> a prov:Activity,
+        ex:PromotionCandidate ;
+    rdfs:comment "BR-KG (Brain Researcher knowledge graph) queried by a parallel session on 2026-10-15: one aggregate ABIDE node (2,226 subjects, ABIDE I+II); neither DOI 10.1038/mp.2013.78 nor 10.1016/j.neuroimage.2016.10.045 present. Relayed, not re-run here." ;
+    prov:used <urn:repronim:abide:cohort/abraham2017_reconstructed> ;
+    ex:gate <urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/consent_and_deidentification>,
+        <urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/generality>,
+        <urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/licence>,
+        <urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/persistent_identifier_and_version>,
+        <urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/provenance_retained>,
+        <urn:repronim:abide:promotion/cohort_abraham_reconstruction/gate/review> ;
+    ex:promotionStatus "blocked" ;
+    ex:targetRegistry "literature KG / ABIDE dataset record" ;
+    ex:targetScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:promotion/motion_rule_v2> a prov:Activity,
+        ex:PromotionCandidate ;
+    prov:used <urn:repronim:abide:rule/motion_v2> ;
+    ex:gate <urn:repronim:abide:promotion/motion_rule_v2/gate/consent_and_deidentification>,
+        <urn:repronim:abide:promotion/motion_rule_v2/gate/generality>,
+        <urn:repronim:abide:promotion/motion_rule_v2/gate/licence>,
+        <urn:repronim:abide:promotion/motion_rule_v2/gate/persistent_identifier_and_version>,
+        <urn:repronim:abide:promotion/motion_rule_v2/gate/provenance_retained>,
+        <urn:repronim:abide:promotion/motion_rule_v2/gate/review> ;
+    ex:promotionStatus "candidate" ;
+    ex:targetRegistry "consortium QC guideline" ;
+    ex:targetScope <urn:repronim:abide:scope/consortium-federation> .
+
+<urn:repronim:abide:promotion/skill_graph_build> a prov:Activity,
+        ex:PromotionCandidate ;
+    prov:used <urn:repronim:abide:skill/abide_graph_build> ;
+    ex:gate <urn:repronim:abide:promotion/skill_graph_build/gate/consent_and_deidentification>,
+        <urn:repronim:abide:promotion/skill_graph_build/gate/generality>,
+        <urn:repronim:abide:promotion/skill_graph_build/gate/licence>,
+        <urn:repronim:abide:promotion/skill_graph_build/gate/persistent_identifier_and_version>,
+        <urn:repronim:abide:promotion/skill_graph_build/gate/provenance_retained>,
+        <urn:repronim:abide:promotion/skill_graph_build/gate/review> ;
+    ex:promotionStatus "candidate" ;
+    ex:targetRegistry "ReproNim/skills (0 skills at pinned commit)" ;
+    ex:targetScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:promotion/variable_cc200_mean_fisher_z> a prov:Activity,
+        ex:PromotionCandidate ;
+    prov:used <urn:repronim:abide:variable/cc200_mean_fisher_z> ;
+    ex:gate <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/consent_and_deidentification>,
+        <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/generality>,
+        <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/licence>,
+        <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/persistent_identifier_and_version>,
+        <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/provenance_retained>,
+        <urn:repronim:abide:promotion/variable_cc200_mean_fisher_z/gate/review> ;
+    ex:promotionStatus "candidate" ;
+    ex:targetRegistry "NIDM-Terms / InterLex" ;
+    ex:targetScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:promotion/variable_qc_raters> a prov:Activity,
+        ex:PromotionCandidate ;
+    prov:used <urn:repronim:abide:variable/qc_func_rater_2> ;
+    ex:gate <urn:repronim:abide:promotion/variable_qc_raters/gate/consent_and_deidentification>,
+        <urn:repronim:abide:promotion/variable_qc_raters/gate/generality>,
+        <urn:repronim:abide:promotion/variable_qc_raters/gate/licence>,
+        <urn:repronim:abide:promotion/variable_qc_raters/gate/persistent_identifier_and_version>,
+        <urn:repronim:abide:promotion/variable_qc_raters/gate/provenance_retained>,
+        <urn:repronim:abide:promotion/variable_qc_raters/gate/review> ;
+    ex:promotionStatus "candidate" ;
+    ex:targetRegistry "NIDM-Terms / InterLex" ;
+    ex:targetScope <urn:repronim:abide:scope/lake> .
+
+<urn:repronim:abide:sensitivity/analyst_pond_records> a ex:SensitivityProfile ;
+    ex:consentScope "broad-sharing" ;
+    ex:containsDirectIdentifiers false ;
+    ex:containsQuasiIdentifiers false ;
+    ex:egressPermitted "permitted" ;
+    ex:egressReason "no blocking attribute" ;
+    ex:note "derived from public data; kept in the pond because unreviewed, not because sensitive" ;
+    ex:restrictedByAgreement false .
+
+<urn:repronim:abide:scope/pond> a ex:KnowledgeScope ;
+    rdfs:label "ReproPond: local FAIR metadata store (lab, site or analyst level)" ;
+    rdfs:seeAlso <https://repronim.org/resources/tutorials/pond-lake/> .
+
+<urn:repronim:abide:scope/lake> a ex:KnowledgeScope ;
+    rdfs:label "ReproLake: semantically aligned store of public datasets" ;
+    rdfs:seeAlso <https://www.repronim.org/resources/tools/reprolake/> .
+

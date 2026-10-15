@@ -1,0 +1,17 @@
+{
+  "after_dedup": 726,
+  "excluded_metadata": {
+    "not open access": 310,
+    "review/survey (title)": 1,
+    "publication type: review": 1,
+    "publication type: editorial": 1,
+    "publication type: dissertation": 1
+  },
+  "eligible_oa_primary": 412,
+  "candidates_ranked": 200,
+  "candidate_mix": {
+    "abide2": 52,
+    "pred": 126,
+    "assoc": 44
+  }
+}

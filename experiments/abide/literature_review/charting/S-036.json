@@ -1,0 +1,255 @@
+{
+  "source_id": "S-036",
+  "pmid": "local_9e370311",
+  "doi": "10.1109/jbhi.2020.2998603",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2/3: analyses ABIDE resting-state fMRI (single-volume brain images derived from rs-fMRI) explicitly and reports an ASD-vs-control diagnostic classification analysis.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "openalex_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "We incorporated data from 529 ASD individuals and 573 typical controls (TC) for each pipeline, which is comprised of 17 different imaging sites.",
+      "section": "methods",
+      "claim": "Cohort: 529 ASD and 573 typical control individuals from 17 ABIDE sites, processed with each of four pipelines.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Selected strategies are Connectome Computation System (CCS), Con\ufb01gurable Pipeline for the Analysis of Con- nectomes (CPAC), Data Processing Assistant for Resting-State fMRI (DPARSF) and Neuroimaging Analysis Kit (NIAK).",
+      "section": "methods",
+      "claim": "Four Preprocessed Connectomes Project pipelines (CCS, C-PAC, DPARSF, NIAK) were used in parallel.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "in this work, \ufb01rstly, we design an image genera- tor to generate single volume brain images from the whole-brain image of each subject.",
+      "section": "methods",
+      "claim": "Features are single-volume whole-brain images generated per subject, rather than ROI-based connectivity matrices.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "we \ufb01rst divided the whole dataset into two parts: training (85%), and testing (15%). From the generated training images, approximately 85% of the whole images were considered as the training set, and 15% as the validation set.",
+      "section": "methods",
+      "claim": "Evaluation used a single random 85/15 train/test split rather than cross-validation.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Table V represents the classi\ufb01cation performance for ensemble learning showing that the third ensemble classi\ufb01er performs better than other ensembles.",
+      "section": "results",
+      "claim": "A deep ensemble classifier (VGG16 feature extractor) was the best-performing of four ensemble configurations tested.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "In our experiments, the highest accuracy for glass brain images is up to 85% belongs to several data sites and for stat map images the accuracy is up to 84% for several data sites as shown in the table.",
+      "section": "results",
+      "claim": "Unit-site classification reached up to 85% accuracy (glass-brain images) and 84% (stat-map images) for some individual sites.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "therefore we performed unit-site classi\ufb01cation to pattern out",
+      "section": "methods",
+      "claim": "Per-site (unit-site) classification was performed to characterise inter-site variability.",
+      "relevance_score": 0.5
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "529 ASD and 573 TC from 17 ABIDE sites, processed identically across four pipelines; phenotypic table (sex, age, ADOS) reported."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "Four named preprocessing pipelines (CCS, C-PAC, DPARSF, NIAK) explicitly compared with a table of per-pipeline processing steps; single-volume image generator method described in detail."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD/TC label drawn from ABIDE phenotypic data; ADOS reported for subgroup but the specific diagnostic criteria used to assign ASD/TC are not restated."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "Primary evaluation is a single random 85%/15% train/test split (no cross-validation, no uncertainty estimate across repeated splits) despite pooling data across 17 sites without leave-site-out evaluation for the main classifier."
+      }
+    ],
+    "overall": "High",
+    "summary": "Well-documented multi-pipeline ABIDE cohort and preprocessing comparison, but the primary classification evaluation relies on a single random train/test split without cross-validation or site-held-out testing, limiting confidence in the reported accuracies."
+  },
+  "charting": {
+    "source_id": "S-036",
+    "title": "Single Volume Image Generator and Deep Learning-Based ASD Classification",
+    "authors": "Ahmed MR; Zhang Y; Inan OT; Liao H",
+    "year": "2020",
+    "journal_conference": "IEEE Journal of Biomedical and Health Informatics",
+    "doi": "10.1109/jbhi.2020.2998603",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "ADOS score reported for subset of subjects",
+    "n_disordered": "529",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "573",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI (single-volume generated images)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "whole-brain single-volume image (glass-brain and stat-map renderings)",
+    "specific_features": "Single-volume whole-brain glass-brain and statistical-map images generated per subject from four preprocessing pipelines",
+    "feature_extraction_tools": "CCS, C-PAC, DPARSF, NIAK (Preprocessed Connectomes Project pipelines)",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Convolutional Neural Network / deep ensemble",
+    "specific_algorithms": "Volume-based CNN; deep ensemble classifier using VGG16 as feature extractor (4 ensemble configurations compared)",
+    "validation_methodology": "Single random 85%/15% training/testing split; per-site (unit-site) classification also evaluated",
+    "performance_metrics": "Precision, Recall, F1-score, Accuracy",
+    "key_performance_results": "Unit-site classification accuracy up to 85% (glass-brain images) and 84% (stat-map images) for several sites; best ensemble classifier (classifier 3) outperformed other ensemble configurations across all four pipelines",
+    "summary_key_findings": "A single-volume image generator applied to four ABIDE preprocessing pipelines (CCS, C-PAC, DPARSF, NIAK) combined with CNN and VGG16-based deep ensemble classifiers achieves up to 85% unit-site classification accuracy for ASD vs. typical control, evaluated with a single 85/15 train/test split.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "predictive | ABIDE I, 529 ASD and 573 TC (1102 total) from 17 sites, processed through four pipelines in parallel. | quote: \"We incorporated data from 529 ASD individuals and 573 typical controls (TC) for each pipeline, which is comprised of 17 different imaging sites.\"",
+      "RQ2": "Four Preprocessed Connectomes Project pipelines compared: CCS, C-PAC, DPARSF, NIAK; no ROI atlas used (whole-volume images rather than ROI connectivity). | quote: \"Selected strategies are Connectome Computation System (CCS), Con\ufb01gurable Pipeline for the Analysis of Con- nectomes (CPAC), Data Processing Assistant for Resting-State fMRI (DPARSF) and Neuroimaging Analysis Kit (NIAK).\"",
+      "RQ3": "predictive \u2014 ASD vs. typical control classification from single-volume brain images. | quote: \"we design an image genera- tor to generate single volume brain images from the whole-brain image of each subject.\"",
+      "RQ4": "Single random 85%/15% train/test split; separate per-site (unit-site) classification performed to assess site variability; no cross-validation or leave-site-out scheme reported for the main model. | quote: \"we \ufb01rst divided the whole dataset into two parts: training (85%), and testing (15%).\"",
+      "RQ5": "Unit-site classification accuracy up to 85% (glass-brain) and 84% (stat-map) for several sites; best deep ensemble classifier outperformed other configurations across all four pipelines. | quote: \"the highest accuracy for glass brain images is up to 85% belongs to several data sites and for stat map images the accuracy is up to 84% for several data sites\"",
+      "RQ6": "no \u2014 overall N by diagnosis and site count reported, but no participant-ID list or code repository found in text. | quote: \"We incorporated data from 529 ASD individuals and 573 typical controls (TC) for each pipeline, which is comprised of 17 different imaging sites.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"We incorporated data from 529 ASD individuals and 573 typical controls (TC) for each pipeline, which is comprised of 17 different imaging sites.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No | quote: \"Ta- ble I arranges for a summary of the distinct preprocessing steps and how they vary across pipelines.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"Selected strategies are Connectome Computation System (CCS), Con\ufb01gurable Pipeline for the Analysis of Con- nectomes (CPAC), Data Processing Assistant for Resting-State fMRI (DPARSF) and Neuroimaging Analysis Kit (NIAK).\"",
+      "CL4 Atlas/parcellation reported?": "No | quote: \"in this work, \ufb01rstly, we design an image genera- tor to generate single volume brain images from the whole-brain image of each subject.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No | quote: \"we \ufb01rst divided the whole dataset into two parts: training (85%), and testing (15%).\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly | quote: \"therefore we performed unit-site classi\ufb01cation to pattern out\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"We incorporated data from 529 ASD individuals and 573 typical controls (TC) for each pipeline\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The present study was carried out using fMRI data from the ABIDE1, which is a particularly complex dataset due to its heterogeneity\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-036",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Yes",
+          "notes": "529 ASD, 573 TC, 17 sites, with phenotypic table (sex, age, ADOS)."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "No",
+          "notes": "No numeric motion/QC threshold stated; only a pipeline processing-steps comparison table."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Pipeline and version reported?",
+          "rating": "Yes",
+          "notes": "Four named PCP pipelines (CCS, C-PAC, DPARSF, NIAK) compared with a steps table."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "No",
+          "notes": "Whole-volume images used instead of an ROI atlas/parcellation."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "ADOS reported for a subgroup but the formal diagnostic criteria for ASD/TC assignment are not restated."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "No",
+          "notes": "Single random split described, no statement on avoiding leakage between generated training/validation images."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "Partial",
+          "notes": "Per-site (unit-site) classification performed, but the main pooled classifier is not evaluated with leave-site-out CV."
+        },
+        {
+          "item_text": "CL7 Code/participant list available?",
+          "rating": "No",
+          "notes": "No code repository or participant list link found in the text."
+        }
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-036",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I; 529 ASD and 573 typically developing individuals (1102 total) from 17 sites, each processed with four pipelines (CCS, C-PAC, DPARSF, NIAK)",
+    "methods": "A single-volume image generator converts each subject's whole-brain fMRI volume into glass-brain and stat-map images; CNN and VGG16-based deep ensemble classifiers evaluated with an 85%/15% train/test split, plus per-site (unit-site) classification",
+    "outcomes": "Unit-site classification accuracy up to 85% (glass-brain) and 84% (stat-map) for several sites; the third deep ensemble classifier configuration performed best across all four pipelines",
+    "key_limitations": "Single random train/test split with no cross-validation; no leave-site-out evaluation for the pooled multi-site classifier despite known site heterogeneity",
+    "relevance_notes": "Provides a direct four-pipeline (CCS/C-PAC/DPARSF/NIAK) comparison on the same ABIDE cohort using a non-connectivity (whole-volume image) feature representation",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1109/jbhi.2020.2998603",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "529 ASD and 573 typically developing individuals from 17 ABIDE sites, processed in parallel through four Preprocessed Connectomes Project pipelines",
+    "n_by_dx": {
+      "ASD": 529,
+      "TD": 573,
+      "total": 1102
+    },
+    "sites": "17",
+    "pipeline": "CCS, C-PAC, DPARSF, NIAK (Preprocessed Connectomes Project)",
+    "atlas": "",
+    "claim_type": "predictive",
+    "finding": "Deep ensemble classification of single-volume whole-brain images achieves up to 85% unit-site classification accuracy (glass-brain images) for ASD vs. typical control, evaluated with an 85%/15% train/test split.",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "We incorporated data from 529 ASD individuals and 573 typical controls (TC) for each pipeline, which is comprised of 17 different imaging sites.",
+      "In our experiments, the highest accuracy for glass brain images is up to 85% belongs to several data sites and for stat map images the accuracy is up to 84% for several data sites as shown in the table."
+    ]
+  }
+}

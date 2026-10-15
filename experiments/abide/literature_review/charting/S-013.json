@@ -1,0 +1,32 @@
+{
+  "source_id": "S-013",
+  "pmid": "local_598175ab",
+  "doi": "10.1109/access.2022.3157613",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: structural MRI only — the paper uses only longitudinal T1-weighted structural MRI (sMRI) slices from ABIDE I/II for outlier-based GAN detection, with no resting-state functional MRI analysis.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1109/access.2022.3157613",
+    "dataset": "ABIDE I+II",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {
+      "ASD": null,
+      "TD": null,
+      "total": null
+    },
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "",
+    "evidence_quotes": [
+      ""
+    ]
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "source_id": "S-075",
+  "pmid": "local_486d7d2c",
+  "doi": "10.3389/fams.2018.00025",
+  "screening": {
+    "decision": "include",
+    "reason": "Includes an ABIDE resting-state fMRI connectivity analysis (one of four disorder datasets studied) comparing unsupervised connectivity-based clusters to clinical ASD diagnostic groups (Inclusion 2, 3)",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "Four hundred and ﬁfty-four subjects with complete phenotypic\ndata were selected from the Autism Brain Imaging Data\nExchange (ABIDE) database (http://fcon_1000.projects.nitrc.\norg/indi/abide/index.html). The sample consisted of 256 HC, 166\nsubjects with autism, and 32 subjects with Asperger’s.",
+      "section": "methods",
+      "claim": "ABIDE cohort: 454 subjects with complete phenotypic data (256 HC, 166 autism, 32 Asperger’s); PDD-NOS excluded.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Each subject was scanned at\none of the following seven diﬀerent sites: California Institute of\nTechnology (Caltech), Carnegie Mellon University (CMU), NYU\nLangone Medical Center (NYU), University of Pittsburgh School\nof Medicine (Pitt), San Diego State University (SDSU), Trinity\nCenter for Health Sciences (Trinity), and University of California\nLos Angeles (UCLA).",
+      "section": "methods",
+      "claim": "ABIDE cohort was drawn from seven sites.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "For most of the sites, diagnosis of ASD was consistent with\nthe Diagnostic and Statistical Manual of Mental Disorders,\nFourth Edition, Text Revision [DSM-IV-TR] criteria [70], and\nclassiﬁcation of either autism or Asperger’s was made by a\nclinician based on the Autism Diagnostic Observation Schedule\n[ADOS] [71] and Autism Diagnostic interview-Revised [ADI-\nR] [72].",
+      "section": "methods",
+      "claim": "ASD diagnosis was based on DSM-IV-TR criteria with ADOS and ADI-R used for clinical classification.",
+      "relevance_score": 0.75
+    },
+    {
+      "text": "each rs-\nfMRI image was partitioned into 200 (for ADHD, AD, and ASD)\nor 125 (for PTSD/PCS) functionally homogenous regions of\ninterests (ROIs) using spatially constrained spectral clustering\n[cc200 template] [76].",
+      "section": "methods",
+      "claim": "ASD rs-fMRI data were parcellated with the 200-region CC200 template.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Site-speciﬁc analysis was applied on the ADHD dataset. We\ncould not apply this analysis on ASD dataset since there was only\none site that had enough samples for HC and disease subgroups",
+      "section": "results",
+      "claim": "No site-specific/leave-site-out analysis was possible for ASD because only one site had enough samples per group.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "TABLE 9 | Peak similarity (highlighted), corresponding number of features, and number of clusters obtained using SFR, SFS, and GA with different clustering methods for\nASD dataset.",
+      "section": "table",
+      "claim": "Table 9 reports peak similarity between clinical-diagnostic, phenotypic and connectivity-based clusters for ASD across feature-selection and clustering methods.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "GA\nDPC\n75.85\n5\n3\n72.45\n60\n3\n68.98\n50\n3\nOPTICS\n76.46\n5\n3\n79.18\n103\n3\n74.47\n70\n3\nHierarchical\n76.63\n5\n3\n89.20\n101\n3\n75.66\n54\n3",
+      "section": "table",
+      "claim": "For ASD, genetic-algorithm feature selection with hierarchical clustering gave the highest clinical-diagnosis-vs-connectivity cluster similarity (89.20%), using 101 features and 3 clusters.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "For ADHD and AD, highest similarity\nwas achieved between connectivity and phenotypic clusters, whereas for ASD\nand PTSD/PCS, highest similarity was achieved between connectivity and clinical\ndiagnostic clusters.",
+      "section": "abstract",
+      "claim": "For ASD, connectivity-based clusters corresponded most closely to clinical diagnostic groups (rather than to phenotypic clusters).",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "Data and source code\nused in this work is publicly available at https://github.com/xinyuzhao/identiﬁcation-of\n-brain-based-disorders.git.",
+      "section": "abstract",
+      "claim": "Source code for the analysis pipeline is publicly released on GitHub.",
+      "relevance_score": 0.5
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "N and diagnostic subgroup composition given (256 HC, 166 autism, 32 Asperger’s), with PDD-NOS explicitly excluded to reduce imbalance."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Seven contributing sites named; phenotypic variables (FIQ, VIQ, PIQ, ADI-R and ADOS subscores) listed in Table 3."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Unclear",
+        "support": "CC200 (200-ROI) parcellation is named, but preprocessing detail is deferred to an unavailable \"Supplementary Material: Data Acquisition and Preprocessing\"."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Low",
+        "support": "DSM-IV-TR criteria with ADOS and ADI-R clinician classification; HC screened by self-report history questionnaire."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Unclear",
+        "support": "Site is identified (7 sites) but motion/QC is not addressed in the available text; no age/sex covariate handling described for ASD."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "High",
+        "support": "No site-specific or leave-site-out analysis was possible for ASD (\"only one site that had enough samples\"), so pooled clusters are not tested for site confounding."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Static and dynamic functional/effective connectivity measures computed from the CC200 parcellation are used as clustering features."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Unclear",
+        "support": "Peak cluster-similarity percentages are reported across feature-selection/clustering method combinations without a stated multiple-comparisons correction or significance test for the similarity values themselves."
+      }
+    ],
+    "overall": "Unclear",
+    "summary": "Cohort composition, sites and diagnosis source are clearly reported, and the CC200 atlas is named, but preprocessing detail is deferred to an unavailable supplement, no site-specific/leave-site-out check was possible for ASD due to sample distribution across sites, and the significance of the reported cluster-similarity percentages is not statistically qualified."
+  },
+  "charting": {
+    "source_id": "S-075",
+    "title": "Investigating the Correspondence of Clinical Diagnostic Grouping With Underlying Neurobiological and Phenotypic Clusters Using Unsupervised Machine Learning",
+    "authors": "",
+    "year": "2018",
+    "journal_conference": "Frontiers in Applied Mathematics and Statistics",
+    "doi": "10.3389/fams.2018.00025",
+    "database_retrieved": "",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism / Asperger’s (ASD) vs healthy control (HC); PDD-NOS excluded",
+    "diagnosis_assessment": "DSM-IV-TR criteria; clinician classification via ADOS and ADI-R",
+    "n_disordered": "198 (166 autism + 32 Asperger’s)",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "HC screened by self-report history questionnaire to rule out ASD, ADHD, or Tourette's Disorder",
+    "medications_therapies": "",
+    "severity_levels": "ADOS Total, Communication and Social subscores; ADI-R Social, Verbal, RRB and Onset subscores used as phenotypic variables",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "Self-report history questionnaire",
+    "n_controls": "256",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "Yes — analysis source code publicly released on GitHub (https://github.com/xinyuzhao/identification-of-brain-based-disorders.git)",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional and effective connectivity (static and dynamic)",
+    "specific_features": "Static/dynamic functional and effective connectivity among 200 CC200 ROIs, with genetic-algorithm-based feature selection",
+    "feature_extraction_tools": "CC200 atlas (spatially constrained spectral clustering parcellation); preprocessing pipeline details deferred to an unavailable supplement",
+    "feature_importance_reported": "Yes",
+    "importance_method": "Genetic algorithm (GA) feature selection maximizing cluster similarity, compared against sequential forward selection (SFS) and an in-house SFR method",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Unsupervised clustering (density peak clustering, OPTICS, hierarchical clustering) with GA-based feature selection",
+    "specific_algorithms": "Density Peak Clustering (DPC), OPTICS, hierarchical clustering; feature selection via GA, SFS, and SFR",
+    "validation_methodology": "No cross-validation during clustering (explicitly stated); cluster-to-diagnosis/phenotype correspondence evaluated via similarity percentage, not a held-out classification test",
+    "performance_metrics": "Cluster similarity percentage (clinical diagnosis vs connectivity-based clusters, and vs phenotypic clusters)",
+    "key_performance_results": "For ASD, GA feature selection with hierarchical clustering gave the highest similarity (89.20%, 101 features, 3 clusters) between clinical-diagnosis clusters and connectivity-based clusters, exceeding the similarity to phenotypic clusters",
+    "summary_key_findings": "Using genetic-algorithm feature selection and unsupervised clustering of ABIDE rs-fMRI connectivity (CC200 atlas), ASD connectivity-based clusters corresponded most closely to the clinical diagnostic grouping (peak similarity 89.20% with hierarchical clustering), in contrast to ADHD and AD where connectivity better matched phenotypic clusters; no site-specific robustness check was possible for ASD due to sample distribution across the seven contributing sites.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "This paper studies four disorders (ADNI/AD, ADHD-200, ABIDE/ASD, in-house PTSD/PCS); only the ABIDE/ASD-specific content is charted here. The study design is an unsupervised clustering/correspondence analysis rather than a classical group-difference statistical test or a held-out predictive evaluation; charted as associational because no train/test classification performance is reported.",
+    "custom_fields": {
+      "RQ1": "associational | ABIDE (consistent with ABIDE I, 7 sites including Caltech/CMU/NYU/Pitt/SDSU/Trinity/UCLA); 454 subjects with complete phenotypic data = 256 HC, 166 autism, 32 Asperger’s (198 ASD total); PDD-NOS and \"Asperger’s or PDD-NOS\" excluded to reduce class imbalance | quote: \"Four hundred and ﬁfty-four subjects with complete phenotypic\ndata were selected from the Autism Brain Imaging Data\nExchange (ABIDE) database\"",
+      "RQ2": "CC200 atlas (200 ROIs, spatially constrained spectral clustering); preprocessing pipeline details deferred to an unavailable supplement | quote: \"each rs-\nfMRI image was partitioned into 200 (for ADHD, AD, and ASD)\nor 125 (for PTSD/PCS) functionally homogenous regions of\ninterests (ROIs) using spatially constrained spectral clustering\n[cc200 template]\"",
+      "RQ3": "associational — unsupervised clustering of connectivity compared to clinical diagnostic and phenotypic groupings (no held-out predictive classification) | quote: \"For ADHD and AD, highest similarity\nwas achieved between connectivity and phenotypic clusters, whereas for ASD\nand PTSD/PCS, highest similarity was achieved between connectivity and clinical\ndiagnostic clusters.\"",
+      "RQ4": "Cluster similarity percentage across GA/SFS/SFR feature selection and DPC/OPTICS/hierarchical clustering combinations; explicitly no cross-validation during clustering; no site-specific/leave-site-out evaluation possible for ASD | quote: \"we did not perform cross-validation during clustering.\"",
+      "RQ5": "For ASD, GA + hierarchical clustering gave the highest clinical-diagnosis-to-connectivity cluster similarity (89.20%, 101 features, 3 clusters), with connectivity matching clinical diagnosis better than phenotypic clusters | quote: \"Hierarchical\n76.63\n5\n3\n89.20\n101\n3\n75.66\n54\n3\"",
+      "RQ6": "no | quote: \"The details of data acquisition and preprocessing\nare described in Supplementary Material: Data Acquisition and\nPreprocessing.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"The sample consisted of 256 HC, 166\nsubjects with autism, and 32 subjects with Asperger’s.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No | quote: \"The details of data acquisition and preprocessing\nare described in Supplementary Material: Data Acquisition and\nPreprocessing.\"",
+      "CL3 Preprocessing pipeline and version reported?": "No | quote: \"The details of data acquisition and preprocessing\nare described in Supplementary Material: Data Acquisition and\nPreprocessing.\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"using spatially constrained spectral clustering\n[cc200 template]\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No | quote: \"we did not perform cross-validation during clustering.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No | quote: \"Site-speciﬁc analysis was applied on the ADHD dataset. We\ncould not apply this analysis on ASD dataset since there was only\none site that had enough samples for HC and disease subgroups\"",
+      "CL7 Code and/or participant list available?": "Partly — analysis source code released on GitHub, but no participant list specific to the ABIDE subset | quote: \"Data and source code\nused in this work is publicly available at https://github.com/xinyuzhao/identiﬁcation-of\n-brain-based-disorders.git.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Four hundred and ﬁfty-four subjects with complete phenotypic\ndata were selected from the Autism Brain Imaging Data\nExchange (ABIDE) database\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-075",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {"item_text": "CL1 Cohort definition reported?", "rating": "Yes", "notes": "N by diagnostic subgroup given; PDD-NOS excluded explicitly."},
+        {"item_text": "CL2 Motion/QC rule reported?", "rating": "No", "notes": "Deferred to an unavailable supplement."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {"item_text": "CL3 Preprocessing pipeline and version reported?", "rating": "No", "notes": "Deferred to an unavailable supplement."},
+        {"item_text": "CL4 Atlas/parcellation reported?", "rating": "Yes", "notes": "CC200, 200 ROIs."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {"item_text": "Diagnosis source and label definition reported?", "rating": "Yes", "notes": "DSM-IV-TR, ADOS, ADI-R; HC via self-report history questionnaire."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {"item_text": "CL5 Leakage control reported?", "rating": "N/A", "notes": "Unsupervised clustering without cross-validation; concept of train/test leakage does not directly apply."},
+        {"item_text": "CL6 Site handling reported?", "rating": "No", "notes": "No site-specific/leave-site-out evaluation possible for ASD; pooled across 7 sites."},
+        {"item_text": "CL7 Code and/or participant list available?", "rating": "Partial", "notes": "Pipeline code on GitHub; no ABIDE-specific participant list."}
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-075",
+    "study_design_sample_dataset": "Associational, unsupervised-clustering correspondence analysis; ABIDE (consistent with ABIDE I), 7 sites, 454 subjects with complete phenotypic data (256 HC, 166 autism, 32 Asperger’s; PDD-NOS excluded)",
+    "methods": "rs-fMRI parcellated into 200 CC200 ROIs; static/dynamic functional and effective connectivity features selected via a genetic algorithm (compared against SFS and an in-house SFR method) to maximize similarity between connectivity-derived clusters (density peak clustering, OPTICS, hierarchical clustering) and clinical diagnosis or phenotypic groupings; no cross-validation during clustering.",
+    "outcomes": "For ASD, connectivity-based clusters matched the clinical diagnostic grouping better than the phenotypic grouping, with a peak similarity of 89.20% (GA feature selection, hierarchical clustering, 101 features, 3 clusters); no site-specific robustness check was possible for ASD because only one site had sufficient samples per group.",
+    "key_limitations": "Preprocessing pipeline and motion/QC details deferred to an unavailable supplement; no site handling/leave-site-out evaluation for the pooled multi-site ASD analysis; no cross-validation, so similarity values reflect in-sample correspondence rather than held-out predictive performance.",
+    "relevance_notes": "Provides an ABIDE I cohort definition (454 subjects, 7 sites) and a connectivity-to-diagnosis correspondence finding (89.20% peak similarity) relevant to characterising how well unsupervised connectivity clusters recover clinical ASD groupings.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fams.2018.00025",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "454 subjects with complete phenotypic data from 7 sites (Caltech, CMU, NYU, Pitt, SDSU, Trinity, UCLA): 256 HC, 166 autism, 32 Asperger’s; PDD-NOS and \"Asperger’s or PDD-NOS\" excluded",
+    "n_by_dx": {"ASD": 198, "TD": 256, "total": 454},
+    "sites": "7 (Caltech, CMU, NYU, Pitt, SDSU, Trinity, UCLA)",
+    "pipeline": "Preprocessing pipeline details deferred to an unavailable supplement",
+    "atlas": "CC200 (200 ROIs, spatially constrained spectral clustering)",
+    "claim_type": "associational",
+    "finding": "Unsupervised connectivity-based clusters (GA feature selection, hierarchical clustering) matched the clinical ASD diagnostic grouping with a peak similarity of 89.20%, more closely than they matched phenotypic clusters.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "Four hundred and ﬁfty-four subjects with complete phenotypic\ndata were selected from the Autism Brain Imaging Data\nExchange (ABIDE) database (http://fcon_1000.projects.nitrc.\norg/indi/abide/index.html). The sample consisted of 256 HC, 166\nsubjects with autism, and 32 subjects with Asperger’s.",
+      "Hierarchical\n76.63\n5\n3\n89.20\n101\n3\n75.66\n54\n3"
+    ]
+  }
+}

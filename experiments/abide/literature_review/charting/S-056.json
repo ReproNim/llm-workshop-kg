@@ -1,0 +1,154 @@
+{
+  "source_id": "S-056",
+  "pmid": "local_33bed9bf",
+  "doi": "10.11113/jurnalteknologi.v83.16389",
+  "screening": {
+    "decision": "include",
+    "reason": "Meets inclusion 2/3: analyses ABIDE I and ABIDE II fMRI data directly (as image slices) to classify ASD vs non-ASD, i.e. a diagnostic-prediction analysis, not just a citation or structural/DTI/phenotype-only use.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "ABIDE I dataset consists of 1112 \ntotal samples including 539 patients and 573 typical \ncontrols (TC) subjects. While ABIDE II dataset consists \nof 1114 total samples with 521 patients and 573 \ntypical controls (TC) subjects.",
+      "section": "methods",
+      "claim": "The study used the full ABIDE I (1112) and ABIDE II (1114) releases, 539/573 and 521/573 ASD/TD respectively.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The original format of the image dataset is NIfTI-1 \ndata format file (NII format) which is in 3-Dimensional \n(3D) form. MRIcron software was used to convert the \n3D data format into 2D data images.",
+      "section": "methods",
+      "claim": "Raw 3D NIfTI volumes were converted to 2D images with MRIcron rather than processed through a connectivity pipeline.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "In this research, the axial plane is used \nas the input samples.",
+      "section": "methods",
+      "claim": "A single axial-plane 2D slice per subject was used as the CNN input, not a connectivity matrix.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "The samples were separated into two folders \nwhich were the training file and test file.",
+      "section": "methods",
+      "claim": "Evaluation used a single train/test split with no cross-validation scheme described.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "The results achieved using CNN models namely \nVGG-16 and ResNet-50 are 63.4% and 87.0% accuracy, respectively.",
+      "section": "abstract",
+      "claim": "VGG-16 reached 63.4% and ResNet-50 reached 87.0% test accuracy classifying ASD vs non-ASD.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "The best CNN model in this project was \nachieved by ResNet50, with an accuracy of 87.0%.",
+      "section": "discussion",
+      "claim": "ResNet-50 was identified as the best-performing model at 87.0% accuracy.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The performance of the CNN pre-trained model was \nevaluated using several measurements such as \nrecall, precision, and accuracy.",
+      "section": "methods",
+      "claim": "Performance was evaluated with recall, precision and accuracy only (no AUC, no uncertainty estimate).",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Unclear", "support": "N by diagnosis given for ABIDE I and II, but no inclusion/exclusion criteria, QC rule or site list reported beyond the raw release counts: \"ABIDE I dataset consists of 1112 total samples including 539 patients and 573 typical controls (TC) subjects.\""},
+      {"domain": "Predictors", "judgment": "High", "support": "Predictor is a single 2D axial-plane slice converted from the 3D NIfTI volume with no connectivity pipeline, atlas or feature-extraction method reported: \"MRIcron software was used to convert the  3D data format into 2D data images.\""},
+      {"domain": "Outcome", "judgment": "Low", "support": "Diagnostic label (Autism/Non-Autism) is the ABIDE phenotypic diagnosis, assigned independently of the image-based predictor."},
+      {"domain": "Analysis", "judgment": "High", "support": "Single train/test split, no cross-validation, no leave-site-out evaluation, and only point-estimate accuracy/recall/precision with no uncertainty reported: \"The samples were separated into two folders  which were the training file and test file.\""}
+    ],
+    "overall": "High",
+    "summary": "Full ABIDE I+II release used as raw counts with no QC/exclusion rule; features are a single 2D brain-plane slice per subject with no connectivity pipeline or atlas; evaluation is a single train/test split with point-estimate accuracy only and no site handling."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "539 (ABIDE I) + 521 (ABIDE II) = 1060",
+    "n_controls": "573 (ABIDE I) + 573 (ABIDE II) = 1146",
+    "data_types": "resting-state fMRI (converted to 2D axial-plane image slices)",
+    "feature_extraction_tools": "MRIcron (3D NIfTI to 2D image slice conversion only; no connectivity pipeline reported)",
+    "specific_features": "",
+    "model_category": "Deep learning (CNN)",
+    "specific_algorithms": "VGG-16, ResNet-50 (pre-trained, fine-tuned)",
+    "validation_methodology": "Single train/test split; no cross-validation or leave-site-out evaluation reported",
+    "performance_metrics": "Accuracy, recall, precision",
+    "key_performance_results": "VGG-16 test accuracy 63.4%; ResNet-50 test accuracy 87.0% (best model)",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "No statement on code or participant-list availability found",
+    "custom_fields": {
+      "RQ1": "ABIDE I (1112 total: 539 ASD/573 TD) and ABIDE II (1114 total: 521 ASD/573 TD) full releases used, ages 5-64; no QC/exclusion rule reported. | quote: \"ABIDE I dataset consists of 1112  total samples including 539 patients and 573 typical  controls (TC) subjects. While ABIDE II dataset consists  of 1114 total samples with 521 patients and 573  typical controls (TC) subjects.\"",
+      "RQ2": "No connectivity pipeline or atlas; raw 3D NIfTI volumes converted to 2D axial-plane image slices with MRIcron for direct CNN input. | quote: \"MRIcron software was used to convert the  3D data format into 2D data images.\"",
+      "RQ3": "predictive — CNN (VGG-16, ResNet-50) classification of ASD vs non-ASD from 2D brain-image slices. | quote: \"The results achieved using CNN models namely  VGG-16 and ResNet-50 are 63.4% and 87.0% accuracy, respectively.\"",
+      "RQ4": "Single train/test split, evaluated with accuracy, recall and precision; no cross-validation, no leave-site-out, no statistical correction reported. | quote: \"The samples were separated into two folders  which were the training file and test file.\"",
+      "RQ5": "ResNet-50 achieved the best test accuracy of 87.0% versus VGG-16's 63.4%; no AUC or confidence interval reported. | quote: \"The best CNN model in this project was  achieved by ResNet50, with an accuracy of 87.0%.\"",
+      "RQ6": "no — only aggregate ABIDE I/II sample counts are given; no participant list or exact inclusion/exclusion rule is published. | quote: \"ABIDE I dataset consists of 1112  total samples including 539 patients and 573 typical  controls (TC) subjects.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis given for ABIDE I and ABIDE II but no inclusion/exclusion rule stated. | quote: \"ABIDE I dataset consists of 1112  total samples including 539 patients and 573 typical  controls (TC) subjects.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion metric, threshold or QC rating is mentioned anywhere in the methods. | quote: \"The age range for both  datasets is between 5-64years.\"",
+      "CL3 Preprocessing pipeline and version reported?": "No — only MRIcron is named, used solely for 3D-to-2D slice conversion, not a connectivity preprocessing pipeline. | quote: \"MRIcron software was used to convert the  3D data format into 2D data images.\"",
+      "CL4 Atlas/parcellation reported?": "No — no atlas or parcellation is used; the predictor is a raw image slice. | quote: \"In this research, the axial plane is used  as the input samples.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — no feature selection/scaling/harmonisation procedure or leakage control is described. | quote: \"The samples were separated into two folders  which were the training file and test file.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — no site covariate, harmonisation or leave-site-out evaluation is reported. | quote: \"The samples were separated into two folders  which were the training file and test file.\"",
+      "CL7 Code and/or participant list available?": "No — no code repository or participant list availability statement found. | quote: \"The performance of the CNN pre-trained model was  evaluated using several measurements such as  recall, precision, and accuracy.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The results achieved using CNN models namely  VGG-16 and ResNet-50 are 63.4% and 87.0% accuracy, respectively.\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "items": [
+        {"item": "CL1", "rating": "Partial", "support": "N by diagnosis given for both releases but no inclusion/exclusion rule."},
+        {"item": "CL2", "rating": "No", "support": "No motion/QC rule reported."}
+      ],
+      "overall_concern": "High"
+    },
+    "domain_2_predictors_features": {
+      "items": [
+        {"item": "CL3", "rating": "No", "support": "No connectivity preprocessing pipeline; only slice-conversion software named."},
+        {"item": "CL4", "rating": "No", "support": "No atlas/parcellation used."}
+      ],
+      "overall_concern": "High"
+    },
+    "domain_3_outcome_labels": {
+      "items": [
+        {"item": "diagnosis source", "rating": "Unclear", "support": "Diagnosis is the ABIDE phenotypic label; source/criteria not restated in this paper."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "items": [
+        {"item": "CL5", "rating": "No", "support": "No leakage-control statement."},
+        {"item": "CL6", "rating": "No", "support": "No site handling or leave-site-out evaluation."},
+        {"item": "CL7", "rating": "No", "support": "No code or participant-list availability statement."}
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I+II full releases, 539/573 (ASD/TD) and 521/573 (ASD/TD) respectively, ages 5-64, sites not itemised.",
+    "methods": "3D NIfTI volumes converted to 2D axial-plane image slices (MRIcron) and classified with pre-trained CNNs (VGG-16, ResNet-50) using a single train/test split.",
+    "outcomes": "ResNet-50 achieved 87.0% test accuracy (best model); VGG-16 achieved 63.4%; evaluated with accuracy, recall and precision.",
+    "key_limitations": "No motion/QC rule, no connectivity pipeline or atlas, no cross-validation or site handling, and no participant-list/code availability statement.",
+    "relevance_notes": "Demonstrates ABIDE I+II used as raw image data for a non-connectivity CNN classifier; cohort cannot be reconstructed beyond the aggregate N reported.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.11113/jurnalteknologi.v83.16389",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "Full ABIDE I (1112: 539 ASD/573 TD) and ABIDE II (1114: 521 ASD/573 TD) releases, ages 5-64; no further exclusion rule stated.",
+    "n_by_dx": {"ASD": 1060, "TD": 1146, "total": 2226},
+    "sites": "",
+    "pipeline": "MRIcron (3D-to-2D slice conversion only)",
+    "atlas": "",
+    "claim_type": "predictive",
+    "finding": "ResNet-50 achieved 87.0% test accuracy classifying ASD vs non-ASD from 2D axial brain-image slices, outperforming VGG-16 (63.4%).",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "ABIDE I dataset consists of 1112 \ntotal samples including 539 patients and 573 typical \ncontrols (TC) subjects. While ABIDE II dataset consists \nof 1114 total samples with 521 patients and 573 \ntypical controls (TC) subjects.",
+      "The results achieved using CNN models namely \nVGG-16 and ResNet-50 are 63.4% and 87.0% accuracy, respectively."
+    ]
+  }
+}

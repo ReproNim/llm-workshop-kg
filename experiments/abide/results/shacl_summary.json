@@ -1,0 +1,77 @@
+{
+ "graph": "graph/abide_kg.ttl + embedding_provenance.ttl + resources.ttl + resource_activity.ttl + scope.ttl",
+ "triples": 296763,
+ "n_shapes": 17,
+ "conforms": true,
+ "mutations": [
+  {
+   "mutation": "connectivity derivative without source",
+   "focus": "urn:repronim:abide:connectivity/Caltech_0051461",
+   "rejected": true,
+   "messages": [
+    "Message: Less than 1 values on <urn:repronim:abide:connectivity/Caltech_0051461>->prov:wasDerivedFrom"
+   ]
+  },
+  {
+   "mutation": "review without reviewer",
+   "focus": "urn:repronim:abide:review/B_reviews_A_v1",
+   "rejected": true,
+   "messages": [
+    "Message: Less than 1 values on <urn:repronim:abide:review/B_reviews_A_v1>->prov:wasAttributedTo"
+   ]
+  },
+  {
+   "mutation": "claim typed as causal",
+   "focus": "urn:repronim:abide:claim/A_v1",
+   "rejected": true,
+   "messages": [
+    "Message: Value Literal(\"causal\") not in list ['Literal(\"associational\")', 'Literal(\"predictive\")']"
+   ]
+  },
+  {
+   "mutation": "evidence span not verbatim",
+   "focus": "urn:repronim:abide:paper/abraham2017/AB_C1/evidence",
+   "rejected": true,
+   "messages": [
+    "Message: Node <urn:repronim:abide:paper/abraham2017/AB_C1/evidence>->ex:verbatimMatch does not contain a value in the set: ['Literal(\"true\" = True, datatype=xsd:boolean)']"
+   ]
+  },
+  {
+   "mutation": "fold with no test participants",
+   "focus": "urn:repronim:abide:fold/mutation_test",
+   "rejected": true,
+   "messages": [
+    "Message: Less than 1 values on <urn:repronim:abide:fold/mutation_test>->ex:testedOn"
+   ]
+  },
+  {
+   "mutation": "activity snapshot without timestamp",
+   "focus": "urn:repronim:abide:snapshot/mriqc-nidm_bidsapp/20261015T145547Z",
+   "rejected": true,
+   "messages": [
+    "Message: snapshot needs prov:generatedAtTime"
+   ]
+  },
+  {
+   "mutation": "promote a study-only record to the lake",
+   "focus": "urn:repronim:abide:promotion/illustrative_study_only",
+   "rejected": true,
+   "messages": [
+    "Message: cannot promote: access level is restricted",
+    "Message: cannot promote: consent scope is study-only, not broad-sharing",
+    "Message: cannot promote: egress not permitted: consent scope is study-only, not broad-sharing; restricted by agreement; quasi-identifiers without aggregation to minimum cell size"
+   ]
+  },
+  {
+   "mutation": "promotion candidate missing a gate",
+   "focus": "urn:repronim:abide:promotion/motion_rule_v2",
+   "rejected": true,
+   "messages": [
+    "Message: promotion candidate is missing gate licence (record it, even as unknown)"
+   ]
+  }
+ ],
+ "all_mutations_rejected": true,
+ "scope": "local profile for this experiment; not NIDM certification and not a check of scientific correctness",
+ "seconds": 5.8
+}

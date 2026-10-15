@@ -1,0 +1,173 @@
+{
+  "source_id": "S-006",
+  "pmid": "local_7623d661",
+  "doi": "10.1007/978-3-030-00889-5_16",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a diagnostic prediction (3D CNN autism vs. control classification) analysis of ABIDE I and ABIDE II resting-state fMRI connectivity (Inclusion 2, 3; not excluded by 1-6).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "We showcase our approach on a challenging large-scale dataset (ABIDE, with N > 2, 000) and report state-of-the-art accuracy results on rs-fMRI- based discrimination of autism patients and healthy controls.",
+      "section": "abstract",
+      "claim": "The study classifies autism vs. control using ABIDE resting-state fMRI connectomes with a 3D CNN.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "The ﬁrst phase of ABIDE (ABIDE-I) compiled data from 1112 individuals, comprising 539 individuals diagnosed with Autism Spec- trum Disorder (ASD) and 573 typical controls, from 17 sites. The second phase (ABIDE-II) was recently released, and consists of an additional 521 individuals with ASD and 593 healthy controls, from 19 sites.",
+      "section": "methods",
+      "claim": "Describes the full ABIDE I and ABIDE II releases used as the data source.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "In our experiments, we used ABIDE-I subject data that passed manual qual- ity assessments (QA) by all the functional raters. This yielded a ﬁnal sample size of 774 ABIDE-I subjects, comprising 379 subjects with ASD and 395 typical con- trols.",
+      "section": "methods",
+      "claim": "ABIDE-I analysed subset: 774 subjects (379 ASD, 395 TD) selected by manual QA.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Since manual QA was not yet available for ABIDE-II, we per- formed an automatic quality control by selecting those subjects that retained at least 100 frames or 4 minutes of fMRI scans after motion scrubbing [19]. Motion scrubbing was performed based on Framewise Displacement (FD), dis- carding one volume before and two volumes after the frame with FD exceeding 0.5mm [15]. This step yielded a ﬁnal ABIDE-II sample size of 163 individuals with ASD and 230 healthy controls.",
+      "section": "methods",
+      "claim": "ABIDE-II held-out test subset (163 ASD, 230 TD) defined by an automatic motion-scrubbing QC rule (FD > 0.5mm, minimum 100 retained frames).",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "The Preprocessed Connectomes Project (PCP) released preprocessed versions of ABIDE using several pipelines [4]. We used the data processed through Conﬁgurable Pipeline for Analysis of Connectomes (CPAC). This pipeline includes slice timing correction, motion correction, global mean intensity normalization and standardization of functional data to MNI space (3x3x3 mm resolution) before the extraction of ROI time series.",
+      "section": "methods",
+      "claim": "Preprocessing used the PCP CPAC pipeline.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "First, we implemented a 10-fold cross-validation scheme for ABIDE-I to be consistent with previously reported classiﬁcation re- sults [1, 18]. Second, we trained each model on all of ABIDE-I and computed test performance on an independent held-out set from ABIDE-II. This is used for assessing the generalization behavior of diﬀerent classiﬁers. We report accu- racy and the receiver operating curves (ROC), along with corresponding area under the curves (AUC) for each of these scenarios.",
+      "section": "methods",
+      "claim": "Evaluation used 10-fold CV on ABIDE-I plus an independent held-out test on ABIDE-II, reporting accuracy and AUC.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Previous studies have reported cross- validated classiﬁcation accuracies up to 67% on ABIDE-I, the ﬁrst phase of the ABIDE study [1]. The proposed CNN approach improves this accuracy to above 73%.",
+      "section": "results",
+      "claim": "The proposed 3D-CNN improves cross-validated ABIDE-I accuracy from a prior benchmark of 67% to above 73%.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The ensemble achieves an AUC of 75.8%.",
+      "section": "results",
+      "claim": "The atlas-ensemble CNN achieves an AUC of 75.8% on the ABIDE-II independent test.",
+      "relevance_score": 0.85
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "Cohort composition and QC-based exclusion are explicitly reported for both ABIDE-I (manual QA, n=774) and ABIDE-II (automatic motion-scrubbing QC, n=393): \"In our experiments, we used ABIDE-I subject data that passed manual qual- ity assessments (QA) by all the functional raters. This yielded a ﬁnal sample size of 774 ABIDE-I subjects, comprising 379 subjects with ASD and 395 typical con- trols.\""
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "Pipeline (CPAC/PCP, version noted for ABIDE-II) and seven atlases (HO, EZ, TT, CC200, CC400, AAL, DOS160) are named with preprocessing steps described."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "Diagnostic label source (how ASD/TD status was determined in ABIDE) is not described in this paper beyond citing the ABIDE release."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Unclear",
+        "support": "Design uses 10-fold CV plus a fully independent ABIDE-II test set (reduces leakage for the main CNN), but baseline hyperparameters were selected by maximising cross-validation accuracy itself, which the authors acknowledge is optimistic: \"We test 10 linearly spaced values for the hyper-parameter α in the range [0.1,10] and report the highest cross-validation accuracy. Thus this baseline result reﬂects an optimistic estimate of performance.\"; no explicit site covariate/harmonisation, and ABIDE-II test sites overlap with ABIDE-I training sites."
+      }
+    ],
+    "overall": "Unclear",
+    "summary": "Cohort and preprocessing are clearly reported; outcome/label source is not described, and the baseline models' hyperparameter selection is self-acknowledged as leakage-optimistic, while the primary CNN is evaluated on an independent ABIDE-II hold-out but without site covariate handling."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "379 (ABIDE-I, 10-fold CV training set); 163 (ABIDE-II, independent held-out test)",
+    "n_controls": "395 (ABIDE-I, 10-fold CV training set); 230 (ABIDE-II, independent held-out test)",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Preprocessed Connectomes Project (PCP) pipeline: Configurable Pipeline for Analysis of Connectomes (CPAC), v1.0.2a used for ABIDE-II preprocessing",
+    "specific_features": "Voxel-level connectivity fingerprints / ROI-wise Pearson correlation, across seven atlases (HO, EZ, TT, CC200, CC400, AAL, DOS160)",
+    "model_category": "Deep learning (volumetric 3D convolutional neural network); linear baselines (ridge, SVM) and fully-connected DNN",
+    "specific_algorithms": "3D CNN (proposed); Ridge Classifier; linear SVM (L1 and L2 penalty); fully-connected deep neural network",
+    "validation_methodology": "10-fold cross-validation on ABIDE-I; independent held-out test on ABIDE-II after training on all of ABIDE-I",
+    "performance_metrics": "Accuracy, ROC/AUC",
+    "key_performance_results": "3D-CNN atlas-ensemble: 73.3% 10-fold CV accuracy on ABIDE-I and 71.7% independent test accuracy on ABIDE-II, AUC 75.8% on the ABIDE-II test; improves on a prior ABIDE-I benchmark of up to 67%.",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "No statement of code or participant-list availability found in the text.",
+    "custom_fields": {
+      "RQ1": "predictive — ABIDE-I (1112 total; analysed 774: 379 ASD/395 TD, 17 sites, manual QA by all functional raters) used for training/10-fold CV; ABIDE-II (analysed 393: 163 ASD/230 TD, from sites overlapping ABIDE-I) used as independent held-out test after automatic motion-scrubbing QC. | quote: \"In our experiments, we used ABIDE-I subject data that passed manual qual- ity assessments (QA) by all the functional raters. This yielded a ﬁnal sample size of 774 ABIDE-I subjects, comprising 379 subjects with ASD and 395 typical con- trols.\"",
+      "RQ2": "CPAC (Configurable Pipeline for Analysis of Connectomes) via the Preprocessed Connectomes Project, v1.0.2a for ABIDE-II, with global signal regression and band-pass filtering; seven atlases: HO, EZ, TT, CC200, CC400, AAL, DOS160. | quote: \"The Preprocessed Connectomes Project (PCP) released preprocessed versions of ABIDE using several pipelines [4]. We used the data processed through Conﬁgurable Pipeline for Analysis of Connectomes (CPAC). This pipeline includes slice timing correction, motion correction, global mean intensity normalization and standardization of functional data to MNI space (3x3x3 mm resolution) before the extraction of ROI time series.\"",
+      "RQ3": "predictive — autism vs. control diagnostic classification using a 3D CNN on connectivity fingerprints. | quote: \"We showcase our approach on a challenging large-scale dataset (ABIDE, with N > 2, 000) and report state-of-the-art accuracy results on rs-fMRI- based discrimination of autism patients and healthy controls.\"",
+      "RQ4": "10-fold cross-validation on ABIDE-I plus a fully independent test on ABIDE-II (trained on all of ABIDE-I); accuracy and ROC/AUC reported; baseline hyperparameters tuned by maximising CV accuracy itself (acknowledged optimistic). | quote: \"First, we implemented a 10-fold cross-validation scheme for ABIDE-I to be consistent with previously reported classiﬁcation re- sults [1, 18]. Second, we trained each model on all of ABIDE-I and computed test performance on an independent held-out set from ABIDE-II. This is used for assessing the generalization behavior of diﬀerent classiﬁers. We report accu- racy and the receiver operating curves (ROC), along with corresponding area under the curves (AUC) for each of these scenarios.\"",
+      "RQ5": "3D-CNN atlas-ensemble reached 73.3% CV accuracy (ABIDE-I) and 71.7% independent test accuracy (ABIDE-II), AUC 75.8%, outperforming linear/DNN baselines and a prior ABIDE-I benchmark of up to 67%; saliency maps highlighted the default mode network as discriminative. | quote: \"Previous studies have reported cross- validated classiﬁcation accuracies up to 67% on ABIDE-I, the ﬁrst phase of the ABIDE study [1]. The proposed CNN approach improves this accuracy to above 73%.\"",
+      "RQ6": "partly — ABIDE-II test cohort defined by an exact, quantitative QC rule (>=100 retained frames after FD>0.5mm scrubbing), but ABIDE-I training cohort relies on manual QA ratings by functional raters without a stated numeric rule or participant list. | quote: \"Since manual QA was not yet available for ABIDE-II, we per- formed an automatic quality control by selecting those subjects that retained at least 100 frames or 4 minutes of fMRI scans after motion scrubbing [19]. Motion scrubbing was performed based on Framewise Displacement (FD), dis- carding one volume before and two volumes after the frame with FD exceeding 0.5mm [15]. This step yielded a ﬁnal ABIDE-II sample size of 163 individuals with ASD and 230 healthy controls.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — training (ABIDE-I, 379 ASD/395 TD) and test (ABIDE-II, 163 ASD/230 TD) Ns reported with their respective QC rules. | quote: \"In our experiments, we used ABIDE-I subject data that passed manual qual- ity assessments (QA) by all the functional raters. This yielded a ﬁnal sample size of 774 ABIDE-I subjects, comprising 379 subjects with ASD and 395 typical con- trols.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes — ABIDE-II used an FD>0.5mm scrubbing threshold with a minimum 100-frame retention rule; ABIDE-I used manual QA by functional raters (no numeric threshold given). | quote: \"Motion scrubbing was performed based on Framewise Displacement (FD), dis- carding one volume before and two volumes after the frame with FD exceeding 0.5mm [15].\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — CPAC via the Preprocessed Connectomes Project, version v1.0.2a for ABIDE-II. | quote: \"We preprocessed the ABIDE-II dataset following the same se- quence of steps listed for ABIDE-I in CPAC (v1.0.2a).\"",
+      "CL4 Atlas/parcellation reported?": "Yes — seven atlases named (HO, EZ, TT, CC200, CC400, AAL, DOS160).",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Partly — the CNN architecture/hyperparameters were fixed across folds, but baseline hyperparameters were chosen by maximising cross-validation accuracy itself, which the authors state is optimistic. | quote: \"We test 10 linearly spaced values for the hyper-parameter α in the range [0.1,10] and report the highest cross-validation accuracy. Thus this baseline result reﬂects an optimistic estimate of performance.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — no site covariate or harmonisation is reported; the ABIDE-II test set is drawn from sites that overlap with ABIDE-I training sites rather than a leave-site-out design.",
+      "CL7 Code and/or participant list available?": "No — no statement of code or participant-list availability was found in the text.",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Both ABIDE-I and ABIDE-II analysed Ns and their QC rules are explicitly reported (CL1, CL2)."
+    },
+    "domain_2_predictors_preprocessing": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Pipeline, version, and all atlases used are named (CL3, CL4)."
+    },
+    "domain_3_outcome_label_source": {
+      "rating": "Unclear",
+      "overall_concern": "Some",
+      "support": "The source/criteria for the ASD vs. TD diagnostic label are not described beyond referencing the ABIDE release."
+    },
+    "domain_4_bias_transparency": {
+      "rating": "Partial",
+      "overall_concern": "Some",
+      "support": "Independent ABIDE-II hold-out test mitigates some leakage risk, but baseline hyperparameter tuning is explicitly leakage-optimistic, no site covariate/harmonisation is used, and code/participant-list availability is not reported (CL5-CL7)."
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction (3D CNN) using ABIDE-I (10-fold CV training set, n=774: 379 ASD/395 TD, 17 sites) and ABIDE-II (independent held-out test, n=393: 163 ASD/230 TD, sites overlapping ABIDE-I).",
+    "methods": "CPAC/PCP-preprocessed connectivity fingerprints across seven atlases fed into a volumetric 3D CNN; compared against ridge regression, linear SVM, and fully-connected DNN baselines; evaluated via 10-fold CV on ABIDE-I and an independent held-out test on ABIDE-II.",
+    "outcomes": "3D-CNN atlas-ensemble reached 73.3% CV accuracy (ABIDE-I) and 71.7% independent test accuracy (ABIDE-II), AUC 75.8% on the ABIDE-II test, outperforming all baselines and a prior ABIDE-I benchmark of up to 67%.",
+    "key_limitations": "No code/participant-list availability statement; baseline hyperparameters tuned by maximising CV accuracy (acknowledged optimistic); no explicit site covariate/harmonisation; ABIDE-II test sites overlap with ABIDE-I training sites rather than being fully held out; diagnostic label source not described.",
+    "relevance_notes": "Demonstrates volumetric 3D-CNN classification with atlas-ensemble voting, trained on ABIDE-I and externally validated on an independent ABIDE-II cohort; a cross-release external-validation example linking the two ABIDE phases.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1007/978-3-030-00889-5_16",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "Training/CV cohort: ABIDE-I subjects passing manual QA by all functional raters (774 of the full 1112-subject, 17-site ABIDE-I release). Independent test cohort: ABIDE-II subjects from sites overlapping ABIDE-I, passing an automatic QC rule (>=100 retained frames after FD>0.5mm motion scrubbing), out of the 521 ASD/593 TD, 19-site ABIDE-II release.",
+    "n_by_dx": {
+      "ASD": 379,
+      "TD": 395,
+      "total": 774
+    },
+    "sites": "17 (ABIDE-I training); 19 total ABIDE-II sites, with the analysed ABIDE-II test subset restricted to sites overlapping ABIDE-I",
+    "pipeline": "CPAC (Configurable Pipeline for Analysis of Connectomes), Preprocessed Connectomes Project release, v1.0.2a for ABIDE-II",
+    "atlas": "HO, EZ, TT, CC200, CC400, AAL, DOS160 (atlas ensemble)",
+    "claim_type": "predictive",
+    "finding": "3D-CNN atlas-ensemble reached 73.3% 10-fold CV accuracy on ABIDE-I and 71.7% independent test accuracy on ABIDE-II (AUC 75.8%), outperforming ridge/SVM/fully-connected baselines and a prior ABIDE-I benchmark of up to 67%.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "In our experiments, we used ABIDE-I subject data that passed manual qual- ity assessments (QA) by all the functional raters. This yielded a ﬁnal sample size of 774 ABIDE-I subjects, comprising 379 subjects with ASD and 395 typical con- trols.",
+      "Since manual QA was not yet available for ABIDE-II, we per- formed an automatic quality control by selecting those subjects that retained at least 100 frames or 4 minutes of fMRI scans after motion scrubbing [19]. Motion scrubbing was performed based on Framewise Displacement (FD), dis- carding one volume before and two volumes after the frame with FD exceeding 0.5mm [15]. This step yielded a ﬁnal ABIDE-II sample size of 163 individuals with ASD and 230 healthy controls.",
+      "The ensemble achieves an AUC of 75.8%."
+    ]
+  }
+}

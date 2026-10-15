@@ -1,0 +1,12 @@
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT ?site ?dx (COUNT(DISTINCT ?p) AS ?remaining) WHERE { GRAPH <urn:repronim:abide:graph/core_v1> {
+  ?new prov:wasRevisionOf ?old ; ex:threshold ?thr ; ex:variable ?var .
+  ?sel prov:used ?old , <urn:repronim:abide:rule/site_min> .
+  ?cohort prov:wasGeneratedBy ?sel ; prov:hadMember ?p .
+  ?p ex:site ?site .
+  ?rec ex:participant ?p ; ?var ?fd ; <urn:repronim:abide:variable/DX_GROUP> ?dx .
+  FILTER (?fd < ?thr)
+} } GROUP BY ?site ?dx ORDER BY ?site ?dx

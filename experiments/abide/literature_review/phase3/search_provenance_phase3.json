@@ -1,0 +1,60 @@
+{
+ "searches": [
+  {
+   "database": "OpenAlex",
+   "query": "https://api.openalex.org/works?filter=cites:W2167868121,title_and_abstract.search:ABIDE",
+   "date_searched": "2026-10-15",
+   "records_identified": 598,
+   "filters": "title_and_abstract.search:ABIDE; citing the named descriptor/seed work",
+   "notes": "seed ABIDE I (W2167868121)"
+  },
+  {
+   "database": "OpenAlex",
+   "query": "https://api.openalex.org/works?filter=cites:W2590651237,title_and_abstract.search:ABIDE",
+   "date_searched": "2026-10-15",
+   "records_identified": 174,
+   "filters": "title_and_abstract.search:ABIDE; citing the named descriptor/seed work",
+   "notes": "seed ABIDE II (W2590651237)"
+  },
+  {
+   "database": "OpenAlex",
+   "query": "https://api.openalex.org/works?filter=cites:W2522924024,title_and_abstract.search:ABIDE",
+   "date_searched": "2026-10-15",
+   "records_identified": 220,
+   "filters": "title_and_abstract.search:ABIDE; citing the named descriptor/seed work",
+   "notes": "seed Abraham 2017 (graph seed) (W2522924024)"
+  },
+  {
+   "database": "Other sources",
+   "query": "release descriptors added by DOI: 10.1038/mp.2013.78, 10.1038/sdata.2017.10",
+   "date_searched": "2026-10-15",
+   "records_identified": 2,
+   "filters": "",
+   "notes": "Di Martino 2014 (ABIDE I) and Di Martino 2017 (ABIDE II) data descriptors"
+  }
+ ],
+ "duplicates_removed": 268,
+ "total_identified": 994,
+ "records_screened": 726,
+ "records_excluded_title_abstract": 314,
+ "reports_sought": 200,
+ "reports_not_retrieved": 101,
+ "date_range_start": "2012-01-01",
+ "date_range_end": "2026-10-15",
+ "grey_literature": "none",
+ "not_retrieved_reasons": {
+  "sought": 200,
+  "retrieved": 99,
+  "first_pass_misses_rechecked": 72,
+  "recovered_by_second_pass": 2,
+  "no_open_access_pdf_location_known": 47,
+  "publisher_oa_url_returned_non_pdf_bot_check": 23,
+  "had_pmcid_but_pmc_routes_blocked": 49,
+  "pmc_routes_blocked_detail": "Europe PMC ?pdf=render returned HTTP 403 (bot check); Europe PMC fullTextXML returned 500; NCBI PMC OA service returned 404 (2026-10-15)",
+  "extension_batch_not_rechecked": 40,
+  "must_include_not_retrieved": {
+   "10.1038/mp.2013.78": "Di Martino 2014 (ABIDE I descriptor): OA locations are a repository landing page (pure.knaw.nl) whose file link returned an HTML bot-check page, and PMC4162310 (PMC routes blocked); no PDF obtained"
+  }
+ },
+ "search_notes": "Metadata screen (not a title/abstract reading): records excluded = not open access (310) plus non-primary publication types / review titles. Of the remaining open-access primary records, the top 200 by citation count (with quotas, search/selection_rule.md) were sought in full text; 99 retrieved; 99 form the corpus assessed for eligibility. Open-access primary records not in the top-ranked set were not sought (corpus-size decision by the review owner). Not retrieved (101): 47 no open-access PDF location known; 23 publisher OA URL returned a bot-check page instead of a PDF; 49 of the misses had a PMCID but PMC routes were blocked (Europe PMC ?pdf=render returned HTTP 403 (bot check); Europe PMC fullTextXML returned 500; NCBI PMC OA service returned 404 (2026-10-15)); 40 extension-batch misses not re-checked. Must-include not retrieved: 10.1038/mp.2013.78: Di Martino 2014 (ABIDE I descriptor): OA locations are a repository landing page (pure.knaw.nl) whose file link returned an HTML bot-check page, and PMC4162310 (PMC routes blocked); no PDF obtained"
+}

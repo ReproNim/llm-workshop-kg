@@ -1,0 +1,190 @@
+{
+ "motion_rule": "v1",
+ "A_reviews_B": {
+  "reviewer": "Analyst A (illustrative)",
+  "target": "analyst_b_v1 correlation model",
+  "evidence": [
+   "analyst_a_v1.json FDR-significant edges",
+   "L2 logistic coefficients refit on all B_v1 participants"
+  ],
+  "top_k_edges": 199,
+  "overlap_with_A_significant": 90,
+  "expected_overlap_if_independent": 54.279999999999994,
+  "hypergeometric_p": 3.894916690083034e-08,
+  "sign_agreement_in_overlap": [
+   90,
+   90
+  ],
+  "verdict": "overlap exceeds chance",
+  "caveat": "Predictive weights in a multivariate model are not edgewise effects; overlap is a consistency check, not validation."
+ },
+ "B_reviews_A": {
+  "reviewer": "Analyst B (illustrative)",
+  "target": "analyst_a_v1 hypoconnectivity result",
+  "evidence": [
+   "analyst_a_v1.json hypo edges",
+   "B_v1 participants not in A_v1, grouped by held-out site"
+  ],
+  "n_independent_participants": 326,
+  "n_sites_usable": 14,
+  "n_sites_direction_consistent": 8,
+  "pooled_d_fixed_effect": -0.08002382028175674,
+  "pooled_d_95ci": [
+   -0.3121788351343386,
+   0.15213119457082513
+  ],
+  "per_site": [
+   {
+    "site": "CALTECH",
+    "n_independent_ASD": 3,
+    "n_independent_TD": 9,
+    "in_A_cohort_site": false,
+    "d": 0.3038530647754669,
+    "se": 0.6695456504821777
+   },
+   {
+    "site": "CMU",
+    "n_independent_ASD": 1,
+    "n_independent_TD": 0,
+    "in_A_cohort_site": false
+   },
+   {
+    "site": "KKI",
+    "n_independent_ASD": 8,
+    "n_independent_TD": 21,
+    "in_A_cohort_site": false,
+    "d": -0.18373052775859833,
+    "se": 0.4161743223667145
+   },
+   {
+    "site": "LEUVEN_1",
+    "n_independent_ASD": 0,
+    "n_independent_TD": 1,
+    "in_A_cohort_site": true
+   },
+   {
+    "site": "LEUVEN_2",
+    "n_independent_ASD": 10,
+    "n_independent_TD": 16,
+    "in_A_cohort_site": false,
+    "d": -0.32464486360549927,
+    "se": 0.4056190252304077
+   },
+   {
+    "site": "MAX_MUN",
+    "n_independent_ASD": 5,
+    "n_independent_TD": 1,
+    "in_A_cohort_site": true
+   },
+   {
+    "site": "NYU",
+    "n_independent_ASD": 13,
+    "n_independent_TD": 27,
+    "in_A_cohort_site": true,
+    "d": 0.43296292424201965,
+    "se": 0.3410327434539795
+   },
+   {
+    "site": "OHSU",
+    "n_independent_ASD": 12,
+    "n_independent_TD": 10,
+    "in_A_cohort_site": false,
+    "d": -0.6809623837471008,
+    "se": 0.44030919671058655
+   },
+   {
+    "site": "OLIN",
+    "n_independent_ASD": 11,
+    "n_independent_TD": 11,
+    "in_A_cohort_site": false,
+    "d": -0.23416556417942047,
+    "se": 0.4278602600097656
+   },
+   {
+    "site": "PITT",
+    "n_independent_ASD": 3,
+    "n_independent_TD": 3,
+    "in_A_cohort_site": true,
+    "d": 0.29011070728302,
+    "se": 0.820780336856842
+   },
+   {
+    "site": "SBL",
+    "n_independent_ASD": 12,
+    "n_independent_TD": 10,
+    "in_A_cohort_site": false,
+    "d": -0.09475482255220413,
+    "se": 0.42841264605522156
+   },
+   {
+    "site": "SDSU",
+    "n_independent_ASD": 7,
+    "n_independent_TD": 16,
+    "in_A_cohort_site": false,
+    "d": -0.9839650392532349,
+    "se": 0.47582003474235535
+   },
+   {
+    "site": "STANFORD",
+    "n_independent_ASD": 11,
+    "n_independent_TD": 13,
+    "in_A_cohort_site": false,
+    "d": -0.17506153881549835,
+    "se": 0.410451740026474
+   },
+   {
+    "site": "TRINITY",
+    "n_independent_ASD": 1,
+    "n_independent_TD": 0,
+    "in_A_cohort_site": true
+   },
+   {
+    "site": "UCLA_1",
+    "n_independent_ASD": 3,
+    "n_independent_TD": 3,
+    "in_A_cohort_site": true,
+    "d": 0.12267143279314041,
+    "se": 0.8172641396522522
+   },
+   {
+    "site": "UCLA_2",
+    "n_independent_ASD": 7,
+    "n_independent_TD": 9,
+    "in_A_cohort_site": false,
+    "d": 0.5030423998832703,
+    "se": 0.5117383599281311
+   },
+   {
+    "site": "UM_1",
+    "n_independent_ASD": 11,
+    "n_independent_TD": 17,
+    "in_A_cohort_site": true,
+    "d": 0.23258636891841888,
+    "se": 0.38819921016693115
+   },
+   {
+    "site": "UM_2",
+    "n_independent_ASD": 1,
+    "n_independent_TD": 1,
+    "in_A_cohort_site": true
+   },
+   {
+    "site": "USM",
+    "n_independent_ASD": 3,
+    "n_independent_TD": 1,
+    "in_A_cohort_site": true
+   },
+   {
+    "site": "YALE",
+    "n_independent_ASD": 18,
+    "n_independent_TD": 17,
+    "in_A_cohort_site": false,
+    "d": -0.052179981023073196,
+    "se": 0.3382572829723358
+   }
+  ],
+  "signature_vs_global_mean_connectivity_r": 0.9806952356884808,
+  "verdict": "not established in independent participants",
+  "caveat": "Signature is dominated by whole-brain mean connectivity when the correlation is high; no global signal regression in filt_noglobal."
+ }
+}

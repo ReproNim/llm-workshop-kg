@@ -1,0 +1,590 @@
+@prefix crypto: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions#> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/> .
+@prefix sio: <http://semanticscience.org/ontology/sio.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix bids: <http://bids.neuroimaging.io/> .
+@prefix dctypes: <http://purl.org/dc/dcmitype/> .
+@prefix nidm: <http://purl.org/nidash/nidm#> .
+@prefix reproschema: <http://schema.repronim.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema1: <http://schema.org/> .
+nidm:Acquisition a sh:NodeShape ;
+	rdfs:comment "An acquisition activity such as an MRI scan or questionnaire administration.  Produces AcquisitionObjects.  Also a prov:Activity." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n50 ;
+	sh:property _:c14n0 , _:c14n21 , _:c14n26 , _:c14n39 ;
+	sh:targetClass nidm:Acquisition .
+nidm:AcquisitionObject a sh:NodeShape ;
+	rdfs:comment "A data entity produced by an Acquisition.  Can represent imaging data, assessment/questionnaire results, or demographic data.  Also a prov:Entity." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n105 ;
+	sh:property _:c14n15 , _:c14n28 , _:c14n29 , _:c14n40 , _:c14n43 , _:c14n54 , _:c14n61 , _:c14n63 , _:c14n72 , _:c14n87 ;
+	sh:targetClass nidm:AcquisitionObject .
+nidm:DataElement a sh:NodeShape ;
+	rdfs:comment "Metadata describing a measured variable.  Defines the semantics, data type, units, and ontology mapping for a column/variable in the study data.  Also a prov:Entity." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n84 ;
+	sh:property _:c14n103 , _:c14n106 , _:c14n12 , _:c14n13 , _:c14n18 , _:c14n37 , _:c14n48 , _:c14n49 , _:c14n59 , _:c14n66 , _:c14n69 , _:c14n88 , _:c14n92 ;
+	sh:targetClass nidm:DataElement .
+nidm:Derivative a sh:NodeShape ;
+	rdfs:comment "A processing or analysis activity that produces derived data (e.g. brain volume measurements from FreeSurfer, FSL, ANTs).  Also a prov:Activity." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n33 ;
+	sh:property _:c14n19 , _:c14n51 , _:c14n75 ;
+	sh:targetClass nidm:Derivative .
+nidm:DerivativeObject a sh:NodeShape ;
+	rdfs:comment "An entity produced by a Derivative processing activity.  Contains derived measurements.  Also a prov:Entity." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n62 ;
+	sh:property _:c14n58 , _:c14n79 ;
+	sh:targetClass nidm:DerivativeObject .
+nidm:PersonalDataElement a sh:NodeShape ;
+	rdfs:comment "A DataElement for personal or demographic data (age, sex, handedness, diagnosis, etc.).  Subclass of nidm:DataElement." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n34 ;
+	sh:property _:c14n10 , _:c14n14 , _:c14n24 , _:c14n4 , _:c14n5 , _:c14n6 , _:c14n70 , _:c14n71 , _:c14n80 , _:c14n81 , _:c14n82 , _:c14n90 , _:c14n96 ;
+	sh:targetClass nidm:PersonalDataElement .
+nidm:Project a sh:NodeShape ;
+	rdfs:comment "Top-level container for a research project or study.  Every NIDM graph has at least one Project.  A Project is also a prov:Activity." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n55 ;
+	sh:property _:c14n100 , _:c14n20 , _:c14n31 , _:c14n7 , _:c14n73 , _:c14n74 , _:c14n76 , _:c14n78 , _:c14n91 , _:c14n93 , _:c14n95 , _:c14n99 ;
+	sh:targetClass nidm:Project .
+nidm:Session a sh:NodeShape ;
+	rdfs:comment "A study session, typically one per participant visit.  Contains acquisition activities.  A Session is also a prov:Activity." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n38 ;
+	sh:property _:c14n1 , _:c14n102 , _:c14n47 , _:c14n53 ;
+	sh:targetClass nidm:Session .
+prov:Activity a sh:NodeShape ;
+	rdfs:comment "An export activity recording which tool created or modified the NIDM file.  Part of the export provenance pattern." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n36 ;
+	sh:property _:c14n101 , _:c14n42 , _:c14n45 , _:c14n52 , _:c14n83 , _:c14n86 , _:c14n98 ;
+	sh:targetClass prov:Activity .
+prov:Association a sh:NodeShape ;
+	rdfs:comment "Links an Acquisition activity to an agent (participant) with a specific role.  Typically connects to a Person with role sio:Subject." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n57 ;
+	sh:property _:c14n2 , _:c14n64 ;
+	sh:targetClass prov:Association .
+prov:Collection a sh:NodeShape ;
+	rdfs:comment "A collection of entities (e.g. a BIDS dataset, a FreeSurfer stats collection).  Also a prov:Entity." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n46 ;
+	sh:property _:c14n25 , _:c14n44 , _:c14n8 , _:c14n97 ;
+	sh:targetClass prov:Collection .
+prov:Person a sh:NodeShape ;
+	rdfs:comment "A research participant or subject.  Also a prov:Agent." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n3 ;
+	sh:property _:c14n60 , _:c14n77 ;
+	sh:targetClass prov:Person .
+prov:SoftwareAgent a sh:NodeShape ;
+	rdfs:comment "Software that produced or processed data (e.g. bidsmri2nidm.py, csv2nidm.py, FreeSurfer).  Also a prov:Agent." ;
+	sh:closed true ;
+	sh:ignoredProperties _:c14n35 ;
+	sh:property _:c14n11 , _:c14n16 , _:c14n27 , _:c14n65 , _:c14n68 , _:c14n94 ;
+	sh:targetClass prov:SoftwareAgent .
+_:c14n0 sh:class prov:Association ;
+	sh:description "Association(s) linking this activity to agents (participants)" ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:order 2 ;
+	sh:path prov:qualifiedAssociation .
+_:c14n1 sh:class nidm:Acquisition ;
+	sh:description "Acquisition activities in this session" ;
+	sh:nodeKind sh:IRI ;
+	sh:order 3 ;
+	sh:path <https://purl.org/nidash/nidm/schema/acquisitions> .
+_:c14n10 sh:datatype xsd:string ;
+	sh:description "Unit of measurement (e.g. mm^3)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 10 ;
+	sh:path nidm:hasUnit .
+_:c14n100 sh:datatype xsd:string ;
+	sh:description "Dataset author(s)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 7 ;
+	sh:path dcat:author .
+_:c14n101 sh:datatype xsd:dateTime ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 3 ;
+	sh:path prov:startedAtTime .
+_:c14n102 sh:datatype xsd:string ;
+	sh:description "Session number within the study" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 2 ;
+	sh:path bids:session_number .
+_:c14n103 sh:datatype xsd:string ;
+	sh:description "Valid categorical choices for this variable" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 12 ;
+	sh:path reproschema:choices .
+_:c14n104 rdf:first nidm:DiffusionWeighted ;
+	rdf:rest _:c14n9 .
+_:c14n105 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n106 sh:description "Type of measurement (e.g. anatomical volume)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 9 ;
+	sh:path nidm:datumType .
+_:c14n11 sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+_:c14n12 sh:description "URI of this DataElement.  May use niiri:, freesurfer:, fsl:, or ants: namespace depending on origin." ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+_:c14n13 sh:description "Ontology concept this variable measures (typically ilx:, obo:, or dicom: URI)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 3 ;
+	sh:path nidm:isAbout .
+_:c14n14 sh:datatype xsd:string ;
+	sh:description "Human-readable variable label" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 1 ;
+	sh:path rdfs:label .
+_:c14n15 sh:datatype xsd:string ;
+	sh:description "URL or file path location" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 9 ;
+	sh:path prov:Location .
+_:c14n16 sh:datatype xsd:string ;
+	sh:description "Command or script name" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 4 ;
+	sh:path nidm:command .
+_:c14n17 rdf:first nidm:T2Weighted ;
+	rdf:rest _:c14n85 .
+_:c14n18 sh:datatype xsd:string ;
+	sh:description "Maximum allowed value" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 7 ;
+	sh:path nidm:maxValue .
+_:c14n19 sh:description "Source entity consumed by this derivative activity" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 2 ;
+	sh:path prov:used .
+_:c14n2 sh:class prov:Person ;
+	sh:description "The agent (participant) involved" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path prov:agent .
+_:c14n20 sh:datatype xsd:string ;
+	sh:description "Project or study name" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 1 ;
+	sh:path dctypes:title .
+_:c14n21 sh:class nidm:AcquisitionObject ;
+	sh:description "Entities generated by this acquisition" ;
+	sh:nodeKind sh:IRI ;
+	sh:order 3 ;
+	sh:path <https://purl.org/nidash/nidm/schema/acquisition_objects> .
+_:c14n22 rdf:first nidm:ArterialSpinLabeling ;
+	rdf:rest rdf:nil .
+_:c14n23 rdf:first nidm:PositronEmissionTomography ;
+	rdf:rest rdf:nil .
+_:c14n24 sh:datatype xsd:string ;
+	sh:description "Brain laterality (Left, Right, Bilateral)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 11 ;
+	sh:path nidm:hasLaterality .
+_:c14n25 sh:description "Member entities of this collection" ;
+	sh:nodeKind sh:IRI ;
+	sh:order 3 ;
+	sh:path prov:hadMember .
+_:c14n26 sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+_:c14n27 sh:datatype xsd:string ;
+	sh:description "Software name (e.g. 'PyNIDM')" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 2 ;
+	sh:path schema1:name .
+_:c14n28 sh:datatype xsd:string ;
+	sh:description "Task name for functional MRI" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 5 ;
+	sh:path nidm:Task .
+_:c14n29 sh:datatype xsd:string ;
+	sh:description "File path, often in BIDS format (e.g. bids::sub-XX/anat/sub-XX_T1w.nii.gz)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 7 ;
+	sh:path nfo:filename .
+_:c14n3 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n30 rdf:first nidm:T1Weighted ;
+	rdf:rest _:c14n17 .
+_:c14n31 sh:datatype xsd:string ;
+	sh:description "Data license" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 3 ;
+	sh:path dct:license .
+_:c14n32 rdf:first nidm:Functional ;
+	rdf:rest _:c14n89 .
+_:c14n33 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n34 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n35 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n36 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n37 sh:datatype xsd:string ;
+	sh:description "Minimum allowed value" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 6 ;
+	sh:path nidm:minValue .
+_:c14n38 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n39 sh:class nidm:Session ;
+	sh:description "The Session this Acquisition belongs to" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 1 ;
+	sh:path dct:isPartOf .
+_:c14n4 sh:datatype xsd:string ;
+	sh:description "Original variable name in source data" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 4 ;
+	sh:path nidm:sourceVariable .
+_:c14n40 sh:description "Intended image usage (Anatomical, Functional, DWI)" ;
+	sh:in _:c14n41 ;
+	sh:maxCount 1 ;
+	sh:order 4 ;
+	sh:path nidm:hadImageUsageType .
+_:c14n41 rdf:first nidm:Anatomical ;
+	rdf:rest _:c14n32 .
+_:c14n42 sh:datatype xsd:dateTime ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 4 ;
+	sh:path prov:endedAtTime .
+_:c14n43 sh:description "Imaging modality (MRI, PET)" ;
+	sh:in _:c14n56 ;
+	sh:maxCount 1 ;
+	sh:order 2 ;
+	sh:path nidm:hadAcquisitionModality .
+_:c14n44 sh:datatype xsd:string ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 2 ;
+	sh:path dct:license .
+_:c14n45 sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+_:c14n46 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n47 sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+_:c14n48 sh:datatype xsd:string ;
+	sh:description "Brain laterality (Left, Right, Bilateral)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 11 ;
+	sh:path nidm:hasLaterality .
+_:c14n49 sh:datatype xsd:string ;
+	sh:description "Variable description" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 2 ;
+	sh:path dct:description .
+_:c14n5 sh:datatype xsd:string ;
+	sh:description "Minimum allowed value" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 6 ;
+	sh:path nidm:minValue .
+_:c14n50 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n51 sh:class nidm:Project ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 1 ;
+	sh:path dct:isPartOf .
+_:c14n52 sh:datatype xsd:string ;
+	sh:description "Output format (e.g. 'turtle')" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 2 ;
+	sh:path nidm:outputFormat .
+_:c14n53 sh:class nidm:Project ;
+	sh:description "The Project this Session belongs to" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 1 ;
+	sh:path dct:isPartOf .
+_:c14n54 sh:datatype xsd:integer ;
+	sh:description "Run number for the acquisition (BIDS run entity).  Written by bidsmri2nidm/csv2nidm as nidm:AcquisitionObject with an integer value." ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 6 ;
+	sh:path nidm:AcquisitionObject .
+_:c14n55 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n56 rdf:first nidm:MagneticResonanceImaging ;
+	rdf:rest _:c14n23 .
+_:c14n57 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n58 sh:class nidm:Derivative ;
+	sh:description "The Derivative activity that produced this object" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 1 ;
+	sh:path prov:wasGeneratedBy .
+_:c14n59 sh:description "XSD data type (xsd:string, xsd:float, xsd:integer)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 5 ;
+	sh:path nidm:valueType .
+_:c14n6 sh:datatype xsd:string ;
+	sh:description "Valid categorical choices for this variable" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 12 ;
+	sh:path reproschema:choices .
+_:c14n60 sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+_:c14n61 sh:description "Image contrast type (T1, T2, DWI, etc.)" ;
+	sh:in _:c14n30 ;
+	sh:maxCount 1 ;
+	sh:order 3 ;
+	sh:path nidm:hadImageContrastType .
+_:c14n62 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n63 sh:datatype xsd:string ;
+	sh:description "SHA-512 hash of the file" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 8 ;
+	sh:path crypto:sha512 .
+_:c14n64 sh:description "Role of the agent (typically sio:Subject)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 1 ;
+	sh:path prov:hadRole .
+_:c14n65 sh:datatype xsd:string ;
+	sh:description "Software version string" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 3 ;
+	sh:path schema1:softwareVersion .
+_:c14n66 sh:datatype xsd:string ;
+	sh:description "Human-readable variable label" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 1 ;
+	sh:path rdfs:label .
+_:c14n67 rdf:first nidm:FlowWeighted ;
+	rdf:rest _:c14n22 .
+_:c14n68 sh:datatype xsd:string ;
+	sh:description "Runtime environment (e.g. 'Python 3.9.23')" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 5 ;
+	sh:path schema1:runtimePlatform .
+_:c14n69 sh:datatype xsd:string ;
+	sh:description "Unit of measurement (e.g. mm^3)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 10 ;
+	sh:path nidm:hasUnit .
+_:c14n7 sh:datatype xsd:string ;
+	sh:description "Acknowledgments" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 5 ;
+	sh:path obo:IAO_0000324 .
+_:c14n70 sh:datatype xsd:string ;
+	sh:description "Maximum allowed value" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 7 ;
+	sh:path nidm:maxValue .
+_:c14n71 sh:description "XSD data type (xsd:string, xsd:float, xsd:integer)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 5 ;
+	sh:path nidm:valueType .
+_:c14n72 sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+_:c14n73 sh:class nidm:DataElement ;
+	sh:description "DataElement definitions for this project" ;
+	sh:nodeKind sh:IRI ;
+	sh:order 10 ;
+	sh:path <https://purl.org/nidash/nidm/schema/data_elements> .
+_:c14n74 sh:class nidm:Session ;
+	sh:description "Sessions belonging to this project" ;
+	sh:nodeKind sh:IRI ;
+	sh:order 9 ;
+	sh:path <https://purl.org/nidash/nidm/schema/sessions> .
+_:c14n75 sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+_:c14n76 sh:datatype xsd:string ;
+	sh:description "Project version or identifier" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 6 ;
+	sh:path sio:Identifier .
+_:c14n77 sh:datatype xsd:string ;
+	sh:description "Subject ID in the study (e.g. 'sub-0050002').  This is the primary human-readable identifier for participants." ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 1 ;
+	sh:path ndar:src_subject_id .
+_:c14n78 sh:datatype xsd:string ;
+	sh:description "Dataset version" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 8 ;
+	sh:path dct:hasVersion .
+_:c14n79 sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+_:c14n8 sh:datatype xsd:string ;
+	sh:description "BIDS standard version" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 1 ;
+	sh:path bids:BIDSVersion .
+_:c14n80 sh:datatype xsd:string ;
+	sh:description "Variable description" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 2 ;
+	sh:path dct:description .
+_:c14n81 sh:description "URI of this DataElement.  May use niiri:, freesurfer:, fsl:, or ants: namespace depending on origin." ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+_:c14n82 sh:description "Brain structure or region measured" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 8 ;
+	sh:path nidm:measureOf .
+_:c14n83 sh:description "Input entity (Collection or Project) that was used" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 6 ;
+	sh:path prov:used .
+_:c14n84 rdf:first rdf:type ;
+	rdf:rest rdf:nil .
+_:c14n85 rdf:first nidm:T2StarWeighted ;
+	rdf:rest _:c14n104 .
+_:c14n86 sh:class prov:SoftwareAgent ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 5 ;
+	sh:path prov:wasAssociatedWith .
+_:c14n87 sh:class nidm:Acquisition ;
+	sh:description "The Acquisition that produced this object" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 1 ;
+	sh:path prov:wasGeneratedBy .
+_:c14n88 sh:description "Brain structure or region measured" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 8 ;
+	sh:path nidm:measureOf .
+_:c14n89 rdf:first nidm:DiffusionWeighted ;
+	rdf:rest rdf:nil .
+_:c14n9 rdf:first nidm:DiffusionTensor ;
+	rdf:rest _:c14n67 .
+_:c14n90 sh:description "Type of measurement (e.g. anatomical volume)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 9 ;
+	sh:path nidm:datumType .
+_:c14n91 sh:datatype xsd:string ;
+	sh:description "Funding information" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 4 ;
+	sh:path obo:IAO_0000623 .
+_:c14n92 sh:datatype xsd:string ;
+	sh:description "Original variable name in source data" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 4 ;
+	sh:path nidm:sourceVariable .
+_:c14n93 sh:class nidm:Derivative ;
+	sh:description "Derivative processing activities" ;
+	sh:nodeKind sh:IRI ;
+	sh:order 11 ;
+	sh:path <https://purl.org/nidash/nidm/schema/derivatives> .
+_:c14n94 sh:datatype xsd:string ;
+	sh:description "Display name (e.g. 'PyNIDM bidsmri2nidm.py')" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 1 ;
+	sh:path rdfs:label .
+_:c14n95 sh:datatype xsd:string ;
+	sh:description "Project description" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 2 ;
+	sh:path dct:description .
+_:c14n96 sh:description "Ontology concept this variable measures (typically ilx:, obo:, or dicom: URI)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 3 ;
+	sh:path nidm:isAbout .
+_:c14n97 sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+_:c14n98 sh:datatype xsd:string ;
+	sh:description "Human-readable label (e.g. 'Create NIDM RDF from BIDS dataset', 'Add CSV data to NIDM file')" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:Literal ;
+	sh:order 1 ;
+	sh:path rdfs:label .
+_:c14n99 sh:description "URI of this Project (typically niiri:<uuid>)" ;
+	sh:maxCount 1 ;
+	sh:nodeKind sh:IRI ;
+	sh:order 0 ;
+	sh:path <https://purl.org/nidash/nidm/schema/identifier> .
+

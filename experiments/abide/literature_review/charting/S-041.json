@@ -1,0 +1,276 @@
+{
+  "source_id": "S-041",
+  "pmid": "local_f07317a7",
+  "doi": "10.3389/fnins.2016.00191",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2-3: a voxel-wise group-difference analysis of inter- and intra-hemispheric resting-state functional connectivity density between ASD and TDC using ABIDE I data.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "We used resting state fMRI data of 458 subjects with ASD and\n517 TDCs (see Table 1 for additional demographic information)\namong 1112 datasets from the ABIDE datasets",
+      "section": "methods",
+      "claim": "458 ASD and 517 TDC subjects were selected from 1112 ABIDE datasets.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We excluded\ndatasets from the social brain Lab BCN NIC UMC Groningen\nand Netherlands Institute for Neurosciences due to the missing\ninformation of a full-scale intelligence quotient (IQ) for many\nsubjects. After preprocessing, we found that a large part of the\ncerebellum was missing in the imaging dataset of Carnegie\nMellon University, and all datasets from Carnegie Mellon\nUniversity were excluded. To control for potential confounding\neﬀects of IQ in our analysis, we decided to exclude ﬁve datasets\nthat included some subjects with IQ lower than 70. Finally, we\nperformed voxel-wise group comparisons with 975 imaging\ndatasets.",
+      "section": "methods",
+      "claim": "Sites/datasets were excluded for missing FIQ (Groningen), incomplete cerebellar coverage (Carnegie Mellon), or low IQ (<70, five further datasets), leaving 975 datasets for voxel-wise comparison.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Datasets were preprocessed with SPM8 (http://www.ﬁl.ion.ucl.\nac.uk/spm/software/spm8/). The ﬁrst step was realignment for\nhead motion correction. Images were realigned to the ﬁrst\nimage and a mean echo planar image (EPI) was created during\nthis step. Subsequently, structural T1 images were coregistered\nto their mean EPI data. Registered EPI data of each subject\nwere normalized to Montreal Neurological Institute (MNI)\ntemplate and spatially smoothed with 8 mm of full-width at half-\nmaximum. Then, in the temporal domain, the linearly increasing\ntrend due to heat absorption was removed at each voxel, and\nthe eﬀects of the head motion, white matter, cerebrospinal ﬂuid,\nand global signal were regressed out. Lastly, temporal band-pass\nﬁltering was applied (0.01–0.08 Hz).",
+      "section": "methods",
+      "claim": "Data were preprocessed with SPM8: realignment, coregistration, MNI normalization, 8mm smoothing, detrending, nuisance regression (motion, WM, CSF, global signal), band-pass filtering.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "2-tailed t-test design with two covariates of age\nand sex was used to compute the statistical signiﬁcance of the\nFCD diﬀerences between the two groups. Statistical signiﬁcance\nwas based on the false discovery rate corrected P < 0.05 together\nwith requiring 20 voxels for the minimum continuous voxel\nsize within a cluster (corrected P < 0.05).",
+      "section": "methods",
+      "claim": "Group differences were tested with a 2-tailed t-test (age and sex covariates), FDR-corrected P<0.05 with a minimum cluster size of 20 voxels.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "",
+      "section": "abstract",
+      "claim": "Both inter- and intra-hemispheric FCD were significantly decreased in ASD vs TDC in the posterior cingulate cortex, lingual/parahippocampal gyrus, and postcentral gyrus.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "",
+      "section": "results",
+      "claim": "ADOS-RRB scores showed significant negative correlations with inter-hemispheric and contralateral FCD in the lingual/parahippocampal gyrus cluster.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "In several sites, the datasets contained clinical information\nsuch\nas\nthe\nAutism\nDiagnostic\nInterview-Revised\n(ADI-\nR), the restricted and repetitive behavior subscore of the\nAutism\nDiagnostic\nObservation\nSchedule\n(ADOS-RRB),\nand communication subscore of the ADOS (ADOS-COM).",
+      "section": "results",
+      "claim": "Clinical diagnosis-related measures used included ADI-R, ADOS-RRB, and ADOS-COM subscores from the ABIDE phenotypic data.",
+      "relevance_score": 0.7
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "Explicit site/IQ/coverage-based exclusion rules and resulting N (975 of 1112) are reported."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "458 ASD and 517 TDC from a defined subset of ABIDE sites, with demographics in Table 1."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "SPM8 preprocessing pipeline with standard nuisance regression and band-pass filtering is explicitly described."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Low",
+        "support": "ADI-R and ADOS (RRB, COM) clinical measures from the ABIDE phenotypic data are used and correlated with connectivity."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Unclear",
+        "support": "Age and sex are modeled as covariates; head motion is regressed as a nuisance signal, but no explicit motion-based subject-exclusion threshold (e.g. FD cutoff) is reported; site is not included as a covariate despite pooling 15 sites."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Unclear",
+        "support": "Age/sex covariates and motion nuisance regression are used, but no site covariate or harmonisation is applied despite acknowledged multi-site heterogeneity."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Voxel-wise global/inter-/intra-hemispheric functional connectivity density (FCD) is a clearly defined, previously validated data-driven metric."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "FDR correction (P<0.05) with a minimum cluster size of 20 voxels, and Benjamini-Hochberg correction for correlation analyses."
+      }
+    ],
+    "overall": "Unclear",
+    "summary": "Cohort definition, preprocessing and multiple-comparisons correction are transparently reported, but no motion-based subject-exclusion threshold or site covariate/harmonisation is described despite pooling 15 ABIDE sites, leaving residual site-confound risk in the Analysis/Confounders domains."
+  },
+  "charting": {
+    "source_id": "S-041",
+    "title": "Abnormalities of Inter- and Intra-Hemispheric Functional Connectivity in Autism Spectrum Disorders: A Study Using the Autism Brain Imaging Data Exchange Database",
+    "authors": "Lee et al.",
+    "year": "2016",
+    "journal_conference": "Frontiers in Neuroscience",
+    "doi": "10.3389/fnins.2016.00191",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Group-difference inter-/intra-hemispheric functional connectivity",
+    "primary_goal": "Examine whether ASD functional under-connectivity originates from ipsilateral or contralateral (inter-hemispheric) brain regions using whole-brain voxel-wise FCD mapping",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "Multi-site (subset of ABIDE I sites contributing both ASD and TDC)",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "ADI-R, ADOS-RRB and ADOS-COM subscores (ABIDE phenotypic data)",
+    "n_disordered": "458",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "54 females",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "true",
+    "healthy_status_confirmed": "",
+    "n_controls": "517",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "true",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "",
+    "dataset_openly_available": "ABIDE data publicly available; no separate analysis code repository mentioned",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Voxel-wise global functional connectivity density (FCD)",
+    "specific_features": "Global, contralateral (inter-hemispheric), and ipsilateral (intra-hemispheric) functional connectivity density maps; no ROI atlas (whole-brain voxel-wise)",
+    "feature_extraction_tools": "SPM8 (custom pipeline)",
+    "feature_importance_reported": "",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "Hypoconnectivity: decreased inter- and intra-hemispheric FCD in ASD vs TDC in posterior cingulate cortex, lingual/parahippocampal gyrus, and postcentral gyrus",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "Voxel-wise 2-tailed t-test (age, sex covariates), FDR-corrected P<0.05, minimum cluster size 20 voxels; Benjamini-Hochberg correction for clinical-correlation analyses",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "ASD showed significantly decreased inter- and intra-hemispheric functional connectivity density relative to TDC in the posterior cingulate cortex, lingual/parahippocampal gyrus, and postcentral gyrus; ADOS-RRB (restricted/repetitive behavior) scores correlated negatively with FCD in these regions, including the default mode network.",
+    "features_associated_disorder": "Posterior cingulate cortex, lingual/parahippocampal gyrus, postcentral gyrus (decreased inter- and intra-hemispheric FCD in ASD)",
+    "future_directions_recommended": "",
+    "reviewer_notes": "No motion-based subject exclusion threshold or site covariate/harmonisation reported, despite pooling 15 ABIDE sites; age and sex only used as covariates.",
+    "custom_fields": {
+      "RQ1": "associational — ABIDE I, N=975 (458 ASD, 517 TDC) after excluding sites/datasets for missing FIQ (Groningen), poor cerebellar coverage (Carnegie Mellon), and low IQ (<70, 5 datasets) from the original 1112 | quote: \"We excluded datasets from the social brain Lab BCN NIC UMC Groningen and Netherlands Institute for Neurosciences due to the missing information of a full-scale intelligence quotient (IQ) for many subjects. After preprocessing, we found that a large part of the cerebellum was missing in the imaging dataset of Carnegie Mellon University, and all datasets from Carnegie Mellon University were excluded. To control for potential confounding eﬀects of IQ in our analysis, we decided to exclude ﬁve datasets that included some subjects with IQ lower than 70. Finally, we performed voxel-wise group comparisons with 975 imaging datasets.\"",
+      "RQ2": "Custom SPM8 preprocessing pipeline (realignment, coregistration, MNI normalization, smoothing, nuisance regression, band-pass filter); no ROI atlas/parcellation — whole-brain voxel-wise functional connectivity density mapping | quote: \"Datasets were preprocessed with SPM8 (http://www.ﬁl.ion.ucl. ac.uk/spm/software/spm8/). The ﬁrst step was realignment for head motion correction. Images were realigned to the ﬁrst image and a mean echo planar image (EPI) was created during this step. Subsequently, structural T1 images were coregistered to their mean EPI data. Registered EPI data of each subject were normalized to Montreal Neurological Institute (MNI) template and spatially smoothed with 8 mm of full-width at half- maximum. Then, in the temporal domain, the linearly increasing trend due to heat absorption was removed at each voxel, and the eﬀects of the head motion, white matter, cerebrospinal ﬂuid, and global signal were regressed out. Lastly, temporal band-pass ﬁltering was applied (0.01–0.08 Hz).\"",
+      "RQ3": "associational — group-difference (ASD vs TDC) voxel-wise functional connectivity density analysis | quote: \"\"",
+      "RQ4": "Voxel-wise 2-tailed t-test with age and sex as covariates; FDR-corrected P<0.05 with minimum cluster size of 20 voxels; Benjamini-Hochberg correction for clinical-correlation analyses; no site covariate or leave-site-out evaluation reported | quote: \"2-tailed t-test design with two covariates of age and sex was used to compute the statistical signiﬁcance of the FCD diﬀerences between the two groups. Statistical signiﬁcance was based on the false discovery rate corrected P < 0.05 together with requiring 20 voxels for the minimum continuous voxel size within a cluster (corrected P < 0.05).\"",
+      "RQ5": "Hypoconnectivity: decreased inter- and intra-hemispheric FCD in ASD vs TDC in posterior cingulate cortex, lingual/parahippocampal gyrus, and postcentral gyrus; ADOS-RRB scores negatively correlated with FCD in these regions | quote: \"\"",
+      "RQ6": "partly — N and site/IQ-based exclusion rules are reported, but no participant ID list is published | quote: \"We excluded datasets from the social brain Lab BCN NIC UMC Groningen and Netherlands Institute for Neurosciences due to the missing information of a full-scale intelligence quotient (IQ) for many subjects. After preprocessing, we found that a large part of the cerebellum was missing in the imaging dataset of Carnegie Mellon University, and all datasets from Carnegie Mellon University were excluded. To control for potential confounding eﬀects of IQ in our analysis, we decided to exclude ﬁve datasets that included some subjects with IQ lower than 70. Finally, we performed voxel-wise group comparisons with 975 imaging datasets.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"We excluded datasets from the social brain Lab BCN NIC UMC Groningen and Netherlands Institute for Neurosciences due to the missing information of a full-scale intelligence quotient (IQ) for many subjects. After preprocessing, we found that a large part of the cerebellum was missing in the imaging dataset of Carnegie Mellon University, and all datasets from Carnegie Mellon University were excluded. To control for potential confounding eﬀects of IQ in our analysis, we decided to exclude ﬁve datasets that included some subjects with IQ lower than 70. Finally, we performed voxel-wise group comparisons with 975 imaging datasets.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — head motion is regressed as a nuisance signal during preprocessing, but no explicit motion-based subject-exclusion metric or threshold (e.g. FD cutoff) is reported | quote: \"Datasets were preprocessed with SPM8 (http://www.ﬁl.ion.ucl. ac.uk/spm/software/spm8/). The ﬁrst step was realignment for head motion correction. Images were realigned to the ﬁrst image and a mean echo planar image (EPI) was created during this step. Subsequently, structural T1 images were coregistered to their mean EPI data. Registered EPI data of each subject were normalized to Montreal Neurological Institute (MNI) template and spatially smoothed with 8 mm of full-width at half- maximum. Then, in the temporal domain, the linearly increasing trend due to heat absorption was removed at each voxel, and the eﬀects of the head motion, white matter, cerebrospinal ﬂuid, and global signal were regressed out. Lastly, temporal band-pass ﬁltering was applied (0.01–0.08 Hz).\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — SPM8-based custom pipeline | quote: \"Datasets were preprocessed with SPM8 (http://www.ﬁl.ion.ucl. ac.uk/spm/software/spm8/). The ﬁrst step was realignment for head motion correction. Images were realigned to the ﬁrst image and a mean echo planar image (EPI) was created during this step. Subsequently, structural T1 images were coregistered to their mean EPI data. Registered EPI data of each subject were normalized to Montreal Neurological Institute (MNI) template and spatially smoothed with 8 mm of full-width at half- maximum. Then, in the temporal domain, the linearly increasing trend due to heat absorption was removed at each voxel, and the eﬀects of the head motion, white matter, cerebrospinal ﬂuid, and global signal were regressed out. Lastly, temporal band-pass ﬁltering was applied (0.01–0.08 Hz).\"",
+      "CL4 Atlas/parcellation reported?": "No — whole-brain voxel-wise functional connectivity density analysis, not an atlas/ROI parcellation | quote: \"\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not applicable, this is a group-difference voxel-wise GLM analysis, not a predictive train/test model | quote: \"\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — the GLM covariates were limited to age and sex; no site covariate, harmonisation, or leave-site-out evaluation is reported despite pooling multiple ABIDE sites | quote: \"2-tailed t-test design with two covariates of age and sex was used to compute the statistical signiﬁcance of the FCD diﬀerences between the two groups. Statistical signiﬁcance was based on the false discovery rate corrected P < 0.05 together with requiring 20 voxels for the minimum continuous voxel size within a cluster (corrected P < 0.05).\"",
+      "CL7 Code and/or participant list available?": "No — ABIDE data are publicly available but no analysis code repository is mentioned | quote: \"\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"We used resting state fMRI data of 458 subjects with ASD and 517 TDCs (see Table 1 for additional demographic information) among 1112 datasets from the ABIDE datasets\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-041",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "Site/IQ/coverage exclusion rules and resulting N (975 of 1112) reported."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "No",
+          "notes": "Motion regressed as nuisance signal but no exclusion metric/threshold given."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline reported",
+          "rating": "Yes",
+          "notes": "SPM8 pipeline fully described."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "N/A",
+          "notes": "Voxel-wise whole-brain analysis, no ROI atlas."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source reported",
+          "rating": "Yes",
+          "notes": "ADI-R and ADOS (RRB, COM) subscores explicitly used."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "N/A",
+          "notes": "Not a predictive train/test model."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "No",
+          "notes": "No site covariate or harmonisation despite multi-site pooling."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "No",
+          "notes": "No code repository mentioned."
+        }
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-041",
+    "study_design_sample_dataset": "Group-difference (associational) voxel-wise analysis; ABIDE I, N=975 (458 ASD, 517 TDC) after site/IQ/coverage-based exclusions from 1112 raw datasets.",
+    "methods": "SPM8-preprocessed rs-fMRI; whole-brain voxel-wise functional connectivity density (global, inter-hemispheric/contralateral, intra-hemispheric/ipsilateral) with a 2-tailed t-test (age, sex covariates), FDR-corrected P<0.05, 20-voxel minimum cluster size.",
+    "outcomes": "Decreased inter- and intra-hemispheric FCD in ASD vs TDC in posterior cingulate cortex, lingual/parahippocampal gyrus, and postcentral gyrus; ADOS-RRB negatively correlated with FCD in these and default-mode-network regions.",
+    "key_limitations": "No motion-based subject-exclusion threshold reported; no site covariate or harmonisation despite pooling multiple sites; no atlas-based parcellation.",
+    "relevance_notes": "A voxel-wise (non-atlas) associational use of ABIDE I illustrating a common gap in this corpus: multi-site pooling without explicit site-effect statistical handling.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2016.00191",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "458 ASD and 517 TDC subjects selected from 1112 ABIDE I datasets, after excluding sites/datasets for missing FIQ (Groningen), incomplete cerebellar coverage (Carnegie Mellon), and low IQ (<70, 5 further datasets).",
+    "n_by_dx": {
+      "ASD": 458,
+      "TD": 517,
+      "total": 975
+    },
+    "sites": "15 (subset of ABIDE I sites contributing both ASD and TDC)",
+    "pipeline": "SPM8 (custom)",
+    "atlas": "",
+    "claim_type": "associational",
+    "finding": "ASD showed significantly decreased inter- and intra-hemispheric functional connectivity density relative to TDC in the posterior cingulate cortex, lingual/parahippocampal gyrus, and postcentral gyrus, with ADOS-RRB scores negatively correlated with FCD in these regions.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "We used resting state fMRI data of 458 subjects with ASD and\n517 TDCs (see Table 1 for additional demographic information)\namong 1112 datasets from the ABIDE datasets",
+      "We excluded\ndatasets from the social brain Lab BCN NIC UMC Groningen\nand Netherlands Institute for Neurosciences due to the missing\ninformation of a full-scale intelligence quotient (IQ) for many\nsubjects. After preprocessing, we found that a large part of the\ncerebellum was missing in the imaging dataset of Carnegie\nMellon University, and all datasets from Carnegie Mellon\nUniversity were excluded. To control for potential confounding\neﬀects of IQ in our analysis, we decided to exclude ﬁve datasets\nthat included some subjects with IQ lower than 70. Finally, we\nperformed voxel-wise group comparisons with 975 imaging\ndatasets.",
+      ""
+    ]
+  }
+}

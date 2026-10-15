@@ -1,0 +1,98 @@
+{
+  "source_id": "S-053",
+  "pmid": "local_0c61e485",
+  "doi": "10.1186/s12859-021-04295-1",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2,3: resting-state fMRI diagnostic classification (ASD vs HC) analysis using ABIDE I data with a graph attention network model.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {"text": "We experimentally compared GAT2 model’s performance on the  ABIDE I database from 1035 subjects", "section": "abstract", "claim": "Study analyses 1035 ABIDE I subjects.", "relevance_score": 0.9},
+    {"text": "We used the resting-state fMRI data from 1035 subjects in the ABIDE I initiative [20]  for this study. The dataset includes 505 individuals diagnosed as having ASD and 530  HC.", "section": "methods", "claim": "Final analysed cohort: 505 ASD, 530 HC from ABIDE I.", "relevance_score": 1.0},
+    {"text": "The data were preprocessed by the Configurable Pipeline for the Analysis of Con- nectomes (CPAC) pipeline [24] that included the following procedure: slice timing cor- rection, motion realignment, intensity normalization, regression of nuisance signals,  band-pass filtering (0.01–0.1 Hz) and registration of fMRI images to standard anatomi- cal space (MNI152).", "section": "methods", "claim": "Preprocessing done with the CPAC pipeline from the Preprocessed Connectomes Project.", "relevance_score": 0.9},
+    {"text": "We use the Harvard Oxford (HO) atlas [23], so we  have N = 110 nodes.", "section": "methods", "claim": "Primary parcellation is the Harvard-Oxford atlas (110 ROIs); AAL atlas used for comparison.", "relevance_score": 0.8},
+    {"text": "After randomly perform- ing fivefold cross-validation data division, in each round of experiments, one-fold data    Page 11 of 20 Hu et al. BMC Bioinformatics          (2021) 22:379  \t were used for testing while other fourfold data were used for t", "section": "results", "claim": "Evaluation used random fivefold cross-validation (no leave-site-out).", "relevance_score": 0.7},
+    {"text": "The GAT2 model achieved the best results in accuracy, sensitivity, F1 score, and MCC  indicators using fivefold cross-validation, with the accuracy of 68.02%, sensitivity of  74.06%, F1 score of 69.31%, and MCC of 0.3426.", "section": "results", "claim": "Main predictive performance: GAT2 best model, accuracy 68.02%, sensitivity 74.06%, F1 69.31%, MCC 0.3426.", "relevance_score": 1.0},
+    {"text": "Compared  with the AAL atlas, using the HO atlas for construction of the brain network,  with the same model, the accuracy was increased by about 5%, the sensitivity was  increased by about 2%, and the F1 value was increas", "section": "results", "claim": "Atlas choice affects classification performance: HO atlas outperforms AAL atlas.", "relevance_score": 0.6},
+    {"text": "3 rsFCs (the connection 4, 5, and 7) were statistically significant (p < 0.05)  between the ASD and HC groups.", "section": "results", "claim": "Post-hoc interpretation identified 3 of 10 top connections with uncorrected group differences (p<0.05).", "relevance_score": 0.6},
+    {"text": "The datasets analyzed during the current study are available in the ABIDE Preprocessed Connectomes Project website of  http://​prepr​ocess​ed-​conne​ctomes-​proje​ct.​org/​abide/​downl​oad.​html. The source codes of GAT-LI are publicly available  at the project website of https://​github.​com/​large​app/​gat-​li.", "section": "discussion", "claim": "Data source and analysis code are publicly released.", "relevance_score": 0.8}
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Unclear", "support": "N (505 ASD/530 HC from 1035 ABIDE I subjects) is stated, but no explicit QC/motion exclusion rule for arriving at this 1035 subset is reported in the text."},
+      {"domain": "Predictors", "judgment": "Low", "support": "\"The data were preprocessed by the Configurable Pipeline for the Analysis of Con- nectomes (CPAC) pipeline\" and Harvard-Oxford/AAL atlases both specified with node counts."},
+      {"domain": "Outcome", "judgment": "Low", "support": "\"The dataset includes 505 individuals diagnosed as having ASD and 530  HC\" — diagnostic label taken directly from the ABIDE I phenotype file (standard site clinical diagnosis)."},
+      {"domain": "Analysis", "judgment": "High", "support": "Evaluation used pooled random fivefold cross-validation with no leave-site-out scheme and no site covariate/harmonisation reported; interpretation-stage connection differences (Table 6) reported as uncorrected p<0.05 with no multiple-comparison correction."}
+    ],
+    "overall": "High",
+    "summary": "Pipeline, atlas and labels are clearly reported, but site is not modelled or held out in cross-validation and the post-hoc connection-level comparisons are uncorrected for multiple comparisons, per PROBAST Analysis domain criteria."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "505",
+    "n_controls": "530",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (CPAC), via the Preprocessed Connectomes Project",
+    "specific_features": "Resting-state functional connectivity (Pearson correlation) between ROIs; Harvard-Oxford atlas (110 ROIs, primary) and AAL atlas (comparison)",
+    "model_category": "Graph neural network (graph attention network)",
+    "specific_algorithms": "GAT2 (novel graph attention network with attention pooling), compared against SVM, PCA+SVM, RF, MLP, CNN, GCN-based and other GAT-based models",
+    "validation_methodology": "Fivefold cross-validation (random split, pooled across sites; no leave-site-out)",
+    "performance_metrics": "Accuracy, sensitivity, specificity, F1, AUC, Matthews correlation coefficient (MCC)",
+    "key_performance_results": "GAT2 (HO atlas): accuracy 68.02%, sensitivity 74.06%, specificity (not stated in this quote), F1 69.31%, MCC 0.3426; best AUC among all models was MLP at 0.7535",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "Yes — data from the ABIDE Preprocessed Connectomes Project; analysis source code at https://github.com/largeapp/gat-li",
+    "custom_fields": {
+      "RQ1": "ABIDE I, 1035 subjects (505 ASD, 530 HC); no explicit motion/QC exclusion rule stated beyond using the Preprocessed Connectomes Project release. | quote: \"We used the resting-state fMRI data from 1035 subjects in the ABIDE I initiative [20]  for this study. The dataset includes 505 individuals diagnosed as having ASD and 530  HC.\"",
+      "RQ2": "CPAC pipeline (Preprocessed Connectomes Project); Harvard-Oxford atlas (110 ROIs) as the primary parcellation, with AAL atlas tested for comparison. | quote: \"We use the Harvard Oxford (HO) atlas [23], so we  have N = 110 nodes.\"",
+      "RQ3": "predictive — graph attention network classification of ASD vs HC from functional brain networks. | quote: \"GAT-LI, which learns to classify functional brain networks of ASD individuals versus healthy controls (HC)\"",
+      "RQ4": "Fivefold cross-validation with random pooled data split; no leave-site-out evaluation or site covariate reported; interpretation-stage rsFC group differences reported at uncorrected p<0.05. | quote: \"After randomly perform- ing fivefold cross-validation data division, in each round of experiments, one-fold data\"",
+      "RQ5": "GAT2 achieved the best classification performance among compared models: accuracy 68.02%, sensitivity 74.06%, F1 69.31%, MCC 0.3426 (HO atlas); 3 of the top 10 interpreted functional connections showed uncorrected significant group differences (p<0.05). | quote: \"The GAT2 model achieved the best results in accuracy, sensitivity, F1 score, and MCC  indicators using fivefold cross-validation, with the accuracy of 68.02%, sensitivity of  74.06%, F1 score of 69.31%, and MCC of 0.3426.\"",
+      "RQ6": "partly — N and diagnostic composition (505 ASD/530 HC of 1035) are stated and data/code are public, but no participant ID list or explicit inclusion/exclusion QC rule for the 1035 subset is given in text. | quote: \"The datasets analyzed during the current study are available in the ABIDE Preprocessed Connectomes Project website\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly | quote: \"The dataset includes 505 individuals diagnosed as having ASD and 530  HC.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion metric or threshold is stated for the 1035-subject subset",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"The data were preprocessed by the Configurable Pipeline for the Analysis of Con- nectomes (CPAC) pipeline [24]\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"We use the Harvard Oxford (HO) atlas [23], so we  have N = 110 nodes.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — no statement that feature construction, scaling or selection was confined to training folds",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — cross-validation is described as a random pooled fivefold split with no site covariate or leave-site-out scheme",
+      "CL7 Code and/or participant list available?": "Yes — code | quote: \"The source codes of GAT-LI are publicly available  at the project website of https://​github.​com/​large​app/​gat-​li.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"We experimentally compared GAT2 model’s performance on the  ABIDE I database from 1035 subjects\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {"rating": "Partial", "notes": "N and diagnostic split (505 ASD/530 HC) reported, but no motion/QC exclusion rule given (CL1 partly, CL2 no).", "overall_concern": "Some"},
+    "domain_2_predictors_features": {"rating": "Yes", "notes": "CPAC pipeline and Harvard-Oxford/AAL atlases both explicitly reported.", "overall_concern": "Low"},
+    "domain_3_outcome_diagnosis": {"rating": "Unclear", "notes": "Diagnosis stated as from the ABIDE I phenotype file, but the specific instrument/criteria per site are not described in this paper.", "overall_concern": "Some"},
+    "domain_4_bias_transparency": {"rating": "Partial", "notes": "CL5 not addressed, CL6 site ignored in pooled CV, CL7 code and data source both public.", "overall_concern": "High"}
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction study; ABIDE I, 1035 subjects (505 ASD, 530 HC), pooled across all contributing sites",
+    "methods": "CPAC-preprocessed resting-state functional connectivity (Harvard-Oxford atlas, 110 ROIs) classified with a novel graph attention network (GAT2) within a graph-learning-and-interpreting framework (GAT-LI); compared against SVM, RF, MLP, CNN and other GNN baselines using fivefold cross-validation",
+    "outcomes": "GAT2 achieved the best classification performance among compared models (accuracy 68.02%, sensitivity 74.06%, F1 69.31%, MCC 0.3426 with the HO atlas); GNNExplainer-based interpretation identified a set of discriminative functional connections, 3 of which showed uncorrected group differences (p<0.05)",
+    "key_limitations": "No leave-site-out or site-covariate evaluation despite multi-site data; no motion/QC rule reported for the analysed subset; post-hoc connection-level tests uncorrected for multiple comparisons",
+    "relevance_notes": "Full ABIDE I 1035-subject PCP release used with CPAC/HO atlas; code and data source publicly linked, supporting reconstructibility of the pipeline though not an explicit subject-selection rule.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1186/s12859-021-04295-1",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Full ABIDE I Preprocessed Connectomes Project release subset of 1035 subjects (505 ASD, 530 HC); no further exclusion rule stated",
+    "n_by_dx": {"ASD": 505, "TD": 530, "total": 1035},
+    "sites": "",
+    "pipeline": "CPAC (Configurable Pipeline for the Analysis of Connectomes), Preprocessed Connectomes Project",
+    "atlas": "Harvard-Oxford atlas (110 ROIs, primary); AAL atlas (comparison)",
+    "claim_type": "predictive",
+    "finding": "GAT2 graph attention network achieved the best ASD-vs-HC classification performance among compared models: accuracy 68.02%, sensitivity 74.06%, F1 69.31%, MCC 0.3426",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "We used the resting-state fMRI data from 1035 subjects in the ABIDE I initiative [20]  for this study. The dataset includes 505 individuals diagnosed as having ASD and 530  HC.",
+      "The GAT2 model achieved the best results in accuracy, sensitivity, F1 score, and MCC  indicators using fivefold cross-validation, with the accuracy of 68.02%, sensitivity of  74.06%, F1 score of 69.31%, and MCC of 0.3426.",
+      "The datasets analyzed during the current study are available in the ABIDE Preprocessed Connectomes Project website of  http://​prepr​ocess​ed-​conne​ctomes-​proje​ct.​org/​abide/​downl​oad.​html. The source codes of GAT-LI are publicly available  at the project website of https://​github.​com/​large​app/​gat-​li."
+    ]
+  }
+}

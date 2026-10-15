@@ -1,0 +1,173 @@
+{
+  "source_id": "S-033",
+  "pmid": "local_bb07b369",
+  "doi": "10.3389/fnins.2018.01018",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a diagnostic prediction (ASD vs. HC) analysis of ABIDE I resting-state fMRI functional connectivity using graph-theoretical features and an SVM, stratified into five age groups (Inclusion 2, 3).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "In this study, we used the fMRI data of 816 individuals enrolled in the Autism Brain Imaging Data Exchange (ABIDE) to introduce a new biomarker extraction pipeline for ASD that relies on the use of graph theoretical metrics of fMRI-based functional connectivity to inform a support vector machine (SVM).",
+      "section": "abstract",
+      "claim": "The study used fMRI data of 816 ABIDE individuals, extracting graph-theoretical metrics of functional connectivity to inform an SVM classifier.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Our methodology achieved better results than most state-of-the-art investigations on this dataset with the best model for the >30 years age group achieving an accuracy, sensitivity, and speciﬁcity of 95, 97, and 95%, respectively.",
+      "section": "abstract",
+      "claim": "The best model (>30 years age group) achieved 95% accuracy, 97% sensitivity and 95% specificity.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "we used the preprocessed version of ABIDE I (Di Martino et al., 2014) data publicly available via the Preprocessed Connectome Project (Cameron et al., 2013b). The preprocessing pipeline we used for this study is the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) (Cameron et al., 2013a). Regions of interests (ROIs) were deﬁned as the 116 regions in the automatic anatomical labeling (AAL) atlas (Tzourio-Mazoyer et al., 2002).",
+      "section": "methods",
+      "claim": "Preprocessing used the CPAC pipeline via the Preprocessed Connectomes Project, with ROIs defined by the 116-region AAL atlas.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Any subject that had a consistently 0 time-series was omitted from the dataset.",
+      "section": "methods",
+      "claim": "Subjects with a consistently zero time-series were excluded from the dataset.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "All Sites 109 342 190 137 51 816 Number of participants from each site for each age group as well as the overall number of participants in a site that were used for this study. Last row shows the total number of subjects in each age-range.",
+      "section": "table",
+      "claim": "816 subjects across 22 sites were distributed into five age ranges (5-10, 10-15, 15-20, 20-30, 30-65 years: 109, 342, 190, 137, 51 subjects respectively).",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "We then use a sequential feature selection technique to choose the top 10 features that contribute to this classiﬁcation.",
+      "section": "methods",
+      "claim": "A sequential feature selection (wrapper) method chose the top 10 of 817 graph-theory features per network-extraction method for the SVM.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We minimized the risk of overﬁtting by using three limiting approaches. First, the simplest kernel (linear) was used for the SVM. Second, only 10 features were used to learn to classify between 104 subjects. Finally, using 10-fold cross validation ensured the model is only evaluated on data points that it has not experienced before.",
+      "section": "methods",
+      "claim": "Overfitting was limited using a linear SVM kernel, only 10 selected features, and 10-fold cross-validation so the model was evaluated only on unseen data.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The raw data supporting the conclusions of this manuscript will be made available by the authors, without undue reservation, to any qualiﬁed researcher.",
+      "section": "methods",
+      "claim": "Raw data will be made available by the authors to any qualified researcher on request, rather than openly deposited.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "Total N (816), site distribution and age-group stratification are tabulated, with an explicit zero-time-series exclusion rule: \"Any subject that had a consistently 0 time-series was omitted from the dataset.\" (exact ASD/HC split is reported only in a supplementary table not captured in the extracted text)."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "Pipeline (CPAC via PCP) and atlas (AAL, 116 ROIs) are specified: \"we used the preprocessed version of ABIDE I (Di Martino et al., 2014) data publicly available via the Preprocessed Connectome Project (Cameron et al., 2013b). The preprocessing pipeline we used for this study is the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) (Cameron et al., 2013a). Regions of interests (ROIs) were deﬁned as the 116 regions in the automatic anatomical labeling (AAL) atlas (Tzourio-Mazoyer et al., 2002).\""
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "Diagnostic label source is not described in this paper beyond citing the ABIDE release."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Unclear",
+        "support": "10-fold cross-validation is used and overfitting-control steps are described (We minimized the risk of overﬁtting by using three limiting approaches. First, the simplest kernel (linear) was used for the SVM. Second, only 10 features were used to learn to classify between 104 subjects. Finally, using 10-fold cross validation ensured the model is only evaluated on data points that it has not experienced before.), but the text does not state whether the sequential feature selection step (reducing 817 features to 10) was nested within each CV fold or performed once on the full dataset before cross-validation, and sites are pooled within each age group with no site covariate or harmonisation."
+      }
+    ],
+    "overall": "Unclear",
+    "summary": "Cohort/site distribution, pipeline and atlas are explicit, and the authors describe deliberate overfitting-control steps (10-fold CV, a single linear kernel, only 10 features); the main uncertainty is whether the wrapper-based sequential feature selection was confined to the training folds, and no explicit site covariate or harmonisation is used across the pooled multi-site sample within each age group."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "not given in the main text (total N=816 across 22 sites and 5 age groups; ASD/HC split reported only in a supplementary table not captured in the extracted full text)",
+    "n_controls": "not given in the main text (total N=816 across 22 sites and 5 age groups; ASD/HC split reported only in a supplementary table not captured in the extracted full text)",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Preprocessed Connectomes Project / CPAC (Configurable Pipeline for the Analysis of Connectomes)",
+    "specific_features": "Graph-theoretical metrics (segregation: clustering coefficient, transitivity; integration: characteristic path length, efficiency; centrality: betweenness, eigenvector, participation coefficient, within-module z-score) of functional connectivity networks (Spearman correlation, percentage-bend correlation, partial correlation, SICE, mutual information), AAL atlas (116 ROIs), 817 features per network-extraction method, reduced to 10 via sequential feature selection",
+    "model_category": "Support vector machine (linear kernel) on graph-theoretical features, age-stratified",
+    "specific_algorithms": "Linear-kernel SVM with sequential (wrapper) feature selection",
+    "validation_methodology": "10-fold cross-validation per age group; models compared via 10x10 Welch's t-tests with Benjamini-Hochberg FDR correction for multiple comparisons",
+    "performance_metrics": "Accuracy, sensitivity, specificity",
+    "key_performance_results": "Best model (>30 years age group) achieved ~95% accuracy, 97% sensitivity and 95% specificity; measures of centrality contributed most to classification performance across age groups.",
+    "features_associated_disorder": "Centrality measures (e.g., betweenness, eigenvector centrality, participation coefficient) of regions previously implicated in structural/functional ASD changes contributed most to classification.",
+    "feature_change_direction": "",
+    "dataset_openly_available": "Partly — raw data will be made available by the authors to any qualified researcher on request, rather than openly deposited at publication.",
+    "custom_fields": {
+      "RQ1": "ABIDE I — 816 individuals across 22 sites, stratified into five age groups (5-10: 109, 10-15: 342, 15-20: 190, 20-30: 137, 30-65: 51); subjects with a consistently zero time-series were excluded; exact ASD/HC split is in a supplementary table not captured in the extracted full text. | quote: \"All Sites 109 342 190 137 51 816 Number of participants from each site for each age group as well as the overall number of participants in a site that were used for this study. Last row shows the total number of subjects in each age-range.\"",
+      "RQ2": "CPAC (Configurable Pipeline for the Analysis of Connectomes) via the Preprocessed Connectomes Project; AAL atlas (116 ROIs); multiple connectivity measures (Spearman, percentage-bend and partial correlation, SICE, mutual information). | quote: \"we used the preprocessed version of ABIDE I (Di Martino et al., 2014) data publicly available via the Preprocessed Connectome Project (Cameron et al., 2013b). The preprocessing pipeline we used for this study is the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) (Cameron et al., 2013a). Regions of interests (ROIs) were deﬁned as the 116 regions in the automatic anatomical labeling (AAL) atlas (Tzourio-Mazoyer et al., 2002).\"",
+      "RQ3": "predictive — ASD vs. HC classification using graph-theoretical connectivity features and a linear SVM, age-stratified. | quote: \"In this study, we used the fMRI data of 816 individuals enrolled in the Autism Brain Imaging Data Exchange (ABIDE) to introduce a new biomarker extraction pipeline for ASD that relies on the use of graph theoretical metrics of fMRI-based functional connectivity to inform a support vector machine (SVM).\"",
+      "RQ4": "10-fold cross-validation within each of five age groups; sequential (wrapper) feature selection reduced 817 features to 10; models compared via 10x10 Welch's t-tests with FDR correction; no explicit site covariate or harmonisation across the pooled multi-site sample. | quote: \"We minimized the risk of overﬁtting by using three limiting approaches. First, the simplest kernel (linear) was used for the SVM. Second, only 10 features were used to learn to classify between 104 subjects. Finally, using 10-fold cross validation ensured the model is only evaluated on data points that it has not experienced before.\"",
+      "RQ5": "Best model (>30 years age group) achieved ~95% accuracy, 97% sensitivity, 95% specificity; centrality measures (e.g., betweenness, eigenvector centrality) contributed most to classification across age groups. | quote: \"Our methodology achieved better results than most state-of-the-art investigations on this dataset with the best model for the >30 years age group achieving an accuracy, sensitivity, and speciﬁcity of 95, 97, and 95%, respectively.\"",
+      "RQ6": "partly — exact per-site, per-age-group total Ns are tabulated and the exclusion rule is stated, but the ASD/HC split is only in a supplementary table not in the extracted text, and raw data are available only on request rather than openly deposited. | quote: \"The raw data supporting the conclusions of this manuscript will be made available by the authors, without undue reservation, to any qualiﬁed researcher.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — total N (816), site and age-group distribution, and the zero-time-series exclusion rule are given, but the ASD/HC split is only in a supplementary table not captured in the extracted full text. | quote: \"Any subject that had a consistently 0 time-series was omitted from the dataset.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no numeric motion/FD threshold is reported; only a consistently-zero-time-series exclusion rule and standard 24-parameter motion regression are described.",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — CPAC via the Preprocessed Connectomes Project is named with preprocessing steps, but no version number is given. | quote: \"we used the preprocessed version of ABIDE I (Di Martino et al., 2014) data publicly available via the Preprocessed Connectome Project (Cameron et al., 2013b). The preprocessing pipeline we used for this study is the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) (Cameron et al., 2013a). Regions of interests (ROIs) were deﬁned as the 116 regions in the automatic anatomical labeling (AAL) atlas (Tzourio-Mazoyer et al., 2002).\"",
+      "CL4 Atlas/parcellation reported?": "Yes — AAL atlas, 116 ROIs. | quote: \"we used the preprocessed version of ABIDE I (Di Martino et al., 2014) data publicly available via the Preprocessed Connectome Project (Cameron et al., 2013b). The preprocessing pipeline we used for this study is the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) (Cameron et al., 2013a). Regions of interests (ROIs) were deﬁned as the 116 regions in the automatic anatomical labeling (AAL) atlas (Tzourio-Mazoyer et al., 2002).\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Unclear — 10-fold CV, a single linear kernel and only 10 selected features are used to limit overfitting, but the text does not explicitly state whether the sequential feature selection step was nested within each CV training fold. | quote: \"We minimized the risk of overﬁtting by using three limiting approaches. First, the simplest kernel (linear) was used for the SVM. Second, only 10 features were used to learn to classify between 104 subjects. Finally, using 10-fold cross validation ensured the model is only evaluated on data points that it has not experienced before.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — sites are pooled within each age group with no explicit site covariate, harmonisation, or leave-site-out evaluation reported.",
+      "CL7 Code and/or participant list available?": "Partly — raw data will be made available by the authors to any qualified researcher on request, rather than openly deposited at publication. | quote: \"The raw data supporting the conclusions of this manuscript will be made available by the authors, without undue reservation, to any qualiﬁed researcher.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "rating": "Partial",
+      "overall_concern": "Low",
+      "support": "Total N, site and age distribution, and an exclusion rule are given, but the ASD/HC split is not in the extracted text and no motion threshold is reported (CL1, CL2)."
+    },
+    "domain_2_predictors_preprocessing": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Pipeline and atlas are clearly named (CL3, CL4)."
+    },
+    "domain_3_outcome_label_source": {
+      "rating": "Unclear",
+      "overall_concern": "Some",
+      "support": "Diagnostic label source is not described beyond citing the ABIDE release."
+    },
+    "domain_4_bias_transparency": {
+      "rating": "Partial",
+      "overall_concern": "Some",
+      "support": "Explicit overfitting-control steps (10-fold CV, linear kernel, 10 features) are described, but fold-confinement of feature selection is unclear and no site handling is reported; data are available only on request (CL5-CL7)."
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction (SVM on graph-theoretical features) using ABIDE I resting-state fMRI, 816 individuals across 22 sites, stratified into five age groups (exact ASD/HC split reported only in a supplementary table).",
+    "methods": "CPAC/PCP-preprocessed functional connectivity (AAL atlas, 116 ROIs; multiple connectivity measures) summarised into 817 graph-theoretical features, reduced to 10 via sequential feature selection and classified with a linear SVM per age group; evaluated via 10-fold CV with 10x10 Welch's t-test model comparisons (FDR-corrected).",
+    "outcomes": "Best model (>30 years age group) achieved ~95% accuracy, 97% sensitivity, 95% specificity; centrality measures were the most consistently informative features across age groups.",
+    "key_limitations": "ASD/HC split not available in the extracted full text (only in a supplementary table); no numeric motion/FD threshold reported; unclear whether feature selection was confined to training folds; no site covariate/harmonisation across the pooled multi-site sample; data available only on request, not openly deposited.",
+    "relevance_notes": "An age-stratified ABIDE I analysis demonstrating that graph-theoretical centrality features combined with careful overfitting controls (linear kernel, few features, 10-fold CV) can achieve high accuracy in an older-age ASD subgroup, though feature-selection leakage risk is not fully resolved by the reported methods.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2018.01018",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "816 ABIDE I individuals across 22 sites, stratified into five age groups (5-10, 10-15, 15-20, 20-30, 30-65 years), after excluding subjects with a consistently zero time-series; exact ASD/HC split reported only in a supplementary table not captured in the extracted full text.",
+    "n_by_dx": {
+      "ASD": null,
+      "TD": null,
+      "total": 816
+    },
+    "sites": "22",
+    "pipeline": "CPAC (Configurable Pipeline for the Analysis of Connectomes) via the Preprocessed Connectomes Project",
+    "atlas": "AAL (Automated Anatomical Labeling), 116 ROIs",
+    "claim_type": "predictive",
+    "finding": "Best model (>30 years age group) achieved ~95% accuracy, 97% sensitivity and 95% specificity using graph-theoretical centrality and other connectivity features with a linear SVM; centrality measures contributed most to classification across age groups.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "All Sites 109 342 190 137 51 816 Number of participants from each site for each age group as well as the overall number of participants in a site that were used for this study. Last row shows the total number of subjects in each age-range.",
+      "Our methodology achieved better results than most state-of-the-art investigations on this dataset with the best model for the >30 years age group achieving an accuracy, sensitivity, and speciﬁcity of 95, 97, and 95%, respectively.",
+      "We minimized the risk of overﬁtting by using three limiting approaches. First, the simplest kernel (linear) was used for the SVM. Second, only 10 features were used to learn to classify between 104 subjects. Finally, using 10-fold cross validation ensured the model is only evaluated on data points that it has not experienced before."
+    ]
+  }
+}

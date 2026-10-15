@@ -1,0 +1,13 @@
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX schema: <http://schema.org/>
+SELECT ?tool ?converter ?label ?region ?side ?volume ?sourceGraph WHERE {
+  VALUES ?region { <http://purl.obolibrary.org/obo/UBERON_0000956> <http://purl.obolibrary.org/obo/UBERON_0002437> <http://purl.obolibrary.org/obo/UBERON_0001359> <http://purl.obolibrary.org/obo/UBERON_0001873> <http://purl.obolibrary.org/obo/UBERON_0001874> <http://purl.obolibrary.org/obo/UBERON_0001876> <http://purl.obolibrary.org/obo/UBERON_0001882> <http://purl.obolibrary.org/obo/UBERON_0001897> <http://purl.obolibrary.org/obo/UBERON_0001954> <http://purl.obolibrary.org/obo/UBERON_0006514> }
+  GRAPH <urn:repronim:abide:graph/view/volumes> { ?o ex:participant <urn:repronim:abide:participant/MaxMun_c_0051332> ; ex:region ?region ; ex:tool ?tool ;
+                                ex:measure ?m ; ex:side ?side ; ex:volume ?volume ; ex:sourceGraph ?sourceGraph . }
+  GRAPH <urn:repronim:abide:graph/view/volume_measures> { ?m rdfs:label ?label }
+  OPTIONAL { GRAPH <urn:repronim:abide:graph/link> { ?res ex:nidmToolNamespace ?tool ; ex:converterRepo ?converter } }
+} ORDER BY ?region ?side ?tool

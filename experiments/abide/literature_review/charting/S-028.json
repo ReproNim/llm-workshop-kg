@@ -1,0 +1,262 @@
+{
+  "source_id": "S-028",
+  "pmid": "local_8e16e9b1",
+  "doi": "10.3389/fncom.2021.654315",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a sparse-autoencoder deep-learning ASD vs HC classifier on ABIDE-I resting-state fMRI (CC200/C-PAC) with 10-fold and per-site 5-fold cross-validated accuracy; satisfies inclusion 1-4.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "This dataset consists 1,035 rs-fMRI data with 505 ASD subject, and 530 healthy control subjects that are collected from 17 di\ufb00erent sites.",
+      "section": "methods",
+      "claim": "ABIDE-I cohort: 1035 subjects (505 ASD, 530 HC) from 17 sites.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "We used the preprocessed data using the Con\ufb01gurable Pipeline for the Analysis of Connectomes C-PAC pipeline (Craddock et al., 2013)",
+      "section": "methods",
+      "claim": "Preprocessing used the C-PAC pipeline (Preprocessed Connectomes Project).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Craddock 200 (CC200) functional parcellation (Craddock et al., 2012)",
+      "section": "methods",
+      "claim": "Functional parcellation used the Craddock 200 (CC200) atlas.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "ASD-SAENet exhibits comparable accuracy (70.8%), and superior speci\ufb01city (79.1%) for the whole dataset as compared to other methods.",
+      "section": "abstract",
+      "claim": "ASD-SAENet achieved 70.8% accuracy and 79.1% specificity on the whole ABIDE dataset.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "we chose k as 10 to perform 10-fold cross validation using the whole dataset.",
+      "section": "results",
+      "claim": "Whole-dataset performance evaluated via 10-fold cross-validation.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "we performed a 5-fold cross validation for each site because of the limitation of the size of the data.",
+      "section": "results",
+      "claim": "Per-site performance evaluated via 5-fold cross-validation for each of the 17 sites.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "exhibits better accuracy for 12 out of the 17 sites. The average accuracy achieved by ASD-SAENet model was 64.42%",
+      "section": "results",
+      "claim": "ASD-SAENet exceeded comparator accuracy for 12 of 17 sites; average per-site accuracy was 64.42%.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The implemented code is available on GitHub portal of our lab at: https:// github.com/pcdslab/ASD-SAENet.",
+      "section": "abstract",
+      "claim": "Classifier code released on GitHub.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "This dataset consists 1,035 rs-fMRI data with 505 ASD subject, and 530 healthy control subjects that are collected from 17 di\ufb00erent sites."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "We used the preprocessed data using the Con\ufb01gurable Pipeline for the Analysis of Connectomes C-PAC pipeline (Craddock et al., 2013) Craddock 200 (CC200) functional parcellation (Craddock et al., 2012)"
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD/HC labels taken from ABIDE's own site diagnoses; no ADOS/ADI-R criterion or diagnosis-validation procedure described in this paper."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Unclear",
+        "support": "k-fold cross-validation is described only generically (\"the dataset is randomly split into k equal sized samples\"); it is not explicitly stated whether the sparse-autoencoder/classifier was retrained from scratch within each fold or whether any feature-wise preprocessing was confined to training folds. No site covariate or harmonization is applied in the whole-dataset model; per-site 5-fold CV evaluates generalizability across sites but is not a leave-one-site-out test."
+      }
+    ],
+    "overall": "Unclear",
+    "summary": "Cohort and pipeline (C-PAC, CC200, 17 sites) are clearly reported, but cross-validation leakage control is not explicitly described and no site-harmonisation or leave-site-out evaluation is used for the main whole-dataset model."
+  },
+  "charting": {
+    "source_id": "S-028",
+    "title": "ASD-SAENet: A Sparse Autoencoder, and Deep-Neural Network Model for Detecting Autism Spectrum Disorder (ASD) Using fMRI Data",
+    "authors": "",
+    "year": "2021",
+    "journal_conference": "Frontiers in Computational Neuroscience",
+    "doi": "10.3389/fncom.2021.654315",
+    "database_retrieved": "ABIDE I",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "Classify ASD vs healthy control using a sparse-autoencoder deep-neural-network model on ABIDE-I resting-state functional connectivity.",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "Human",
+    "task_type": "Resting-state",
+    "study_setting": "Multi-site (17 sites)",
+    "country_region": "",
+    "disorder_diagnosis": "Autism spectrum disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "505",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "530",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "The implemented code is available on GitHub portal of our lab at: https:// github.com/pcdslab/ASD-SAENet.",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Pairwise functional connectivity (Pearson correlation) between CC200 ROIs",
+    "specific_features": "Pearson correlation functional connectivity matrix over 200 CC200 regions",
+    "feature_extraction_tools": "C-PAC (Preprocessed Connectomes Project), CC200 parcellation",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Deep learning (sparse autoencoder + DNN classifier)",
+    "specific_algorithms": "Sparse autoencoder (feature reduction) jointly trained with a two-hidden-layer softmax DNN classifier (ASD-SAENet)",
+    "validation_methodology": "10-fold cross-validation on the whole ABIDE-I dataset; separate 5-fold cross-validation per site",
+    "performance_metrics": "Accuracy, sensitivity, specificity",
+    "key_performance_results": "ASD-SAENet exhibits comparable accuracy (70.8%), and superior speci\ufb01city (79.1%) for the whole dataset as compared to other methods. exhibits better accuracy for 12 out of the 17 sites. The average accuracy achieved by ASD-SAENet model was 64.42%",
+    "summary_key_findings": "ASD-SAENet achieved 70.8% accuracy and 79.1% specificity on the whole ABIDE-I dataset (10-fold CV), comparable to prior state-of-the-art methods but with substantially shorter training time, and outperformed comparators on 12 of 17 individual sites (average per-site accuracy 64.42%, 5-fold CV).",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE-I, 17 sites, 1035 subjects (505 ASD, 530 HC) | quote: \"This dataset consists 1,035 rs-fMRI data with 505 ASD subject, and 530 healthy control subjects that are collected from 17 di\ufb00erent sites.\"",
+      "RQ2": "C-PAC pipeline (Preprocessed Connectomes Project) with CC200 functional parcellation | quote: \"We used the preprocessed data using the Con\ufb01gurable Pipeline for the Analysis of Connectomes C-PAC pipeline (Craddock et al., 2013)\"",
+      "RQ3": "predictive \u2014 ASD vs HC deep-learning classification | quote: \"ASD-SAENet exhibits comparable accuracy (70.8%), and superior speci\ufb01city (79.1%) for the whole dataset as compared to other methods.\"",
+      "RQ4": "10-fold cross-validation on the whole dataset; separate 5-fold cross-validation per site to assess generalisability; no explicit leave-one-site-out evaluation or site harmonisation in the main model | quote: \"we chose k as 10 to perform 10-fold cross validation using the whole dataset.\"",
+      "RQ5": "70.8% accuracy / 79.1% specificity on the whole ABIDE-I dataset; outperformed comparators for 12/17 sites with 64.42% average per-site accuracy | quote: \"ASD-SAENet exhibits comparable accuracy (70.8%), and superior speci\ufb01city (79.1%) for the whole dataset as compared to other methods.\"",
+      "RQ6": "no \u2014 cohort size and site breakdown are given but no participant list or exact per-subject exclusion rules are published beyond use of the PCP-preprocessed release | quote: \"This dataset consists 1,035 rs-fMRI data with 505 ASD subject, and 530 healthy control subjects that are collected from 17 di\ufb00erent sites.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly | quote: \"This dataset consists 1,035 rs-fMRI data with 505 ASD subject, and 530 healthy control subjects that are collected from 17 di\ufb00erent sites.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No | quote: \"\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"We used the preprocessed data using the Con\ufb01gurable Pipeline for the Analysis of Connectomes C-PAC pipeline (Craddock et al., 2013)\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"Craddock 200 (CC200) functional parcellation (Craddock et al., 2012)\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Unclear | quote: \"\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly | quote: \"we performed a 5-fold cross validation for each site because of the limitation of the size of the data.\"",
+      "CL7 Code and/or participant list available?": "Yes | quote: \"The implemented code is available on GitHub portal of our lab at: https:// github.com/pcdslab/ASD-SAENet.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"This dataset consists 1,035 rs-fMRI data with 505 ASD subject, and 530 healthy control subjects that are collected from 17 di\ufb00erent sites.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-028",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Partial",
+          "notes": "N and site count given, but no explicit numeric exclusion/QC rule beyond using the PCP-preprocessed release. | quote: \"This dataset consists 1,035 rs-fMRI data with 505 ASD subject, and 530 healthy control subjects that are collected from 17 di\ufb00erent sites.\""
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "No",
+          "notes": "No motion/FD threshold reported."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported?",
+          "rating": "Yes",
+          "notes": "C-PAC pipeline named."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "Yes",
+          "notes": "CC200 atlas named."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "Relies on ABIDE's site-level ASD/HC labels; no additional diagnostic criterion described."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "Unclear",
+          "notes": "Cross-validation is described only generically; no explicit statement that model training/feature steps were confined to training folds."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "Partial",
+          "notes": "Per-site 5-fold CV reported for generalisability, but no site covariate, harmonisation or leave-one-site-out evaluation of the pooled model. | quote: \"we performed a 5-fold cross validation for each site because of the limitation of the size of the data.\""
+        },
+        {
+          "item_text": "CL7 Code and/or participant list available?",
+          "rating": "Yes",
+          "notes": "quote: \"The implemented code is available on GitHub portal of our lab at: https:// github.com/pcdslab/ASD-SAENet.\""
+        }
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-028",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE-I, 17 sites, 1035 subjects (505 ASD/530 HC)",
+    "methods": "C-PAC-preprocessed CC200 functional connectivity, sparse autoencoder jointly trained with a two-layer softmax DNN classifier (ASD-SAENet); 10-fold CV on whole dataset and separate per-site 5-fold CV.",
+    "outcomes": "70.8% accuracy and 79.1% specificity on the whole dataset (comparable to prior state-of-the-art but faster to train); outperformed comparators on 12/17 sites with 64.42% average per-site accuracy.",
+    "key_limitations": "Cross-validation leakage control not explicitly described; no site harmonisation or leave-one-site-out test for the pooled model; per-site models limited by small site-level sample sizes.",
+    "relevance_notes": "Benchmarks a lightweight sparse-autoencoder classifier against prior ABIDE-I deep-learning baselines (ASD-DiagNet, Heinsfeld et al.) using the same C-PAC/CC200 preprocessing, with code released on GitHub.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fncom.2021.654315",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "This dataset consists 1,035 rs-fMRI data with 505 ASD subject, and 530 healthy control subjects that are collected from 17 di\ufb00erent sites.",
+    "n_by_dx": {
+      "ASD": 505,
+      "TD": 530,
+      "total": 1035
+    },
+    "sites": "17",
+    "pipeline": "C-PAC (Preprocessed Connectomes Project)",
+    "atlas": "CC200 (Craddock 200)",
+    "claim_type": "predictive",
+    "finding": "ASD-SAENet exhibits comparable accuracy (70.8%), and superior speci\ufb01city (79.1%) for the whole dataset as compared to other methods.",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "This dataset consists 1,035 rs-fMRI data with 505 ASD subject, and 530 healthy control subjects that are collected from 17 di\ufb00erent sites.",
+      "ASD-SAENet exhibits comparable accuracy (70.8%), and superior speci\ufb01city (79.1%) for the whole dataset as compared to other methods.",
+      "exhibits better accuracy for 12 out of the 17 sites. The average accuracy achieved by ASD-SAENet model was 64.42%"
+    ]
+  }
+}

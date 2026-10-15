@@ -1,0 +1,2445 @@
+{
+ "engine": "pyoxigraph (on-disk store)",
+ "query_seconds": {
+  "Q1": 0.0078,
+  "Q2": 0.0978,
+  "Q3": 0.001,
+  "Q4": 0.0008,
+  "Q5": 0.0016,
+  "Q6": 0.0002,
+  "Q7": 0.0007,
+  "Q8": 0.2069,
+  "Q9": 0.0015,
+  "Q11": 0.0012,
+  "Q12": 0.0008,
+  "Q15": 0.1776,
+  "Q5b": 0.0011,
+  "Q9b": 0.0003,
+  "Q15b": 0.0004,
+  "Q10": 0.0269
+ },
+ "rows": {
+  "Q1": [
+   {
+    "cohort": "ex:cohort/B_v1",
+    "dx": "1",
+    "n": "348"
+   },
+   {
+    "cohort": "ex:cohort/B_v1",
+    "dx": "2",
+    "n": "419"
+   },
+   {
+    "cohort": "ex:cohort/B_v2",
+    "dx": "1",
+    "n": "308"
+   },
+   {
+    "cohort": "ex:cohort/B_v2",
+    "dx": "2",
+    "n": "396"
+   },
+   {
+    "cohort": "ex:cohort/abraham2017_reconstructed",
+    "dx": "1",
+    "n": "405"
+   },
+   {
+    "cohort": "ex:cohort/abraham2017_reconstructed",
+    "dx": "2",
+    "n": "468"
+   }
+  ],
+  "Q2": [
+   {
+    "overlap": "441",
+    "bTestExcludedByV2": "63"
+   }
+  ],
+  "Q3": [
+   {
+    "conn": "ex:connectivity/Leuven_1_0050682",
+    "method": "Pearson correlation of CC200 time series, Fisher z, upper triangle (19900 edges)",
+    "ts": "ex:timeseries/Leuven_1_0050682",
+    "tsUrl": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/rois_cc200/Leuven_1_0050682_rois_cc200.1D",
+    "tsSha": "58e95aa69587c9f38ec04cd22f01f9645129a86489e2f6f4b2b6787f306833f8",
+    "pre": "ex:preprocess/Leuven_1_0050682",
+    "software": "Leuven_1_0050682",
+    "raw": "ex:raw/Leuven_1_0050682/rest",
+    "rawUrl": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/RawDataBIDS/Leuven_1/sub-0050682/func/sub-0050682_task-rest_run-1_bold.nii.gz",
+    "cfg": "ex:resource/pipeline_config",
+    "strategy": "filt_noglobal (band-pass filtered, no global signal regression)",
+    "nuisance": "CompCor 5 components; Friston 24 motion; linear and quadratic trend",
+    "gsr": "false",
+    "bandpass": "0.01-0.1"
+   },
+   {
+    "conn": "ex:connectivity/Leuven_1_0050682",
+    "method": "Pearson correlation of CC200 time series, Fisher z, upper triangle (19900 edges)",
+    "ts": "ex:timeseries/Leuven_1_0050682",
+    "tsUrl": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/rois_cc200/Leuven_1_0050682_rois_cc200.1D",
+    "tsSha": "58e95aa69587c9f38ec04cd22f01f9645129a86489e2f6f4b2b6787f306833f8",
+    "pre": "ex:preprocess/Leuven_1_0050682",
+    "software": "C-PAC (ABIDE Preprocessed release)",
+    "raw": "ex:raw/Leuven_1_0050682/rest",
+    "rawUrl": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/RawDataBIDS/Leuven_1/sub-0050682/func/sub-0050682_task-rest_run-1_bold.nii.gz",
+    "cfg": "ex:resource/pipeline_config",
+    "strategy": "filt_noglobal (band-pass filtered, no global signal regression)",
+    "nuisance": "CompCor 5 components; Friston 24 motion; linear and quadratic trend",
+    "gsr": "false",
+    "bandpass": "0.01-0.1"
+   }
+  ],
+  "Q4": [
+   {
+    "paper": "ex:paper/abraham2017",
+    "question": "we demonstrate the feasibility of inter-site classification of neuropsychiatric status",
+    "claim": "ex:paper/abraham2017/AB_C1",
+    "claimType": "predictive",
+    "scope": "Out-of-sample diagnosis prediction, N=871 after visual QC, inter- and intra-site CV",
+    "quote": "Good choices of methods for the various steps of the pipeline lead to 67% prediction accuracy on the full ABIDE data",
+    "locator": "Abstract",
+    "cohortQuote": "This yielded 871 subjects out of the initial 1112."
+   },
+   {
+    "paper": "ex:paper/abraham2017",
+    "question": "we demonstrate the feasibility of inter-site classification of neuropsychiatric status",
+    "claim": "ex:paper/abraham2017/AB_C2",
+    "claimType": "predictive",
+    "scope": "Comparison of atlas choices within the prediction pipeline",
+    "quote": "the definition of functional brain areas is of paramount importance for biomarker discovery",
+    "locator": "Abstract",
+    "cohortQuote": "This yielded 871 subjects out of the initial 1112."
+   },
+   {
+    "paper": "ex:paper/abraham2017",
+    "question": "we demonstrate the feasibility of inter-site classification of neuropsychiatric status",
+    "claim": "ex:paper/abraham2017/AB_C3",
+    "claimType": "predictive",
+    "scope": "Learning curves over training-set size",
+    "quote": "prediction accuracy improves as we include more subjects",
+    "locator": "Abstract",
+    "cohortQuote": "This yielded 871 subjects out of the initial 1112."
+   },
+   {
+    "paper": "ex:paper/dimartino2014",
+    "question": "To understand the relative contributions of hypo and hyperconnectivity in ASD, we carried out whole-brain iFC analyses",
+    "claim": "ex:paper/dimartino2014/DM_C1",
+    "claimType": "associational",
+    "scope": "Group difference (ASD vs TC) in 763 males, 17 sites; covariates age, FIQ, site, mean FD; FDR q<0.05",
+    "quote": "both were detected, though hypoconnectivity dominated, particularly for cortico-cortical and interhemispheric functional connectivity",
+    "locator": "Abstract",
+    "cohortQuote": "This yielded data for 763 individuals (ASD=360, TC=403) from 17 sites"
+   }
+  ],
+  "Q5": [
+   {
+    "kind": "ex:Result",
+    "nFlagged": "85"
+   },
+   {
+    "kind": "ex:Claim",
+    "nFlagged": "2"
+   },
+   {
+    "kind": "ex:EvidenceAssessment",
+    "nFlagged": "4"
+   }
+  ],
+  "Q6": [
+   {
+    "review": "ex:review/B_reviews_A_v1",
+    "verdict": "not established in independent participants",
+    "d": "-0.08002382",
+    "nInd": "326",
+    "nSites": "14",
+    "nConsistent": "8",
+    "caveat": "Signature is dominated by whole-brain mean connectivity when the correlation is high; no global signal regression in filt_noglobal."
+   },
+   {
+    "review": "ex:review/B_reviews_A_v2",
+    "verdict": "not established in independent participants",
+    "d": "-0.1128023",
+    "nInd": "332",
+    "nSites": "15",
+    "nConsistent": "10",
+    "caveat": "Signature is dominated by whole-brain mean connectivity when the correlation is high; no global signal regression in filt_noglobal."
+   }
+  ],
+  "Q7": [
+   {
+    "review": "ex:assessment/A_vs_paper",
+    "reviewer": "Analyst A (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:paper/dimartino2014/DM_C1",
+    "evidence": "ex:claim/A_v1",
+    "verdict": "comparable question, non-equivalent analysis"
+   },
+   {
+    "review": "ex:assessment/A_vs_paper",
+    "reviewer": "Analyst A (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:paper/dimartino2014/DM_C1",
+    "evidence": "ex:paper/dimartino2014/DM_C1",
+    "verdict": "comparable question, non-equivalent analysis"
+   },
+   {
+    "review": "ex:assessment/B_vs_paper",
+    "reviewer": "Analyst B (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:paper/abraham2017/AB_C1",
+    "evidence": "ex:claim/B_v1",
+    "verdict": "comparable question, non-equivalent analysis"
+   },
+   {
+    "review": "ex:assessment/B_vs_paper",
+    "reviewer": "Analyst B (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:paper/abraham2017/AB_C1",
+    "evidence": "ex:paper/abraham2017/AB_C1",
+    "verdict": "comparable question, non-equivalent analysis"
+   },
+   {
+    "review": "ex:review/A_reviews_B_v1",
+    "reviewer": "Analyst A (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:claim/B_v1",
+    "evidence": "ex:result/A_v1",
+    "verdict": "overlap exceeds chance"
+   },
+   {
+    "review": "ex:review/A_reviews_B_v1",
+    "reviewer": "Analyst A (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:claim/B_v1",
+    "evidence": "ex:result/B_v1/pooled/correlation",
+    "verdict": "overlap exceeds chance"
+   },
+   {
+    "review": "ex:review/A_reviews_B_v2",
+    "reviewer": "Analyst A (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:claim/B_v2",
+    "evidence": "ex:result/A_v2",
+    "verdict": "overlap exceeds chance"
+   },
+   {
+    "review": "ex:review/A_reviews_B_v2",
+    "reviewer": "Analyst A (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:claim/B_v2",
+    "evidence": "ex:result/B_v2/pooled/correlation",
+    "verdict": "overlap exceeds chance"
+   },
+   {
+    "review": "ex:review/B_reviews_A_v1",
+    "reviewer": "Analyst B (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:claim/A_v1",
+    "evidence": "ex:cohort/B_v1",
+    "verdict": "not established in independent participants"
+   },
+   {
+    "review": "ex:review/B_reviews_A_v1",
+    "reviewer": "Analyst B (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:claim/A_v1",
+    "evidence": "ex:result/A_v1",
+    "verdict": "not established in independent participants"
+   },
+   {
+    "review": "ex:review/B_reviews_A_v2",
+    "reviewer": "Analyst B (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:claim/A_v2",
+    "evidence": "ex:cohort/B_v2",
+    "verdict": "not established in independent participants"
+   },
+   {
+    "review": "ex:review/B_reviews_A_v2",
+    "reviewer": "Analyst B (hypothetical)",
+    "role": "ex:Reviewer",
+    "target": "ex:claim/A_v2",
+    "evidence": "ex:result/A_v2",
+    "verdict": "not established in independent participants"
+   }
+  ],
+  "Q8": [
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Left hemisphere cortical gray matter volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0000956",
+    "side": "Left",
+    "volume": "341067.47",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Right hemisphere cortical gray matter volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0000956",
+    "side": "Right",
+    "volume": "340835.13",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "gray (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0000956",
+    "side": "both",
+    "volume": "784086.25",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "GMVOL (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0000956",
+    "side": "both",
+    "volume": "667230",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Total cortical gray matter volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0000956",
+    "side": "both",
+    "volume": "681902.56",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "csf (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001359",
+    "side": "both",
+    "volume": "224763.88",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "CSFVOL (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001359",
+    "side": "both",
+    "volume": "1519.2031",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "CSF Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001359",
+    "side": "both",
+    "volume": "1137.7",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Left-Caudate (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001873",
+    "side": "Left",
+    "volume": "4677.7725",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Left-Caudate Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001873",
+    "side": "Left",
+    "volume": "4232.4067",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Left-Caudate Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001873",
+    "side": "Left",
+    "volume": "4521.3",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Right-Caudate (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001873",
+    "side": "Right",
+    "volume": "4604.34",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Right-Caudate Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001873",
+    "side": "Right",
+    "volume": "4364.9673",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Right-Caudate Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001873",
+    "side": "Right",
+    "volume": "4432",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Left-Putamen (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001874",
+    "side": "Left",
+    "volume": "6408.6914",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Left-Putamen Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001874",
+    "side": "Left",
+    "volume": "5410.1943",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Left-Putamen Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001874",
+    "side": "Left",
+    "volume": "5870.9",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Right-Putamen (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001874",
+    "side": "Right",
+    "volume": "6770.134",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Right-Putamen Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001874",
+    "side": "Right",
+    "volume": "5416.87",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Right-Putamen Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001874",
+    "side": "Right",
+    "volume": "5637.6",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Left-Amygdala (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001876",
+    "side": "Left",
+    "volume": "1681.3279",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Left-Amygdala Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001876",
+    "side": "Left",
+    "volume": "1342.7734",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Left-Amygdala Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001876",
+    "side": "Left",
+    "volume": "2013.5",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Right-Amygdala (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001876",
+    "side": "Right",
+    "volume": "1760.4828",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Right-Amygdala Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001876",
+    "side": "Right",
+    "volume": "1426.6968",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Right-Amygdala Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001876",
+    "side": "Right",
+    "volume": "2078.9",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Left-Accumbens-area (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001882",
+    "side": "Left",
+    "volume": "432.01447",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Left-Accumbens-area Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001882",
+    "side": "Left",
+    "volume": "659.9426",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Left-Accumbens-area Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001882",
+    "side": "Left",
+    "volume": "516.9",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Right-Accumbens-area (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001882",
+    "side": "Right",
+    "volume": "584.60236",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Right-Accumbens-area Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001882",
+    "side": "Right",
+    "volume": "538.826",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Right-Accumbens-area Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001882",
+    "side": "Right",
+    "volume": "742.6",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Left-Thalamus-Proper (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001897",
+    "side": "Left",
+    "volume": "10451.316",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Left-Thalamus-Proper Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001897",
+    "side": "Left",
+    "volume": "10512.352",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Left-Thalamus-Proper Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001897",
+    "side": "Left",
+    "volume": "10378.4",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Right-Thalamus-Proper (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001897",
+    "side": "Right",
+    "volume": "10354.996",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Right-Thalamus-Proper Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001897",
+    "side": "Right",
+    "volume": "10320.663",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Right-Thalamus-Proper Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001897",
+    "side": "Right",
+    "volume": "11576.2",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Left-Hippocampus (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001954",
+    "side": "Left",
+    "volume": "4116.0586",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Left-Hippocampus Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001954",
+    "side": "Left",
+    "volume": "4406.929",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Left-Hippocampus Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001954",
+    "side": "Left",
+    "volume": "4597.9",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Right-Hippocampus (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001954",
+    "side": "Right",
+    "volume": "4370.6895",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Right-Hippocampus Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001954",
+    "side": "Right",
+    "volume": "4509.926",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Right-Hippocampus Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0001954",
+    "side": "Right",
+    "volume": "4929.6",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Left hemisphere cerebral white matter volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0002437",
+    "side": "Left",
+    "volume": "292482.94",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Right hemisphere cerebral white matter volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0002437",
+    "side": "Right",
+    "volume": "296303.47",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "white (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0002437",
+    "side": "both",
+    "volume": "731300.4",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "WMVOL (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0002437",
+    "side": "both",
+    "volume": "559789",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Total cerebral white matter volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0002437",
+    "side": "both",
+    "volume": "588786.4",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Left-Pallidum (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0006514",
+    "side": "Left",
+    "volume": "2295.4941",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Left-Pallidum Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0006514",
+    "side": "Left",
+    "volume": "1712.7991",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Left-Pallidum Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0006514",
+    "side": "Left",
+    "volume": "2491.1",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "converter": "ReproNim/fsl_seg_to_nidm",
+    "label": "Right-Pallidum (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0006514",
+    "side": "Right",
+    "volume": "2124.7864",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "converter": "ReproNim/ants_seg_to_nidm",
+    "label": "Right-Pallidum Volume (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0006514",
+    "side": "Right",
+    "volume": "1675.6057",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "converter": "ReproNim/segstats_jsonld",
+    "label": "Right-Pallidum Volume_mm3 (mm^3)",
+    "region": "http://purl.obolibrary.org/obo/UBERON_0006514",
+    "side": "Right",
+    "volume": "2154.1",
+    "sourceGraph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   }
+  ],
+  "Q9": [
+   {
+    "cls": "ANTs segmentation outputs",
+    "direction": "consumes",
+    "name": "ants_seg_to_nidm",
+    "usage": "data_source"
+   },
+   {
+    "cls": "BIDS dataset",
+    "direction": "consumes",
+    "name": "ANTs NIDM BIDS App",
+    "usage": "pointer"
+   },
+   {
+    "cls": "BIDS dataset",
+    "direction": "consumes",
+    "name": "FreeSurfer NIDM BIDS App",
+    "usage": "pointer"
+   },
+   {
+    "cls": "BIDS dataset",
+    "direction": "consumes",
+    "name": "MRIQC NIDM BIDS App",
+    "usage": "pointer"
+   },
+   {
+    "cls": "BIDS dataset",
+    "direction": "consumes",
+    "name": "PyNIDM",
+    "usage": "pointer"
+   },
+   {
+    "cls": "BIDS dataset",
+    "direction": "consumes",
+    "name": "simple2 BABS scripts",
+    "usage": "pointer"
+   },
+   {
+    "cls": "FSL FEAT directory",
+    "direction": "consumes",
+    "name": "NIDM-Results for FSL",
+    "usage": "pointer"
+   },
+   {
+    "cls": "FSL FIRST/FAST outputs",
+    "direction": "consumes",
+    "name": "fsl_seg_to_nidm",
+    "usage": "data_source"
+   },
+   {
+    "cls": "FreeSurfer stats files",
+    "direction": "consumes",
+    "name": "segstats_jsonld",
+    "usage": "data_source"
+   },
+   {
+    "cls": "data dictionary",
+    "direction": "consumes",
+    "name": "stuff2NIDM",
+    "usage": "pointer"
+   },
+   {
+    "cls": "ex:BrainVolume",
+    "direction": "produces",
+    "name": "ANTs NIDM BIDS App",
+    "usage": "pointer"
+   },
+   {
+    "cls": "ex:BrainVolume",
+    "direction": "produces",
+    "name": "FreeSurfer NIDM BIDS App",
+    "usage": "pointer"
+   },
+   {
+    "cls": "ex:BrainVolume",
+    "direction": "produces",
+    "name": "OpenNeuroDerivatives-NIDM",
+    "usage": "pointer"
+   },
+   {
+    "cls": "ex:BrainVolume",
+    "direction": "produces",
+    "name": "ants_seg_to_nidm",
+    "usage": "data_source"
+   },
+   {
+    "cls": "ex:BrainVolume",
+    "direction": "produces",
+    "name": "fsl_seg_to_nidm",
+    "usage": "data_source"
+   },
+   {
+    "cls": "ex:BrainVolume",
+    "direction": "produces",
+    "name": "segstats_jsonld",
+    "usage": "data_source"
+   },
+   {
+    "cls": "ex:BrainVolume",
+    "direction": "produces",
+    "name": "simple2 BABS scripts",
+    "usage": "pointer"
+   },
+   {
+    "cls": "ex:BrainVolume",
+    "direction": "produces",
+    "name": "simple2 NIDM examples (ABIDE, ADHD200)",
+    "usage": "data_source"
+   },
+   {
+    "cls": "ex:Claim",
+    "direction": "produces",
+    "name": "Abraham et al. 2017 (inter-site prediction)",
+    "usage": "data_source"
+   },
+   {
+    "cls": "ex:Claim",
+    "direction": "produces",
+    "name": "Di Martino et al. 2014 (ABIDE)",
+    "usage": "data_source"
+   },
+   {
+    "cls": "ex:ResearchQuestion",
+    "direction": "produces",
+    "name": "Abraham et al. 2017 (inter-site prediction)",
+    "usage": "data_source"
+   },
+   {
+    "cls": "ex:ResearchQuestion",
+    "direction": "produces",
+    "name": "Di Martino et al. 2014 (ABIDE)",
+    "usage": "data_source"
+   },
+   {
+    "cls": "ex:Result",
+    "direction": "produces",
+    "name": "NIDM-Results for FSL",
+    "usage": "pointer"
+   },
+   {
+    "cls": "ex:Result",
+    "direction": "produces",
+    "name": "nidmresults",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:Acquisition",
+    "direction": "produces",
+    "name": "NIDM specifications",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:AcquisitionObject",
+    "direction": "consumes",
+    "name": "Neurobagel federation API",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:AcquisitionObject",
+    "direction": "produces",
+    "name": "ABIDE I raw data (BIDS, S3)",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:AcquisitionObject",
+    "direction": "produces",
+    "name": "ABIDE Preprocessed (PCP)",
+    "usage": "data_source"
+   },
+   {
+    "cls": "nidm:AcquisitionObject",
+    "direction": "produces",
+    "name": "NIDM specifications",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:AcquisitionObject",
+    "direction": "produces",
+    "name": "PyNIDM",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:AcquisitionObject",
+    "direction": "produces",
+    "name": "simple2 NIDM examples (ABIDE, ADHD200)",
+    "usage": "data_source"
+   },
+   {
+    "cls": "nidm:DataElement",
+    "direction": "consumes",
+    "name": "NIDM-Terms",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:DataElement",
+    "direction": "produces",
+    "name": "NIDM specifications",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:DataElement",
+    "direction": "produces",
+    "name": "NIDM-Experiment terms",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:DataElement",
+    "direction": "produces",
+    "name": "NIDM-Terms",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:DataElement",
+    "direction": "produces",
+    "name": "PyNIDM",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:DataElement",
+    "direction": "produces",
+    "name": "ReproSchema",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:DataElement",
+    "direction": "produces",
+    "name": "ants_seg_to_nidm",
+    "usage": "data_source"
+   },
+   {
+    "cls": "nidm:DataElement",
+    "direction": "produces",
+    "name": "fsl_seg_to_nidm",
+    "usage": "data_source"
+   },
+   {
+    "cls": "nidm:DataElement",
+    "direction": "produces",
+    "name": "segstats_jsonld",
+    "usage": "data_source"
+   },
+   {
+    "cls": "nidm:DataElement",
+    "direction": "produces",
+    "name": "simple2 NIDM examples (ABIDE, ADHD200)",
+    "usage": "data_source"
+   },
+   {
+    "cls": "nidm:DataElement",
+    "direction": "produces",
+    "name": "stuff2NIDM",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:Derivative",
+    "direction": "produces",
+    "name": "NIDM specifications",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:DerivativeObject",
+    "direction": "produces",
+    "name": "ABIDE Preprocessed (PCP)",
+    "usage": "data_source"
+   },
+   {
+    "cls": "nidm:DerivativeObject",
+    "direction": "produces",
+    "name": "ANTs NIDM BIDS App",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:DerivativeObject",
+    "direction": "produces",
+    "name": "C-PAC",
+    "usage": "data_source"
+   },
+   {
+    "cls": "nidm:DerivativeObject",
+    "direction": "produces",
+    "name": "FreeSurfer NIDM BIDS App",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:DerivativeObject",
+    "direction": "produces",
+    "name": "MRIQC NIDM BIDS App",
+    "usage": "pointer"
+   },
+   {
+    "cls": "nidm:DerivativeObject",
+    "direction": "produces",
+    "name": "stuff2NIDM",
+    "usage": "pointer"
+   },
+   {
+    "cls": "phenotype table",
+    "direction": "consumes",
+    "name": "Neurobagel bagel-cli",
+    "usage": "pointer"
+   },
+   {
+    "cls": "phenotype table",
+    "direction": "consumes",
+    "name": "PyNIDM",
+    "usage": "pointer"
+   },
+   {
+    "cls": "prov:Activity",
+    "direction": "produces",
+    "name": "PyNIDM",
+    "usage": "pointer"
+   },
+   {
+    "cls": "results table",
+    "direction": "consumes",
+    "name": "stuff2NIDM",
+    "usage": "pointer"
+   }
+  ],
+  "Q11": [
+   {
+    "candidate": "ex:promotion/claim_AB_C1",
+    "item": "ex:paper/abraham2017/AB_C1",
+    "registry": "literature KG (e.g. BR-KG, AbstractAtlas)",
+    "status": "candidate",
+    "gateType": "licence",
+    "gateStatus": "unknown",
+    "evidence": "article licence not recorded; quote length kept short"
+   },
+   {
+    "candidate": "ex:promotion/claim_AB_C2",
+    "item": "ex:paper/abraham2017/AB_C2",
+    "registry": "literature KG (e.g. BR-KG, AbstractAtlas)",
+    "status": "candidate",
+    "gateType": "licence",
+    "gateStatus": "unknown",
+    "evidence": "article licence not recorded; quote length kept short"
+   },
+   {
+    "candidate": "ex:promotion/claim_DM_C1",
+    "item": "ex:paper/dimartino2014/DM_C1",
+    "registry": "literature KG (e.g. BR-KG, AbstractAtlas)",
+    "status": "candidate",
+    "gateType": "licence",
+    "gateStatus": "unknown",
+    "evidence": "article licence not recorded; quote length kept short"
+   },
+   {
+    "candidate": "ex:promotion/cohort_abraham_reconstruction",
+    "item": "ex:cohort/abraham2017_reconstructed",
+    "registry": "literature KG / ABIDE dataset record",
+    "status": "blocked",
+    "gateType": "generality",
+    "gateStatus": "fail",
+    "evidence": "rater-QC rule reconstructs 873 participants vs 871 reported; membership unverified"
+   },
+   {
+    "candidate": "ex:promotion/cohort_abraham_reconstruction",
+    "item": "ex:cohort/abraham2017_reconstructed",
+    "registry": "literature KG / ABIDE dataset record",
+    "status": "blocked",
+    "gateType": "persistent_identifier_and_version",
+    "gateStatus": "fail",
+    "evidence": "no persistent identifier minted for the cohort definition"
+   },
+   {
+    "candidate": "ex:promotion/cohort_abraham_reconstruction",
+    "item": "ex:cohort/abraham2017_reconstructed",
+    "registry": "literature KG / ABIDE dataset record",
+    "status": "blocked",
+    "gateType": "review",
+    "gateStatus": "unknown",
+    "evidence": "no external review"
+   },
+   {
+    "candidate": "ex:promotion/motion_rule_v2",
+    "item": "ex:rule/motion_v2",
+    "registry": "consortium QC guideline",
+    "status": "candidate",
+    "gateType": "generality",
+    "gateStatus": "fail",
+    "evidence": "FD<0.15 excludes 0%-88% per site (max CMU); 1 of 20 sites lose over half; excludes 23.0% of ASD vs 13.5% of TD, so the rule is site- and diagnosis-dependent (fd_sweep.json)"
+   },
+   {
+    "candidate": "ex:promotion/motion_rule_v2",
+    "item": "ex:rule/motion_v2",
+    "registry": "consortium QC guideline",
+    "status": "candidate",
+    "gateType": "licence",
+    "gateStatus": "unknown",
+    "evidence": "no licence chosen for local rules"
+   },
+   {
+    "candidate": "ex:promotion/motion_rule_v2",
+    "item": "ex:rule/motion_v2",
+    "registry": "consortium QC guideline",
+    "status": "candidate",
+    "gateType": "persistent_identifier_and_version",
+    "gateStatus": "fail",
+    "evidence": "versioned in this graph only (motion_v1 -> motion_v2)"
+   },
+   {
+    "candidate": "ex:promotion/skill_graph_build",
+    "item": "ex:skill/abide_graph_build",
+    "registry": "ReproNim/skills (0 skills at pinned commit)",
+    "status": "candidate",
+    "gateType": "generality",
+    "gateStatus": "fail",
+    "evidence": "tested on ABIDE only"
+   },
+   {
+    "candidate": "ex:promotion/skill_graph_build",
+    "item": "ex:skill/abide_graph_build",
+    "registry": "ReproNim/skills (0 skills at pinned commit)",
+    "status": "candidate",
+    "gateType": "licence",
+    "gateStatus": "unknown",
+    "evidence": ""
+   },
+   {
+    "candidate": "ex:promotion/skill_graph_build",
+    "item": "ex:skill/abide_graph_build",
+    "registry": "ReproNim/skills (0 skills at pinned commit)",
+    "status": "candidate",
+    "gateType": "persistent_identifier_and_version",
+    "gateStatus": "fail",
+    "evidence": "not yet in a versioned repository"
+   },
+   {
+    "candidate": "ex:promotion/skill_graph_build",
+    "item": "ex:skill/abide_graph_build",
+    "registry": "ReproNim/skills (0 skills at pinned commit)",
+    "status": "candidate",
+    "gateType": "review",
+    "gateStatus": "unknown",
+    "evidence": ""
+   },
+   {
+    "candidate": "ex:promotion/variable_cc200_mean_fisher_z",
+    "item": "ex:variable/cc200_mean_fisher_z",
+    "registry": "NIDM-Terms / InterLex",
+    "status": "candidate",
+    "gateType": "generality",
+    "gateStatus": "unknown",
+    "evidence": "used in one dataset"
+   },
+   {
+    "candidate": "ex:promotion/variable_cc200_mean_fisher_z",
+    "item": "ex:variable/cc200_mean_fisher_z",
+    "registry": "NIDM-Terms / InterLex",
+    "status": "candidate",
+    "gateType": "licence",
+    "gateStatus": "unknown",
+    "evidence": ""
+   },
+   {
+    "candidate": "ex:promotion/variable_cc200_mean_fisher_z",
+    "item": "ex:variable/cc200_mean_fisher_z",
+    "registry": "NIDM-Terms / InterLex",
+    "status": "candidate",
+    "gateType": "persistent_identifier_and_version",
+    "gateStatus": "fail",
+    "evidence": "local urn only; no InterLex/NIDM-Terms identifier; no isAbout concept found"
+   },
+   {
+    "candidate": "ex:promotion/variable_cc200_mean_fisher_z",
+    "item": "ex:variable/cc200_mean_fisher_z",
+    "registry": "NIDM-Terms / InterLex",
+    "status": "candidate",
+    "gateType": "review",
+    "gateStatus": "unknown",
+    "evidence": "no term review"
+   },
+   {
+    "candidate": "ex:promotion/variable_qc_raters",
+    "item": "ex:variable/qc_func_rater_2",
+    "registry": "NIDM-Terms / InterLex",
+    "status": "candidate",
+    "gateType": "licence",
+    "gateStatus": "unknown",
+    "evidence": ""
+   },
+   {
+    "candidate": "ex:promotion/variable_qc_raters",
+    "item": "ex:variable/qc_func_rater_2",
+    "registry": "NIDM-Terms / InterLex",
+    "status": "candidate",
+    "gateType": "persistent_identifier_and_version",
+    "gateStatus": "fail",
+    "evidence": "not in ReproNim's ABIDE term map (abide_phenotypic_v1_0b_vars_to_terms_v5.json); no isAbout"
+   },
+   {
+    "candidate": "ex:promotion/variable_qc_raters",
+    "item": "ex:variable/qc_func_rater_2",
+    "registry": "NIDM-Terms / InterLex",
+    "status": "candidate",
+    "gateType": "review",
+    "gateStatus": "unknown",
+    "evidence": ""
+   }
+  ],
+  "Q12": [
+   {
+    "item": "ex:claim/A_v1",
+    "level": "analyst",
+    "access": "public",
+    "egress": "permitted",
+    "reason": "no blocking attribute"
+   },
+   {
+    "item": "ex:claim/A_v2",
+    "level": "analyst",
+    "access": "public",
+    "egress": "permitted",
+    "reason": "no blocking attribute"
+   },
+   {
+    "item": "ex:claim/B_v1",
+    "level": "analyst",
+    "access": "public",
+    "egress": "permitted",
+    "reason": "no blocking attribute"
+   },
+   {
+    "item": "ex:claim/B_v2",
+    "level": "analyst",
+    "access": "public",
+    "egress": "permitted",
+    "reason": "no blocking attribute"
+   },
+   {
+    "item": "ex:cohort/A_v1",
+    "level": "analyst",
+    "access": "public",
+    "egress": "permitted",
+    "reason": "no blocking attribute"
+   },
+   {
+    "item": "ex:cohort/A_v2",
+    "level": "analyst",
+    "access": "public",
+    "egress": "permitted",
+    "reason": "no blocking attribute"
+   },
+   {
+    "item": "ex:cohort/B_v1",
+    "level": "analyst",
+    "access": "public",
+    "egress": "permitted",
+    "reason": "no blocking attribute"
+   },
+   {
+    "item": "ex:cohort/B_v2",
+    "level": "analyst",
+    "access": "public",
+    "egress": "permitted",
+    "reason": "no blocking attribute"
+   },
+   {
+    "item": "ex:review/A_reviews_B_v1",
+    "level": "analyst",
+    "access": "public",
+    "egress": "permitted",
+    "reason": "no blocking attribute"
+   },
+   {
+    "item": "ex:review/B_reviews_A_v1",
+    "level": "analyst",
+    "access": "public",
+    "egress": "permitted",
+    "reason": "no blocking attribute"
+   },
+   {
+    "item": "ex:cohort/abraham2017_reconstructed",
+    "level": "lab",
+    "access": "public"
+   },
+   {
+    "item": "ex:participantRecords",
+    "label": "ABIDE participant-level phenotype records, scan pointers, time series and IDPs (1,112 participants)",
+    "level": "lab",
+    "access": "public",
+    "egress": "permitted",
+    "reason": "no blocking attribute",
+    "policy": "never-promote: the lake already holds the authoritative public release; link to it instead of copying"
+   },
+   {
+    "item": "ex:rule/coverage",
+    "level": "lab",
+    "access": "public"
+   },
+   {
+    "item": "ex:rule/fiq_range",
+    "level": "lab",
+    "access": "public"
+   },
+   {
+    "item": "ex:rule/motion_v1",
+    "level": "lab",
+    "access": "public"
+   },
+   {
+    "item": "ex:rule/motion_v2",
+    "level": "lab",
+    "access": "public"
+   },
+   {
+    "item": "ex:rule/rater_qc",
+    "level": "lab",
+    "access": "public"
+   },
+   {
+    "item": "ex:rule/site_min",
+    "level": "lab",
+    "access": "public"
+   },
+   {
+    "item": "ex:skill/abide_graph_build",
+    "label": "This experiment's rebuild.sh as a reusable procedure",
+    "level": "lab",
+    "access": "public"
+   },
+   {
+    "item": "ex:illustrative/study_only_record",
+    "label": "ILLUSTRATIVE study-only record (not real data)",
+    "level": "site",
+    "access": "restricted",
+    "egress": "not permitted",
+    "reason": "consent scope is study-only, not broad-sharing; restricted by agreement; quasi-identifiers without aggregation to minimum cell size"
+   }
+  ],
+  "Q15": [
+   {
+    "pub": "https://openalex.org/W1823252948",
+    "status": "candidate",
+    "title": "Increased Functional Connectivity Between Subcortical and Cortical Resting-State Networks in Autism Spectrum Disorder",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2001233655",
+    "status": "candidate",
+    "title": "Neuroanatomical Diversity of Corpus Callosum and Brain Volume in Autism: Meta-analysis, Analysis of the Autism Brain Imaging Data Exchange Project, and Simulation",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2006591500",
+    "status": "candidate",
+    "title": "Functional connectivity classification of autism identifies highly predictive brain features but falls short of biomarker standards",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2042273466",
+    "status": "candidate",
+    "title": "Diagnostic classification of intrinsic functional connectivity highlights somatosensory, default mode, and visual regions in autism",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2102724155",
+    "status": "candidate",
+    "title": "Abnormal brain synchrony in Down Syndrome",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2108573091",
+    "status": "candidate",
+    "title": "Underconnectivity of the superior temporal sulcus predicts emotion recognition deficits in autism",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2120759354",
+    "status": "candidate",
+    "title": "Multisite functional connectivity MRI classification of autism: ABIDE results",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2161814901",
+    "status": "candidate",
+    "title": "Sex differences in structural organization of motor systems and their dissociable links with repetitive/restricted behaviors in children with autism",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2347013431",
+    "status": "candidate",
+    "title": "Motion and morphometry in clinical and nonclinical populations",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2518410112",
+    "status": "candidate",
+    "title": "Identifying differences in brain activities and an accurate detection of autism spectrum disorder using resting state functional-magnetic resonance imaging : A spatial filtering approach",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2522924024",
+    "status": "candidate",
+    "title": "Deriving reproducible biomarkers from multi-site resting-state data: An Autism-based example",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2523624904",
+    "status": "candidate",
+    "title": "Thalamocortical Dysconnectivity in Autism Spectrum Disorder: An Analysis of the Autism Brain Imaging Data Exchange",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2552047097",
+    "status": "candidate",
+    "title": "Promises, Pitfalls, and Basic Guidelines for Applying Machine Learning Classifiers to Psychiatric Imaging Data, with Autism as an Example",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2555745147",
+    "status": "candidate",
+    "title": "Motor noise is rich signal in autism research and pharmacological treatments",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2561837554",
+    "status": "candidate",
+    "title": "Using Functional or Structural Magnetic Resonance Images and Personal Characteristic Data to Identify ADHD and Autism",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2567599812",
+    "status": "candidate",
+    "title": "3D fully convolutional networks for subcortical segmentation in MRI: A large-scale study",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2590651237",
+    "status": "candidate",
+    "title": "Enhancing studies of the connectome in autism using the autism brain imaging data exchange II",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2591711955",
+    "status": "candidate",
+    "title": "Distance Metric Learning Using Graph Convolutional Networks: Application to Functional Brain Networks",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2593997215",
+    "status": "candidate",
+    "title": "Reorganization of functionally connected brain subnetworks in high\u2010functioning autism",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2604525417",
+    "status": "candidate",
+    "title": "Spectral Graph Convolutions for Population-Based Disease Prediction",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2608333859",
+    "status": "candidate",
+    "title": "Bootstrapping Graph Convolutional Neural Networks for Autism Spectrum Disorder Classification",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2611096323",
+    "status": "candidate",
+    "title": "High-resolution magnetic resonance imaging reveals nuclei of the human amygdala: manual segmentation to automatic atlas",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2744921996",
+    "status": "candidate",
+    "title": "Intrinsic functional connectivity variance and state\u2010specific under\u2010connectivity in autism",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2751527031",
+    "status": "candidate",
+    "title": "Identifying Autism from Resting-State fMRI Using Long Short-Term Memory Networks",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2752558629",
+    "status": "candidate",
+    "title": "Identification of autism spectrum disorder using deep learning and the ABIDE dataset",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2779020697",
+    "status": "candidate",
+    "title": "Metric learning with spectral graph convolutions on brain connectivity networks",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2791126311",
+    "status": "candidate",
+    "title": "Classification of Autism Spectrum Disorder Using Random Support Vector Machine Cluster",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2792637345",
+    "status": "candidate",
+    "title": "Idiosyncratic organization of cortical networks in autism spectrum disorder",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2796879336",
+    "status": "candidate",
+    "title": "Aberrant hemodynamic responses in autism: Implications for resting state fMRI functional connectivity studies",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2801745895",
+    "status": "candidate",
+    "title": "A general prediction model for the detection of ADHD and Autism using structural and functional MRI",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2802789529",
+    "status": "candidate",
+    "title": "Combination of rs-fMRI and sMRI Data to Discriminate Autism Spectrum Disorders in Young Children Using Deep Belief Network",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2805625726",
+    "status": "candidate",
+    "title": "Connectome priors in deep neural networks to predict autism",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2806489700",
+    "status": "candidate",
+    "title": "Disease prediction using graph convolutional networks: Application to Autism Spectrum Disorder and Alzheimer\u2019s disease",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2807933635",
+    "status": "candidate",
+    "title": "3D Convolutional Neural Networks for Classification of Functional Connectomes",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2810012895",
+    "status": "candidate",
+    "title": "A Novel Transfer Learning Approach to Enhance Deep Neural Network Classification of Brain Functional Connectomes",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2910220482",
+    "status": "candidate",
+    "title": "Topological Properties of Resting-State fMRI Functional Networks Improve Machine Learning-Based Autism Classification",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2912080696",
+    "status": "candidate",
+    "title": "Enhancing Diagnosis of Autism With Optimized Machine Learning Models and Personal Characteristic Data",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2949392028",
+    "status": "candidate",
+    "title": "Predicting symptom severity in autism spectrum disorder based on cortical thickness measures in agglomerative data",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2972996185",
+    "status": "candidate",
+    "title": "Diagnosis of Autism Spectrum Disorder Based on Eigenvalues of Brain Networks",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2979717766",
+    "status": "candidate",
+    "title": "A Hybrid 3DCNN and 3DC-LSTM Based Model for 4D Spatio-Temporal fMRI Data: An ABIDE Autism Classification Study",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W2999255523",
+    "status": "candidate",
+    "title": "Improving the detection of autism spectrum disorder by combining structural and functional MRI information",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3000167727",
+    "status": "candidate",
+    "title": "Automated Detection of Autism Spectrum Disorder Using a Convolutional Neural Network",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3003326784",
+    "status": "candidate",
+    "title": "Self-weighted adaptive structure learning for ASD diagnosis via multi-template multi-center representation",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3006025189",
+    "status": "candidate",
+    "title": "Optimising network modelling methods for fMRI",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3009544884",
+    "status": "candidate",
+    "title": "Attentional Connectivity-based Prediction of Autism Using Heterogeneous rs-fMRI Data from CC200 Atlas",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3025027487",
+    "status": "candidate",
+    "title": "Classifying Autism Spectrum Disorder Using the Temporal Statistics of Resting-State Functional MRI Data With 3D Convolutional Neural Networks",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3029963245",
+    "status": "candidate",
+    "title": "Single Volume Image Generator and Deep Learning-Based ASD Classification",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3040685212",
+    "status": "candidate",
+    "title": "Multi-site fMRI analysis using privacy-preserving federated learning and domain adaptation: ABIDE results",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3040879299",
+    "status": "candidate",
+    "title": "AIMAFE: Autism spectrum disorder identification with multi-atlas deep feature representation and ensemble learning",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3041361970",
+    "status": "candidate",
+    "title": "Improved ASD classification using dynamic functional connectivity and multi-task feature selection",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3044779191",
+    "status": "candidate",
+    "title": "Identifying Autism Spectrum Disorder From Resting-State fMRI Using Deep Belief Network",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3069503685",
+    "status": "candidate",
+    "title": "Diagnostic prediction of autism spectrum disorder using complex network measures in a machine learning framework",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3081397765",
+    "status": "candidate",
+    "title": "Atypical Brain Asymmetry in Autism\u2014A Candidate for Clinically Meaningful Stratification",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3093225483",
+    "status": "candidate",
+    "title": "Diagnosis of Autism Spectrum Disorder Based on Functional Brain Networks with Deep Learning",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3095479837",
+    "status": "candidate",
+    "title": "Hi-GCN: A hierarchical graph convolution network for graph embedding learning of brain network and brain disorders prediction",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3128956043",
+    "status": "candidate",
+    "title": "Combining anatomical and functional networks for neuropathology identification: A case study on autism spectrum disorder",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3133989655",
+    "status": "candidate",
+    "title": "Towards robust and replicable sex differences in the intrinsic brain function of autism",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3149668772",
+    "status": "candidate",
+    "title": "Multi-atlas classification of autism spectrum disorder with hinge loss trained deep architectures: ABIDE I results",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3155786160",
+    "status": "candidate",
+    "title": "ASD-SAENet: A Sparse Autoencoder, and Deep-Neural Network Model for Detecting Autism Spectrum Disorder (ASD) Using fMRI Data",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3159196951",
+    "status": "candidate",
+    "title": "FUNCTIONAL MAGNETIC RESONANCE IMAGING FOR AUTISM SPECTRUM DISORDER DETECTION USING DEEP LEARNING",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3162039091",
+    "status": "candidate",
+    "title": "Functional Connectivity-Based Prediction of Autism on Site Harmonized ABIDE Dataset",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3163463488",
+    "status": "candidate",
+    "title": "Classification of ASD based on fMRI data with deep learning",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3171183426",
+    "status": "candidate",
+    "title": "Explainable Deep Learning for Personalized Age Prediction With Brain Morphology",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3176112874",
+    "status": "candidate",
+    "title": "DarkASDNet: Classification of ASD on Functional MRI Using Deep Neural Network",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3185956502",
+    "status": "candidate",
+    "title": "MAGE: Automatic diagnosis of autism spectrum disorders using multi-atlas graph convolutional networks and ensemble learning",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3187525041",
+    "status": "candidate",
+    "title": "Using DeepGCN to identify the autism spectrum disorder from multi-site resting-state data",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3200496752",
+    "status": "candidate",
+    "title": "Autism Spectrum Disorder Studies Using fMRI Data and Machine Learning: A Review",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3206202156",
+    "status": "candidate",
+    "title": "Autism spectrum disorder diagnosis using graph attention network based on spatial-constrained sparse functional brain networks",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3209594421",
+    "status": "candidate",
+    "title": "Multi-site clustering and nested feature extraction for identifying autism spectrum disorder with resting-state fMRI",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W3212514517",
+    "status": "candidate",
+    "title": "TE-HI-GCN: An Ensemble of Transfer Hierarchical Graph Convolutional Networks for Disorder Diagnosis",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W4206714166",
+    "status": "candidate",
+    "title": "MVS-GCN: A prior brain structure learning-guided multi-view graph convolution network for autism spectrum disorder diagnosis",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W4206777429",
+    "status": "candidate",
+    "title": "Detection of Autism Spectrum Disorder using fMRI Functional Connectivity with Feature Selection and Deep Learning",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W4220662520",
+    "status": "candidate",
+    "title": "A study of brain networks for autism spectrum disorder classification using resting-state functional connectivity",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W4225141725",
+    "status": "candidate",
+    "title": "Population heterogeneity in clinical cohorts affects the predictive accuracy of brain imaging",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W4282977711",
+    "status": "candidate",
+    "title": "Multi-site harmonization of MRI data uncovers machine-learning discrimination capability in barely separable populations: An example from the ABIDE dataset",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W4286382578",
+    "status": "candidate",
+    "title": "MAMF-GCN: Multi-scale adaptive multi-channel fusion deep graph convolutional network for predicting mental disorder",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W4294310988",
+    "status": "candidate",
+    "title": "Improving Multi-Site Autism Classification via Site-Dependence Minimization and Second-Order Functional Connectivity",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W4312161096",
+    "status": "candidate",
+    "title": "Connectome-wide Mega-analysis Reveals Robust Patterns of Atypical Functional Connectivity in Autism",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W4388019035",
+    "status": "candidate",
+    "title": "Analysis of Brain Imaging Data for the Detection of Early Age Autism Spectrum Disorder Using Transfer Learning Approaches for Internet of Things",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "https://openalex.org/W4402184853",
+    "status": "candidate",
+    "title": "MADE-for-ASD: A multi-atlas deep ensemble network for diagnosing Autism Spectrum Disorder",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "0"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2266",
+    "status": "mentions",
+    "title": "Regional Brain Age Prediction Using Simple Fully Convolutional Network",
+    "datasets": "ex:dataset/abide_i ex:dataset/abide_ii",
+    "nClaims": "41"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2782",
+    "status": "mentions",
+    "title": "Normative Modelling of Glymphatic Dynamics: A Multi-Site fMRI Study of gBOLD-CSF Coupling",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "34"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2343",
+    "status": "mentions",
+    "title": "Choroid Plexus Segmentation in Autism Using a Probabilistic Implementation of ASCHOPLEX",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "28"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/1693",
+    "status": "mentions",
+    "title": "Heterogeneity on connectome lateralization by childhood stage in children with autism",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "21"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/506",
+    "status": "mentions",
+    "title": "Sparse covariate-driven factorization of functional connectivity for site effect correction",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "20"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/660",
+    "status": "mentions",
+    "title": "FastSurfer-CC: A Robust, Accurate, and Comprehensive Framework for Corpus Callosum Morphometry",
+    "datasets": "ex:dataset/abide_ii",
+    "nClaims": "19"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2264",
+    "status": "mentions",
+    "title": "Fine-tuning of Convolutional Neural Network for Brain Age Prediction on a Local Health Check Dataset",
+    "datasets": "ex:dataset/abide_i ex:dataset/abide_ii",
+    "nClaims": "18"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2270",
+    "status": "mentions",
+    "title": "A Novel Foundation Model for Structural Brain Health Analysis",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "17"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/1696",
+    "status": "mentions",
+    "title": "Neuroanatomical Substrates of IQ Prediction Error in Autism: Evidence for Structural Compensation",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "15"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/25",
+    "status": "mentions",
+    "title": "Hierarchical clustering of habenula functional connectivity elucidates autism subgroups",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "15"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/966",
+    "status": "mentions",
+    "title": "Neurobiological signatures of functional brain organization across lifespan",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "14"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2095",
+    "status": "mentions",
+    "title": "Analysis of Autism fMRI data using hemodynamic deconvolution and unconventional connectivity metrics",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "11"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/591",
+    "status": "mentions",
+    "title": "Brain age mapping using 3D fully convolutional neural network",
+    "datasets": "ex:dataset/abide_i ex:dataset/abide_ii",
+    "nClaims": "10"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/629",
+    "status": "mentions",
+    "title": "deepCoRRseek: A retrospective on Consortium for Reliability and Reproducibility",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "10"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/1719",
+    "status": "mentions",
+    "title": "Habenula resting-state functional connectivity alterations among autistic individuals",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "8"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/559",
+    "status": "mentions",
+    "title": "An Interpretable Graph Neural Network approach to study Autism Spectrum Disorder",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "6"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2234",
+    "status": "mentions",
+    "title": "External validation of machine learning models \u2014 registered models and adaptive sample splitting",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "4"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/4",
+    "status": "mentions",
+    "title": "Validating gene-brain-behaviour associations in autism: A replication study",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "1"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2271",
+    "status": "uses-data (stated)",
+    "title": "Learning Deep Representations of sMRI with Dimensions of Psychiatry for Clinical Prediction",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "36"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/971",
+    "status": "uses-data (stated)",
+    "title": "Multimetric resting-state signatures of functional maturation across childhood and adolescence",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "31"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/931",
+    "status": "uses-data (stated)",
+    "title": "Autism and Incomplete Hippocampal Inversion: a multi-cohort study",
+    "datasets": "ex:dataset/abide_i ex:dataset/abide_ii",
+    "nClaims": "21"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/1217",
+    "status": "uses-data (stated)",
+    "title": "Subcallosal cingulate DBS and its impact on functional connectivity: Insights from 3 T fMRI",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "19"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/639",
+    "status": "uses-data (stated)",
+    "title": "MedGemma-Based Autism Spectrum Disorder Classification from Resting-State fMRI in the ABIDE Dataset",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "18"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/15",
+    "status": "uses-data (stated)",
+    "title": "Divergent Subcortico-Cortical Directionality in ADHD and ASD: A Regression DCM Study",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "15"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2291",
+    "status": "uses-data (stated)",
+    "title": "Functional Connectivity Alterations in ASD Are Embedded within Normative Brain Network Organization",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "15"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2636",
+    "status": "uses-data (stated)",
+    "title": "Multilevel resting-state connectivity reveals network reorganization from childhood to adolescence",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "12"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/1740",
+    "status": "uses-data (stated)",
+    "title": "Mega-analysis reveals disorder-specific and transdiagnostic functional connectome psychopathology",
+    "datasets": "ex:dataset/abide_ii",
+    "nClaims": "11"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2020",
+    "status": "uses-data (stated)",
+    "title": "Finding variance line artifacts in FMRI data using AFNI",
+    "datasets": "ex:dataset/abide_i ex:dataset/abide_ii",
+    "nClaims": "11"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/6",
+    "status": "uses-data (stated)",
+    "title": "Integrating tractography and advanced diffusion modeling to map white matter alterations in autism",
+    "datasets": "ex:dataset/abide_ii",
+    "nClaims": "10"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/1673",
+    "status": "uses-data (stated)",
+    "title": "Identifying an Atypical Sensitive Developmental Pattern in ASD using Stiff-Sloppy Modes",
+    "datasets": "ex:dataset/abide_i ex:dataset/abide_ii",
+    "nClaims": "9"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2",
+    "status": "uses-data (stated)",
+    "title": "Functional synchronization profiles in autism differ by spatial scale and along cortical gradients",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "9"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/698",
+    "status": "uses-data (stated)",
+    "title": "Free Water and DTI-ALPS Associate with Symptoms Across the Lifespan in Autism Spectrum Disorder",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "9"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/1674",
+    "status": "uses-data (stated)",
+    "title": "Alterations in Dynamic Phase Synchronization in Autism Spectrum Disorder",
+    "datasets": "ex:dataset/abide_ii",
+    "nClaims": "8"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/42",
+    "status": "uses-data (stated)",
+    "title": "A Causal and Explainable Framework to Identify TMS Targets for Autism Spectrum Disorder",
+    "datasets": "ex:dataset/abide_i",
+    "nClaims": "8"
+   },
+   {
+    "pub": "ex:abstract/ohbm2026/2627",
+    "status": "uses-data (stated)",
+    "title": "Characterizing Human Brain Network Dynamics Across Populations with NeuroLex",
+    "datasets": "ex:dataset/abide",
+    "nClaims": "7"
+   }
+  ],
+  "Q5b": [
+   {
+    "change": "ex:change/A_result",
+    "summary": "n 441->372; sites 9->8; FDR edges 5428->5119; hypo fraction 0.996->0.996",
+    "material": "false"
+   },
+   {
+    "change": "ex:change/B_pooled_correlation",
+    "summary": "AUC 0.723 [0.688,0.755] -> 0.724; accuracy 0.670->0.683",
+    "material": "false"
+   },
+   {
+    "change": "ex:change/B_pooled_demographic",
+    "summary": "AUC 0.485 [0.443,0.524] -> 0.482; accuracy 0.540->0.565",
+    "material": "false"
+   },
+   {
+    "change": "ex:change/B_pooled_demographic_fd",
+    "summary": "AUC 0.587 [0.545,0.624] -> 0.568; accuracy 0.551->0.547",
+    "material": "false"
+   },
+   {
+    "change": "ex:change/B_pooled_tangent",
+    "summary": "AUC 0.739 [0.702,0.774] -> 0.734; accuracy 0.669->0.669",
+    "material": "false"
+   },
+   {
+    "change": "ex:change/claim_A",
+    "summary": "claim text regenerated from v2 result",
+    "material": "false"
+   },
+   {
+    "change": "ex:change/claim_B",
+    "summary": "claim text regenerated from v2 result",
+    "material": "false"
+   },
+   {
+    "change": "ex:change/review_A_of_B",
+    "summary": "verdict 'overlap exceeds chance' -> 'overlap exceeds chance'",
+    "material": "false"
+   },
+   {
+    "change": "ex:change/review_B_of_A",
+    "summary": "verdict 'not established in independent participants' -> 'not established in independent participants'",
+    "material": "false"
+   }
+  ],
+  "Q9b": [
+   {
+    "usage": "data_source",
+    "name": "ABIDE Preprocessed (PCP)"
+   },
+   {
+    "usage": "data_source",
+    "name": "Abraham et al. 2017 (inter-site prediction)"
+   },
+   {
+    "usage": "data_source",
+    "name": "C-PAC"
+   },
+   {
+    "usage": "data_source",
+    "name": "Di Martino et al. 2014 (ABIDE)"
+   },
+   {
+    "usage": "data_source",
+    "name": "ants_seg_to_nidm"
+   },
+   {
+    "usage": "data_source",
+    "name": "fsl_seg_to_nidm"
+   },
+   {
+    "usage": "data_source",
+    "name": "segstats_jsonld"
+   },
+   {
+    "usage": "data_source",
+    "name": "simple2 NIDM examples (ABIDE, ADHD200)"
+   },
+   {
+    "usage": "executed",
+    "name": "Oxigraph (pyoxigraph)"
+   },
+   {
+    "usage": "executed",
+    "name": "RDFLib"
+   },
+   {
+    "usage": "executed",
+    "name": "UMAP"
+   },
+   {
+    "usage": "executed",
+    "name": "nilearn"
+   },
+   {
+    "usage": "executed",
+    "name": "pySHACL"
+   },
+   {
+    "usage": "executed",
+    "name": "scikit-learn"
+   }
+  ],
+  "Q15b": [
+   {
+    "snap": "ex:snapshot/publication_links/abide/20261015T154446Z",
+    "t": "2026-10-15T15:44:46Z",
+    "abstracts": "35",
+    "stated": "17",
+    "oaDM": "598",
+    "oaAB": "220"
+   }
+  ],
+  "Q10": [
+   {
+    "resource": "segstats_jsonld",
+    "name": "segstats_jsonld",
+    "type": "SoftwareSourceCode",
+    "usage_here": "data_source",
+    "score": 3.093,
+    "bm25": 4.361,
+    "freshness": 0.418,
+    "as_of": "2026-10-15T15:28:23Z",
+    "snapshot_age_hours": 4.68,
+    "last_push": "2025-11-30T19:34:41Z",
+    "last_commit": "2025-11-30T19:34:41Z",
+    "days_since_push_at_snapshot": 318,
+    "commits_90d": 0,
+    "commits_365d": 11,
+    "contributors_365d": 2,
+    "latest_release": null,
+    "latest_release_date": null,
+    "openalex_count": 0,
+    "openalex_query": "https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fsegstats_jsonld%22&per_page=1"
+   },
+   {
+    "resource": "freesurfer-nidm_bidsapp",
+    "name": "FreeSurfer NIDM BIDS App",
+    "type": "SoftwareSourceCode",
+    "usage_here": "pointer",
+    "score": 1.501,
+    "bm25": 1.505,
+    "freshness": 0.995,
+    "as_of": "2026-10-15T15:28:23Z",
+    "snapshot_age_hours": 4.68,
+    "last_push": "2026-10-13T13:19:15Z",
+    "last_commit": "2026-10-13T11:33:11Z",
+    "days_since_push_at_snapshot": 2,
+    "commits_90d": 13,
+    "commits_365d": 18,
+    "contributors_365d": 2,
+    "latest_release": "v0.1.1",
+    "latest_release_date": null,
+    "openalex_count": 0,
+    "openalex_query": "https://api.openalex.org/works?search=%22github.com%2FReproNim%2Ffreesurfer-nidm_bidsapp%22&per_page=1"
+   },
+   {
+    "resource": "ants_seg_to_nidm",
+    "name": "ants_seg_to_nidm",
+    "type": "SoftwareSourceCode",
+    "usage_here": "data_source",
+    "score": 1.097,
+    "bm25": 1.544,
+    "freshness": 0.421,
+    "as_of": "2026-10-15T15:28:23Z",
+    "snapshot_age_hours": 4.68,
+    "last_push": "2025-12-02T16:53:45Z",
+    "last_commit": "2025-12-02T16:53:45Z",
+    "days_since_push_at_snapshot": 316,
+    "commits_90d": 0,
+    "commits_365d": 11,
+    "contributors_365d": 2,
+    "latest_release": null,
+    "latest_release_date": null,
+    "openalex_count": 0,
+    "openalex_query": "https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fants_seg_to_nidm%22&per_page=1"
+   },
+   {
+    "resource": "openneuroderivatives-nidm",
+    "name": "OpenNeuroDerivatives-NIDM",
+    "type": "SoftwareSourceCode",
+    "usage_here": "pointer",
+    "score": 0.866,
+    "bm25": 0.974,
+    "freshness": 0.777,
+    "as_of": "2026-10-15T15:28:23Z",
+    "snapshot_age_hours": 4.68,
+    "last_push": "2026-07-14T18:05:10Z",
+    "last_commit": "2026-07-14T18:05:08Z",
+    "days_since_push_at_snapshot": 92,
+    "commits_90d": 0,
+    "commits_365d": 2,
+    "contributors_365d": 1,
+    "latest_release": null,
+    "latest_release_date": null,
+    "openalex_count": 0,
+    "openalex_query": "https://api.openalex.org/works?search=%22github.com%2FReproNim%2FOpenNeuroDerivatives-NIDM%22&per_page=1"
+   },
+   {
+    "resource": "simple2_bidsapp_babs",
+    "name": "simple2 BABS scripts",
+    "type": "SoftwareSourceCode",
+    "usage_here": "pointer",
+    "score": 0.862,
+    "bm25": 0.866,
+    "freshness": 0.992,
+    "as_of": "2026-10-15T15:28:23Z",
+    "snapshot_age_hours": 4.68,
+    "last_push": "2026-10-13T02:34:12Z",
+    "last_commit": "2026-10-12T10:35:28Z",
+    "days_since_push_at_snapshot": 3,
+    "commits_90d": 8,
+    "commits_365d": 19,
+    "contributors_365d": 2,
+    "latest_release": null,
+    "latest_release_date": null,
+    "openalex_count": 0,
+    "openalex_query": "https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fsimple2_bidsapp_babs%22&per_page=1"
+   }
+  ]
+ },
+ "gold": {
+  "Q1": "Analyst B's QC (three-rater visual QC + full CC200 coverage + mean FD < 0.2 mm): 767 participants (348 ASD, 419 TD). After the FD < 0.15 revision: 704 (308 ASD, 396 TD). Rater QC alone (Abraham 2017 reconstruction): 873 vs 871 reported.",
+  "Q2": "441 participants are in both cohorts (A is a strict subset of B). 63 of B's test participants are excluded by the tightened rule.",
+  "Q3": "Leuven_1_0050682: connectivity ex:connectivity/Leuven_1_0050682 <- Pearson correlation of CC200 time series, Fisher z, upper triangle (19900 edges) <- time series https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/rois_cc200/Leuven_1_0050682_rois_cc200.1D (sha256 58e95aa69587...) <- Leuven_1_0050682 [filt_noglobal (band-pass filtered, no global signal regression); CompCor 5 components; Friston 24 motion; linear and quadratic trend; GSR=false; band-pass 0.01-0.1 Hz] <- raw scan https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/RawDataBIDS/Leuven_1/sub-0050682/func/sub-0050682_task-rest_run-1_bold.nii.gz.",
+  "Q4": "abraham2017: question \"we demonstrate the feasibility of inter-site classification of neuropsychiatric status\"; claim \"Good choices of methods for the various steps of the pipeline lead to 67% prediction accuracy on the full ABIDE data\" is predictive (Out-of-sample diagnosis prediction, N=871 after visual QC, inter- and intra-site CV); abraham2017: question \"we demonstrate the feasibility of inter-site classification of neuropsychiatric status\"; claim \"the definition of functional brain areas is of paramount importance for biomarker discovery\" is predictive (Comparison of atlas choices within the prediction pipeline); abraham2017: question \"we demonstrate the feasibility of inter-site classification of neuropsychiatric status\"; claim \"prediction accuracy improves as we include more subjects\" is predictive (Learning curves over training-set size); dimartino2014: question \"To understand the relative contributions of hypo and hyperconnectivity in ASD, we carried out whole-brain iFC analyses\"; claim \"both were detected, though hypoconnectivity dominated, particularly for cortico-cortical and interhemispheric functional connectivity\" is associational (Group difference (ASD vs TC) in 763 males, 17 sites; covariates age, FIQ, site, mean FD; FDR q<0.05)",
+  "Q5": "Flagged for reassessment by graph traversal: {'Result': 85, 'Claim': 2, 'EvidenceAssessment': 4}. After recomputation 0 of 9 result families changed materially.",
+  "Q6": "B_reviews_A_v1: not established in independent participants (pooled d=-0.080, 8/14 sites same direction, 326 independent participants) | B_reviews_A_v2: not established in independent participants (pooled d=-0.113, 10/15 sites same direction, 332 independent participants)",
+  "Q7": "A_reviews_B_v1 by Analyst A (hypothetical) as Reviewer on B_v1: overlap exceeds chance; A_reviews_B_v2 by Analyst A (hypothetical) as Reviewer on B_v2: overlap exceeds chance; A_vs_paper by Analyst A (hypothetical) as Reviewer on DM_C1: comparable question, non-equivalent analysis; B_reviews_A_v1 by Analyst B (hypothetical) as Reviewer on A_v1: not established in independent participants; B_reviews_A_v2 by Analyst B (hypothetical) as Reviewer on A_v2: not established in independent participants; B_vs_paper by Analyst B (hypothetical) as Reviewer on AB_C1: comparable question, non-equivalent analysis",
+  "Q8": "MaxMun_c_0051332 (ndar:src_subject_id 51332, ReproNim simple2 MaxMun_c graph). Producers: ANTs via ReproNim/ants_seg_to_nidm; FSL via ReproNim/fsl_seg_to_nidm; FreeSurfer via ReproNim/segstats_jsonld. cortical GM both: ANTs 667,230, FSL 784,086, FreeSurfer 681,903 mm3 (max/min 1.18); CSF both: ANTs 1,519, FSL 224,764, FreeSurfer 1,138 mm3 (max/min 197.56); caudate Left: ANTs 4,232, FSL 4,678, FreeSurfer 4,521 mm3 (max/min 1.11); caudate Right: ANTs 4,365, FSL 4,604, FreeSurfer 4,432 mm3 (max/min 1.05); putamen Left: ANTs 5,410, FSL 6,409, FreeSurfer 5,871 mm3 (max/min 1.18); putamen Right: ANTs 5,417, FSL 6,770, FreeSurfer 5,638 mm3 (max/min 1.25); amygdala Left: ANTs 1,343, FSL 1,681, FreeSurfer 2,014 mm3 (max/min 1.50); amygdala Right: ANTs 1,427, FSL 1,760, FreeSurfer 2,079 mm3 (max/min 1.46); accumbens Left: ANTs 660, FSL 432, FreeSurfer 517 mm3 (max/min 1.53); accumbens Right: ANTs 539, FSL 585, FreeSurfer 743 mm3 (max/min 1.38); thalamus Left: ANTs 10,512, FSL 10,451, FreeSurfer 10,378 mm3 (max/min 1.01); thalamus Right: ANTs 10,321, FSL 10,355, FreeSurfer 11,576 mm3 (max/min 1.12); hippocampus Left: ANTs 4,407, FSL 4,116, FreeSurfer 4,598 mm3 (max/min 1.12); hippocampus Right: ANTs 4,510, FSL 4,371, FreeSurfer 4,930 mm3 (max/min 1.13); cerebral WM both: ANTs 559,789, FSL 731,300, FreeSurfer 588,786 mm3 (max/min 1.31); pallidum Left: ANTs 1,713, FSL 2,295, FreeSurfer 2,491 mm3 (max/min 1.45); pallidum Right: ANTs 1,676, FSL 2,125, FreeSurfer 2,154 mm3 (max/min 1.29). Across tools, max/min ratios for tissue and subcortical structures range 1.01-1.53 (closest: thalamus, caudate, hippocampus; furthest: amygdala, accumbens, pallidum); CSF differs by two orders of magnitude because FSL reports total CSF while FreeSurfer and ANTs report the ventricular CSF label under the same UBERON term.",
+  "Q9": "ANTs segmentation outputs (instances in the store: n/a) <- produced by none; consumed by ants_seg_to_nidm [data_source]; BIDS dataset (instances in the store: n/a) <- produced by none; consumed by ANTs NIDM BIDS App [pointer], FreeSurfer NIDM BIDS App [pointer], MRIQC NIDM BIDS App [pointer], PyNIDM [pointer], simple2 BABS scripts [pointer]; FSL FEAT directory (instances in the store: n/a) <- produced by none; consumed by NIDM-Results for FSL [pointer]; FSL FIRST/FAST outputs (instances in the store: n/a) <- produced by none; consumed by fsl_seg_to_nidm [data_source]; FreeSurfer stats files (instances in the store: n/a) <- produced by none; consumed by segstats_jsonld [data_source]; data dictionary (instances in the store: n/a) <- produced by none; consumed by stuff2NIDM [pointer]; ex:BrainVolume (instances in the store: 0 typed; 157,078 volume observations in view/volumes) <- produced by ANTs NIDM BIDS App [pointer], FreeSurfer NIDM BIDS App [pointer], OpenNeuroDerivatives-NIDM [pointer], ants_seg_to_nidm [data_source], fsl_seg_to_nidm [data_source], segstats_jsonld [data_source], simple2 BABS scripts [pointer], simple2 NIDM examples (ABIDE, ADHD200) [data_source]; ex:Claim (instances in the store: 8) <- produced by Abraham et al. 2017 (inter-site prediction) [data_source], Di Martino et al. 2014 (ABIDE) [data_source]; ex:ResearchQuestion (instances in the store: 4) <- produced by Abraham et al. 2017 (inter-site prediction) [data_source], Di Martino et al. 2014 (ABIDE) [data_source]; ex:Result (instances in the store: 170) <- produced by NIDM-Results for FSL [pointer], nidmresults [pointer]; nidm:Acquisition (instances in the store: 7671) <- produced by NIDM specifications [pointer]; nidm:AcquisitionObject (instances in the store: 7671) <- produced by ABIDE I raw data (BIDS, S3) [pointer], ABIDE Preprocessed (PCP) [data_source], NIDM specifications [pointer], PyNIDM [pointer], simple2 NIDM examples (ABIDE, ADHD200) [data_source]; consumed by Neurobagel federation API [pointer]; nidm:DataElement (instances in the store: 5822) <- produced by NIDM specifications [pointer], NIDM-Experiment terms [pointer], NIDM-Terms [pointer], PyNIDM [pointer], ReproSchema [pointer], ants_seg_to_nidm [data_source], fsl_seg_to_nidm [data_source], segstats_jsonld [data_source], simple2 NIDM examples (ABIDE, ADHD200) [data_source], stuff2NIDM [pointer]; consumed by NIDM-Terms [pointer]; nidm:Derivative (instances in the store: 3059) <- produced by NIDM specifications [pointer]; nidm:DerivativeObject (instances in the store: 3059) <- produced by ABIDE Preprocessed (PCP) [data_source], ANTs NIDM BIDS App [pointer], C-PAC [data_source], FreeSurfer NIDM BIDS App [pointer], MRIQC NIDM BIDS App [pointer], stuff2NIDM [pointer]; phenotype table (instances in the store: n/a) <- produced by none; consumed by Neurobagel bagel-cli [pointer], PyNIDM [pointer]; prov:Activity (instances in the store: 18043) <- produced by PyNIDM [pointer]; results table (instances in the store: n/a) <- produced by none; consumed by stuff2NIDM [pointer]. Executed here: Oxigraph (pyoxigraph), RDFLib, UMAP, nilearn, pySHACL, scikit-learn. Used as data sources: ABIDE Preprocessed (PCP), Abraham et al. 2017 (inter-site prediction), C-PAC, Di Martino et al. 2014 (ABIDE), ants_seg_to_nidm, fsl_seg_to_nidm, segstats_jsonld, simple2 NIDM examples (ABIDE, ADHD200). Every other listed resource is a pointer only (not run).",
+  "Q10": "FreeSurfer NIDM BIDS App: 13 default-branch commits in 90 d, last commit 2026-10-13T11:33:11Z (as of 2026-10-15T15:28:23Z; snapshot 4.68 h old when answered); simple2 BABS scripts: 8 default-branch commits in 90 d, last commit 2026-10-12T10:35:28Z (as of 2026-10-15T15:28:23Z; snapshot 4.68 h old when answered). Not active in the last 90 days: segstats_jsonld (as of 2026-10-15T15:28:23Z); ants_seg_to_nidm (as of 2026-10-15T15:28:23Z); OpenNeuroDerivatives-NIDM (as of 2026-10-15T15:28:23Z).",
+  "Q11": "claim_AB_C1 [candidate] -> literature KG (e.g. BR-KG, AbstractAtlas): unmet licence=unknown; claim_AB_C2 [candidate] -> literature KG (e.g. BR-KG, AbstractAtlas): unmet licence=unknown; claim_DM_C1 [candidate] -> literature KG (e.g. BR-KG, AbstractAtlas): unmet licence=unknown; cohort_abraham_reconstruction [blocked] -> literature KG / ABIDE dataset record: unmet generality=fail, persistent_identifier_and_version=fail, review=unknown; motion_rule_v2 [candidate] -> consortium QC guideline: unmet generality=fail, licence=unknown, persistent_identifier_and_version=fail; skill_graph_build [candidate] -> ReproNim/skills (0 skills at pinned commit): unmet generality=fail, licence=unknown, persistent_identifier_and_version=fail, review=unknown; variable_cc200_mean_fisher_z [candidate] -> NIDM-Terms / InterLex: unmet generality=unknown, licence=unknown, persistent_identifier_and_version=fail, review=unknown; variable_qc_raters [candidate] -> NIDM-Terms / InterLex: unmet licence=unknown, persistent_identifier_and_version=fail, review=unknown",
+  "Q13": "MaxMun_c_0051332: 239 source triples within two hops (results/participant_ego.ttl), grouped into 30 nodes: demographics AGE_AT_SCAN=23 SEX=1 DX_GROUP=2 SITE_ID=MAX_MUN ...; IQ FIQ=125 PIQ=126; motion & rater QC func_mean_fd=0.0644 func_perc_fd=6.61 qc_rater_1=OK qc_func_rater_2=maybe ...; 23 other phenotype values 65 recorded as missing; raw rest BOLD (S3 pointer, not downloaded); raw T1w (S3 pointer, not downloaded); ANTs ROI thickness sha256 0a429d8404; ANTs cortical thickness (ABIDE Preprocessed release); CC200 time series sha256 a5b1b91a01; C-PAC (ABIDE Preprocessed release); connectivity (19,900 Fisher-z edges) sha256 6282fca418; common.py; ANTs volumes (101) L hippocampus 4,407 mm\u00b3; FSL volumes (18) L hippocampus 4,116 mm\u00b3; FreeSurfer volumes (62) L hippocampus 4,598 mm\u00b3; PyNIDM csv2nidm person; ReproNim simple2 person simple2:MaxMun_c; cohort abraham2017_reconstructed; cohort B_v1; cohort A_v1; cohort B_v2; cohort A_v2: NOT a member (site MAX_MUN < 10 per group); B B_v2 fold: held-out site MAX_MUN; B B_v1 fold: held-out site MAX_MUN; B B_v1: training in 19 other folds; B B_v2: training in 19 other folds; 10 results used this participant (A edgewise GLM, B per-fold metrics); Abraham et al. 2017 (reconstructed cohort, N=873 vs 871 reported); pond:lab copy consent broad-sharing, egress permitted lake copy: ABIDE Preprocessed",
+  "Q14": "AGE_AT_SCAN: 1112 (539 ASD, 573 TD; missing at 0 sites); FIQ: 1040 (505 ASD, 535 TD; missing at 1 sites); VIQ: 917 (456 ASD, 461 TD; missing at 4 sites); PIQ: 931 (458 ASD, 473 TD; missing at 3 sites); ADOS_TOTAL: 415 (383 ASD, 32 TD; missing at 4 sites); SRS_RAW_TOTAL: 365 (190 ASD, 175 TD; missing at 15 sites); func_mean_fd: 1099 (529 ASD, 570 TD; missing at 0 sites); CC200_timeseries: 989 (480 ASD, 509 TD; missing at 0 sites); L_hippocampus_ANTs: 766 (370 ASD, 396 TD; missing at 1 sites); L_hippocampus_FSL: 983 (464 ASD, 519 TD; missing at 0 sites); L_hippocampus_FreeSurfer: 982 (463 ASD, 519 TD; missing at 0 sites); ReproNim_DX: 1112 (539 ASD, 573 TD; missing at 0 sites). Limits: Analyst A (age, FIQ, FD, CC200) -> 924 participants, limited by CC200_timeseries; Analyst B (age, FD, CC200) -> 988 participants, limited by CC200_timeseries; UMAP primary (age, FIQ, VIQ, PIQ) -> 868 participants, limited by VIQ; UMAP + SRS -> 330 participants, limited by SRS_RAW_TOTAL; UMAP + FreeSurfer IDP join -> 746 participants, limited by VIQ; ADOS-based analysis + CC200 -> 347 participants, limited by ADOS_TOTAL.",
+  "Q15": "As of 2026-10-15T15:44:46Z (latest publication-link snapshot; AbstractAtlas OHBM 2026 bundle pinned by hash, repo commit 181652e2): 35 abstracts mention ABIDE (17 state they used ABIDE data, 18 mention it only; regex, hand check 15/17 stated uses correct, posters 1217 and 639 are false positives); those abstracts carry 541 AbstractAtlas claims (249 in the stated-use abstracts). OpenAlex (pulled 2026-10-15T15:44:34+00:00): 598 works cite Di Martino 2014 and 220 cite Abraham 2017 while naming ABIDE in title/abstract (status candidate; top 50 per paper stored as nodes). Largest stated-use abstracts: poster 2271 Learning Deep Representations of sMRI with Dimensions of Psy (36 claims); poster 971 Multimetric resting-state signatures of functional maturatio (31 claims); poster 931 Autism and Incomplete Hippocampal Inversion: a multi-cohort  (21 claims); poster 1217 Subcallosal cingulate DBS and its impact on functional conne (19 claims; false positive by hand check); poster 639 MedGemma-Based Autism Spectrum Disorder Classification from  (18 claims; false positive by hand check).",
+  "Q12": "ABIDE participant-level phenotype records, scan pointers, time series and IDPs (1,112 participants) (pond:lab, public): never-promote: the lake already holds the authoritative public release; link to it instead of copying; ILLUSTRATIVE study-only record (not real data) (pond:site, restricted): egress not permitted: consent scope is study-only, not broad-sharing; restricted by agreement; quasi-identifiers without aggregation to minimum cell size. Other pond items (analyst cohorts, claims, reviews, local rules) are egress-permitted but stay until a promotion passes its gates."
+ },
+ "answered_at": "2026-10-15T20:09:08+00:00"
+}

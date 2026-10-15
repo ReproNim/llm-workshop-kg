@@ -1,0 +1,154 @@
+{
+  "source_id": "S-071",
+  "pmid": "local_62eceeaf",
+  "doi": "10.1109/tnsre.2022.3233656",
+  "screening": {
+    "decision": "include",
+    "reason": "Meets inclusion 2/3: analyses all of ABIDE I resting-state fMRI connectivity data for multi-site domain-adaptation ASD identification (diagnostic prediction).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The data used in the current study were provided by ABIDE I ( http://fcon_1000.projects.nitrc.org/indi/abide/), and we use all 1102 subjects (ﬁlter_noglobal) processed by the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) [22] for experiments.",
+      "section": "methods",
+      "claim": "All 1102 ABIDE I subjects (CPAC filter_noglobal preprocessing) were used.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "We conduct experiments on all ABIDE I data (without any data screening), and obtain the mean 73.1%/73.4% accu-\nracy on AAL/CC200 atlas",
+      "section": "methods",
+      "claim": "No data screening/QC exclusion was applied; the full 1102-subject ABIDE I release was used.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "To validate the effectiveness of the proposed LRCDR\nmethod, we conduct inter-site cross-validation experiments on\n17 sites from ABIDE database. Speciﬁcally, one site is left\nas the target domain for testing, and the remaining 16 sites\nas multiple source domains for training.",
+      "section": "methods",
+      "claim": "Evaluation used leave-one-site-out inter-site cross-validation across all 17 ABIDE I sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The mean time series from 116 regions of interest (ROIs)\nbased on the automated anatomical labeling (AAL) atlas [23] are used for experiments.",
+      "section": "methods",
+      "claim": "Functional connectivity features used the AAL atlas (116 ROIs).",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "We also use the Craddock 200 (CC200) atlas [31] to\nfurther verify the effectiveness of the LRCDR method and obtain the 73.4% mean accuracy.",
+      "section": "results",
+      "claim": "CC200 atlas gave 73.4% mean leave-one-site-out accuracy.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "For inter-site prediction on all ABIDE I data\n(1102 subjects from 17 sites), LRCDR obtains the mean\naccuracy of 73.1%, superior to the results of the compared\nstate-of-the-art domain adaptation methods and multi-site\nASD identiﬁcation methods.",
+      "section": "abstract",
+      "claim": "LRCDR achieved 73.1% mean leave-one-site-out accuracy on AAL atlas, outperforming compared domain-adaptation methods.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "In addition, we locate some\nmeaningful biomarkers: Most of the top important biomark-\ners are inter-network resting-state functional connectivi-\nties (RSFCs).",
+      "section": "abstract",
+      "claim": "Feature-importance analysis identified mostly inter-network RSFCs as the most discriminative connections.",
+      "relevance_score": 0.7
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Unclear", "support": "Total N (1102) and the filter_noglobal preprocessing variant are given, but no ASD/TD breakdown is reported in the extractable text, and the authors explicitly state no data screening/QC exclusion was applied: \"We conduct experiments on all ABIDE I data (without any data screening)\""},
+      {"domain": "Predictors", "judgment": "Low", "support": "Pipeline (CPAC filter_noglobal) and two named atlases (AAL, CC200) with Pearson-correlation connectivity clearly described."},
+      {"domain": "Outcome", "judgment": "Low", "support": "ASD/TD labels are the ABIDE phenotypic diagnosis, independent of the connectivity-derived predictors."},
+      {"domain": "Analysis", "judgment": "Unclear", "support": "Leave-one-site-out inter-site cross-validation explicitly handles site, but the hyperparameter search over (α, β, γ, λ, η) is not stated to be confined to the training/source domains, leaving open a risk of test-domain leakage: \"The parameters (α, β, γ, λ, η) are all searched in the set of {0.001, 0.01, 0.1, 1, 10, 100}.\""}
+    ],
+    "overall": "Unclear",
+    "summary": "Full ABIDE I release used with no stated QC/exclusion and no ASD/TD breakdown in the extractable text; pipeline and atlases are well described; site is explicitly handled via leave-one-site-out cross-validation, but hyperparameter-search leakage control is not described."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "",
+    "n_controls": "",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (CPAC), filter_noglobal variant",
+    "specific_features": "Pearson correlation (Fisher r-to-z transformed) functional connectivity using AAL (116 ROIs) and Craddock 200 (CC200) atlases",
+    "model_category": "Domain adaptation with linear SVM classifier",
+    "specific_algorithms": "Low Rank and Class Discriminative Representation (LRCDR)",
+    "validation_methodology": "Leave-one-site-out inter-site cross-validation across all 17 ABIDE I sites",
+    "performance_metrics": "Accuracy, sensitivity, specificity, F1 score",
+    "key_performance_results": "Mean leave-one-site-out accuracy 73.1% (AAL atlas) and 73.4% (CC200 atlas), outperforming compared domain-adaptation and multi-site ASD identification methods",
+    "features_associated_disorder": "Most of the top discriminative resting-state functional connectivities (RSFCs) identified by the model's feature weights are inter-network connections",
+    "feature_change_direction": "",
+    "dataset_openly_available": "No code repository; supplementary material only, linked via the journal DOI",
+    "custom_fields": {
+      "RQ1": "All 1102 ABIDE I subjects from 17 sites, CPAC filter_noglobal preprocessing, used without any data screening/QC exclusion; ASD/TD breakdown is not given in the extractable text. | quote: \"we use all 1102 subjects (ﬁlter_noglobal) processed by the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) [22] for experiments.\"",
+      "RQ2": "CPAC (filter_noglobal) pipeline; AAL (116 ROIs) and CC200 atlases with Pearson-correlation connectivity. | quote: \"The mean time series from 116 regions of interest (ROIs) based on the automated anatomical labeling (AAL) atlas [23] are used for experiments.\"",
+      "RQ3": "predictive — a domain-adaptation (LRCDR) method with a linear SVM classifies ASD vs TD across sites. | quote: \"we train a linear SVM based on the source domain data PT Xs to directly predict the labels of target domain data PT Xt.\"",
+      "RQ4": "Leave-one-site-out inter-site cross-validation across all 17 sites; accuracy, sensitivity, specificity and F1 score reported; no stated statistical correction. | quote: \"we conduct inter-site cross-validation experiments on 17 sites from ABIDE database. Speciﬁcally, one site is left as the target domain for testing, and the remaining 16 sites as multiple source domains for training.\"",
+      "RQ5": "LRCDR achieved mean leave-one-site-out accuracy 73.1% (AAL) and 73.4% (CC200), the most discriminative connections being mostly inter-network RSFCs; no CI reported. | quote: \"LRCDR obtains the mean accuracy of 73.1%, superior to the results of the compared state-of-the-art domain adaptation methods and multi-site ASD identiﬁcation methods.\"",
+      "RQ6": "partly — the exact preprocessing variant (filter_noglobal) and the no-screening rule are stated, but no participant-ID list or ASD/TD breakdown is given. | quote: \"We conduct experiments on all ABIDE I data (without any data screening), and obtain the mean 73.1%/73.4% accu-\nracy on AAL/CC200 atlas\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — total N (1102) and preprocessing variant given, but ASD/TD breakdown by diagnosis is not present in the extractable text and no exclusion rule was applied. | quote: \"we use all 1102 subjects (ﬁlter_noglobal) processed by the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) [22] for experiments.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — explicitly no data screening/QC exclusion was applied. | quote: \"We conduct experiments on all ABIDE I data (without any data screening)\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — CPAC, filter_noglobal variant named. | quote: \"processed by the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) [22] for experiments\"",
+      "CL4 Atlas/parcellation reported?": "Yes — AAL (116 ROIs) and CC200 atlases. | quote: \"The mean time series from 116 regions of interest (ROIs) based on the automated anatomical labeling (AAL) atlas [23] are used for experiments.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — the hyperparameter search is described but not stated to be confined to the source (training) domains only. | quote: \"The parameters (α, β, γ, λ, η) are all searched in the set of {0.001, 0.01, 0.1, 1, 10, 100}.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — leave-one-site-out inter-site cross-validation across all 17 sites, which is the method's core domain-adaptation design. | quote: \"we conduct inter-site cross-validation experiments on 17 sites from ABIDE database.\"",
+      "CL7 Code and/or participant list available?": "No — only supplementary material is linked via the journal DOI; no code repository or participant list. | quote: \"This article has supplementary downloadable material available at\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The data used in the current study were provided by ABIDE I\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "items": [
+        {"item": "CL1", "rating": "Partial", "support": "Total N given but no ASD/TD breakdown in extractable text, and no exclusion rule applied."},
+        {"item": "CL2", "rating": "No", "support": "No data screening/QC exclusion was applied."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_predictors_features": {
+      "items": [
+        {"item": "CL3", "rating": "Yes", "support": "CPAC filter_noglobal pipeline named."},
+        {"item": "CL4", "rating": "Yes", "support": "AAL and CC200 atlases named."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_outcome_labels": {
+      "items": [
+        {"item": "diagnosis source", "rating": "Unclear", "support": "ASD/TD labels are the ABIDE phenotypic diagnosis; this paper does not restate diagnostic criteria."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "items": [
+        {"item": "CL5", "rating": "No", "support": "Hyperparameter search not stated to be confined to training/source domains."},
+        {"item": "CL6", "rating": "Yes", "support": "Leave-one-site-out inter-site cross-validation across all 17 sites."},
+        {"item": "CL7", "rating": "No", "support": "No code repository or participant list; only supplementary material."}
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction; all 1102 ABIDE I subjects from 17 sites, CPAC filter_noglobal preprocessing, no data screening applied, ASD/TD breakdown not in extractable text.",
+    "methods": "AAL (116 ROIs) and CC200 atlas functional connectivity; Low Rank and Class Discriminative Representation (LRCDR) domain-adaptation method with a linear SVM; leave-one-site-out inter-site cross-validation across all 17 sites.",
+    "outcomes": "Mean leave-one-site-out accuracy 73.1% (AAL) and 73.4% (CC200), outperforming compared domain-adaptation and multi-site ASD identification methods; top discriminative connections were mostly inter-network RSFCs.",
+    "key_limitations": "No ASD/TD breakdown or QC/exclusion rule in the extractable text (explicitly no data screening applied); hyperparameter-search leakage control not described; no code or participant list, only supplementary material.",
+    "relevance_notes": "Demonstrates a domain-adaptation approach explicitly designed to handle ABIDE I site heterogeneity via leave-one-site-out evaluation on the full unscreened release.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1109/tnsre.2022.3233656",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "All 1102 ABIDE I subjects from 17 sites, CPAC filter_noglobal preprocessing, no data screening/QC exclusion applied.",
+    "n_by_dx": {"ASD": null, "TD": null, "total": 1102},
+    "sites": "17",
+    "pipeline": "CPAC, filter_noglobal",
+    "atlas": "AAL, CC200",
+    "claim_type": "predictive",
+    "finding": "LRCDR domain-adaptation method achieved mean leave-one-site-out accuracy of 73.1% (AAL atlas) and 73.4% (CC200 atlas), outperforming compared domain-adaptation and multi-site ASD identification methods.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "we use all 1102 subjects (ﬁlter_noglobal) processed by the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) [22] for experiments.",
+      "LRCDR obtains the mean accuracy of 73.1%, superior to the results of the compared state-of-the-art domain adaptation methods and multi-site ASD identiﬁcation methods."
+    ]
+  }
+}

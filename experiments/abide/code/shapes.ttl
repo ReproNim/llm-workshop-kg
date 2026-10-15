@@ -1,0 +1,105 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix nidm: <http://purl.org/nidash/nidm#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ex: <urn:repronim:abide:> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix crypto: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:AcquisitionShape a sh:NodeShape ; sh:targetClass nidm:Acquisition ;
+  sh:property [ sh:path dct:isPartOf ; sh:minCount 1 ; sh:maxCount 1 ; sh:class nidm:Session ] ;
+  sh:property [ sh:path prov:qualifiedAssociation ; sh:minCount 1 ; sh:class prov:Association ] .
+
+ex:AssociationShape a sh:NodeShape ; sh:targetClass prov:Association ;
+  sh:property [ sh:path prov:agent ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Agent ] ;
+  sh:property [ sh:path prov:hadRole ; sh:minCount 1 ] .
+
+ex:AcquisitionObjectShape a sh:NodeShape ; sh:targetClass nidm:AcquisitionObject ;
+  sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class nidm:Acquisition ] ;
+  sh:property [ sh:path ex:participant ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Person ] .
+
+ex:DataElementShape a sh:NodeShape ; sh:targetClass nidm:DataElement ;
+  sh:property [ sh:path nidm:sourceVariable ; sh:minCount 1 ; sh:maxCount 1 ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:class prov:Entity ] .
+
+ex:DerivativeShape a sh:NodeShape ; sh:targetClass nidm:Derivative ;
+  sh:property [ sh:path prov:used ; sh:minCount 1 ; sh:class prov:Entity ] ;
+  sh:property [ sh:path prov:wasAssociatedWith ; sh:qualifiedValueShape [ sh:class prov:SoftwareAgent ] ; sh:qualifiedMinCount 1 ] .
+
+ex:DerivativeObjectShape a sh:NodeShape ; sh:targetClass nidm:DerivativeObject ;
+  sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:maxCount 1 ; sh:class nidm:Derivative ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:class prov:Entity ] ;
+  sh:property [ sh:path ex:participant ; sh:minCount 1 ; sh:maxCount 1 ; sh:class prov:Person ] ;
+  sh:property [ sh:path crypto:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+ex:CohortShape a sh:NodeShape ; sh:targetClass ex:Cohort ;
+  sh:property [ sh:path ex:n ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ] ;
+  sh:property [ sh:path prov:hadMember ; sh:minCount 1 ; sh:class prov:Person ] .
+
+ex:ClaimShape a sh:NodeShape ; sh:targetClass ex:Claim ;
+  sh:property [ sh:path ex:claimType ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "associational" "predictive" ) ] ;
+  sh:property [ sh:path ex:scope ; sh:minCount 1 ] ;
+  sh:property [ sh:path ex:addresses ; sh:minCount 1 ] .
+
+ex:AnalystClaimShape a sh:NodeShape ;
+  sh:targetSubjectsOf prov:wasAttributedTo ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:class prov:Agent ] .
+
+ex:ReviewShape a sh:NodeShape ; sh:targetClass ex:EvidenceAssessment ;
+  sh:property [ sh:path prov:wasAttributedTo ; sh:minCount 1 ; sh:class prov:Person ] ;
+  sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:class prov:Activity ] ;
+  sh:property [ sh:path ex:target ; sh:minCount 1 ] ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ] ;
+  sh:property [ sh:path ex:verdict ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+ex:EvidenceSpanShape a sh:NodeShape ; sh:targetClass ex:EvidenceSpan ;
+  sh:property [ sh:path ex:quote ; sh:minCount 1 ] ;
+  sh:property [ sh:path ex:locator ; sh:minCount 1 ] ;
+  sh:property [ sh:path ex:verbatimMatch ; sh:hasValue true ] .
+
+ex:FoldShape a sh:NodeShape ; sh:targetClass ex:Fold ;
+  sh:property [ sh:path ex:testedOn ; sh:minCount 1 ] ;
+  sh:property [ sh:path ex:trainedOn ; sh:minCount 1 ] ;
+  sh:property [ sh:path dct:isPartOf ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+# ---- resources and activity snapshots ----
+ex:ResourceShape a sh:NodeShape ; sh:targetClass ex:Resource ;
+  sh:property [ sh:path <http://schema.org/description> ; sh:minCount 1 ; sh:message "resource needs a plain-language description" ] ;
+  sh:property [ sh:path ex:workflowStep ; sh:minCount 1 ; sh:message "resource needs at least one facet (workflow step)" ] ;
+  sh:property [ sh:path [ sh:inversePath ex:snapshotOf ] ; sh:minCount 1 ; sh:message "resource needs at least one activity snapshot" ] .
+
+ex:SnapshotShape a sh:NodeShape ; sh:targetClass ex:ResourceActivitySnapshot ;
+  sh:property [ sh:path prov:generatedAtTime ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:dateTime ; sh:message "snapshot needs prov:generatedAtTime" ] ;
+  sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:class ex:RefreshActivity ; sh:message "snapshot needs the refresh activity that produced it" ] .
+
+# ---- knowledge scope, promotion gates, egress ----
+ex:PromotionGatesShape a sh:NodeShape ; sh:targetClass ex:PromotionCandidate ;
+  sh:property [ sh:path ex:promotionStatus ; sh:minCount 1 ; sh:in ( "candidate" "promoted" "blocked" ) ] ;
+  sh:sparql [ a sh:SPARQLConstraint ;
+    sh:message "promotion candidate is missing gate {?missing} (record it, even as unknown)" ;
+    sh:select """PREFIX ex: <urn:repronim:abide:>
+      SELECT $this ?missing WHERE {
+        { BIND("generality" AS ?missing) } UNION { BIND("review" AS ?missing) } UNION { BIND("consent_and_deidentification" AS ?missing) }
+        UNION { BIND("licence" AS ?missing) } UNION { BIND("persistent_identifier_and_version" AS ?missing) } UNION { BIND("provenance_retained" AS ?missing) }
+        FILTER NOT EXISTS { $this ex:gate ?g . ?g ex:gateType ?missing ; ex:status ?st . FILTER (?st IN ("pass", "fail", "unknown")) }
+      }""" ] .
+
+ex:EgressGateShape a sh:NodeShape ; sh:targetClass ex:PromotionCandidate ;
+  sh:sparql [ a sh:SPARQLConstraint ;
+    sh:message "cannot promote: {?why}" ;
+    sh:select """PREFIX ex: <urn:repronim:abide:>
+      SELECT $this ?why WHERE {
+        $this ex:promotionStatus "promoted" ; <http://www.w3.org/ns/prov#used> ?item .
+        { ?item ex:accessLevel "restricted" . BIND("access level is restricted" AS ?why) }
+        UNION { ?item ex:hasSensitivityProfile ?p . ?p ex:consentScope ?c . FILTER (?c != "broad-sharing")
+                BIND(CONCAT("consent scope is ", ?c, ", not broad-sharing") AS ?why) }
+        UNION { ?item ex:hasSensitivityProfile ?p . ?p ex:egressPermitted ?e . FILTER (?e != "permitted")
+                ?p ex:egressReason ?r . BIND(CONCAT("egress ", ?e, ": ", ?r) AS ?why) }
+      }""" ] .
+
+ex:LakeCopyShape a sh:NodeShape ; sh:targetSubjectsOf ex:lakeCopy ;
+  sh:sparql [ a sh:SPARQLConstraint ;
+    sh:message "cannot link to a lake copy: {?why}" ;
+    sh:select """PREFIX ex: <urn:repronim:abide:>
+      SELECT $this ?why WHERE { $this ex:hasSensitivityProfile ?p . ?p ex:egressPermitted ?e ; ex:egressReason ?r .
+        FILTER (?e != "permitted") BIND(CONCAT("egress ", ?e, ": ", ?r) AS ?why) }""" ] .

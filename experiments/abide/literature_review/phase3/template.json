@@ -1,0 +1,401 @@
+{
+ "research_question": "EXAMPLE — the review's objective / research question",
+ "protocol": {
+  "title": "EXAMPLE review title",
+  "objective": "EXAMPLE — the review's objective",
+  "pico_population": "…",
+  "pico_intervention": "…",
+  "pico_comparison": "…",
+  "pico_outcome": "…",
+  "inclusion_criteria": "…",
+  "exclusion_criteria": "…",
+  "research_questions": [],
+  "databases": [
+   "PubMed"
+  ],
+  "date_range_start": "",
+  "date_range_end": "",
+  "max_hops": 10,
+  "registration_number": "",
+  "protocol_url": "",
+  "funding_sources": "",
+  "competing_interests": "",
+  "amendments": "",
+  "rob_tool": "RoB 2",
+  "review_id": "review_local_00000000_000000",
+  "pg_dsn": "",
+  "force_refresh": false,
+  "cache_threshold": 0.95,
+  "cache_ttl_days": 30,
+  "share_to_cache": true,
+  "charting_questions": [],
+  "grouping_dimension": "disorder_cohort",
+  "default_group_questions": [],
+  "per_group_questions": {},
+  "appraisal_domains": [],
+  "target_audience": "",
+  "word_count_target": 8000,
+  "citation_style": "APA 7",
+  "section_output_formats": {},
+  "rubric_section_config": [],
+  "charting_template": null,
+  "critical_appraisal_config": null,
+  "synthesis_batch_size": 20,
+  "max_batch_retries": 3,
+  "article_concurrency": 5,
+  "evidence_chunk_chars": 12000,
+  "evidence_chunk_overlap": 400,
+  "evidence_max_chars": 0,
+  "evidence_spans_per_article": 8,
+  "article_text_budget": 16000,
+  "max_articles": null
+ },
+ "search_queries": [
+  "PubMed: (\"example\"[MeSH]) AND (2015:2024[dp])"
+ ],
+ "flow": {
+  "db_pubmed": 0,
+  "db_biorxiv": 0,
+  "db_medrxiv": 0,
+  "db_related": 0,
+  "db_hops": 0,
+  "db_other_sources": {
+   "user_supplied": 3
+  },
+  "total_identified": 3,
+  "duplicates_removed": 0,
+  "after_dedup": 3,
+  "screened_title_abstract": 3,
+  "excluded_title_abstract": 1,
+  "sought_fulltext": 2,
+  "not_retrieved": 0,
+  "assessed_eligibility": 2,
+  "excluded_eligibility": 1,
+  "excluded_reasons": {
+   "Sample below the 20-participant minimum": 1,
+   "Not human participants": 1
+  },
+  "included_synthesis": 1,
+  "full_text_retrieved": 2,
+  "full_text_sources": {
+   "user_supplied_pdf": 1,
+   "ezproxy_pdf": 1
+  },
+  "assessed_on_full_text": 2,
+  "assessed_on_abstract_only": 0,
+  "excluded_reasons_title_abstract": {
+   "Not human participants": 1
+  },
+  "excluded_reasons_full_text": {
+   "Sample below the 20-participant minimum": 1
+  },
+  "included_with_full_text": 1,
+  "included_abstract_only": 0
+ },
+ "included_articles": [
+  {
+   "pmid": "local_1a2b3c4d",
+   "title": "EXAMPLE — replace with the study title",
+   "abstract": "Study abstract as printed in the paper.",
+   "authors": "Smith J; Doe A",
+   "journal": "Journal of Examples",
+   "year": "2024",
+   "doi": "10.1234/example.2024.001",
+   "pmc_id": "",
+   "mesh_terms": [],
+   "keywords": [
+    "example"
+   ],
+   "source": "user_supplied",
+   "full_text": null,
+   "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+   "full_text_source": "user_supplied_pdf",
+   "full_text_retrieved_at": "2026-10-15T19:21:29.985326+00:00",
+   "hop_level": 0,
+   "parent_id": "",
+   "inclusion_status": "included",
+   "exclusion_reason": "",
+   "risk_of_bias": {
+    "assessments": [
+     {
+      "domain": "Randomisation process",
+      "judgment": "Low",
+      "support": "Computer-generated sequence, allocation concealed."
+     }
+    ],
+    "overall": "Low",
+    "summary": "Low risk across all domains."
+   },
+   "extracted_data": null,
+   "critical_appraisal": {
+    "source_id": "S-001",
+    "domain_1_participant_quality": {
+     "domain_name": "Participant and Sample Quality",
+     "items": [
+      {
+       "item_text": "Is the sample adequately described?",
+       "rating": "Yes",
+       "notes": "Full demographics reported in Table 1."
+      }
+     ],
+     "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+     "domain_name": "Data Collection Quality",
+     "items": [],
+     "overall_concern": ""
+    },
+    "domain_3_feature_model_quality": {
+     "domain_name": "Feature and Model Quality",
+     "items": [],
+     "overall_concern": ""
+    },
+    "domain_4_bias_transparency": {
+     "domain_name": "Bias and Transparency",
+     "items": [],
+     "overall_concern": ""
+    }
+   },
+   "quality_score": 0.85,
+   "full_text_note": "omitted from the public repository (publisher licences vary); re-fetch with literature_review/code and verify content_sha256"
+  }
+ ],
+ "screening_log": [
+  {
+   "pmid": "local_1a2b3c4d",
+   "title": "EXAMPLE — replace with the study title",
+   "decision": "include",
+   "reason": "Population, comparator and primary outcome all reported.",
+   "stage": "title_abstract",
+   "assessed_on": "title_abstract",
+   "full_text_source": ""
+  },
+  {
+   "pmid": "local_1a2b3c4d",
+   "title": "EXAMPLE — replace with the study title",
+   "decision": "include",
+   "reason": "Full text confirms a randomised design and reports sensitivity/specificity.",
+   "stage": "full_text",
+   "assessed_on": "full_text",
+   "full_text_source": "user_supplied_pdf"
+  },
+  {
+   "pmid": "local_5e6f7a8b",
+   "title": "EXAMPLE — a study excluded at eligibility",
+   "decision": "exclude",
+   "reason": "Sample below the 20-participant minimum (n=12 case series).",
+   "stage": "full_text",
+   "assessed_on": "full_text",
+   "full_text_source": "ezproxy_pdf"
+  },
+  {
+   "pmid": "local_9c0d1e2f",
+   "title": "EXAMPLE — a study excluded at screening",
+   "decision": "exclude",
+   "reason": "Not human participants (rodent model).",
+   "stage": "title_abstract",
+   "assessed_on": "title_abstract",
+   "full_text_source": ""
+  }
+ ],
+ "evidence_spans": [
+  {
+   "text": "Sensitivity was 0.91 (95% CI 0.87–0.94).",
+   "paper_pmid": "local_1a2b3c4d",
+   "paper_title": "EXAMPLE — replace with the study title",
+   "section": "results",
+   "relevance_score": 0.9,
+   "claim": "The method achieves high sensitivity.",
+   "doi": "10.1234/example.2024.001",
+   "grounding_score": 1.0,
+   "grounded": true
+  }
+ ],
+ "synthesis_text": "Narrative synthesis across included studies, with citations.",
+ "bias_assessment": "Cross-study risk-of-bias summary.",
+ "limitations": "Review-level limitations.",
+ "grade_assessments": {
+  "Primary outcome": {
+   "outcome": "Primary outcome",
+   "domains": {
+    "Risk of bias": {
+     "rating": "No downgrade",
+     "explanation": "Most studies low risk."
+    }
+   },
+   "overall_certainty": "Not assessed",
+   "summary": "Moderate certainty overall."
+  }
+ },
+ "timestamp": "2026-10-15T19:21:29.985326+00:00",
+ "prisma_review": null,
+ "cache_hit": false,
+ "cache_similarity_score": 0.0,
+ "cache_matched_criteria": {},
+ "data_charting_rubrics": [
+  {
+   "source_id": "S-001",
+   "title": "EXAMPLE — replace with the study title",
+   "authors": "Smith J; Doe A",
+   "year": "2024",
+   "journal_conference": "Journal of Examples",
+   "doi": "10.1234/example.2024.001",
+   "database_retrieved": "user_supplied",
+   "disorder_cohort": "Example cohort",
+   "primary_focus": "Diagnosis",
+   "primary_goal": "",
+   "study_design": "Cross-sectional",
+   "duration_frequency": "",
+   "subject_model": "",
+   "task_type": "",
+   "study_setting": "",
+   "country_region": "",
+   "disorder_diagnosis": "",
+   "diagnosis_assessment": "",
+   "n_disordered": "42",
+   "age_mean_sd": "",
+   "age_range": "",
+   "gender_distribution": "",
+   "comorbidities_included_excluded": "",
+   "medications_therapies": "",
+   "severity_levels": "",
+   "healthy_controls_included": "",
+   "healthy_status_confirmed": "",
+   "n_controls": "",
+   "age_mean_sd_controls": "",
+   "age_range_controls": "",
+   "gender_distribution_controls": "",
+   "age_matched": "",
+   "gender_matched": "",
+   "neurodevelopmentally_typical": "",
+   "data_types": "",
+   "tasks_performed": "",
+   "equipment_tools": "",
+   "new_dataset_contributed": "",
+   "dataset_openly_available": "",
+   "dataset_available_request": "",
+   "sensitive_data_anonymized": "",
+   "feature_types": "",
+   "specific_features": "",
+   "feature_extraction_tools": "",
+   "feature_importance_reported": "",
+   "importance_method": "",
+   "top_features_identified": "",
+   "feature_change_direction": "",
+   "model_category": "",
+   "specific_algorithms": "",
+   "validation_methodology": "",
+   "performance_metrics": "",
+   "key_performance_results": "",
+   "summary_key_findings": "Key findings for this study.",
+   "features_associated_disorder": "",
+   "future_directions_recommended": "",
+   "reviewer_notes": "",
+   "custom_fields": {
+    "Which instrument was used?": "Example scale"
+   },
+   "section_outputs": {}
+  }
+ ],
+ "narrative_rows": [
+  {
+   "source_id": "S-001",
+   "study_design_sample_dataset": "Cross-sectional, n=42",
+   "methods": "…",
+   "outcomes": "…",
+   "key_limitations": "…",
+   "relevance_notes": "…",
+   "review_specific_questions": ""
+  }
+ ],
+ "critical_appraisals": [
+  {
+   "source_id": "S-001",
+   "domain_1_participant_quality": {
+    "domain_name": "Participant and Sample Quality",
+    "items": [
+     {
+      "item_text": "Is the sample adequately described?",
+      "rating": "Yes",
+      "notes": "Full demographics reported in Table 1."
+     }
+    ],
+    "overall_concern": "Low"
+   },
+   "domain_2_data_collection_quality": {
+    "domain_name": "Data Collection Quality",
+    "items": [],
+    "overall_concern": ""
+   },
+   "domain_3_feature_model_quality": {
+    "domain_name": "Feature and Model Quality",
+    "items": [],
+    "overall_concern": ""
+   },
+   "domain_4_bias_transparency": {
+    "domain_name": "Bias and Transparency",
+    "items": [],
+    "overall_concern": ""
+   }
+  }
+ ],
+ "grounding_validation": null,
+ "structured_abstract": "Background: … Objective: … Methods: … Results: … Conclusion: …",
+ "introduction_text": "Introduction section text.",
+ "conclusions_text": "Conclusions section text.",
+ "quality_checklist": {},
+ "structured_appraisal_results": [
+  {
+   "source_id": "S-001",
+   "domains": [
+    {
+     "domain_name": "Participant and Sample Quality",
+     "item_ratings": [
+      {
+       "item_text": "Is the sample adequately described?",
+       "rating": "Yes"
+      }
+     ],
+     "domain_concern": "Low"
+    }
+   ]
+  }
+ ],
+ "per_group_analysis": {
+  "dimension": "disorder_cohort",
+  "topic": "EXAMPLE — the review's objective",
+  "n_articles_synthesized": 1,
+  "n_groups": 1,
+  "unlabeled_count": 0,
+  "groups": [
+   {
+    "label": "Example cohort",
+    "n_studies": 1,
+    "summary": {
+     "label": "Example cohort",
+     "n_studies": 1,
+     "aggregate_finding": "Aggregate quantitative finding for this group.",
+     "representative_pmids": [
+      "local_1a2b3c4d"
+     ],
+     "caveats": ""
+    },
+    "answers": [
+     {
+      "question": "What is the dominant study design?",
+      "answer": "Cross-sectional in 1/1 studies.",
+      "supporting_pmids": [
+       "local_1a2b3c4d"
+      ],
+      "caveats": ""
+     }
+    ]
+   }
+  ],
+  "overall_caveats": ""
+ },
+ "run_configuration": null,
+ "plan_iterations": [],
+ "agent_invocations": [],
+ "search_iterations": []
+}

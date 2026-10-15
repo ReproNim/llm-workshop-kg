@@ -1,0 +1,239 @@
+{
+  "source_id": "S-039",
+  "pmid": "local_c0914f68",
+  "doi": "10.1016/j.biopsych.2022.12.018",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a resting-state functional-connectivity group-difference (mega-)analysis between autism and neurotypical participants using ABIDE I and ABIDE II alongside EU-AIMS LEAP (Inclusion 2, 3)",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The study \nincluded resting-state fMRI and clinical data from the LEAP and the ABIDE I and II initiatives, \nof 1824 (796 with autism) participants with age range 5-58 years.",
+      "section": "abstract",
+      "claim": "Mega-analysis combines EU-AIMS LEAP with ABIDE I and ABIDE II for a total of 1824 participants (796 autism).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "ALL \nEU-AIMS LEAP \nABIDE I \nABIDE II \n \nAutism \nNT \ntest \nvalue, \np-value \nAutism \nNT \ntest \nvalue, \np-value \nAutism \nNT \ntest \nvalue, \np-value \nAutism \nNT \ntest \nvalue, \np-value \nn \n796 \n1028 \n.. \n222 \n200 \n.. \n369 \n481 \n.. \n205 \n347 \n.. ",
+      "section": "table",
+      "claim": "Table 1 breaks the combined sample down by dataset: ABIDE I contributed 369 autism/481 NT, and ABIDE II contributed 205 autism/347 NT.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Resting-state fMRI and structural scans were obtained using 3T MRI scanners at 32 scanning \nsites (Supplement Section 3).",
+      "section": "methods",
+      "claim": "Data were acquired at 32 scanning sites across the combined datasets.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "ComBat (36) was used to remove the confounding \neffects of scanning site from the fMRI data (Supplement Section 4).",
+      "section": "methods",
+      "claim": "Site effects were harmonised using ComBat.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "To \nassess FC group differences, a general linear model was fitted to each edge, including \ndiagnosis, age, sex, and mean framewise displacement (FD) as covariates.",
+      "section": "methods",
+      "claim": "Group differences were assessed with a GLM per edge including diagnosis, age, sex and mean FD as covariates, analysed with the Network Based Statistic.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "At the primary component-forming threshold of p<0.05, the NT>ASD contrast revealed \nhypoconnectivity in autism that encompassed 13,001 edges (17.1% of the total number of \nedges) linking 376 brain regions (pfwe<0.001; Figure 1A-C). The ASD>NT contrast revealed \nhyperconnectivity in autism, including 16,767 edges (22% of the total number of edges; \npfwe<0.001) and linking all 390 brain regions",
+      "section": "results",
+      "claim": "Autism showed both brain-wide hypoconnectivity (13,001 edges, 17.1%) and hyperconnectivity (16,767 edges, 22%) relative to neurotypicals, each significant after family-wise error correction.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "To further demonstrate the robustness and replicability of our findings we conducted the full \nFC mapping and analysis of group differences separately in the LEAP and \nABIDE 1&2 data.",
+      "section": "results",
+      "claim": "Findings were replicated by repeating the full analysis separately within LEAP and within the combined ABIDE I/II data.",
+      "relevance_score": 0.75
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Unclear",
+        "support": "Paper states \"Details about our exclusion criteria are provided in Supplement Section 2\" but the exclusion rules themselves are not given in the body text."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "N by diagnosis and dataset (ABIDE I 369/481, ABIDE II 205/347), age range, sex and site count (32 sites) reported in Table 1 and text."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Unclear",
+        "support": "Preprocessing pipeline name/version not stated in the body text; only Schaefer-400 + Harvard-Oxford subcortical parcellation and ComBat harmonisation are named, with pipeline detail deferred to an unavailable supplement."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Low",
+        "support": "\"Each site within ABIDE followed their individual diagnostic procedures for establishing an autism diagnosis, although the majority of the sites used the Autism Diagnostic Observation Schedule (35) and/or Autism Diagnostic Interview-Revised (32).\""
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "GLM included diagnosis, age, sex and mean FD as covariates; ComBat used for site."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "Site harmonised with ComBat; age/sex/motion included as covariates; sensitivity analyses for IQ, sex, medication and ADHD comorbidity reported."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Pearson correlation FC matrices from Schaefer-400 + Harvard-Oxford subcortical ROIs, Gaussian-gamma mixture normalised."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "Network Based Statistic with family-wise error-corrected threshold (pfwe<.001) across primary component thresholds."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Large multi-dataset mega-analysis with clearly reported N by dataset/diagnosis, diagnosis source, covariate handling (age, sex, mean FD, ComBat site harmonisation) and FWE-corrected network-based statistics; main gap is that the preprocessing pipeline name/version and the exact exclusion rules are deferred to a supplement not present in the extracted text."
+  },
+  "charting": {
+    "source_id": "S-039",
+    "title": "Connectome-wide Mega-analysis Reveals Robust Patterns of Atypical Functional Connectivity in Autism",
+    "authors": "",
+    "year": "2022",
+    "journal_conference": "Biological Psychiatry",
+    "doi": "10.1016/j.biopsych.2022.12.018",
+    "database_retrieved": "",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism spectrum disorder vs neurotypical",
+    "diagnosis_assessment": "Clinical diagnosis per site; majority used ADOS and/or ADI-R",
+    "n_disordered": "574 (ABIDE I 369 + ABIDE II 205); combined with EU-AIMS LEAP for a total autism N of 796",
+    "age_mean_sd": "",
+    "age_range": "5-58 years (combined sample)",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "Neurotypical controls reported no psychiatric diagnosis",
+    "n_controls": "828 (ABIDE I 481 + ABIDE II 347); combined with EU-AIMS LEAP for a total NT N of 1028",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "3T MRI scanners at 32 scanning sites",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity",
+    "specific_features": "Pearson-correlation connectome; Schaefer 400-region cortical parcellation + 15 Harvard-Oxford subcortical ROIs (390 regions, 75,855 edges)",
+    "feature_extraction_tools": "ComBat (site harmonisation); pipeline name/version not reported in available text",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "Hypoconnectivity in sensory/somatomotor and higher-order attentional networks; hyperconnectivity involving the default mode network, subcortex (thalamus, striatum), and cognitive control network",
+    "model_category": "",
+    "specific_algorithms": "Network Based Statistic (NBS); canonical correlation analysis (CCA) for brain-behaviour associations",
+    "validation_methodology": "Split-sample replication: full analysis repeated separately in LEAP and in combined ABIDE I/II data",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "Autism is associated with a brain-wide pattern of both hypoconnectivity (13,001 edges, 17.1% of all edges, pfwe<0.001) and hyperconnectivity (16,767 edges, 22% of all edges, pfwe<0.001) relative to neurotypicals; findings replicated separately in the ABIDE I/II subsample and in LEAP, and were associated with clinical symptom dimensions via CCA.",
+    "features_associated_disorder": "Hypoconnectivity: visual-somatomotor, within-somatomotor, somatomotor-dorsal attention, somatomotor-salience, amygdala-somatomotor/visual. Hyperconnectivity: DMN-cognitive control network, thalamus and medial temporal areas with striatum/thalamus.",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "associational | ABIDE I and ABIDE II combined with EU-AIMS LEAP; ABIDE I n=369 autism/481 NT, ABIDE II n=205 autism/347 NT (combined ABIDE total autism 574, NT 828); detailed exclusion rules referenced as \"Supplement Section 2\", not given in body text. | quote: \"n \n796 \n1028 \n.. \n222 \n200 \n.. \n369 \n481 \n.. \n205 \n347 \n.. \"",
+      "RQ2": "Pipeline name/version not reported in available text; Schaefer-400 cortical + Harvard-Oxford subcortical atlas used, ComBat for site harmonisation | quote: \"Schaefer parcellation to divide the cortex of each participant into 400 functional regions of \ninterest (ROIs) (37), combined with 15 subcortical ROIs from the Harvard-Oxford subcortical \natlas (38)\"",
+      "RQ3": "associational — connectome-wide group-difference mega-analysis between autism and neurotypical participants | quote: \"Through a mega-analytic approach (the pooling of raw data acquired at multiple sites), we \nmapped connectome-wide differences between autistic and neurotypical individuals\"",
+      "RQ4": "General linear model per edge with diagnosis, age, sex and mean FD covariates, Network Based Statistic with family-wise error correction (pfwe<.001); split-sample replication in LEAP vs ABIDE I/II, not leave-site-out | quote: \"a general linear model was fitted to each edge, including \ndiagnosis, age, sex, and mean framewise displacement (FD) as covariates\"",
+      "RQ5": "Brain-wide hypoconnectivity (13,001 edges, 17.1%, pfwe<0.001) and hyperconnectivity (16,767 edges, 22%, pfwe<0.001) in autism; hypoconnectivity concentrated in sensory/somatomotor/attention networks, hyperconnectivity in DMN/subcortex | quote: \"the NT>ASD contrast revealed \nhypoconnectivity in autism that encompassed 13,001 edges (17.1% of the total number of \nedges) linking 376 brain regions (pfwe<0.001\"",
+      "RQ6": "partly | quote: \"Details about our \nexclusion \ncriteria are provided in Supplement Section 2.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — resulting N by diagnosis and dataset given in Table 1, exact exclusion rules deferred to an unavailable supplement | quote: \"Our final sample for analysis included 796 individuals with autism (141 females; age-range: \n5-58) and 1028 NT individuals\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — mean FD reported and used as covariate/table variable, but no exclusion threshold stated in body text | quote: \"Head motion \nmeanFD (mean \n± SD) \n0.079 \n±0.037\"",
+      "CL3 Preprocessing pipeline and version reported?": "No | quote: \"The Supplement also contains details on denoising efficacy \n(Supplement Section 6)\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"Schaefer parcellation to divide the cortex of each participant into 400 functional regions of \ninterest (ROIs) (37), combined with 15 subcortical ROIs from the Harvard-Oxford subcortical \natlas (38)\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No | quote: \"ComBat (36) was used to remove the confounding \neffects of scanning site from the fMRI data (Supplement Section 4).\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes | quote: \"ComBat (36) was used to remove the confounding \neffects of scanning site from the fMRI data (Supplement Section 4).\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"Details about our exclusion \ncriteria are provided in Supplement Section 2.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Autism Brain \nImaging Data Exchange, ABIDE-I and ABIDE-II (21) \nhttp://fcon_1000.projects.nitrc.org/indi/abide/\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-039",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {"item_text": "CL1 Cohort definition reported?", "rating": "Partial", "notes": "N by diagnosis/dataset reported; exclusion rules referenced but not in body text."},
+        {"item_text": "CL2 Motion/QC rule reported?", "rating": "Partial", "notes": "Mean FD reported and used as a covariate/table variable but no exclusion threshold given."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {"item_text": "CL3 Preprocessing pipeline and version reported?", "rating": "No", "notes": "Pipeline name/version deferred to supplement not in available text."},
+        {"item_text": "CL4 Atlas/parcellation reported?", "rating": "Yes", "notes": "Schaefer-400 + Harvard-Oxford subcortical ROIs."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {"item_text": "Diagnosis source and label definition reported?", "rating": "Yes", "notes": "Clinical diagnosis, majority ADOS/ADI-R per site; NT controls self-reported no psychiatric diagnosis."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {"item_text": "CL5 Leakage control reported?", "rating": "N/A", "notes": "Associational mega-analysis, not a predictive model with train/test leakage risk."},
+        {"item_text": "CL6 Site handling reported?", "rating": "Yes", "notes": "ComBat harmonisation of site effects; split-sample replication across LEAP vs ABIDE I/II."},
+        {"item_text": "CL7 Code and/or participant list available?", "rating": "No", "notes": "Not stated in available text."}
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-039",
+    "study_design_sample_dataset": "Group-difference (associational) mega-analysis; ABIDE I (369 autism/481 NT) and ABIDE II (205 autism/347 NT) combined with EU-AIMS LEAP (222/200) for a total of 796 autism/1028 NT across 32 sites",
+    "methods": "Pearson-correlation connectomes from Schaefer-400 cortical + 15 Harvard-Oxford subcortical ROIs; ComBat site harmonisation; per-edge GLM with diagnosis, age, sex, mean FD covariates assessed with the Network-Based Statistic at FWE-corrected thresholds; canonical correlation analysis linking connectivity to clinical symptom dimensions.",
+    "outcomes": "Autism showed brain-wide hypoconnectivity (13,001 edges, 17.1% of edges, pfwe<0.001), concentrated in sensory/somatomotor/attention networks, and hyperconnectivity (16,767 edges, 22% of edges, pfwe<0.001), concentrated in DMN/subcortical connections; pattern replicated separately in LEAP and in combined ABIDE I/II data.",
+    "key_limitations": "Preprocessing pipeline name/version and exact exclusion criteria are deferred to a supplement not present in the extracted full text; analysis excluded the cerebellum due to poor scan coverage; most participants under 25 years old; sex ratio imbalanced between groups.",
+    "relevance_notes": "A large multi-site mega-analysis explicitly reporting ABIDE I and ABIDE II subsample sizes separately and replicating its connectome-wide findings within the combined ABIDE I/II data alone.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1016/j.biopsych.2022.12.018",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "ABIDE I: 369 autism/481 NT; ABIDE II: 205 autism/347 NT; combined with EU-AIMS LEAP (222/200) for total N=1824; exclusion criteria detailed in an unavailable supplement",
+    "n_by_dx": {"ASD": 574, "TD": 828, "total": 1402},
+    "sites": "32 (across LEAP, ABIDE I and ABIDE II)",
+    "pipeline": "ComBat site harmonisation; pipeline name/version not reported in available text",
+    "atlas": "Schaefer 400-region cortical parcellation + 15 Harvard-Oxford subcortical ROIs",
+    "claim_type": "associational",
+    "finding": "Autism showed brain-wide hypoconnectivity (13,001 edges, 17.1% of edges, pfwe<0.001) and hyperconnectivity (16,767 edges, 22% of edges, pfwe<0.001) relative to neurotypicals, replicated separately within the combined ABIDE I/II data.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "n \n796 \n1028 \n.. \n222 \n200 \n.. \n369 \n481 \n.. \n205 \n347 \n.. ",
+      "At the primary component-forming threshold of p<0.05, the NT>ASD contrast revealed \nhypoconnectivity in autism that encompassed 13,001 edges (17.1% of the total number of \nedges) linking 376 brain regions (pfwe<0.001; Figure 1A-C). The ASD>NT contrast revealed \nhyperconnectivity in autism, including 16,767 edges (22% of the total number of edges; \npfwe<0.001) and linking all 390 brain regions"
+    ]
+  }
+}

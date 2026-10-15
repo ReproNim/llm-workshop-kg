@@ -1,0 +1,281 @@
+{
+  "source_id": "S-045",
+  "pmid": "local_013df539",
+  "doi": "10.1371/journal.pone.0190081",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2/3: analyses ABIDE resting-state BOLD fMRI explicitly and reports a group-difference analysis between ASD and typical control subjects.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "Anatomical and functional data from fifty-five subjects with ASD (12.7 ± 2.4 y/o) and 55 age- matched (14.1 ± 3.1 y/o) healthy controls were accessed through the NITRC database and the ABIDE project.",
+      "section": "abstract",
+      "claim": "Cohort: 55 ASD and 55 age-matched typical control subjects from ABIDE.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Diagnosis was established with the Autism Diagnostic Observation Schedule (ADOS) [39], the Autism Diagnostic Interview Revised (ADI-R) [40] as well as clini- cal consensus.",
+      "section": "methods",
+      "claim": "Diagnosis established via ADOS, ADI-R and clinical consensus.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "The 240 regions of interest (ROIs) defined for this study were extracted from the TT_Daemon human brain atlas [43] provided with the AFNI package [44].",
+      "section": "methods",
+      "claim": "ROI analysis used the TT_Daemon atlas via AFNI.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "The rs-BOLD data were corrected for motion artifacts using a time series general affine registration for 12 parameters (3dWarpDrive/AFNI).",
+      "section": "methods",
+      "claim": "Motion correction performed via AFNI 3dWarpDrive 12-parameter affine registration.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "We found that the main regions, where signal complexity significantly decreased among ASD patients, were the amygdala (p = 0.001), the vermis (p = 0.02), the basal ganglia (p = 0.01) and the hippocampus (p = 0.02).",
+      "section": "results",
+      "claim": "ASD patients showed significantly decreased fractal-dimension signal complexity in the amygdala, vermis, basal ganglia and hippocampus.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "This indicates that there were no regions where signal complexity signifi- cantly increased respect to controls among the ASD patients.",
+      "section": "results",
+      "claim": "No brain regions showed significantly increased signal complexity in ASD relative to controls; changes were unidirectional (decreased).",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Overall, we found reduced signal complexity in the ASD subjects with respect to controls.",
+      "section": "discussion",
+      "claim": "Overall summary finding: reduced rs-BOLD signal complexity (fractal dimension) in ASD vs. controls.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "We downloaded data from the publicly accessible ABIDE-1 database: http://fcon_1000.projects.nitrc.org/indi/abide/ abide_I",
+      "section": "methods",
+      "claim": "Data sourced from the publicly accessible ABIDE I database.",
+      "relevance_score": 0.4
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "55 ASD and 55 age-matched controls, with demographic table (age, IQ, sex ratio, handedness, ADI-R/ADOS scores)."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Table 1 reports age, IQ, sex/handedness ratios and ADI-R/ADOS scores for both groups; acquisition described (3T GE Signa, 32-channel coil)."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "AFNI-based motion correction, N27-atlas spatial warping, and TT_Daemon ROI atlas explicitly described, plus a custom fractal-dimension (Hurst exponent) analysis pipeline detailed step by step."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Low",
+        "support": "Diagnosis established via ADOS, ADI-R and clinical consensus, explicitly stated."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Unclear",
+        "support": "Groups are age-matched, but sex ratio differs markedly between groups (46:9 ASD vs 38:17 controls) and is not statistically addressed; site is not discussed (appears to be a single-scanner/site subset) and motion is not quantified with a standard FD metric."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Unclear",
+        "support": "No explicit covariate adjustment for sex imbalance or head motion is reported; authors note most ASD patients were on psychotropic medication and chose not to exclude them."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Fractal dimension (Hurst exponent via power spectral density and dispersional analysis) computed voxelwise and validated against normality tests."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Unclear",
+        "support": "Z-score thresholding (|Z|>2.0) and region-wise p-values are reported, but no explicit multiple-comparisons correction (e.g. FDR/Bonferroni) across the 240 ROIs is described."
+      }
+    ],
+    "overall": "Unclear",
+    "summary": "A methodologically detailed single-cohort ABIDE associational study (custom fractal-dimension analysis) with clear diagnostic criteria and pipeline description, but unclear handling of sex imbalance, site, head-motion quantification, and multiple-comparisons correction."
+  },
+  "charting": {
+    "source_id": "S-045",
+    "title": "Temporal fractal analysis of the rs-BOLD signal identifies brain abnormalities in autism spectrum disorder",
+    "authors": "Dona O; Hall GB; Noseworthy MD",
+    "year": "2017",
+    "journal_conference": "PLOS ONE",
+    "doi": "10.1371/journal.pone.0190081",
+    "database_retrieved": "unpaywall",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "ADOS, ADI-R, clinical consensus",
+    "n_disordered": "55",
+    "age_mean_sd": "12.7 ± 2.4 years",
+    "age_range": "",
+    "gender_distribution": "46 M : 9 F",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "Most ASD patients received psychotropic medication; not excluded",
+    "severity_levels": "ADI-R total (mean 41.6, SD 8.7), ADOS severity (mean 6.5, SD 2.2)",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "55",
+    "age_mean_sd_controls": "14.1 ± 3.1 years",
+    "age_range_controls": "",
+    "gender_distribution_controls": "38 M : 17 F",
+    "age_matched": "Yes",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "Yes",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "3T GE Signa MRI, 32-channel RF coil",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "Data sourced from the publicly accessible ABIDE I database",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "signal complexity (fractal dimension / Hurst exponent)",
+    "specific_features": "Voxelwise fractal dimension (FD = 2-H) of the rs-BOLD signal over 240 TT_Daemon ROIs",
+    "feature_extraction_tools": "Custom AFNI-based pipeline (3dWarpDrive motion correction, N27 atlas warping)",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "Decreased fractal dimension (signal complexity) in ASD vs. controls; no regions showed significantly increased complexity",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "A custom fractal-dimension (Hurst exponent) analysis of rs-BOLD signal complexity in 55 ASD and 55 age-matched controls from ABIDE found significantly decreased signal complexity in ASD in the amygdala (p=0.001), vermis (p=0.02), basal ganglia (p=0.01) and hippocampus (p=0.02), with no regions showing significantly increased complexity in ASD; fractal dimension in several ROIs correlated with ADI-R/ADOS severity scores.",
+    "features_associated_disorder": "Amygdala, vermis, basal ganglia, hippocampus (decreased signal complexity in ASD)",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "associational | ABIDE I, 55 ASD and 55 age-matched controls accessed via NITRC/ABIDE; acquisition appears to be a single scanner/site (3T GE Signa, 32-channel coil), site not explicitly named. | quote: \"Anatomical and functional data from fifty-five subjects with ASD (12.7 ± 2.4 y/o) and 55 age- matched (14.1 ± 3.1 y/o) healthy controls were accessed through the NITRC database and the ABIDE project.\"",
+      "RQ2": "Custom AFNI-based pipeline (3dWarpDrive motion correction, N27 atlas spatial warping); TT_Daemon atlas (240 ROIs) for ROI-level analysis. | quote: \"The 240 regions of interest (ROIs) defined for this study were extracted from the TT_Daemon human brain atlas [43] provided with the AFNI package [44].\"",
+      "RQ3": "associational — group difference in rs-BOLD signal complexity (fractal dimension) between ASD and controls, plus correlation with ADI-R/ADOS severity. | quote: \"To determine regions of the brain of ASD patients with increased or decreased signal complex- ity respect to a typical control group, we estimated the voxel-wise FD on every subject of both groups.\"",
+      "RQ4": "Voxel-wise Z-scoring (|Z|>2.0 threshold) and region-wise comparisons with reported p-values; Pearson correlation (PPMC) between ROI Z-scores and ADI-R/ADOS scores; no explicit multiple-comparisons correction described. | quote: \"We found that the main regions, where signal complexity significantly decreased among ASD patients, were the amygdala (p = 0.001), the vermis (p = 0.02), the basal ganglia (p = 0.01) and the hippocampus (p = 0.02).\"",
+      "RQ5": "Significantly decreased signal complexity (fractal dimension) in ASD in amygdala, vermis, basal ganglia and hippocampus; no regions significantly increased. | quote: \"Overall, we found reduced signal complexity in the ASD subjects with respect to controls.\"",
+      "RQ6": "no — N and demographics reported but no participant-ID list or code repository found; data sourced from the general public ABIDE repository. | quote: \"We downloaded data from the publicly accessible ABIDE-1 database: http://fcon_1000.projects.nitrc.org/indi/abide/ abide_I\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"Anatomical and functional data from fifty-five subjects with ASD (12.7 ± 2.4 y/o) and 55 age- matched (14.1 ± 3.1 y/o) healthy controls were accessed through the NITRC database and the ABIDE project.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly | quote: \"The rs-BOLD data were corrected for motion artifacts using a time series general affine registration for 12 parameters (3dWarpDrive/AFNI).\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly | quote: \"The rs-BOLD data were corrected for motion artifacts using a time series general affine registration for 12 parameters (3dWarpDrive/AFNI).\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"The 240 regions of interest (ROIs) defined for this study were extracted from the TT_Daemon human brain atlas [43] provided with the AFNI package [44].\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "N/A | quote: \"To determine regions of the brain of ASD patients with increased or decreased signal complex- ity respect to a typical control group, we estimated the voxel-wise FD on every subject of both groups.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No | quote: \"Subjects were scanned using a 3T GE Signa MRI and a 32-channel RF- coil.\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"We downloaded data from the publicly accessible ABIDE-1 database: http://fcon_1000.projects.nitrc.org/indi/abide/ abide_I\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Anatomical and functional data from fifty-five subjects with ASD (12.7 ± 2.4 y/o) and 55 age- matched (14.1 ± 3.1 y/o) healthy controls were accessed through the NITRC database and the ABIDE project.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-045",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Yes",
+          "notes": "55 ASD, 55 age-matched controls, with full demographic/clinical table."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "Partial",
+          "notes": "AFNI 3dWarpDrive motion correction described, but no explicit numeric exclusion threshold (e.g. mean FD cutoff) for subject-level QC."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Pipeline and version reported?",
+          "rating": "Partial",
+          "notes": "Custom AFNI-based pipeline steps described but not a named standard pipeline (C-PAC/DPARSF/NIAK/CCS) or version number."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "Yes",
+          "notes": "TT_Daemon atlas (240 ROIs) via AFNI."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Yes",
+          "notes": "ADOS, ADI-R and clinical consensus explicitly stated as diagnostic basis."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "N/A",
+          "notes": "Associational group-comparison, not a predictive/classification analysis."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "No",
+          "notes": "Appears to be a single-scanner/site cohort; no multi-site covariate or harmonisation discussed."
+        },
+        {
+          "item_text": "CL7 Code/participant list available?",
+          "rating": "No",
+          "notes": "Only the general public ABIDE repository link given; no study-specific code or participant list."
+        }
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-045",
+    "study_design_sample_dataset": "Group-difference (associational); ABIDE I; 55 ASD and 55 age-matched typical controls (apparently single-scanner/site cohort, 3T GE Signa)",
+    "methods": "Custom AFNI-based pipeline (3dWarpDrive motion correction, N27 atlas warping); voxelwise fractal dimension (Hurst exponent) computed over 240 TT_Daemon ROIs; Z-score thresholding and Pearson correlation with ADI-R/ADOS severity scores",
+    "outcomes": "Significantly decreased signal complexity (fractal dimension) in ASD in the amygdala (p=0.001), vermis (p=0.02), basal ganglia (p=0.01) and hippocampus (p=0.02); no regions showed significantly increased complexity in ASD; FD in several ROIs correlated with ADI-R/ADOS scores",
+    "key_limitations": "Sex ratio differs between groups without reported adjustment; no standard motion-exclusion threshold or explicit multiple-comparisons correction reported; most ASD patients were medicated and not excluded",
+    "relevance_notes": "A non-standard (fractal-dimension) connectivity analysis method applied to an ABIDE subset, useful for linking methodological diversity within the dataset-publication knowledge graph",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1371/journal.pone.0190081",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "55 ASD and 55 age-matched typically developing controls accessed via NITRC/ABIDE, apparently from a single acquisition site/scanner (3T GE Signa, 32-channel coil)",
+    "n_by_dx": {
+      "ASD": 55,
+      "TD": 55,
+      "total": 110
+    },
+    "sites": "",
+    "pipeline": "Custom AFNI-based pipeline (3dWarpDrive motion correction, N27 atlas warping)",
+    "atlas": "TT_Daemon (AFNI)",
+    "claim_type": "associational",
+    "finding": "ASD patients show significantly decreased rs-BOLD fractal-dimension signal complexity relative to controls in the amygdala (p=0.001), vermis (p=0.02), basal ganglia (p=0.01) and hippocampus (p=0.02), with no regions showing significantly increased complexity.",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "Anatomical and functional data from fifty-five subjects with ASD (12.7 ± 2.4 y/o) and 55 age- matched (14.1 ± 3.1 y/o) healthy controls were accessed through the NITRC database and the ABIDE project.",
+      "We found that the main regions, where signal complexity significantly decreased among ASD patients, were the amygdala (p = 0.001), the vermis (p = 0.02), the basal ganglia (p = 0.01) and the hippocampus (p = 0.02)."
+    ]
+  }
+}

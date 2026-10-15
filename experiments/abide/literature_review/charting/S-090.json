@@ -1,0 +1,154 @@
+{
+  "source_id": "S-090",
+  "pmid": "local_3a3f7f6a",
+  "doi": "10.1016/j.neunet.2025.107450",
+  "screening": {
+    "decision": "include",
+    "reason": "Meets inclusion 2/3: analyses ABIDE-I resting-state fMRI functional connectivity with a hierarchical graph-based deep-learning model (ASD-HNet) for ASD vs healthy-control classification.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "we conducted the experiment on the publicly available ABIDE-I\ndataset, including rs-fMRI and phenotypic data of 1112 sub-\njects from 17 different sites (Di Martino et al., 2014; Crad-\ndock et al., 2013). In current study, we utilized rs-fMRI data\nfrom 848 subjects, including 396 patients with ASD and 452\nhealth controls (HCs).",
+      "section": "methods",
+      "claim": "Of the 1112-subject ABIDE-I release across 17 sites, 848 subjects (396 ASD, 452 HC) were used.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "we used the data Processing As-\nsistant for Resting-State fMRI (DPARSF) t",
+      "section": "methods",
+      "claim": "Preprocessing used DPARSF.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "(1) Discarding the first 5 volumes. (2) Correct-\ning of slice-related delay. (3) Correcting head movement.\n(4) Using EPI template normalization in MNI space, resam-\npling to 3 mm resolution of 3 × 3 × 3. (5) Smoothing with a\n4 mm full-width at half-maximum (FWHM) Gaussian ker-\nnel. (6) Linear detrending and temporal band-pass filter-\ning of BOLD signal (0.01-0.10 Hz).",
+      "section": "methods",
+      "claim": "DPARSF preprocessing steps: discard first 5 volumes, slice-timing, head-movement correction, normalization, smoothing, band-pass filtering.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "we use the Automated Anatomical Labeling (AAL) tem-\nplate (Tzourio-Mazoyer et al., 2002) to divide the brain into",
+      "section": "methods",
+      "claim": "Functional connectivity used the AAL atlas with 116 ROIs.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "In our experiment, we employed the 10-fold cross-\nvalidation strategy to conduct the comparison among dif-\nferent models.",
+      "section": "methods",
+      "claim": "Evaluation used pooled 10-fold cross-validation (no leave-site-out scheme described).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The code is available\nat https://github.com/LYQbyte/ASD-HNet.",
+      "section": "methods",
+      "claim": "The authors' code is publicly released on GitHub.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "ASD-HNet\n73.57\n72.63\n74.90\n71.04\n-",
+      "section": "table",
+      "claim": "ASD-HNet achieved accuracy 73.57%, sensitivity 72.63%, specificity 74.90%, F1 71.04%, outperforming all compared methods.",
+      "relevance_score": 1.0
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Unclear", "support": "N by diagnosis is given (396 ASD/452 HC of the 1112-subject, 17-site release), but no explicit inclusion/exclusion rule or motion/QC threshold for the 848-subject subset is stated: \"we utilized rs-fMRI data\nfrom 848 subjects, including 396 patients with ASD and 452\nhealth controls (HCs).\""},
+      {"domain": "Predictors", "judgment": "Low", "support": "DPARSF pipeline steps and the AAL atlas (116 ROIs) are described in detail."},
+      {"domain": "Outcome", "judgment": "Low", "support": "ASD/HC labels are the ABIDE phenotypic diagnosis, independent of the connectivity-derived predictors."},
+      {"domain": "Analysis", "judgment": "High", "support": "Evaluation is a pooled 10-fold cross-validation with no leave-site-out or site-covariate handling described: \"we employed the 10-fold cross-\nvalidation strategy to conduct the comparison among dif-\nferent models.\""}
+    ],
+    "overall": "High",
+    "summary": "Pipeline, atlas and code availability are well documented, but the cohort's exact inclusion/exclusion and QC rule are not given, and the primary evaluation pools all sites in a single 10-fold cross-validation with no site handling."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "396",
+    "n_controls": "452",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Data Processing Assistant for Resting-State fMRI (DPARSF)",
+    "specific_features": "Pearson correlation functional connectivity network using the AAL atlas (116 ROIs), with functional-gradient-based community clustering",
+    "model_category": "Graph neural network / deep learning",
+    "specific_algorithms": "ASD-HNet (hierarchical functional-gradient-based graph network: ROI scale, community scale, global scale)",
+    "validation_methodology": "Pooled 10-fold cross-validation (no leave-site-out)",
+    "performance_metrics": "Accuracy (ACC), sensitivity (SEN), specificity (SPE), F1-score",
+    "key_performance_results": "ASD-HNet: accuracy 73.57%, sensitivity 72.63%, specificity 74.90%, F1-score 71.04%, outperforming compared methods (f-GCN, BrainnetCNN, CNN-model, FBNETGEN, ASD-DiagNet, BrainTransformerNet, Hi-GCN, MCG-Net) with paired t-test p<0.05",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "Code publicly available on GitHub (https://github.com/LYQbyte/ASD-HNet); no study-specific participant-ID list given",
+    "custom_fields": {
+      "RQ1": "ABIDE-I, 848 of the 1112 subjects across 17 sites (396 ASD, 452 HC); no explicit numeric exclusion/QC rule given for the subset selection. | quote: \"we utilized rs-fMRI data\nfrom 848 subjects, including 396 patients with ASD and 452\nhealth controls (HCs).\"",
+      "RQ2": "DPARSF pipeline (slice timing, head-movement correction, normalization, smoothing, band-pass filter, nuisance regression); AAL atlas (116 ROIs). | quote: \"we used the data Processing As-\nsistant for Resting-State fMRI (DPARSF) t\"",
+      "RQ3": "predictive — ASD-HNet classifies ASD vs healthy controls from hierarchical functional-connectivity features. | quote: \"ASD-HNet outperforms existing methods.\"",
+      "RQ4": "Pooled 10-fold cross-validation across the whole dataset (no leave-site-out), with a paired t-test comparing ASD-HNet's per-fold accuracy against compared methods. | quote: \"we employed the 10-fold cross-\nvalidation strategy to conduct the comparison among dif-\nferent models.\"",
+      "RQ5": "ASD-HNet achieved accuracy 73.57%, sensitivity 72.63%, specificity 74.90%, F1 71.04%, the best among all compared methods (paired t-test p<0.05 for each comparison). | quote: \"ASD-HNet\n73.57\n72.63\n74.90\n71.04\n-\"",
+      "RQ6": "partly — N by diagnosis and the source release (ABIDE-I, 17 sites) are given and code is public, but no participant-ID list or exact numeric exclusion rule for the 848-subject subset is published. | quote: \"The code is available\nat https://github.com/LYQbyte/ASD-HNet.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis given (396/452 of 848) but no explicit exclusion rule for how 848 of the 1112 release subjects were chosen. | quote: \"we utilized rs-fMRI data\nfrom 848 subjects, including 396 patients with ASD and 452\nhealth controls (HCs).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — head-movement correction is a named DPARSF preprocessing step, but no specific motion metric or subject-exclusion threshold is given. | quote: \"(3) Correcting head movement.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — DPARSF named with its processing steps. | quote: \"we used the data Processing As-\nsistant for Resting-State fMRI (DPARSF) t\"",
+      "CL4 Atlas/parcellation reported?": "Yes — AAL atlas, 116 ROIs. | quote: \"we use the Automated Anatomical Labeling (AAL) tem-\nplate (Tzourio-Mazoyer et al., 2002) to divide the brain into\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — no statement that any preprocessing or feature step was confined to the training folds within the 10-fold scheme. | quote: \"we employed the 10-fold cross-\nvalidation strategy to conduct the comparison among dif-\nferent models.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — 10-fold cross-validation pools all 17 sites with no site covariate or leave-site-out evaluation reported. | quote: \"we employed the 10-fold cross-\nvalidation strategy to conduct the comparison among dif-\nferent models.\"",
+      "CL7 Code and/or participant list available?": "Yes (code only) — the authors' code is public on GitHub; no participant-ID list is given. | quote: \"The code is available\nat https://github.com/LYQbyte/ASD-HNet.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"we conducted the experiment on the publicly available ABIDE-I\ndataset\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "items": [
+        {"item": "CL1", "rating": "Partial", "support": "N by diagnosis given, no explicit exclusion rule for the 848-subject subset."},
+        {"item": "CL2", "rating": "Partial", "support": "Head-movement correction named as a preprocessing step but no motion threshold given."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_predictors_features": {
+      "items": [
+        {"item": "CL3", "rating": "Yes", "support": "DPARSF pipeline steps described in detail."},
+        {"item": "CL4", "rating": "Yes", "support": "AAL atlas (116 ROIs) named."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_outcome_labels": {
+      "items": [
+        {"item": "diagnosis source", "rating": "Unclear", "support": "ASD/HC labels are the ABIDE phenotypic diagnosis; this paper does not restate diagnostic criteria."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "items": [
+        {"item": "CL5", "rating": "No", "support": "No leakage-control statement for the 10-fold procedure."},
+        {"item": "CL6", "rating": "No", "support": "Pooled 10-fold CV with no site handling or leave-site-out."},
+        {"item": "CL7", "rating": "Partial", "support": "Code is public; no participant-ID list."}
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE-I, 848 of the 1112-subject, 17-site release (396 ASD, 452 HC).",
+    "methods": "DPARSF-preprocessed rs-fMRI; AAL-atlas (116 ROI) functional connectivity; hierarchical functional-gradient-based graph network (ASD-HNet, ROI/community/global scales); pooled 10-fold cross-validation.",
+    "outcomes": "ASD-HNet achieved accuracy 73.57%, sensitivity 72.63%, specificity 74.90%, F1 71.04%, significantly outperforming eight compared methods (paired t-test p<0.05 each).",
+    "key_limitations": "No explicit exclusion/QC rule or motion threshold for the 848-subject subset; pooled 10-fold CV with no site handling or stated leakage control.",
+    "relevance_notes": "Code is openly released, aiding reproducibility of the model though not of the exact cohort definition; benchmarked directly against several other ABIDE-I classification methods with matched or overlapping subsets.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1016/j.neunet.2025.107450",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "848 of the 1112 ABIDE-I subjects across 17 sites: 396 ASD, 452 healthy controls.",
+    "n_by_dx": {"ASD": 396, "TD": 452, "total": 848},
+    "sites": "17",
+    "pipeline": "DPARSF (Data Processing Assistant for Resting-State fMRI)",
+    "atlas": "AAL (116 ROIs)",
+    "claim_type": "predictive",
+    "finding": "ASD-HNet achieved accuracy 73.57%, sensitivity 72.63%, specificity 74.90%, F1 71.04%, outperforming eight compared ABIDE-I classification methods.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "we utilized rs-fMRI data\nfrom 848 subjects, including 396 patients with ASD and 452\nhealth controls (HCs).",
+      "ASD-HNet\n73.57\n72.63\n74.90\n71.04\n-"
+    ]
+  }
+}

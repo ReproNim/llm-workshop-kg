@@ -1,0 +1,28 @@
+{
+  "source_id": "S-042",
+  "pmid": "local_8436785a",
+  "doi": "10.3389/fnins.2016.00439",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: uses only T1-weighted structural MRI (brain/intracranial volume estimation via SPM, FSL, FreeSurfer) from ABIDE, with no resting-state functional analysis.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2016.00439",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "",
+    "evidence_quotes": [
+      "T1-weighted sMRIs of 417 ASD subjects and 459 typically developing controls (TDC) from the ABIDE dataset were estimated using three popular preprocessing methods: SPM, FSL, and FreeSurfer (FS"
+    ]
+  }
+}

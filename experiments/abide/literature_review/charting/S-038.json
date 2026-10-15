@@ -1,0 +1,275 @@
+{
+  "source_id": "S-038",
+  "pmid": "local_4a257bf0",
+  "doi": "10.1002/hbm.23084",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2/3: the paper's primary dataset is a 13-vs-13 movie-watching fMRI sample (not ABIDE), but it explicitly analyses 27 ABIDE I resting-state participants as a reproducibility cohort, correlating subnetwork connectivity similarity with ADI-R/ADOS symptom severity.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "Additional 27 individuals with ASD from the ABIDE resting-state database were included to  test the reproducibility of the results.",
+      "section": "abstract",
+      "claim": "27 ABIDE I ASD participants were analysed as an independent resting-state reproducibility cohort.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "We selected only ASD participants from the ABIDE database since diagnostic scores were  not available for controls. We selected the same 5 datasets used in (1), that is sites with  codes: 'CALTECH' (n=19), 'CMU' (n=14), 'PITT' (n=30), 'UM_1' (n=55), 'UM_2' (n=13) for  a total of 131 ASD participants.",
+      "section": "methods",
+      "claim": "ABIDE subset drawn from 5 sites (CALTECH, CMU, PITT, UM_1, UM_2), 131 ASD participants before further restriction; no ABIDE controls used because diagnostic scores were unavailable for them.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "This yielded 27 subjects with IDs: 51457, 51464, 51468,  51474, 50642, 50643, 50645, 50646, 50647, 50649, 50651, 50652, 50653, 50655, 50002,  50003, 50004, 50006, 50007, 50012, 50016, 50019, 50022, 50024, 50025, 50053, 50056.",
+      "section": "methods",
+      "claim": "Final 27-subject ABIDE cohort is given as an explicit participant-ID list.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We applied scrubbing so that we kept 125 volumes with lowest framewise displacem",
+      "section": "methods",
+      "claim": "Motion control for the ABIDE replication used framewise-displacement-based scrubbing, retaining the 125 lowest-motion volumes per subject.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "Code used in this paper is available at  https://github.com/eglerean/hfASDmodules.",
+      "section": "methods",
+      "claim": "Analysis code, including the ABIDE participant-filtering script, is released on GitHub.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "When repeating the intersubject similarity analysis for the 27 ABIDE participants, we  obtained similar results as those for the within ASD group i.e. only the VTL subnetwork  showed significant correlation between subnetwork intersubject similarity and joint ADI- R/ADOS score similarity (p=0.0287) with moderate effect size (r = 0.17, Figure S4).",
+      "section": "results",
+      "claim": "In the ABIDE replication cohort, ventro-temporal-limbic (VTL) subnetwork similarity between ASD subject pairs significantly correlated with ADI-R/ADOS symptom-severity similarity (p=0.0287, r=0.17).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Between-group differences were observed in the composition of default-mode and a ventro- temporal-limbic (VTL) subnetwork.",
+      "section": "results",
+      "claim": "In the primary (non-ABIDE) movie-watching sample, ASD vs. typical subjects differed in default-mode and ventro-temporal-limbic subnetwork composition.",
+      "relevance_score": 0.5
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "ABIDE subset explicitly defined by site codes, IQ/sex phenotypic filters, and availability of ADI-R/ADOS scores, yielding a documented 27-subject ID list."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Demographic/clinical ranges (ADI-R, ADOS subscale ranges) reported for the final 27 ABIDE subjects."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "Custom FSL-based pipeline with 24-parameter motion regression, nuisance regression and framewise-displacement scrubbing fully specified for the ABIDE replication."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Low",
+        "support": "ADI-R and ADOS scores from the ABIDE phenotypic file used explicitly, with score ranges reported."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Unclear",
+        "support": "Sex and IQ matched by design (male, FIQ>=100); site and age not explicitly controlled for in the ABIDE replication analysis, though the original 5 sites are the same as the matched comparison dataset in a related paper."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Unclear",
+        "support": "No ABIDE control group was available (diagnostic scores missing for controls), so the ABIDE arm is a within-ASD correlation, not a group comparison; no site-covariate adjustment reported."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Scaled inclusivity / intersubject similarity of subnetwork structure, consistent with the primary movie dataset's methodology."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "Mantel test with permutation-based significance testing and effect size reported for the ABIDE replication (p=0.0287, r=0.17)."
+      }
+    ],
+    "overall": "Low",
+    "summary": "The ABIDE arm of this paper is a tightly specified, reproducible resting-state replication of a symptom-severity correlation finding, with an explicit 27-subject participant-ID list, though it lacks an ABIDE control group and explicit site/age covariate handling."
+  },
+  "charting": {
+    "source_id": "S-038",
+    "title": "Reorganization of functionally connected brain subnetworks in high-functioning autism",
+    "authors": "Glerean E; Pan RK; Salmi J; Kujala R; Lahnakoski J; Roine U; Nummenmaa L; Leppamaki S; Nieminen-von Wendt T; Tani P; Saramaki J; Sams M; Jaaskelainen IP",
+    "year": "2015",
+    "journal_conference": "Human Brain Mapping",
+    "doi": "10.1002/hbm.23084",
+    "database_retrieved": "unpaywall",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state (ABIDE replication arm); movie-watching (primary, non-ABIDE sample)",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "ADI-R, ADOS (from ABIDE phenotypic file v1.0b)",
+    "n_disordered": "27",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "Male only (SEX column filtered to value 1)",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "ADI-R social/verbal/RRB/onset and ADOS total/comm/social/stereotyped-behaviour score ranges reported",
+    "healthy_controls_included": "No",
+    "healthy_status_confirmed": "",
+    "n_controls": "",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI (ABIDE replication arm); task (movie-watching) fMRI (primary sample)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "Yes — analysis and ABIDE-filtering code at https://github.com/eglerean/hfASDmodules; explicit list of 27 ABIDE subject IDs given in supplement",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity (voxelwise subnetwork structure)",
+    "specific_features": "Scaled inclusivity / intersubject similarity of graph-theoretic subnetworks over a 6mm-isotropic voxel lattice (ventro-temporal-limbic, default-mode and other subnetworks)",
+    "feature_extraction_tools": "Custom FSL-based pipeline (24-parameter motion regression, nuisance regression, framewise-displacement scrubbing)",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "Mantel test with permutation-based significance testing",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "In an independent 27-subject ABIDE I resting-state replication cohort (ASD only), ventro-temporal-limbic subnetwork intersubject-similarity correlated significantly with ADI-R/ADOS symptom-severity similarity (p=0.0287, r=0.17), reproducing the paper's primary finding from a 13-vs-13 movie-watching fMRI sample that VTL subnetwork organization is reorganized in autism and tracks symptom severity.",
+    "features_associated_disorder": "Ventro-temporal-limbic (VTL) subnetwork (amygdala, striatum, thalamus, parahippocampal, fusiform, inferior temporal gyri) and default-mode subnetwork",
+    "future_directions_recommended": "",
+    "reviewer_notes": "This paper's primary dataset is NOT ABIDE (13 ASD vs. 13 matched controls watching a movie); ABIDE I contributes only a 27-subject ASD-only resting-state replication arm with no ABIDE control group, used to test a within-ASD symptom-severity correlation rather than an ASD-vs-control group difference.",
+    "custom_fields": {
+      "RQ1": "associational (within-ASD correlation, no ABIDE controls) | ABIDE I, 27 of 131 candidate ASD participants from 5 sites (CALTECH, CMU, PITT, UM_1, UM_2), restricted by IQ>=100, male sex, and availability of ADI-R/ADOS scores; explicit 27-subject ID list given. | quote: \"This yielded 27 subjects with IDs: 51457, 51464, 51468,  51474, 50642, 50643, 50645, 50646, 50647, 50649, 50651, 50652, 50653, 50655, 50002,  50003, 50004, 50006, 50007, 50012, 50016, 50019, 50022, 50024, 50025, 50053, 50056.\"",
+      "RQ2": "Custom FSL-based pipeline (not C-PAC/DPARSF/NIAK/CCS); no named cortical atlas — voxelwise 6mm-isotropic lattice. | quote: \"We applied scrubbing so that we kept 125 volumes with lowest framewise displacem\"",
+      "RQ3": "associational — within-ASD correlation between subnetwork similarity and symptom severity (no ASD-vs-control comparison in the ABIDE arm). | quote: \"We selected only ASD participants from the ABIDE database since diagnostic scores were  not available for controls.\"",
+      "RQ4": "Mantel test with permutation-based significance testing on subnetwork intersubject similarity vs. ADI-R/ADOS score similarity. | quote: \"only the VTL subnetwork  showed significant correlation between subnetwork intersubject similarity and joint ADI- R/ADOS score similarity (p=0.0287) with moderate effect size (r = 0.17, Figure S4).\"",
+      "RQ5": "VTL subnetwork similarity correlates with ADI-R/ADOS symptom-severity similarity (p=0.0287, r=0.17), replicating the movie-watching sample's finding. | quote: \"only the VTL subnetwork  showed significant correlation between subnetwork intersubject similarity and joint ADI- R/ADOS score similarity (p=0.0287) with moderate effect size (r = 0.17, Figure S4).\"",
+      "RQ6": "yes — participant list (explicit 27 ABIDE subject IDs given in supplementary methods). | quote: \"This yielded 27 subjects with IDs: 51457, 51464, 51468,  51474, 50642, 50643, 50645, 50646, 50647, 50649, 50651, 50652, 50653, 50655, 50002,  50003, 50004, 50006, 50007, 50012, 50016, 50019, 50022, 50024, 50025, 50053, 50056.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"This yielded 27 subjects with IDs: 51457, 51464, 51468,  51474, 50642, 50643, 50645, 50646, 50647, 50649, 50651, 50652, 50653, 50655, 50002,  50003, 50004, 50006, 50007, 50012, 50016, 50019, 50022, 50024, 50025, 50053, 50056.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes | quote: \"We applied scrubbing so that we kept 125 volumes with lowest framewise displacem\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly | quote: \"We then preprocessed each subject using the same  parameters as per our dataset.\"",
+      "CL4 Atlas/parcellation reported?": "No | quote: \"Additional 27 individuals with ASD from the ABIDE resting-state database were included to  test the reproducibility of the results.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "N/A | quote: \"This correlation was observed also within the controls, and\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No | quote: \"We selected the same 5 datasets used in (1), that is sites with  codes: 'CALTECH' (n=19), 'CMU' (n=14), 'PITT' (n=30), 'UM_1' (n=55), 'UM_2' (n=13) for  a total of 131 ASD participants.\"",
+      "CL7 Code and/or participant list available?": "Yes | quote: \"Code used in this paper is available at  https://github.com/eglerean/hfASDmodules.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Additional 27 individuals with ASD from the ABIDE resting-state database were included to  test the reproducibility of the results.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-038",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Yes",
+          "notes": "Explicit 27-subject ID list, derived via documented phenotypic filters from a 131-candidate, 5-site ABIDE subset."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "Yes",
+          "notes": "Framewise-displacement scrubbing retaining the 125 lowest-motion volumes, plus 24-parameter motion regression."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Pipeline and version reported?",
+          "rating": "Partial",
+          "notes": "Pipeline described as matching the primary dataset's custom FSL pipeline, but no named standard pipeline (C-PAC/DPARSF/NIAK) or version number given."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "No",
+          "notes": "Analysis performed on a voxelwise 6mm-isotropic lattice without a named ROI atlas."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Yes",
+          "notes": "ADI-R and ADOS scores from the ABIDE phenotypic file explicitly used, with score ranges reported."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "N/A",
+          "notes": "Not a predictive/classification analysis; not applicable."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "No",
+          "notes": "No site covariate or harmonisation reported for the pooled 5-site, 27-subject ABIDE analysis."
+        },
+        {
+          "item_text": "CL7 Code/participant list available?",
+          "rating": "Yes",
+          "notes": "Both analysis code and the explicit 27-subject ID list are published."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-038",
+    "study_design_sample_dataset": "Associational (within-ASD symptom-severity correlation); ABIDE I; 27 ASD participants (no ABIDE controls) from 5 sites (CALTECH, CMU, PITT, UM_1, UM_2), used as a replication arm alongside a primary 13-ASD/13-control movie-watching fMRI sample",
+    "methods": "Custom FSL-based preprocessing with 24-parameter motion regression and framewise-displacement scrubbing; graph-theoretic subnetwork construction and scaled-inclusivity intersubject similarity; Mantel permutation test against ADI-R/ADOS score similarity",
+    "outcomes": "Ventro-temporal-limbic subnetwork intersubject similarity correlated significantly with ADI-R/ADOS symptom-severity similarity in the ABIDE replication cohort (p=0.0287, r=0.17), reproducing the primary movie-watching finding",
+    "key_limitations": "No ABIDE control group (diagnostic scores unavailable for controls), so the ABIDE arm tests a within-ASD correlation rather than a group difference; no site or age covariate adjustment reported for the pooled 5-site ABIDE sample",
+    "relevance_notes": "An unusually well-documented example of an ABIDE subset reconstructible from the paper alone (explicit 27-subject ID list and public filtering code), useful as a high-confidence node in the dataset-publication knowledge graph",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1002/hbm.23084",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "27 ASD-only participants selected from 5 ABIDE I sites (CALTECH, CMU, PITT, UM_1, UM_2) by filtering the v1.0b composite phenotypic file for high-functioning (FIQ>=100), male subjects with valid ADI-R and ADOS scores; explicit subject-ID list given",
+    "n_by_dx": {
+      "ASD": 27,
+      "TD": 0,
+      "total": 27
+    },
+    "sites": "5 (CALTECH, CMU, PITT, UM_1, UM_2)",
+    "pipeline": "Custom FSL-based pipeline (24-parameter motion regression, nuisance regression, framewise-displacement scrubbing)",
+    "atlas": "None (voxelwise 6mm-isotropic lattice)",
+    "claim_type": "associational",
+    "finding": "Ventro-temporal-limbic subnetwork intersubject similarity correlates significantly with ADI-R/ADOS symptom-severity similarity among 27 ABIDE I ASD participants (p=0.0287, r=0.17), replicating a finding from an independent movie-watching fMRI sample.",
+    "reconstructible": "yes — participant list",
+    "evidence_quotes": [
+      "This yielded 27 subjects with IDs: 51457, 51464, 51468,  51474, 50642, 50643, 50645, 50646, 50647, 50649, 50651, 50652, 50653, 50655, 50002,  50003, 50004, 50006, 50007, 50012, 50016, 50019, 50022, 50024, 50025, 50053, 50056.",
+      "only the VTL subnetwork  showed significant correlation between subnetwork intersubject similarity and joint ADI- R/ADOS score similarity (p=0.0287) with moderate effect size (r = 0.17, Figure S4)."
+    ]
+  }
+}

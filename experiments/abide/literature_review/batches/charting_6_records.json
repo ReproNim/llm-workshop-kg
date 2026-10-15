@@ -1,0 +1,1979 @@
+[
+  {
+    "source_id": "S-056",
+    "pmid": "local_33bed9bf",
+    "doi": "10.11113/jurnalteknologi.v83.16389",
+    "screening": {
+      "decision": "include",
+      "reason": "Meets inclusion 2/3: analyses ABIDE I and ABIDE II fMRI data directly (as image slices) to classify ASD vs non-ASD, i.e. a diagnostic-prediction analysis, not just a citation or structural/DTI/phenotype-only use.",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "unpaywall_pdf"
+    },
+    "evidence_spans": [
+      {
+        "text": "ABIDE I dataset consists of 1112 \ntotal samples including 539 patients and 573 typical \ncontrols (TC) subjects. While ABIDE II dataset consists \nof 1114 total samples with 521 patients and 573 \ntypical controls (TC) subjects.",
+        "section": "methods",
+        "claim": "The study used the full ABIDE I (1112) and ABIDE II (1114) releases, 539/573 and 521/573 ASD/TD respectively.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "The original format of the image dataset is NIfTI-1 \ndata format file (NII format) which is in 3-Dimensional \n(3D) form. MRIcron software was used to convert the \n3D data format into 2D data images.",
+        "section": "methods",
+        "claim": "Raw 3D NIfTI volumes were converted to 2D images with MRIcron rather than processed through a connectivity pipeline.",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "In this research, the axial plane is used \nas the input samples.",
+        "section": "methods",
+        "claim": "A single axial-plane 2D slice per subject was used as the CNN input, not a connectivity matrix.",
+        "relevance_score": 0.7
+      },
+      {
+        "text": "The samples were separated into two folders \nwhich were the training file and test file.",
+        "section": "methods",
+        "claim": "Evaluation used a single train/test split with no cross-validation scheme described.",
+        "relevance_score": 0.6
+      },
+      {
+        "text": "The results achieved using CNN models namely \nVGG-16 and ResNet-50 are 63.4% and 87.0% accuracy, respectively.",
+        "section": "abstract",
+        "claim": "VGG-16 reached 63.4% and ResNet-50 reached 87.0% test accuracy classifying ASD vs non-ASD.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "The best CNN model in this project was \nachieved by ResNet50, with an accuracy of 87.0%.",
+        "section": "discussion",
+        "claim": "ResNet-50 was identified as the best-performing model at 87.0% accuracy.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "The performance of the CNN pre-trained model was \nevaluated using several measurements such as \nrecall, precision, and accuracy.",
+        "section": "methods",
+        "claim": "Performance was evaluated with recall, precision and accuracy only (no AUC, no uncertainty estimate).",
+        "relevance_score": 0.6
+      }
+    ],
+    "risk_of_bias": {
+      "assessments": [
+        {
+          "domain": "Participants",
+          "judgment": "Unclear",
+          "support": "N by diagnosis given for ABIDE I and II, but no inclusion/exclusion criteria, QC rule or site list reported beyond the raw release counts: \"ABIDE I dataset consists of 1112 total samples including 539 patients and 573 typical controls (TC) subjects.\""
+        },
+        {
+          "domain": "Predictors",
+          "judgment": "High",
+          "support": "Predictor is a single 2D axial-plane slice converted from the 3D NIfTI volume with no connectivity pipeline, atlas or feature-extraction method reported: \"MRIcron software was used to convert the  3D data format into 2D data images.\""
+        },
+        {
+          "domain": "Outcome",
+          "judgment": "Low",
+          "support": "Diagnostic label (Autism/Non-Autism) is the ABIDE phenotypic diagnosis, assigned independently of the image-based predictor."
+        },
+        {
+          "domain": "Analysis",
+          "judgment": "High",
+          "support": "Single train/test split, no cross-validation, no leave-site-out evaluation, and only point-estimate accuracy/recall/precision with no uncertainty reported: \"The samples were separated into two folders  which were the training file and test file.\""
+        }
+      ],
+      "overall": "High",
+      "summary": "Full ABIDE I+II release used as raw counts with no QC/exclusion rule; features are a single 2D brain-plane slice per subject with no connectivity pipeline or atlas; evaluation is a single train/test split with point-estimate accuracy only and no site handling."
+    },
+    "charting": {
+      "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+      "study_design": "Diagnostic prediction",
+      "n_disordered": "539 (ABIDE I) + 521 (ABIDE II) = 1060",
+      "n_controls": "573 (ABIDE I) + 573 (ABIDE II) = 1146",
+      "data_types": "resting-state fMRI (converted to 2D axial-plane image slices)",
+      "feature_extraction_tools": "MRIcron (3D NIfTI to 2D image slice conversion only; no connectivity pipeline reported)",
+      "specific_features": "",
+      "model_category": "Deep learning (CNN)",
+      "specific_algorithms": "VGG-16, ResNet-50 (pre-trained, fine-tuned)",
+      "validation_methodology": "Single train/test split; no cross-validation or leave-site-out evaluation reported",
+      "performance_metrics": "Accuracy, recall, precision",
+      "key_performance_results": "VGG-16 test accuracy 63.4%; ResNet-50 test accuracy 87.0% (best model)",
+      "features_associated_disorder": "",
+      "feature_change_direction": "",
+      "dataset_openly_available": "No statement on code or participant-list availability found",
+      "custom_fields": {
+        "RQ1": "ABIDE I (1112 total: 539 ASD/573 TD) and ABIDE II (1114 total: 521 ASD/573 TD) full releases used, ages 5-64; no QC/exclusion rule reported. | quote: \"ABIDE I dataset consists of 1112  total samples including 539 patients and 573 typical  controls (TC) subjects. While ABIDE II dataset consists  of 1114 total samples with 521 patients and 573  typical controls (TC) subjects.\"",
+        "RQ2": "No connectivity pipeline or atlas; raw 3D NIfTI volumes converted to 2D axial-plane image slices with MRIcron for direct CNN input. | quote: \"MRIcron software was used to convert the  3D data format into 2D data images.\"",
+        "RQ3": "predictive — CNN (VGG-16, ResNet-50) classification of ASD vs non-ASD from 2D brain-image slices. | quote: \"The results achieved using CNN models namely  VGG-16 and ResNet-50 are 63.4% and 87.0% accuracy, respectively.\"",
+        "RQ4": "Single train/test split, evaluated with accuracy, recall and precision; no cross-validation, no leave-site-out, no statistical correction reported. | quote: \"The samples were separated into two folders  which were the training file and test file.\"",
+        "RQ5": "ResNet-50 achieved the best test accuracy of 87.0% versus VGG-16's 63.4%; no AUC or confidence interval reported. | quote: \"The best CNN model in this project was  achieved by ResNet50, with an accuracy of 87.0%.\"",
+        "RQ6": "no — only aggregate ABIDE I/II sample counts are given; no participant list or exact inclusion/exclusion rule is published. | quote: \"ABIDE I dataset consists of 1112  total samples including 539 patients and 573 typical  controls (TC) subjects.\"",
+        "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis given for ABIDE I and ABIDE II but no inclusion/exclusion rule stated. | quote: \"ABIDE I dataset consists of 1112  total samples including 539 patients and 573 typical  controls (TC) subjects.\"",
+        "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion metric, threshold or QC rating is mentioned anywhere in the methods. | quote: \"The age range for both  datasets is between 5-64years.\"",
+        "CL3 Preprocessing pipeline and version reported?": "No — only MRIcron is named, used solely for 3D-to-2D slice conversion, not a connectivity preprocessing pipeline. | quote: \"MRIcron software was used to convert the  3D data format into 2D data images.\"",
+        "CL4 Atlas/parcellation reported?": "No — no atlas or parcellation is used; the predictor is a raw image slice. | quote: \"In this research, the axial plane is used  as the input samples.\"",
+        "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — no feature selection/scaling/harmonisation procedure or leakage control is described. | quote: \"The samples were separated into two folders  which were the training file and test file.\"",
+        "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — no site covariate, harmonisation or leave-site-out evaluation is reported. | quote: \"The samples were separated into two folders  which were the training file and test file.\"",
+        "CL7 Code and/or participant list available?": "No — no code repository or participant list availability statement found. | quote: \"The performance of the CNN pre-trained model was  evaluated using several measurements such as  recall, precision, and accuracy.\"",
+        "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The results achieved using CNN models namely  VGG-16 and ResNet-50 are 63.4% and 87.0% accuracy, respectively.\""
+      }
+    },
+    "critical_appraisal": {
+      "domain_1_participant_quality": {
+        "items": [
+          {
+            "item": "CL1",
+            "rating": "Partial",
+            "support": "N by diagnosis given for both releases but no inclusion/exclusion rule."
+          },
+          {
+            "item": "CL2",
+            "rating": "No",
+            "support": "No motion/QC rule reported."
+          }
+        ],
+        "overall_concern": "High"
+      },
+      "domain_2_predictors_features": {
+        "items": [
+          {
+            "item": "CL3",
+            "rating": "No",
+            "support": "No connectivity preprocessing pipeline; only slice-conversion software named."
+          },
+          {
+            "item": "CL4",
+            "rating": "No",
+            "support": "No atlas/parcellation used."
+          }
+        ],
+        "overall_concern": "High"
+      },
+      "domain_3_outcome_labels": {
+        "items": [
+          {
+            "item": "diagnosis source",
+            "rating": "Unclear",
+            "support": "Diagnosis is the ABIDE phenotypic label; source/criteria not restated in this paper."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_4_bias_transparency": {
+        "items": [
+          {
+            "item": "CL5",
+            "rating": "No",
+            "support": "No leakage-control statement."
+          },
+          {
+            "item": "CL6",
+            "rating": "No",
+            "support": "No site handling or leave-site-out evaluation."
+          },
+          {
+            "item": "CL7",
+            "rating": "No",
+            "support": "No code or participant-list availability statement."
+          }
+        ],
+        "overall_concern": "High"
+      }
+    },
+    "narrative_row": {
+      "study_design_sample_dataset": "Diagnostic prediction; ABIDE I+II full releases, 539/573 (ASD/TD) and 521/573 (ASD/TD) respectively, ages 5-64, sites not itemised.",
+      "methods": "3D NIfTI volumes converted to 2D axial-plane image slices (MRIcron) and classified with pre-trained CNNs (VGG-16, ResNet-50) using a single train/test split.",
+      "outcomes": "ResNet-50 achieved 87.0% test accuracy (best model); VGG-16 achieved 63.4%; evaluated with accuracy, recall and precision.",
+      "key_limitations": "No motion/QC rule, no connectivity pipeline or atlas, no cross-validation or site handling, and no participant-list/code availability statement.",
+      "relevance_notes": "Demonstrates ABIDE I+II used as raw image data for a non-connectivity CNN classifier; cohort cannot be reconstructed beyond the aggregate N reported.",
+      "review_specific_questions": ""
+    },
+    "kg_link": {
+      "doi": "10.11113/jurnalteknologi.v83.16389",
+      "dataset": "ABIDE I+II",
+      "relation": "uses-data",
+      "cohort_description": "Full ABIDE I (1112: 539 ASD/573 TD) and ABIDE II (1114: 521 ASD/573 TD) releases, ages 5-64; no further exclusion rule stated.",
+      "n_by_dx": {
+        "ASD": 1060,
+        "TD": 1146,
+        "total": 2226
+      },
+      "sites": "",
+      "pipeline": "MRIcron (3D-to-2D slice conversion only)",
+      "atlas": "",
+      "claim_type": "predictive",
+      "finding": "ResNet-50 achieved 87.0% test accuracy classifying ASD vs non-ASD from 2D axial brain-image slices, outperforming VGG-16 (63.4%).",
+      "reconstructible": "no",
+      "evidence_quotes": [
+        "ABIDE I dataset consists of 1112 \ntotal samples including 539 patients and 573 typical \ncontrols (TC) subjects. While ABIDE II dataset consists \nof 1114 total samples with 521 patients and 573 \ntypical controls (TC) subjects.",
+        "The results achieved using CNN models namely \nVGG-16 and ResNet-50 are 63.4% and 87.0% accuracy, respectively."
+      ]
+    }
+  },
+  {
+    "source_id": "S-062",
+    "pmid": "local_81234492",
+    "doi": "10.3389/fpsyt.2019.00620",
+    "screening": {
+      "decision": "include",
+      "reason": "Meets inclusion 2/3: analyses ABIDE I resting-state fMRI functional connectivity for both group-difference (over/under-connectivity) and SVM diagnostic classification.",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "unpaywall_pdf"
+    },
+    "evidence_spans": [
+      {
+        "text": "we selected a \nsubgroup of 190 subjects (102 with ASD and 88 TD) according to the following criteria: male \nchildren (age range: 6.5–13 years); rs-fMRI data acquired with open eyes; data from the \nUniversity sites that provided the largest number of scans (KKI, NYU, UCLA, UM).",
+        "section": "abstract",
+        "claim": "Cohort was a 190-subject (102 ASD, 88 TD) subset of ABIDE I selected by age, sex, eye status and site.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "We analyzed the preprocessed data available on the ABIDE \npreprocessed homepage (29, 30), using the Configurable Pipeline \nfor the Analysis of Connectomes (CPAC) (31), that includes slice-\ntiming, motion correction, intensity normalization, nuisance \nsignal removal (e.g. tissue signals, low-frequency drifts), and \nregistrations.",
+        "section": "methods",
+        "claim": "Preprocessing used the Preprocessed Connectomes Project CPAC pipeline.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "Both anatomical and functional atlases were chosen to derive the \nFC measures; in particular, we chose Harvard-Oxford (HO) and \nAutomatic Anatomical Labeling (AAL) as anatomical templates \nand Craddock-200 (CC) as functional templates to extract time \nseries from brain regions",
+        "section": "methods",
+        "claim": "Four atlases (AAL, HO, CC, Power) were compared for the connectivity analysis.",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "a leave-site out cross-validation scheme was performed: \neach training set was composed by all the sites except one, that \nwas left out for validation.",
+        "section": "methods",
+        "claim": "Classification used a leave-one-site-out cross-validation scheme.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "The mean L-SVM classification performance, \nin terms of the area under the ROC curve (AUC), was 0.75 ± 0.05. The highest performance \nwas obtained using data from KKI, NYU and UCLA sites in training and data from UM as testing \nset (AUC = 0.83).",
+        "section": "abstract",
+        "claim": "Leave-one-site-out SVM classification reached mean AUC 0.75 ± 0.05, best fold AUC 0.83.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "Specifically, stronger functional connectivity (FC) in ASD with respect to TD \ninvolve (p < 0.001) the angular gyrus with the precuneus in the right (R) hemisphere, and the \nR frontal operculum cortex with the pars opercularis of the left (L) inferior frontal gyrus.",
+        "section": "abstract",
+        "claim": "ASD showed hyper-connectivity between right angular gyrus-precuneus (DMN) and right frontal operculum-left IFG pars opercularis.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "implementation of the HO atlas. The binary classification \nresults between subjects with ASD and controls in a leave-one-\nsite-out cross-validation scheme achieved an average accuracy \nof 0.71 ± 0.06 and an average AUC of 0.75  ± 0.05.",
+        "section": "results",
+        "claim": "Best atlas (HO) gave leave-one-site-out accuracy 0.71 ± 0.06 and AUC 0.75 ± 0.05.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "DATA AVAILABILITY\nPublicly available datasets were analyzed in this study. This data \ncan be found here: http://fcon_1000.projects.nitrc.org/indi/abide/",
+        "section": "methods",
+        "claim": "Data availability statement points only to the general ABIDE repository, not a specific participant list for this subsample.",
+        "relevance_score": 0.5
+      }
+    ],
+    "risk_of_bias": {
+      "assessments": [
+        {
+          "domain": "Participants",
+          "judgment": "Low",
+          "support": "Explicit, stepwise selection criteria (age 6.5-13, male, eyes open, four most-populated sites) with resulting N by diagnosis given: \"we selected a subgroup of 190 subjects (102 with ASD and 88 TD) according to the following criteria\""
+        },
+        {
+          "domain": "Predictors",
+          "judgment": "Low",
+          "support": "Named pipeline (CPAC) and four named atlases (AAL, HO, CC, Power) with feature counts per atlas reported in Table 4."
+        },
+        {
+          "domain": "Outcome",
+          "judgment": "Low",
+          "support": "ASD/TD diagnosis is the ABIDE phenotypic diagnosis (DSM-5-based, ADOS Gotham scores reported), independent of the imaging predictor."
+        },
+        {
+          "domain": "Analysis",
+          "judgment": "Low",
+          "support": "Leave-one-site-out cross-validation used throughout, whole-brain features without a tuned feature-selection step, and fixed default SVM hyperparameter to avoid a leakage-prone nested search: \"a leave-site out cross-validation scheme was performed: each training set was composed by all the sites except one, that was left out for validation.\""
+        }
+      ],
+      "overall": "Low",
+      "summary": "Well-documented cohort-definition, pipeline, atlas choice and leave-one-site-out evaluation with no evident leakage; the main limitation is that only four of the larger ABIDE I sites are used and no held-out replication cohort is reported."
+    },
+    "charting": {
+      "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+      "study_design": "Both",
+      "n_disordered": "102",
+      "n_controls": "88",
+      "data_types": "resting-state fMRI",
+      "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (CPAC), via the ABIDE Preprocessed Connectomes Project",
+      "specific_features": "Pearson-correlation (Fisher z-transformed) functional connectivity using AAL, Harvard-Oxford (HO), Craddock-200 (CC) and Power atlases",
+      "model_category": "Linear-kernel Support Vector Machine (L-SVM)",
+      "specific_algorithms": "Linear SVM classification, compared across AAL/HO/CC/Power parcellations",
+      "validation_methodology": "Leave-one-site-out cross-validation across KKI, NYU, UCLA, UM",
+      "performance_metrics": "AUC, accuracy, sensitivity, specificity",
+      "key_performance_results": "Best atlas (HO): mean leave-one-site-out AUC 0.75 ± 0.05, accuracy 0.71 ± 0.06; best fold (train KKI/NYU/UCLA, test UM) AUC 0.83",
+      "features_associated_disorder": "Stronger (hyper-) connectivity in ASD between right angular gyrus and right precuneus (DMN), and between right frontal operculum and left IFG pars opercularis; weaker (hypo-) connections also reported (e.g. intra-hemispheric right temporal fusiform)",
+      "feature_change_direction": "Mixed hyper- and hypo-connectivity, varying by connection",
+      "dataset_openly_available": "No study-specific participant list or code; only the general ABIDE repository link is given",
+      "custom_fields": {
+        "RQ1": "ABIDE I, a selected subgroup of 190 subjects (102 ASD, 88 TD) from four sites (KKI, NYU, UCLA, UM), restricted to male children aged 6.5-13 years with eyes-open rs-fMRI. | quote: \"we selected a subgroup of 190 subjects (102 with ASD and 88 TD) according to the following criteria: male children (age range: 6.5–13 years); rs-fMRI data acquired with open eyes; data from the University sites that provided the largest number of scans (KKI, NYU, UCLA, UM).\"",
+        "RQ2": "ABIDE Preprocessed Connectomes Project CPAC pipeline; four atlases compared (AAL, Harvard-Oxford, Craddock-200, Power). | quote: \"using the Configurable Pipeline for the Analysis of Connectomes (CPAC) (31), that includes slice- timing, motion correction, intensity normalization, nuisance signal removal\"",
+        "RQ3": "both — reports both group-difference (over/under-connectivity via permutation test) and diagnostic classification (linear SVM). | quote: \"A permutation test was conducted to identify over-connectivity and under-connectivity alterations in the ASD group.\"",
+        "RQ4": "Leave-one-site-out cross-validation for classification; permutation testing with significance thresholds (p<0.01, 0.005, 0.001) for connectivity differences. | quote: \"a leave-site out cross-validation scheme was performed: each training set was composed by all the sites except one, that was left out for validation.\"",
+        "RQ5": "Hyper-connectivity in ASD between right angular gyrus-precuneus (DMN) and right frontal operculum-left IFG; best leave-one-site-out classification AUC 0.75±0.05 (HO atlas), best single fold AUC 0.83. | quote: \"The mean L-SVM classification performance, in terms of the area under the ROC curve (AUC), was 0.75 ± 0.05.\"",
+        "RQ6": "partly — exact numeric selection rules (age, sex, eye status, site) are given but no participant-ID list, and the data-availability statement only links to the general ABIDE repository. | quote: \"Publicly available datasets were analyzed in this study. This data can be found here: http://fcon_1000.projects.nitrc.org/indi/abide/\"",
+        "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — stepwise selection criteria and resulting N (102 ASD/88 TD) are given. | quote: \"we selected a subgroup of 190 subjects (102 with ASD and 88 TD) according to the following criteria\"",
+        "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — motion correction is named as a CPAC preprocessing step but no specific motion metric or threshold for subject exclusion is given. | quote: \"using the Configurable Pipeline for the Analysis of Connectomes (CPAC) (31), that includes slice- timing, motion correction, intensity normalization, nuisance signal removal\"",
+        "CL3 Preprocessing pipeline and version reported?": "Yes — CPAC named with the specific processing strategies used. | quote: \"using the Configurable Pipeline for the Analysis of Connectomes (CPAC) (31)\"",
+        "CL4 Atlas/parcellation reported?": "Yes — four named atlases (AAL, HO, CC, Power). | quote: \"we chose Harvard-Oxford (HO) and Automatic Anatomical Labeling (AAL) as anatomical templates and Craddock-200 (CC) as functional templates\"",
+        "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Partly — no feature selection was used (avoiding that leakage route) and the SVM C hyperparameter was fixed rather than tuned to avoid a nested-CV leak, but this is stated as a design choice rather than an explicit leakage-control procedure. | quote: \"to avoid running optimization of hyperparameters, which would have required and additional nested cross validation\"",
+        "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — leave-one-site-out cross-validation across the four sites. | quote: \"a leave-site out cross-validation scheme was performed: each training set was composed by all the sites except one, that was left out for validation.\"",
+        "CL7 Code and/or participant list available?": "No — data-availability statement only links to the general ABIDE repository, no study-specific participant list or code repository. | quote: \"Publicly available datasets were analyzed in this study. This data can be found here: http://fcon_1000.projects.nitrc.org/indi/abide/\"",
+        "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"We analyzed the preprocessed data available on the ABIDE preprocessed homepage\""
+      }
+    },
+    "critical_appraisal": {
+      "domain_1_participant_quality": {
+        "items": [
+          {
+            "item": "CL1",
+            "rating": "Yes",
+            "support": "Explicit stepwise selection criteria and resulting N by diagnosis."
+          },
+          {
+            "item": "CL2",
+            "rating": "Partial",
+            "support": "Motion correction named as a pipeline step but no subject-level motion threshold given."
+          }
+        ],
+        "overall_concern": "Low"
+      },
+      "domain_2_predictors_features": {
+        "items": [
+          {
+            "item": "CL3",
+            "rating": "Yes",
+            "support": "CPAC pipeline and processing strategies named."
+          },
+          {
+            "item": "CL4",
+            "rating": "Yes",
+            "support": "Four named atlases compared."
+          }
+        ],
+        "overall_concern": "Low"
+      },
+      "domain_3_outcome_labels": {
+        "items": [
+          {
+            "item": "diagnosis source",
+            "rating": "Yes",
+            "support": "ASD/TD is the ABIDE phenotypic diagnosis; ADOS Gotham total/severity scores reported per site."
+          }
+        ],
+        "overall_concern": "Low"
+      },
+      "domain_4_bias_transparency": {
+        "items": [
+          {
+            "item": "CL5",
+            "rating": "Partial",
+            "support": "No tuned feature selection (reduces leakage risk) but no explicit leakage-control statement."
+          },
+          {
+            "item": "CL6",
+            "rating": "Yes",
+            "support": "Leave-one-site-out cross-validation reported."
+          },
+          {
+            "item": "CL7",
+            "rating": "No",
+            "support": "No study-specific participant list or code; only the general ABIDE link given."
+          }
+        ],
+        "overall_concern": "Some"
+      }
+    },
+    "narrative_row": {
+      "study_design_sample_dataset": "Both (group-difference + diagnostic prediction); ABIDE I subset of 190 male children (102 ASD, 88 TD), ages 6.5-13, from KKI, NYU, UCLA and UM.",
+      "methods": "CPAC-preprocessed rs-fMRI; functional connectivity under AAL, HO, CC and Power atlases; permutation testing for group differences; linear-SVM classification with leave-one-site-out cross-validation.",
+      "outcomes": "Best atlas (HO): leave-one-site-out mean AUC 0.75±0.05, accuracy 0.71±0.06, best fold AUC 0.83; hyper-connectivity in ASD between right angular gyrus-precuneus and right frontal operculum-left IFG, plus weaker connections elsewhere.",
+      "key_limitations": "Restricted to male children at four sites; no study-specific participant list published; feature selection not attempted so no leakage-control procedure was needed or described in detail.",
+      "relevance_notes": "A methodologically thorough ABIDE I subset analysis combining connectivity group-difference findings with a properly site-cross-validated SVM classifier; selection rule is exact enough to approximate reconstruction but no ID list is given.",
+      "review_specific_questions": ""
+    },
+    "kg_link": {
+      "doi": "10.3389/fpsyt.2019.00620",
+      "dataset": "ABIDE I",
+      "relation": "uses-data",
+      "cohort_description": "Male children aged 6.5-13 years, rs-fMRI acquired with open eyes, from the four most-populated sites (KKI, NYU, UCLA, UM); 190 subjects (102 ASD, 88 TD).",
+      "n_by_dx": {
+        "ASD": 102,
+        "TD": 88,
+        "total": 190
+      },
+      "sites": "KKI, NYU, UCLA, UM",
+      "pipeline": "CPAC (Configurable Pipeline for the Analysis of Connectomes), ABIDE Preprocessed Connectomes Project",
+      "atlas": "AAL, Harvard-Oxford, Craddock-200, Power",
+      "claim_type": "both",
+      "finding": "Leave-one-site-out linear-SVM classification achieved mean AUC 0.75±0.05 (HO atlas, accuracy 0.71±0.06); ASD showed hyper-connectivity between right angular gyrus-precuneus and right frontal operculum-left IFG, and weaker connections elsewhere.",
+      "reconstructible": "partly",
+      "evidence_quotes": [
+        "we selected a \nsubgroup of 190 subjects (102 with ASD and 88 TD) according to the following criteria: male \nchildren (age range: 6.5–13 years); rs-fMRI data acquired with open eyes; data from the \nUniversity sites that provided the largest number of scans (KKI, NYU, UCLA, UM).",
+        "The mean L-SVM classification performance, \nin terms of the area under the ROC curve (AUC), was 0.75 ± 0.05."
+      ]
+    }
+  },
+  {
+    "source_id": "S-064",
+    "pmid": "local_730ab177",
+    "doi": "10.3389/frai.2025.1594372",
+    "screening": {
+      "decision": "include",
+      "reason": "Meets inclusion 2/3: analyses ABIDE I rs-fMRI connectivity data for a deep-learning-based ASD vs typical-control diagnostic classification.",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "unpaywall_pdf"
+    },
+    "evidence_spans": [
+      {
+        "text": "The rs-fMRI data used in this study were sourced from\nthe ABIDE I dataset, comprising 505 autistic individuals and\n530 typical controls (TCs).",
+        "section": "methods",
+        "claim": "Dataset was ABIDE I with 505 ASD and 530 TC subjects.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "The data is preprocessed using the Conﬁgurable Pipeline for\nthe Analysis of Connectomes (CPAC) pipeline, which includes\nessential steps such as slice timing correction, voxel intensity\nnormalization, motion correction, nuisance signal removal, global\nsignal regression, band-pass ﬁltering, and spatial registration.",
+        "section": "methods",
+        "claim": "Preprocessing used the CPAC pipeline with standard steps including motion correction.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "After preprocessing and quality control, the ﬁnal dataset consists\nof 1,035 samples distributed as follows: 623 samples for the\ntraining set, 308 samples for the validation set, and 104 samples\nfor the test set.",
+        "section": "methods",
+        "claim": "After QC, 1,035 subjects were split into a single train/validation/test partition (623/308/104), with no cross-validation or site handling described.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "Functional connectivity matrices are derived from three brain\natlases (AAL, CC, EZ) using Pearson correlation coeﬃcients, which\nare ﬂattened into one-dimensional vectors.",
+        "section": "methods",
+        "claim": "Features are Pearson-correlation connectivity matrices from three atlases (AAL, CC, EZ).",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "Results: The proposed model is evaluated using multiple ASD datasets. The\nperformance metrics include an average accuracy of 0.735, sensitivity of 0.765,\nand speciﬁcity of 0.752, surpassing the results of existing state-of-the-art\nmethods.",
+        "section": "abstract",
+        "claim": "Average performance across the three atlas-based datasets: accuracy 0.735, sensitivity 0.765, specificity 0.752.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "our developed\nMHOA based on the SSDAE model has accuracy 66.35%, 70.19%,\nand 83.82% for EZ, AAL, and CC, respectively.",
+        "section": "results",
+        "claim": "Per-atlas accuracy: EZ 66.35%, AAL 70.19%, CC 83.82%.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "Data availability statement\nPublicly available datasets were analyzed in this study. This data\ncan be found here: https://www.nature.com/articles/s41598-022-\n09821-6.",
+        "section": "methods",
+        "claim": "Data-availability statement links only to a general ABIDE-derived dataset reference, not a study-specific participant list or code.",
+        "relevance_score": 0.5
+      }
+    ],
+    "risk_of_bias": {
+      "assessments": [
+        {
+          "domain": "Participants",
+          "judgment": "Unclear",
+          "support": "N by diagnosis given (505 ASD/530 TC) and a post-QC total of 1,035 stated, but no explicit inclusion/exclusion rule or motion/QC threshold is described: \"The rs-fMRI data used in this study were sourced from the ABIDE I dataset, comprising 505 autistic individuals and 530 typical controls (TCs).\""
+        },
+        {
+          "domain": "Predictors",
+          "judgment": "Low",
+          "support": "CPAC pipeline and three named atlases (AAL, CC, EZ) with Pearson-correlation connectivity matrices clearly described."
+        },
+        {
+          "domain": "Outcome",
+          "judgment": "Low",
+          "support": "ASD/TC labels are the ABIDE phenotypic diagnosis, assigned independently of the imaging-derived predictors."
+        },
+        {
+          "domain": "Analysis",
+          "judgment": "High",
+          "support": "Single fixed train/validation/test split with no cross-validation or leave-site-out evaluation, and only point-estimate accuracy/sensitivity/specificity with no uncertainty reported: \"the ﬁnal dataset consists of 1,035 samples distributed as follows: 623 samples for the training set, 308 samples for the validation set, and 104 samples for the test set.\""
+        }
+      ],
+      "overall": "High",
+      "summary": "Pipeline and atlas choices are clearly reported, but cohort QC/exclusion detail is thin and evaluation relies on a single random train/validation/test split with no cross-validation or site handling."
+    },
+    "charting": {
+      "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+      "study_design": "Diagnostic prediction",
+      "n_disordered": "505",
+      "n_controls": "530",
+      "data_types": "resting-state fMRI",
+      "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (CPAC)",
+      "specific_features": "Pearson-correlation functional connectivity matrices using AAL, Craddock (CC) and EZ atlases",
+      "model_category": "Deep learning hybrid (Stacked Sparse Denoising Autoencoder + Multi-Layer Perceptron) with metaheuristic feature selection",
+      "specific_algorithms": "SSDAE-MLP hybrid with modified Hiking Optimization Algorithm (HOA with Dynamic Opposites Learning and Double Attractors) for feature selection",
+      "validation_methodology": "Single fixed train/validation/test split (623/308/104 of 1,035 samples); no cross-validation or leave-site-out evaluation reported",
+      "performance_metrics": "Accuracy, sensitivity, specificity",
+      "key_performance_results": "Average accuracy 0.735, sensitivity 0.765, specificity 0.752; per-atlas accuracy EZ 66.35%, AAL 70.19%, CC 83.82%",
+      "features_associated_disorder": "",
+      "feature_change_direction": "",
+      "dataset_openly_available": "No study-specific participant list or code; data-availability statement only links to a general dataset reference",
+      "custom_fields": {
+        "RQ1": "ABIDE I, 505 autistic individuals and 530 typical controls; after preprocessing and quality control the final analysed dataset was 1,035 samples; no explicit exclusion-rule text beyond mentioning QC. | quote: \"The rs-fMRI data used in this study were sourced from the ABIDE I dataset, comprising 505 autistic individuals and 530 typical controls (TCs).\"",
+        "RQ2": "CPAC pipeline (slice timing, motion correction, nuisance regression, band-pass filtering); three atlases (AAL, CC, EZ) used to build Pearson-correlation connectivity matrices. | quote: \"The data is preprocessed using the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) pipeline, which includes essential steps such as slice timing correction, voxel intensity normalization, motion correction, nuisance signal removal, global signal regression, band-pass ﬁltering, and spatial registration.\"",
+        "RQ3": "predictive — SSDAE+MLP hybrid deep-learning classifier for ASD vs TC. | quote: \"Results: The proposed model is evaluated using multiple ASD datasets. The performance metrics include an average accuracy of 0.735, sensitivity of 0.765, and speciﬁcity of 0.752, surpassing the results of existing state-of-the-art methods.\"",
+        "RQ4": "Single fixed train/validation/test split (623/308/104); no cross-validation, no leave-site-out, no statistical correction reported. | quote: \"the ﬁnal dataset consists of 1,035 samples distributed as follows: 623 samples for the training set, 308 samples for the validation set, and 104 samples for the test set.\"",
+        "RQ5": "Average accuracy 0.735 (sensitivity 0.765, specificity 0.752) across three atlas-based datasets; best per-atlas accuracy 83.82% (CC atlas); no AUC or CI reported. | quote: \"our developed MHOA based on the SSDAE model has accuracy 66.35%, 70.19%, and 83.82% for EZ, AAL, and CC, respectively.\"",
+        "RQ6": "no — only aggregate N and split sizes are given; data-availability statement links to a general dataset reference, not a study-specific participant list or code. | quote: \"Publicly available datasets were analyzed in this study. This data can be found here:\"",
+        "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis given (505/530) and a post-QC total (1,035) stated, but no explicit inclusion/exclusion criteria text. | quote: \"The rs-fMRI data used in this study were sourced from the ABIDE I dataset, comprising 505 autistic individuals and 530 typical controls (TCs).\"",
+        "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — motion correction and \"quality control\" are mentioned but no specific metric or threshold is given. | quote: \"After preprocessing and quality control, the ﬁnal dataset consists of 1,035 samples distributed as follows\"",
+        "CL3 Preprocessing pipeline and version reported?": "Yes — CPAC pipeline with its processing steps named. | quote: \"The data is preprocessed using the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) pipeline\"",
+        "CL4 Atlas/parcellation reported?": "Yes — three named atlases (AAL, CC, EZ). | quote: \"Functional connectivity matrices are derived from three brain atlases (AAL, CC, EZ) using Pearson correlation coeﬃcients\"",
+        "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — the feature-selection (HOA) and autoencoder pre-training steps are described without stating whether they were fit on the training split only. | quote: \"The SSDAE comprises two autoencoder layers: the ﬁrst encoding layer has 1,000 units, and the second reduces the representation to 600 units.\"",
+        "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — no site covariate, harmonisation or leave-site-out evaluation is reported; evaluation is a pooled random split. | quote: \"the ﬁnal dataset consists of 1,035 samples distributed as follows: 623 samples for the training set, 308 samples for the validation set, and 104 samples for the test set.\"",
+        "CL7 Code and/or participant list available?": "No — data-availability statement only links to a general dataset reference, no code repository or participant list for this study. | quote: \"Publicly available datasets were analyzed in this study. This data can be found here:\"",
+        "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The rs-fMRI data used in this study were sourced from the ABIDE I dataset, comprising 505 autistic individuals and 530 typical controls (TCs).\""
+      }
+    },
+    "critical_appraisal": {
+      "domain_1_participant_quality": {
+        "items": [
+          {
+            "item": "CL1",
+            "rating": "Partial",
+            "support": "N by diagnosis and post-QC total given, but no explicit inclusion/exclusion criteria text."
+          },
+          {
+            "item": "CL2",
+            "rating": "Partial",
+            "support": "QC mentioned generically, no metric/threshold given."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_2_predictors_features": {
+        "items": [
+          {
+            "item": "CL3",
+            "rating": "Yes",
+            "support": "CPAC pipeline named with its steps."
+          },
+          {
+            "item": "CL4",
+            "rating": "Yes",
+            "support": "Three named atlases (AAL, CC, EZ)."
+          }
+        ],
+        "overall_concern": "Low"
+      },
+      "domain_3_outcome_labels": {
+        "items": [
+          {
+            "item": "diagnosis source",
+            "rating": "Unclear",
+            "support": "ASD/TC labels are the ABIDE phenotypic diagnosis; this paper does not restate the diagnostic criteria used by ABIDE sites."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_4_bias_transparency": {
+        "items": [
+          {
+            "item": "CL5",
+            "rating": "No",
+            "support": "No statement that feature selection/autoencoder pre-training was confined to training data."
+          },
+          {
+            "item": "CL6",
+            "rating": "No",
+            "support": "No site handling or leave-site-out evaluation; single pooled split."
+          },
+          {
+            "item": "CL7",
+            "rating": "No",
+            "support": "No study-specific participant list or code."
+          }
+        ],
+        "overall_concern": "High"
+      }
+    },
+    "narrative_row": {
+      "study_design_sample_dataset": "Diagnostic prediction; ABIDE I, 505 ASD and 530 TC, post-QC total 1,035, split 623/308/104 train/validation/test, sites not itemised.",
+      "methods": "CPAC-preprocessed rs-fMRI; Pearson-correlation connectivity matrices from AAL, CC and EZ atlases; SSDAE+MLP hybrid deep-learning classifier with a modified Hiking Optimization Algorithm for feature selection.",
+      "outcomes": "Average accuracy 0.735, sensitivity 0.765, specificity 0.752 across the three atlas-based datasets; best per-atlas accuracy 83.82% (CC atlas).",
+      "key_limitations": "Single fixed train/validation/test split with no cross-validation or site handling; no explicit leakage-control statement for feature selection/pre-training; no study-specific participant list or code.",
+      "relevance_notes": "Illustrates a deep-learning feature-selection approach on ABIDE I benchmarked against a prior published split strategy (Liu et al., 2024), but with limited reproducibility detail.",
+      "review_specific_questions": ""
+    },
+    "kg_link": {
+      "doi": "10.3389/frai.2025.1594372",
+      "dataset": "ABIDE I",
+      "relation": "uses-data",
+      "cohort_description": "505 autistic individuals and 530 typical controls from ABIDE I, ages 10.0-35.0 (ASD) and 10.0-33.7 (TC); after preprocessing and quality control, final dataset of 1,035 samples.",
+      "n_by_dx": {
+        "ASD": 505,
+        "TD": 530,
+        "total": 1035
+      },
+      "sites": "",
+      "pipeline": "CPAC (Configurable Pipeline for the Analysis of Connectomes)",
+      "atlas": "AAL, Craddock (CC), EZ",
+      "claim_type": "predictive",
+      "finding": "SSDAE+MLP hybrid with modified Hiking Optimization Algorithm feature selection achieved average accuracy 0.735 (sensitivity 0.765, specificity 0.752) across three atlas-based ABIDE I datasets, best per-atlas accuracy 83.82% (CC atlas).",
+      "reconstructible": "no",
+      "evidence_quotes": [
+        "The rs-fMRI data used in this study were sourced from\nthe ABIDE I dataset, comprising 505 autistic individuals and\n530 typical controls (TCs).",
+        "Results: The proposed model is evaluated using multiple ASD datasets. The\nperformance metrics include an average accuracy of 0.735, sensitivity of 0.765,\nand speciﬁcity of 0.752, surpassing the results of existing state-of-the-art\nmethods."
+      ]
+    }
+  },
+  {
+    "source_id": "S-069",
+    "pmid": "local_7424ae8d",
+    "doi": "10.35377/saucis.04.01.879735",
+    "screening": {
+      "decision": "include",
+      "reason": "Meets inclusion 2/3: analyses ABIDE I resting-state fMRI connectivity to classify ASD vs typical control with RNN/LSTM/CNN deep-learning models.",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "unpaywall_pdf"
+    },
+    "evidence_spans": [
+      {
+        "text": "we used the same 871 samples from the ABIDE 1 data set [23], [24], [25]. Of the 871 subjects, 403 patients were ASD and 468 were TC patients.",
+        "section": "methods",
+        "claim": "Cohort was a commonly-used 871-subject ABIDE I subset: 403 ASD, 468 TC.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "In this study, we used multiscale functional brain parcels. Brain parcels were created using a method known as the bootstrap analysis of stable clusters called BASC [32]. Scales were selected using a data- based method called MSTEPS [33]. There are different scales in this method. In this study, the scale is set to 122.",
+        "section": "methods",
+        "claim": "Parcellation used the BASC atlas at scale 122, selected via MSTEPS.",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "An edge between a pair of ROIs is usually weighted with the Pearson correlation coefficient (PCC).",
+        "section": "methods",
+        "claim": "Functional connectivity edges were defined using the Pearson correlation coefficient.",
+        "relevance_score": 0.6
+      },
+      {
+        "text": "Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method. The main purpose of this process is to use each data for both training and testing.",
+        "section": "methods",
+        "claim": "Evaluation used 10-fold cross-validation (no site-based split mentioned).",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "Table 2 Average classification performances \nMETHOD \nACC \nSENS \nSPEC \nRNN \n74.74 \n72.95 \n76.28",
+        "section": "table",
+        "claim": "Best model (RNN) achieved 10-fold CV accuracy 74.74%, sensitivity 72.95%, specificity 76.28%.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "Table 2 shows the average classification performances obtained by 10-fold cross-validation tests. When the classification results are examined, it is seen that the highest performance value is provided by RNN with 74.74%.",
+        "section": "results",
+        "claim": "RNN was the best-performing model at 74.74% accuracy.",
+        "relevance_score": 0.9
+      }
+    ],
+    "risk_of_bias": {
+      "assessments": [
+        {
+          "domain": "Participants",
+          "judgment": "Unclear",
+          "support": "N by diagnosis given (403 ASD/468 TC) by reusing a commonly-cited 871-subject subset, but no inclusion/exclusion rule or motion/QC threshold specific to this paper is reported: \"we used the same 871 samples from the ABIDE 1 data set [23], [24], [25]. Of the 871 subjects, 403 patients were ASD and 468 were TC patients.\""
+        },
+        {
+          "domain": "Predictors",
+          "judgment": "Low",
+          "support": "Atlas (BASC, scale 122 via MSTEPS) and connectivity measure (PCC) are clearly specified."
+        },
+        {
+          "domain": "Outcome",
+          "judgment": "Low",
+          "support": "ASD/TC labels are the ABIDE phenotypic diagnosis, independent of the connectivity-derived predictors."
+        },
+        {
+          "domain": "Analysis",
+          "judgment": "High",
+          "support": "10-fold cross-validation is pooled across sites with no site handling, leave-site-out evaluation, or leakage-control statement for any preprocessing/feature steps: \"Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method.\""
+        }
+      ],
+      "overall": "High",
+      "summary": "Cohort and atlas are specified, but no motion/QC rule, no site handling (pooled 10-fold CV), and no leakage-control or code/participant-list availability statement."
+    },
+    "charting": {
+      "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+      "study_design": "Diagnostic prediction",
+      "n_disordered": "403",
+      "n_controls": "468",
+      "data_types": "resting-state fMRI",
+      "feature_extraction_tools": "",
+      "specific_features": "Pearson correlation coefficient functional connectivity using the BASC atlas (scale 122, selected via MSTEPS)",
+      "model_category": "Deep learning (recurrent and convolutional neural networks)",
+      "specific_algorithms": "RNN, BiRNN, LSTM, BiLSTM, CNN, CNN-RNN, CNN-BiRNN",
+      "validation_methodology": "10-fold cross-validation (pooled across sites; no leave-site-out)",
+      "performance_metrics": "Accuracy (ACC), sensitivity (SENS), specificity (SPEC)",
+      "key_performance_results": "Best model RNN: accuracy 74.74%, sensitivity 72.95%, specificity 76.28% (10-fold CV average)",
+      "features_associated_disorder": "",
+      "feature_change_direction": "",
+      "dataset_openly_available": "No statement on code or participant-list availability found",
+      "custom_fields": {
+        "RQ1": "ABIDE I, the same commonly-used 871-subject subset (403 ASD, 468 TC); no study-specific exclusion/QC rule is described beyond reusing this subset. | quote: \"we used the same 871 samples from the ABIDE 1 data set [23], [24], [25]. Of the 871 subjects, 403 patients were ASD and 468 were TC patients.\"",
+        "RQ2": "No named preprocessing pipeline (e.g. CPAC/DPARSF); connectivity derived using the BASC atlas (scale 122 via MSTEPS) and Pearson correlation. | quote: \"we used multiscale functional brain parcels. Brain parcels were created using a method known as the bootstrap analysis of stable clusters called BASC [32].\"",
+        "RQ3": "predictive — RNN/LSTM/CNN and hybrid models classify ASD vs TC from functional connectivity. | quote: \"The long short-term memory network (LSTM), convolutional neural network (CNN) , and hybrid models are used together for the classification process.\"",
+        "RQ4": "10-fold cross-validation, pooled across sites, no site covariate or leave-site-out evaluation, no statistical correction reported. | quote: \"Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method.\"",
+        "RQ5": "Best model (RNN) reached 74.74% accuracy, 72.95% sensitivity, 76.28% specificity on 10-fold CV; no AUC or CI reported. | quote: \"the highest performance value is provided by RNN with 74.74%.\"",
+        "RQ6": "no — reuses a commonly-cited ABIDE I subset (871 subjects) referenced to prior papers, with no participant-ID list or exact exclusion rule of its own. | quote: \"we used the same 871 samples from the ABIDE 1 data set [23], [24], [25].\"",
+        "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis given (403 ASD/468 TC) but defined only by reuse of a prior subset, with no exclusion rule of its own. | quote: \"Of the 871 subjects, 403 patients were ASD and 468 were TC patients.\"",
+        "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion metric or QC threshold is reported. | quote: \"Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method.\"",
+        "CL3 Preprocessing pipeline and version reported?": "No — no named preprocessing pipeline (e.g. CPAC/DPARSF) or version is given. | quote: \"we used multiscale functional brain parcels. Brain parcels were created using a method known as the bootstrap analysis of stable clusters called BASC [32].\"",
+        "CL4 Atlas/parcellation reported?": "Yes — BASC atlas at scale 122, selected via MSTEPS. | quote: \"In this study, the scale is set to 122.\"",
+        "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — no statement that any preprocessing or feature step was confined to the training folds. | quote: \"Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method. The main purpose of this process is to use each data for both training and testing.\"",
+        "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — 10-fold cross-validation is pooled across subjects with no site covariate or leave-site-out evaluation. | quote: \"Tests on the ABIDE I data set were carried out using the 10-fold cross-validation method.\"",
+        "CL7 Code and/or participant list available?": "No — no code repository or participant-list availability statement found. | quote: \"we used the same 871 samples from the ABIDE 1 data set [23], [24], [25].\"",
+        "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Within the study's scope, ASD and healthy individuals were distinguished on 871 samples obtained from the ABIDE I data set.\""
+      }
+    },
+    "critical_appraisal": {
+      "domain_1_participant_quality": {
+        "items": [
+          {
+            "item": "CL1",
+            "rating": "Partial",
+            "support": "N by diagnosis given but defined by reusing a prior subset with no new exclusion rule."
+          },
+          {
+            "item": "CL2",
+            "rating": "No",
+            "support": "No motion/QC rule reported."
+          }
+        ],
+        "overall_concern": "High"
+      },
+      "domain_2_predictors_features": {
+        "items": [
+          {
+            "item": "CL3",
+            "rating": "No",
+            "support": "No named preprocessing pipeline given."
+          },
+          {
+            "item": "CL4",
+            "rating": "Yes",
+            "support": "BASC atlas at scale 122 named."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_3_outcome_labels": {
+        "items": [
+          {
+            "item": "diagnosis source",
+            "rating": "Unclear",
+            "support": "ASD/TC labels are the ABIDE phenotypic diagnosis; diagnostic criteria not restated here."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_4_bias_transparency": {
+        "items": [
+          {
+            "item": "CL5",
+            "rating": "No",
+            "support": "No leakage-control statement for the 10-fold procedure."
+          },
+          {
+            "item": "CL6",
+            "rating": "No",
+            "support": "Pooled 10-fold CV, no site handling or leave-site-out."
+          },
+          {
+            "item": "CL7",
+            "rating": "No",
+            "support": "No code or participant-list availability statement."
+          }
+        ],
+        "overall_concern": "High"
+      }
+    },
+    "narrative_row": {
+      "study_design_sample_dataset": "Diagnostic prediction; ABIDE I, a commonly-cited 871-subject subset (403 ASD, 468 TC), sites not itemised.",
+      "methods": "BASC-atlas (scale 122) functional connectivity via Pearson correlation; RNN, BiRNN, LSTM, BiLSTM, CNN and CNN-hybrid classifiers evaluated with 10-fold cross-validation.",
+      "outcomes": "Best model (RNN): accuracy 74.74%, sensitivity 72.95%, specificity 76.28%, comparable to or better than several prior published results on the same subset (Table 3 comparison).",
+      "key_limitations": "No preprocessing pipeline named, no motion/QC rule, pooled 10-fold CV with no site handling, no leakage-control statement, and no code or participant-list availability.",
+      "relevance_notes": "Uses the same widely-reused 871-subject ABIDE I subset as several prior studies, enabling direct accuracy comparison, but adds no new reproducibility information.",
+      "review_specific_questions": ""
+    },
+    "kg_link": {
+      "doi": "10.35377/saucis.04.01.879735",
+      "dataset": "ABIDE I",
+      "relation": "uses-data",
+      "cohort_description": "A commonly-cited ABIDE I subset of 871 subjects (403 ASD, 468 TC), reused from prior published studies.",
+      "n_by_dx": {
+        "ASD": 403,
+        "TD": 468,
+        "total": 871
+      },
+      "sites": "",
+      "pipeline": "",
+      "atlas": "BASC (scale 122, via MSTEPS)",
+      "claim_type": "predictive",
+      "finding": "RNN achieved the best 10-fold cross-validation performance: accuracy 74.74%, sensitivity 72.95%, specificity 76.28%.",
+      "reconstructible": "no",
+      "evidence_quotes": [
+        "we used the same 871 samples from the ABIDE 1 data set [23], [24], [25]. Of the 871 subjects, 403 patients were ASD and 468 were TC patients.",
+        "the highest performance value is provided by RNN with 74.74%."
+      ]
+    }
+  },
+  {
+    "source_id": "S-071",
+    "pmid": "local_62eceeaf",
+    "doi": "10.1109/tnsre.2022.3233656",
+    "screening": {
+      "decision": "include",
+      "reason": "Meets inclusion 2/3: analyses all of ABIDE I resting-state fMRI connectivity data for multi-site domain-adaptation ASD identification (diagnostic prediction).",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "unpaywall_pdf"
+    },
+    "evidence_spans": [
+      {
+        "text": "The data used in the current study were provided by ABIDE I ( http://fcon_1000.projects.nitrc.org/indi/abide/), and we use all 1102 subjects (ﬁlter_noglobal) processed by the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) [22] for experiments.",
+        "section": "methods",
+        "claim": "All 1102 ABIDE I subjects (CPAC filter_noglobal preprocessing) were used.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "We conduct experiments on all ABIDE I data (without any data screening), and obtain the mean 73.1%/73.4% accu-\nracy on AAL/CC200 atlas",
+        "section": "methods",
+        "claim": "No data screening/QC exclusion was applied; the full 1102-subject ABIDE I release was used.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "To validate the effectiveness of the proposed LRCDR\nmethod, we conduct inter-site cross-validation experiments on\n17 sites from ABIDE database. Speciﬁcally, one site is left\nas the target domain for testing, and the remaining 16 sites\nas multiple source domains for training.",
+        "section": "methods",
+        "claim": "Evaluation used leave-one-site-out inter-site cross-validation across all 17 ABIDE I sites.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "The mean time series from 116 regions of interest (ROIs)\nbased on the automated anatomical labeling (AAL) atlas [23] are used for experiments.",
+        "section": "methods",
+        "claim": "Functional connectivity features used the AAL atlas (116 ROIs).",
+        "relevance_score": 0.7
+      },
+      {
+        "text": "We also use the Craddock 200 (CC200) atlas [31] to\nfurther verify the effectiveness of the LRCDR method and obtain the 73.4% mean accuracy.",
+        "section": "results",
+        "claim": "CC200 atlas gave 73.4% mean leave-one-site-out accuracy.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "For inter-site prediction on all ABIDE I data\n(1102 subjects from 17 sites), LRCDR obtains the mean\naccuracy of 73.1%, superior to the results of the compared\nstate-of-the-art domain adaptation methods and multi-site\nASD identiﬁcation methods.",
+        "section": "abstract",
+        "claim": "LRCDR achieved 73.1% mean leave-one-site-out accuracy on AAL atlas, outperforming compared domain-adaptation methods.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "In addition, we locate some\nmeaningful biomarkers: Most of the top important biomark-\ners are inter-network resting-state functional connectivi-\nties (RSFCs).",
+        "section": "abstract",
+        "claim": "Feature-importance analysis identified mostly inter-network RSFCs as the most discriminative connections.",
+        "relevance_score": 0.7
+      }
+    ],
+    "risk_of_bias": {
+      "assessments": [
+        {
+          "domain": "Participants",
+          "judgment": "Unclear",
+          "support": "Total N (1102) and the filter_noglobal preprocessing variant are given, but no ASD/TD breakdown is reported in the extractable text, and the authors explicitly state no data screening/QC exclusion was applied: \"We conduct experiments on all ABIDE I data (without any data screening)\""
+        },
+        {
+          "domain": "Predictors",
+          "judgment": "Low",
+          "support": "Pipeline (CPAC filter_noglobal) and two named atlases (AAL, CC200) with Pearson-correlation connectivity clearly described."
+        },
+        {
+          "domain": "Outcome",
+          "judgment": "Low",
+          "support": "ASD/TD labels are the ABIDE phenotypic diagnosis, independent of the connectivity-derived predictors."
+        },
+        {
+          "domain": "Analysis",
+          "judgment": "Unclear",
+          "support": "Leave-one-site-out inter-site cross-validation explicitly handles site, but the hyperparameter search over (α, β, γ, λ, η) is not stated to be confined to the training/source domains, leaving open a risk of test-domain leakage: \"The parameters (α, β, γ, λ, η) are all searched in the set of {0.001, 0.01, 0.1, 1, 10, 100}.\""
+        }
+      ],
+      "overall": "Unclear",
+      "summary": "Full ABIDE I release used with no stated QC/exclusion and no ASD/TD breakdown in the extractable text; pipeline and atlases are well described; site is explicitly handled via leave-one-site-out cross-validation, but hyperparameter-search leakage control is not described."
+    },
+    "charting": {
+      "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+      "study_design": "Diagnostic prediction",
+      "n_disordered": "",
+      "n_controls": "",
+      "data_types": "resting-state fMRI",
+      "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (CPAC), filter_noglobal variant",
+      "specific_features": "Pearson correlation (Fisher r-to-z transformed) functional connectivity using AAL (116 ROIs) and Craddock 200 (CC200) atlases",
+      "model_category": "Domain adaptation with linear SVM classifier",
+      "specific_algorithms": "Low Rank and Class Discriminative Representation (LRCDR)",
+      "validation_methodology": "Leave-one-site-out inter-site cross-validation across all 17 ABIDE I sites",
+      "performance_metrics": "Accuracy, sensitivity, specificity, F1 score",
+      "key_performance_results": "Mean leave-one-site-out accuracy 73.1% (AAL atlas) and 73.4% (CC200 atlas), outperforming compared domain-adaptation and multi-site ASD identification methods",
+      "features_associated_disorder": "Most of the top discriminative resting-state functional connectivities (RSFCs) identified by the model's feature weights are inter-network connections",
+      "feature_change_direction": "",
+      "dataset_openly_available": "No code repository; supplementary material only, linked via the journal DOI",
+      "custom_fields": {
+        "RQ1": "All 1102 ABIDE I subjects from 17 sites, CPAC filter_noglobal preprocessing, used without any data screening/QC exclusion; ASD/TD breakdown is not given in the extractable text. | quote: \"we use all 1102 subjects (ﬁlter_noglobal) processed by the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) [22] for experiments.\"",
+        "RQ2": "CPAC (filter_noglobal) pipeline; AAL (116 ROIs) and CC200 atlases with Pearson-correlation connectivity. | quote: \"The mean time series from 116 regions of interest (ROIs) based on the automated anatomical labeling (AAL) atlas [23] are used for experiments.\"",
+        "RQ3": "predictive — a domain-adaptation (LRCDR) method with a linear SVM classifies ASD vs TD across sites. | quote: \"we train a linear SVM based on the source domain data PT Xs to directly predict the labels of target domain data PT Xt.\"",
+        "RQ4": "Leave-one-site-out inter-site cross-validation across all 17 sites; accuracy, sensitivity, specificity and F1 score reported; no stated statistical correction. | quote: \"we conduct inter-site cross-validation experiments on 17 sites from ABIDE database. Speciﬁcally, one site is left as the target domain for testing, and the remaining 16 sites as multiple source domains for training.\"",
+        "RQ5": "LRCDR achieved mean leave-one-site-out accuracy 73.1% (AAL) and 73.4% (CC200), the most discriminative connections being mostly inter-network RSFCs; no CI reported. | quote: \"LRCDR obtains the mean accuracy of 73.1%, superior to the results of the compared state-of-the-art domain adaptation methods and multi-site ASD identiﬁcation methods.\"",
+        "RQ6": "partly — the exact preprocessing variant (filter_noglobal) and the no-screening rule are stated, but no participant-ID list or ASD/TD breakdown is given. | quote: \"We conduct experiments on all ABIDE I data (without any data screening), and obtain the mean 73.1%/73.4% accu-\nracy on AAL/CC200 atlas\"",
+        "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — total N (1102) and preprocessing variant given, but ASD/TD breakdown by diagnosis is not present in the extractable text and no exclusion rule was applied. | quote: \"we use all 1102 subjects (ﬁlter_noglobal) processed by the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) [22] for experiments.\"",
+        "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — explicitly no data screening/QC exclusion was applied. | quote: \"We conduct experiments on all ABIDE I data (without any data screening)\"",
+        "CL3 Preprocessing pipeline and version reported?": "Yes — CPAC, filter_noglobal variant named. | quote: \"processed by the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) [22] for experiments\"",
+        "CL4 Atlas/parcellation reported?": "Yes — AAL (116 ROIs) and CC200 atlases. | quote: \"The mean time series from 116 regions of interest (ROIs) based on the automated anatomical labeling (AAL) atlas [23] are used for experiments.\"",
+        "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — the hyperparameter search is described but not stated to be confined to the source (training) domains only. | quote: \"The parameters (α, β, γ, λ, η) are all searched in the set of {0.001, 0.01, 0.1, 1, 10, 100}.\"",
+        "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — leave-one-site-out inter-site cross-validation across all 17 sites, which is the method's core domain-adaptation design. | quote: \"we conduct inter-site cross-validation experiments on 17 sites from ABIDE database.\"",
+        "CL7 Code and/or participant list available?": "No — only supplementary material is linked via the journal DOI; no code repository or participant list. | quote: \"This article has supplementary downloadable material available at\"",
+        "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The data used in the current study were provided by ABIDE I\""
+      }
+    },
+    "critical_appraisal": {
+      "domain_1_participant_quality": {
+        "items": [
+          {
+            "item": "CL1",
+            "rating": "Partial",
+            "support": "Total N given but no ASD/TD breakdown in extractable text, and no exclusion rule applied."
+          },
+          {
+            "item": "CL2",
+            "rating": "No",
+            "support": "No data screening/QC exclusion was applied."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_2_predictors_features": {
+        "items": [
+          {
+            "item": "CL3",
+            "rating": "Yes",
+            "support": "CPAC filter_noglobal pipeline named."
+          },
+          {
+            "item": "CL4",
+            "rating": "Yes",
+            "support": "AAL and CC200 atlases named."
+          }
+        ],
+        "overall_concern": "Low"
+      },
+      "domain_3_outcome_labels": {
+        "items": [
+          {
+            "item": "diagnosis source",
+            "rating": "Unclear",
+            "support": "ASD/TD labels are the ABIDE phenotypic diagnosis; this paper does not restate diagnostic criteria."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_4_bias_transparency": {
+        "items": [
+          {
+            "item": "CL5",
+            "rating": "No",
+            "support": "Hyperparameter search not stated to be confined to training/source domains."
+          },
+          {
+            "item": "CL6",
+            "rating": "Yes",
+            "support": "Leave-one-site-out inter-site cross-validation across all 17 sites."
+          },
+          {
+            "item": "CL7",
+            "rating": "No",
+            "support": "No code repository or participant list; only supplementary material."
+          }
+        ],
+        "overall_concern": "Some"
+      }
+    },
+    "narrative_row": {
+      "study_design_sample_dataset": "Diagnostic prediction; all 1102 ABIDE I subjects from 17 sites, CPAC filter_noglobal preprocessing, no data screening applied, ASD/TD breakdown not in extractable text.",
+      "methods": "AAL (116 ROIs) and CC200 atlas functional connectivity; Low Rank and Class Discriminative Representation (LRCDR) domain-adaptation method with a linear SVM; leave-one-site-out inter-site cross-validation across all 17 sites.",
+      "outcomes": "Mean leave-one-site-out accuracy 73.1% (AAL) and 73.4% (CC200), outperforming compared domain-adaptation and multi-site ASD identification methods; top discriminative connections were mostly inter-network RSFCs.",
+      "key_limitations": "No ASD/TD breakdown or QC/exclusion rule in the extractable text (explicitly no data screening applied); hyperparameter-search leakage control not described; no code or participant list, only supplementary material.",
+      "relevance_notes": "Demonstrates a domain-adaptation approach explicitly designed to handle ABIDE I site heterogeneity via leave-one-site-out evaluation on the full unscreened release.",
+      "review_specific_questions": ""
+    },
+    "kg_link": {
+      "doi": "10.1109/tnsre.2022.3233656",
+      "dataset": "ABIDE I",
+      "relation": "uses-data",
+      "cohort_description": "All 1102 ABIDE I subjects from 17 sites, CPAC filter_noglobal preprocessing, no data screening/QC exclusion applied.",
+      "n_by_dx": {
+        "ASD": null,
+        "TD": null,
+        "total": 1102
+      },
+      "sites": "17",
+      "pipeline": "CPAC, filter_noglobal",
+      "atlas": "AAL, CC200",
+      "claim_type": "predictive",
+      "finding": "LRCDR domain-adaptation method achieved mean leave-one-site-out accuracy of 73.1% (AAL atlas) and 73.4% (CC200 atlas), outperforming compared domain-adaptation and multi-site ASD identification methods.",
+      "reconstructible": "partly",
+      "evidence_quotes": [
+        "we use all 1102 subjects (ﬁlter_noglobal) processed by the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) [22] for experiments.",
+        "LRCDR obtains the mean accuracy of 73.1%, superior to the results of the compared state-of-the-art domain adaptation methods and multi-site ASD identiﬁcation methods."
+      ]
+    }
+  },
+  {
+    "source_id": "S-072",
+    "pmid": "local_88791905",
+    "doi": "10.48550/arxiv.1712.08041",
+    "screening": {
+      "decision": "include",
+      "reason": "Meets inclusion 2/3: analyses ABIDE resting-state fMRI dynamic functional-connectivity variability for both a group-difference finding and ASD vs control classification.",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "openalex_pdf"
+    },
+    "evidence_spans": [
+      {
+        "text": "We limited ourselves to\nacquisitions with repetition time of 2s (sites NYU, SDSU, UM, USM). This\nresulted in a dataset of 147 subjects with ASD and 146 healthy controls.",
+        "section": "methods",
+        "claim": "Cohort restricted to four ABIDE sites with TR=2s: 147 ASD, 146 healthy controls.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "The pre-processed acquisitions are\navailable as part of the Pre-processed Connectome Project (http://preprocessed- connectomes-project.org/abide/, C-PAC pipeline).",
+        "section": "methods",
+        "claim": "Data were preprocessed via the Preprocessed Connectomes Project, CPAC pipeline.",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "We\nextracted rsfMRI time series using a 200-region parcellation CC200[?], estimated\nsubject-wise time-resolved connectivity matrices with windows lengths ranging\nfrom 10 to 20 volumes (20-40s) and calculated node variability.",
+        "section": "methods",
+        "claim": "Dynamic functional connectivity was computed with sliding-window correlations over the CC200 atlas.",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "For inter-site, we employed a leave-\none-out-site approach that involved training the classiﬁer on all the sites\nexcept the one left out for testing.",
+        "section": "methods",
+        "claim": "Inter-site evaluation used a leave-one-site-out approach.",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "Our analysis revealed that pa-\ntients diagnosed with autism spectrum disorder (ASD) show increased\nFC variability in several brain regions that are associated with low FC\nvariability in the typical brain.",
+        "section": "abstract",
+        "claim": "ASD patients showed increased dynamic FC variability in regions that are low-variability in typical controls.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "We then used the enhanced FC variability\nof brain regions as features for training machine learning models for ASD\nclassiﬁcation and achieved 65%",
+        "section": "abstract",
+        "claim": "Node-variability features gave up to 65% classification accuracy.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "Table 1 summarizes the performance of diﬀerent\nclassiﬁers on intra-site ASD prediction. The accuracy achieved by all classiﬁers\nis comparable and is around 60%. The sensitivity varies between 60 to 65%. The\nspeciﬁcity is ˜60% for SVM and MLP, whereas RF and NB produce slightly lower\nspeciﬁcity.",
+        "section": "results",
+        "claim": "Intra-site 5-fold CV: accuracy ~60%, sensitivity 60-65%, specificity ~60% (SVM, MLP).",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "The results on inter-site classiﬁcation are presented in Table 3. Whereas\nthe classiﬁcation accuracy using MLP is ˜62% for all sites, the speciﬁcity and\nsensitivity vary across sites, consistent with the results shown in Figure 1b.",
+        "section": "results",
+        "claim": "Leave-one-site-out classification accuracy using MLP was ~62% across sites.",
+        "relevance_score": 0.9
+      }
+    ],
+    "risk_of_bias": {
+      "assessments": [
+        {
+          "domain": "Participants",
+          "judgment": "Unclear",
+          "support": "N by diagnosis and site restriction (TR=2s sites only) are given, but no motion/QC exclusion rule beyond the TR filter is reported: \"We limited ourselves to acquisitions with repetition time of 2s (sites NYU, SDSU, UM, USM). This resulted in a dataset of 147 subjects with ASD and 146 healthy controls.\""
+        },
+        {
+          "domain": "Predictors",
+          "judgment": "Low",
+          "support": "CPAC pipeline and CC200 atlas with sliding-window dynamic connectivity clearly described."
+        },
+        {
+          "domain": "Outcome",
+          "judgment": "Low",
+          "support": "ASD/control labels are the ABIDE phenotypic diagnosis, independent of the connectivity-derived predictors."
+        },
+        {
+          "domain": "Analysis",
+          "judgment": "Unclear",
+          "support": "Both intra-site 5-fold cross-validation (pooled across sites) and a leave-one-site-out inter-site evaluation are reported; the intra-site pooled scenario does not control for site, but the leave-one-site-out scenario does, and no leakage-control statement is given for the node-selection step based on \"a positive group-level diﬀerence across the three big sites (NYU, UM, and USM)\" used to pick features."
+        }
+      ],
+      "overall": "Unclear",
+      "summary": "Cohort and pipeline/atlas are reasonably well described; the study reports both a pooled intra-site 5-fold CV (no site control) and a leave-one-site-out inter-site evaluation (site controlled), with a possible leakage route where a feature subset is chosen using group differences across the same sites used later for training/testing."
+    },
+    "charting": {
+      "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+      "study_design": "Both",
+      "n_disordered": "147",
+      "n_controls": "146",
+      "data_types": "resting-state fMRI",
+      "feature_extraction_tools": "Preprocessed Connectomes Project, CPAC (C-PAC) pipeline",
+      "specific_features": "Sliding-window dynamic functional connectivity (node variability) and static node strength, using the CC200 atlas",
+      "model_category": "Classical machine learning",
+      "specific_algorithms": "Support Vector Machine, Random Forest, Naive Bayes, Multilayer Perceptron",
+      "validation_methodology": "Intra-site 5-fold cross-validation (pooled and site-balanced variants) and inter-site leave-one-site-out cross-validation",
+      "performance_metrics": "Accuracy, sensitivity, specificity",
+      "key_performance_results": "Up to 65% accuracy using node-variability features; intra-site 5-fold CV ~60% accuracy, 60-65% sensitivity, ~60% specificity (SVM, MLP); inter-site leave-one-site-out MLP accuracy ~62%",
+      "features_associated_disorder": "Brain regions with low FC variability in typical controls show increased FC variability in ASD",
+      "feature_change_direction": "Increased (hyper-variability) dynamic functional connectivity in ASD relative to controls",
+      "dataset_openly_available": "No code repository or participant-list availability statement found; data referenced via the Preprocessed Connectomes Project public resource",
+      "custom_fields": {
+        "RQ1": "ABIDE, restricted to the four sites with repetition time 2s (NYU, SDSU, UM, USM): 147 ASD and 146 healthy controls; no further exclusion rule described. | quote: \"We limited ourselves to acquisitions with repetition time of 2s (sites NYU, SDSU, UM, USM). This resulted in a dataset of 147 subjects with ASD and 146 healthy controls.\"",
+        "RQ2": "Preprocessed Connectomes Project CPAC pipeline; CC200 atlas, 200-region parcellation. | quote: \"We extracted rsfMRI time series using a 200-region parcellation CC200[?], estimated subject-wise time-resolved connectivity matrices with windows lengths ranging from 10 to 20 volumes (20-40s) and calculated node variability.\"",
+        "RQ3": "both — reports a group-difference finding (increased FC variability in ASD) and machine-learning classification of ASD vs control. | quote: \"pa- tients diagnosed with autism spectrum disorder (ASD) show increased FC variability in several brain regions that are associated with low FC variability in the typical brain.\"",
+        "RQ4": "Intra-site 5-fold cross-validation (pooled and site-balanced) and inter-site leave-one-site-out cross-validation; accuracy, sensitivity and specificity reported; no statistical correction stated. | quote: \"For inter-site, we employed a leave- one-out-site approach that involved training the classiﬁer on all the sites except the one left out for testing.\"",
+        "RQ5": "ASD patients show increased dynamic FC variability in regions of low variability in controls; classification reached up to 65% accuracy (intra-site) and ~62% accuracy (inter-site, leave-one-site-out, MLP); no CI reported. | quote: \"achieved 65%\"",
+        "RQ6": "no — only aggregate N and site names are given; no participant-ID list or code repository. | quote: \"This resulted in a dataset of 147 subjects with ASD and 146 healthy controls.\"",
+        "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis and the TR=2s site restriction are given, but no further inclusion/exclusion criteria are described. | quote: \"This resulted in a dataset of 147 subjects with ASD and 146 healthy controls.\"",
+        "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion metric or QC threshold is reported beyond the repetition-time restriction. | quote: \"We limited ourselves to acquisitions with repetition time of 2s (sites NYU, SDSU, UM, USM).\"",
+        "CL3 Preprocessing pipeline and version reported?": "Partly — the CPAC pipeline is named via the Preprocessed Connectomes Project, but no version or specific strategy is detailed. | quote: \"The pre-processed acquisitions are available as part of the Pre-processed Connectome Project (http://preprocessed- connectomes-project.org/abide/, C-PAC pipeline).\"",
+        "CL4 Atlas/parcellation reported?": "Yes — CC200, 200-region parcellation. | quote: \"We extracted rsfMRI time series using a 200-region parcellation CC200[?]\"",
+        "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — node-subset feature selection is based on group differences computed across the same sites used for training/testing, with no stated train/test separation for that selection step. | quote: \"nodes that show variability <0.9 in typical subjects and experience a positive group-level diﬀerence across the three big sites (NYU, UM, and USM)\"",
+        "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — both a site-balanced intra-site variant and a leave-one-site-out inter-site evaluation are reported. | quote: \"For inter-site, we employed a leave- one-out-site approach that involved training the classiﬁer on all the sites except the one left out for testing.\"",
+        "CL7 Code and/or participant list available?": "No — no code repository or participant-list availability statement found. | quote: \"The pre-processed acquisitions are available as part of the Pre-processed Connectome Project (http://preprocessed- connectomes-project.org/abide/, C-PAC pipeline).\"",
+        "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The dataset analyzed in the study is the Autism Brain Imaging Data Exchange (ABIDE)[?], a large, publicly available dataset of rsfMRI acquisitions of subjects diagnosed with ASD and healthy controls.\""
+      }
+    },
+    "critical_appraisal": {
+      "domain_1_participant_quality": {
+        "items": [
+          {
+            "item": "CL1",
+            "rating": "Partial",
+            "support": "N by diagnosis and site restriction given, no further exclusion rule."
+          },
+          {
+            "item": "CL2",
+            "rating": "No",
+            "support": "No motion/QC threshold reported."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_2_predictors_features": {
+        "items": [
+          {
+            "item": "CL3",
+            "rating": "Partial",
+            "support": "CPAC pipeline named via Preprocessed Connectomes Project, no version/strategy detail."
+          },
+          {
+            "item": "CL4",
+            "rating": "Yes",
+            "support": "CC200 atlas named."
+          }
+        ],
+        "overall_concern": "Low"
+      },
+      "domain_3_outcome_labels": {
+        "items": [
+          {
+            "item": "diagnosis source",
+            "rating": "Unclear",
+            "support": "ASD/control labels are the ABIDE phenotypic diagnosis; this paper does not restate diagnostic criteria."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_4_bias_transparency": {
+        "items": [
+          {
+            "item": "CL5",
+            "rating": "No",
+            "support": "Node-subset selection used group differences across the same evaluation sites with no stated train/test separation."
+          },
+          {
+            "item": "CL6",
+            "rating": "Yes",
+            "support": "Leave-one-site-out inter-site evaluation reported alongside the pooled intra-site variant."
+          },
+          {
+            "item": "CL7",
+            "rating": "No",
+            "support": "No code or participant-list availability statement."
+          }
+        ],
+        "overall_concern": "Some"
+      }
+    },
+    "narrative_row": {
+      "study_design_sample_dataset": "Both (group-difference + diagnostic prediction); ABIDE, four TR=2s sites (NYU, SDSU, UM, USM), 147 ASD and 146 healthy controls.",
+      "methods": "CPAC-preprocessed rs-fMRI; CC200 atlas sliding-window dynamic functional connectivity (node variability) and static node strength; SVM/RF/NB/MLP classifiers with intra-site 5-fold CV and inter-site leave-one-site-out evaluation.",
+      "outcomes": "ASD showed increased FC variability in regions of otherwise-low variability in controls; classification reached up to 65% accuracy (intra-site) and ~62% accuracy (inter-site leave-one-site-out, MLP).",
+      "key_limitations": "No motion/QC threshold beyond a TR restriction; possible feature-selection leakage from choosing nodes by cross-site group differences; no code or participant-list availability.",
+      "relevance_notes": "An early dynamic-FC approach to ABIDE combining a group-difference finding with both pooled and leave-one-site-out classification evaluation.",
+      "review_specific_questions": ""
+    },
+    "kg_link": {
+      "doi": "10.48550/arxiv.1712.08041",
+      "dataset": "ABIDE I",
+      "relation": "uses-data",
+      "cohort_description": "ABIDE acquisitions restricted to repetition time 2s at four sites (NYU, SDSU, UM, USM): 147 ASD, 146 healthy controls.",
+      "n_by_dx": {
+        "ASD": 147,
+        "TD": 146,
+        "total": 293
+      },
+      "sites": "NYU, SDSU, UM, USM",
+      "pipeline": "Preprocessed Connectomes Project, CPAC",
+      "atlas": "CC200",
+      "claim_type": "both",
+      "finding": "ASD patients show increased dynamic FC variability in regions of low variability in typical controls; node-variability-based classifiers reached up to 65% accuracy (intra-site) and ~62% accuracy (inter-site leave-one-site-out, MLP).",
+      "reconstructible": "partly",
+      "evidence_quotes": [
+        "We limited ourselves to\nacquisitions with repetition time of 2s (sites NYU, SDSU, UM, USM). This\nresulted in a dataset of 147 subjects with ASD and 146 healthy controls.",
+        "pa- tients diagnosed with autism spectrum disorder (ASD) show increased\nFC variability in several brain regions that are associated with low FC\nvariability in the typical brain."
+      ]
+    }
+  },
+  {
+    "source_id": "S-076",
+    "pmid": "local_696781dc",
+    "doi": "10.1186/s12859-023-05495-7",
+    "screening": {
+      "decision": "include",
+      "reason": "Meets inclusion 2/3: analyses ABIDE I resting-state fMRI connectivity with a heterogeneous graph convolutional attention network for ASD vs control classification.",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "unpaywall_pdf"
+    },
+    "evidence_spans": [
+      {
+        "text": "This paper carries out research on the challenging public ABIDE I dataset [31], which \naggregates data from 17 different international collection sites, sharing neuroimaging \nand phenotype data of 1112 subjects. In the experiment, 871 subjects (including 403 \nASD patients and 468 healthy controls) who meet the imaging quality and atypical \ninformation criteria were used.",
+        "section": "methods",
+        "claim": "Cohort was the commonly-used 871-subject ABIDE I subset (403 ASD, 468 HC) meeting imaging-quality and phenotypic-completeness criteria.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "Data preprocessing was performed using the configurable pipeline for the analysis of con- \nnectomes. According to the Harvard-Oxford atlas, there are 111 ROIs in the brain \n[32].",
+        "section": "methods",
+        "claim": "Preprocessing used CPAC; functional connectivity used the Harvard-Oxford atlas (111 ROIs).",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "a 10-fold cross-validation schema that mixes data from all 17 sites while keeping",
+        "section": "methods",
+        "claim": "Primary evaluation was a pooled 10-fold cross-validation mixing all sites in fixed proportion, not a leave-site-out scheme.",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "The proposed method is assessed on the autism brain imaging data \nexchange (ABIDE) repository. In total, 871 subjects in the ABIDE I dataset are used \nfor the classification task. The best classification accuracy of 82.9% is achieved.",
+        "section": "abstract",
+        "claim": "The proposed HCAN method achieved a best classification accuracy of 82.9% on 871 ABIDE I subjects.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "The proposed HCAN method achieves an average ACC of 82.9%, \nSEN of 76.7%, SPE of 86.6% and AUC of 84.6%.",
+        "section": "results",
+        "claim": "10-fold CV performance: ACC 82.9%, sensitivity 76.7%, specificity 86.6%, AUC 84.6%.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "Availability of data and materials\nThe datasets analysed during the current study are available from a world-wide multi-site database Autism Brain Imaging \nData Exchange (ABIDE I) (http://​prepr​ocess​ed-​conne​ctomes-​proje​ct.​org/).",
+        "section": "methods",
+        "claim": "Data-availability statement points only to the general ABIDE/Preprocessed Connectomes Project resource, not a study-specific participant list or code.",
+        "relevance_score": 0.5
+      }
+    ],
+    "risk_of_bias": {
+      "assessments": [
+        {
+          "domain": "Participants",
+          "judgment": "Unclear",
+          "support": "N by diagnosis given (403 ASD/468 HC) with a stated selection basis (\"imaging quality and atypical information criteria\"), but no specific motion/QC metric or threshold is defined: \"871 subjects (including 403 ASD patients and 468 healthy controls) who meet the imaging quality and atypical information criteria were used.\""
+        },
+        {
+          "domain": "Predictors",
+          "judgment": "Low",
+          "support": "CPAC pipeline and Harvard-Oxford atlas (111 ROIs) clearly named, with distance-correlation connectivity described."
+        },
+        {
+          "domain": "Outcome",
+          "judgment": "Low",
+          "support": "ASD/HC labels are the ABIDE phenotypic diagnosis, independent of the connectivity-derived predictors."
+        },
+        {
+          "domain": "Analysis",
+          "judgment": "High",
+          "support": "Primary evaluation pools all 17 sites in a single 10-fold cross-validation preserving site proportions rather than a leave-site-out scheme: \"a 10-fold cross-validation schema that mixes data from all 17 sites while keeping\""
+        }
+      ],
+      "overall": "High",
+      "summary": "Cohort and pipeline/atlas are clearly specified, but the main evaluation is a pooled 10-fold cross-validation across sites rather than leave-site-out, and no leakage-control statement is given for the graph-construction or feature steps."
+    },
+    "charting": {
+      "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+      "study_design": "Diagnostic prediction",
+      "n_disordered": "403",
+      "n_controls": "468",
+      "data_types": "resting-state fMRI",
+      "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (CPAC), via the Preprocessed Connectomes Project",
+      "specific_features": "Distance-correlation functional connectivity using the Harvard-Oxford atlas (111 ROIs), structured as a heterogeneous graph",
+      "model_category": "Graph neural network",
+      "specific_algorithms": "Heterogeneous graph convolutional attention network (HCAN) with MLP classification head",
+      "validation_methodology": "Pooled 10-fold cross-validation across all 17 sites (site-proportion preserving, not leave-site-out); supplementary per-site 5-fold cross-validation also reported",
+      "performance_metrics": "Accuracy (ACC), sensitivity (SEN), specificity (SPE), area under the ROC curve (AUC)",
+      "key_performance_results": "Average ACC 82.9%, SEN 76.7%, SPE 86.6%, AUC 84.6% (10-fold CV); per-site 5-fold CV mean ACC/SEN/SPE/AUC = 75.6%/72.6%/77.3%/83.0%",
+      "features_associated_disorder": "",
+      "feature_change_direction": "",
+      "dataset_openly_available": "No study-specific participant list or code; data-availability statement only links to the general ABIDE/Preprocessed Connectomes Project resource",
+      "custom_fields": {
+        "RQ1": "ABIDE I, the commonly-used 871-subject subset (403 ASD, 468 HC) from 17 sites, selected by \"imaging quality and atypical information criteria\" (no specific metric/threshold given). | quote: \"In the experiment, 871 subjects (including 403 \nASD patients and 468 healthy controls) who meet the imaging quality and atypical \ninformation criteria were used.\"",
+        "RQ2": "CPAC pipeline via the Preprocessed Connectomes Project; Harvard-Oxford atlas (111 ROIs), distance-correlation connectivity. | quote: \"Data preprocessing was performed using the configurable pipeline for the analysis of con- \nnectomes. According to the Harvard-Oxford atlas, there are 111 ROIs in the brain \n[32].\"",
+        "RQ3": "predictive — a heterogeneous graph convolutional attention network (HCAN) classifies ASD vs healthy controls. | quote: \"The best classification accuracy of 82.9% is achieved.\"",
+        "RQ4": "Pooled 10-fold cross-validation mixing all 17 sites in fixed proportion (not leave-site-out); supplementary per-site 5-fold cross-validation also reported; no statistical correction stated. | quote: \"a 10-fold cross-validation schema that mixes data from all 17 sites while keeping\"",
+        "RQ5": "HCAN achieved ACC 82.9%, SEN 76.7%, SPE 86.6%, AUC 84.6% on pooled 10-fold CV; per-site 5-fold CV mean ACC/SEN/SPE/AUC = 75.6%/72.6%/77.3%/83.0%. | quote: \"The proposed HCAN method achieves an average ACC of 82.9%, \nSEN of 76.7%, SPE of 86.6% and AUC of 84.6%.\"",
+        "RQ6": "no — reuses a commonly-cited 871-subject ABIDE I subset with only a general qualitative selection criterion; data-availability statement links only to the general ABIDE resource, no participant-ID list or code. | quote: \"The datasets analysed during the current study are available from a world-wide multi-site database Autism Brain Imaging \nData Exchange (ABIDE I)\"",
+        "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis given (403/468) with a general selection basis stated, but no precise exclusion rule or threshold. | quote: \"871 subjects (including 403 \nASD patients and 468 healthy controls) who meet the imaging quality and atypical \ninformation criteria were used.\"",
+        "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — \"imaging quality\" is mentioned generically with no specific motion metric or threshold. | quote: \"who meet the imaging quality and atypical \ninformation criteria were used.\"",
+        "CL3 Preprocessing pipeline and version reported?": "Yes — CPAC named via the Preprocessed Connectomes Project. | quote: \"Data preprocessing was performed using the configurable pipeline for the analysis of con- \nnectomes.\"",
+        "CL4 Atlas/parcellation reported?": "Yes — Harvard-Oxford atlas, 111 ROIs. | quote: \"According to the Harvard-Oxford atlas, there are 111 ROIs in the brain \n[32].\"",
+        "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — no statement that graph-construction or feature steps were confined to training folds. | quote: \"a 10-fold cross-validation schema that mixes data from all 17 sites while keeping\"",
+        "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly — the primary evaluation pools sites in proportion (not leave-site-out), though a supplementary per-site 5-fold cross-validation is also reported. | quote: \"Then, 5-fold cross-validation on each site is performed separately.\"",
+        "CL7 Code and/or participant list available?": "No — data-availability statement only links to the general ABIDE/Preprocessed Connectomes Project resource; no study-specific code or participant list. | quote: \"The datasets analysed during the current study are available from a world-wide multi-site database Autism Brain Imaging \nData Exchange (ABIDE I)\"",
+        "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"This paper carries out research on the challenging public ABIDE I dataset [31]\""
+      }
+    },
+    "critical_appraisal": {
+      "domain_1_participant_quality": {
+        "items": [
+          {
+            "item": "CL1",
+            "rating": "Partial",
+            "support": "N by diagnosis given with a general selection basis, no precise exclusion rule."
+          },
+          {
+            "item": "CL2",
+            "rating": "No",
+            "support": "No specific motion/QC metric or threshold given."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_2_predictors_features": {
+        "items": [
+          {
+            "item": "CL3",
+            "rating": "Yes",
+            "support": "CPAC pipeline named."
+          },
+          {
+            "item": "CL4",
+            "rating": "Yes",
+            "support": "Harvard-Oxford atlas (111 ROIs) named."
+          }
+        ],
+        "overall_concern": "Low"
+      },
+      "domain_3_outcome_labels": {
+        "items": [
+          {
+            "item": "diagnosis source",
+            "rating": "Unclear",
+            "support": "ASD/HC labels are the ABIDE phenotypic diagnosis; diagnostic criteria not restated here."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_4_bias_transparency": {
+        "items": [
+          {
+            "item": "CL5",
+            "rating": "No",
+            "support": "No leakage-control statement for graph construction or features."
+          },
+          {
+            "item": "CL6",
+            "rating": "Partial",
+            "support": "Primary result is pooled 10-fold CV across sites; a supplementary per-site 5-fold CV is also reported."
+          },
+          {
+            "item": "CL7",
+            "rating": "No",
+            "support": "No study-specific code or participant list; only the general ABIDE resource link."
+          }
+        ],
+        "overall_concern": "High"
+      }
+    },
+    "narrative_row": {
+      "study_design_sample_dataset": "Diagnostic prediction; ABIDE I, a commonly-cited 871-subject subset (403 ASD, 468 HC) from 17 sites.",
+      "methods": "CPAC-preprocessed rs-fMRI; Harvard-Oxford atlas (111 ROIs) distance-correlation connectivity structured as a heterogeneous graph; heterogeneous graph convolutional attention network (HCAN) with MLP classification, evaluated with pooled 10-fold cross-validation and supplementary per-site 5-fold cross-validation.",
+      "outcomes": "Average ACC 82.9%, SEN 76.7%, SPE 86.6%, AUC 84.6% (10-fold CV), exceeding compared methods on the same 871-subject subset; per-site 5-fold CV mean ACC/SEN/SPE/AUC = 75.6%/72.6%/77.3%/83.0%, with performance varying notably by site (e.g. CMU n=11).",
+      "key_limitations": "No specific motion/QC threshold; primary evaluation pools sites rather than leave-site-out; no leakage-control statement; no study-specific code or participant list.",
+      "relevance_notes": "A graph-neural-network approach on the widely-reused 871-subject ABIDE I subset, directly comparable to several prior published methods on the same subjects.",
+      "review_specific_questions": ""
+    },
+    "kg_link": {
+      "doi": "10.1186/s12859-023-05495-7",
+      "dataset": "ABIDE I",
+      "relation": "uses-data",
+      "cohort_description": "871 subjects (403 ASD, 468 HC) from ABIDE I's 17 sites, meeting imaging-quality and phenotypic-completeness criteria.",
+      "n_by_dx": {
+        "ASD": 403,
+        "TD": 468,
+        "total": 871
+      },
+      "sites": "17",
+      "pipeline": "CPAC (Configurable Pipeline for the Analysis of Connectomes)",
+      "atlas": "Harvard-Oxford (111 ROIs)",
+      "claim_type": "predictive",
+      "finding": "The proposed HCAN method achieved average ACC 82.9%, SEN 76.7%, SPE 86.6% and AUC 84.6% on pooled 10-fold cross-validation across the 871-subject ABIDE I subset.",
+      "reconstructible": "partly",
+      "evidence_quotes": [
+        "In the experiment, 871 subjects (including 403 \nASD patients and 468 healthy controls) who meet the imaging quality and atypical \ninformation criteria were used.",
+        "The proposed HCAN method achieves an average ACC of 82.9%, \nSEN of 76.7%, SPE of 86.6% and AUC of 84.6%."
+      ]
+    }
+  },
+  {
+    "source_id": "S-079",
+    "pmid": "local_a479f63a",
+    "doi": "10.3390/brainsci10060364",
+    "screening": {
+      "decision": "exclude",
+      "reason": "Exclusion 3: uses only structural (T1-weighted) morphological MRI features from ABIDE (cortical thickness, surface area, volumes via FreeSurfer) for brain-age prediction; no resting-state functional MRI analysis is performed.",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "unpaywall_pdf"
+    },
+    "kg_link": {
+      "doi": "10.3390/brainsci10060364",
+      "dataset": "ABIDE I",
+      "relation": "mentions",
+      "cohort_description": "",
+      "n_by_dx": {
+        "ASD": null,
+        "TD": null,
+        "total": null
+      },
+      "sites": "",
+      "pipeline": "",
+      "atlas": "",
+      "claim_type": "",
+      "finding": "",
+      "reconstructible": "",
+      "evidence_quotes": []
+    }
+  },
+  {
+    "source_id": "S-084",
+    "pmid": "local_1f1ffdd7",
+    "doi": "10.3389/fnins.2016.00108",
+    "screening": {
+      "decision": "exclude",
+      "reason": "Exclusion 4 (no autism-vs-control analysis): this is primarily a statistical-methods paper (mixed-effects models for resampled network statistics) demonstrated on ABIDE UCLA and Michigan autism subjects only, relating ADOS symptom-severity covariates to connectivity density within the autism group. No autism-vs-typically-developing group-difference analysis or diagnostic classification is performed; the only mention of healthy subjects (n=90, Michigan) is used to construct a baseline network for a methods illustration/simulation, not as a compared control group.",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "unpaywall_pdf"
+    },
+    "kg_link": {
+      "doi": "10.3389/fnins.2016.00108",
+      "dataset": "ABIDE I",
+      "relation": "mentions",
+      "cohort_description": "",
+      "n_by_dx": {
+        "ASD": null,
+        "TD": null,
+        "total": null
+      },
+      "sites": "",
+      "pipeline": "",
+      "atlas": "",
+      "claim_type": "",
+      "finding": "",
+      "reconstructible": "",
+      "evidence_quotes": []
+    }
+  },
+  {
+    "source_id": "S-087",
+    "pmid": "local_1b0f6bd1",
+    "doi": "10.1002/mp.15011",
+    "screening": {
+      "decision": "exclude",
+      "reason": "Exclusion 4: ABIDE is used only as one of several unseen/generalizability test datasets (10 randomly selected, unlabeled images) to benchmark a deformable image registration network (FDRN); there is no autism-vs-control analysis and no diagnostic use of the data.",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "unpaywall_pdf"
+    },
+    "kg_link": {
+      "doi": "10.1002/mp.15011",
+      "dataset": "ABIDE I",
+      "relation": "mentions",
+      "cohort_description": "",
+      "n_by_dx": {
+        "ASD": null,
+        "TD": null,
+        "total": null
+      },
+      "sites": "",
+      "pipeline": "",
+      "atlas": "",
+      "claim_type": "",
+      "finding": "",
+      "reconstructible": "",
+      "evidence_quotes": []
+    }
+  },
+  {
+    "source_id": "S-090",
+    "pmid": "local_3a3f7f6a",
+    "doi": "10.1016/j.neunet.2025.107450",
+    "screening": {
+      "decision": "include",
+      "reason": "Meets inclusion 2/3: analyses ABIDE-I resting-state fMRI functional connectivity with a hierarchical graph-based deep-learning model (ASD-HNet) for ASD vs healthy-control classification.",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "unpaywall_pdf"
+    },
+    "evidence_spans": [
+      {
+        "text": "we conducted the experiment on the publicly available ABIDE-I\ndataset, including rs-fMRI and phenotypic data of 1112 sub-\njects from 17 different sites (Di Martino et al., 2014; Crad-\ndock et al., 2013). In current study, we utilized rs-fMRI data\nfrom 848 subjects, including 396 patients with ASD and 452\nhealth controls (HCs).",
+        "section": "methods",
+        "claim": "Of the 1112-subject ABIDE-I release across 17 sites, 848 subjects (396 ASD, 452 HC) were used.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "we used the data Processing As-\nsistant for Resting-State fMRI (DPARSF) t",
+        "section": "methods",
+        "claim": "Preprocessing used DPARSF.",
+        "relevance_score": 0.7
+      },
+      {
+        "text": "(1) Discarding the first 5 volumes. (2) Correct-\ning of slice-related delay. (3) Correcting head movement.\n(4) Using EPI template normalization in MNI space, resam-\npling to 3 mm resolution of 3 × 3 × 3. (5) Smoothing with a\n4 mm full-width at half-maximum (FWHM) Gaussian ker-\nnel. (6) Linear detrending and temporal band-pass filter-\ning of BOLD signal (0.01-0.10 Hz).",
+        "section": "methods",
+        "claim": "DPARSF preprocessing steps: discard first 5 volumes, slice-timing, head-movement correction, normalization, smoothing, band-pass filtering.",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "we use the Automated Anatomical Labeling (AAL) tem-\nplate (Tzourio-Mazoyer et al., 2002) to divide the brain into",
+        "section": "methods",
+        "claim": "Functional connectivity used the AAL atlas with 116 ROIs.",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "In our experiment, we employed the 10-fold cross-\nvalidation strategy to conduct the comparison among dif-\nferent models.",
+        "section": "methods",
+        "claim": "Evaluation used pooled 10-fold cross-validation (no leave-site-out scheme described).",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "The code is available\nat https://github.com/LYQbyte/ASD-HNet.",
+        "section": "methods",
+        "claim": "The authors' code is publicly released on GitHub.",
+        "relevance_score": 0.7
+      },
+      {
+        "text": "ASD-HNet\n73.57\n72.63\n74.90\n71.04\n-",
+        "section": "table",
+        "claim": "ASD-HNet achieved accuracy 73.57%, sensitivity 72.63%, specificity 74.90%, F1 71.04%, outperforming all compared methods.",
+        "relevance_score": 1.0
+      }
+    ],
+    "risk_of_bias": {
+      "assessments": [
+        {
+          "domain": "Participants",
+          "judgment": "Unclear",
+          "support": "N by diagnosis is given (396 ASD/452 HC of the 1112-subject, 17-site release), but no explicit inclusion/exclusion rule or motion/QC threshold for the 848-subject subset is stated: \"we utilized rs-fMRI data\nfrom 848 subjects, including 396 patients with ASD and 452\nhealth controls (HCs).\""
+        },
+        {
+          "domain": "Predictors",
+          "judgment": "Low",
+          "support": "DPARSF pipeline steps and the AAL atlas (116 ROIs) are described in detail."
+        },
+        {
+          "domain": "Outcome",
+          "judgment": "Low",
+          "support": "ASD/HC labels are the ABIDE phenotypic diagnosis, independent of the connectivity-derived predictors."
+        },
+        {
+          "domain": "Analysis",
+          "judgment": "High",
+          "support": "Evaluation is a pooled 10-fold cross-validation with no leave-site-out or site-covariate handling described: \"we employed the 10-fold cross-\nvalidation strategy to conduct the comparison among dif-\nferent models.\""
+        }
+      ],
+      "overall": "High",
+      "summary": "Pipeline, atlas and code availability are well documented, but the cohort's exact inclusion/exclusion and QC rule are not given, and the primary evaluation pools all sites in a single 10-fold cross-validation with no site handling."
+    },
+    "charting": {
+      "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+      "study_design": "Diagnostic prediction",
+      "n_disordered": "396",
+      "n_controls": "452",
+      "data_types": "resting-state fMRI",
+      "feature_extraction_tools": "Data Processing Assistant for Resting-State fMRI (DPARSF)",
+      "specific_features": "Pearson correlation functional connectivity network using the AAL atlas (116 ROIs), with functional-gradient-based community clustering",
+      "model_category": "Graph neural network / deep learning",
+      "specific_algorithms": "ASD-HNet (hierarchical functional-gradient-based graph network: ROI scale, community scale, global scale)",
+      "validation_methodology": "Pooled 10-fold cross-validation (no leave-site-out)",
+      "performance_metrics": "Accuracy (ACC), sensitivity (SEN), specificity (SPE), F1-score",
+      "key_performance_results": "ASD-HNet: accuracy 73.57%, sensitivity 72.63%, specificity 74.90%, F1-score 71.04%, outperforming compared methods (f-GCN, BrainnetCNN, CNN-model, FBNETGEN, ASD-DiagNet, BrainTransformerNet, Hi-GCN, MCG-Net) with paired t-test p<0.05",
+      "features_associated_disorder": "",
+      "feature_change_direction": "",
+      "dataset_openly_available": "Code publicly available on GitHub (https://github.com/LYQbyte/ASD-HNet); no study-specific participant-ID list given",
+      "custom_fields": {
+        "RQ1": "ABIDE-I, 848 of the 1112 subjects across 17 sites (396 ASD, 452 HC); no explicit numeric exclusion/QC rule given for the subset selection. | quote: \"we utilized rs-fMRI data\nfrom 848 subjects, including 396 patients with ASD and 452\nhealth controls (HCs).\"",
+        "RQ2": "DPARSF pipeline (slice timing, head-movement correction, normalization, smoothing, band-pass filter, nuisance regression); AAL atlas (116 ROIs). | quote: \"we used the data Processing As-\nsistant for Resting-State fMRI (DPARSF) t\"",
+        "RQ3": "predictive — ASD-HNet classifies ASD vs healthy controls from hierarchical functional-connectivity features. | quote: \"ASD-HNet outperforms existing methods.\"",
+        "RQ4": "Pooled 10-fold cross-validation across the whole dataset (no leave-site-out), with a paired t-test comparing ASD-HNet's per-fold accuracy against compared methods. | quote: \"we employed the 10-fold cross-\nvalidation strategy to conduct the comparison among dif-\nferent models.\"",
+        "RQ5": "ASD-HNet achieved accuracy 73.57%, sensitivity 72.63%, specificity 74.90%, F1 71.04%, the best among all compared methods (paired t-test p<0.05 for each comparison). | quote: \"ASD-HNet\n73.57\n72.63\n74.90\n71.04\n-\"",
+        "RQ6": "partly — N by diagnosis and the source release (ABIDE-I, 17 sites) are given and code is public, but no participant-ID list or exact numeric exclusion rule for the 848-subject subset is published. | quote: \"The code is available\nat https://github.com/LYQbyte/ASD-HNet.\"",
+        "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis given (396/452 of 848) but no explicit exclusion rule for how 848 of the 1112 release subjects were chosen. | quote: \"we utilized rs-fMRI data\nfrom 848 subjects, including 396 patients with ASD and 452\nhealth controls (HCs).\"",
+        "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — head-movement correction is a named DPARSF preprocessing step, but no specific motion metric or subject-exclusion threshold is given. | quote: \"(3) Correcting head movement.\"",
+        "CL3 Preprocessing pipeline and version reported?": "Yes — DPARSF named with its processing steps. | quote: \"we used the data Processing As-\nsistant for Resting-State fMRI (DPARSF) t\"",
+        "CL4 Atlas/parcellation reported?": "Yes — AAL atlas, 116 ROIs. | quote: \"we use the Automated Anatomical Labeling (AAL) tem-\nplate (Tzourio-Mazoyer et al., 2002) to divide the brain into\"",
+        "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — no statement that any preprocessing or feature step was confined to the training folds within the 10-fold scheme. | quote: \"we employed the 10-fold cross-\nvalidation strategy to conduct the comparison among dif-\nferent models.\"",
+        "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — 10-fold cross-validation pools all 17 sites with no site covariate or leave-site-out evaluation reported. | quote: \"we employed the 10-fold cross-\nvalidation strategy to conduct the comparison among dif-\nferent models.\"",
+        "CL7 Code and/or participant list available?": "Yes (code only) — the authors' code is public on GitHub; no participant-ID list is given. | quote: \"The code is available\nat https://github.com/LYQbyte/ASD-HNet.\"",
+        "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"we conducted the experiment on the publicly available ABIDE-I\ndataset\""
+      }
+    },
+    "critical_appraisal": {
+      "domain_1_participant_quality": {
+        "items": [
+          {
+            "item": "CL1",
+            "rating": "Partial",
+            "support": "N by diagnosis given, no explicit exclusion rule for the 848-subject subset."
+          },
+          {
+            "item": "CL2",
+            "rating": "Partial",
+            "support": "Head-movement correction named as a preprocessing step but no motion threshold given."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_2_predictors_features": {
+        "items": [
+          {
+            "item": "CL3",
+            "rating": "Yes",
+            "support": "DPARSF pipeline steps described in detail."
+          },
+          {
+            "item": "CL4",
+            "rating": "Yes",
+            "support": "AAL atlas (116 ROIs) named."
+          }
+        ],
+        "overall_concern": "Low"
+      },
+      "domain_3_outcome_labels": {
+        "items": [
+          {
+            "item": "diagnosis source",
+            "rating": "Unclear",
+            "support": "ASD/HC labels are the ABIDE phenotypic diagnosis; this paper does not restate diagnostic criteria."
+          }
+        ],
+        "overall_concern": "Some"
+      },
+      "domain_4_bias_transparency": {
+        "items": [
+          {
+            "item": "CL5",
+            "rating": "No",
+            "support": "No leakage-control statement for the 10-fold procedure."
+          },
+          {
+            "item": "CL6",
+            "rating": "No",
+            "support": "Pooled 10-fold CV with no site handling or leave-site-out."
+          },
+          {
+            "item": "CL7",
+            "rating": "Partial",
+            "support": "Code is public; no participant-ID list."
+          }
+        ],
+        "overall_concern": "Some"
+      }
+    },
+    "narrative_row": {
+      "study_design_sample_dataset": "Diagnostic prediction; ABIDE-I, 848 of the 1112-subject, 17-site release (396 ASD, 452 HC).",
+      "methods": "DPARSF-preprocessed rs-fMRI; AAL-atlas (116 ROI) functional connectivity; hierarchical functional-gradient-based graph network (ASD-HNet, ROI/community/global scales); pooled 10-fold cross-validation.",
+      "outcomes": "ASD-HNet achieved accuracy 73.57%, sensitivity 72.63%, specificity 74.90%, F1 71.04%, significantly outperforming eight compared methods (paired t-test p<0.05 each).",
+      "key_limitations": "No explicit exclusion/QC rule or motion threshold for the 848-subject subset; pooled 10-fold CV with no site handling or stated leakage control.",
+      "relevance_notes": "Code is openly released, aiding reproducibility of the model though not of the exact cohort definition; benchmarked directly against several other ABIDE-I classification methods with matched or overlapping subsets.",
+      "review_specific_questions": ""
+    },
+    "kg_link": {
+      "doi": "10.1016/j.neunet.2025.107450",
+      "dataset": "ABIDE I",
+      "relation": "uses-data",
+      "cohort_description": "848 of the 1112 ABIDE-I subjects across 17 sites: 396 ASD, 452 healthy controls.",
+      "n_by_dx": {
+        "ASD": 396,
+        "TD": 452,
+        "total": 848
+      },
+      "sites": "17",
+      "pipeline": "DPARSF (Data Processing Assistant for Resting-State fMRI)",
+      "atlas": "AAL (116 ROIs)",
+      "claim_type": "predictive",
+      "finding": "ASD-HNet achieved accuracy 73.57%, sensitivity 72.63%, specificity 74.90%, F1 71.04%, outperforming eight compared ABIDE-I classification methods.",
+      "reconstructible": "partly",
+      "evidence_quotes": [
+        "we utilized rs-fMRI data\nfrom 848 subjects, including 396 patients with ASD and 452\nhealth controls (HCs).",
+        "ASD-HNet\n73.57\n72.63\n74.90\n71.04\n-"
+      ]
+    }
+  },
+  {
+    "source_id": "S-091",
+    "pmid": "local_6a54db71",
+    "doi": "10.1038/s41598-019-45465-9",
+    "screening": {
+      "decision": "include",
+      "reason": "Meets inclusion 2/3: derives 30 resting-state-network biomarkers from ABIDE I+II (group-difference analysis, ASD vs TD) and validates them against a local cohort with group-difference and ROC/AUC analyses.",
+      "stage": "full_text",
+      "assessed_on": "full_text",
+      "full_text_source": "unpaywall_pdf"
+    },
+    "evidence_spans": [
+      {
+        "text": "This study included 1112 ABIDE I datasets \nfrom 17 sites and 983 ABIDE II datasets from 16 sites. The ABIDE datasets were obtained online15. In total, 2095 \nABIDE datasets were used (ASD: 1001 and TD: 1094; 5–64 years).",
+        "section": "methods",
+        "claim": "Biomarkers were derived from the full ABIDE I+II release: 2095 subjects (1001 ASD, 1094 TD) across 33 sites.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "We recruited 21 patients with ASD and 23 individuals with neurotypical development (TD).",
+        "section": "abstract",
+        "claim": "Biomarkers were validated on an independent local cohort of 21 ASD and 23 TD participants.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "We subsequently applied \ndual-regression analysis18 by using the FSL general linear model (GLM) and the 10-brain resting-state networks \n(RSN10), “PNAS_Smith09_rsn10.nii.gz,” provided by Smith et. al.19,20 as a reference.",
+        "section": "methods",
+        "claim": "A lab-made FSL pipeline with ICA dual-regression against the Smith09 RSN10 template was used (no ROI atlas).",
+        "relevance_score": 0.8
+      },
+      {
+        "text": "(1) FC val-\nues significantly different [family-wise error (FWE)-corrected p < 0.05] between the ASD and TD groups and (2) \nvoxels inside the corresponding R-masks to create A1–A20 masks (ASD > TD: A1 to A10 and ASD < TD: A11 to \nA20).",
+        "section": "methods",
+        "claim": "Biomarker masks (A1-A20) were derived from FWE-corrected two-sample t-test group differences between ASD and TD in ABIDE, with explicit direction (A1-A10: ASD>TD; A11-A20: ASD<TD).",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "The results indicated that the biomarkers \ngenerated from the default mode and executive control networks significantly differed between the \nparticipants with ASD and TD. In particular, the biomarkers derived from the default mode network \nwere negatively correlated with the raw scores and model factors of the SRS.",
+        "section": "abstract",
+        "claim": "DMN- and executive-control-network-derived biomarkers differed between ASD and TD and correlated negatively with SRS severity scores.",
+        "relevance_score": 1.0
+      },
+      {
+        "text": "The results of this study indicate that the FC of DMN in the ASD group was \nweaker than that of the TD group.",
+        "section": "discussion",
+        "claim": "DMN functional connectivity was weaker (hypoconnectivity) in ASD than TD.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "The areas \nunder the curve (AUCs) for the biomarkers were (0.590, 0.745, p < 0.05), (0.588, 0.646), and (0.646, 0.677) for \n(R4, A4), (R5, A15), and (R8, A18), respectively.",
+        "section": "results",
+        "claim": "ROC analysis on the local cohort gave AUCs up to 0.745 (A4, DMN-derived biomarker), significantly higher than its R-template counterpart.",
+        "relevance_score": 0.9
+      },
+      {
+        "text": "The pipelines, as well as the 30 masks of this study, are available28. The \nopen-science materials and tools, including the RSN10 template, C-PAC, ABIDE, and our pipeline, can be used \nto replicate the methods of this study.",
+        "section": "methods",
+        "claim": "The 30 biomarker masks (not the local participant data) are shared publicly, aiding methodological but not full cohort reproducibility.",
+        "relevance_score": 0.6
+      },
+      {
+        "text": "Data Availability\nThe datasets generated during and/or analyzed during the current study are available from the corresponding \nauthor on reasonable request.",
+        "section": "methods",
+        "claim": "Underlying datasets (including the local KMUH cohort) are available only on reasonable request, not as an open participant list.",
+        "relevance_score": 0.5
+      }
+    ],
+    "risk_of_bias": {
+      "rob_tool": "JBI Critical Appraisal",
+      "assessments": [
+        {
+          "domain": "Inclusion criteria defined",
+          "judgment": "Low",
+          "support": "ABIDE I+II full release composition (2095, 17+16 sites) is given, and the local KMUH cohort has explicit inclusion criteria (age 12-22, IQ>70, DSM-IV-TR/ADOS diagnosis): \"Both groups of participants \nwere between 12 and 22 years old and had scores of >70 in either the full-scale Wechsler Adult Intelligence \nScale or full-scale Wechsler Intelligence Scale for Children, Fourth Edition.\""
+        },
+        {
+          "domain": "Subjects and setting described",
+          "judgment": "Low",
+          "support": "Local cohort recruitment (active follow-up psychiatric clinic and community at KMUH) and ABIDE source are both described."
+        },
+        {
+          "domain": "Exposure measured validly (rs-fMRI pipeline)",
+          "judgment": "Low",
+          "support": "FSL-based pipeline (FSL-BET, FSL-BBreg, FSL-FNIRT, CompCor, dual regression against RSN10) is described step by step."
+        },
+        {
+          "domain": "Condition measured (diagnosis source)",
+          "judgment": "Low",
+          "support": "Local ASD diagnosis is explicitly based on DSM-IV-TR criteria and the Autism Diagnostic Observation Schedule; ABIDE diagnoses are the contributing sites' own clinical diagnoses."
+        },
+        {
+          "domain": "Confounders identified (age, sex, site, motion)",
+          "judgment": "Unclear",
+          "support": "24 motion parameters and CompCor components are regressed at the individual level, but no age/sex/site covariate adjustment is reported for the pooled ABIDE I+II group-difference analysis."
+        },
+        {
+          "domain": "Confounders handled",
+          "judgment": "High",
+          "support": "No site-harmonisation or covariate-adjustment step is described when pooling ABIDE I (17 sites) and ABIDE II (16 sites) for the two-sample t-test used to derive the A-masks."
+        },
+        {
+          "domain": "Outcomes measured validly (connectivity metric)",
+          "judgment": "Low",
+          "support": "Dual-regression functional connectivity against the validated Smith09 RSN10 template is a standard, well-described outcome measure."
+        },
+        {
+          "domain": "Appropriate statistical analysis (multiple comparisons)",
+          "judgment": "Low",
+          "support": "FWE-corrected two-sample t-tests (FSL-randomise, 5000 permutations) for group differences, and FDR-adjusted p-values for the SRS/SNAP correlation analysis."
+        }
+      ],
+      "overall": "Unclear",
+      "summary": "Cohort, pipeline and diagnosis sources are clearly described, and statistical correction is appropriate, but no age/sex/site covariate handling is reported when pooling ABIDE I and ABIDE II across 33 sites to derive the biomarker masks."
+    },
+    "charting": {
+      "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+      "study_design": "Both",
+      "n_disordered": "1001 (ABIDE I+II derivation); 21 (local KMUH validation cohort)",
+      "n_controls": "1094 (ABIDE I+II derivation); 23 (local KMUH validation cohort)",
+      "data_types": "resting-state fMRI",
+      "feature_extraction_tools": "Lab-made pipeline based on FSL (FSL-BET, FSL-BBreg, FSL-FNIRT, CompCor, dual regression), noted as methodologically similar to C-PAC",
+      "specific_features": "Dual-regression functional connectivity against the Smith et al. 2009 RSN10 resting-state network template (no discrete ROI atlas)",
+      "model_category": "Univariate biomarker / ROC analysis",
+      "specific_algorithms": "Two-sample t-test (FWE-corrected) for group differences; receiver operating characteristic (ROC) analysis of individual biomarkers",
+      "validation_methodology": "Biomarkers derived from the full ABIDE I+II dataset, then independently validated (group difference, correlation, and ROC/AUC) on a separate local (KMUH) cohort",
+      "performance_metrics": "AUC (ROC analysis), Pearson correlation coefficients, FDR-adjusted p-values",
+      "key_performance_results": "DMN-derived biomarker A4 AUC = 0.745 (significantly higher than the RSN-template-only biomarker R4, AUC = 0.590, p<0.05) for distinguishing ASD in the local cohort",
+      "features_associated_disorder": "Default mode network (DMN) and executive control network (ECN) biomarkers differed significantly between ASD and TD",
+      "feature_change_direction": "DMN functional connectivity was weaker (hypoconnectivity) in ASD than TD; A4 (DMN) biomarker negatively correlated with SRS severity scores",
+      "dataset_openly_available": "The 30 biomarker masks and pipeline are shared on GitHub (https://github.com/htygithub/ASDmask/); the underlying datasets (including the local cohort) are available only from the corresponding author on reasonable request",
+      "custom_fields": {
+        "RQ1": "ABIDE I (1112, 17 sites) + ABIDE II (983, 16 sites) for biomarker derivation (2095 total, 1001 ASD/1094 TD), plus an independent local KMUH cohort (21 ASD, 23 TD) for validation; no further ABIDE QC/exclusion rule reported beyond using the full obtained datasets. | quote: \"This study included 1112 ABIDE I datasets \nfrom 17 sites and 983 ABIDE II datasets from 16 sites.\"",
+        "RQ2": "Lab-made FSL pipeline (FSL-BET, FSL-BBreg, FSL-FNIRT, CompCor, dual regression), noted as similar to C-PAC; no ROI atlas, instead the Smith et al. 2009 RSN10 ICA template. | quote: \"We subsequently applied \ndual-regression analysis18 by using the FSL general linear model (GLM) and the 10-brain resting-state networks \n(RSN10)\"",
+        "RQ3": "both — derives group-difference biomarkers (ASD vs TD, FWE-corrected t-test) in ABIDE and evaluates their diagnostic utility (ROC/AUC) in an independent local cohort. | quote: \"a receiver operating characteristic analysis to evaluate the classification performances of the \nbiomarkers.\"",
+        "RQ4": "Two-sample t-tests with FWE correction (FSL-randomise, 5000 permutations) for ABIDE group differences; Pearson correlation with FDR-adjusted p-values and ROC/AUC analysis in the KMUH validation cohort; no site covariate or leave-site-out scheme for the pooled ABIDE derivation step. | quote: \"FC val-\nues significantly different [family-wise error (FWE)-corrected p < 0.05] between the ASD and TD groups\"",
+        "RQ5": "DMN functional connectivity was weaker in ASD than TD; DMN-derived biomarker A4 achieved AUC 0.745 in the local cohort (vs 0.590 for its RSN-template counterpart R4, p<0.05); DMN biomarkers correlated negatively with SRS severity. | quote: \"The results of this study indicate that the FC of DMN in the ASD group was \nweaker than that of the TD group.\"",
+        "RQ6": "partly — the ABIDE-level N and sites are reported and the 30 biomarker masks/pipeline are public, but the underlying datasets (including the local cohort) are available only on reasonable request, not as an open participant list. | quote: \"The datasets generated during and/or analyzed during the current study are available from the corresponding \nauthor on reasonable request.\"",
+        "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — ABIDE I+II N by diagnosis given (1001 ASD/1094 TD), and the local cohort has explicit inclusion criteria and resulting N (21 ASD/23 TD). | quote: \"In total, 2095 \nABIDE datasets were used (ASD: 1001 and TD: 1094; 5–64 years).\"",
+        "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — 24 motion parameters are regressed out, but no subject-exclusion motion threshold (e.g. mean FD cut-off) is reported. | quote: \"regressing out 24 motion parameters obtained \nafter the realignment procedure16\"",
+        "CL3 Preprocessing pipeline and version reported?": "Yes — a detailed FSL-based lab-made pipeline is described step by step. | quote: \"Anatomical 3D volumes and R-fMRI 4D volumes were \nprocessed in the FMRIB Software Library (FSL) environment.\"",
+        "CL4 Atlas/parcellation reported?": "Partly — no discrete ROI atlas is used; instead the Smith et al. 2009 RSN10 ICA network template defines the networks. | quote: \"the 10-brain resting-state networks \n(RSN10), “PNAS_Smith09_rsn10.nii.gz,” provided by Smith et. al.19,20 as a reference.\"",
+        "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Partly — biomarkers (A-masks) are derived entirely from ABIDE and then validated on the fully independent local KMUH cohort, which avoids a direct train/test leakage, but no leakage-control statement is given for the ABIDE-internal statistics themselves. | quote: \"the A-masks were derived from the group analysis of the ABIDE \nRSN10 FC maps\"",
+        "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — ABIDE I (17 sites) and ABIDE II (16 sites) are pooled for the group-difference analysis with no site covariate, harmonisation, or leave-site-out evaluation reported. | quote: \"This study included 1112 ABIDE I datasets \nfrom 17 sites and 983 ABIDE II datasets from 16 sites.\"",
+        "CL7 Code and/or participant list available?": "Partly — the 30 biomarker masks and pipeline are shared on GitHub, but the underlying datasets/participant list are available only on reasonable request. | quote: \"The pipelines, as well as the 30 masks of this study, are available28.\"",
+        "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"we applied information from a \nlarge-scale dataset, the Autism Brain Imaging Data Exchange (ABIDE), to clinical applications.\""
+      }
+    },
+    "critical_appraisal": {
+      "domain_1_participant_quality": {
+        "items": [
+          {
+            "item": "CL1",
+            "rating": "Yes",
+            "support": "N by diagnosis given for both ABIDE I+II and the local cohort, with explicit local inclusion criteria."
+          },
+          {
+            "item": "CL2",
+            "rating": "Partial",
+            "support": "Motion parameters regressed but no subject-exclusion motion threshold given."
+          }
+        ],
+        "overall_concern": "Low"
+      },
+      "domain_2_predictors_features": {
+        "items": [
+          {
+            "item": "CL3",
+            "rating": "Yes",
+            "support": "Detailed FSL-based pipeline described."
+          },
+          {
+            "item": "CL4",
+            "rating": "Partial",
+            "support": "ICA/RSN10 template used instead of a discrete ROI atlas."
+          }
+        ],
+        "overall_concern": "Low"
+      },
+      "domain_3_outcome_labels": {
+        "items": [
+          {
+            "item": "diagnosis source",
+            "rating": "Yes",
+            "support": "Local diagnosis explicitly based on DSM-IV-TR criteria and ADOS; ABIDE diagnoses are the contributing sites' own clinical diagnoses."
+          }
+        ],
+        "overall_concern": "Low"
+      },
+      "domain_4_bias_transparency": {
+        "items": [
+          {
+            "item": "CL5",
+            "rating": "Partial",
+            "support": "Independent local validation cohort avoids direct leakage, but no leakage-control statement for the ABIDE-internal derivation."
+          },
+          {
+            "item": "CL6",
+            "rating": "No",
+            "support": "ABIDE I and II pooled across 33 sites with no site covariate or harmonisation."
+          },
+          {
+            "item": "CL7",
+            "rating": "Partial",
+            "support": "Biomarker masks/pipeline public; underlying data only on reasonable request."
+          }
+        ],
+        "overall_concern": "Some"
+      }
+    },
+    "narrative_row": {
+      "study_design_sample_dataset": "Both (biomarker group-difference derivation + ROC/AUC validation); ABIDE I+II (2095 subjects, 1001 ASD/1094 TD, 33 sites) for derivation, local KMUH cohort (21 ASD, 23 TD) for validation.",
+      "methods": "FSL-based lab-made pipeline; dual-regression functional connectivity against the Smith09 RSN10 template; FWE-corrected two-sample t-tests to derive 30 biomarker masks (R1-R10, A1-A20); ROC/AUC and FDR-corrected correlation analyses in the local cohort against SRS/SNAP-IV scores.",
+      "outcomes": "DMN and executive-control-network biomarkers differed significantly between ASD and TD; DMN connectivity was weaker in ASD; DMN-derived biomarker A4 reached AUC 0.745 in the local cohort, significantly outperforming its RSN-template-only counterpart (AUC 0.590); DMN biomarkers correlated negatively with SRS severity.",
+      "key_limitations": "No age/sex/site covariate handling when pooling ABIDE I and II across 33 sites for the derivation step; no motion-exclusion threshold reported; underlying datasets available only on reasonable request (biomarker masks/pipeline are public).",
+      "relevance_notes": "A clear example of deriving a biomarker from the full ABIDE I+II release and testing its transfer to an independent, non-ABIDE clinical cohort, including an explicit ROC/AUC diagnostic-utility evaluation.",
+      "review_specific_questions": ""
+    },
+    "kg_link": {
+      "doi": "10.1038/s41598-019-45465-9",
+      "dataset": "ABIDE I+II",
+      "relation": "uses-data",
+      "cohort_description": "Full ABIDE I (1112, 17 sites) and ABIDE II (983, 16 sites) releases used for biomarker derivation: 2095 subjects total, 1001 ASD and 1094 TD, ages 5-64.",
+      "n_by_dx": {
+        "ASD": 1001,
+        "TD": 1094,
+        "total": 2095
+      },
+      "sites": "33 (17 ABIDE I + 16 ABIDE II)",
+      "pipeline": "Lab-made FSL-based pipeline (FSL-BET, FSL-BBreg, FSL-FNIRT, CompCor, dual regression), methodologically similar to C-PAC",
+      "atlas": "Smith et al. 2009 RSN10 ICA network template (no discrete ROI atlas)",
+      "claim_type": "both",
+      "finding": "DMN and executive-control-network biomarkers differed significantly between ASD and TD in ABIDE (weaker DMN connectivity in ASD); the DMN-derived biomarker A4 achieved AUC 0.745 for distinguishing ASD in an independent local validation cohort, significantly higher than its RSN-template-only counterpart (AUC 0.590).",
+      "reconstructible": "partly",
+      "evidence_quotes": [
+        "This study included 1112 ABIDE I datasets \nfrom 17 sites and 983 ABIDE II datasets from 16 sites. The ABIDE datasets were obtained online15. In total, 2095 \nABIDE datasets were used (ASD: 1001 and TD: 1094; 5–64 years).",
+        "The areas \nunder the curve (AUCs) for the biomarkers were (0.590, 0.745, p < 0.05), (0.588, 0.646), and (0.646, 0.677) for \n(R4, A4), (R5, A15), and (R8, A18), respectively."
+      ]
+    }
+  }
+]

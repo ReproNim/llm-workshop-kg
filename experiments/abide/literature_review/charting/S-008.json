@@ -1,0 +1,282 @@
+{
+  "source_id": "S-008",
+  "pmid": "local_62f73884",
+  "doi": "10.1186/s13229-021-00415-z",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2-3: analyses a large ABIDE I+II resting-state fMRI discovery sample for sex-by-diagnosis group-difference connectivity, replicated in independent samples.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The final \nABIDE I and II dataset of N = 1019 included N = 82 \nfemales with autism, N = 362 males with autism, N = 166 \nneurotypical females (NT F), and N = 409 neurotypical \nmales (NT M), aggregated across 13 sites.",
+      "section": "methods",
+      "claim": "The ABIDE I+II discovery sample totalled N=1019 (82 F ASD, 362 M ASD, 166 NT F, 409 NT M) across 13 sites.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Briefly, we selected cases between \n7 and 18 years of age (the ages most represented across \nABIDE sites), with MRI data successfully completing \nbrain image co-registration and transformation to stand-\nard space, with FIQ between 70 and 148 and with mean \nframewise displacement (mFD) [54] within three times \nthe interquartile range (IQR) + the third quartile (Q3) of \nthe sample (i.e., mFD 0.39",
+      "section": "methods",
+      "claim": "Cases were selected aged 7-18 years with successful registration, FIQ 70-148, and mFD within 3xIQR+Q3 of the sample (~0.39mm).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "At each step, any sites with less than three individual \ndatasets per diagnostic/sex groups were excluded.",
+      "section": "methods",
+      "claim": "Sites with fewer than three individual datasets per diagnostic/sex group were excluded.",
+      "relevance_score": 0.75
+    },
+    {
+      "text": "R-fMRI image pre-processing \nsteps included: slice time correction, 24 motion param-\neters regression [57], component-based noise reduction \n(CompCor) [58], removal of linear and quadratic trends, \nand band-pass filtering (0.01–0.1 Hz, for all metrics but \nfALFF).",
+      "section": "methods",
+      "claim": "R-fMRI preprocessing included slice-time correction, 24-motion-parameter regression, CompCor noise reduction, detrending, and band-pass filtering; five metrics examined: PCC-iFC, VMHC, ReHo, DC, fALFF.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "To account for site and collection time variability \nacross each of the data collections in ABIDE I and II data \nrepositories, site effects were removed using the ComBat \nfunction available in python [61] (https​://githu​b.com/\nbrent​p/comba​t.py). This approach has been shown to \neffectively account for scanner-related variance",
+      "section": "methods",
+      "claim": "Site effects across ABIDE I and II data collections were removed using the ComBat harmonisation function.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Discovery analyses in ABIDE revealed significant main effects of diagnosis and sex across the intrinsic func‑\ntional connectivity of the posterior cingulate cortex, regional homogeneity and voxel-mirrored homotopic connectiv‑\nity (VMHC) in several cortical regions, largely converging in the default network midline.",
+      "section": "results",
+      "claim": "Discovery analyses in ABIDE showed significant main effects of diagnosis and sex on PCC-iFC, ReHo and VMHC converging on the default network midline.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Sex-by-diagnosis interactions \nwere confined to the dorsolateral occipital cortex, with reduced VMHC in females with autism.",
+      "section": "results",
+      "claim": "Sex-by-diagnosis interaction was confined to the dorsolateral occipital cortex, with reduced VMHC in autistic females.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "ABIDE I and II: Data are freely accessible in the publicly available Autism Brain \nImaging Data Exchange repository (http://fcon_1000.projects.nitrc.org/indi/\nabide).",
+      "section": "discussion",
+      "claim": "ABIDE I and II data are freely accessible via the public ABIDE/FCP-INDI repository.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "Age, FIQ, registration success, mFD and site-minimum-N exclusion rules explicitly stated, with full details cross-referenced to Supplementary Methods."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "N by diagnosis and sex, and 13 sites, are reported, with per-site/per-measure missingness tabulated (Table 1)."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "Preprocessing pipeline steps explicitly described (slice-timing, motion regression, CompCor, band-pass filter, registration) and tested for robustness to alternative pipelines."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "ADI-R/ADOS-based phenotypic variables are referenced (Table 1 footnotes) but the diagnostic confirmation procedure itself is not restated in the main extracted text."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Age and mFD matched across groups; site modeled; sex and diagnosis are the primary factors of interest."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "Site harmonised via ComBat; age and mFD included as nuisance covariates in the GLM."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Five established R-fMRI metrics (PCC-iFC, VMHC, ReHo, DC, fALFF) used, each validated in prior literature."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "Voxel-level Z>3.1 and cluster-level P<0.01 threshold set to account for five R-fMRI metrics tested (Bonferroni-equivalent 0.05/5)."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Large, well-documented ABIDE I+II discovery sample with explicit QC/exclusion rules, ComBat site harmonisation, robustness checks across preprocessing pipelines, and replication in two independent cohorts; main gap is that the diagnosis-confirmation method is not restated in the main text."
+  },
+  "charting": {
+    "source_id": "S-008",
+    "title": "Towards robust and replicable sex differences in the intrinsic brain function of autism",
+    "authors": "Dorothea L. Floris; José O. A. Filho; Meng-Chuan Lai; et al.",
+    "year": "2021",
+    "journal_conference": "Molecular Autism",
+    "doi": "10.1186/s13229-021-00415-z",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "primary_focus": "Sex-by-diagnosis differences in intrinsic brain function",
+    "primary_goal": "Characterise robust and replicable sex differences and sex-by-diagnosis interactions in resting-state brain function in autism",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "Multi-site (13 merged sites from ABIDE I and II)",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "ADI-R and ADOS-2 scores available as phenotypic variables (per Table 1 footnotes); confirmation procedure not restated in main text",
+    "n_disordered": "444 (362 males + 82 females)",
+    "age_mean_sd": "",
+    "age_range": "7-18 years",
+    "gender_distribution": "82 females / 362 males",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "true",
+    "healthy_status_confirmed": "",
+    "n_controls": "575 (409 males + 166 females)",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "166 females / 409 males",
+    "age_matched": "true",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "true",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "",
+    "dataset_openly_available": "Yes — ABIDE I and II data freely accessible via the FCP-INDI repository",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Voxel-wise R-fMRI metrics",
+    "specific_features": "PCC-seed intrinsic functional connectivity (iFC), voxel-mirrored homotopic connectivity (VMHC), regional homogeneity (ReHo), degree centrality (DC), fractional ALFF (fALFF); Harvard-Oxford atlas used for anatomical labelling of clusters",
+    "feature_extraction_tools": "Custom R-fMRI pipeline (slice-timing correction, 24-parameter motion regression, CompCor, detrending, band-pass filtering, FSL FLIRT BBR + ANTs registration); C-PAC credited in author contributions for analyses support; ComBat (python, brentp/combat.py) for site harmonisation",
+    "feature_importance_reported": "",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "Sex-by-diagnosis interaction: reduced VMHC in autistic females vs. increased/typical VMHC pattern in the other three groups, localized to dorsolateral occipital cortex",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "Voxel-level GLM (Z>3.1, cluster-level P<0.01, GRF-corrected); robustness checked across alternative preprocessing pipelines; replication tested in two independent cohorts (EU-AIMS LEAP, GENDAAR)",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "In the ABIDE I+II discovery sample (N=1019, 13 sites), main effects of diagnosis and sex were found across PCC-iFC, ReHo and VMHC converging on the default-network midline; a sex-by-diagnosis interaction on VMHC in dorsolateral occipital cortex showed reduced VMHC in autistic females and replicated in the larger of two independent cohorts (EU-AIMS LEAP) but not GENDAAR.",
+    "features_associated_disorder": "PCC-iFC, ReHo and VMHC group differences along the default-network midline; VMHC sex-by-diagnosis interaction in dorsolateral occipital cortex",
+    "future_directions_recommended": "A priori harmonisation across discovery and replication datasets; systematic study of sample-related factors affecting replicability.",
+    "reviewer_notes": "ABIDE I and II data collections explicitly merged by matched site (e.g., KKI & ABIDEII-KKI1) to form 13 combined sites for ComBat harmonisation.",
+    "custom_fields": {
+      "RQ1": "associational — ABIDE I+II discovery sample, N=1019 (82 F ASD, 362 M ASD, 166 NT F, 409 NT M), 13 merged sites; QC rule: age 7-18, successful registration, FIQ 70-148, mFD within 3xIQR+Q3 (~0.39mm), sites with <3 datasets per diagnostic/sex group excluded | quote: \"The final ABIDE I and II dataset of N = 1019 included N = 82 females with autism, N = 362 males with autism, N = 166 neurotypical females (NT F), and N = 409 neurotypical males (NT M), aggregated across 13 sites.\"",
+      "RQ2": "Custom preprocessing pipeline (slice-timing, 24-parameter motion regression, CompCor, detrending, band-pass filter, FSL BBR + ANTs registration); Harvard-Oxford atlas for cluster labelling; ComBat used for site harmonisation across ABIDE I/II collections | quote: \"R-fMRI image pre-processing steps included: slice time correction, 24 motion param- eters regression [57], component-based noise reduction (CompCor) [58], removal of linear and quadratic trends, and band-pass filtering (0.01–0.1 Hz, for all metrics but fALFF).\"",
+      "RQ3": "associational — group-difference GLM analysis of diagnosis, sex and their interaction | quote: \"Discovery analyses in ABIDE revealed significant main effects of diagnosis and sex across the intrinsic func‑ tional connectivity of the posterior cingulate cortex, regional homogeneity and voxel-mirrored homotopic connectiv‑ ity (VMHC) in several cortical regions, largely converging in the default network midline.\"",
+      "RQ4": "Voxel-wise GLM with diagnosis/sex/interaction as regressors and age+mFD as covariates; voxel-level Z>3.1, cluster-level P<0.01 (Bonferroni-equivalent 0.05/5 metrics); robustness checked across alternate pipelines; no leave-site-out evaluation, but site effects removed via ComBat and findings checked for site consistency | quote: \"Discovery analyses in ABIDE revealed significant main effects of diagnosis and sex across the intrinsic func‑ tional connectivity of the posterior cingulate cortex, regional homogeneity and voxel-mirrored homotopic connectiv‑ ity (VMHC) in several cortical regions, largely converging in the default network midline.\"",
+      "RQ5": "Main effects of diagnosis and sex across PCC-iFC, ReHo and VMHC converging on the default-network midline; sex-by-diagnosis interaction confined to VMHC in dorsolateral occipital cortex, with reduced VMHC in autistic females, replicated in EU-AIMS LEAP but not GENDAAR | quote: \"Sex-by-diagnosis interactions were confined to the dorsolateral occipital cortex, with reduced VMHC in females with autism.\"",
+      "RQ6": "yes — exact rules — quantitative inclusion/exclusion thresholds (age, FIQ, mFD, site-minimum-N) are given in the main text with full detail in Supplementary Methods | quote: \"Briefly, we selected cases between 7 and 18 years of age (the ages most represented across ABIDE sites), with MRI data successfully completing brain image co-registration and transformation to stand- ard space, with FIQ between 70 and 148 and with mean framewise displacement (mFD) [54] within three times the interquartile range (IQR) + the third quartile (Q3) of the sample (i.e., mFD 0.39\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"The final ABIDE I and II dataset of N = 1019 included N = 82 females with autism, N = 362 males with autism, N = 166 neurotypical females (NT F), and N = 409 neurotypical males (NT M), aggregated across 13 sites.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes — mFD within three times the IQR plus Q3 of the sample (~0.39mm), with group mFD kept low (<0.2mm) via matching | quote: \"Briefly, we selected cases between 7 and 18 years of age (the ages most represented across ABIDE sites), with MRI data successfully completing brain image co-registration and transformation to stand- ard space, with FIQ between 70 and 148 and with mean framewise displacement (mFD) [54] within three times the interquartile range (IQR) + the third quartile (Q3) of the sample (i.e., mFD 0.39\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"R-fMRI image pre-processing steps included: slice time correction, 24 motion param- eters regression [57], component-based noise reduction (CompCor) [58], removal of linear and quadratic trends, and band-pass filtering (0.01–0.1 Hz, for all metrics but fALFF).\"",
+      "CL4 Atlas/parcellation reported?": "Yes — Harvard-Oxford atlas used for anatomical labelling of significant clusters | quote: \"\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not applicable, this is a group-difference GLM analysis, not a predictive model with train/test folds | quote: \"\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — ComBat used to remove site/collection-time effects across ABIDE I and II data collections | quote: \"To account for site and collection time variability across each of the data collections in ABIDE I and II data repositories, site effects were removed using the ComBat function available in python [61] (https​://githu​b.com/ brent​p/comba​t.py). This approach has been shown to effectively account for scanner-related variance\"",
+      "CL7 Code and/or participant list available?": "Partly — ABIDE raw data are openly available via FCP-INDI; exact participant selection criteria are published in Supplementary Methods, but no analysis code repository is mentioned | quote: \"ABIDE I and II: Data are freely accessible in the publicly available Autism Brain Imaging Data Exchange repository (http://fcon_1000.projects.nitrc.org/indi/ abide).\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The final ABIDE I and II dataset of N = 1019 included N = 82 females with autism, N = 362 males with autism, N = 166 neurotypical females (NT F), and N = 409 neurotypical males (NT M), aggregated across 13 sites.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-008",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "Explicit N by diagnosis/sex, 13 sites, and quantitative inclusion criteria."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Yes",
+          "notes": "mFD threshold (3xIQR+Q3, ~0.39mm) and group matching on mFD (<0.2mm) explicitly reported."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline reported",
+          "rating": "Yes",
+          "notes": "Full pipeline steps listed; robustness to alternative pipelines explicitly tested."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "Harvard-Oxford atlas used for cluster labelling."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source reported",
+          "rating": "Unclear",
+          "notes": "ADI-R/ADOS variables referenced in table footnotes but confirmation procedure not restated in main text."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "N/A",
+          "notes": "Not a predictive model."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "Yes",
+          "notes": "ComBat harmonisation explicitly applied across ABIDE I/II site collections."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "Partial",
+          "notes": "Raw ABIDE data openly available; exact selection criteria published in supplement; no analysis code link given."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-008",
+    "study_design_sample_dataset": "Group-difference (associational) voxel-wise R-fMRI study; ABIDE I+II discovery sample, N=1019 (82 F ASD, 362 M ASD, 166 NT F, 409 NT M) across 13 merged sites; replicated in EU-AIMS LEAP and GENDAAR.",
+    "methods": "Custom R-fMRI preprocessing (slice-timing, motion regression, CompCor, band-pass filter, BBR+ANTs registration) with ComBat site harmonisation; five metrics (PCC-iFC, VMHC, ReHo, DC, fALFF) analysed via voxel-wise GLM with diagnosis, sex and their interaction as regressors, age and mFD as covariates.",
+    "outcomes": "Main effects of diagnosis and sex converged on the default-network midline across PCC-iFC, ReHo and VMHC; a sex-by-diagnosis interaction on VMHC in dorsolateral occipital cortex (reduced VMHC in autistic females) replicated in EU-AIMS LEAP but not GENDAAR.",
+    "key_limitations": "Lack of a priori harmonisation among discovery and replication datasets; diagnosis-confirmation method not restated in main text; replicability varied by metric and sample.",
+    "relevance_notes": "Large, methodologically transparent use of combined ABIDE I+II data with explicit QC thresholds, ComBat site harmonisation, and independent-sample replication — a strong example of reconstructible cohort definition.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1186/s13229-021-00415-z",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "N=1019 (82 F ASD, 362 M ASD, 166 NT F, 409 NT M) selected from ABIDE I and II, aggregated across 13 merged sites; inclusion: age 7-18, successful registration, FIQ 70-148, mFD within 3xIQR+Q3 (~0.39mm); sites with <3 datasets per diagnostic/sex group excluded.",
+    "n_by_dx": {
+      "ASD": 444,
+      "TD": 575,
+      "total": 1019
+    },
+    "sites": "13",
+    "pipeline": "Custom (slice-timing, 24-parameter motion regression, CompCor, band-pass filter, BBR+ANTs registration) + ComBat site harmonisation",
+    "atlas": "Harvard-Oxford atlas",
+    "claim_type": "associational",
+    "finding": "Main effects of diagnosis and sex on PCC-iFC, ReHo and VMHC converged on the default-network midline; a VMHC sex-by-diagnosis interaction in dorsolateral occipital cortex (reduced VMHC in autistic females) replicated in EU-AIMS LEAP but not GENDAAR.",
+    "reconstructible": "yes — exact rules",
+    "evidence_quotes": [
+      "The final \nABIDE I and II dataset of N = 1019 included N = 82 \nfemales with autism, N = 362 males with autism, N = 166 \nneurotypical females (NT F), and N = 409 neurotypical \nmales (NT M), aggregated across 13 sites.",
+      "Discovery analyses in ABIDE revealed significant main effects of diagnosis and sex across the intrinsic func‑\ntional connectivity of the posterior cingulate cortex, regional homogeneity and voxel-mirrored homotopic connectiv‑\nity (VMHC) in several cortical regions, largely converging in the default network midline.",
+      "Sex-by-diagnosis interactions \nwere confined to the dorsolateral occipital cortex, with reduced VMHC in females with autism."
+    ]
+  }
+}

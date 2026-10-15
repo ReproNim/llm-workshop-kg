@@ -1,0 +1,173 @@
+{
+  "source_id": "S-030",
+  "pmid": "local_97b1be33",
+  "doi": "10.3389/fpsyt.2020.00440",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a diagnostic prediction (ASD vs. control) analysis of combined ABIDE I+II resting-state fMRI using 3D-CNNs on temporal summary measures, with both 5-fold and leave-site-out cross-validation (Inclusion 2, 3).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "We attained results competitive on this task for a combined ABIDE-I and II datasets of ~66%. When all summary measures were combined the result was still only as good as that of the best single measure which was regional homogeneity (ReHo).",
+      "section": "abstract",
+      "claim": "The 3D-CNN achieved ~66% accuracy on the combined ABIDE I+II dataset; combining all summary measures performed no better than the best single measure (ReHo).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The ABIDE I+II datasets is a collection of structural (T1w) and functional (rs-fMRI) brain images aggregated across 29 institutions (10), available for download2. It includes 1,028 participants with a diagnosis of autism, Asperger or pervasive developmental disorder-not otherwise speciﬁed (called ASD from now on), and 1,141 typically developing participants (CON).",
+      "section": "methods",
+      "claim": "ABIDE I+II aggregates data from 29 institutions, with 1,028 ASD and 1,141 typically developing participants in the full release.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "We chose to cut off the minimum scan duration to 100-time points, which led us to include 96% of the whole ABIDE I+II dataset (N=2,085, N(ASD) =993), the vast majority of which (95%) with a minimum acquisition time of 4 min.",
+      "section": "methods",
+      "claim": "A minimum scan-duration cutoff of 100 time points retained 96% of ABIDE I+II (N=2,085, N(ASD)=993).",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "The preprocessing was done using the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC, (12). We followed a preprocessing strategy adopted by the Preprocessed Connectome Project initiative3. This will allow others to replicate and extend the ﬁndings in this paper.",
+      "section": "methods",
+      "claim": "Preprocessing used C-PAC following a Preprocessed Connectomes Project strategy, chosen explicitly to enable replication.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "For the leave-site-out CV procedure, we selected ﬁve sites with the highest number of total subjects (ASD/total), namely New York University (NYU) (90/159), Kennedy Krieger Institute - 1 (KKI-I) (88/114), University of Miami - 1 (UM-I) (50/96), University of California, Los Angeles (UCLA)-I (28/69), Oregon Health & Science University (OHSU)-I (42/64).",
+      "section": "methods",
+      "claim": "The leave-site-out evaluation used the five largest sites (NYU, KKI-I, UM-I, UCLA-I, OHSU-I) with each held out as the test set in turn.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "When assessed by ﬁve-fold CV procedure, all tested models performed at around 60% accuracy for the classiﬁcation task (Figure 2 and Table 2), with little variation between models' performances. On the contrary, the leave-site-out CV procedure shows high variability in terms of model performances with relatively good performance for the NYU site and poor performance for the other sites",
+      "section": "results",
+      "claim": "Five-fold CV gave around 60% accuracy for all models with little variation, while leave-site-out CV showed high variability, good for NYU and poor for other sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The overall best performing model was the MM-ensemble, which achieved balanced accuracy of 64% and F1 score of 66%, averaged over the ﬁve-folds of the CV procedure. With the leave- site-out CV procedure the performance of the MM-ensemble dropped to an average balanced accuracy of mean 56% and F1 score of 59%, suggesting that this model does not do well in generalizing to new sites.",
+      "section": "results",
+      "claim": "The best model (MM-ensemble) reached 64% balanced accuracy / 66% F1 under 5-fold CV, dropping to 56% balanced accuracy / 59% F1 under leave-site-out CV.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "The code used of all the experiments performed is available on GitHub1.",
+      "section": "methods",
+      "claim": "All experiment code is publicly released on GitHub.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "Full-release composition and the exact inclusion rule (>=100 time points, yielding N=2,085, N(ASD)=993) are explicit: \"We chose to cut off the minimum scan duration to 100-time points, which led us to include 96% of the whole ABIDE I+II dataset (N=2,085, N(ASD) =993), the vast majority of which (95%) with a minimum acquisition time of 4 min.\""
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "Pipeline (C-PAC, following a published Preprocessed Connectomes Project strategy chosen explicitly for replicability) is specified: \"The preprocessing was done using the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC, (12). We followed a preprocessing strategy adopted by the Preprocessed Connectome Project initiative3. This will allow others to replicate and extend the ﬁndings in this paper.\""
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "Diagnosis source is not described in this paper beyond citing the ABIDE release and its diagnostic categories (autism, Asperger, PDD-NOS)."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Low",
+        "support": "Both 5-fold CV (with a validation split separate from the test fold) and an independent leave-site-out CV across the five largest sites are reported, directly exposing the gap between pooled and cross-site generalisation: \"The overall best performing model was the MM-ensemble, which achieved balanced accuracy of 64% and F1 score of 66%, averaged over the ﬁve-folds of the CV procedure. With the leave- site-out CV procedure the performance of the MM-ensemble dropped to an average balanced accuracy of mean 56% and F1 score of 59%, suggesting that this model does not do well in generalizing to new sites.\""
+      }
+    ],
+    "overall": "Low",
+    "summary": "Cohort composition, the inclusion rule, pipeline and both pooled (5-fold) and leave-site-out cross-validation are all explicitly reported, with code openly released; the only unreported item is the diagnostic label source."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "993",
+    "n_controls": "1092 (2085 total minus 993 ASD)",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "C-PAC (Configurable Pipeline for the Analysis of Connectomes), following a Preprocessed Connectomes Project preprocessing strategy",
+    "specific_features": "Voxel-wise temporal summary measures (regional homogeneity, ALFF, fALFF, degree centrality, eigenvector centrality, local functional connectivity density, entropy, voxel-mirrored homotopic connectivity, autocorrelation lag), each used as a full 3D volume input to a 3D-CNN",
+    "model_category": "3D convolutional neural network (per-measure and multi-measure ensemble/combined models); linear SVM baseline",
+    "specific_algorithms": "3D-CNN on each single summary measure (SM-model); MM-ensemble (majority vote across SM-models); MM-model (concatenated summary measures); linear SVM equivalents of each",
+    "validation_methodology": "Five-fold cross-validation (with an inner training/validation split) and a separate leave-site-out cross-validation across the five largest sites (NYU, KKI-I, UM-I, UCLA-I, OHSU-I), each held out as test site in turn",
+    "performance_metrics": "Balanced accuracy, F1-score",
+    "key_performance_results": "5-fold CV: best model (MM-ensemble, 3D-CNN) balanced accuracy 64% / F1 66%; ReHo single-measure model comparable. Leave-site-out CV: MM-ensemble dropped to 56% balanced accuracy / 59% F1, with good performance for NYU and poor performance for other sites, indicating limited cross-site generalisation. Linear-SVM gave comparable results (~60% accuracy; MM-ensemble 66%/67%).",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "Yes — all experiment code is released publicly on GitHub.",
+    "custom_fields": {
+      "RQ1": "ABIDE I+II — full release 1,028 ASD/1,141 TD across 29 institutions; after a minimum-scan-duration cutoff (>=100 time points), 96% was retained (N=2,085, N(ASD)=993). | quote: \"We chose to cut off the minimum scan duration to 100-time points, which led us to include 96% of the whole ABIDE I+II dataset (N=2,085, N(ASD) =993), the vast majority of which (95%) with a minimum acquisition time of 4 min.\"",
+      "RQ2": "C-PAC (Configurable Pipeline for the Analysis of Connectomes), following a Preprocessed Connectomes Project strategy chosen for replicability; no ROI atlas used — voxel-wise summary-measure volumes (e.g. ReHo, ALFF) are fed directly into a 3D-CNN. | quote: \"The preprocessing was done using the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC, (12). We followed a preprocessing strategy adopted by the Preprocessed Connectome Project initiative3. This will allow others to replicate and extend the ﬁndings in this paper.\"",
+      "RQ3": "predictive — ASD vs. control classification using 3D-CNNs on voxel-wise temporal summary measures of rs-fMRI, with a linear-SVM comparison. | quote: \"We attained results competitive on this task for a combined ABIDE-I and II datasets of ~66%. When all summary measures were combined the result was still only as good as that of the best single measure which was regional homogeneity (ReHo).\"",
+      "RQ4": "Two complementary schemes: five-fold cross-validation (with a held-out validation split) and a leave-site-out cross-validation across the five largest sites, each held out as the test set in turn. | quote: \"For the leave-site-out CV procedure, we selected ﬁve sites with the highest number of total subjects (ASD/total), namely New York University (NYU) (90/159), Kennedy Krieger Institute - 1 (KKI-I) (88/114), University of Miami - 1 (UM-I) (50/96), University of California, Los Angeles (UCLA)-I (28/69), Oregon Health & Science University (OHSU)-I (42/64).\"",
+      "RQ5": "5-fold CV: ~60-66% balanced accuracy across models, best for the MM-ensemble (64%/66% F1) and the ReHo single measure; leave-site-out CV: MM-ensemble dropped to 56% balanced accuracy/59% F1, with good performance only at the NYU site, showing that pooled cross-validation substantially overestimates cross-site generalisation. | quote: \"When assessed by ﬁve-fold CV procedure, all tested models performed at around 60% accuracy for the classiﬁcation task (Figure 2 and Table 2), with little variation between models' performances. On the contrary, the leave-site-out CV procedure shows high variability in terms of model performances with relatively good performance for the NYU site and poor performance for the other sites\"",
+      "RQ6": "yes — exact rules — the exact inclusion rule (minimum 100 time points) and resulting N (2,085, 993 ASD) are given, and all analysis code is released on GitHub, though no explicit participant ID list is published. | quote: \"The code used of all the experiments performed is available on GitHub1.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — exact inclusion rule (minimum 100 time points) and resulting N (2,085 total, 993 ASD) are given. | quote: \"We chose to cut off the minimum scan duration to 100-time points, which led us to include 96% of the whole ABIDE I+II dataset (N=2,085, N(ASD) =993), the vast majority of which (95%) with a minimum acquisition time of 4 min.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — a minimum scan-duration/time-point cutoff is used as the quality rule, but no motion/framewise-displacement threshold is reported.",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — C-PAC is named with its processing steps and an explicit replicability rationale, but no version number is stated. | quote: \"The preprocessing was done using the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC, (12). We followed a preprocessing strategy adopted by the Preprocessed Connectome Project initiative3. This will allow others to replicate and extend the ﬁndings in this paper.\"",
+      "CL4 Atlas/parcellation reported?": "No — the analysis is voxel-wise on whole-brain summary-measure volumes, not based on an ROI atlas/parcellation.",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Yes — the five-fold scheme kept training/validation/test invariant within each fold, and the leave-site-out scheme used a separate validation split (90/10 of the remaining data) purely for model/epoch selection before testing on the held-out site, guarding against contamination. | quote: \"For the leave-site-out CV procedure, we selected ﬁve sites with the highest number of total subjects (ASD/total), namely New York University (NYU) (90/159), Kennedy Krieger Institute - 1 (KKI-I) (88/114), University of Miami - 1 (UM-I) (50/96), University of California, Los Angeles (UCLA)-I (28/69), Oregon Health & Science University (OHSU)-I (42/64).\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — an explicit leave-site-out cross-validation was run across the five largest ABIDE sites in addition to pooled five-fold CV. | quote: \"For the leave-site-out CV procedure, we selected ﬁve sites with the highest number of total subjects (ASD/total), namely New York University (NYU) (90/159), Kennedy Krieger Institute - 1 (KKI-I) (88/114), University of Miami - 1 (UM-I) (50/96), University of California, Los Angeles (UCLA)-I (28/69), Oregon Health & Science University (OHSU)-I (42/64).\"",
+      "CL7 Code and/or participant list available?": "Yes — all experiment code is released on GitHub. | quote: \"The code used of all the experiments performed is available on GitHub1.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Full-release composition and the exact inclusion rule/resulting N are explicit (CL1); only a duration-based QC rule is given, no motion threshold (CL2)."
+    },
+    "domain_2_predictors_preprocessing": {
+      "rating": "Partial",
+      "overall_concern": "Some",
+      "support": "Pipeline is clearly named and justified for replicability, but no atlas is used (voxel-wise analysis) and no pipeline version is given (CL3, CL4)."
+    },
+    "domain_3_outcome_label_source": {
+      "rating": "Unclear",
+      "overall_concern": "Some",
+      "support": "Diagnostic label source is not described beyond citing the ABIDE diagnostic categories."
+    },
+    "domain_4_bias_transparency": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Both pooled and leave-site-out CV are reported with contamination-avoiding validation splits, code is openly released on GitHub (CL5-CL7)."
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction (3D-CNN on voxel-wise rs-fMRI summary measures) using combined ABIDE I+II (N=2,085 after a minimum scan-duration QC cutoff; 993 ASD, 1,092 TD; 29 institutions).",
+    "methods": "C-PAC-preprocessed voxel-wise temporal summary measures (ReHo, ALFF, fALFF, degree/eigenvector centrality, LFCD, entropy, VMHC, autocorrelation lag) fed into per-measure and ensemble/combined 3D-CNN models and linear-SVM equivalents; evaluated via five-fold CV and a separate leave-site-out CV across the five largest sites.",
+    "outcomes": "Best model (MM-ensemble) reached 64% balanced accuracy/66% F1 under five-fold CV, comparable to the single ReHo measure, but dropped to 56% balanced accuracy/59% F1 under leave-site-out CV, generalising well only to the NYU site.",
+    "key_limitations": "No motion/FD-based QC threshold reported (only a scan-duration cutoff); no atlas/ROI parcellation used; diagnostic label source not described; large drop in performance under leave-site-out evaluation indicates limited cross-site generalisation.",
+    "relevance_notes": "A methodologically strong example directly quantifying the gap between pooled cross-validation and leave-site-out generalisation on combined ABIDE I+II, with openly released code, highly relevant to assessing site-generalisation claims in ABIDE-based prediction studies.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fpsyt.2020.00440",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "Full ABIDE I+II release (1,028 ASD/1,141 TD, 29 institutions) filtered by a minimum scan-duration cutoff (>=100 time points), retaining 96% of the release: N=2,085 (993 ASD).",
+    "n_by_dx": {
+      "ASD": 993,
+      "TD": 1092,
+      "total": 2085
+    },
+    "sites": "29 institutions overall; leave-site-out evaluation used the 5 largest (NYU, KKI-I, UM-I, UCLA-I, OHSU-I)",
+    "pipeline": "C-PAC (Configurable Pipeline for the Analysis of Connectomes), following a Preprocessed Connectomes Project strategy",
+    "atlas": "None — voxel-wise whole-brain summary-measure volumes (no ROI parcellation)",
+    "claim_type": "predictive",
+    "finding": "Best model (3D-CNN MM-ensemble) achieved 64% balanced accuracy/66% F1 under five-fold CV, dropping to 56% balanced accuracy/59% F1 under leave-site-out CV across the five largest ABIDE sites, showing substantially weaker cross-site generalisation than pooled CV suggests.",
+    "reconstructible": "yes — exact rules",
+    "evidence_quotes": [
+      "We chose to cut off the minimum scan duration to 100-time points, which led us to include 96% of the whole ABIDE I+II dataset (N=2,085, N(ASD) =993), the vast majority of which (95%) with a minimum acquisition time of 4 min.",
+      "For the leave-site-out CV procedure, we selected ﬁve sites with the highest number of total subjects (ASD/total), namely New York University (NYU) (90/159), Kennedy Krieger Institute - 1 (KKI-I) (88/114), University of Miami - 1 (UM-I) (50/96), University of California, Los Angeles (UCLA)-I (28/69), Oregon Health & Science University (OHSU)-I (42/64).",
+      "The overall best performing model was the MM-ensemble, which achieved balanced accuracy of 64% and F1 score of 66%, averaged over the ﬁve-folds of the CV procedure. With the leave- site-out CV procedure the performance of the MM-ensemble dropped to an average balanced accuracy of mean 56% and F1 score of 59%, suggesting that this model does not do well in generalizing to new sites."
+    ]
+  }
+}

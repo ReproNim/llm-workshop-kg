@@ -1,0 +1,26 @@
+{
+  "source_id": "S-087",
+  "pmid": "local_1b0f6bd1",
+  "doi": "10.1002/mp.15011",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 4: ABIDE is used only as one of several unseen/generalizability test datasets (10 randomly selected, unlabeled images) to benchmark a deformable image registration network (FDRN); there is no autism-vs-control analysis and no diagnostic use of the data.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1002/mp.15011",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "",
+    "evidence_quotes": []
+  }
+}

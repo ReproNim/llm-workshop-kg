@@ -1,0 +1,21 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+{
+  "candidates": 200,
+  "retrieved_pdf": 99,
+  "retrieved_ranked": 99,
+  "too_little_text": [],
+  "corpus": 99,
+  "mix": {
+    "abide2_seeded": 26,
+    "heuristic_predictive": 65,
+    "heuristic_associational": 23
+  },
+  "must_include_present": [
+    "10.1038/sdata.2017.10",
+    "10.1016/j.neuroimage.2016.10.045"
+  ],
+  "routes": {
+    "unpaywall_pdf": 96,
+    "openalex_pdf": 3
+  }
+}

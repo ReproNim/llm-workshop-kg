@@ -1,0 +1,257 @@
+{
+  "source_id": "S-063",
+  "pmid": "local_e623bee8",
+  "doi": "10.3390/diagnostics13172773",
+  "screening": {
+    "decision": "include",
+    "reason": "Trains a 3D CNN on ABIDE preprocessed resting-state fMRI (ReHo) derivatives to classify ASD vs controls and evaluates data-augmentation strategies with 10-fold cross-validation; satisfies inclusion 1-4.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The 539 subjects with ASD and the 573 controls were split 70/15/15 into training, validation and test sets.",
+      "section": "methods",
+      "claim": "Cohort: 539 ASD and 573 controls from ABIDE preprocessed (1112 total, i.e. ABIDE I).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "we downloaded fMRI data (derivatives) pro- cessed with the Connectome Computation System (CCS) pipeline [9] which performs slice timing correction, motion realignment and global intensity normalisation.",
+      "section": "methods",
+      "claim": "fMRI derivatives processed with the CCS (Connectome Computation System) pipeline.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "we chose to use Regional Homogeneity (ReHo) derivative for comparing different aug- mentation strategies.",
+      "section": "methods",
+      "claim": "ReHo voxel-wise derivative volumes used as 3D CNN input (no ROI atlas/parcellation).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "10-fold cross validation was used and the mean test accuracy was calculated.",
+      "section": "methods",
+      "claim": "Performance assessed via 10-fold cross-validation, mean test accuracy.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Compared to no augmentation, the best augmentation approach increases the test accuracy by 0.6 percentage units.",
+      "section": "results",
+      "claim": "Best augmentation (random scaling, early stopping) improved test accuracy by only 0.6 percentage points over no augmentation.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "elastic deformations seem to work best, with an improvement of 2.2 percentage units.",
+      "section": "results",
+      "claim": "With a fixed number of epochs, elastic deformation augmentation gave the largest improvement (2.2 percentage points).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Our conclusion is that augmentation only provides mi- nor improvements when training 3D CNNs for classi\ufb01cation of ASD versus controls",
+      "section": "discussion",
+      "claim": "Overall conclusion: data augmentation gives only minor accuracy improvements for ASD vs control 3D-CNN classification.",
+      "relevance_score": 0.9
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Unclear",
+        "support": "The 539 subjects with ASD and the 573 controls were split 70/15/15 into training, validation and test sets. No explicit motion/QC exclusion rule beyond using the ABIDE-preprocessed release is described in this paper."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "we downloaded fMRI data (derivatives) pro- cessed with the Connectome Computation System (CCS) pipeline [9] which performs slice timing correction, motion realignment and global intensity normalisation. we chose to use Regional Homogeneity (ReHo) derivative for comparing different aug- mentation strategies."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD/control labels are the underlying ABIDE site diagnoses; no additional diagnostic criterion described in this paper."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Unclear",
+        "support": "10-fold cross-validation is used and a separate held-out test split is described (70/15/15), but no site covariate, harmonisation or leave-one-site-out evaluation is reported, and the training accuracy was \"well above 90%, indicating overfitting\" (the training accuracy is well above 90%, indicating over \ufb01tting), which raises concern about the reliability of the reported test accuracies."
+      }
+    ],
+    "overall": "Unclear",
+    "summary": "Full ABIDE I cohort (539 ASD/573 controls) and pipeline (CCS, ReHo) clearly reported, but no explicit participant-level QC/motion rule, no site handling, and the authors themselves note overfitting in the 3D CNN."
+  },
+  "charting": {
+    "source_id": "S-063",
+    "title": "Evaluation of Augmentation Methods in Classifying Autism Spectrum Disorders from fMRI Data with 3D Convolutional Neural Networks",
+    "authors": "",
+    "year": "2023",
+    "journal_conference": "Diagnostics",
+    "doi": "10.3390/diagnostics13172773",
+    "database_retrieved": "ABIDE I",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "Evaluate how different data-augmentation strategies affect 3D-CNN test accuracy for classifying ASD vs controls from ABIDE resting-state fMRI ReHo derivatives.",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "Human",
+    "task_type": "Resting-state",
+    "study_setting": "Multi-site (ABIDE I, 17 sites per the full release)",
+    "country_region": "",
+    "disorder_diagnosis": "Autism spectrum disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "539",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "573",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Voxel-wise ReHo (Regional Homogeneity) 3D volumes (61x73x61 voxels)",
+    "specific_features": "ReHo derivative volumes (no ROI atlas; voxel-wise 3D CNN input)",
+    "feature_extraction_tools": "CCS (Connectome Computation System) via ABIDE preprocessed",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Deep learning (3D CNN)",
+    "specific_algorithms": "3D CNN (3 convolutional layers + dense layer + sigmoid output) trained with various data-augmentation strategies (scaling, rotation, brightness, elastic deformation)",
+    "validation_methodology": "70/15/15 train/validation/test split, 10-fold cross-validation for mean test accuracy",
+    "performance_metrics": "Test accuracy (10-fold CV mean and SD)",
+    "key_performance_results": "Compared to no augmentation, the best augmentation approach increases the test accuracy by 0.6 percentage units. elastic deformations seem to work best, with an improvement of 2.2 percentage units.",
+    "summary_key_findings": "Data augmentation provided only minor improvements in 3D-CNN test accuracy for ASD-vs-control classification on ABIDE ReHo data (0.6-2.2 percentage points depending on strategy and stopping criterion); about half of the augmentation strategies tested reduced test accuracy relative to no augmentation, and training accuracy well above 90% indicated overfitting.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "Evaluate other ABIDE-preprocessed derivatives and multi-channel 3D CNNs combining several derivatives.",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE I (ABIDE preprocessed), 539 ASD and 573 controls (1112 total); no explicit numeric QC/motion exclusion rule described beyond use of the ABIDE-preprocessed release | quote: \"The 539 subjects with ASD and the 573 controls were split 70/15/15 into training, validation and test sets.\"",
+      "RQ2": "CCS (Connectome Computation System) pipeline (slice timing, motion realignment, global intensity normalisation, global signal regression + bandpass filter strategy); ReHo derivative used, no ROI atlas (voxel-wise) | quote: \"we downloaded fMRI data (derivatives) pro- cessed with the Connectome Computation System (CCS) pipeline [9] which performs slice timing correction, motion realignment and global intensity normalisation.\"",
+      "RQ3": "predictive \u2014 3D CNN classification of ASD vs controls | quote: \"Our conclusion is that augmentation only provides mi- nor improvements when training 3D CNNs for classi\ufb01cation of ASD versus controls\"",
+      "RQ4": "70/15/15 train/validation/test split with early stopping, plus 10-fold cross-validation for mean test accuracy; no site covariate or leave-site-out evaluation | quote: \"10-fold cross validation was used and the mean test accuracy was calculated.\"",
+      "RQ5": "Augmentation gave only minor gains (best: 0.6 percentage points with early stopping, 2.2 with fixed epochs); half of augmentation strategies reduced accuracy; training accuracy >90% indicated overfitting | quote: \"Compared to no augmentation, the best augmentation approach increases the test accuracy by 0.6 percentage units.\"",
+      "RQ6": "no \u2014 cohort size (539/573) is given but no participant ID list or exact numeric exclusion rule is published in this paper beyond relying on the ABIDE-preprocessed release | quote: \"The 539 subjects with ASD and the 573 controls were split 70/15/15 into training, validation and test sets.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly | quote: \"The 539 subjects with ASD and the 573 controls were split 70/15/15 into training, validation and test sets.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No | quote: \"\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"we downloaded fMRI data (derivatives) pro- cessed with the Connectome Computation System (CCS) pipeline [9] which performs slice timing correction, motion realignment and global intensity normalisation.\"",
+      "CL4 Atlas/parcellation reported?": "No | quote: \"\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Unclear | quote: \"\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No | quote: \"\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The 539 subjects with ASD and the 573 controls were split 70/15/15 into training, validation and test sets.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-063",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Partial",
+          "notes": "N by diagnosis given, but no explicit inclusion/exclusion rule stated. | quote: \"The 539 subjects with ASD and the 573 controls were split 70/15/15 into training, validation and test sets.\""
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "No",
+          "notes": "No motion/FD threshold reported in this paper."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported?",
+          "rating": "Yes",
+          "notes": "CCS pipeline described."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "No",
+          "notes": "Voxel-wise ReHo volumes used; no ROI atlas."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "Relies on ABIDE's own site-level ASD/control labels; no further criterion described."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "Unclear",
+          "notes": "70/15/15 split with early stopping and 10-fold CV described, but no statement on whether any preprocessing step used test-set information."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "No",
+          "notes": "No site covariate, harmonisation or leave-one-site-out evaluation."
+        },
+        {
+          "item_text": "CL7 Code and/or participant list available?",
+          "rating": "No",
+          "notes": "No code or participant list availability statement found."
+        }
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-063",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I (ABIDE preprocessed), 539 ASD / 573 controls (1112 total)",
+    "methods": "CCS-pipeline ReHo derivative volumes (voxel-wise, no atlas) fed into a 3D CNN; 70/15/15 train/val/test split with early stopping and 10-fold cross-validation; multiple data-augmentation strategies (scaling, rotation, brightness, elastic deformation) compared.",
+    "outcomes": "Augmentation gave only minor test-accuracy improvements (0.6-2.2 percentage points depending on strategy/stopping rule); about half of augmentation strategies reduced accuracy; training accuracy >90% indicated overfitting.",
+    "key_limitations": "No explicit motion/QC rule, no site handling, and authors note overfitting; absolute baseline accuracy values not stated numerically in text (only relative percentage-point changes and figures).",
+    "relevance_notes": "Uses the full ABIDE-I ABIDE-preprocessed release (CCS pipeline, ReHo) as a methodological testbed for augmentation rather than proposing a novel classifier; illustrates a predictive study with weak leakage/site-handling reporting.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3390/diagnostics13172773",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "The 539 subjects with ASD and the 573 controls were split 70/15/15 into training, validation and test sets.",
+    "n_by_dx": {
+      "ASD": 539,
+      "TD": 573,
+      "total": 1112
+    },
+    "sites": "",
+    "pipeline": "CCS (Connectome Computation System)",
+    "atlas": "none (voxel-wise ReHo)",
+    "claim_type": "predictive",
+    "finding": "Compared to no augmentation, the best augmentation approach increases the test accuracy by 0.6 percentage units.",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "The 539 subjects with ASD and the 573 controls were split 70/15/15 into training, validation and test sets.",
+      "we downloaded fMRI data (derivatives) pro- cessed with the Connectome Computation System (CCS) pipeline [9] which performs slice timing correction, motion realignment and global intensity normalisation.",
+      "Compared to no augmentation, the best augmentation approach increases the test accuracy by 0.6 percentage units.",
+      "elastic deformations seem to work best, with an improvement of 2.2 percentage units."
+    ]
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "source_id": "S-022",
+  "pmid": "local_b72b2fbd",
+  "doi": "10.3389/fnins.2019.01325",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a CNN-based diagnostic prediction (ASD vs. control) analysis of ABIDE I resting-state fMRI functional connectivity, including a leave-site-out evaluation (Inclusion 2, 3).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "detect ASD correctly with an accuracy of 70.22% using the ABIDE I dataset and the CC400",
+      "section": "abstract",
+      "claim": "The proposed CNN detects ASD with 70.22% accuracy on ABIDE I using the CC400 atlas.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The inclusion criteria for sites was having at least 20 subjects meeting other criteria for inclusion like successful preprocessing with manual visual inspection of normalization to MNI space of MPRAGE.",
+      "section": "methods",
+      "claim": "Site inclusion required at least 20 subjects and successful preprocessing/normalisation QC.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "There are 1,112 subjects (539 diagnosed with ASD, and 573 typical controls) in the ABIDE I dataset, reduced to 871 subjects after preprocessing.",
+      "section": "methods",
+      "claim": "ABIDE I (1,112 subjects: 539 ASD/573 TD) was reduced to 871 subjects after preprocessing.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The Preprocessed Connectomes Project (PCP) is a publicly available preprocessed version of data from both the 1,000 Functional Connectomes Project (FCP) and the International Neuroimaging Data-Sharing Initiative (INDI)3. We used data from the FCP using the conﬁgurable pipeline, the Analysis of Connectomes (CPAC).",
+      "section": "methods",
+      "claim": "Data were preprocessed via the Preprocessed Connectomes Project using CPAC.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "We used the CC400 functional parcellation atlas of the brain throughout our study.",
+      "section": "methods",
+      "claim": "The CC400 functional parcellation atlas was used throughout.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "We achieved an accuracy of 70.22 %, which is better than the rest of the reported works (Table 4).",
+      "section": "results",
+      "claim": "The CNN achieved 70.22% 10-fold CV accuracy, better than prior reported works.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "we used a leave-site-out approach for our proposed CNN, SVM, KNN, and RF classiﬁers (Heinsfeld et al., 2018). In this method, each site is taken as one fold in the dataset, and we applied a cross-validation approach on the remaining sites instead of diﬀerent folds. Therefore, each time, one site out of 17 is used to test, and the other sites are used for training.",
+      "section": "methods",
+      "claim": "Performance was also evaluated using a leave-site-out approach across the 17 ABIDE I sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "DATA AVAILABILITY STATEMENT The datasets generated for this study are available on request to the corresponding author.",
+      "section": "methods",
+      "claim": "Data are available on request to the corresponding author, not openly released.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "Cohort origin, site-inclusion rule, and the reduction from 1,112 to 871 subjects after preprocessing QC are explicit: \"There are 1,112 subjects (539 diagnosed with ASD, and 573 typical controls) in the ABIDE I dataset, reduced to 871 subjects after preprocessing.\""
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "Pipeline (CPAC/PCP) and atlas (CC400) are named with preprocessing steps described."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Low",
+        "support": "States ADOS/ADI-R were used for ASD diagnosis or typical-control confirmation at most sites."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Unclear",
+        "support": "Uses 10-fold CV and an additional leave-site-out evaluation across all 17 sites (reduces pooled-CV site leakage), but the text does not state whether feature/hyperparameter selection was confined to training folds."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Cohort, QC-driven sample reduction, pipeline, atlas and diagnosis source are all reported, and a leave-site-out evaluation is included alongside 10-fold CV; the main residual gap is that within-fold leakage control for hyperparameter/feature selection is not explicitly described."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "505 (stated as used); ABIDE I total before preprocessing-based reduction was 539 ASD; final analysed N after preprocessing was 871 subjects total (ASD/TD split of the 871 not given)",
+    "n_controls": "530 (stated as used); ABIDE I total before preprocessing-based reduction was 573 TD; final analysed N after preprocessing was 871 subjects total (ASD/TD split of the 871 not given)",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Preprocessed Connectomes Project (PCP) pipeline: Configurable Pipeline for Analysis of Connectomes (CPAC)",
+    "specific_features": "ROI-wise Pearson correlation connectivity matrix, CC400 functional parcellation atlas",
+    "model_category": "Deep learning (1D CNN); compared against classical ML (SVM, KNN, random forest)",
+    "specific_algorithms": "Convolutional neural network (proposed); SVM (RBF kernel), KNN (k=20), Random Forest",
+    "validation_methodology": "10-fold cross-validation (primary); leave-site-out evaluation across all 17 ABIDE I sites (secondary, per-site accuracy reported)",
+    "performance_metrics": "Accuracy, ROC/AUC, sensitivity, specificity, F-score, confusion matrix",
+    "key_performance_results": "CNN achieved 70.22% 10-fold CV accuracy, outperforming SVM (69%), KNN (62%) and RF (60%) after hyperparameter optimisation; leave-site-out accuracy varied by site, with KKI, SDSU and USM exceeding 70%.",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "No — data available on request to the corresponding author, not openly released.",
+    "custom_fields": {
+      "RQ1": "ABIDE I: 1,112 individuals (539 ASD/573 TD, 17 sites), sites required >=20 subjects passing successful preprocessing/normalisation QC; after CPAC preprocessing the sample was reduced to 871 subjects (a separate statement reports 505 ASD/530 typical controls as the dataset used). | quote: \"There are 1,112 subjects (539 diagnosed with ASD, and 573 typical controls) in the ABIDE I dataset, reduced to 871 subjects after preprocessing.\"",
+      "RQ2": "Preprocessed Connectomes Project, CPAC pipeline (slice timing correction, motion correction, voxel intensity normalisation, nuisance regression with 24 motion parameters, CompCor, band-pass filter 0.01-10Hz); CC400 functional parcellation atlas. | quote: \"The Preprocessed Connectomes Project (PCP) is a publicly available preprocessed version of data from both the 1,000 Functional Connectomes Project (FCP) and the International Neuroimaging Data-Sharing Initiative (INDI)3. We used data from the FCP using the conﬁgurable pipeline, the Analysis of Connectomes (CPAC).\"",
+      "RQ3": "predictive — ASD vs. control classification using a CNN on functional connectivity matrices. | quote: \"detect ASD correctly with an accuracy of 70.22% using the ABIDE I dataset and the CC400\"",
+      "RQ4": "10-fold cross-validation as the primary evaluation; a leave-site-out evaluation (each of the 17 sites held out in turn) was also performed for CNN, SVM, KNN and RF. | quote: \"we used a leave-site-out approach for our proposed CNN, SVM, KNN, and RF classiﬁers (Heinsfeld et al., 2018). In this method, each site is taken as one fold in the dataset, and we applied a cross-validation approach on the remaining sites instead of diﬀerent folds. Therefore, each time, one site out of 17 is used to test, and the other sites are used for training.\"",
+      "RQ5": "CNN achieved 70.22% accuracy (10-fold CV) with the CC400 atlas, outperforming SVM/KNN/RF baselines; in the leave-site-out evaluation, KKI, SDSU and USM sites achieved accuracies above 70%, with performance varying by site. | quote: \"We achieved an accuracy of 70.22 %, which is better than the rest of the reported works (Table 4).\"",
+      "RQ6": "partly — ABIDE I release, site-inclusion rule (>=20 subjects, QC-passing) and the pre/post-preprocessing Ns are stated, but no participant list is published and the raw/derived data are available only on request. | quote: \"DATA AVAILABILITY STATEMENT The datasets generated for this study are available on request to the corresponding author.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — ABIDE I totals (539 ASD/573 TD) and the post-preprocessing total (871) are given, but the exact ASD/TD split of the final 871 is not stated. | quote: \"There are 1,112 subjects (539 diagnosed with ASD, and 573 typical controls) in the ABIDE I dataset, reduced to 871 subjects after preprocessing.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — site inclusion required successful preprocessing with manual visual inspection of MNI normalisation, and mean framewise displacement (FD) is mentioned as a quality measure, but no numeric FD threshold is given. | quote: \"The inclusion criteria for sites was having at least 20 subjects meeting other criteria for inclusion like successful preprocessing with manual visual inspection of normalization to MNI space of MPRAGE.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — CPAC via the Preprocessed Connectomes Project is named with preprocessing steps, but no pipeline version number is given. | quote: \"The Preprocessed Connectomes Project (PCP) is a publicly available preprocessed version of data from both the 1,000 Functional Connectomes Project (FCP) and the International Neuroimaging Data-Sharing Initiative (INDI)3. We used data from the FCP using the conﬁgurable pipeline, the Analysis of Connectomes (CPAC).\"",
+      "CL4 Atlas/parcellation reported?": "Yes — CC400 functional parcellation atlas. | quote: \"We used the CC400 functional parcellation atlas of the brain throughout our study.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Unclear — classifier hyperparameters were tuned (e.g. SVM C, KNN k, RF depth/n_estimators), but the text does not state whether this tuning was confined to training folds within the CV scheme.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — a leave-site-out evaluation was performed across all 17 ABIDE I sites in addition to pooled 10-fold CV. | quote: \"we used a leave-site-out approach for our proposed CNN, SVM, KNN, and RF classiﬁers (Heinsfeld et al., 2018). In this method, each site is taken as one fold in the dataset, and we applied a cross-validation approach on the remaining sites instead of diﬀerent folds. Therefore, each time, one site out of 17 is used to test, and the other sites are used for training.\"",
+      "CL7 Code and/or participant list available?": "No — data are available on request to the corresponding author, not openly released. | quote: \"DATA AVAILABILITY STATEMENT The datasets generated for this study are available on request to the corresponding author.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "rating": "Partial",
+      "overall_concern": "Low",
+      "support": "Site-inclusion rule and pre/post-preprocessing totals are given, but exact final ASD/TD split and a numeric FD threshold are not (CL1, CL2)."
+    },
+    "domain_2_predictors_preprocessing": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Pipeline steps and atlas are described, though no version number is given (CL3, CL4)."
+    },
+    "domain_3_outcome_label_source": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "ADOS/ADI-R are named as the diagnostic/confirmation instruments used at most sites."
+    },
+    "domain_4_bias_transparency": {
+      "rating": "Partial",
+      "overall_concern": "Some",
+      "support": "A leave-site-out evaluation is a strong positive (CL6), but within-fold leakage control for hyperparameter tuning is not described and data are available only on request, not openly (CL5, CL7)."
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction (1D CNN) using ABIDE I resting-state fMRI (1,112 subjects, 539 ASD/573 TD, 17 sites), reduced to 871 subjects after CPAC preprocessing QC (a separate statement reports 505 ASD/530 TD as the dataset used).",
+    "methods": "CPAC/PCP-preprocessed functional connectivity (CC400 atlas) fed into a 1D CNN; compared against optimised SVM, KNN and Random Forest; evaluated via 10-fold CV and a leave-site-out scheme across all 17 sites.",
+    "outcomes": "CNN achieved 70.22% 10-fold CV accuracy, outperforming SVM (69%), KNN (62%) and RF (60%); leave-site-out accuracy varied by site, exceeding 70% at KKI, SDSU and USM.",
+    "key_limitations": "Exact ASD/TD split of the final 871-subject analysed sample not stated; no numeric motion/FD cut-off given; data available only on request, not openly released; within-fold leakage control for hyperparameter tuning not described.",
+    "relevance_notes": "Combines a standard pooled 10-fold CV evaluation with an explicit leave-site-out analysis across all 17 ABIDE I sites, making site-level generalisation directly reportable for the dataset-publication link.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2019.01325",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "ABIDE I (1,112 subjects: 539 ASD/573 TD, 17 sites; site inclusion required >=20 subjects passing successful preprocessing/MNI-normalisation QC), reduced via CPAC preprocessing to 871 analysed subjects; a separate statement in the same paper reports 505 ASD/530 typical controls as the dataset used.",
+    "n_by_dx": {
+      "ASD": null,
+      "TD": null,
+      "total": 871
+    },
+    "sites": "17",
+    "pipeline": "CPAC (Configurable Pipeline for Analysis of Connectomes) via the Preprocessed Connectomes Project",
+    "atlas": "CC400 (Craddock 400-region functional parcellation)",
+    "claim_type": "predictive",
+    "finding": "CNN achieved 70.22% 10-fold CV accuracy on ABIDE I with the CC400 atlas, outperforming SVM/KNN/RF baselines; a leave-site-out evaluation across all 17 sites found accuracy above 70% at the KKI, SDSU and USM sites.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "There are 1,112 subjects (539 diagnosed with ASD, and 573 typical controls) in the ABIDE I dataset, reduced to 871 subjects after preprocessing.",
+      "We achieved an accuracy of 70.22 %, which is better than the rest of the reported works (Table 4).",
+      "we used a leave-site-out approach for our proposed CNN, SVM, KNN, and RF classiﬁers (Heinsfeld et al., 2018). In this method, each site is taken as one fold in the dataset, and we applied a cross-validation approach on the remaining sites instead of diﬀerent folds. Therefore, each time, one site out of 17 is used to test, and the other sites are used for training."
+    ]
+  }
+}

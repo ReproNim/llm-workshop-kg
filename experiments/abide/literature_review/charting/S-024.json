@@ -1,0 +1,209 @@
+{
+  "source_id": "S-024",
+  "pmid": "local_87840d2a",
+  "doi": "10.1007/978-3-319-66182-7_54",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2/3: analyses ABIDE resting-state functional connectivity explicitly and evaluates a diagnostic classification task (ASD vs control via k-nn on learned graph distances).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "we demonstrate the model performance on the functional connectivity graphs of 871 subjects from the challenging Autism Brain Imaging Data Exchange (ABIDE) database [5], which contains heterogeneous rs-fMRI data acquired at multiple",
+      "section": "methods",
+      "claim": "Study uses the 871-subject ABIDE I cohort.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "It includes N = 871 subjects from diﬀerent imaging sites that met the imaging quality and phenotypic information criteria, consisting of 403 individuals suﬀering from ASD and 468 healthy con- trols.",
+      "section": "methods",
+      "claim": "Cohort: 871 ABIDE participants (403 ASD, 468 controls) meeting imaging-quality and phenotypic-information criteria.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "has been preprocessed by the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC) [2], which involves skull striping",
+      "section": "methods",
+      "claim": "Data preprocessed with C-PAC.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "We, subsequently, extract the mean time series for a set of regions from the Harvard Oxford (HO) atlas comprising R = 110 cortical and subcortical ROIs [4] and normalise them to zero mean and unit variance.",
+      "section": "methods",
+      "claim": "Harvard-Oxford atlas (110 ROIs) used for connectivity feature extraction.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "We also ensure that subjects from all 20 sites are included in both training and test sets.",
+      "section": "methods",
+      "claim": "Training/test split mixes subjects from all 20 sites rather than holding sites out.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "Table 1: k-nn classiﬁcation results with k = 3 using the proposed metric and Euclidean distance following PCA. Classiﬁcation all sites site 6 site 9 site 14 site 16 site 18 PCA/Euclidean 51.0% 59.3% 25.0% 30.0% 64.3% 50.0% GCN 62.9% 81.5% 62.5% 70.0% 50.0% 90.0%",
+      "section": "results",
+      "claim": "A k-nn classifier (k=3) using the GCN-learned distance metric reaches 62.9% accuracy across all sites versus 51.0% for PCA/Euclidean distance.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "improving the performance of a simple k-nn classiﬁer by 11.9% compared to a traditional distance metric",
+      "section": "abstract",
+      "claim": "The learned GCN distance metric improves k-nn ASD-vs-control classification accuracy by 11.9 percentage points over Euclidean/PCA distance.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "source code available at https://github.com/sk1712/gcn_metric_learning",
+      "section": "methods",
+      "claim": "Source code for the method is publicly released.",
+      "relevance_score": 0.5
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Low", "support": "871-subject ABIDE I cohort (403 ASD, 468 controls) from 20 sites, same well-documented subset as Abraham et al. 2017."},
+      {"domain": "Predictors", "judgment": "Low", "support": "C-PAC pipeline and Harvard-Oxford (110-ROI) atlas explicitly specified."},
+      {"domain": "Outcome", "judgment": "Unclear", "support": "Diagnostic label inherited from ABIDE phenotypic file; no diagnostic instrument/criteria restated in this short conference paper."},
+      {"domain": "Analysis", "judgment": "High", "support": "Siamese network trained on matching/non-matching subject pairs, with subjects from all 20 sites present in both training and test sets rather than held out; k = 3 and other network hyperparameters tuned via cross-validation but pair-based splitting makes independence between train/test pairs unclear."}
+    ],
+    "overall": "Unclear",
+    "summary": "Short, methodologically transparent conference paper reusing the well-characterised 871-subject ABIDE cohort; main appraisal concerns are the pair-based (not subject-independent, not site-held-out) train/test construction typical of metric-learning setups."
+  },
+  "charting": {
+    "source_id": "S-024",
+    "title": "Distance Metric Learning Using Graph Convolutional Networks: Application to Functional Brain Networks",
+    "authors": "Ktena SI; Parisot S; Ferrante E; Rajchl M; Lee M; Glocker B; Rueckert D",
+    "year": "2017",
+    "journal_conference": "MICCAI 2017 (Springer LNCS)",
+    "doi": "10.1007/978-3-319-66182-7_54",
+    "database_retrieved": "unpaywall",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "403",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "468",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "Yes — source code available at https://github.com/sk1712/gcn_metric_learning",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity graph (brain graph with Harvard-Oxford ROI nodes)",
+    "specific_features": "Functional connectivity edges between Harvard-Oxford ROIs; k-NN anatomical graph structure for spectral convolution",
+    "feature_extraction_tools": "C-PAC (Preprocessed Connectomes Project)",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Graph Convolutional Network (siamese metric-learning architecture)",
+    "specific_algorithms": "Siamese GCN distance-metric learning compared with a simple k-nn classifier (k=3) on learned distances vs. Euclidean/PCA distances",
+    "validation_methodology": "Random subject/pair split into training and test sets ensuring all 20 sites present in both; network hyperparameters tuned via cross-validation",
+    "performance_metrics": "k-nn classification accuracy (per-site and all-sites), AUC/ROC",
+    "key_performance_results": "k-nn (k=3) accuracy on the GCN-learned metric: 62.9% across all sites (vs. 51.0% for PCA/Euclidean distance), an 11.9 percentage-point improvement; larger per-site gains for some of the 5 biggest sites (e.g. site 18: 90.0% vs 50.0%)",
+    "summary_key_findings": "A siamese graph convolutional network learns a graph-similarity metric for ABIDE functional connectomes that improves k-nn ASD-vs-control classification accuracy by 11.9 percentage points (62.9% vs. 51.0%) over a traditional PCA/Euclidean distance metric, with larger gains within individual sites than across all sites pooled.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "predictive | Same 871-subject ABIDE I cohort (403 ASD, 468 controls) from 20 sites as used by Abraham et al. 2017. | quote: \"It includes N = 871 subjects from diﬀerent imaging sites that met the imaging quality and phenotypic information criteria, consisting of 403 individuals suﬀering from ASD and 468 healthy con- trols.\"",
+      "RQ2": "C-PAC pipeline; Harvard-Oxford atlas (110 ROIs). | quote: \"We, subsequently, extract the mean time series for a set of regions from the Harvard Oxford (HO) atlas comprising R = 110 cortical and subcortical ROIs\"",
+      "RQ3": "predictive — ASD vs control classification using a learned graph-distance metric and k-nn classifier. | quote: \"we use a simple k-nn classiﬁer with k = 3 based the estimated distances, and summarise results in Table 1\"",
+      "RQ4": "Random matching/non-matching pair split with subjects from all 20 sites present in both train and test sets; network hyperparameters chosen via cross-validation. | quote: \"We also ensure that subjects from all 20 sites are included in both training and test sets.\"",
+      "RQ5": "k-nn accuracy 62.9% (all sites) with the GCN distance metric vs. 51.0% with PCA/Euclidean distance, an 11.9-point improvement; larger gains for individual sites (up to 90.0% vs 50.0% for site 18). | quote: \"PCA/Euclidean 51.0% 59.3% 25.0% 30.0% 64.3% 50.0% GCN 62.9% 81.5% 62.5% 70.0% 50.0% 90.0%\"",
+      "RQ6": "partly — cohort is the published 871-subject ABIDE subset (403/468) with source code released, but no independent participant-ID list in this paper. | quote: \"source code available at https://github.com/sk1712/gcn_metric_learning\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"consisting of 403 individuals suﬀering from ASD and 468 healthy con- trols\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No | quote: \"that met the imaging quality and phenotypic information criteria\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"has been preprocessed by the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC) [2], which involves skull striping\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"the Harvard Oxford (HO) atlas comprising R = 110 cortical and subcortical ROIs\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No | quote: \"The diﬀerent network parameters are optimised using cross-validation.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly | quote: \"We also ensure that subjects from all 20 sites are included in both training and test sets.\"",
+      "CL7 Code and/or participant list available?": "Yes | quote: \"source code available at https://github.com/sk1712/gcn_metric_learning\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"we demonstrate the model performance on the functional connectivity graphs of 871 subjects from the challenging Autism Brain Imaging Data Exchange (ABIDE) database\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-024",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {"item_text": "CL1 Cohort definition reported?", "rating": "Yes", "notes": "871 subjects (403 ASD, 468 controls), 20 sites, re-using the Abraham et al. 2017 ABIDE subset."},
+        {"item_text": "CL2 Motion/QC rule reported?", "rating": "No", "notes": "Only a general reference to 'imaging quality and phenotypic information criteria', no numeric threshold stated."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {"item_text": "CL3 Pipeline and version reported?", "rating": "Yes", "notes": "C-PAC named explicitly with key preprocessing steps."},
+        {"item_text": "CL4 Atlas/parcellation reported?", "rating": "Yes", "notes": "Harvard-Oxford atlas with 110 ROIs specified."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {"item_text": "Diagnosis source and label definition", "rating": "Unclear", "notes": "Label (ASD vs control) inherited from ABIDE phenotypic file without restating the diagnostic instrument."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {"item_text": "CL5 Leakage control reported?", "rating": "No", "notes": "No explicit statement that pair construction or hyperparameter tuning avoided test-pair contamination."},
+        {"item_text": "CL6 Site handling reported?", "rating": "Partial", "notes": "All 20 sites deliberately present in both training and test sets rather than held out or harmonised."},
+        {"item_text": "CL7 Code/participant list available?", "rating": "Yes", "notes": "Public GitHub repository for source code."}
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-024",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I; 871 subjects (403 ASD, 468 controls) from 20 sites",
+    "methods": "C-PAC-preprocessed Harvard-Oxford (110-ROI) connectivity graphs; siamese graph convolutional network learning a graph-distance metric from matching/non-matching subject pairs; k-nn (k=3) classification on learned distances compared to PCA/Euclidean distance",
+    "outcomes": "k-nn accuracy 62.9% across all sites with the learned GCN metric vs. 51.0% with PCA/Euclidean distance (11.9-point improvement); larger per-site improvements (e.g. site 18: 90.0% vs 50.0%); AUC improvements reported per site",
+    "key_limitations": "Pair-based siamese training/testing with all 20 sites represented in both splits rather than held out; short conference format limits detail on diagnostic label source and on leakage control for pair construction",
+    "relevance_notes": "A graph-metric-learning method applied to the same well-characterised 871-subject ABIDE cohort used elsewhere in this corpus, useful for linking methodological lineage in the dataset-publication graph",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1007/978-3-319-66182-7_54",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "871 ABIDE I participants (403 ASD, 468 controls) from 20 sites meeting imaging quality and phenotypic information criteria",
+    "n_by_dx": {"ASD": 403, "TD": 468, "total": 871},
+    "sites": "20",
+    "pipeline": "C-PAC (Preprocessed Connectomes Project)",
+    "atlas": "Harvard-Oxford (110 ROIs)",
+    "claim_type": "predictive",
+    "finding": "A siamese GCN-learned graph-distance metric improves k-nn (k=3) ASD-vs-control classification accuracy from 51.0% (PCA/Euclidean distance) to 62.9% across all sites.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "It includes N = 871 subjects from diﬀerent imaging sites that met the imaging quality and phenotypic information criteria, consisting of 403 individuals suﬀering from ASD and 468 healthy con- trols.",
+      "Table 1: k-nn classiﬁcation results with k = 3 using the proposed metric and Euclidean distance following PCA. Classiﬁcation all sites site 6 site 9 site 14 site 16 site 18 PCA/Euclidean 51.0% 59.3% 25.0% 30.0% 64.3% 50.0% GCN 62.9% 81.5% 62.5% 70.0% 50.0% 90.0%"
+    ]
+  }
+}

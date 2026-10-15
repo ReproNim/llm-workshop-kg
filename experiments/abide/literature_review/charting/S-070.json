@@ -1,0 +1,263 @@
+{
+  "source_id": "S-070",
+  "pmid": "local_fe9d4dc4",
+  "doi": "10.3389/fnagi.2022.948704",
+  "screening": {
+    "decision": "include",
+    "reason": "Proposes a 3D CNN + GRU (CNNG) deep-learning classifier using spatio-temporal features from ABIDE I resting-state fMRI, reporting accuracy/sensitivity/specificity/AUC on an ASD vs TC held-out test split; satisfies inclusion 1-4.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The dataset brings together 1,112 subjects (539 ASD patients and 573 TCs) from 17 sites around worldwide",
+      "section": "methods",
+      "claim": "ABIDE I full release: 1112 subjects (539 ASD/573 TC) from 17 sites.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "A \ufb01nal dataset of 871 subjects, including 403 ASD patients and 468 TCs, was obtained by removing the samples with incomplete brain coverage, high motion peaks, ghosting and other scanner artifacts.",
+      "section": "methods",
+      "claim": "Final analysed sample after QC was 871 subjects (403 ASD/468 TC), excluding incomplete coverage, high motion peaks, ghosting and other artifacts.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "The preprocessing method used in this paper is the con\ufb01gurable pipeline for the analysis of connectomes (CPAC)",
+      "section": "methods",
+      "claim": "fMRI preprocessing used the CPAC pipeline.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "the spatial dimension of each image (61, 73, 61) is downsampled to (28, 28, 28). After the processing of temporal and spatial dimensions, the size of the obtained fMRI data is (28, 28, 28, 32).",
+      "section": "methods",
+      "claim": "Spatio-temporal 4D fMRI volumes (28x28x28x32, voxel-wise, no atlas) used directly as CNNG input.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "the data is categorized into a training set and a test set in a ratio of 8:2.",
+      "section": "methods",
+      "claim": "Model evaluated on an 8:2 train/test split.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "the proposed algorithm obtains an accuracy of 72.46% in the experiment of 871 subjects, which is 5.26% higher than that of HI-GCN, 4.44% higher than that of GAT, and 2.44% higher than that of CNN.",
+      "section": "results",
+      "claim": "CNNG achieved 72.46% accuracy, outperforming HI-GCN, GAT and CNN comparators.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "The proposed algorithm also obtains a speci\ufb01city of 79.25% and a sensitivity of 74.35%.",
+      "section": "results",
+      "claim": "CNNG specificity 79.25%, sensitivity 74.35%.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "the AUC value of the proposed algorithm is 0.79, which is 5.42% higher compared to GAT.",
+      "section": "results",
+      "claim": "CNNG AUC = 0.79, higher than GAT, HI-GCN, CNN-MLP and DiagNet comparators.",
+      "relevance_score": 0.9
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Unclear",
+        "support": "A \ufb01nal dataset of 871 subjects, including 403 ASD patients and 468 TCs, was obtained by removing the samples with incomplete brain coverage, high motion peaks, ghosting and other scanner artifacts. Exclusion criteria are described qualitatively (incomplete coverage, high motion peaks, ghosting, artifacts) without a numeric threshold."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "The preprocessing method used in this paper is the con\ufb01gurable pipeline for the analysis of connectomes (CPAC) the spatial dimension of each image (61, 73, 61) is downsampled to (28, 28, 28). After the processing of temporal and spatial dimensions, the size of the obtained fMRI data is (28, 28, 28, 32)."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD/TC labels are ABIDE's own site diagnoses; no ADOS/ADI-R criterion or additional validation described in this paper."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "the data is categorized into a training set and a test set in a ratio of 8:2. A single 8:2 train/test split (not cross-validation) is used for the main CNNG results, with no leakage-control statement, no site covariate or harmonisation, and no leave-one-site-out evaluation despite the multi-site (17-site) composition."
+      }
+    ],
+    "overall": "High",
+    "summary": "Cohort and CPAC pipeline well described, with a qualitative (non-numeric) motion/artifact exclusion rule; the main classification result relies on a single 8:2 split without cross-validation, site handling or an explicit leakage-control statement."
+  },
+  "charting": {
+    "source_id": "S-070",
+    "title": "CNNG: A Convolutional Neural Networks With Gated Recurrent Units for Autism Spectrum Disorder Classification",
+    "authors": "",
+    "year": "2022",
+    "journal_conference": "Frontiers in Aging Neuroscience",
+    "doi": "10.3389/fnagi.2022.948704",
+    "database_retrieved": "ABIDE I",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "Classify ASD vs. typical controls directly from 4D spatio-temporal resting-state fMRI using a joint 3D-CNN + GRU (CNNG) deep-learning model.",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "Human",
+    "task_type": "Resting-state",
+    "study_setting": "Multi-site (17 sites)",
+    "country_region": "",
+    "disorder_diagnosis": "Autism spectrum disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "403",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "468",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Raw 4D spatio-temporal fMRI volumes (downsampled, voxel-wise, no ROI/atlas)",
+    "specific_features": "28x28x28 spatial volumes x 32 timepoints, fed directly into a 3D-CNN+GRU network",
+    "feature_extraction_tools": "CPAC",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Deep learning (3D CNN + Gated Recurrent Unit)",
+    "specific_algorithms": "CNNG: stacked small 3D convolutional kernels (3x3x3) for spatial features + GRU for temporal features, compared against LSTM variant, CNN-MLP, DiagNet, HI-GCN, GAT, SVC",
+    "validation_methodology": "Single 8:2 train/test split (no cross-validation reported for the main result); per-site average accuracy/sensitivity/specificity also reported across the 17 sites",
+    "performance_metrics": "Accuracy, sensitivity, specificity, AUC",
+    "key_performance_results": "the proposed algorithm obtains an accuracy of 72.46% in the experiment of 871 subjects, which is 5.26% higher than that of HI-GCN, 4.44% higher than that of GAT, and 2.44% higher than that of CNN. The proposed algorithm also obtains a speci\ufb01city of 79.25% and a sensitivity of 74.35%. the AUC value of the proposed algorithm is 0.79, which is 5.42% higher compared to GAT.",
+    "summary_key_findings": "CNNG achieved 72.46% accuracy, 74.35% sensitivity, 79.25% specificity and AUC 0.79 for ASD vs TC classification from raw spatio-temporal ABIDE-I fMRI, outperforming CNN-MLP, DiagNet, HI-GCN and GAT comparators.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE I, 17 sites, 1112 subjects initially (539 ASD/573 TC), QC'd to 871 (403 ASD/468 TC) by removing incomplete coverage, high motion peaks, ghosting and other artifacts (no numeric threshold given) | quote: \"A \ufb01nal dataset of 871 subjects, including 403 ASD patients and 468 TCs, was obtained by removing the samples with incomplete brain coverage, high motion peaks, ghosting and other scanner artifacts.\"",
+      "RQ2": "CPAC pipeline; no ROI atlas \u2014 raw downsampled 4D spatio-temporal fMRI volumes (28x28x28x32) used directly | quote: \"The preprocessing method used in this paper is the con\ufb01gurable pipeline for the analysis of connectomes (CPAC)\"",
+      "RQ3": "predictive \u2014 ASD vs TC deep-learning classification | quote: \"the proposed algorithm obtains an accuracy of 72.46% in the experiment of 871 subjects, which is 5.26% higher than that of HI-GCN, 4.44% higher than that of GAT, and 2.44% higher than that of CNN.\"",
+      "RQ4": "Single 8:2 train/test split; accuracy/sensitivity/specificity/AUC computed on the held-out test set; per-site average metrics also reported across the 17 sites; no leave-site-out or ComBat harmonisation | quote: \"the data is categorized into a training set and a test set in a ratio of 8:2.\"",
+      "RQ5": "72.46% accuracy, 74.35% sensitivity, 79.25% specificity, AUC 0.79, outperforming CNN-MLP, DiagNet, HI-GCN and GAT | quote: \"the AUC value of the proposed algorithm is 0.79, which is 5.42% higher compared to GAT.\"",
+      "RQ6": "partly \u2014 initial release size and final QC'd N by diagnosis given, but exclusion rule is qualitative (no numeric motion threshold) and no participant list published | quote: \"A \ufb01nal dataset of 871 subjects, including 403 ASD patients and 468 TCs, was obtained by removing the samples with incomplete brain coverage, high motion peaks, ghosting and other scanner artifacts.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly | quote: \"A \ufb01nal dataset of 871 subjects, including 403 ASD patients and 468 TCs, was obtained by removing the samples with incomplete brain coverage, high motion peaks, ghosting and other scanner artifacts.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly | quote: \"A \ufb01nal dataset of 871 subjects, including 403 ASD patients and 468 TCs, was obtained by removing the samples with incomplete brain coverage, high motion peaks, ghosting and other scanner artifacts.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"The preprocessing method used in this paper is the con\ufb01gurable pipeline for the analysis of connectomes (CPAC)\"",
+      "CL4 Atlas/parcellation reported?": "No | quote: \"\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No | quote: \"\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No | quote: \"\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The dataset brings together 1,112 subjects (539 ASD patients and 573 TCs) from 17 sites around worldwide\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-070",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Partial",
+          "notes": "N by diagnosis given, exclusion criteria stated qualitatively. | quote: \"A \ufb01nal dataset of 871 subjects, including 403 ASD patients and 468 TCs, was obtained by removing the samples with incomplete brain coverage, high motion peaks, ghosting and other scanner artifacts.\""
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "Partial",
+          "notes": "\"high motion peaks\" mentioned as an exclusion reason, no numeric FD threshold given."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported?",
+          "rating": "Yes",
+          "notes": "CPAC pipeline steps described in detail."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "No",
+          "notes": "Voxel-wise downsampled 4D volumes used; no ROI atlas."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "Relies on ABIDE's site-level ASD/TC labels; no further criterion described."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "No",
+          "notes": "Single 8:2 split with no explicit leakage-control statement."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "No",
+          "notes": "No ComBat/site covariate/leave-one-site-out evaluation despite 17-site composition."
+        },
+        {
+          "item_text": "CL7 Code and/or participant list available?",
+          "rating": "No",
+          "notes": "No code or participant-list availability statement found."
+        }
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-070",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I, 17 sites, 1112 initial subjects QC'd to 871 (403 ASD/468 TC)",
+    "methods": "CPAC-preprocessed raw 4D spatio-temporal fMRI (voxel-wise, downsampled to 28x28x28x32, no atlas) fed into a stacked small-kernel 3D-CNN + GRU network (CNNG); single 8:2 train/test split; compared against CNN-MLP, DiagNet, HI-GCN, GAT, SVC and an LSTM variant.",
+    "outcomes": "CNNG achieved 72.46% accuracy, 74.35% sensitivity, 79.25% specificity, AUC 0.79, outperforming all deep-learning comparators tested.",
+    "key_limitations": "Single train/test split rather than cross-validation; qualitative (non-numeric) motion/QC exclusion; no site covariate, harmonisation or leave-one-site-out evaluation despite 17-site data.",
+    "relevance_notes": "Illustrative of voxel-wise spatio-temporal (non-atlas) deep-learning approaches to ABIDE classification, and of weak reporting on cross-validation/leakage/site handling relative to connectivity-matrix-based studies.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnagi.2022.948704",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "A \ufb01nal dataset of 871 subjects, including 403 ASD patients and 468 TCs, was obtained by removing the samples with incomplete brain coverage, high motion peaks, ghosting and other scanner artifacts.",
+    "n_by_dx": {
+      "ASD": 403,
+      "TD": 468,
+      "total": 871
+    },
+    "sites": "17",
+    "pipeline": "CPAC",
+    "atlas": "none (voxel-wise downsampled 4D volumes)",
+    "claim_type": "predictive",
+    "finding": "the proposed algorithm obtains an accuracy of 72.46% in the experiment of 871 subjects, which is 5.26% higher than that of HI-GCN, 4.44% higher than that of GAT, and 2.44% higher than that of CNN. the AUC value of the proposed algorithm is 0.79, which is 5.42% higher compared to GAT.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "A \ufb01nal dataset of 871 subjects, including 403 ASD patients and 468 TCs, was obtained by removing the samples with incomplete brain coverage, high motion peaks, ghosting and other scanner artifacts.",
+      "the proposed algorithm obtains an accuracy of 72.46% in the experiment of 871 subjects, which is 5.26% higher than that of HI-GCN, 4.44% higher than that of GAT, and 2.44% higher than that of CNN.",
+      "The proposed algorithm also obtains a speci\ufb01city of 79.25% and a sensitivity of 74.35%.",
+      "the AUC value of the proposed algorithm is 0.79, which is 5.42% higher compared to GAT."
+    ]
+  }
+}

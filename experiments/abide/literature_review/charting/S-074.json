@@ -1,0 +1,96 @@
+{
+  "source_id": "S-074",
+  "pmid": "local_d76b09c5",
+  "doi": "10.1007/978-3-031-44858-4_12",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2,3: resting-state fMRI diagnostic classification (ASD vs TC) on ABIDE I using a multi-atlas transformer with self-supervised pretraining.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {"text": "Our framework utilizes resting-state functional mag-\nnetic resonance imaging data from the ABIDE I dataset, comprising 406 ASD and 476 typical control (TC) subjects.", "section": "abstract", "claim": "Analysed cohort: 406 ASD, 476 TC from ABIDE I.", "relevance_score": 1.0},
+    {"text": "In this work we use the preprocessed data from the DPARSF pipeline [31] comprising 406 ASD and 476 TC subjects.", "section": "methods", "claim": "Preprocessing pipeline is DPARSF.", "relevance_score": 0.9},
+    {"text": "METAFormer employs a multi-atlas approach, where flattened connectivity matrices from the AAL, CC200, and DOS160 atlases serve as input to the transformer encoder.", "section": "methods", "claim": "Three atlases used jointly: AAL, CC200, DOS160.", "relevance_score": 0.9},
+    {"text": "we employed 10-fold stratified cross-validation. For each fold, the model is trained\non the remaining nine training folds and evaluated on the held-out test fold.\nFurther, we set aside 30% of each training fold as validation sets", "section": "methods", "claim": "Evaluation: 10-fold stratified CV with a held-out test fold and a separate validation split from the training folds (leakage-aware).", "relevance_score": 0.9},
+    {"text": "METAFormer PT 0.837 ±0.030 0.819±0.045 0.901 ±0.044 0.856 ±0.023 0.832 ±0.032", "section": "table", "claim": "Main result: pretrained METAFormer accuracy 83.7%, precision 81.9%, recall 90.1%, F1 85.6%, AUC 0.832.", "relevance_score": 1.0},
+    {"text": "The code for our framework is available at github.com/Lugges991/METAFormer", "section": "abstract", "claim": "Analysis code publicly released on GitHub.", "relevance_score": 0.6},
+    {"text": "The raw dataset encompasses a total of 1112 subjects, 539 of which are diagnosed with ASD and 573 are TC.", "section": "methods", "claim": "Full ABIDE I release referenced for context: 1112 subjects, 539 ASD, 573 TC.", "relevance_score": 0.5}
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Unclear", "support": "N is given (406 ASD, 476 TC, following the DPARSF-preprocessed PCP subset) but no explicit motion/QC exclusion rule for arriving at this subset from the full 1112-subject release is stated in this paper."},
+      {"domain": "Predictors", "judgment": "Low", "support": "DPARSF pipeline and three atlases (AAL, CC200, DOS160) all explicitly specified with ROI counts and resolutions."},
+      {"domain": "Outcome", "judgment": "Unclear", "support": "ASD/TC labels taken from the ABIDE I phenotype file; diagnostic instrument/criteria not elaborated in this paper."},
+      {"domain": "Analysis", "judgment": "Low", "support": "\"we employed 10-fold stratified cross-validation. For each fold, the model is trained\non the remaining nine training folds and evaluated on the held-out test fold.\nFurther, we set aside 30% of each training fold as validation sets\" — explicit non-overlapping train/validation/test split per fold; however no site covariate, harmonisation, or leave-site-out evaluation is reported for the pooled 17-site cohort."}
+    ],
+    "overall": "Low",
+    "summary": "Pipeline, atlases and a leakage-aware 10-fold stratified CV with separate validation split are all clearly reported, with code publicly released; residual concerns are an unexplained reduction from the full 1112-subject release to 406/476 and no site handling in the pooled cross-validation."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "406",
+    "n_controls": "476",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "DPARSF pipeline (SPM8-based: initial volume discard, slice-timing correction, motion realignment, 24-parameter motion/WM/CSF nuisance regression, bandpass filtering), via the Preprocessed Connectomes Project",
+    "specific_features": "Flattened resting-state functional connectivity matrices from three atlases: AAL (116 ROIs), CC200 (200 ROIs), Dosenbach160 (DOS160)",
+    "model_category": "Transformer (multi-atlas, self-supervised pretraining)",
+    "specific_algorithms": "METAFormer (multi-atlas enhanced transformer, 3 parallel BERT-style transformer encoders with self-supervised masked-value pretraining), compared against single-atlas transformers (SAT) and published state-of-the-art ASD classifiers",
+    "validation_methodology": "10-fold stratified cross-validation; 30% of each training fold held out as a validation set for hyperparameter tuning and early stopping, kept separate from the test fold",
+    "performance_metrics": "Accuracy, precision, recall, F1-score, AUC",
+    "key_performance_results": "METAFormer (pretrained): accuracy 83.7±3.0%, precision 81.9±4.5%, recall 90.1±4.4%, F1 85.6±2.3%, AUC 0.832±0.032, outperforming non-pretrained and single-atlas variants as well as published state-of-the-art methods using 10-fold cross-validation",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "Yes — code available at github.com/Lugges991/METAFormer; data from the public ABIDE I Preprocessed Connectomes Project release",
+    "custom_fields": {
+      "RQ1": "ABIDE I, 17 sites; DPARSF-preprocessed subset of 406 ASD and 476 TC subjects (out of the full 1112-subject, 539 ASD/573 TC release); no explicit additional motion/QC exclusion rule stated in this paper. | quote: \"In this work we use the preprocessed data from the DPARSF pipeline [31] comprising 406 ASD and 476 TC subjects.\"",
+      "RQ2": "DPARSF pipeline (SPM8-based, 24-parameter motion/WM/CSF regression, bandpass filtering); three atlases used jointly — AAL (116 ROIs), CC200 (200 ROIs), Dosenbach160. | quote: \"METAFormer employs a multi-atlas approach, where flattened connectivity matrices from the AAL, CC200, and DOS160 atlases serve as input to the transformer encoder.\"",
+      "RQ3": "predictive — multi-atlas transformer classification of ASD vs TC with self-supervised pretraining. | quote: \"we pro-\npose a novel Multi-Atlas Enhanced Transformer framework, METAFormer,\nASD classification.\"",
+      "RQ4": "10-fold stratified cross-validation with 30% of each training fold held out as a separate validation set for hyperparameter tuning/early stopping, distinct from the held-out test fold; no site covariate, harmonisation, or leave-site-out evaluation reported for the pooled 17-site cohort. | quote: \"we employed 10-fold stratified cross-validation. For each fold, the model is trained\non the remaining nine training folds and evaluated on the held-out test fold.\nFurther, we set aside 30% of each training fold as validation sets\"",
+      "RQ5": "Pretrained METAFormer achieved accuracy 83.7±3.0% and AUC 0.832±0.032, outperforming non-pretrained and single-atlas transformer variants as well as previously published ASD classifiers evaluated with 10-fold cross-validation on comparably sized ABIDE I samples. | quote: \"METAFormer PT 0.837 ±0.030 0.819±0.045 0.901 ±0.044 0.856 ±0.023 0.832 ±0.032\"",
+      "RQ6": "partly — exact N, pipeline, atlases and analysis code (GitHub) are reported, but the paper does not explain why 406/476 (rather than the full 539/573 ASD/TC release) were used, so the exact exclusion rule is not stated. | quote: \"The code for our framework is available at github.com/Lugges991/METAFormer\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly | quote: \"Our framework utilizes resting-state functional mag-\nnetic resonance imaging data from the ABIDE I dataset, comprising 406 ASD and 476 typical control (TC) subjects.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — standard DPARSF motion-correction/nuisance-regression steps are listed, but no motion metric or threshold used to exclude subjects is reported",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"In this work we use the preprocessed data from the DPARSF pipeline [31] comprising 406 ASD and 476 TC subjects.\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"METAFormer employs a multi-atlas approach, where flattened connectivity matrices from the AAL, CC200, and DOS160 atlases serve as input to the transformer encoder.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Yes | quote: \"we employed 10-fold stratified cross-validation. For each fold, the model is trained\non the remaining nine training folds and evaluated on the held-out test fold.\nFurther, we set aside 30% of each training fold as validation sets\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — no site covariate, harmonisation, or leave-site-out scheme is reported for the pooled 17-site cohort",
+      "CL7 Code and/or participant list available?": "Yes — code | quote: \"The code for our framework is available at github.com/Lugges991/METAFormer\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Our framework utilizes resting-state functional mag-\nnetic resonance imaging data from the ABIDE I dataset, comprising 406 ASD and 476 typical control (TC) subjects.\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {"rating": "Partial", "notes": "N reported but reduction from full release to 406/476 not explained (CL1 partly); no motion/QC threshold given (CL2 no).", "overall_concern": "Some"},
+    "domain_2_predictors_features": {"rating": "Yes", "notes": "DPARSF pipeline and three atlases (AAL, CC200, DOS160) all explicitly reported.", "overall_concern": "Low"},
+    "domain_3_outcome_diagnosis": {"rating": "Unclear", "notes": "Diagnosis from ABIDE I phenotype file; instrument/criteria not elaborated.", "overall_concern": "Some"},
+    "domain_4_bias_transparency": {"rating": "Partial", "notes": "CL5 yes (separate validation/test folds); CL6 no site handling in pooled CV; CL7 code publicly released.", "overall_concern": "Some"}
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction study; ABIDE I, 406 ASD and 476 TC subjects (DPARSF-preprocessed PCP subset) across 17 sites",
+    "methods": "DPARSF-preprocessed resting-state fMRI connectivity from three atlases (AAL, CC200, Dosenbach160) classified with a multi-atlas transformer (METAFormer) using self-supervised masked-value pretraining, evaluated with 10-fold stratified cross-validation and a separate validation split per fold",
+    "outcomes": "Pretrained METAFormer achieved accuracy 83.7%, AUC 0.832, outperforming non-pretrained and single-atlas variants as well as previously published ABIDE I classifiers using comparable cross-validation",
+    "key_limitations": "No explanation given for the reduction from the full 1112-subject ABIDE I release to the 406/476 analysed subset; no site covariate, harmonisation, or leave-site-out evaluation despite the pooled 17-site cohort; diagnostic instrument/criteria not elaborated",
+    "relevance_notes": "Pipeline, atlases and analysis code (GitHub) are all reported, and the leakage-aware CV design (separate validation fold) is an explicit methodological strength noted in the paper itself.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1007/978-3-031-44858-4_12",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "DPARSF-preprocessed ABIDE I subset of 406 ASD and 476 TC subjects (from the full 1112-subject, 17-site release); exact exclusion rule for this subset not stated in the paper",
+    "n_by_dx": {"ASD": 406, "TD": 476, "total": 882},
+    "sites": "17 sites (pooled, not individually itemised in this paper)",
+    "pipeline": "DPARSF (SPM8-based)",
+    "atlas": "AAL (116 ROIs), CC200 (200 ROIs), Dosenbach160 — used jointly in a multi-atlas ensemble",
+    "claim_type": "predictive",
+    "finding": "Pretrained METAFormer multi-atlas transformer classified ASD vs TC with accuracy 83.7±3.0% and AUC 0.832±0.032, outperforming single-atlas and non-pretrained variants",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "In this work we use the preprocessed data from the DPARSF pipeline [31] comprising 406 ASD and 476 TC subjects.",
+      "METAFormer employs a multi-atlas approach, where flattened connectivity matrices from the AAL, CC200, and DOS160 atlases serve as input to the transformer encoder.",
+      "METAFormer PT 0.837 ±0.030 0.819±0.045 0.901 ±0.044 0.856 ±0.023 0.832 ±0.032"
+    ]
+  }
+}

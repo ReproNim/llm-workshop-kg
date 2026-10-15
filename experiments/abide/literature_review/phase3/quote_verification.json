@@ -1,0 +1,86 @@
+{
+ "stats": {
+  "checked": 1743,
+  "passed": 1735,
+  "dropped": 8,
+  "empty_quotes": 49,
+  "by_kind": {
+   "evidence_span": {
+    "checked": 577,
+    "passed": 572,
+    "dropped": 5
+   },
+   "rob_support": {
+    "checked": 77,
+    "passed": 77,
+    "dropped": 0
+   },
+   "custom_field": {
+    "checked": 874,
+    "passed": 874,
+    "dropped": 0
+   },
+   "kg_link": {
+    "checked": 215,
+    "passed": 212,
+    "dropped": 3
+   }
+  },
+  "by_basis": {
+   "exact": 1520,
+   "hyphenation": 214,
+   "spacing": 1
+  }
+ },
+ "dropped": [
+  {
+   "source_id": "S-013",
+   "kind": "kg_link",
+   "location": "kg_link.evidence_quotes[0]",
+   "quote": ""
+  },
+  {
+   "source_id": "S-014",
+   "kind": "evidence_span",
+   "location": "evidence_spans[4]",
+   "quote": ""
+  },
+  {
+   "source_id": "S-014",
+   "kind": "evidence_span",
+   "location": "evidence_spans[6]",
+   "quote": ""
+  },
+  {
+   "source_id": "S-014",
+   "kind": "evidence_span",
+   "location": "evidence_spans[8]",
+   "quote": ""
+  },
+  {
+   "source_id": "S-029",
+   "kind": "kg_link",
+   "location": "kg_link.evidence_quotes[1]",
+   "quote": ""
+  },
+  {
+   "source_id": "S-041",
+   "kind": "evidence_span",
+   "location": "evidence_spans[4]",
+   "quote": ""
+  },
+  {
+   "source_id": "S-041",
+   "kind": "evidence_span",
+   "location": "evidence_spans[5]",
+   "quote": ""
+  },
+  {
+   "source_id": "S-041",
+   "kind": "kg_link",
+   "location": "kg_link.evidence_quotes[2]",
+   "quote": ""
+  }
+ ],
+ "quote_basis_note": "Quotes for full-text-mismatched items (S-040) were checked against the corpus abstract."
+}

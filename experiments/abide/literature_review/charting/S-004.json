@@ -1,0 +1,262 @@
+{
+  "source_id": "S-004",
+  "pmid": "local_ad2b6012",
+  "doi": "10.1109/tce.2023.3328479",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2-3: analyses ABIDE I and ABIDE II resting-state fMRI data with a CNN/transfer-learning diagnostic classification (ASD vs control).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "where ABIDE-I and \nABIDE-II consists of 1112 rs- fMRI datasets from 573 typical \ncontrol (TC) and 539 autism individuals, and 1114 rs-fMRI from \n521 autism and 593 typical control individuals respectively, \nwhich were collected from 17 different sites.",
+      "section": "abstract",
+      "claim": "ABIDE-I and ABIDE-II together comprise 1112 and 1114 rs-fMRI datasets respectively, from 17 different sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Our proposed \noptimized version of CNN achieved 81.56% accuracy. This \noutperforms prior conventional approaches presented only on \nthe ABIDE I datasets.",
+      "section": "abstract",
+      "claim": "The proposed optimized CNN achieved 81.56% accuracy, exceeding prior approaches tested only on ABIDE I.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "The ABIDE-I dataset is \ncomposed of 1112 resting-state functional magnetic resonance \nimaging (rs-fMRI) datasets. Among these, 573 datasets belong \nto typically developing persons, while 539 datasets belong to \nindividuals with autism. On the other hand, the ABIDE-II \ndataset consists of 1014 resting-state functional magnetic \nresonance imaging (rs-fMRI) datasets. Out of these, 521 \ndatasets are from individuals with autism, and 593 datasets are \nfrom typically developing control individuals.",
+      "section": "methods",
+      "claim": "ABIDE-I has 1112 datasets (573 TC, 539 ASD); ABIDE-II has 1014 (should be 1114 per abstract) with 521 ASD and 593 control datasets.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "Collecting the Abide dataset was a challenging task as the \nonline data repository is only accessible for Neuro Informatics \nTools and Resources Collaboratory (NITRC) members. \nFirstly,  applied for data access to NITRC through E-mail and \nsubmitted the thesis title, supervisor contact, problem \nstatement and research objectives. Luckily, upon success after \na couple of days that made us eligible to download available",
+      "section": "methods",
+      "claim": "Data access required an application to NITRC (thesis title, supervisor contact, problem statement, research objectives).",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "Collected dataset was organized in three groups: \n● \nABIDE I \n● \nABIDE II \n● \nABIDE I+II ",
+      "section": "methods",
+      "claim": "The collected dataset was organized into three groups: ABIDE I, ABIDE II, and ABIDE I+II.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "TABLE XI \nCLASSIFICATION ACCURACY OF CONVOLUTION NEURAL NETWORK FOR ABIDE-II \nDataset \nModel \nAcc \nSensitivity \nSpecificity \nF1-Score \nABIDE - I+II \nCNN  \n81.56  \n81.5%  \n80.5%  \n88.0% \nDTL-NN   \n82.31%  \n83.3%  \n80.7%  \n87.0%",
+      "section": "results",
+      "claim": "On the combined ABIDE-I+II dataset, CNN achieved 81.56% accuracy and DTL-NN (transfer learning) achieved 82.31% accuracy.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Our analysis is limited by the method utilised to \ncollect ABIDE data from 17 foreign clinical and research \nsites. Another limitation is picture data availability. The \ndataset has 851 subjects, which is significant.",
+      "section": "discussion",
+      "claim": "The authors note their analysis is limited by the method of collecting ABIDE data from 17 clinical/research sites and by picture data availability.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "ABIDE-II data download and labelling was a \nchallenging task. Each image was manually labelled and \nassigned a group. Each group was tested separately to \ncompare and analyze results of each set.",
+      "section": "results",
+      "claim": "Images were manually labelled and grouped by data-collection resource (site), with each site's group tested and compared separately rather than pooled or held out.",
+      "relevance_score": 0.75
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "High",
+        "support": "Diagnosis source/instrument is never stated; labels appear to be taken directly from ABIDE group assignment ('Each image was manually labelled and assigned a group') with no mention of ADOS/ADI-R or inclusion/exclusion criteria beyond 'resources and age'."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "High",
+        "support": "No preprocessing pipeline (e.g. CPAC/DPARSF), connectivity feature extraction, or atlas/parcellation is described; the paper refers only to 'images' and 'heat maps' fed to CNN/transfer-learning models with no stated derivation from raw rs-fMRI."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "Outcome is binary ASD vs control classification, but how group labels were sourced/validated is not reported."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "No train/test split ratio, cross-validation scheme, or held-out evaluation is reported for the authors' own experiments; results are reported per 'resource' (site) as separate subsets rather than leave-site-out; no measure of uncertainty (CI) is given around the single reported accuracy figures."
+      }
+    ],
+    "overall": "High",
+    "summary": "Predictive classification study with no reported preprocessing/atlas, no reported train/test or cross-validation protocol, no leakage control statement, and no diagnosis-source documentation; accuracy figures are reported as single point estimates without uncertainty."
+  },
+  "charting": {
+    "source_id": "S-004",
+    "title": "Analysis of Brain Imaging Data for the Detection of Early Age Autism Spectrum Disorder Using Transfer Learning Approaches for Internet of Things",
+    "authors": "",
+    "year": "2023",
+    "journal_conference": "IEEE Transactions on Consumer Electronics",
+    "doi": "10.1109/tce.2023.3328479",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "Early-age ASD detection using CNN and transfer learning on ABIDE rs-fMRI-derived images",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "Multi-site (17 sites, ABIDE I+II)",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "539 (ABIDE-I); 521 (ABIDE-II)",
+    "age_mean_sd": "",
+    "age_range": "7-64 years (ABIDE-I); 5-64 years (ABIDE-II)",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "true",
+    "healthy_status_confirmed": "",
+    "n_controls": "573 (ABIDE-I); 593 (ABIDE-II)",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI (as images/heat maps)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "",
+    "dataset_openly_available": "No statement of code or participant-list release",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "image-based (MRI scan images / heat maps), no stated connectivity feature extraction",
+    "specific_features": "",
+    "feature_extraction_tools": "",
+    "feature_importance_reported": "",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Deep learning (CNN); Transfer learning (DTL-NN)",
+    "specific_algorithms": "CNN; transfer-learning CNN (DTL-NN)",
+    "validation_methodology": "Not reported (no train/test split ratio or cross-validation scheme described); results reported per site/resource subset",
+    "performance_metrics": "Accuracy, sensitivity, specificity, F1-score",
+    "key_performance_results": "ABIDE-I complete: CNN 78.5% acc (DTL-NN 80%); ABIDE-II complete: CNN 80.5% acc (DTL-NN 83%); ABIDE-I+II complete: CNN 81.56% acc, DTL-NN 82.31% acc",
+    "summary_key_findings": "An optimized CNN and a transfer-learning (DTL-NN) model classify ASD vs control from ABIDE rs-fMRI-derived images, reaching 81.56% (CNN) and 82.31% (DTL-NN) accuracy on the combined ABIDE-I+II dataset.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "Development of an assistive tool for individuals with autism to improve daily well-being and efficiency.",
+    "reviewer_notes": "No preprocessing pipeline, atlas, train/test split, or diagnosis-instrument information reported; total N and per-site tables are internally inconsistent (abstract says ABIDE-II = 1114 datasets vs Table II = 1014).",
+    "custom_fields": {
+      "RQ1": "predictive — ABIDE-I: N=1112 (539 ASD, 573 controls), 17 sites; ABIDE-II: N reported inconsistently as 1114 (abstract) / 1014 (Table II) (521 ASD, 593 controls); no explicit QC/exclusion rule beyond removing missing/broken images (938 of 1112 ABIDE-I scans used after cleaning) | quote: \"ABIDE-I and   ABIDE-II consists of 1112 rs- fMRI datasets from 573 typical   control (TC) and 539 autism individuals, and 1114 rs-fMRI from   521 autism and 593 typical control individuals respectively,   which were collected from 17 different sites.\"",
+      "RQ2": "No pipeline or atlas/parcellation reported; the paper uses MRI-derived images/heat maps directly as CNN/transfer-learning input with no stated connectivity feature extraction | quote: \"\"",
+      "RQ3": "predictive — ASD vs control classification using CNN and transfer learning | quote: \"Our proposed   optimized version of CNN achieved 81.56% accuracy. This   outperforms prior conventional approaches presented only on   the ABIDE I datasets.\"",
+      "RQ4": "No train/test split ratio or cross-validation scheme is reported; evaluation is reported separately per site/resource subset rather than leave-site-out | quote: \"ABIDE-II data download and labelling was a   challenging task. Each image was manually labelled and   assigned a group. Each group was tested separately to compare and analyze results of each set.\"",
+      "RQ5": "predictive — combined ABIDE-I+II: CNN 81.56% accuracy, DTL-NN 82.31% accuracy (no CI reported) | quote: \"ABIDE - I+II  CNN   81.56   81.5%   80.5%   88.0%   DTL-NN    82.31%   83.3%   80.7%   87.0%\"",
+      "RQ6": "no — only aggregate N and site counts given; no participant ID list or exact per-dataset inclusion rule published | quote: \"Our analysis is limited by the method utilised to   collect ABIDE data from 17 foreign clinical and research   sites. Another limitation is picture data availability. The dataset has 851 subjects, which is significant.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — Ns by diagnosis and site are given but with internally inconsistent totals, and exclusion rules are limited to removing missing/broken images | quote: \"The ABIDE-I dataset is   composed of 1112 resting-state functional magnetic resonance   imaging (rs-fMRI) datasets. Among these, 573 datasets belong   to typically developing persons, while 539 datasets belong   to individuals with autism.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — only a general statement that missing/broken images were removed (938 of 1112 used); no motion metric or threshold given | quote: \"\"",
+      "CL3 Preprocessing pipeline and version reported?": "No | quote: \"\"",
+      "CL4 Atlas/parcellation reported?": "No | quote: \"\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — no train/test or cross-validation protocol is described at all | quote: \"\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly — results are tabulated separately per site/resource (e.g. UM, UCLA, USM, LEUVEN, BNI, EMC, ETH, GU) but this is descriptive reporting, not harmonisation or leave-site-out evaluation | quote: \"ABIDE-II data download and labelling was a   challenging task. Each image was manually labelled and   assigned a group. Each group was tested separately to compare and analyze results of each set.\"",
+      "CL7 Code and/or participant list available?": "No — no code repository or participant ID list is mentioned | quote: \"\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Collected dataset was organized in three groups:\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-004",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Partial",
+          "notes": "Ns given but inconsistent between abstract/Table II; no stated clinical inclusion/exclusion criteria beyond age/resource grouping."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "No",
+          "notes": "Only cleaning of missing/broken images mentioned; no motion metric or threshold."
+        }
+      ],
+      "overall_concern": "High"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline reported",
+          "rating": "No",
+          "notes": "No pipeline described."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "No",
+          "notes": "No atlas/parcellation described; raw images/heat maps used."
+        }
+      ],
+      "overall_concern": "High"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source reported",
+          "rating": "No",
+          "notes": "Labels appear to come directly from ABIDE group assignment with no diagnostic-instrument documentation."
+        }
+      ],
+      "overall_concern": "High"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "No",
+          "notes": "No train/test or CV protocol described at all."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "Partial",
+          "notes": "Separate per-site reporting only, no harmonisation or leave-site-out."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "No",
+          "notes": "Not mentioned."
+        }
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-004",
+    "study_design_sample_dataset": "Diagnostic prediction (CNN and transfer learning); ABIDE-I (1112 datasets: 539 ASD, 573 TC) and ABIDE-II (reported as 1114 or 1014 datasets: 521 ASD, 593 TC) across 17 sites; combined ABIDE-I+II analysis also reported.",
+    "methods": "MRI-derived images/heat maps from ABIDE rs-fMRI data are classified with an optimized CNN and a transfer-learning model (DTL-NN); results reported separately per data-collection site/resource and per age-based subgroup, with no described preprocessing pipeline, atlas, or train/test split.",
+    "outcomes": "Accuracy, sensitivity, specificity and F1-score reported per site and per dataset grouping; best combined ABIDE-I+II result: CNN 81.56% accuracy, DTL-NN 82.31% accuracy.",
+    "key_limitations": "Authors note limitations from multi-site data collection (17 sites) and picture data availability (851 subjects); no cross-validation/held-out evaluation, no diagnosis-source documentation, no preprocessing/atlas details, inconsistent N reporting between abstract and tables.",
+    "relevance_notes": "Uses ABIDE I and II for diagnostic prediction but with minimal methodological transparency on cohort construction, QC, pipeline, and validation — illustrates reconstructibility and rigor gaps relevant to the dataset-publication link.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1109/tce.2023.3328479",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "ABIDE-I: 1112 rs-fMRI datasets (539 ASD, 573 controls); ABIDE-II: reported as 1114 (abstract) / 1014 (Table II) rs-fMRI datasets (521 ASD, 593 controls); 17 sites total; grouped as ABIDE-I, ABIDE-II, and ABIDE-I+II for analysis.",
+    "n_by_dx": {
+      "ASD": null,
+      "TD": null,
+      "total": null
+    },
+    "sites": "17",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "predictive",
+    "finding": "An optimized CNN and a transfer-learning model (DTL-NN) classify ASD vs control from ABIDE rs-fMRI-derived images, achieving 81.56% (CNN) and 82.31% (DTL-NN) accuracy on the combined ABIDE-I+II dataset, with no reported cross-validation or held-out-site evaluation.",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "where ABIDE-I and \nABIDE-II consists of 1112 rs- fMRI datasets from 573 typical \ncontrol (TC) and 539 autism individuals, and 1114 rs-fMRI from \n521 autism and 593 typical control individuals respectively, \nwhich were collected from 17 different sites.",
+      "TABLE XI \nCLASSIFICATION ACCURACY OF CONVOLUTION NEURAL NETWORK FOR ABIDE-II \nDataset \nModel \nAcc \nSensitivity \nSpecificity \nF1-Score \nABIDE - I+II \nCNN  \n81.56  \n81.5%  \n80.5%  \n88.0% \nDTL-NN   \n82.31%  \n83.3%  \n80.7%  \n87.0%",
+      "Collected dataset was organized in three groups: \n● \nABIDE I \n● \nABIDE II \n● \nABIDE I+II "
+    ]
+  }
+}

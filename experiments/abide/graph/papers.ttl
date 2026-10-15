@@ -1,0 +1,285 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <urn:repronim:abide:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:repronim:abide:paper/abraham2017/AB_C1> a ex:Claim ;
+    rdfs:label "AB_C1" ;
+    ex:addresses <urn:repronim:abide:paper/abraham2017/AB_Q> ;
+    ex:claimType "predictive" ;
+    ex:dependsOn <urn:repronim:abide:paper/abraham2017/AB_cohort>,
+        <urn:repronim:abide:paper/abraham2017/AB_cv>,
+        <urn:repronim:abide:paper/abraham2017/AB_motion>,
+        <urn:repronim:abide:paper/abraham2017/AB_qc>,
+        <urn:repronim:abide:paper/abraham2017/AB_tangent> ;
+    ex:evidenceStatus "paper-reported; not replicated here" ;
+    ex:hasEvidence <urn:repronim:abide:paper/abraham2017/AB_C1/evidence> ;
+    ex:scope "Out-of-sample diagnosis prediction, N=871 after visual QC, inter- and intra-site CV" ;
+    ex:statedIn <urn:repronim:abide:paper/abraham2017> .
+
+<urn:repronim:abide:paper/abraham2017/AB_C2> a ex:Claim ;
+    rdfs:label "AB_C2" ;
+    ex:addresses <urn:repronim:abide:paper/abraham2017/AB_Q> ;
+    ex:claimType "predictive" ;
+    ex:dependsOn <urn:repronim:abide:paper/abraham2017/AB_cohort>,
+        <urn:repronim:abide:paper/abraham2017/AB_cv>,
+        <urn:repronim:abide:paper/abraham2017/AB_motion>,
+        <urn:repronim:abide:paper/abraham2017/AB_qc>,
+        <urn:repronim:abide:paper/abraham2017/AB_tangent> ;
+    ex:evidenceStatus "paper-reported; not replicated here" ;
+    ex:hasEvidence <urn:repronim:abide:paper/abraham2017/AB_C2/evidence> ;
+    ex:scope "Comparison of atlas choices within the prediction pipeline" ;
+    ex:statedIn <urn:repronim:abide:paper/abraham2017> .
+
+<urn:repronim:abide:paper/abraham2017/AB_C3> a ex:Claim ;
+    rdfs:label "AB_C3" ;
+    ex:addresses <urn:repronim:abide:paper/abraham2017/AB_Q> ;
+    ex:claimType "predictive" ;
+    ex:dependsOn <urn:repronim:abide:paper/abraham2017/AB_cohort>,
+        <urn:repronim:abide:paper/abraham2017/AB_cv>,
+        <urn:repronim:abide:paper/abraham2017/AB_motion>,
+        <urn:repronim:abide:paper/abraham2017/AB_qc>,
+        <urn:repronim:abide:paper/abraham2017/AB_tangent> ;
+    ex:evidenceStatus "paper-reported; not replicated here" ;
+    ex:hasEvidence <urn:repronim:abide:paper/abraham2017/AB_C3/evidence> ;
+    ex:scope "Learning curves over training-set size" ;
+    ex:statedIn <urn:repronim:abide:paper/abraham2017> .
+
+<urn:repronim:abide:paper/dimartino2014/DM_C1> a ex:Claim ;
+    rdfs:label "DM_C1" ;
+    ex:addresses <urn:repronim:abide:paper/dimartino2014/DM_Q> ;
+    ex:claimType "associational" ;
+    ex:dependsOn <urn:repronim:abide:paper/dimartino2014/DM_cohort>,
+        <urn:repronim:abide:paper/dimartino2014/DM_fdr>,
+        <urn:repronim:abide:paper/dimartino2014/DM_fiq>,
+        <urn:repronim:abide:paper/dimartino2014/DM_glm>,
+        <urn:repronim:abide:paper/dimartino2014/DM_motion>,
+        <urn:repronim:abide:paper/dimartino2014/DM_nuisance>,
+        <urn:repronim:abide:paper/dimartino2014/DM_preproc> ;
+    ex:evidenceStatus "paper-reported; not replicated here" ;
+    ex:hasEvidence <urn:repronim:abide:paper/dimartino2014/DM_C1/evidence> ;
+    ex:scope "Group difference (ASD vs TC) in 763 males, 17 sites; covariates age, FIQ, site, mean FD; FDR q<0.05" ;
+    ex:statedIn <urn:repronim:abide:paper/dimartino2014> .
+
+<urn:repronim:abide:paper/abraham2017/AB_C1/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/abraham2017> ;
+    ex:charOffset 1813 ;
+    ex:locator "Abstract" ;
+    ex:quote "Good choices of methods for the various steps of the pipeline lead to 67% prediction accuracy on the full ABIDE data" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/abraham2017/AB_C2/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/abraham2017> ;
+    ex:charOffset 2324 ;
+    ex:locator "Abstract" ;
+    ex:quote "the definition of functional brain areas is of paramount importance for biomarker discovery" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/abraham2017/AB_C3/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/abraham2017> ;
+    ex:charOffset 2210 ;
+    ex:locator "Abstract" ;
+    ex:quote "prediction accuracy improves as we include more subjects" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/abraham2017/AB_Q/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/abraham2017> ;
+    ex:charOffset 1132 ;
+    ex:locator "Abstract" ;
+    ex:quote "we demonstrate the feasibility of inter-site classification of neuropsychiatric status" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/abraham2017/AB_cohort/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/abraham2017> ;
+    ex:charOffset 12138 ;
+    ex:locator "Section 2.1" ;
+    ex:quote "This yielded 871 subjects out of the initial 1112." ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/abraham2017/AB_cv/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/abraham2017> ;
+    ex:charOffset 6708 ;
+    ex:locator "Introduction" ;
+    ex:quote "we left out entire sites to measure performance in the presence of uncontrolled variability" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/abraham2017/AB_motion/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/abraham2017> ;
+    ex:charOffset 12455 ;
+    ex:locator "Section 2.1" ;
+    ex:quote "Head motion was modeled using 24 regressors derived from the parameters estimated during motion realignment" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/abraham2017/AB_qc/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/abraham2017> ;
+    ex:charOffset 10318 ;
+    ex:locator "Section 2.1" ;
+    ex:quote "Data were selected based on the results of quality visual inspection by three human experts" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/abraham2017/AB_tangent/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/abraham2017> ;
+    ex:charOffset 32157 ;
+    ex:locator "Section 3.3" ;
+    ex:quote "Among all matrix types, tangent embedding is the best on all ABIDE subsets." ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/dimartino2014/DM_C1/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/dimartino2014> ;
+    ex:charOffset 1222 ;
+    ex:locator "Abstract" ;
+    ex:quote "both were detected, though hypoconnectivity dominated, particularly for cortico-cortical and interhemispheric functional connectivity" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/dimartino2014/DM_Q> a ex:ResearchQuestion ;
+    rdfs:label "DM_Q" ;
+    ex:hasEvidence <urn:repronim:abide:paper/dimartino2014/DM_Q/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/dimartino2014> .
+
+<urn:repronim:abide:paper/dimartino2014/DM_Q/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/dimartino2014> ;
+    ex:charOffset 9054 ;
+    ex:locator "Methods, Analytic Strategy" ;
+    ex:quote "To understand the relative contributions of hypo and hyperconnectivity in ASD, we carried out whole-brain iFC analyses" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/dimartino2014/DM_cohort> a ex:ReportedCohort ;
+    rdfs:label "DM_cohort" ;
+    ex:ASD 360 ;
+    ex:TD 403 ;
+    ex:hasEvidence <urn:repronim:abide:paper/dimartino2014/DM_cohort/evidence> ;
+    ex:membership "participant list not machine-readable in the article; Supplementary Table 1 gives per-site counts" ;
+    ex:reported_n 763 ;
+    ex:sites 17 ;
+    ex:statedIn <urn:repronim:abide:paper/dimartino2014> .
+
+<urn:repronim:abide:paper/dimartino2014/DM_cohort/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/dimartino2014> ;
+    ex:charOffset 8787 ;
+    ex:locator "Methods, Participants" ;
+    ex:quote "This yielded data for 763 individuals (ASD=360, TC=403) from 17 sites" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/dimartino2014/DM_fdr> a ex:Method ;
+    rdfs:label "DM_fdr" ;
+    ex:hasEvidence <urn:repronim:abide:paper/dimartino2014/DM_fdr/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/dimartino2014> .
+
+<urn:repronim:abide:paper/dimartino2014/DM_fdr/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/dimartino2014> ;
+    ex:charOffset 12641 ;
+    ex:locator "Methods, Group-level Analyses" ;
+    ex:quote "we corrected for multiple comparisons using false discovery rate (FDR; q<0.05)" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/dimartino2014/DM_fiq> a ex:InclusionCriterion ;
+    rdfs:label "DM_fiq" ;
+    ex:hasEvidence <urn:repronim:abide:paper/dimartino2014/DM_fiq/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/dimartino2014> .
+
+<urn:repronim:abide:paper/dimartino2014/DM_fiq/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/dimartino2014> ;
+    ex:charOffset 8404 ;
+    ex:locator "Methods, Participants" ;
+    ex:quote "individuals with FIQ within two SD of the overall ABIDE sample mean (108±15)" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/dimartino2014/DM_glm> a ex:Method ;
+    rdfs:label "DM_glm" ;
+    ex:hasEvidence <urn:repronim:abide:paper/dimartino2014/DM_glm/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/dimartino2014> .
+
+<urn:repronim:abide:paper/dimartino2014/DM_glm/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/dimartino2014> ;
+    ex:charOffset 12406 ;
+    ex:locator "Methods, Group-level Analyses" ;
+    ex:quote "(covariates: age, FIQ, site, and mean FD)" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/dimartino2014/DM_motion> a ex:InclusionCriterion ;
+    rdfs:label "DM_motion" ;
+    ex:hasEvidence <urn:repronim:abide:paper/dimartino2014/DM_motion/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/dimartino2014> .
+
+<urn:repronim:abide:paper/dimartino2014/DM_motion/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/dimartino2014> ;
+    ex:charOffset 8537 ;
+    ex:locator "Methods, Participants" ;
+    ex:quote "less than two SD above the sample mean (0.23±0.27mm" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/dimartino2014/DM_nuisance> a ex:Method ;
+    rdfs:label "DM_nuisance" ;
+    ex:hasEvidence <urn:repronim:abide:paper/dimartino2014/DM_nuisance/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/dimartino2014> .
+
+<urn:repronim:abide:paper/dimartino2014/DM_nuisance/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/dimartino2014> ;
+    ex:charOffset 9873 ;
+    ex:locator "Methods, Image Preprocessing" ;
+    ex:quote "nuisance signal regression (including 6 motion parameters, 5 CompCorr signals" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/dimartino2014/DM_preproc> a ex:Method ;
+    rdfs:label "DM_preproc" ;
+    ex:hasEvidence <urn:repronim:abide:paper/dimartino2014/DM_preproc/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/dimartino2014> .
+
+<urn:repronim:abide:paper/dimartino2014/DM_preproc/evidence> a ex:EvidenceSpan ;
+    prov:wasQuotedFrom <urn:repronim:abide:paper/dimartino2014> ;
+    ex:charOffset 9644 ;
+    ex:locator "Methods, Image Preprocessing" ;
+    ex:quote "R-fMRI scans were preprocessed with an alpha version of the Configurable Pipeline for the Analysis of Connectomes" ;
+    ex:verbatimMatch true .
+
+<urn:repronim:abide:paper/abraham2017/AB_Q> a ex:ResearchQuestion ;
+    rdfs:label "AB_Q" ;
+    ex:hasEvidence <urn:repronim:abide:paper/abraham2017/AB_Q/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/abraham2017> .
+
+<urn:repronim:abide:paper/abraham2017/AB_cohort> a ex:ReportedCohort ;
+    rdfs:label "AB_cohort" ;
+    ex:hasEvidence <urn:repronim:abide:paper/abraham2017/AB_cohort/evidence> ;
+    ex:membership "participant list not published in the article; reconstructed here from ABIDE Preprocessed rater columns" ;
+    ex:reconstructedAs <urn:repronim:abide:cohort/abraham2017_reconstructed> ;
+    ex:reported_n 871 ;
+    ex:sites_text "17 different sites" ;
+    ex:statedIn <urn:repronim:abide:paper/abraham2017> .
+
+<urn:repronim:abide:paper/abraham2017/AB_cv> a ex:Method ;
+    rdfs:label "AB_cv" ;
+    ex:hasEvidence <urn:repronim:abide:paper/abraham2017/AB_cv/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/abraham2017> .
+
+<urn:repronim:abide:paper/abraham2017/AB_motion> a ex:Method ;
+    rdfs:label "AB_motion" ;
+    ex:hasEvidence <urn:repronim:abide:paper/abraham2017/AB_motion/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/abraham2017> .
+
+<urn:repronim:abide:paper/abraham2017/AB_qc> a ex:InclusionCriterion ;
+    rdfs:label "AB_qc" ;
+    ex:hasEvidence <urn:repronim:abide:paper/abraham2017/AB_qc/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/abraham2017> .
+
+<urn:repronim:abide:paper/abraham2017/AB_tangent> a ex:Method ;
+    rdfs:label "AB_tangent" ;
+    ex:hasEvidence <urn:repronim:abide:paper/abraham2017/AB_tangent/evidence> ;
+    ex:statedIn <urn:repronim:abide:paper/abraham2017> .
+
+<urn:repronim:abide:paper/abraham2017> a prov:Entity,
+        ex:Publication ;
+    rdfs:label "Deriving reproducible biomarkers from multi-site resting-state data: An Autism-based example" ;
+    dct:identifier <https://doi.org/10.1016/j.neuroimage.2016.10.045> ;
+    prov:atLocation <https://arxiv.org/pdf/1611.06066v1> ;
+    ex:textSha256 "7fdaac96a9c57f04f0c128d08d49ec96e8f93721b7ed0fcdfd8f2db7eed58616" ;
+    ex:versionNote "arXiv v1 preprint (18 Nov 2016); published NeuroImage text not compared" .
+
+<urn:repronim:abide:paper/dimartino2014> a prov:Entity,
+        ex:Publication ;
+    rdfs:label "The autism brain imaging data exchange: towards a large-scale evaluation of the intrinsic brain architecture in autism" ;
+    dct:identifier <https://doi.org/10.1038/mp.2013.78> ;
+    prov:atLocation <https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4162310/fullTextXML> ;
+    ex:textSha256 "ba9ce3661fdd85292d18b9c65c7cdd73d0fd8dae260a49591f01c225026e24b4" ;
+    ex:versionNote "PMC author manuscript PMC4162310" .
+

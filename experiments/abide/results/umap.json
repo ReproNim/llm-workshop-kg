@@ -1,0 +1,137 @@
+{
+ "query": "queries/phenotype_matrix.rq",
+ "n_cohort_rows": 767,
+ "umap_primary": {
+  "features": [
+   "AGE_AT_SCAN",
+   "FIQ",
+   "VIQ",
+   "PIQ"
+  ],
+  "n_complete_cases": 604,
+  "n_dropped_missing": 163,
+  "by_dx": {
+   "TD": 324,
+   "ASD": 280
+  },
+  "n_sites": 15,
+  "trustworthiness_umap": 0.9770233250884333,
+  "trustworthiness_pca": 0.9199040248030913,
+  "trustworthiness_other_seeds": [
+   0.9730507650279453,
+   0.9736936392685216
+  ],
+  "neighbour_overlap_vs_other_seeds": [
+   0.8677704194260487,
+   0.8571743929359824
+  ],
+  "silhouette_by_dx": 0.025420671328902245,
+  "silhouette_by_site": -0.3369918763637543,
+  "joins": {
+   "thickness": {
+    "n": 604,
+    "spearman_with_age": 0.026474557892308438,
+    "spearman_with_umap1": -0.041956491964129865,
+    "spearman_with_umap2": -0.07042086921857243
+   },
+   "mean_conn": {
+    "n": 604,
+    "spearman_with_age": 0.16093036859458704,
+    "spearman_with_umap1": 0.03756778474220762,
+    "spearman_with_umap2": 0.08353340298670839
+   },
+   "gm_FreeSurfer": {
+    "n": 543,
+    "spearman_with_age": -0.25441302785271386,
+    "spearman_with_umap1": 0.07248075832237036,
+    "spearman_with_umap2": -0.26065675041703296
+   },
+   "gm_ANTs": {
+    "n": 506,
+    "spearman_with_age": 0.09009103992647027,
+    "spearman_with_umap1": 0.16931261185708765,
+    "spearman_with_umap2": -0.14090426932139294
+   },
+   "gm_FSL": {
+    "n": 544,
+    "spearman_with_age": -0.10646625524460628,
+    "spearman_with_umap1": 0.05075359354548246,
+    "spearman_with_umap2": -0.17388131237086044
+   },
+   "hippo_L_FreeSurfer": {
+    "n": 543,
+    "spearman_with_age": 0.29345642954033097,
+    "spearman_with_umap1": 0.13986543865290404,
+    "spearman_with_umap2": 0.0924644371441195
+   }
+  },
+  "embedding_sha256": "2c5d66f776ae36224cc5e753fa3c79eb915b9cce9a95a6e5d04808821985aaa7"
+ },
+ "umap_with_srs": {
+  "features": [
+   "AGE_AT_SCAN",
+   "FIQ",
+   "VIQ",
+   "PIQ",
+   "SRS_RAW_TOTAL"
+  ],
+  "n_complete_cases": 255,
+  "n_dropped_missing": 512,
+  "by_dx": {
+   "ASD": 139,
+   "TD": 116
+  },
+  "n_sites": 4,
+  "trustworthiness_umap": 0.9517399143565473,
+  "trustworthiness_pca": 0.8980583727743972,
+  "trustworthiness_other_seeds": [
+   0.9523732251521299,
+   0.9476707234617985
+  ],
+  "neighbour_overlap_vs_other_seeds": [
+   0.7892810457516339,
+   0.798169934640523
+  ],
+  "silhouette_by_dx": 0.1780334860086441,
+  "silhouette_by_site": -0.09515215456485748,
+  "joins": {
+   "thickness": {
+    "n": 255,
+    "spearman_with_age": 0.08665294837957889,
+    "spearman_with_umap1": -0.020244470819823994,
+    "spearman_with_umap2": -0.09346051412691062
+   },
+   "mean_conn": {
+    "n": 255,
+    "spearman_with_age": 0.30322452598625155,
+    "spearman_with_umap1": 0.07760392542843911,
+    "spearman_with_umap2": -0.1362327755905512
+   },
+   "gm_FreeSurfer": {
+    "n": 195,
+    "spearman_with_age": -0.3442969735765101,
+    "spearman_with_umap1": 0.24648400200682968,
+    "spearman_with_umap2": 0.31939665636278297
+   },
+   "gm_ANTs": {
+    "n": 171,
+    "spearman_with_age": -0.10431956839839447,
+    "spearman_with_umap1": 0.272702618379053,
+    "spearman_with_umap2": 0.24130366957064342
+   },
+   "gm_FSL": {
+    "n": 196,
+    "spearman_with_age": -0.32571809535987034,
+    "spearman_with_umap1": 0.2101889408633426,
+    "spearman_with_umap2": 0.2917387181346573
+   },
+   "hippo_L_FreeSurfer": {
+    "n": 195,
+    "spearman_with_age": 0.38311317889686336,
+    "spearman_with_umap1": 0.18638268947547296,
+    "spearman_with_umap2": -0.07645535613135022
+   }
+  },
+  "embedding_sha256": "ed3389225c68e98fa4144a7fd4189fe8507029eb698ffbfe83e6a2d0e4923e82"
+ }
+}

@@ -1,0 +1,97 @@
+{
+  "source_id": "S-059",
+  "pmid": "local_65679dfd",
+  "doi": "10.3389/fninf.2021.802305",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2,3: resting-state fMRI diagnostic classification (ASD vs NC) on ABIDE NYU (primary) and UM (secondary) site subsets using a multi-scale graph convolutional network.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {"text": "The proposed MGRL is evaluated on 184 subjects from the public Autism Brain Imaging Data Exchange (ABIDE) database with rs-fMRI scans.", "section": "abstract", "claim": "Primary evaluation cohort: 184 ABIDE subjects.", "relevance_score": 0.9},
+    {"text": "In this work, we use rs-fMRI data from the New York University (NYU) site with the largest sample size collected in this database. Speciﬁcally, the NYU site includes 184 subjects, 79 of whom were from ASD and 105 NC cases.", "section": "methods", "claim": "Primary cohort: NYU site, 79 ASD, 105 NC.", "relevance_score": 1.0},
+    {"text": "the remaining volumes are processed by a well- accepted pipeline with the Data Processing Assistant for Resting- State fMRI toolbox (DPARSF) (Yan et al., 2016).", "section": "methods", "claim": "Preprocessing pipeline: DPARSF.", "relevance_score": 0.8},
+    {"text": "by partitioning the brain into multiple ROIs using two atlases, i.e., Automated Anatomical Labeling (AAL) (Tzourio-Mazoyer et al., 2002) atlas with 116 ROIs and Craddock200 (CC200) (Craddock et al., 2012) atlas with 200 ROIs.", "section": "methods", "claim": "Multi-scale atlases: AAL (116 ROIs) and CC200 (200 ROIs).", "relevance_score": 0.9},
+    {"text": "Considering the small amount of subjects, we randomly select\n80% of all the samples as training data, 10% of all samples as\nvalidation data, and the remaining 10% as test data. We repeat the\nrandom partition process 100 times and record the mean and SD\nresults of each method.", "section": "methods", "claim": "Validation: random 80/10/10 train/val/test split repeated 100 times, mean±SD reported.", "relevance_score": 0.9},
+    {"text": "MGRL (Ours)\n0.795 ± 0.068\n0.809 ± 0.146\n0.823 ± 0.103\n0.802 ± 0.075\n0.886 ± 0.062", "section": "table", "claim": "MGRL main NYU result: accuracy 0.795, recall 0.809, precision 0.823, F1 0.802, AUC 0.886.", "relevance_score": 1.0},
+    {"text": "to avoid signiﬁcant inter-site heterogeneity, we mainly used rs-fMRI data from the NYU site. While ABIDE contains data from 21 sites, as a future work, we will evaluate the proposed method on all sites in ABIDE and design smart techniques to reduce inter-site data heterogeneity.", "section": "discussion", "claim": "Authors deliberately restricted to single sites (NYU/UM) to avoid inter-site heterogeneity; no multi-site/leave-site-out evaluation performed.", "relevance_score": 0.7},
+    {"text": "The original contributions presented in the\nstudy are included\nin the article/supplementary material, further inquiries can be\ndirected to the corresponding author/s.", "section": "discussion", "claim": "Data availability statement: data in article/supplement, further inquiries to corresponding author.", "relevance_score": 0.3}
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Low", "support": "\"the NYU site includes 184 subjects, 79 of whom were from ASD and 105 NC cases\" with demographic Table 1 (age, sex, FIQ) for both NYU and UM."},
+      {"domain": "Predictors", "judgment": "Low", "support": "DPARSF pipeline fully described (head motion correction, nuisance regression, MNI standardization, band-pass filter) and two atlases (AAL, CC200) specified with ROI counts."},
+      {"domain": "Outcome", "judgment": "Unclear", "support": "ASD/NC labels taken from the ABIDE phenotype file; the specific diagnostic instrument/criteria are not elaborated in this paper."},
+      {"domain": "Analysis", "judgment": "Unclear", "support": "Validation uses a randomized 80/10/10 split repeated 100 times with mean±SD (addresses single-split uncertainty), but sites are evaluated separately rather than pooled with site covariate/harmonisation or leave-site-out, and it is not stated whether feature normalization/graph construction was confined to the training partition within each repeat."}
+    ],
+    "overall": "Low",
+    "summary": "Cohort, pipeline and atlases are clearly reported with repeated random-split validation giving uncertainty estimates; residual concerns are an unstated diagnostic-instrument source and unclear confinement of preprocessing/feature steps to training folds."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "79",
+    "n_controls": "105",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "DPARSF (Data Processing Assistant for Resting-State fMRI)",
+    "specific_features": "Multi-scale functional connectivity networks (Pearson correlation) using AAL (116 ROIs) and CC200 (200 ROIs) atlases",
+    "model_category": "Graph convolutional network (multi-scale)",
+    "specific_algorithms": "MGRL (multi-scale graph representation learning, dual GCN branches with feature fusion), compared against DCF, LCCF, CCF, GCNA (single-scale AAL GCN), GCNC (single-scale CC200 GCN)",
+    "validation_methodology": "Random 80%/10%/10% train/validation/test split, repeated 100 times, mean±SD reported; evaluated separately on NYU and UM single-site cohorts (no leave-site-out or pooled multi-site evaluation)",
+    "performance_metrics": "Accuracy, recall, precision, F1-score, AUC",
+    "key_performance_results": "MGRL (NYU): accuracy 0.795±0.068, recall 0.809±0.146, precision 0.823±0.103, F1 0.802±0.075, AUC 0.886±0.062; MGRL (UM): accuracy 0.762±0.078, F1 0.812±0.054, AUC 0.867±0.049",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "Partly — data availability statement refers to article/supplementary material and further inquiries to corresponding author; no code repository link found",
+    "custom_fields": {
+      "RQ1": "ABIDE I, single-site subsets: NYU (184 subjects: 79 ASD, 105 NC, primary) and UM (145 subjects: 68 ASD, 77 NC, secondary); sites chosen specifically to avoid inter-site heterogeneity, no further motion/QC rule stated. | quote: \"In this work, we use rs-fMRI data from the New York University (NYU) site with the largest sample size collected in this database. Speciﬁcally, the NYU site includes 184 subjects, 79 of whom were from ASD and 105 NC cases.\"",
+      "RQ2": "DPARSF pipeline (head motion correction, nuisance regression, MNI standardization, band-pass filter); two parcellations used for multi-scale representation — AAL (116 ROIs) and CC200 (200 ROIs). | quote: \"by partitioning the brain into multiple ROIs using two atlases, i.e., Automated Anatomical Labeling (AAL) (Tzourio-Mazoyer et al., 2002) atlas with 116 ROIs and Craddock200 (CC200) (Craddock et al., 2012) atlas with 200 ROIs.\"",
+      "RQ3": "predictive — multi-scale graph convolutional network classification of ASD vs NC. | quote: \"The MGRL consists of three major components: (1) multi-scale FCNs construction using multiple brain atlases for ROI partition, (2) FCNs representation learning via multi-scale GCNs, and (3) multi-scale feature fusion and classiﬁcation for ASD diagnosis.\"",
+      "RQ4": "Random 80/10/10 train/validation/test split repeated 100 times with mean±SD reported, evaluated separately for NYU and UM (no site pooling, harmonisation, or leave-site-out). | quote: \"Considering the small amount of subjects, we randomly select\n80% of all the samples as training data, 10% of all samples as\nvalidation data, and the remaining 10% as test data. We repeat the\nrandom partition process 100 times and record the mean and SD\nresults of each method.\"",
+      "RQ5": "MGRL outperformed single-scale GCN and handcrafted-feature baselines on both sites: NYU accuracy 0.795±0.068/AUC 0.886±0.062; UM accuracy 0.762±0.078/AUC 0.867±0.049; improvement of at least 3% over single-atlas GCNs attributed to complementary multi-scale topology information. | quote: \"MGRL (Ours)\n0.795 ± 0.068\n0.809 ± 0.146\n0.823 ± 0.103\n0.802 ± 0.075\n0.886 ± 0.062\"",
+      "RQ6": "partly — exact per-site N and diagnostic split (NYU 79 ASD/105 NC; UM in Table 1) are reported, but no participant ID list or code repository is given, only a general data-availability statement. | quote: \"The original contributions presented in the\nstudy are included\nin the article/supplementary material, further inquiries can be\ndirected to the corresponding author/s.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"the NYU site includes 184 subjects, 79 of whom were from ASD and 105 NC cases\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — head motion correction is listed as a preprocessing step, but no motion metric/threshold used to exclude subjects is reported",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"the remaining volumes are processed by a well- accepted pipeline with the Data Processing Assistant for Resting- State fMRI toolbox (DPARSF) (Yan et al., 2016).\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"by partitioning the brain into multiple ROIs using two atlases, i.e., Automated Anatomical Labeling (AAL) (Tzourio-Mazoyer et al., 2002) atlas with 116 ROIs and Craddock200 (CC200) (Craddock et al., 2012) atlas with 200 ROIs.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not stated whether FCN construction or normalization was performed only within the training partition of each repeated split",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly | quote: \"to avoid signiﬁcant inter-site heterogeneity, we mainly used rs-fMRI data from the NYU site. While ABIDE contains data from 21 sites, as a future work, we will evaluate the proposed method on all sites in ABIDE and design smart techniques to reduce inter-site data heterogeneity.\"",
+      "CL7 Code and/or participant list available?": "Partly | quote: \"The original contributions presented in the\nstudy are included\nin the article/supplementary material, further inquiries can be\ndirected to the corresponding author/s.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The proposed MGRL is evaluated on 184 subjects from the public Autism Brain Imaging Data Exchange (ABIDE) database with rs-fMRI scans.\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {"rating": "Partial", "notes": "N and diagnostic split reported for both sites (CL1 yes); no motion/QC threshold reported (CL2 no).", "overall_concern": "Some"},
+    "domain_2_predictors_features": {"rating": "Yes", "notes": "DPARSF pipeline and dual atlases (AAL, CC200) both fully specified.", "overall_concern": "Low"},
+    "domain_3_outcome_diagnosis": {"rating": "Unclear", "notes": "Labels from ABIDE phenotype file; diagnostic instrument/criteria not elaborated.", "overall_concern": "Some"},
+    "domain_4_bias_transparency": {"rating": "Partial", "notes": "CL5 unclear; CL6 site heterogeneity explicitly avoided by single-site analysis rather than modelled; CL7 only a general data-availability statement, no code link.", "overall_concern": "Some"}
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction study; ABIDE I single-site cohorts, NYU (184 subjects: 79 ASD, 105 NC, primary) and UM (secondary)",
+    "methods": "DPARSF-preprocessed resting-state fMRI, multi-scale functional connectivity networks built from AAL (116 ROIs) and CC200 (200 ROIs) atlases, classified with a multi-scale graph convolutional network (MGRL) with feature fusion; evaluated with a repeated random 80/10/10 split (100 repeats)",
+    "outcomes": "MGRL outperformed single-scale GCN and handcrafted-feature baselines on both sites (NYU accuracy 0.795, AUC 0.886; UM accuracy 0.762, AUC 0.867), with multi-scale atlas fusion improving performance by at least 3% over single-atlas GCNs",
+    "key_limitations": "Restricted to single sites to avoid inter-site heterogeneity rather than modelling it; no leave-site-out or pooled multi-site evaluation; diagnostic instrument/criteria and motion QC threshold not described; data availability limited to a general statement with no code link",
+    "relevance_notes": "Demonstrates an atlas-fusion GCN approach validated with a repeated-split uncertainty estimate on two separate ABIDE single-site subsets, explicitly avoiding rather than addressing multi-site heterogeneity.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fninf.2021.802305",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Single-site subsets: NYU (184 subjects, 79 ASD/105 NC, primary) and UM (145 subjects, 68 ASD/77 NC, secondary), selected to avoid inter-site heterogeneity",
+    "n_by_dx": {"ASD": 79, "TD": 105, "total": 184},
+    "sites": "NYU (primary, 184 subjects); UM (secondary, 145 subjects)",
+    "pipeline": "DPARSF (Data Processing Assistant for Resting-State fMRI)",
+    "atlas": "AAL (116 ROIs) and CC200 (200 ROIs), used jointly for multi-scale representation",
+    "claim_type": "predictive",
+    "finding": "Multi-scale GCN (MGRL) classified ASD vs NC with accuracy 0.795±0.068 and AUC 0.886±0.062 on the NYU site, outperforming single-atlas GCN and handcrafted-feature baselines by at least 3%",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "In this work, we use rs-fMRI data from the New York University (NYU) site with the largest sample size collected in this database. Speciﬁcally, the NYU site includes 184 subjects, 79 of whom were from ASD and 105 NC cases.",
+      "by partitioning the brain into multiple ROIs using two atlases, i.e., Automated Anatomical Labeling (AAL) (Tzourio-Mazoyer et al., 2002) atlas with 116 ROIs and Craddock200 (CC200) (Craddock et al., 2012) atlas with 200 ROIs.",
+      "MGRL (Ours)\n0.795 ± 0.068\n0.809 ± 0.146\n0.823 ± 0.103\n0.802 ± 0.075\n0.886 ± 0.062"
+    ]
+  }
+}

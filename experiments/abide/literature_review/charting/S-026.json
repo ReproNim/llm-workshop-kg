@@ -1,0 +1,181 @@
+{
+  "source_id": "S-026",
+  "pmid": "local_8a1f1b25",
+  "doi": "10.1093/scan/nst156",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a group-difference (associational) seed-based resting-state functional connectivity analysis of ABIDE data (pSTS iFC, ASD vs. TD), used as a large independent replication of an original 15-vs-15 sample (Inclusion 2, 3).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "Intrinsic FC of the right pSTS was further examined using 584 (278 ASD/306 controls) resting-state data of the",
+      "section": "abstract",
+      "claim": "Right pSTS intrinsic functional connectivity was examined in 584 ABIDE resting-state datasets (278 ASD/306 controls) in addition to the original 15 ASD/15 TD sample.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Analyses with the large independent ABIDE dataset replicated reductions in pSTS-iFC to fronto-parietal regions.",
+      "section": "abstract",
+      "claim": "The large independent ABIDE dataset replicated reductions in pSTS functional connectivity to fronto-parietal regions.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The replication dataset consisted of 584 resting-state fMRI datasets from nine sites contributing to the ‘ABIDE’ release (Di Martino et al., 2013). In this sample, all participants with ASD (278) had a clinician’s DSM-IV-TR diagnosis of ASD, which was corroborated by the Autism Diagnostic Observation Schedule (ADOS) and the Autism Diagnostic Interview-Revised (Lord et al., 1994, 1999) for all sites except one.",
+      "section": "methods",
+      "claim": "The ABIDE replication sample comprised 584 resting-state datasets from nine ABIDE sites, with ASD diagnosis corroborated by ADOS/ADI-R at all but one site.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "For the ABIDE-replication dataset (278 ASD/306 TD participants) (Supplementary Table S1), we computed iFC and mean FD scores using the same procedures as described above (Supplementary Figure S3B). Within each site, groups displayed comparable mean FD scores (except for one site). Across sites, micro-movements were greater within the ASD than in the TD group [F(1,566) ¼ 4.23, P ¼ 0.041] (Supplementary Table S1 and Figure S3B). As for the ori- ginal sample, we corrected for micro-movements by including mean FD scores as a nuisance covariate in the primary group analysis",
+      "section": "methods",
+      "claim": "Mean framewise displacement was computed for the ABIDE sample and included as a nuisance covariate in the primary group analysis.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Similar to findings emerging from the original dataset, we observed a significant reduction in pSTS-iFC with right IPL and left premotor area in the ASD compared with the TD group. Reduced pSTS-iFC was also observed with the fusiform gyrus and bilateral superior oc- cipital gyrus (Figure 6; Supplementary Table S3). Stronger pSTS-iFC in the ASD group was observed with left thalamus and right IFG",
+      "section": "results",
+      "claim": "The ABIDE replication showed reduced pSTS connectivity with right IPL, left premotor area, fusiform gyrus and bilateral superior occipital gyrus in ASD, and increased connectivity with left thalamus and right IFG.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "TD > ASD group differences remained similar in the secondary ‘scrubbed’ analyses (Supplementary Figure S4B), whereas primary findings of ASD > TD group differences were only identified subthreshold.",
+      "section": "results",
+      "claim": "A secondary motion-scrubbing sensitivity analysis of the ABIDE data showed the TD>ASD findings remained similar, while ASD>TD findings were only subthreshold.",
+      "relevance_score": 0.75
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "ABIDE replication sample size, sites, and diagnostic corroboration are explicit: \"The replication dataset consisted of 584 resting-state fMRI datasets from nine sites contributing to the ‘ABIDE’ release (Di Martino et al., 2013). In this sample, all participants with ASD (278) had a clinician’s DSM-IV-TR diagnosis of ASD, which was corroborated by the Autism Diagnostic Observation Schedule (ADOS) and the Autism Diagnostic Interview-Revised (Lord et al., 1994, 1999) for all sites except one.\""
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Nine ABIDE sites are named as contributing the 584 datasets, with age/IQ matching noted within and across sites."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Unclear",
+        "support": "iFC was computed using \"the same procedures as described above\" (the original sample's SPM-based seed-based pipeline), but no named standard ABIDE pipeline (e.g. CPAC/DPARSF) or pipeline version is given for the ABIDE data specifically."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Low",
+        "support": "ASD diagnosis is explicitly a clinician DSM-IV-TR diagnosis corroborated by ADOS/ADI-R for all but one site."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Age and IQ matching within/across sites and mean FD motion are explicitly addressed: \"For the ABIDE-replication dataset (278 ASD/306 TD participants) (Supplementary Table S1), we computed iFC and mean FD scores using the same procedures as described above (Supplementary Figure S3B). Within each site, groups displayed comparable mean FD scores (except for one site). Across sites, micro-movements were greater within the ASD than in the TD group [F(1,566) ¼ 4.23, P ¼ 0.041] (Supplementary Table S1 and Figure S3B). As for the ori- ginal sample, we corrected for micro-movements by including mean FD scores as a nuisance covariate in the primary group analysis\""
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "Mean FD was included as a nuisance covariate in the primary group analysis, and a secondary motion-scrubbed analysis was performed as a sensitivity check."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Seed-based intrinsic functional connectivity of right pSTS, using the same seed definition and procedure as the original fMRI sample."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "Small-volume correction and whole-brain cluster-level correction (FWE) were applied to group-difference analyses."
+      }
+    ],
+    "overall": "Low",
+    "summary": "The ABIDE replication cohort, diagnostic corroboration, motion handling (FD as covariate, plus a scrubbed sensitivity analysis) and multiple-comparisons correction are all explicit; the main gap is that no named, versioned, standard connectivity preprocessing pipeline is given for the ABIDE data specifically."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Group-difference (associational)",
+    "n_disordered": "278",
+    "n_controls": "306",
+    "data_types": "resting-state fMRI (plus task-based fMRI in a separate, non-ABIDE original sample)",
+    "feature_extraction_tools": "In-house SPM-based pipeline (same procedures as used for the original sample; no named standard ABIDE pipeline such as CPAC/DPARSF)",
+    "specific_features": "Seed-based intrinsic functional connectivity (iFC) of the right posterior superior temporal sulcus (pSTS) seed region",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "features_associated_disorder": "Reduced (hypo-connected) pSTS functional connectivity with right inferior parietal lobule, left premotor area, fusiform gyrus and bilateral superior occipital gyrus in ASD; increased (hyper-connected) pSTS connectivity with left thalamus and right inferior frontal gyrus in ASD.",
+    "feature_change_direction": "Mixed: hypoconnectivity (pSTS to fronto-parietal/visual regions) and hyperconnectivity (pSTS to thalamus and IFG) in ASD relative to TD.",
+    "dataset_openly_available": "",
+    "custom_fields": {
+      "RQ1": "ABIDE I — 584 resting-state datasets (278 ASD/306 TD) from nine ABIDE sites, used as an independent replication sample; ASD diagnosis was a clinician DSM-IV-TR diagnosis corroborated by ADOS/ADI-R at all but one site; groups matched on age (and IQ within most sites). | quote: \"The replication dataset consisted of 584 resting-state fMRI datasets from nine sites contributing to the ‘ABIDE’ release (Di Martino et al., 2013). In this sample, all participants with ASD (278) had a clinician’s DSM-IV-TR diagnosis of ASD, which was corroborated by the Autism Diagnostic Observation Schedule (ADOS) and the Autism Diagnostic Interview-Revised (Lord et al., 1994, 1999) for all sites except one.\"",
+      "RQ2": "No named standard ABIDE pipeline (e.g. CPAC/DPARSF) — iFC was computed using the same in-house SPM-based seed-based procedure as the original (non-ABIDE) sample; analysis is seed-based (right pSTS seed), not atlas/parcellation-based. | quote: \"For the ABIDE-replication dataset (278 ASD/306 TD participants) (Supplementary Table S1), we computed iFC and mean FD scores using the same procedures as described above (Supplementary Figure S3B). Within each site, groups displayed comparable mean FD scores (except for one site). Across sites, micro-movements were greater within the ASD than in the TD group [F(1,566) ¼ 4.23, P ¼ 0.041] (Supplementary Table S1 and Figure S3B). As for the ori- ginal sample, we corrected for micro-movements by including mean FD scores as a nuisance covariate in the primary group analysis\"",
+      "RQ3": "associational — group-difference analysis of pSTS resting-state functional connectivity between ASD and TD. | quote: \"Analyses with the large independent ABIDE dataset replicated reductions in pSTS-iFC to fronto-parietal regions.\"",
+      "RQ4": "Two-sample group comparison of right pSTS seed-based iFC with mean framewise displacement included as a nuisance covariate; small-volume and whole-brain FWE-corrected statistics; a secondary motion-scrubbed analysis was run as a sensitivity check. | quote: \"For the ABIDE-replication dataset (278 ASD/306 TD participants) (Supplementary Table S1), we computed iFC and mean FD scores using the same procedures as described above (Supplementary Figure S3B). Within each site, groups displayed comparable mean FD scores (except for one site). Across sites, micro-movements were greater within the ASD than in the TD group [F(1,566) ¼ 4.23, P ¼ 0.041] (Supplementary Table S1 and Figure S3B). As for the ori- ginal sample, we corrected for micro-movements by including mean FD scores as a nuisance covariate in the primary group analysis\"",
+      "RQ5": "ASD showed hypo-connectivity between pSTS and right IPL, left premotor area, fusiform gyrus and bilateral superior occipital gyrus, and hyper-connectivity between pSTS and left thalamus and right IFG, replicating the direction of the original sample's fronto-parietal hypoconnectivity finding. | quote: \"Similar to findings emerging from the original dataset, we observed a significant reduction in pSTS-iFC with right IPL and left premotor area in the ASD compared with the TD group. Reduced pSTS-iFC was also observed with the fusiform gyrus and bilateral superior oc- cipital gyrus (Figure 6; Supplementary Table S3). Stronger pSTS-iFC in the ASD group was observed with left thalamus and right IFG\"",
+      "RQ6": "partly — exact ABIDE site count, sample size and diagnostic-corroboration rule are stated, but no ABIDE participant ID list or code repository is given in this paper. | quote: \"The replication dataset consisted of 584 resting-state fMRI datasets from nine sites contributing to the ‘ABIDE’ release (Di Martino et al., 2013). In this sample, all participants with ASD (278) had a clinician’s DSM-IV-TR diagnosis of ASD, which was corroborated by the Autism Diagnostic Observation Schedule (ADOS) and the Autism Diagnostic Interview-Revised (Lord et al., 1994, 1999) for all sites except one.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — 584 datasets (278 ASD/306 TD) from nine named ABIDE sites, with the diagnostic corroboration rule stated. | quote: \"The replication dataset consisted of 584 resting-state fMRI datasets from nine sites contributing to the ‘ABIDE’ release (Di Martino et al., 2013). In this sample, all participants with ASD (278) had a clinician’s DSM-IV-TR diagnosis of ASD, which was corroborated by the Autism Diagnostic Observation Schedule (ADOS) and the Autism Diagnostic Interview-Revised (Lord et al., 1994, 1999) for all sites except one.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes — mean framewise displacement (FD) was computed and included as a nuisance covariate in the primary analysis, with a secondary motion-scrubbed analysis as a sensitivity check. | quote: \"For the ABIDE-replication dataset (278 ASD/306 TD participants) (Supplementary Table S1), we computed iFC and mean FD scores using the same procedures as described above (Supplementary Figure S3B). Within each site, groups displayed comparable mean FD scores (except for one site). Across sites, micro-movements were greater within the ASD than in the TD group [F(1,566) ¼ 4.23, P ¼ 0.041] (Supplementary Table S1 and Figure S3B). As for the ori- ginal sample, we corrected for micro-movements by including mean FD scores as a nuisance covariate in the primary group analysis\"",
+      "CL3 Preprocessing pipeline and version reported?": "No — no named, versioned pipeline (e.g. CPAC/DPARSF) is given for the ABIDE data; processing followed the paper's own in-house SPM-based procedure.",
+      "CL4 Atlas/parcellation reported?": "No — analysis is seed-based (right pSTS seed region), not based on a standard whole-brain atlas/parcellation.",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "N/A — this is a group-difference (not predictive/cross-validated) analysis; no train/test split or feature selection applies.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly — groups were matched on age (and largely IQ) within and across the nine sites, and motion was handled as a covariate, but no explicit site covariate or ComBat-style harmonisation of connectivity values themselves is reported.",
+      "CL7 Code and/or participant list available?": "No statement of code or participant-list availability was found in the text.",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "ABIDE replication sample size, sites and diagnostic-corroboration rule are explicit (CL1, CL2)."
+    },
+    "domain_2_predictors_preprocessing": {
+      "rating": "Partial",
+      "overall_concern": "Some",
+      "support": "No named/versioned standard pipeline or atlas is used for the ABIDE data; analysis is seed-based (CL3, CL4)."
+    },
+    "domain_3_outcome_label_source": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "ASD diagnosis is a clinician DSM-IV-TR diagnosis corroborated by ADOS/ADI-R at all but one site."
+    },
+    "domain_4_bias_transparency": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Mean FD was used as a nuisance covariate with a motion-scrubbed sensitivity analysis, and multiple-comparisons correction was applied; no code/data availability statement is given."
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Group-difference (associational) analysis using ABIDE I resting-state fMRI (584 datasets: 278 ASD/306 TD, nine sites) as an independent replication of an original 15 ASD/15 TD task+resting-state sample.",
+    "methods": "Seed-based intrinsic functional connectivity of the right posterior superior temporal sulcus (pSTS), computed with the same in-house SPM-based procedure as the original sample; mean FD included as a nuisance covariate, with a motion-scrubbed secondary analysis; small-volume and whole-brain FWE-corrected statistics.",
+    "outcomes": "ABIDE replication confirmed reduced pSTS connectivity with right IPL, left premotor area, fusiform gyrus and bilateral superior occipital gyrus in ASD (replicating the original sample), plus increased pSTS connectivity with left thalamus and right IFG not seen in the original sample.",
+    "key_limitations": "No named/versioned standard connectivity pipeline or atlas used for the ABIDE data (seed-based, in-house SPM procedure); no code/participant-list availability statement; cross-site IQ not matched.",
+    "relevance_notes": "An early (2013) example of using the full multi-site ABIDE release as an independent large-sample replication cohort for a seed-based connectivity finding from a small original sample, with an explicit motion (FD covariate + scrubbing) sensitivity analysis.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1093/scan/nst156",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "584 resting-state fMRI datasets (278 ASD/306 TD) from nine ABIDE sites, used as an independent replication sample; ASD diagnosis corroborated by ADOS/ADI-R at all but one site; groups matched on age (and largely IQ) within sites.",
+    "n_by_dx": {
+      "ASD": 278,
+      "TD": 306,
+      "total": 584
+    },
+    "sites": "9",
+    "pipeline": "In-house SPM-based seed-based connectivity pipeline (not a named standard ABIDE pipeline)",
+    "atlas": "None — seed-based analysis (right posterior superior temporal sulcus seed)",
+    "claim_type": "associational",
+    "finding": "ASD showed reduced pSTS connectivity with right IPL, left premotor area, fusiform gyrus and bilateral superior occipital gyrus, and increased pSTS connectivity with left thalamus and right IFG, replicating fronto-parietal pSTS hypoconnectivity from a smaller original sample.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "The replication dataset consisted of 584 resting-state fMRI datasets from nine sites contributing to the ‘ABIDE’ release (Di Martino et al., 2013). In this sample, all participants with ASD (278) had a clinician’s DSM-IV-TR diagnosis of ASD, which was corroborated by the Autism Diagnostic Observation Schedule (ADOS) and the Autism Diagnostic Interview-Revised (Lord et al., 1994, 1999) for all sites except one.",
+      "For the ABIDE-replication dataset (278 ASD/306 TD participants) (Supplementary Table S1), we computed iFC and mean FD scores using the same procedures as described above (Supplementary Figure S3B). Within each site, groups displayed comparable mean FD scores (except for one site). Across sites, micro-movements were greater within the ASD than in the TD group [F(1,566) ¼ 4.23, P ¼ 0.041] (Supplementary Table S1 and Figure S3B). As for the ori- ginal sample, we corrected for micro-movements by including mean FD scores as a nuisance covariate in the primary group analysis",
+      "Similar to findings emerging from the original dataset, we observed a significant reduction in pSTS-iFC with right IPL and left premotor area in the ASD compared with the TD group. Reduced pSTS-iFC was also observed with the fusiform gyrus and bilateral superior oc- cipital gyrus (Figure 6; Supplementary Table S3). Stronger pSTS-iFC in the ASD group was observed with left thalamus and right IFG"
+    ]
+  }
+}

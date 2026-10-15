@@ -1,0 +1,289 @@
+{
+  "source_id": "S-015",
+  "pmid": "local_a8b1e837",
+  "doi": "10.1038/s41467-022-31053-5",
+  "screening": {
+    "decision": "include",
+    "reason": "Resting-state fMRI (fALFF, ReHo) from ABIDE I+II is correlated with post-mortem gene expression in ASD vs controls; satisfies inclusion 1-4.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "We generated voxel-wise maps of fALFF and ReHo for a total of 1983 subjects from the ABIDE I and ABIDE II datasets (ASD = 916, CTL = 1067",
+      "section": "results",
+      "claim": "Study used fALFF/ReHo maps from 1983 ABIDE I+II subjects (ASD=916, CTL=1067) before QC.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "After the removal of subjects with image artifacts, high head movement, or poor MNI152 coregistration, we analyzed the data from the remaining 710 ASD (79% male), and 606 CTL (87% male) subjects, whose age ranges from 5 to 64 years.",
+      "section": "methods",
+      "claim": "After QC exclusions, 710 ASD and 606 CTL subjects were analysed.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "scans meeting at least one of these three requirements were removed: (1) mean FWD > 0.30 mm, (2) greater than 50% of frames being scrubbed, or (3) scans with outlier mean, 1st, 2nd, or 3rd quantile DVARS values.",
+      "section": "methods",
+      "claim": "Motion/QC exclusion criteria: mean FWD>0.30mm, >50% scrubbed frames, or DVARS outliers.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The package CPAC v1.8.0 was used for fMRI pre-processing including head motion correction, scrubbing, and nuisance regression.",
+      "section": "methods",
+      "claim": "fMRI preprocessing used C-PAC v1.8.0.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "We used the resulting 11 region atlas to assign a region label",
+      "section": "methods",
+      "claim": "An 11-region Brodmann-area atlas was used to parcellate fALFF/ReHo maps.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "To reduce the impact of confounders, we regressed out age, site, and sex using a linear model.",
+      "section": "methods",
+      "claim": "Age, site and sex were regressed out as confounders using a linear model.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "415 differentially corre- lated genes (DC genes; Diff Cor P < 0.01, CTL FDR < 0.05",
+      "section": "results",
+      "claim": "415 genes were differentially correlated with fALFF/ReHo between ASD and controls (Diff Cor P<0.01, CTL FDR<0.05).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "DC genes showed an effect size larger than 1.8, resulting in ~3% of the gene expressed in our data",
+      "section": "results",
+      "claim": "Differentially correlated genes showed effect sizes larger than 1.8, ~3% of expressed genes.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "our study includes ages from 5 to 64 years and data from 37 sites",
+      "section": "discussion",
+      "claim": "Study spans ages 5-64 years across 37 sites, broader than prior age/site-restricted reports.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "After the removal of subjects with image artifacts, high head movement, or poor MNI152 coregistration, we analyzed the data from the remaining 710 ASD (79% male), and 606 CTL (87% male) subjects, whose age ranges from 5 to 64 years."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "We generated voxel-wise maps of fALFF and ReHo for a total of 1983 subjects from the ABIDE I and ABIDE II datasets (ASD = 916, CTL = 1067 our study includes ages from 5 to 64 years and data from 37 sites"
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "The package CPAC v1.8.0 was used for fMRI pre-processing including head motion correction, scrubbing, and nuisance regression."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "Diagnosis is the underlying ABIDE site clinical ASD diagnosis; no additional validation or ADOS/ADI-R criterion described in this paper."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "To reduce the impact of confounders, we regressed out age, site, and sex using a linear model."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "We accessed publicly available ABIDE data across 30 different sites. To reduce the impact of confounders, we regressed out age, site, and sex using a linear model."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "fALFF and ReHo are cited as extensively validated rs-fMRI measures, computed via C-PAC."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "415 differentially corre- lated genes (DC genes; Diff Cor P < 0.01, CTL FDR < 0.05"
+      }
+    ],
+    "overall": "Low",
+    "summary": "Large multi-site ABIDE I+II sample with explicit motion-QC thresholds, site correction and age/sex/site deconfounding, FDR-corrected gene-correlation analysis; diagnosis source itself not independently validated beyond ABIDE's clinical label."
+  },
+  "charting": {
+    "source_id": "S-015",
+    "title": "Association between resting-state functional brain connectivity and gene expression is altered in autism spectrum disorder",
+    "authors": "",
+    "year": "2022",
+    "journal_conference": "Nature Communications",
+    "doi": "10.1038/s41467-022-31053-5",
+    "database_retrieved": "ABIDE I+II",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "Identify genes whose cortical expression is differentially correlated with resting-state brain activity (fALFF, ReHo) between ASD and control individuals.",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "Human",
+    "task_type": "Resting-state",
+    "study_setting": "Multi-site (37 sites overall; 30 sites in the site-correction step)",
+    "country_region": "",
+    "disorder_diagnosis": "Autism spectrum disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "710",
+    "age_mean_sd": "",
+    "age_range": "5-64 years",
+    "gender_distribution": "79% male",
+    "comorbidities_included_excluded": "Individuals with Chromosome 15q Duplication were excluded from downstream gene-expression analysis",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "606",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "5-64 years",
+    "gender_distribution_controls": "87% male",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI, post-mortem cortical RNA-seq gene expression",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "Yes - code on GitHub; ABIDE imaging data available to approved investigators via NITRC/1000 Functional Connectomes registration",
+    "dataset_available_request": "Yes, via NITRC registration",
+    "sensitive_data_anonymized": "",
+    "feature_types": "fALFF and ReHo (regional, Brodmann-atlas parcellated)",
+    "specific_features": "fALFF and ReHo averaged over an 11-region Brodmann-area atlas matched to RNA-seq regions",
+    "feature_extraction_tools": "C-PAC v1.8.0",
+    "feature_importance_reported": "Yes",
+    "importance_method": "Fisher r-to-z transformation of ASD vs CTL gene-fMRI correlations, combined via Fisher's method, FDR-corrected",
+    "top_features_identified": "FILIP1 and GABRQ among genes with highest effect size",
+    "feature_change_direction": "415 differentially correlated (DC) genes identified; 59.8% showed similarly-signed positive correlation with fALFF/ReHo in both groups",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "415 genes were differentially correlated between ASD and controls with rs-fMRI activity (fALFF/ReHo) at Diff Cor P<0.01, CTL FDR<0.05, with effect sizes >1.8 for ~3% of expressed genes; these DC genes show altered postnatal developmental expression trajectories relevant to ASD.",
+    "features_associated_disorder": "Cortical regional fALFF/ReHo correlated with expression of 415 genes (including FILIP1, GABRQ) differently in ASD vs controls, especially in primary visual and inferior temporal cortex.",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE I+II across 37 sites (30 sites in the site-correction procedure), initial 916 ASD/1067 CTL (1983 total), QC'd to 710 ASD (79% male) / 606 CTL (87% male), ages 5-64 | quote: \"After the removal of subjects with image artifacts, high head movement, or poor MNI152 coregistration, we analyzed the data from the remaining 710 ASD (79% male), and 606 CTL (87% male) subjects, whose age ranges from 5 to 64 years.\"",
+      "RQ2": "C-PAC v1.8.0 pipeline; 11-region Brodmann-area atlas parcellation of fALFF and ReHo maps | quote: \"The package CPAC v1.8.0 was used for fMRI pre-processing including head motion correction, scrubbing, and nuisance regression.\"",
+      "RQ3": "associational \u2014 differential correlation between rs-fMRI measures (fALFF/ReHo) and gene expression, ASD vs controls | quote: \"415 differentially corre- lated genes (DC genes; Diff Cor P < 0.01, CTL FDR < 0.05\"",
+      "RQ4": "Fisher r-to-z test of ASD vs CTL correlation differences, combined by Fisher's method, Benjamini-Hochberg FDR correction; age/site/sex regressed out by linear model, site-mean correction applied | quote: \"To reduce the impact of confounders, we regressed out age, site, and sex using a linear model.\"",
+      "RQ5": "415 differentially correlated genes identified (Diff Cor P<0.01, CTL FDR<0.05), effect size >1.8 for ~3% of expressed genes, with regional emphasis on primary visual and inferior temporal cortex | quote: \"415 differentially corre- lated genes (DC genes; Diff Cor P < 0.01, CTL FDR < 0.05\"",
+      "RQ6": "yes \u2014 exact rules \u2014 explicit numeric QC thresholds given, though no individual participant list published (ABIDE access via NITRC registration) | quote: \"scans meeting at least one of these three requirements were removed: (1) mean FWD > 0.30 mm, (2) greater than 50% of frames being scrubbed, or (3) scans with outlier mean, 1st, 2nd, or 3rd quantile DVARS values.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"After the removal of subjects with image artifacts, high head movement, or poor MNI152 coregistration, we analyzed the data from the remaining 710 ASD (79% male), and 606 CTL (87% male) subjects, whose age ranges from 5 to 64 years.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes | quote: \"scans meeting at least one of these three requirements were removed: (1) mean FWD > 0.30 mm, (2) greater than 50% of frames being scrubbed, or (3) scans with outlier mean, 1st, 2nd, or 3rd quantile DVARS values.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"The package CPAC v1.8.0 was used for fMRI pre-processing including head motion correction, scrubbing, and nuisance regression.\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"We used the resulting 11 region atlas to assign a region label\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "N/A | quote: \"\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes | quote: \"We accessed publicly available ABIDE data across 30 different sites.\"",
+      "CL7 Code and/or participant list available?": "Yes | quote: \"Custom R code and data to support the data correction, correlation analysis, visualizations, functional, and gene set enrichments are available at https://github.com/konopkalab/\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"We generated voxel-wise maps of fALFF and ReHo for a total of 1983 subjects from the ABIDE I and ABIDE II datasets (ASD = 916, CTL = 1067\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-015",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Yes",
+          "notes": "quote: \"After the removal of subjects with image artifacts, high head movement, or poor MNI152 coregistration, we analyzed the data from the remaining 710 ASD (79% male), and 606 CTL (87% male) subjects, whose age ranges from 5 to 64 years.\""
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "Yes",
+          "notes": "quote: \"scans meeting at least one of these three requirements were removed: (1) mean FWD > 0.30 mm, (2) greater than 50% of frames being scrubbed, or (3) scans with outlier mean, 1st, 2nd, or 3rd quantile DVARS values.\""
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported?",
+          "rating": "Yes",
+          "notes": "quote: \"The package CPAC v1.8.0 was used for fMRI pre-processing including head motion correction, scrubbing, and nuisance regression.\""
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "Yes",
+          "notes": "quote: \"We used the resulting 11 region atlas to assign a region label\""
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "Relies on ABIDE's own site-level clinical ASD diagnosis; no additional instrument or validation criterion stated in this paper."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "N/A",
+          "notes": "Associational correlation analysis, not a predictive model with train/test split."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "Yes",
+          "notes": "Explicit site-mean correction across 30 sites plus site regressed out as a covariate. | quote: \"We accessed publicly available ABIDE data across 30 different sites.\""
+        },
+        {
+          "item_text": "CL7 Code and/or participant list available?",
+          "rating": "Yes",
+          "notes": "Code on GitHub; no individual participant list published. | quote: \"Custom R code and data to support the data correction, correlation analysis, visualizations, functional, and gene set enrichments are available at https://github.com/konopkalab/\""
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-015",
+    "study_design_sample_dataset": "Associational; ABIDE I+II, 37 sites, 710 ASD (79% male) / 606 CTL (87% male) after QC, ages 5-64",
+    "methods": "C-PAC v1.8.0 preprocessing, fALFF and ReHo computed per voxel then parcellated into 11 Brodmann-area ROIs matched to post-mortem RNA-seq regions; site-mean correction; age/site/sex regressed out; Fisher r-to-z difference testing between ASD and CTL correlations, combined via Fisher's method, FDR-corrected.",
+    "outcomes": "415 genes differentially correlated with fALFF/ReHo between ASD and controls (Diff Cor P<0.01, CTL FDR<0.05); effect size >1.8 for ~3% of expressed genes; developmental expression trajectories of these genes altered into adulthood.",
+    "key_limitations": "Restricted to 11 cortical regions available from rare post-mortem ASD tissue; gene-expression comparison used a further random-subsampling procedure (e.g., ASD N=360 / Healthy N=302 in the depicted analysis) distinct from the full imaging QC sample.",
+    "relevance_notes": "Large, multi-site, well-documented ABIDE I+II QC and site-correction pipeline (CPAC, Brodmann atlas) linking imaging phenotypes to transcriptomic data; code publicly released.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1038/s41467-022-31053-5",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "After the removal of subjects with image artifacts, high head movement, or poor MNI152 coregistration, we analyzed the data from the remaining 710 ASD (79% male), and 606 CTL (87% male) subjects, whose age ranges from 5 to 64 years.",
+    "n_by_dx": {
+      "ASD": 710,
+      "TD": 606,
+      "total": 1316
+    },
+    "sites": "37",
+    "pipeline": "CPAC v1.8.0",
+    "atlas": "Brodmann atlas (11 regions)",
+    "claim_type": "associational",
+    "finding": "415 differentially corre- lated genes (DC genes; Diff Cor P < 0.01, CTL FDR < 0.05",
+    "reconstructible": "yes \u2014 exact rules",
+    "evidence_quotes": [
+      "After the removal of subjects with image artifacts, high head movement, or poor MNI152 coregistration, we analyzed the data from the remaining 710 ASD (79% male), and 606 CTL (87% male) subjects, whose age ranges from 5 to 64 years.",
+      "scans meeting at least one of these three requirements were removed: (1) mean FWD > 0.30 mm, (2) greater than 50% of frames being scrubbed, or (3) scans with outlier mean, 1st, 2nd, or 3rd quantile DVARS values.",
+      "415 differentially corre- lated genes (DC genes; Diff Cor P < 0.01, CTL FDR < 0.05",
+      "DC genes showed an effect size larger than 1.8, resulting in ~3% of the gene expressed in our data"
+    ]
+  }
+}

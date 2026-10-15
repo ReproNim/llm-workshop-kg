@@ -1,0 +1,29 @@
+Open access: Unpaywall → OpenAlex → Semantic Scholar
+Institutional access: disabled (--oa-only)
+20 DOI(s) to fetch into literature_review/pdfs_part5
+  MISS  10.1093/cercor/bhaa252
+  OK    10.1016/j.dcn.2019.100747 → 10.1016_j.dcn.2019.100747.pdf [Unpaywall (open access)]
+  OK    10.1038/s41598-022-12171-y → 10.1038_s41598-022-12171-y.pdf [Unpaywall (open access)]
+  OK    10.1101/2021.02.09.430363 → 10.1101_2021.02.09.430363.pdf [Unpaywall (open access)]
+  MISS  10.3389/fnins.2024.1391191
+  MISS  10.1016/j.neuroimage.2015.04.022
+  MISS  10.1109/bigdata55660.2022.10021070
+  OK    10.30880/ijie.2021.13.05.006 → 10.30880_ijie.2021.13.05.006.pdf [Unpaywall (open access)]
+  MISS  10.3390/jimaging9060110
+  MISS  10.1002/aur.2840
+  MISS  10.1109/tmi.2024.3493195
+  MISS  10.1002/hbm.70190
+  MISS  10.3390/brainsci14050456
+  MISS  10.1016/j.dcn.2020.100762
+  MISS  10.1109/tmi.2025.3556420
+  MISS  10.1016/j.neuroimage.2023.120481
+  MISS  10.1155/2023/4136087
+  MISS  10.1109/tcbb.2015.2440244
+  MISS  10.1038/s41598-024-71174-z
+  MISS  10.1049/cit2.70046
+
+Retrieved 4, failed 16.
+    4  Unpaywall (open access)
+4 of these were open access — retrieved without touching the institutional proxy.
+Wrote literature_review/pdfs_part5/retrieval_manifest.json (DOI + retrieval route per file)
+Next: python build_corpus.py --dir literature_review/pdfs_part5 --manifest literature_review/pdfs_part5/retrieval_manifest.json --out corpus.json

@@ -1,0 +1,29 @@
+{
+  "source_id": "S-046",
+  "pmid": "local_f3faa5c8",
+  "doi": "10.1016/j.neuroimage.2017.04.039",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: uses only structural (T1) MRI from ABIDE I for a subcortical-structure segmentation CNN; segmentations are evaluated against FreeSurfer automatic labels (ABIDE has no ground-truth segmentation) and robustness is assessed across site/age/diagnosis groups, but there is no resting-state functional connectivity analysis or autism-vs-control diagnostic/connectivity finding.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1016/j.neuroimage.2017.04.039",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "ABIDE I involved 17 international sites, sharing previously collected resting state functional magnetic resonance imaging (R-fMRI), anatomical and phenotypic datasets",
+      "This eﬀort yielded a huge dataset containing 1112 subjects, including 539 from individuals with autism spectrum disorder (ASD) and 573 from typical controls (ages 7-64 years, median 14.7 years across groups)."
+    ]
+  }
+}

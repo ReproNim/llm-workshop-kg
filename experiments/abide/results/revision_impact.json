@@ -1,0 +1,252 @@
+{
+ "n_flagged_entities": 92,
+ "flagged_by_kind": {
+  "claim_or_review": 6,
+  "result": 2,
+  "fold_result": 80,
+  "pooled_result": 4
+ },
+ "n_result_families_compared": 9,
+ "n_material_changes": 0,
+ "materiality_rule": "material if the v2 point estimate falls outside the v1 95% interval (bootstrap for pooled AUC and A's hypo fraction), or a review verdict string changes",
+ "changes": {
+  "A_result": {
+   "v1": "urn:repronim:abide:result/A_v1",
+   "v2": "urn:repronim:abide:result/A_v2",
+   "summary": "n 441->372; sites 9->8; FDR edges 5428->5119; hypo fraction 0.996->0.996",
+   "material": false
+  },
+  "B_pooled_demographic": {
+   "v1": "urn:repronim:abide:result/B_v1/pooled/demographic",
+   "v2": "urn:repronim:abide:result/B_v2/pooled/demographic",
+   "summary": "AUC 0.485 [0.443,0.524] -> 0.482; accuracy 0.540->0.565",
+   "material": false
+  },
+  "B_pooled_demographic_fd": {
+   "v1": "urn:repronim:abide:result/B_v1/pooled/demographic_fd",
+   "v2": "urn:repronim:abide:result/B_v2/pooled/demographic_fd",
+   "summary": "AUC 0.587 [0.545,0.624] -> 0.568; accuracy 0.551->0.547",
+   "material": false
+  },
+  "B_pooled_correlation": {
+   "v1": "urn:repronim:abide:result/B_v1/pooled/correlation",
+   "v2": "urn:repronim:abide:result/B_v2/pooled/correlation",
+   "summary": "AUC 0.723 [0.688,0.755] -> 0.724; accuracy 0.670->0.683",
+   "material": false
+  },
+  "B_pooled_tangent": {
+   "v1": "urn:repronim:abide:result/B_v1/pooled/tangent",
+   "v2": "urn:repronim:abide:result/B_v2/pooled/tangent",
+   "summary": "AUC 0.739 [0.702,0.774] -> 0.734; accuracy 0.669->0.669",
+   "material": false
+  },
+  "review_A_of_B": {
+   "v1": "urn:repronim:abide:review/A_reviews_B_v1",
+   "v2": "urn:repronim:abide:review/A_reviews_B_v2",
+   "summary": "verdict 'overlap exceeds chance' -> 'overlap exceeds chance'",
+   "material": false
+  },
+  "review_B_of_A": {
+   "v1": "urn:repronim:abide:review/B_reviews_A_v1",
+   "v2": "urn:repronim:abide:review/B_reviews_A_v2",
+   "summary": "verdict 'not established in independent participants' -> 'not established in independent participants'",
+   "material": false
+  },
+  "claim_A": {
+   "v1": "urn:repronim:abide:claim/A_v1",
+   "v2": "urn:repronim:abide:claim/A_v2",
+   "summary": "claim text regenerated from v2 result",
+   "material": false
+  },
+  "claim_B": {
+   "v1": "urn:repronim:abide:claim/B_v1",
+   "v2": "urn:repronim:abide:claim/B_v2",
+   "summary": "claim text regenerated from v2 result",
+   "material": false
+  }
+ },
+ "per_site_tangent_accuracy": [
+  {
+   "site": "CALTECH",
+   "n_test_v1": 12,
+   "n_test_v2": 12,
+   "tangent_acc_v1": 0.5,
+   "tangent_acc_v2": 0.4166666666666667,
+   "delta": -0.08333333333333331,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "CMU",
+   "n_test_v1": 1,
+   "n_test_v2": 1,
+   "tangent_acc_v1": 1.0,
+   "tangent_acc_v2": 1.0,
+   "delta": 0.0,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "KKI",
+   "n_test_v1": 29,
+   "n_test_v2": 26,
+   "tangent_acc_v1": 0.3793103448275862,
+   "tangent_acc_v2": 0.38461538461538464,
+   "delta": 0.005305039787798449,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "LEUVEN_1",
+   "n_test_v1": 28,
+   "n_test_v2": 27,
+   "tangent_acc_v1": 0.6071428571428571,
+   "tangent_acc_v2": 0.5555555555555556,
+   "delta": -0.051587301587301515,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "LEUVEN_2",
+   "n_test_v1": 26,
+   "n_test_v2": 24,
+   "tangent_acc_v1": 0.7307692307692307,
+   "tangent_acc_v2": 0.75,
+   "delta": 0.019230769230769273,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "MAX_MUN",
+   "n_test_v1": 40,
+   "n_test_v2": 37,
+   "tangent_acc_v1": 0.4,
+   "tangent_acc_v2": 0.40540540540540543,
+   "delta": 0.005405405405405406,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "NYU",
+   "n_test_v1": 166,
+   "n_test_v2": 158,
+   "tangent_acc_v1": 0.7289156626506024,
+   "tangent_acc_v2": 0.7151898734177216,
+   "delta": -0.013725789232880814,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "OHSU",
+   "n_test_v1": 22,
+   "n_test_v2": 20,
+   "tangent_acc_v1": 0.5909090909090909,
+   "tangent_acc_v2": 0.65,
+   "delta": 0.05909090909090908,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "OLIN",
+   "n_test_v1": 22,
+   "n_test_v2": 19,
+   "tangent_acc_v1": 0.7272727272727273,
+   "tangent_acc_v2": 0.7368421052631579,
+   "delta": 0.009569377990430561,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "PITT",
+   "n_test_v1": 40,
+   "n_test_v2": 31,
+   "tangent_acc_v1": 0.65,
+   "tangent_acc_v2": 0.6451612903225806,
+   "delta": -0.004838709677419395,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "SBL",
+   "n_test_v1": 22,
+   "n_test_v2": 16,
+   "tangent_acc_v1": 0.5909090909090909,
+   "tangent_acc_v2": 0.5625,
+   "delta": -0.02840909090909094,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "SDSU",
+   "n_test_v1": 23,
+   "n_test_v2": 23,
+   "tangent_acc_v1": 0.7391304347826086,
+   "tangent_acc_v2": 0.7391304347826086,
+   "delta": 0.0,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "STANFORD",
+   "n_test_v1": 24,
+   "n_test_v2": 23,
+   "tangent_acc_v1": 0.6666666666666666,
+   "tangent_acc_v2": 0.6521739130434783,
+   "delta": -0.01449275362318836,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "TRINITY",
+   "n_test_v1": 40,
+   "n_test_v2": 37,
+   "tangent_acc_v1": 0.675,
+   "tangent_acc_v2": 0.6486486486486487,
+   "delta": -0.02635135135135136,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "UCLA_1",
+   "n_test_v1": 54,
+   "n_test_v2": 53,
+   "tangent_acc_v1": 0.6111111111111112,
+   "tangent_acc_v2": 0.6415094339622641,
+   "delta": 0.03039832285115296,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "UCLA_2",
+   "n_test_v1": 16,
+   "n_test_v2": 14,
+   "tangent_acc_v1": 0.5625,
+   "tangent_acc_v2": 0.5,
+   "delta": -0.0625,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "UM_1",
+   "n_test_v1": 77,
+   "n_test_v2": 72,
+   "tangent_acc_v1": 0.7662337662337663,
+   "tangent_acc_v2": 0.8333333333333334,
+   "delta": 0.0670995670995671,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "UM_2",
+   "n_test_v1": 31,
+   "n_test_v2": 30,
+   "tangent_acc_v1": 0.7741935483870968,
+   "tangent_acc_v2": 0.7666666666666667,
+   "delta": -0.007526881720430034,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "USM",
+   "n_test_v1": 59,
+   "n_test_v2": 48,
+   "tangent_acc_v1": 0.7288135593220338,
+   "tangent_acc_v2": 0.6875,
+   "delta": -0.041313559322033844,
+   "v2_outside_v1_wilson_ci": false
+  },
+  {
+   "site": "YALE",
+   "n_test_v1": 35,
+   "n_test_v2": 33,
+   "tangent_acc_v1": 0.7428571428571429,
+   "tangent_acc_v2": 0.7575757575757576,
+   "delta": 0.014718614718614687,
+   "v2_outside_v1_wilson_ci": false
+  }
+ ],
+ "n_sites_outside_v1_ci": 0,
+ "dropped_folds": []
+}

@@ -1,0 +1,50 @@
+{
+ "what": "Package unzipped into an empty directory; inputs downloaded fresh (S3, GitHub, EBI, arXiv, AbstractAtlas); pipeline rerun with uv --frozen.",
+ "download": "2108/2108 input files match data/expected_sha256.json (4 transient DNS failures on the first pass, fetched on rerun)",
+ "steps_run": "rebuild.sh STEPS=all through scope.py (33 min: cohorts, papers, both analysts v1 and v2, reviews, revision flag and compare, graph v1/final, PyNIDM csv2nidm, ReproNim simple2, LinkML validation, resources, UMAP, scope); after the fix below, STEPS=graph through competency; then profile_simple2, validate, find_resources --examples, figures, key_numbers, report.",
+ "not_run": {
+  "code/query_bench.py": "the rdflib-vs-Oxigraph comparison was dropped by the owner and is no longer a rebuild step; it was stopped in the clean room and its output is not shipped."
+ },
+ "code_identity": "Code in the clean room equals the zip's code. Files changed after the rebuild started (report.py, key_numbers.py, competency/query_bench/profile docstrings, package.py, rebuild.sh, orcd sbatch) only remove the engine comparison or change text; key_numbers and report were rerun in the clean room with them.",
+ "reproducibility_bug_caught": "code/publications.py fetched the AbstractAtlas bundle with urllib's default User-Agent; the host returns HTTP 403 to 'Python-urllib/3.x' (curl gets 200), so a fresh rebuild failed. Fixed by sending an explicit User-Agent; the bytes are still checked against the sha256 in the URL.",
+ "stale_output_caught": "graph/abide_extension.ttl in the working package predated the current graph (12 classes); the clean room produced 13 (adds ex:ReportedCohort). Local outputs were regenerated before packaging.",
+ "key_numbers": {
+  "n": 218,
+  "matched_rtol_0.01": 215,
+  "differed": {
+   "competency.max_query_seconds": {
+    "clean_room": 0.2017,
+    "original": 0.2069,
+    "kind": "run time (machine/load dependent)"
+   },
+   "pynidm.csv2nidm_seconds": {
+    "clean_room": 16.1,
+    "original": 21.8,
+    "kind": "run time (machine/load dependent)"
+   },
+   "simple2.verbatim_seconds_oxigraph": {
+    "clean_room": 109.9,
+    "original": 117.4,
+    "kind": "run time (machine/load dependent)"
+   }
+  },
+  "value_differences": []
+ },
+ "gold_answers_Q1_Q15": {
+  "Q1": "identical",
+  "Q2": "identical",
+  "Q3": "identical",
+  "Q4": "identical",
+  "Q5": "identical",
+  "Q6": "identical",
+  "Q7": "identical",
+  "Q8": "identical",
+  "Q9": "identical",
+  "Q10": "identical apart from answer-time/snapshot-age text",
+  "Q11": "identical",
+  "Q12": "identical",
+  "Q13": "identical",
+  "Q14": "identical",
+  "Q15": "identical"
+ }
+}

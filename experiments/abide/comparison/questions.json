@@ -1,0 +1,71 @@
+{
+  "status": "questions fixed; gold answers in comparison/gold_answers.json (written by code/competency.py); keep gold out of any system under test",
+  "dataset": "ABIDE I Preprocessed (fcp-indi S3), CPAC filt_noglobal, CC200 atlas; phenotype Phenotypic_V1_0b_preprocessed1.csv",
+  "papers": [
+    "Di Martino et al. 2014 Mol Psychiatry doi:10.1038/mp.2013.78",
+    "Abraham et al. 2017 NeuroImage doi:10.1016/j.neuroimage.2016.10.045"
+  ],
+  "scenario": "Illustrative: Analyst A tests group differences in connectivity (Di Martino-style); Analyst B predicts diagnosis with leave-site-out CV (Abraham-style). A then tightens motion QC from mean FD < 0.2 mm to a stricter threshold.",
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "How many ABIDE I participants have phenotype + CC200 time series passing the functional QC used by Analyst B? Break down by diagnosis."
+    },
+    {
+      "id": "Q2",
+      "text": "What is the overlap between Analyst A's and Analyst B's cohorts, and how many of B's test participants are excluded by A's tightened motion QC?"
+    },
+    {
+      "id": "Q3",
+      "text": "For participant Leuven_1_0050682, trace its connectivity feature back to the source scan URL and the preprocessing pipeline and parameters."
+    },
+    {
+      "id": "Q4",
+      "text": "What research question does each paper ask; is each claim associational or predictive; and what cohort scope does each claim have?"
+    },
+    {
+      "id": "Q5",
+      "text": "After Analyst A's QC revision, which of Analyst B's results must be reassessed, and which actually changed after recomputation?"
+    },
+    {
+      "id": "Q6",
+      "text": "Does Analyst A's group effect hold in Analyst B's held-out sites?"
+    },
+    {
+      "id": "Q7",
+      "text": "Who made each review assessment, and on what evidence?"
+    },
+    {
+      "id": "Q8",
+      "text": "For participant MaxMun_c_0051332, which software produced each brain-volume value, and do ANTs, FSL and FreeSurfer agree?"
+    },
+    {
+      "id": "Q9",
+      "text": "Which ReproNim resources could produce or consume each node type in our graph, and which were actually executed here?"
+    },
+    {
+      "id": "Q10",
+      "text": "Find an actively maintained tool to export FreeSurfer stats to NIDM; how recent is that evidence?"
+    },
+    {
+      "id": "Q11",
+      "text": "Which local items in this graph are candidates for promotion to global knowledge (ReproPond to ReproLake), and which gates are unmet?"
+    },
+    {
+      "id": "Q12",
+      "text": "Which records in this graph may not leave the pond, and why?"
+    },
+    {
+      "id": "Q13",
+      "text": "Everything the graph knows about participant MaxMun_c_0051332, with sources."
+    },
+    {
+      "id": "Q14",
+      "text": "How many participants have data element E (by diagnosis and site), and which combinations limit each analysis?"
+    },
+    {
+      "id": "Q15",
+      "text": "Which publications and abstracts use ABIDE I, which claims do they make, and how current is that list?"
+    }
+  ]
+}

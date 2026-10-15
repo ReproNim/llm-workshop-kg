@@ -1,0 +1,417 @@
+{
+ "id": "Q6",
+ "question": "Does Analyst A's group effect hold in Analyst B's held-out sites?",
+ "date": "2026-10-15",
+ "client": "Claude Code 2.1.282 subagent (model sonnet)",
+ "tool_calls": [
+  {
+   "seq": 1,
+   "tool": "kg_search_datasets",
+   "arguments": {
+    "text": "ABIDE",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"dataset_id\":\"ds:manual:abide\",\"title\":\"ABIDE (I & II)\",\"tasks\":[\"resting state\",\"reading span task\"],\"modalities\":[\"MRI\"],\"n_subjects\":2226,\"species\":[\"human\"],\"kg_id\":\"4:61f2a6e6-9289-4db3-a996-562b57f61fe1:489281\"},{\"dataset_id\":\"4:61f2a6e6-9289-4db3-a996-562b57f61fe1:497343\",\"title\":\"abide1: CMU_b\", ... (per-site sub-dataset nodes follow)",
+   "response_chars": 1450,
+   "ok": true,
+   "note": "Located the ABIDE dataset node (ds:manual:abide) and per-site sub-dataset nodes (e.g. abide1: CMU_b, UM_1/2, Leuven_2, Stanford, UCLA_1/2) to see if site-level nodes carry any result/effect annotations."
+  },
+  {
+   "seq": 2,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Di Martino 2014 autism functional connectivity",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"trm_51d6fe3f3942f\",...,\"label\":\"autism spectrum quotient\",\"node_type\":\"Concept\",...},{\"kg_id\":\"ONVOC_0000215\",...,\"label\":\"Autism Spectrum Disorder\",\"node_type\":\"Concept\",...},{\"kg_id\":\"neurostore_task:Hobb8BWTr4UY:fmri:0\",...,\"label\":\"Functional Connectivity Analysis\",\"node_type\":\"Task\",...}]}",
+   "response_chars": 1250,
+   "ok": true,
+   "note": "Tried to locate a node for Di Martino et al. 2014 by free-text search; only returned generic ASD/connectivity concept and task nodes, no publication node matching this paper."
+  },
+  {
+   "seq": 3,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Abraham 2017 autism classification leave-site-out",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"neurostore_task:cz6dejs6d4N4:fmri:0\",\"label\":\"Multi-site fMRI classification\",\"node_type\":\"Task\",\"score\":15.86...},{\"kg_id\":\"trm_51d6fe3f3942f\",\"label\":\"autism spectrum quotient\",...}]",
+   "response_chars": 1400,
+   "ok": true,
+   "note": "Same for Abraham et al. 2017; only a generic 'Multi-site fMRI classification' Task node surfaced, no publication node matching this specific paper."
+  },
+  {
+   "seq": 4,
+   "tool": "kg_related_datasets",
+   "arguments": {
+    "kg_id": "4:61f2a6e6-9289-4db3-a996-562b57f61fe1:489281",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[]}",
+   "response_chars": 22,
+   "ok": true,
+   "note": "Checked for datasets/publications linked to the ABIDE dataset node; empty."
+  },
+  {
+   "seq": 5,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "10.1038/mp.2013.78",
+    "limit": 5
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"kg_query_timeout\",\"message\":\"kg_search_nodes produced a degraded result (mcp_timeout) but degraded responses are disabled by default. Re-run with allow_degraded=True.\",...}",
+   "response_chars": 320,
+   "ok": false,
+   "note": "Tried locating the Di Martino 2014 paper node directly by DOI text; timed out."
+  },
+  {
+   "seq": 6,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "10.1016/j.neuroimage.2016.10.045",
+    "limit": 5
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"kg_query_timeout\",\"message\":\"kg_search_nodes produced a degraded result (mcp_timeout) but degraded responses are disabled by default. Re-run with allow_degraded=True.\",...}",
+   "response_chars": 320,
+   "ok": false,
+   "note": "Same for Abraham 2017 DOI; timed out."
+  },
+  {
+   "seq": 7,
+   "tool": "kg_get_node",
+   "arguments": {
+    "kg_id": "4:61f2a6e6-9289-4db3-a996-562b57f61fe1:489281"
+   },
+   "response_truncated": "{\"ok\":true,\"node\":{\"kg_id\":\"ds:manual:abide\",...,\"properties\":{\"modalities\":[\"MRI\"],\"description\":\"Multi-site ASD vs control resting-state fMRI and structural MRI\",\"subjects_count\":2226,...,\"neighbors\":[{\"direction\":\"out\",\"target\":\"ONVOC_0000184\",\"rel\":\"ABOUT\"},{\"direction\":\"out\",\"target\":\"task__resting_state\",\"rel\":\"HAS_TASK\"},{\"direction\":\"out\",\"target\":\"consortium:abide\",\"rel\":\"PART_OF\"},{\"direction\":\"out\",\"target\":\"repo:nitrc_/_indi\",\"rel\":\"HOSTED_AT\"}]}}}",
+   "response_chars": 1100,
+   "ok": true,
+   "note": "Fetched the ABIDE dataset node directly; its neighbor edges are generic (ontology/task/species/modality/consortium/hosting repo) with no link to specific publications, effects, or cross-site replication results."
+  },
+  {
+   "seq": 8,
+   "tool": "kg_multihop_qa",
+   "arguments": {
+    "question": "Does the autism spectrum disorder group difference in functional connectivity found in ABIDE I (Di Martino et al. 2014) replicate or hold across held-out sites in leave-site-out cross-validation (Abraham et al. 2017)?",
+    "max_hops": 3
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"kg_query_timeout\",\"message\":\"kg_multihop_qa produced a degraded result (mcp_timeout) but degraded responses are disabled by default. Re-run with allow_degraded=True.\",\"query_time_s\":45,...}",
+   "response_chars": 300,
+   "ok": false,
+   "note": "Asked the direct comparison question; timed out at the 45s internal budget."
+  },
+  {
+   "seq": 9,
+   "tool": "kg_verify_hypothesis",
+   "arguments": {
+    "hypothesis": "The ASD vs control functional connectivity group difference found in ABIDE (Di Martino et al. 2014) generalizes across sites and is not site-specific, consistent with cross-site classification results in Abraham et al. 2017.",
+    "hypothesis_budget_seconds": 45,
+    "include_subgraph": false,
+    "max_evidence": 30,
+    "max_paths": 30
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"{neo4j_code: Neo.ClientError.Procedure.ProcedureCallFailed} {message: Failed to invoke procedure `db.index.fulltext.queryNodes`: Caused by: org.apache.lucene.search.IndexSearcher$TooManyNestedClauses: Query contains too many nested clauses; maxClauseCount is set to 1024}...}",
+   "response_chars": 420,
+   "ok": false,
+   "note": "Long hypothesis text produced too many fulltext query clauses server-side and failed outright."
+  },
+  {
+   "seq": 10,
+   "tool": "kg_neighbors",
+   "arguments": {
+    "kg_id": "consortium:abide",
+    "limit": 25
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[]}",
+   "response_chars": 22,
+   "ok": true,
+   "note": "Checked the ABIDE consortium node for neighbors (e.g. linked publications); empty."
+  },
+  {
+   "seq": 11,
+   "tool": "kg_verify_hypothesis",
+   "arguments": {
+    "hypothesis": "ABIDE autism connectivity group differences replicate across sites.",
+    "hypothesis_budget_seconds": 30,
+    "include_subgraph": false,
+    "max_evidence": 20,
+    "max_paths": 20
+   },
+   "response_truncated": "{\"ok\":true,\"result\":{\"hypothesis\":\"ABIDE autism connectivity group differences replicate across sites.\",\"status\":\"degraded_timeout\",\"degraded_reason\":\"rerank_skipped_budget\",\"normalized_claim\":{\"subject\":{\"kg_id\":\"concept:reduced_functional_connectivity_in_autism\",...},\"object\":{\"kg_id\":\"concept:atypical_functional_connectivity_in_autism_spectrum_disorder\",...},\"predicate\":\"related_to\"},\"verdict\":\"insufficient_evidence\",\"confidence\":0,...,\"n_supporting\":0,\"n_conflicting\":0,\"n_uncertain\":0,...,\"top_paths\":[],\"warnings\":[\"entity_resolution search terms capped at 8 from 14\",\"rerank_skipped_budget\"]}}",
+   "response_chars": 5200,
+   "ok": true,
+   "note": "Shortened hypothesis ran but hit its internal rerank budget; verdict='insufficient_evidence', confidence=0, zero supporting/conflicting/uncertain evidence paths returned. BR found only generic ASD-connectivity concept nodes as seeds, not an evidence chain connecting the two papers' findings."
+  },
+  {
+   "seq": 12,
+   "tool": "kg_multihop_qa",
+   "arguments": {
+    "question": "ABIDE autism connectivity finding reproducible across sites?",
+    "max_hops": 2,
+    "allow_degraded": true
+   },
+   "response_truncated": "{\"ok\":true,\"result\":{\"summary\":{\"question\":\"ABIDE autism connectivity finding reproducible across sites?\",\"max_hops\":2,\"hops_used\":1,\"n_seed_entities\":6,\"n_paths\":50,...},\"answer\":\"Found 50 path(s) within 2 hops around Autism Spectrum Disorder, Autism spectrum disorder, Autism spectrum disorder diagnosis; shortest path length is 1. Example path: Autism Spectrum Disorder -> pmid:33866324.\",...top_paths to unrelated publications e.g. pmid:33866324 (touch hedonics in ASD), 10.1016/j.nicl.2015.07.018 (DMN segregation in non-medicated children), pmid:28384509 (VR-SCT biomarkers)}",
+   "response_chars": 7800,
+   "ok": true,
+   "note": "Shorter question completed (1 hop, 50 generic ASD-concept paths) but every top path led to unrelated publications (touch perception, DMN in medication status, VR social-cognition training) -- none referencing Di Martino 2014, Abraham 2017, ABIDE site effects, or cross-validation/replication."
+  },
+  {
+   "seq": 13,
+   "tool": "kg_get_node",
+   "arguments": {
+    "kg_id": "10.1038/mp.2013.78"
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"node not found: 10.1038/mp.2013.78\"}",
+   "response_chars": 58,
+   "ok": false,
+   "note": "Confirmed the Di Martino et al. 2014 paper has no node under its DOI in BR-KG."
+  },
+  {
+   "seq": 14,
+   "tool": "kg_get_node",
+   "arguments": {
+    "kg_id": "10.1016/j.neuroimage.2016.10.045"
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"node not found: 10.1016/j.neuroimage.2016.10.045\"}",
+   "response_chars": 71,
+   "ok": false,
+   "note": "Confirmed the Abraham et al. 2017 paper has no node under its DOI in BR-KG either."
+  },
+  {
+   "seq": 15,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Di Martino",
+    "node_types": [
+     "Publication"
+    ],
+    "limit": 10,
+    "allow_degraded": true
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"10.1093/scan/nsr051\",\"label\":\"The balance between feeling and knowing...\"},{\"kg_id\":\"10.1016/j.biopsych.2011.08.013\",\"label\":\"Dimensional brain-behavior relationships in children with attention-deficit/hyperactivity disorder.\"},{\"kg_id\":\"10.1016/j.biopsych.2010.10.029\",\"label\":\"Aberrant striatal functional connectivity in children with autism.\"},...]}",
+   "response_chars": 2100,
+   "ok": true,
+   "note": "Restricted to Publication nodes and searched author surname; returned several ADHD/autism connectivity papers that may share co-authorship but none is the 2014 Mol Psychiatry ABIDE paper itself."
+  },
+  {
+   "seq": 16,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "leave-site-out cross-validation autism prediction accuracy site",
+    "node_types": [
+     "Publication"
+    ],
+    "limit": 10,
+    "allow_degraded": true
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"pmid:22245259\",\"label\":\"Using multivariate linear SVM analysis and leave-one-out cross-validation, we aimed at identifying neuroanatomical GM patterns relevant for individual classification of MS patients.\"},{\"kg_id\":\"735278bd8e6cd04686d4c5e0c3596971\",\"label\":\"Site Common Information-Guided Site-to-Individual-to-Global Multi-View GCN for Psychiatric Diagnosis.\"},{\"kg_id\":\"b4e5ed42f0565d9e2a1e0935794320a6\",\"label\":\"Harmonizing 10,000 connectomes: site-invariant representation learning...\"},{\"kg_id\":\"pmid:37409103\",\"label\":\"Gender effects on autism spectrum disorder: a multi-site resting-state fMRI study...\"},...]}",
+   "response_chars": 2400,
+   "ok": true,
+   "note": "Searched for the Abraham 2017 leave-site-out paradigm directly; surfaced unrelated multi-site harmonization/classification papers, none matching Abraham et al. 2017 or its specific ABIDE leave-site-out result."
+  }
+ ],
+ "final_answer": "BR could not answer this question: it has no node for either source paper (Di Martino et al. 2014, DOI 10.1038/mp.2013.78; Abraham et al. 2017, DOI 10.1016/j.neuroimage.2016.10.045), no node or edge linking a group-difference finding to a leave-site-out/held-out-site result, and kg_verify_hypothesis returned verdict='insufficient_evidence' (confidence 0, zero supporting/conflicting paths) for the generalization claim. kg_multihop_qa only reached generic ABIDE/ASD-connectivity concept nodes connected to unrelated publications. BR therefore cannot state whether Analyst A's group effect holds in Analyst B's held-out sites.",
+ "evidence": [
+  {
+   "claim": "ABIDE is represented in BR-KG as a multi-site ASD-vs-control resting-state/structural MRI dataset (2226 subjects) with per-site sub-dataset nodes (e.g. CMU_b, UM_1/2, Leuven_2, Stanford, UCLA_1/2), but no linked publication or result nodes.",
+   "source": "kg_search_datasets / kg_get_node, node ds:manual:abide (element_id 4:61f2a6e6-9289-4db3-a996-562b57f61fe1:489281)"
+  },
+  {
+   "claim": "No BR-KG node exists for Di Martino et al. 2014 (doi:10.1038/mp.2013.78) or Abraham et al. 2017 (doi:10.1016/j.neuroimage.2016.10.045).",
+   "source": "kg_get_node, direct DOI lookups (seq 13, 14), both 'node not found'"
+  },
+  {
+   "claim": "A hypothesis that the ABIDE group-level connectivity difference generalizes across sites returned verdict='insufficient_evidence' with zero supporting, conflicting, or uncertain evidence paths.",
+   "source": "kg_verify_hypothesis, seq 11 (degraded_timeout / rerank_skipped_budget)"
+  }
+ ],
+ "br_limitations": "BR-KG does not index these two specific papers (no DOI-addressable node for either), has no edge type connecting a 'group difference' finding to a 'cross-site classification accuracy' or 'held-out site' result, carries no per-site effect-size or replication statistics for ABIDE, and cannot join to the ABIDE phenotype CSV or analyst-defined cohorts (QC threshold changes, CC200/filt_noglobal pipeline choice). Its hypothesis-verification and multi-hop tools repeatedly degraded to generic ASD-connectivity concept matches rather than the specific papers/claim requested, and one long-form hypothesis call failed outright on a server-side query-size error.",
+ "confidence": "low",
+ "computation_phase": {
+  "source": "NOT BR output. Computation run by the operating agent on ORCD (MIT Engaging, partition pi_satra). BR returned only the NITRC landing page; the fcp-indi S3 paths are the operator's prior knowledge.",
+  "scripts": "jobs/ (abide_compute.py, abide_compute.sbatch)",
+  "jobs": {
+   "25932392": "FAILED (NaN correlations from constant ROIs)",
+   "25932776": "COMPLETED 1m57s, but connectivity used only 49/200 CC200 ROIs (ROIs constant in any subject were dropped) -> results_49roi_superseded_job25932776.json",
+   "25933294": "TIMEOUT at 2h (200-ROI rerun with constant-ROI subjects excluded); no output",
+   "rerun": "staged (6h, 8 CPU, folds parallel) but NOT submitted: ORCD login refused (Duo session expired), stopped after 2 failed logins per rule"
+  },
+  "data": {
+   "phenotype": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Phenotypic_V1_0b_preprocessed1.csv",
+   "roi_template": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/rois_cc200/{fid}_rois_cc200.1D"
+  },
+  "answer": "Weakly. Deriving A's FDR edges without the held-out site and testing a signed composite in each of B's held-out sites: 16/20 sites positive direction, only 4/20 (OHSU, OLIN, SDSU, TRINITY) p<0.05 uncorrected, median edge sign agreement 0.66; A's effect is mostly ASD<TC (188/207 sig edges). PRELIMINARY 49-ROI result.",
+  "valid": "PRELIMINARY: 49/200 ROIs; 200-ROI rerun pending",
+  "detail": {
+   "per_site": {
+    "CALTECH": {
+     "n_test": 15,
+     "n_sig_train": 179,
+     "sign_agreement": 0.648,
+     "composite_t": 0.516,
+     "composite_p": 0.6276678224430293
+    },
+    "CMU": {
+     "n_test": 11,
+     "n_sig_train": 220,
+     "sign_agreement": 0.709,
+     "composite_t": 1.037,
+     "composite_p": 0.3356745963874463
+    },
+    "KKI": {
+     "n_test": 33,
+     "n_sig_train": 209,
+     "sign_agreement": 0.316,
+     "composite_t": -0.605,
+     "composite_p": 0.5543999898915114
+    },
+    "LEUVEN_1": {
+     "n_test": 28,
+     "n_sig_train": 200,
+     "sign_agreement": 0.74,
+     "composite_t": 1.051,
+     "composite_p": 0.30350213536622817
+    },
+    "LEUVEN_2": {
+     "n_test": 28,
+     "n_sig_train": 187,
+     "sign_agreement": 0.786,
+     "composite_t": 1.497,
+     "composite_p": 0.14840225139216037
+    },
+    "MAX_MUN": {
+     "n_test": 46,
+     "n_sig_train": 197,
+     "sign_agreement": 0.533,
+     "composite_t": 0.153,
+     "composite_p": 0.8793808657129001
+    },
+    "NYU": {
+     "n_test": 172,
+     "n_sig_train": 141,
+     "sign_agreement": 0.582,
+     "composite_t": 0.553,
+     "composite_p": 0.5813473181372514
+    },
+    "OHSU": {
+     "n_test": 25,
+     "n_sig_train": 202,
+     "sign_agreement": 0.703,
+     "composite_t": 2.361,
+     "composite_p": 0.027093666136950648
+    },
+    "OLIN": {
+     "n_test": 28,
+     "n_sig_train": 204,
+     "sign_agreement": 0.863,
+     "composite_t": 2.194,
+     "composite_p": 0.03788064323639886
+    },
+    "PITT": {
+     "n_test": 50,
+     "n_sig_train": 200,
+     "sign_agreement": 0.42,
+     "composite_t": -0.227,
+     "composite_p": 0.821412836349242
+    },
+    "SBL": {
+     "n_test": 26,
+     "n_sig_train": 211,
+     "sign_agreement": 0.649,
+     "composite_t": 0.48,
+     "composite_p": 0.6354360129907771
+    },
+    "SDSU": {
+     "n_test": 27,
+     "n_sig_train": 194,
+     "sign_agreement": 0.851,
+     "composite_t": 2.385,
+     "composite_p": 0.03111500649415954
+    },
+    "STANFORD": {
+     "n_test": 25,
+     "n_sig_train": 224,
+     "sign_agreement": 0.46,
+     "composite_t": -0.243,
+     "composite_p": 0.8099499281267015
+    },
+    "TRINITY": {
+     "n_test": 44,
+     "n_sig_train": 152,
+     "sign_agreement": 0.796,
+     "composite_t": 2.222,
+     "composite_p": 0.03189387961545038
+    },
+    "UCLA_1": {
+     "n_test": 64,
+     "n_sig_train": 151,
+     "sign_agreement": 0.629,
+     "composite_t": 0.634,
+     "composite_p": 0.5282929071606833
+    },
+    "UCLA_2": {
+     "n_test": 21,
+     "n_sig_train": 227,
+     "sign_agreement": 0.427,
+     "composite_t": -0.445,
+     "composite_p": 0.6631147786889825
+    },
+    "UM_1": {
+     "n_test": 86,
+     "n_sig_train": 147,
+     "sign_agreement": 0.728,
+     "composite_t": 0.938,
+     "composite_p": 0.35087747410725006
+    },
+    "UM_2": {
+     "n_test": 34,
+     "n_sig_train": 160,
+     "sign_agreement": 0.863,
+     "composite_t": 1.937,
+     "composite_p": 0.06359977388720477
+    },
+    "USM": {
+     "n_test": 67,
+     "n_sig_train": 206,
+     "sign_agreement": 0.68,
+     "composite_t": 0.607,
+     "composite_p": 0.5472487939128226
+    },
+    "YALE": {
+     "n_test": 41,
+     "n_sig_train": 215,
+     "sign_agreement": 0.609,
+     "composite_t": 0.499,
+     "composite_p": 0.6208777039474767
+    }
+   },
+   "n_sites_tested": 20,
+   "n_sites_composite_p_lt_05_same_direction": 4,
+   "n_sites_composite_t_positive": 16,
+   "median_sign_agreement": 0.6645000000000001
+  },
+  "A_group_effect": {
+   "n": {
+    "total": 884,
+    "ASD": 408,
+    "TC": 476
+   },
+   "n_edges": 1176,
+   "n_fdr_sig": 207,
+   "n_sig_ASD_gt_TC": 19,
+   "n_sig_ASD_lt_TC": 188,
+   "min_p": 9.32524934134957e-08
+  },
+  "A_tight_group_effect": {
+   "n": {
+    "total": 633,
+    "ASD": 274,
+    "TC": 359
+   },
+   "n_edges": 1176,
+   "n_fdr_sig": 168,
+   "n_sig_ASD_gt_TC": 13,
+   "n_sig_ASD_lt_TC": 155,
+   "min_p": 2.497791593664391e-08
+  }
+ }
+}

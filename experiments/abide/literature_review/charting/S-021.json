@@ -1,0 +1,209 @@
+{
+  "source_id": "S-021",
+  "pmid": "local_1cbc0566",
+  "doi": "10.3389/fnhum.2013.00599",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2/3: analyses ABIDE resting-state functional connectivity explicitly and reports a diagnostic classification analysis (autism vs. typical development).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "We attempted to replicate the method and results using the Autism Brain Imaging Data Exchange (ABIDE) including resting state fMRI data obtained from 964 subjects and 16 separate international sites.",
+      "section": "abstract",
+      "claim": "Study replicates a single-site connectivity classification approach on a 964-subject, 16-site ABIDE sample.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "A total of 964 subjects met all inclusion criteria (517 typically developing subjects and 447 subjects with autism from 16 sites).",
+      "section": "methods",
+      "claim": "Analysed cohort: 964 ABIDE I participants (447 autism, 517 typically developing) from 16 sites after applying inclusion criteria.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Inclusion criteria for subjects were successful preprocessing with manual visual inspection of normalization to MNI space of MPRAGE, coregistration of BOLD and MPRAGE images, seg- mentation of MPRAG",
+      "section": "methods",
+      "claim": "QC rule was manual visual inspection of normalization/coregistration/segmentation success, not a numeric motion threshold at the subject-inclusion stage.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "Motion scrubbing (Power et al., 2012) of framewise dis- placement and DVARS with removal of volumes before and after a root-mean-square displace",
+      "section": "methods",
+      "claim": "Motion was handled via framewise-displacement/DVARS-based scrubbing of individual volumes.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "Overall, a leave-one-out classiﬁer was used to generate a classiﬁcation score for each of the 964 subjects, leaving out one subject at a time and calculating the classiﬁcation score for the left out sub- ject.",
+      "section": "methods",
+      "claim": "Evaluation used a leave-one-subject-out classifier across all 964 subjects.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Age, age-squared, gender, handedness, and site were included as covariates for the classiﬁer.",
+      "section": "abstract",
+      "claim": "Site was included as a covariate adjusted for in the classifier.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "As high as 60% accuracy was obtained for whole brain classiﬁcation, with the best accuracy from connections involving regions of the default mode network, parahippocampaland fusiform gyri, insula, Wernicke Area, and intraparietal sulcus.",
+      "section": "abstract",
+      "claim": "Best whole-brain classification accuracy was 60%, driven by default-mode, parahippocampal/fusiform, insula, Wernicke and intraparietal-sulcus connections.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Multisite functional connectivity classiﬁcation of autism outperformed chance using a simple leave-one-out classiﬁer, but exhibited poorer accuracy than for single site results.",
+      "section": "abstract",
+      "claim": "Multisite classification outperformed chance but underperformed prior single-site classification results.",
+      "relevance_score": 0.8
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Low", "support": "964 of 1112 ABIDE I subjects (447 autism/517 TD) from 16 sites retained after explicit preprocessing-success inclusion criteria (Table with demographics, ADI-R/ADOS/IQ reported)."},
+      {"domain": "Predictors", "judgment": "Low", "support": "Custom SPM8 pipeline fully specified step-by-step (slice timing, realignment, coregistration, normalization, nuisance regression, motion scrubbing) with a 7266-ROI gray-matter lattice."},
+      {"domain": "Outcome", "judgment": "Low", "support": "Diagnosis source given as the ABIDE phenotypic file with reported ADI-R, ADOS, and IQ instrument scores for subgroups."},
+      {"domain": "Analysis", "judgment": "Unclear", "support": "Leave-one-out classifier with age/sex/handedness/site covariates is well described, but it is not stated whether connection selection (t-test-based binning) was recomputed excluding the left-out subject at every iteration or on a dataset including that subject."}
+    ],
+    "overall": "Low",
+    "summary": "A methodologically transparent, large multisite ABIDE I replication attempt; the main appraisal uncertainty is whether per-connection statistical selection was leakage-free within the leave-one-out loop."
+  },
+  "charting": {
+    "source_id": "S-021",
+    "title": "Multisite functional connectivity MRI classification of autism: ABIDE results",
+    "authors": "Nielsen JA; Zielinski BA; Fletcher PT; Alexander AL; Lange N; Bigler ED; Lainhart JE; Anderson JS",
+    "year": "2013",
+    "journal_conference": "Frontiers in Human Neuroscience",
+    "doi": "10.3389/fnhum.2013.00599",
+    "database_retrieved": "unpaywall",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "ADI-R, ADOS (reported for subset of subjects, per-site)",
+    "n_disordered": "447",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "396 M, 51 F (autism group)",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "517",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "426 M, 91 F (control group)",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity (voxelwise lattice)",
+    "specific_features": "Pairwise functional connectivity across a 7266-ROI whole-brain gray-matter lattice (26.4 million connections)",
+    "feature_extraction_tools": "Custom pipeline in SPM8 (MATLAB)",
+    "feature_importance_reported": "Yes",
+    "importance_method": "Binning of connections by discriminative strength; per-site accuracy by connection bin",
+    "top_features_identified": "Default mode network, parahippocampal and fusiform gyri, insula, Wernicke area, intraparietal sulcus connections",
+    "feature_change_direction": "",
+    "model_category": "Univariate connection-based classifier",
+    "specific_algorithms": "Leave-one-out classifier on binned connections, with age, age-squared, gender, handedness and site as covariates",
+    "validation_methodology": "Leave-one-subject-out cross-validation across all 964 subjects",
+    "performance_metrics": "Classification accuracy, sensitivity, specificity",
+    "key_performance_results": "Best whole-brain classification accuracy was 60%, above chance but lower than previously reported single-site accuracy of about 80%",
+    "summary_key_findings": "Replicating a single-site connectivity classifier approach on the full multisite ABIDE I sample (964 subjects, 16 sites) yields 60% leave-one-out classification accuracy, substantially lower than previously reported single-site accuracy (~80%), with the most discriminative connections involving the default mode network, parahippocampal/fusiform gyri, insula, Wernicke area and intraparietal sulcus.",
+    "features_associated_disorder": "Default mode network, parahippocampal/fusiform gyri, insula, Wernicke area, intraparietal sulcus connections most discriminative of autism vs. control",
+    "future_directions_recommended": "Longer BOLD imaging times, controlled acquisition strategies, multimodal feature integration, and improved classification methods",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "predictive | ABIDE I, 964 of 1112 participants (447 autism, 517 TD) from 16 sites after preprocessing-success inclusion criteria. | quote: \"A total of 964 subjects met all inclusion criteria (517 typically developing subjects and 447 subjects with autism from 16 sites).\"",
+      "RQ2": "Custom SPM8 pipeline (not C-PAC/DPARSF/NIAK); 7266-ROI whole-brain gray-matter lattice (no named cortical atlas). | quote: \"Preprocessing was performed in MATLAB (Mathworks, Natick, MA) using SPM8 (Wellcome Trust, London) software.\"",
+      "RQ3": "predictive — classification of autism vs. typical development from whole-brain functional connectivity. | quote: \"we evaluate clas- siﬁcation accuracy of whole-brain functional connectivity across sites\"",
+      "RQ4": "Leave-one-subject-out classifier with age, age-squared, gender, handedness and site as covariates. | quote: \"Age, age-squared, gender, handedness, and site were included as covariates for the classiﬁer.\"",
+      "RQ5": "60% maximum whole-brain classification accuracy, best connections in default mode network, parahippocampal/fusiform gyri, insula, Wernicke area, intraparietal sulcus. | quote: \"As high as 60% accuracy was obtained for whole brain classiﬁcation, with the best accuracy from connections involving regions of the default mode network, parahippocampaland fusiform gyri, insula, Wernicke Area, and intraparietal sulcus.\"",
+      "RQ6": "partly — exact inclusion rules stated (preprocessing success criteria, >=20 subjects per site) and demographic/N-by-site table given, but no explicit participant-ID list. | quote: \"Inclusion criteria for sites were a total of at least 20 subjects meeting all other inclusion crite- ria.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"A total of 964 subjects met all inclusion criteria (517 typically developing subjects and 447 subjects with autism from 16 sites).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes | quote: \"Motion scrubbing (Power et al., 2012) of framewise dis- placement and DVARS with removal of volumes before and after a root-mean-square displace\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"Preprocessing was performed in MATLAB (Mathworks, Natick, MA) using SPM8 (Wellcome Trust, London) software.\"",
+      "CL4 Atlas/parcellation reported?": "Partly | quote: \"we obtained pairwise functional connectivity measurements from a lattice of 7266 regions of interest covering the gray matter\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Unclear | quote: \"a leave-one-out classiﬁer was used to generate a classiﬁcation score for each of the 964 subjects, leaving out one subject at a time\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes | quote: \"Age, age-squared, gender, handedness, and site were included as covariates for the classiﬁer.\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"available at http://fcon_1000.projects.nitrc.org/indi/abide/.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"ABIDE consists of 1112 datasets comprised of 539 autism and 573 typically developing individuals (Di Marti\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-021",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {"item_text": "CL1 Cohort definition reported?", "rating": "Yes", "notes": "964/1112 ABIDE I subjects (447 autism, 517 TD), 16 sites, with site-level inclusion (>=20 subjects/site) and demographic/clinical table."},
+        {"item_text": "CL2 Motion/QC rule reported?", "rating": "Yes", "notes": "Framewise-displacement/DVARS motion scrubbing (>0.2mm threshold) plus manual visual QC of registration/segmentation."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {"item_text": "CL3 Pipeline and version reported?", "rating": "Yes", "notes": "Custom SPM8 pipeline fully enumerated step by step."},
+        {"item_text": "CL4 Atlas/parcellation reported?", "rating": "Partial", "notes": "A 7266-voxel gray-matter lattice is used rather than a named cortical parcellation/atlas."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {"item_text": "Diagnosis source and label definition", "rating": "Yes", "notes": "ADI-R, ADOS and IQ scores reported by diagnostic group in the demographic table, sourced from the ABIDE phenotypic data."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {"item_text": "CL5 Leakage control reported?", "rating": "Unclear", "notes": "Leave-one-out procedure described but not explicit about whether connection-selection statistics exclude the left-out subject at each iteration."},
+        {"item_text": "CL6 Site handling reported?", "rating": "Yes", "notes": "Site included as an explicit covariate in the classifier; per-site accuracy also reported."},
+        {"item_text": "CL7 Code/participant list available?", "rating": "No", "notes": "Only the general ABIDE public repository is cited; no study-specific code or participant list link found."}
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-021",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I; 964 subjects (447 autism, 517 typically developing) from 16 sites",
+    "methods": "Custom SPM8 preprocessing pipeline; whole-brain functional connectivity over a 7266-ROI gray-matter lattice; leave-one-subject-out classifier with age, age-squared, gender, handedness and site as covariates",
+    "outcomes": "Maximum 60% whole-brain classification accuracy, above chance but below the ~80% previously reported for single-site classification; most discriminative connections involved default mode network, parahippocampal/fusiform gyri, insula, Wernicke area, and intraparietal sulcus; classifier score correlated with symptom severity, social function, daily living skills and verbal IQ",
+    "key_limitations": "Multisite heterogeneity substantially degrades classification accuracy relative to single-site results; accuracy was significantly higher for sites with longer BOLD scan durations",
+    "relevance_notes": "An early, influential multisite ABIDE I benchmark showing that cross-site connectivity classification underperforms single-site classification, motivating later work on pipeline/atlas choice and site-aware cross-validation",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnhum.2013.00599",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "964 of 1112 ABIDE I subjects (447 autism, 517 typically developing) from 16 sites meeting preprocessing-success inclusion criteria and a minimum of 20 subjects per site",
+    "n_by_dx": {"ASD": 447, "TD": 517, "total": 964},
+    "sites": "16",
+    "pipeline": "Custom SPM8 pipeline (slice timing, realignment, coregistration, normalization, nuisance regression, motion scrubbing)",
+    "atlas": "7266-ROI whole-brain gray-matter voxel lattice (no named cortical atlas)",
+    "claim_type": "predictive",
+    "finding": "Leave-one-out whole-brain connectivity classification achieved up to 60% accuracy distinguishing autism from typical development, with the most discriminative connections in the default mode network, parahippocampal/fusiform gyri, insula, Wernicke area and intraparietal sulcus.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "A total of 964 subjects met all inclusion criteria (517 typically developing subjects and 447 subjects with autism from 16 sites).",
+      "As high as 60% accuracy was obtained for whole brain classiﬁcation, with the best accuracy from connections involving regions of the default mode network, parahippocampaland fusiform gyri, insula, Wernicke Area, and intraparietal sulcus."
+    ]
+  }
+}

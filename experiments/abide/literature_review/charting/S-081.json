@@ -1,0 +1,249 @@
+{
+  "source_id": "S-081",
+  "pmid": "local_ef4bae49",
+  "doi": "10.3897/rio.3.e12733",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a diagnostic-prediction (ASD vs control classification) analysis of ABIDE I resting-state fMRI (ReHo) data, satisfying inclusion 2-3, despite being a short software/project report.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The ABIDE dataset contains 539 individuals with ASD and 573 control subjects.",
+      "section": "methods",
+      "claim": "Cohort used was the full ABIDE I preprocessed dataset: 539 ASD, 573 controls.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "First, participants were randomly divided into balanced split-half training and testing sets.",
+      "section": "methods",
+      "claim": "Evaluation used a single random balanced split-half train/test division, not cross-validation or leave-site-out.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "We specifically focused on the regional homogeneity (ReHo) fMRI derivative (Zang et al. 2004) from the Configurable Pipeline for the Analysis of Connectomes (CPAC) pipeline (Craddock et al. 2013).",
+      "section": "methods",
+      "claim": "Feature was the ReHo derivative from the C-PAC pipeline (Preprocessed Connectomes Project release).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The accuracy of our model without any dimensionality reduction or feature selection was ~ 62%.",
+      "section": "results",
+      "claim": "Whole-brain voxel-wise ReHo SVM/logistic classifier achieved about 62% accuracy with no feature selection/dimensionality reduction.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Using this program allowed us to build a sparse whole-brain biomarker that predicted diagnostic labels with 62% accuracy.",
+      "section": "discussion",
+      "claim": "Main reported predictive result: 62% diagnostic accuracy.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "All data at ABIDE I Preprocessed are fully anonymized and hence are in compliance with HIPAA.",
+      "section": "methods",
+      "claim": "Used the ABIDE I Preprocessed (PCP) release, anonymized per HIPAA.",
+      "relevance_score": 0.5
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "High",
+        "support": "Full ABIDE I N (539/573) used with no stated QC/motion exclusion criteria described in the text."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Unclear",
+        "support": "ReHo voxel-wise features from C-PAC with no parcellation/atlas; no feature engineering beyond grey-matter masking."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "Diagnosis labels taken as given from ABIDE without describing the diagnostic instrument in this report."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "Single random balanced split-half train/test with no cross-validation, no confidence interval on the 62% accuracy, and no site-based or leave-site-out evaluation; this is a software demo rather than a validated biomarker study."
+      }
+    ],
+    "overall": "High",
+    "summary": "A software/project report whose example use-case reports a single train/test split with no CV, no CI, and no site handling; demonstrative rather than a validated predictive model."
+  },
+  "charting": {
+    "source_id": "S-081",
+    "title": "Developing predictive imaging biomarkers using whole-brain classifiers: Application to the ABIDE I dataset",
+    "authors": "",
+    "year": "2017",
+    "journal_conference": "Research Ideas and Outcomes",
+    "doi": "10.3897/rio.3.e12733",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "539",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "most subjects male, ratio of males/females identical in both groups",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "573",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI (ReHo derivative)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "no — contributes an open-source classification software tool",
+    "dataset_openly_available": "Uses the publicly available ABIDE I Preprocessed Connectomes Project release; no code repository link found in the text",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "ABIDE I Preprocessed data are fully anonymized per HIPAA",
+    "feature_types": "voxel-wise regional homogeneity (ReHo)",
+    "specific_features": "Whole-brain grey-matter-masked voxel-wise ReHo (no parcellation/atlas, no feature reduction)",
+    "feature_extraction_tools": "C-PAC pipeline (Preprocessed Connectomes Project, ABIDE I Preprocessed)",
+    "feature_importance_reported": "",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Linear classifier (logistic regression / linear SVM)",
+    "specific_algorithms": "Logistic regression-based classifier (prototype); SVM shown in Figure 1; scikit-learn implementation",
+    "validation_methodology": "Single random balanced split-half train/test split (no cross-validation used in the reported example)",
+    "performance_metrics": "Accuracy",
+    "key_performance_results": "~62% accuracy without dimensionality reduction or feature selection",
+    "summary_key_findings": "A command-line, scikit-learn-based classifier tool was built and demonstrated on ABIDE I ReHo data, achieving ~62% accuracy for ASD-vs-control prediction on a single random split-half train/test division with no feature selection.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "Feature selection/engineering and additional algorithms (random forest, Gaussian naive Bayes) to improve predictive accuracy",
+    "reviewer_notes": "Short Neurohackweek 2016 project/software report (5 pages); evaluation is a demonstration, not a validated biomarker claim.",
+    "custom_fields": {
+      "RQ1": "ABIDE I (full preprocessed release): 539 ASD, 573 controls; no QC/exclusion rule described in this report. | quote: \"The ABIDE dataset contains 539 individuals with ASD and 573 control subjects.\"",
+      "RQ2": "C-PAC pipeline, regional homogeneity (ReHo) derivative from the Preprocessed Connectomes Project; no ROI atlas (voxel-wise, grey-matter masked). | quote: \"We speciﬁcally focused on the regional homogeneity (ReHo) fMRI derivative (Zang et al. 2004) from the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) pipeline\"",
+      "RQ3": "predictive — whole-brain voxel-wise classifier predicting ASD vs control diagnosis. | quote: \"Using this program allowed us to build a sparse whole-brain biomarker that predicted diagnostic labels with 62% accuracy.\"",
+      "RQ4": "Single random balanced split-half train/test division; accuracy compared predictions to true diagnoses; no cross-validation or leave-site-out reported for the example use-case (software supports stratified 5-fold CV for hyperparameter tuning only). | quote: \"First, participants were randomly divided into balanced split-half training and testing sets.\"",
+      "RQ5": "Whole-brain ReHo classifier achieved ~62% accuracy with no dimensionality reduction or feature selection. | quote: \"The accuracy of our model without any dimensionality reduction or feature selection was ~ 62%.\"",
+      "RQ6": "partly — uses the full public ABIDE I Preprocessed release (no custom subsetting) but no participant list or code repository link is given in the text. | quote: \"The ABIDE dataset contains 539 individuals with ASD and 573 control subjects.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis given (539/573) but no exclusion/QC rule stated. | quote: \"The ABIDE dataset contains 539 individuals with ASD and 573 control subjects.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion/QC metric or threshold is reported in the text.",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — C-PAC pipeline named via the ABIDE I Preprocessed release, no version number given. | quote: \"from the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) pipeline (Craddock et al. 2013)\"",
+      "CL4 Atlas/parcellation reported?": "No — analysis is voxel-wise whole-brain (grey-matter masked), no ROI atlas/parcellation used.",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — the reported example used no feature selection; the general software supports grid-search CV for hyperparameter tuning but this is not detailed as leakage-controlled for the example run.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — no site covariate, harmonisation, or leave-site-out evaluation is reported.",
+      "CL7 Code and/or participant list available?": "No — no code repository or participant list link appears in the text.",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-081",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Partial",
+          "notes": "N by diagnosis given, no exclusion rule."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "No",
+          "notes": "Not reported."
+        }
+      ],
+      "overall_concern": "High"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported",
+          "rating": "Partial",
+          "notes": "C-PAC named, no version."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "No",
+          "notes": "Voxel-wise, no atlas."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "Diagnosis source not described in this short report; relies on ABIDE labels."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "No",
+          "notes": "No feature selection/leakage control described for the example."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "No",
+          "notes": "Not addressed."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "No",
+          "notes": "No link found in text."
+        }
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-081",
+    "study_design_sample_dataset": "Diagnostic prediction demo; ABIDE I Preprocessed (full release), n=539 ASD / 573 controls.",
+    "methods": "Whole-brain grey-matter-masked voxel-wise ReHo features (C-PAC pipeline); scikit-learn logistic regression/SVM classifier; single random balanced split-half train/test division.",
+    "outcomes": "~62% classification accuracy without dimensionality reduction or feature selection.",
+    "key_limitations": "No cross-validation, no confidence interval, no site handling, no stated QC/exclusion rule; authors themselves frame this as a software prototype/proof-of-concept rather than a validated biomarker.",
+    "relevance_notes": "A Neurohackweek software-tool report demonstrating a reusable open classifier pipeline on the full public ABIDE I Preprocessed release.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3897/rio.3.e12733",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Full ABIDE I Preprocessed Connectomes Project release, 539 ASD and 573 control individuals; no stated exclusion/QC rule.",
+    "n_by_dx": {
+      "ASD": 539,
+      "TD": 573,
+      "total": 1112
+    },
+    "sites": "17 (ABIDE I release sites; not independently subset in this analysis)",
+    "pipeline": "C-PAC (regional homogeneity, ReHo derivative, ABIDE I Preprocessed release)",
+    "atlas": "none (voxel-wise, grey-matter masked)",
+    "claim_type": "predictive",
+    "finding": "A whole-brain voxel-wise ReHo classifier predicted ASD vs control diagnosis with ~62% accuracy on a single random split-half train/test division, without feature selection or dimensionality reduction.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "The ABIDE dataset contains 539 individuals with ASD and 573 control subjects.",
+      "The accuracy of our model without any dimensionality reduction or feature selection was ~ 62%."
+    ]
+  }
+}

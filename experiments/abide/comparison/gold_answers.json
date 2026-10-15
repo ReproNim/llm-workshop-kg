@@ -1,0 +1,197 @@
+{
+ "answered_at": "2026-10-15T20:09:08+00:00",
+ "answers": [
+  {
+   "id": "Q1",
+   "question": "How many ABIDE I participants have phenotype + CC200 time series passing the functional QC used by Analyst B? Break down by diagnosis.",
+   "gold": "Analyst B's QC (three-rater visual QC + full CC200 coverage + mean FD < 0.2 mm): 767 participants (348 ASD, 419 TD). After the FD < 0.15 revision: 704 (308 ASD, 396 TD). Rater QC alone (Abraham 2017 reconstruction): 873 vs 871 reported.",
+   "queries": [
+    "queries/Q1.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json"
+   ],
+   "seconds": 0.0078
+  },
+  {
+   "id": "Q2",
+   "question": "What is the overlap between Analyst A's and Analyst B's cohorts, and how many of B's test participants are excluded by A's tightened motion QC?",
+   "gold": "441 participants are in both cohorts (A is a strict subset of B). 63 of B's test participants are excluded by the tightened rule.",
+   "queries": [
+    "queries/Q2.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json"
+   ],
+   "seconds": 0.0978
+  },
+  {
+   "id": "Q3",
+   "question": "For participant Leuven_1_0050682, trace its connectivity feature back to the source scan URL and the preprocessing pipeline and parameters.",
+   "gold": "Leuven_1_0050682: connectivity ex:connectivity/Leuven_1_0050682 <- Pearson correlation of CC200 time series, Fisher z, upper triangle (19900 edges) <- time series https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/rois_cc200/Leuven_1_0050682_rois_cc200.1D (sha256 58e95aa69587...) <- Leuven_1_0050682 [filt_noglobal (band-pass filtered, no global signal regression); CompCor 5 components; Friston 24 motion; linear and quadratic trend; GSR=false; band-pass 0.01-0.1 Hz] <- raw scan https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/RawDataBIDS/Leuven_1/sub-0050682/func/sub-0050682_task-rest_run-1_bold.nii.gz.",
+   "queries": [
+    "queries/Q3.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json"
+   ],
+   "seconds": 0.001
+  },
+  {
+   "id": "Q4",
+   "question": "What research question does each paper ask; is each claim associational or predictive; and what cohort scope does each claim have?",
+   "gold": "abraham2017: question \"we demonstrate the feasibility of inter-site classification of neuropsychiatric status\"; claim \"Good choices of methods for the various steps of the pipeline lead to 67% prediction accuracy on the full ABIDE data\" is predictive (Out-of-sample diagnosis prediction, N=871 after visual QC, inter- and intra-site CV); abraham2017: question \"we demonstrate the feasibility of inter-site classification of neuropsychiatric status\"; claim \"the definition of functional brain areas is of paramount importance for biomarker discovery\" is predictive (Comparison of atlas choices within the prediction pipeline); abraham2017: question \"we demonstrate the feasibility of inter-site classification of neuropsychiatric status\"; claim \"prediction accuracy improves as we include more subjects\" is predictive (Learning curves over training-set size); dimartino2014: question \"To understand the relative contributions of hypo and hyperconnectivity in ASD, we carried out whole-brain iFC analyses\"; claim \"both were detected, though hypoconnectivity dominated, particularly for cortico-cortical and interhemispheric functional connectivity\" is associational (Group difference (ASD vs TC) in 763 males, 17 sites; covariates age, FIQ, site, mean FD; FDR q<0.05)",
+   "queries": [
+    "queries/Q4.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json"
+   ],
+   "seconds": 0.0008
+  },
+  {
+   "id": "Q5",
+   "question": "After Analyst A's QC revision, which of Analyst B's results must be reassessed, and which actually changed after recomputation?",
+   "gold": "Flagged for reassessment by graph traversal: {'Result': 85, 'Claim': 2, 'EvidenceAssessment': 4}. After recomputation 0 of 9 result families changed materially.",
+   "queries": [
+    "queries/Q5.rq",
+    "queries/Q5b.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json"
+   ],
+   "seconds": 0.0016
+  },
+  {
+   "id": "Q6",
+   "question": "Does Analyst A's group effect hold in Analyst B's held-out sites?",
+   "gold": "B_reviews_A_v1: not established in independent participants (pooled d=-0.080, 8/14 sites same direction, 326 independent participants) | B_reviews_A_v2: not established in independent participants (pooled d=-0.113, 10/15 sites same direction, 332 independent participants)",
+   "queries": [
+    "queries/Q6.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json"
+   ],
+   "seconds": 0.0002
+  },
+  {
+   "id": "Q7",
+   "question": "Who made each review assessment, and on what evidence?",
+   "gold": "A_reviews_B_v1 by Analyst A (hypothetical) as Reviewer on B_v1: overlap exceeds chance; A_reviews_B_v2 by Analyst A (hypothetical) as Reviewer on B_v2: overlap exceeds chance; A_vs_paper by Analyst A (hypothetical) as Reviewer on DM_C1: comparable question, non-equivalent analysis; B_reviews_A_v1 by Analyst B (hypothetical) as Reviewer on A_v1: not established in independent participants; B_reviews_A_v2 by Analyst B (hypothetical) as Reviewer on A_v2: not established in independent participants; B_vs_paper by Analyst B (hypothetical) as Reviewer on AB_C1: comparable question, non-equivalent analysis",
+   "queries": [
+    "queries/Q7.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json"
+   ],
+   "seconds": 0.0007
+  },
+  {
+   "id": "Q8",
+   "question": "For participant MaxMun_c_0051332, which software produced each brain-volume value, and do ANTs, FSL and FreeSurfer agree?",
+   "gold": "MaxMun_c_0051332 (ndar:src_subject_id 51332, ReproNim simple2 MaxMun_c graph). Producers: ANTs via ReproNim/ants_seg_to_nidm; FSL via ReproNim/fsl_seg_to_nidm; FreeSurfer via ReproNim/segstats_jsonld. cortical GM both: ANTs 667,230, FSL 784,086, FreeSurfer 681,903 mm3 (max/min 1.18); CSF both: ANTs 1,519, FSL 224,764, FreeSurfer 1,138 mm3 (max/min 197.56); caudate Left: ANTs 4,232, FSL 4,678, FreeSurfer 4,521 mm3 (max/min 1.11); caudate Right: ANTs 4,365, FSL 4,604, FreeSurfer 4,432 mm3 (max/min 1.05); putamen Left: ANTs 5,410, FSL 6,409, FreeSurfer 5,871 mm3 (max/min 1.18); putamen Right: ANTs 5,417, FSL 6,770, FreeSurfer 5,638 mm3 (max/min 1.25); amygdala Left: ANTs 1,343, FSL 1,681, FreeSurfer 2,014 mm3 (max/min 1.50); amygdala Right: ANTs 1,427, FSL 1,760, FreeSurfer 2,079 mm3 (max/min 1.46); accumbens Left: ANTs 660, FSL 432, FreeSurfer 517 mm3 (max/min 1.53); accumbens Right: ANTs 539, FSL 585, FreeSurfer 743 mm3 (max/min 1.38); thalamus Left: ANTs 10,512, FSL 10,451, FreeSurfer 10,378 mm3 (max/min 1.01); thalamus Right: ANTs 10,321, FSL 10,355, FreeSurfer 11,576 mm3 (max/min 1.12); hippocampus Left: ANTs 4,407, FSL 4,116, FreeSurfer 4,598 mm3 (max/min 1.12); hippocampus Right: ANTs 4,510, FSL 4,371, FreeSurfer 4,930 mm3 (max/min 1.13); cerebral WM both: ANTs 559,789, FSL 731,300, FreeSurfer 588,786 mm3 (max/min 1.31); pallidum Left: ANTs 1,713, FSL 2,295, FreeSurfer 2,491 mm3 (max/min 1.45); pallidum Right: ANTs 1,676, FSL 2,125, FreeSurfer 2,154 mm3 (max/min 1.29). Across tools, max/min ratios for tissue and subcortical structures range 1.01-1.53 (closest: thalamus, caudate, hippocampus; furthest: amygdala, accumbens, pallidum); CSF differs by two orders of magnitude because FSL reports total CSF while FreeSurfer and ANTs report the ventricular CSF label under the same UBERON term.",
+   "queries": [
+    "queries/Q8.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json",
+    "results/simple2.json",
+    "results/simple2_tool_agreement.csv"
+   ],
+   "seconds": 0.2069
+  },
+  {
+   "id": "Q9",
+   "question": "Which ReproNim resources could produce or consume each node type in our graph, and which were actually executed here?",
+   "gold": "ANTs segmentation outputs (instances in the store: n/a) <- produced by none; consumed by ants_seg_to_nidm [data_source]; BIDS dataset (instances in the store: n/a) <- produced by none; consumed by ANTs NIDM BIDS App [pointer], FreeSurfer NIDM BIDS App [pointer], MRIQC NIDM BIDS App [pointer], PyNIDM [pointer], simple2 BABS scripts [pointer]; FSL FEAT directory (instances in the store: n/a) <- produced by none; consumed by NIDM-Results for FSL [pointer]; FSL FIRST/FAST outputs (instances in the store: n/a) <- produced by none; consumed by fsl_seg_to_nidm [data_source]; FreeSurfer stats files (instances in the store: n/a) <- produced by none; consumed by segstats_jsonld [data_source]; data dictionary (instances in the store: n/a) <- produced by none; consumed by stuff2NIDM [pointer]; ex:BrainVolume (instances in the store: 0 typed; 157,078 volume observations in view/volumes) <- produced by ANTs NIDM BIDS App [pointer], FreeSurfer NIDM BIDS App [pointer], OpenNeuroDerivatives-NIDM [pointer], ants_seg_to_nidm [data_source], fsl_seg_to_nidm [data_source], segstats_jsonld [data_source], simple2 BABS scripts [pointer], simple2 NIDM examples (ABIDE, ADHD200) [data_source]; ex:Claim (instances in the store: 8) <- produced by Abraham et al. 2017 (inter-site prediction) [data_source], Di Martino et al. 2014 (ABIDE) [data_source]; ex:ResearchQuestion (instances in the store: 4) <- produced by Abraham et al. 2017 (inter-site prediction) [data_source], Di Martino et al. 2014 (ABIDE) [data_source]; ex:Result (instances in the store: 170) <- produced by NIDM-Results for FSL [pointer], nidmresults [pointer]; nidm:Acquisition (instances in the store: 7671) <- produced by NIDM specifications [pointer]; nidm:AcquisitionObject (instances in the store: 7671) <- produced by ABIDE I raw data (BIDS, S3) [pointer], ABIDE Preprocessed (PCP) [data_source], NIDM specifications [pointer], PyNIDM [pointer], simple2 NIDM examples (ABIDE, ADHD200) [data_source]; consumed by Neurobagel federation API [pointer]; nidm:DataElement (instances in the store: 5822) <- produced by NIDM specifications [pointer], NIDM-Experiment terms [pointer], NIDM-Terms [pointer], PyNIDM [pointer], ReproSchema [pointer], ants_seg_to_nidm [data_source], fsl_seg_to_nidm [data_source], segstats_jsonld [data_source], simple2 NIDM examples (ABIDE, ADHD200) [data_source], stuff2NIDM [pointer]; consumed by NIDM-Terms [pointer]; nidm:Derivative (instances in the store: 3059) <- produced by NIDM specifications [pointer]; nidm:DerivativeObject (instances in the store: 3059) <- produced by ABIDE Preprocessed (PCP) [data_source], ANTs NIDM BIDS App [pointer], C-PAC [data_source], FreeSurfer NIDM BIDS App [pointer], MRIQC NIDM BIDS App [pointer], stuff2NIDM [pointer]; phenotype table (instances in the store: n/a) <- produced by none; consumed by Neurobagel bagel-cli [pointer], PyNIDM [pointer]; prov:Activity (instances in the store: 18043) <- produced by PyNIDM [pointer]; results table (instances in the store: n/a) <- produced by none; consumed by stuff2NIDM [pointer]. Executed here: Oxigraph (pyoxigraph), RDFLib, UMAP, nilearn, pySHACL, scikit-learn. Used as data sources: ABIDE Preprocessed (PCP), Abraham et al. 2017 (inter-site prediction), C-PAC, Di Martino et al. 2014 (ABIDE), ants_seg_to_nidm, fsl_seg_to_nidm, segstats_jsonld, simple2 NIDM examples (ABIDE, ADHD200). Every other listed resource is a pointer only (not run).",
+   "queries": [
+    "queries/Q9.rq",
+    "queries/Q9b.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json",
+    "results/resources_catalog.json"
+   ],
+   "seconds": 0.0015
+  },
+  {
+   "id": "Q10",
+   "question": "Find an actively maintained tool to export FreeSurfer stats to NIDM; how recent is that evidence?",
+   "gold": "FreeSurfer NIDM BIDS App: 13 default-branch commits in 90 d, last commit 2026-10-13T11:33:11Z (as of 2026-10-15T15:28:23Z; snapshot 4.68 h old when answered); simple2 BABS scripts: 8 default-branch commits in 90 d, last commit 2026-10-12T10:35:28Z (as of 2026-10-15T15:28:23Z; snapshot 4.68 h old when answered). Not active in the last 90 days: segstats_jsonld (as of 2026-10-15T15:28:23Z); ants_seg_to_nidm (as of 2026-10-15T15:28:23Z); OpenNeuroDerivatives-NIDM (as of 2026-10-15T15:28:23Z).",
+   "queries": [
+    "queries/Q10.txt"
+   ],
+   "result_files": [
+    "results/competency_answers.json",
+    "graph/resource_activity.ttl",
+    "results/find_resources_examples.txt"
+   ],
+   "seconds": 0.0269
+  },
+  {
+   "id": "Q11",
+   "question": "Which local items in this graph are candidates for promotion to global knowledge (ReproPond to ReproLake), and which gates are unmet?",
+   "gold": "claim_AB_C1 [candidate] -> literature KG (e.g. BR-KG, AbstractAtlas): unmet licence=unknown; claim_AB_C2 [candidate] -> literature KG (e.g. BR-KG, AbstractAtlas): unmet licence=unknown; claim_DM_C1 [candidate] -> literature KG (e.g. BR-KG, AbstractAtlas): unmet licence=unknown; cohort_abraham_reconstruction [blocked] -> literature KG / ABIDE dataset record: unmet generality=fail, persistent_identifier_and_version=fail, review=unknown; motion_rule_v2 [candidate] -> consortium QC guideline: unmet generality=fail, licence=unknown, persistent_identifier_and_version=fail; skill_graph_build [candidate] -> ReproNim/skills (0 skills at pinned commit): unmet generality=fail, licence=unknown, persistent_identifier_and_version=fail, review=unknown; variable_cc200_mean_fisher_z [candidate] -> NIDM-Terms / InterLex: unmet generality=unknown, licence=unknown, persistent_identifier_and_version=fail, review=unknown; variable_qc_raters [candidate] -> NIDM-Terms / InterLex: unmet licence=unknown, persistent_identifier_and_version=fail, review=unknown",
+   "queries": [
+    "queries/Q11.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json",
+    "results/scope.json"
+   ],
+   "seconds": 0.0012
+  },
+  {
+   "id": "Q12",
+   "question": "Which records in this graph may not leave the pond, and why?",
+   "gold": "ABIDE participant-level phenotype records, scan pointers, time series and IDPs (1,112 participants) (pond:lab, public): never-promote: the lake already holds the authoritative public release; link to it instead of copying; ILLUSTRATIVE study-only record (not real data) (pond:site, restricted): egress not permitted: consent scope is study-only, not broad-sharing; restricted by agreement; quasi-identifiers without aggregation to minimum cell size. Other pond items (analyst cohorts, claims, reviews, local rules) are egress-permitted but stay until a promotion passes its gates.",
+   "queries": [
+    "queries/Q12.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json",
+    "results/scope.json"
+   ],
+   "seconds": 0.0008
+  },
+  {
+   "id": "Q13",
+   "question": "Everything the graph knows about participant MaxMun_c_0051332, with sources.",
+   "gold": "MaxMun_c_0051332: 239 source triples within two hops (results/participant_ego.ttl), grouped into 30 nodes: demographics AGE_AT_SCAN=23 SEX=1 DX_GROUP=2 SITE_ID=MAX_MUN ...; IQ FIQ=125 PIQ=126; motion & rater QC func_mean_fd=0.0644 func_perc_fd=6.61 qc_rater_1=OK qc_func_rater_2=maybe ...; 23 other phenotype values 65 recorded as missing; raw rest BOLD (S3 pointer, not downloaded); raw T1w (S3 pointer, not downloaded); ANTs ROI thickness sha256 0a429d8404; ANTs cortical thickness (ABIDE Preprocessed release); CC200 time series sha256 a5b1b91a01; C-PAC (ABIDE Preprocessed release); connectivity (19,900 Fisher-z edges) sha256 6282fca418; common.py; ANTs volumes (101) L hippocampus 4,407 mm\u00b3; FSL volumes (18) L hippocampus 4,116 mm\u00b3; FreeSurfer volumes (62) L hippocampus 4,598 mm\u00b3; PyNIDM csv2nidm person; ReproNim simple2 person simple2:MaxMun_c; cohort abraham2017_reconstructed; cohort B_v1; cohort A_v1; cohort B_v2; cohort A_v2: NOT a member (site MAX_MUN < 10 per group); B B_v2 fold: held-out site MAX_MUN; B B_v1 fold: held-out site MAX_MUN; B B_v1: training in 19 other folds; B B_v2: training in 19 other folds; 10 results used this participant (A edgewise GLM, B per-fold metrics); Abraham et al. 2017 (reconstructed cohort, N=873 vs 871 reported); pond:lab copy consent broad-sharing, egress permitted lake copy: ABIDE Preprocessed",
+   "queries": [
+    "queries/Q13_construct.rq"
+   ],
+   "result_files": [
+    "results/participant_ego.json",
+    "results/participant_ego.ttl"
+   ],
+   "seconds": null
+  },
+  {
+   "id": "Q14",
+   "question": "How many participants have data element E (by diagnosis and site), and which combinations limit each analysis?",
+   "gold": "AGE_AT_SCAN: 1112 (539 ASD, 573 TD; missing at 0 sites); FIQ: 1040 (505 ASD, 535 TD; missing at 1 sites); VIQ: 917 (456 ASD, 461 TD; missing at 4 sites); PIQ: 931 (458 ASD, 473 TD; missing at 3 sites); ADOS_TOTAL: 415 (383 ASD, 32 TD; missing at 4 sites); SRS_RAW_TOTAL: 365 (190 ASD, 175 TD; missing at 15 sites); func_mean_fd: 1099 (529 ASD, 570 TD; missing at 0 sites); CC200_timeseries: 989 (480 ASD, 509 TD; missing at 0 sites); L_hippocampus_ANTs: 766 (370 ASD, 396 TD; missing at 1 sites); L_hippocampus_FSL: 983 (464 ASD, 519 TD; missing at 0 sites); L_hippocampus_FreeSurfer: 982 (463 ASD, 519 TD; missing at 0 sites); ReproNim_DX: 1112 (539 ASD, 573 TD; missing at 0 sites). Limits: Analyst A (age, FIQ, FD, CC200) -> 924 participants, limited by CC200_timeseries; Analyst B (age, FD, CC200) -> 988 participants, limited by CC200_timeseries; UMAP primary (age, FIQ, VIQ, PIQ) -> 868 participants, limited by VIQ; UMAP + SRS -> 330 participants, limited by SRS_RAW_TOTAL; UMAP + FreeSurfer IDP join -> 746 participants, limited by VIQ; ADOS-based analysis + CC200 -> 347 participants, limited by ADOS_TOTAL.",
+   "queries": [
+    "queries/Q14.rq"
+   ],
+   "result_files": [
+    "results/element_coverage.json"
+   ],
+   "seconds": null
+  },
+  {
+   "id": "Q15",
+   "question": "Which publications and abstracts use ABIDE I, which claims do they make, and how current is that list?",
+   "gold": "As of 2026-10-15T15:44:46Z (latest publication-link snapshot; AbstractAtlas OHBM 2026 bundle pinned by hash, repo commit 181652e2): 35 abstracts mention ABIDE (17 state they used ABIDE data, 18 mention it only; regex, hand check 15/17 stated uses correct, posters 1217 and 639 are false positives); those abstracts carry 541 AbstractAtlas claims (249 in the stated-use abstracts). OpenAlex (pulled 2026-10-15T15:44:34+00:00): 598 works cite Di Martino 2014 and 220 cite Abraham 2017 while naming ABIDE in title/abstract (status candidate; top 50 per paper stored as nodes). Largest stated-use abstracts: poster 2271 Learning Deep Representations of sMRI with Dimensions of Psy (36 claims); poster 971 Multimetric resting-state signatures of functional maturatio (31 claims); poster 931 Autism and Incomplete Hippocampal Inversion: a multi-cohort  (21 claims); poster 1217 Subcallosal cingulate DBS and its impact on functional conne (19 claims; false positive by hand check); poster 639 MedGemma-Based Autism Spectrum Disorder Classification from  (18 claims; false positive by hand check).",
+   "queries": [
+    "queries/Q15.rq",
+    "queries/Q15b.rq"
+   ],
+   "result_files": [
+    "results/competency_answers.json",
+    "results/publications.json"
+   ],
+   "seconds": 0.1776
+  }
+ ]
+}

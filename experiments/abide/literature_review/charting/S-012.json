@@ -1,0 +1,288 @@
+{
+  "source_id": "S-012",
+  "pmid": "local_0dbea86a",
+  "doi": "10.3389/fnsys.2018.00074",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2-3: a discovery analysis in ABIDE I and a validation analysis in ABIDE II report group-difference cortico-cerebellar functional connectivity (ASD vs TD).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "we used functional magnetic resonance imaging (fMRI) of 708 subjects under a resting\nstate protocol provided by the ABIDE I Consortium.",
+      "section": "abstract",
+      "claim": "708 subjects from the ABIDE I Consortium were used for the discovery analysis.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "ABIDE I is composed of 573\nindividuals with TD and 539 individuals with ASD (totaling\n1 112 subjects). ABIDE II is composed of 593 individuals\nwith TD and 521 individuals with ASD (totaling 1 114\nsubjects).",
+      "section": "methods",
+      "claim": "ABIDE I (573 TD, 539 ASD = 1112) and ABIDE II (593 TD, 521 ASD = 1114) raw releases were downloaded.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "After preprocessing (described in section 2.2.), the\nABIDE I dataset was composed of 432 subjects with TD\n(348 males, mean age ± standard deviation of 18.21 ±\n8.04) and 276 individuals with ASD (241 males, 18.42 ±\n8.38). The ABIDE II dataset was composed of 316 subjects\nwith TD (208 males, 12.80 ± 5.61) and 269 individuals\nwith ASD (234 males, 13.93 ± 7.07).",
+      "section": "methods",
+      "claim": "After preprocessing, ABIDE I yielded 432 TD and 276 ASD subjects (708 total); ABIDE II yielded 316 TD and 269 ASD subjects (585 total).",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "We preprocessed the imaging data using the Athena pipeline\n(www.nitrc.org/plugins/mwiki/index.php/neurobureau:Athena\nPipeline).\nThe\npipeline\nfocused\non\nproviding\nsystematic\nprocessing of fMRI data, including the following main steps:\nexclusion of the ﬁrst four scans; slice timing correction;",
+      "section": "methods",
+      "claim": "Imaging data were preprocessed using the Athena pipeline.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "Subjects that had more than 5% of the total number of scans\nremoved by scrubbing were excluded from the analysis. Head\nmotion across the dataset is measured by the FD, which presents\na mean of 0.137 mm and standard deviation of 0.102 mm on\nthe study dataset (ABIDE I) and a mean of 0.169 mm with\nstandard deviation of 0.132 mm on the independent dataset\n(ABIDE II).",
+      "section": "methods",
+      "claim": "Subjects with >5% of scans removed by motion scrubbing were excluded; mean FD was 0.137±0.102mm (ABIDE I) and 0.169±0.132mm (ABIDE II).",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "A total of 93 subjects (53 TD and 40 ASD) in the\nstudy dataset (ABIDE I) and 45 subjects (24 TD and 21 ASD) in\nthe independent dataset (ABIDE II) had scans removed by the\nscrubbing process.",
+      "section": "methods",
+      "claim": "93 subjects (53 TD, 40 ASD) in ABIDE I and 45 subjects (24 TD, 21 ASD) in ABIDE II had scans removed by scrubbing.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": ",\nnamely, the right fusiform gyrus [β = −0.042, t-value = −3.689,\np = 0.005 —t-test (GLM)], the right postcentral gyrus [β =\n−0.038, t-value = −3.131, p = 0.027 — t-test (GLM)], the\nright superior temporal gyrus [β = −0.034, t-value = −3.082,\np = 0.027 –t-test (GLM)], the right middle temporal gyrus\n[β = −0.039, t-value = −3.783, p < 0.001 —t-test (GLM)],\nand the left middle temporal gyrus [β = −0.056, t-va",
+      "section": "results",
+      "claim": "Discovery analysis (ABIDE I) found reduced cortico-cerebellar connectivity in ASD in five cortical ROIs (right fusiform, right postcentral, right superior temporal, right middle temporal, left middle temporal gyri), FDR-corrected.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "In\nthis validation analysis, three out of ﬁve cortical ROIs, namely,\nthe right fusiform gyrus [β\n=\n−0.028, t-value = −2.193,\np = 0.047 —t-test (GLM)], the right superior temporal gyrus\n[β = −0.044, t-value = −3.495, p = 0.002 —t-test (GLM)],\nand the left middle temporal gyrus [β\n=\n−0.033, t-value\n= −2.583, p = 0.025—t-test (GLM)], conﬁrmed the reduced\nfunctional connectivity in the ASD group",
+      "section": "results",
+      "claim": "In the ABIDE II validation sample, 3 of 5 ROIs (right fusiform gyrus, right superior temporal gyrus, left middle temporal gyrus) replicated the reduced connectivity finding.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Thus, to\nminimize the site eﬀect in our analysis, we included it as a\ncovariate in group-level statistics as described in the section 2.3.",
+      "section": "discussion",
+      "claim": "Site was included as a covariate in group-level statistics to minimize the multicentric site effect.",
+      "relevance_score": 0.85
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "Raw and post-QC Ns by diagnosis are fully reported for both ABIDE I (discovery) and ABIDE II (validation)."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Age, sex and site counts (11 sites for ABIDE II validation) are reported."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "Athena pipeline explicitly named and its processing steps described."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "ASD/Asperger grouping per DSM-5 is stated, but the diagnostic-instrument source (e.g. ADOS/ADI-R) for ABIDE labels is not independently restated beyond referring to the ABIDE repository."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Motion (FD), age, sex and site are explicitly reported and modeled."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "Motion scrubbing with an explicit >5%-removed exclusion rule; site included as a covariate in group-level statistics."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Cortico-cerebellar connectivity via linear regression against cerebellar PCs (95% variance), applied identically in discovery and validation."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "FDR correction (Benjamini-Hochberg) applied across all 65 cortical ROI tests."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Well-documented discovery (ABIDE I) and independent validation (ABIDE II) design with explicit motion-based QC thresholds, named preprocessing pipeline, site-covariate handling, and multiple-comparisons correction; main gap is the diagnosis-source instrument not being independently restated."
+  },
+  "charting": {
+    "source_id": "S-012",
+    "title": "Abnormal Cortico-Cerebellar Functional Connectivity in Autism Spectrum Disorder",
+    "authors": "Ramos et al.",
+    "year": "2019",
+    "journal_conference": "Frontiers in Systems Neuroscience",
+    "doi": "10.3389/fnsys.2018.00074",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "primary_focus": "Group-difference cortico-cerebellar functional connectivity, discovery + validation",
+    "primary_goal": "Identify and validate cortical regions showing differential (cerebellar) functional connectivity between ASD and TD",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "Multi-site (ABIDE I + 11 sites in ABIDE II validation)",
+    "disorder_diagnosis": "Autism Spectrum Disorder (including Asperger syndrome per DSM-5)",
+    "diagnosis_assessment": "",
+    "n_disordered": "276 (ABIDE I discovery); 269 (ABIDE II validation)",
+    "age_mean_sd": "18.42 ± 8.38 (ABIDE I ASD); 13.93 ± 7.07 (ABIDE II ASD)",
+    "age_range": "",
+    "gender_distribution": "241/276 males (ABIDE I ASD); 234/269 males (ABIDE II ASD)",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "true",
+    "healthy_status_confirmed": "",
+    "n_controls": "432 (ABIDE I discovery); 316 (ABIDE II validation)",
+    "age_mean_sd_controls": "18.21 ± 8.04 (ABIDE I TD); 12.80 ± 5.61 (ABIDE II TD)",
+    "age_range_controls": "",
+    "gender_distribution_controls": "348/432 males (ABIDE I TD); 208/316 males (ABIDE II TD)",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "true",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "",
+    "dataset_openly_available": "ABIDE data available via the ABIDE Consortium website; no separate analysis code repository mentioned",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Seed/region-based functional connectivity",
+    "specific_features": "Cortico-cerebellar connectivity: linear regression between each cortical ROI time series and cerebellar principal components (95% variance); 65 cortical ROIs tested",
+    "feature_extraction_tools": "Athena pipeline",
+    "feature_importance_reported": "",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "Hypoconnectivity (underconnectivity): reduced cortico-cerebellar functional connectivity in ASD vs TD across five ROIs discovered in ABIDE I, 3 replicated in ABIDE II",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "Discovery analysis in ABIDE I, independent replication analysis in ABIDE II (same preprocessing/statistics); FDR correction across 65 tests",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "ASD showed reduced cortico-cerebellar functional connectivity with five cortical ROIs in the ABIDE I discovery sample (N=708); three of the five (right fusiform gyrus, right superior temporal gyrus, left middle temporal gyrus) replicated in an independent ABIDE II validation sample (N=585, 11 sites), all FDR-corrected.",
+    "features_associated_disorder": "Right fusiform gyrus, right postcentral gyrus, right superior temporal gyrus, right middle temporal gyrus, left middle temporal gyrus (cortico-cerebellar connectivity)",
+    "future_directions_recommended": "Further studies to comprehensively examine ASD-related differences in cortico-cerebellar functional connectivity, addressing incomplete cerebellar coverage.",
+    "reviewer_notes": "Strength: independent discovery/validation design across ABIDE I and II with identical pipeline and site-covariate adjustment.",
+    "custom_fields": {
+      "RQ1": "associational — discovery: ABIDE I post-QC N=708 (432 TD, 276 ASD); validation: ABIDE II post-QC N=585 (316 TD, 269 ASD, 11 sites); QC rule: >5% of scans removed by motion scrubbing excludes a subject | quote: \"After preprocessing (described in section 2.2.), the ABIDE I dataset was composed of 432 subjects with TD (348 males, mean age ± standard deviation of 18.21 ± 8.04) and 276 individuals with ASD (241 males, 18.42 ± 8.38). The ABIDE II dataset was composed of 316 subjects with TD (208 males, 12.80 ± 5.61) and 269 individuals with ASD (234 males, 13.93 ± 7.07).\"",
+      "RQ2": "Athena pipeline; no cortical parcellation atlas named — analysis uses 65 cortical ROIs regressed against cerebellar principal components, not a specific named cortical atlas in the extracted text | quote: \"We preprocessed the imaging data using the Athena pipeline (www.nitrc.org/plugins/mwiki/index.php/neurobureau:Athena Pipeline). The pipeline focused on providing systematic processing of fMRI data, including the following main steps: exclusion of the ﬁrst four scans; slice timing correction;\"",
+      "RQ3": "associational — group-difference (ASD vs TD) cortico-cerebellar connectivity, with discovery + independent validation | quote: \", namely, the right fusiform gyrus [β = −0.042, t-value = −3.689, p = 0.005 —t-test (GLM)], the right postcentral gyrus [β = −0.038, t-value = −3.131, p = 0.027 — t-test (GLM)], the right superior temporal gyrus [β = −0.034, t-value = −3.082, p = 0.027 –t-test (GLM)], the right middle temporal gyrus [β = −0.039, t-value = −3.783, p < 0.001 —t-test (GLM)], and the left middle temporal gyrus [β = −0.056, t-va\"",
+      "RQ4": "Linear regression (GLM) per cortical ROI vs. cerebellar PCs, with site as covariate; Benjamini-Hochberg FDR correction across 65 tests (significance threshold 5%); validated via an independent-sample (ABIDE II) replication rather than leave-site-out cross-validation | quote: \"Thus, to minimize the site eﬀect in our analysis, we included it as a covariate in group-level statistics as described in the section 2.3.\"",
+      "RQ5": "Hypoconnectivity: reduced cortico-cerebellar connectivity in ASD vs TD in five ROIs in ABIDE I discovery (right fusiform, right postcentral, right/left middle temporal, right superior temporal gyri), 3 of 5 (right fusiform, right superior temporal, left middle temporal) replicated in ABIDE II (p=0.047, 0.002, 0.025 respectively, FDR-corrected) | quote: \"In this validation analysis, three out of ﬁve cortical ROIs, namely, the right fusiform gyrus [β = −0.028, t-value = −2.193, p = 0.047 —t-test (GLM)], the right superior temporal gyrus [β = −0.044, t-value = −3.495, p = 0.002 —t-test (GLM)], and the left middle temporal gyrus [β = −0.033, t-value = −2.583, p = 0.025—t-test (GLM)], conﬁrmed the reduced functional connectivity in the ASD group\"",
+      "RQ6": "partly — N by diagnosis/site and exact QC thresholds (5% scrubbing, FD descriptive stats) are reported, but no participant ID list or supplementary selection criteria document is referenced | quote: \"After preprocessing (described in section 2.2.), the ABIDE I dataset was composed of 432 subjects with TD (348 males, mean age ± standard deviation of 18.21 ± 8.04) and 276 individuals with ASD (241 males, 18.42 ± 8.38). The ABIDE II dataset was composed of 316 subjects with TD (208 males, 12.80 ± 5.61) and 269 individuals with ASD (234 males, 13.93 ± 7.07).\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"After preprocessing (described in section 2.2.), the ABIDE I dataset was composed of 432 subjects with TD (348 males, mean age ± standard deviation of 18.21 ± 8.04) and 276 individuals with ASD (241 males, 18.42 ± 8.38). The ABIDE II dataset was composed of 316 subjects with TD (208 males, 12.80 ± 5.61) and 269 individuals with ASD (234 males, 13.93 ± 7.07).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes — subjects with >5% of scans removed by FD-based scrubbing were excluded; mean FD reported per dataset | quote: \"Subjects that had more than 5% of the total number of scans removed by scrubbing were excluded from the analysis. Head motion across the dataset is measured by the FD, which presents a mean of 0.137 mm and standard deviation of 0.102 mm on the study dataset (ABIDE I) and a mean of 0.169 mm with standard deviation of 0.132 mm on the independent dataset (ABIDE II).\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — Athena pipeline | quote: \"We preprocessed the imaging data using the Athena pipeline (www.nitrc.org/plugins/mwiki/index.php/neurobureau:Athena Pipeline). The pipeline focused on providing systematic processing of fMRI data, including the following main steps: exclusion of the ﬁrst four scans; slice timing correction;\"",
+      "CL4 Atlas/parcellation reported?": "No — cortical ROIs used but no named standard atlas/parcellation is specified in the extracted text | quote: \"\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not applicable, this is a group-difference GLM/replication design, not a predictive train/test model | quote: \"\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — site included as a covariate in group-level statistics to minimize the multicentric site effect | quote: \"Thus, to minimize the site eﬀect in our analysis, we included it as a covariate in group-level statistics as described in the section 2.3.\"",
+      "CL7 Code and/or participant list available?": "Partly — ABIDE data are openly available via the ABIDE Consortium website; no separate analysis code repository is mentioned | quote: \"\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"ABIDE I is composed of 573 individuals with TD and 539 individuals with ASD (totaling 1 112 subjects). ABIDE II is composed of 593 individuals with TD and 521 individuals with ASD (totaling 1 114 subjects).\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-012",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "Raw and post-QC Ns by diagnosis for both discovery and validation samples."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Yes",
+          "notes": "Explicit >5%-scrubbed exclusion rule and mean FD statistics."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline reported",
+          "rating": "Yes",
+          "notes": "Athena pipeline named."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "No",
+          "notes": "No standard cortical atlas named in extracted text."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source reported",
+          "rating": "Unclear",
+          "notes": "DSM-5 ASD/Asperger grouping stated; underlying ABIDE diagnostic instrument not independently restated."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "N/A",
+          "notes": "Not a predictive train/test model."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "Yes",
+          "notes": "Site modeled as covariate in group-level statistics."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "Partial",
+          "notes": "ABIDE data openly available; no analysis code link given."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-012",
+    "study_design_sample_dataset": "Group-difference (associational) discovery + independent validation; ABIDE I discovery N=708 (432 TD, 276 ASD), ABIDE II validation N=585 (316 TD, 269 ASD, 11 sites).",
+    "methods": "Athena-pipeline-preprocessed rs-fMRI; FD-based motion scrubbing with >5%-removed exclusion rule; cortico-cerebellar connectivity via linear regression of 65 cortical ROIs against cerebellar PCs, with site as a covariate; FDR correction across tests.",
+    "outcomes": "Five ROIs showed reduced (hypo-) cortico-cerebellar connectivity in ASD in ABIDE I; three (right fusiform gyrus, right superior temporal gyrus, left middle temporal gyrus) replicated in the independent ABIDE II sample.",
+    "key_limitations": "Incomplete cerebellar coverage in some individuals (particularly posterior cerebellum); diagnosis-source instrument not independently restated; no atlas-based parcellation named.",
+    "relevance_notes": "A clean discovery/validation example using both ABIDE I and ABIDE II with transparent QC and site-covariate handling, illustrating cross-release replication of an associational finding.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnsys.2018.00074",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "Discovery: ABIDE I post-QC N=708 (432 TD, 276 ASD); Validation: ABIDE II post-QC N=585 (316 TD, 269 ASD) from 11 sites; subjects with >5% of scans removed by FD-based scrubbing excluded.",
+    "n_by_dx": {
+      "ASD": 545,
+      "TD": 748,
+      "total": 1293
+    },
+    "sites": "11 (ABIDE II validation); ABIDE I site count not restated in extracted text",
+    "pipeline": "Athena pipeline",
+    "atlas": "",
+    "claim_type": "associational",
+    "finding": "ASD showed reduced cortico-cerebellar functional connectivity in five cortical ROIs discovered in ABIDE I; three (right fusiform gyrus p=0.047, right superior temporal gyrus p=0.002, left middle temporal gyrus p=0.025, all FDR-corrected) replicated in the independent ABIDE II sample.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "After preprocessing (described in section 2.2.), the\nABIDE I dataset was composed of 432 subjects with TD\n(348 males, mean age ± standard deviation of 18.21 ±\n8.04) and 276 individuals with ASD (241 males, 18.42 ±\n8.38). The ABIDE II dataset was composed of 316 subjects\nwith TD (208 males, 12.80 ± 5.61) and 269 individuals\nwith ASD (234 males, 13.93 ± 7.07).",
+      ",\nnamely, the right fusiform gyrus [β = −0.042, t-value = −3.689,\np = 0.005 —t-test (GLM)], the right postcentral gyrus [β =\n−0.038, t-value = −3.131, p = 0.027 — t-test (GLM)], the\nright superior temporal gyrus [β = −0.034, t-value = −3.082,\np = 0.027 –t-test (GLM)], the right middle temporal gyrus\n[β = −0.039, t-value = −3.783, p < 0.001 —t-test (GLM)],\nand the left middle temporal gyrus [β = −0.056, t-va",
+      "In\nthis validation analysis, three out of ﬁve cortical ROIs, namely,\nthe right fusiform gyrus [β\n=\n−0.028, t-value = −2.193,\np = 0.047 —t-test (GLM)], the right superior temporal gyrus\n[β = −0.044, t-value = −3.495, p = 0.002 —t-test (GLM)],\nand the left middle temporal gyrus [β\n=\n−0.033, t-value\n= −2.583, p = 0.025—t-test (GLM)], conﬁrmed the reduced\nfunctional connectivity in the ASD group"
+    ]
+  }
+}

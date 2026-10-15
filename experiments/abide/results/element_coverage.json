@@ -1,0 +1,590 @@
+{
+ "query": "queries/Q14.rq",
+ "query_seconds": 0.237,
+ "per_element_seconds": {
+  "AGE_AT_SCAN": 0.01,
+  "FIQ": 0.008,
+  "VIQ": 0.008,
+  "PIQ": 0.008,
+  "ADOS_TOTAL": 0.004,
+  "SRS_RAW_TOTAL": 0.003,
+  "func_mean_fd": 0.009,
+  "CC200_timeseries": 0.008,
+  "L_hippocampus_ANTs": 0.036,
+  "L_hippocampus_FSL": 0.03,
+  "L_hippocampus_FreeSurfer": 0.03,
+  "ReproNim_DX": 0.045
+ },
+ "participants": 1112,
+ "elements": {
+  "AGE_AT_SCAN": {
+   "n": 1112,
+   "by_dx": {
+    "TD": 573,
+    "ASD": 539
+   },
+   "by_site": {
+    "NYU": 184,
+    "UM_1": 110,
+    "USM": 101,
+    "UCLA_1": 82,
+    "PITT": 57,
+    "MAX_MUN": 57,
+    "YALE": 56,
+    "KKI": 55,
+    "TRINITY": 49,
+    "STANFORD": 40,
+    "CALTECH": 38,
+    "SDSU": 36,
+    "OLIN": 36,
+    "LEUVEN_2": 35,
+    "UM_2": 35,
+    "SBL": 30,
+    "LEUVEN_1": 29,
+    "OHSU": 28,
+    "CMU": 27,
+    "UCLA_2": 27
+   },
+   "sites_with_none": []
+  },
+  "FIQ": {
+   "n": 1040,
+   "by_dx": {
+    "TD": 535,
+    "ASD": 505
+   },
+   "by_site": {
+    "NYU": 184,
+    "UM_1": 106,
+    "USM": 101,
+    "UCLA_1": 81,
+    "PITT": 57,
+    "YALE": 56,
+    "KKI": 55,
+    "MAX_MUN": 55,
+    "TRINITY": 49,
+    "STANFORD": 40,
+    "CALTECH": 37,
+    "SDSU": 36,
+    "UM_2": 35,
+    "OLIN": 34,
+    "LEUVEN_1": 29,
+    "CMU": 27,
+    "UCLA_2": 27,
+    "OHSU": 26,
+    "SBL": 5
+   },
+   "sites_with_none": [
+    "LEUVEN_2"
+   ]
+  },
+  "VIQ": {
+   "n": 917,
+   "by_dx": {
+    "TD": 461,
+    "ASD": 456
+   },
+   "by_site": {
+    "NYU": 184,
+    "UM_1": 110,
+    "USM": 101,
+    "UCLA_1": 82,
+    "PITT": 57,
+    "YALE": 56,
+    "TRINITY": 49,
+    "STANFORD": 40,
+    "CALTECH": 37,
+    "SDSU": 36,
+    "LEUVEN_2": 35,
+    "UM_2": 35,
+    "LEUVEN_1": 29,
+    "CMU": 27,
+    "UCLA_2": 27,
+    "SBL": 12
+   },
+   "sites_with_none": [
+    "KKI",
+    "MAX_MUN",
+    "OHSU",
+    "OLIN"
+   ]
+  },
+  "PIQ": {
+   "n": 931,
+   "by_dx": {
+    "TD": 473,
+    "ASD": 458
+   },
+   "by_site": {
+    "NYU": 184,
+    "UM_1": 106,
+    "USM": 101,
+    "UCLA_1": 82,
+    "PITT": 57,
+    "YALE": 56,
+    "TRINITY": 48,
+    "STANFORD": 40,
+    "CALTECH": 37,
+    "SDSU": 36,
+    "LEUVEN_2": 35,
+    "UM_2": 35,
+    "LEUVEN_1": 29,
+    "CMU": 27,
+    "UCLA_2": 27,
+    "MAX_MUN": 19,
+    "SBL": 12
+   },
+   "sites_with_none": [
+    "KKI",
+    "OHSU",
+    "OLIN"
+   ]
+  },
+  "ADOS_TOTAL": {
+   "n": 415,
+   "by_dx": {
+    "ASD": 383,
+    "TD": 32
+   },
+   "by_site": {
+    "USM": 90,
+    "NYU": 79,
+    "UCLA_1": 49,
+    "PITT": 26,
+    "TRINITY": 24,
+    "KKI": 22,
+    "OLIN": 20,
+    "CALTECH": 19,
+    "STANFORD": 19,
+    "CMU": 14,
+    "OHSU": 13,
+    "SDSU": 13,
+    "UCLA_2": 12,
+    "SBL": 8,
+    "MAX_MUN": 6,
+    "YALE": 1
+   },
+   "sites_with_none": [
+    "LEUVEN_1",
+    "LEUVEN_2",
+    "UM_1",
+    "UM_2"
+   ]
+  },
+  "SRS_RAW_TOTAL": {
+   "n": 365,
+   "by_dx": {
+    "ASD": 190,
+    "TD": 175
+   },
+   "by_site": {
+    "NYU": 149,
+    "USM": 100,
+    "YALE": 52,
+    "LEUVEN_2": 35,
+    "LEUVEN_1": 29
+   },
+   "sites_with_none": [
+    "CALTECH",
+    "CMU",
+    "KKI",
+    "MAX_MUN",
+    "OHSU",
+    "OLIN",
+    "PITT",
+    "SBL",
+    "SDSU",
+    "STANFORD",
+    "TRINITY",
+    "UCLA_1",
+    "UCLA_2",
+    "UM_1",
+    "UM_2"
+   ]
+  },
+  "func_mean_fd": {
+   "n": 1099,
+   "by_dx": {
+    "TD": 570,
+    "ASD": 529
+   },
+   "by_site": {
+    "NYU": 184,
+    "UM_1": 110,
+    "USM": 101,
+    "UCLA_1": 73,
+    "PITT": 57,
+    "MAX_MUN": 57,
+    "YALE": 55,
+    "KKI": 55,
+    "TRINITY": 49,
+    "STANFORD": 40,
+    "CALTECH": 38,
+    "SDSU": 36,
+    "OLIN": 36,
+    "LEUVEN_2": 35,
+    "UM_2": 35,
+    "SBL": 30,
+    "LEUVEN_1": 29,
+    "CMU": 27,
+    "OHSU": 26,
+    "UCLA_2": 26
+   },
+   "sites_with_none": []
+  },
+  "CC200_timeseries": {
+   "n": 989,
+   "by_dx": {
+    "TD": 509,
+    "ASD": 480
+   },
+   "by_site": {
+    "NYU": 173,
+    "UM_1": 106,
+    "UCLA_1": 72,
+    "USM": 71,
+    "YALE": 55,
+    "PITT": 55,
+    "MAX_MUN": 52,
+    "KKI": 48,
+    "TRINITY": 45,
+    "STANFORD": 39,
+    "UM_2": 34,
+    "OLIN": 34,
+    "LEUVEN_2": 32,
+    "SDSU": 29,
+    "LEUVEN_1": 29,
+    "SBL": 28,
+    "OHSU": 26,
+    "UCLA_2": 26,
+    "CALTECH": 21,
+    "CMU": 14
+   },
+   "sites_with_none": []
+  },
+  "L_hippocampus_ANTs": {
+   "n": 766,
+   "by_dx": {
+    "TD": 396,
+    "ASD": 370
+   },
+   "by_site": {
+    "NYU": 182,
+    "UM_1": 106,
+    "UCLA_1": 73,
+    "YALE": 56,
+    "PITT": 56,
+    "TRINITY": 49,
+    "STANFORD": 38,
+    "OLIN": 36,
+    "SDSU": 34,
+    "UM_2": 34,
+    "SBL": 30,
+    "OHSU": 28,
+    "UCLA_2": 26,
+    "CMU": 9,
+    "MAX_MUN": 3,
+    "LEUVEN_2": 2,
+    "LEUVEN_1": 2,
+    "USM": 1,
+    "KKI": 1
+   },
+   "sites_with_none": [
+    "CALTECH"
+   ]
+  },
+  "L_hippocampus_FSL": {
+   "n": 983,
+   "by_dx": {
+    "TD": 519,
+    "ASD": 464
+   },
+   "by_site": {
+    "NYU": 182,
+    "UM_1": 105,
+    "UCLA_1": 73,
+    "YALE": 56,
+    "PITT": 56,
+    "KKI": 55,
+    "MAX_MUN": 52,
+    "TRINITY": 49,
+    "STANFORD": 38,
+    "CALTECH": 38,
+    "OLIN": 36,
+    "LEUVEN_2": 35,
+    "UM_2": 34,
+    "SDSU": 33,
+    "SBL": 30,
+    "LEUVEN_1": 29,
+    "OHSU": 28,
+    "CMU": 27,
+    "UCLA_2": 26,
+    "USM": 1
+   },
+   "sites_with_none": []
+  },
+  "L_hippocampus_FreeSurfer": {
+   "n": 982,
+   "by_dx": {
+    "TD": 519,
+    "ASD": 463
+   },
+   "by_site": {
+    "NYU": 183,
+    "UM_1": 106,
+    "UCLA_1": 73,
+    "YALE": 56,
+    "PITT": 56,
+    "KKI": 55,
+    "MAX_MUN": 52,
+    "TRINITY": 49,
+    "STANFORD": 38,
+    "CALTECH": 38,
+    "OLIN": 36,
+    "SDSU": 34,
+    "UM_2": 34,
+    "LEUVEN_2": 33,
+    "SBL": 30,
+    "OHSU": 28,
+    "CMU": 27,
+    "LEUVEN_1": 27,
+    "UCLA_2": 26,
+    "USM": 1
+   },
+   "sites_with_none": []
+  },
+  "ReproNim_DX": {
+   "n": 1112,
+   "by_dx": {
+    "TD": 573,
+    "ASD": 539
+   },
+   "by_site": {
+    "NYU": 184,
+    "UM_1": 110,
+    "USM": 101,
+    "UCLA_1": 82,
+    "PITT": 57,
+    "MAX_MUN": 57,
+    "YALE": 56,
+    "KKI": 55,
+    "TRINITY": 49,
+    "STANFORD": 40,
+    "CALTECH": 38,
+    "SDSU": 36,
+    "OLIN": 36,
+    "LEUVEN_2": 35,
+    "UM_2": 35,
+    "SBL": 30,
+    "LEUVEN_1": 29,
+    "OHSU": 28,
+    "CMU": 27,
+    "UCLA_2": 27
+   },
+   "sites_with_none": []
+  }
+ },
+ "analysis_requirements": {
+  "Analyst A (age, FIQ, FD, CC200)": {
+   "requires": [
+    "AGE_AT_SCAN",
+    "FIQ",
+    "func_mean_fd",
+    "CC200_timeseries"
+   ],
+   "n": 924,
+   "by_dx": {
+    "TD": 475,
+    "ASD": 449
+   },
+   "n_sites": 19,
+   "limiting_element": "CC200_timeseries"
+  },
+  "Analyst B (age, FD, CC200)": {
+   "requires": [
+    "AGE_AT_SCAN",
+    "func_mean_fd",
+    "CC200_timeseries"
+   ],
+   "n": 988,
+   "by_dx": {
+    "TD": 509,
+    "ASD": 479
+   },
+   "n_sites": 20,
+   "limiting_element": "CC200_timeseries"
+  },
+  "UMAP primary (age, FIQ, VIQ, PIQ)": {
+   "requires": [
+    "AGE_AT_SCAN",
+    "FIQ",
+    "VIQ",
+    "PIQ"
+   ],
+   "n": 868,
+   "by_dx": {
+    "TD": 438,
+    "ASD": 430
+   },
+   "n_sites": 15,
+   "limiting_element": "VIQ"
+  },
+  "UMAP + SRS": {
+   "requires": [
+    "AGE_AT_SCAN",
+    "FIQ",
+    "VIQ",
+    "PIQ",
+    "SRS_RAW_TOTAL"
+   ],
+   "n": 330,
+   "by_dx": {
+    "ASD": 175,
+    "TD": 155
+   },
+   "n_sites": 4,
+   "limiting_element": "SRS_RAW_TOTAL"
+  },
+  "UMAP + FreeSurfer IDP join": {
+   "requires": [
+    "AGE_AT_SCAN",
+    "FIQ",
+    "VIQ",
+    "PIQ",
+    "L_hippocampus_FreeSurfer"
+   ],
+   "n": 746,
+   "by_dx": {
+    "TD": 387,
+    "ASD": 359
+   },
+   "n_sites": 15,
+   "limiting_element": "VIQ"
+  },
+  "ADOS-based analysis + CC200": {
+   "requires": [
+    "ADOS_TOTAL",
+    "CC200_timeseries"
+   ],
+   "n": 347,
+   "by_dx": {
+    "ASD": 327,
+    "TD": 20
+   },
+   "n_sites": 16,
+   "limiting_element": "ADOS_TOTAL"
+  }
+ },
+ "upset_top": [
+  {
+   "elements": [
+    "CC200_timeseries",
+    "func_mean_fd",
+    "FIQ",
+    "L_hippocampus_FreeSurfer"
+   ],
+   "n": 427
+  },
+  {
+   "elements": [
+    "CC200_timeseries",
+    "func_mean_fd",
+    "FIQ",
+    "ADOS_TOTAL",
+    "L_hippocampus_FreeSurfer"
+   ],
+   "n": 193
+  },
+  {
+   "elements": [
+    "CC200_timeseries",
+    "func_mean_fd",
+    "FIQ",
+    "SRS_RAW_TOTAL",
+    "L_hippocampus_FreeSurfer"
+   ],
+   "n": 145
+  },
+  {
+   "elements": [
+    "CC200_timeseries",
+    "func_mean_fd",
+    "FIQ",
+    "SRS_RAW_TOTAL",
+    "ADOS_TOTAL",
+    "L_hippocampus_FreeSurfer"
+   ],
+   "n": 75
+  },
+  {
+   "elements": [
+    "CC200_timeseries",
+    "func_mean_fd",
+    "FIQ",
+    "SRS_RAW_TOTAL",
+    "ADOS_TOTAL"
+   ],
+   "n": 65
+  },
+  {
+   "elements": [
+    "func_mean_fd",
+    "FIQ",
+    "L_hippocampus_FreeSurfer"
+   ],
+   "n": 34
+  },
+  {
+   "elements": [
+    "func_mean_fd",
+    "FIQ",
+    "ADOS_TOTAL",
+    "L_hippocampus_FreeSurfer"
+   ],
+   "n": 30
+  },
+  {
+   "elements": [
+    "CC200_timeseries",
+    "func_mean_fd",
+    "SRS_RAW_TOTAL",
+    "L_hippocampus_FreeSurfer"
+   ],
+   "n": 30
+  },
+  {
+   "elements": [
+    "func_mean_fd",
+    "FIQ",
+    "SRS_RAW_TOTAL",
+    "ADOS_TOTAL"
+   ],
+   "n": 24
+  },
+  {
+   "elements": [
+    "CC200_timeseries",
+    "func_mean_fd",
+    "L_hippocampus_FreeSurfer"
+   ],
+   "n": 22
+  },
+  {
+   "elements": [
+    "CC200_timeseries",
+    "func_mean_fd",
+    "ADOS_TOTAL",
+    "L_hippocampus_FreeSurfer"
+   ],
+   "n": 10
+  },
+  {
+   "elements": [
+    "CC200_timeseries",
+    "func_mean_fd",
+    "FIQ"
+   ],
+   "n": 8
+  }
+ ]
+}

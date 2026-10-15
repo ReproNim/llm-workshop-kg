@@ -1,0 +1,34 @@
+host node2803 start 2026-10-15T10:04:35-04:00
+HTTP/1.1 200 OK
+Downloading scipy (33.7MiB)
+Downloading numpy (16.0MiB)
+Downloading scikit-learn (8.7MiB)
+Downloading lxml (5.0MiB)
+Downloading pandas (10.3MiB)
+Downloading nilearn (10.0MiB)
+Downloading nibabel (3.1MiB)
+ Downloaded nibabel
+ Downloaded lxml
+ Downloaded scikit-learn
+ Downloaded nilearn
+ Downloaded numpy
+ Downloaded scipy
+ Downloaded pandas
+Installed 20 packages in 50.84s
+/orcd/scratch/orcd/013/satra/uv-cache/archive-v0/j-SjXUJNtGGReHoz/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:3037: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+/orcd/scratch/orcd/013/satra/uv-cache/archive-v0/j-SjXUJNtGGReHoz/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:3038: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+Traceback (most recent call last):
+  File "/orcd/scratch/orcd/013/satra/abide_br/abide_compute.py", line 146, in <module>
+    resA, tA, sigA = group_summary(A)
+                     ^^^^^^^^^^^^^^^^
+  File "/orcd/scratch/orcd/013/satra/abide_br/abide_compute.py", line 140, in group_summary
+    t, p, sig = edgewise(d)
+                ^^^^^^^^^^^
+  File "/orcd/scratch/orcd/013/satra/abide_br/abide_compute.py", line 135, in edgewise
+    q = stats.false_discovery_control(p)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/orcd/scratch/orcd/013/satra/uv-cache/archive-v0/j-SjXUJNtGGReHoz/lib/python3.12/site-packages/scipy/stats/_morestats.py", line 5018, in false_discovery_control
+    raise ValueError("All values in `ps` must lie between 0. and 1.")
+ValueError: All values in `ps` must lie between 0. and 1.

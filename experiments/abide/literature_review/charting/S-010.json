@@ -1,0 +1,173 @@
+{
+  "source_id": "S-010",
+  "pmid": "local_afcc5b8c",
+  "doi": "10.1038/s41598-022-06459-2",
+  "screening": {
+    "decision": "include",
+    "reason": "Trains ML models on the IMPAC dataset and reports a resting-state-fMRI-based external validation (AUROC) of those models on ABIDE I and ABIDE II (Inclusion 2, 3; ABIDE used for an autism-vs-control predictive analysis, not merely cited).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "Our model achieves state-of-the-art 80% area under the ROC curve (AUROC) in diagnosis on test data from the IMPAC dataset; and 86% and 79% AUROC on the external ABIDE I and ABIDE II datasets (with further improvement to 93% and 90% after supervised domain adaptation).",
+      "section": "abstract",
+      "claim": "Models trained on IMPAC generalise to ABIDE I and ABIDE II with 86% and 79% AUROC, improving to 93%/90% after supervised domain adaptation.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "Participants from all sites of the ABIDE I and ABIDE II were included for external validation, provided both sMRI and rsfMRI were obtained on the same visit. The first avail- able pair of sMRI and rsfMRI scans were used per subject. 1045 subjects from ABIDE I and 761 subjects from ABIDE II met this criteria.",
+      "section": "methods",
+      "claim": "External validation used all ABIDE I/II sites, restricted to subjects with a paired same-visit sMRI+rsfMRI scan: 1045 ABIDE I and 761 ABIDE II subjects.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "Table 3. Demographics of IMPAC participants, ABIDE I participants, and ABIDE II participants. Errors shown are standard deviations. IMPAC ABIDE I ABIDE II Female % 50 15 20 ASD % 46 48 52 Age (years) 17 ± 9.6 17 ± 8.1 17 ± 11 Total participants 915 1045 761",
+      "section": "table",
+      "claim": "Demographic breakdown (sex %, ASD %, age, total N) for the IMPAC, ABIDE I and ABIDE II analysed samples.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The IMPAC fMRI and sMRI were processed using the fconn1000 ­pipeline41. For the fMRI connectivity features, the TSE connectivity metric was fit on either the training data alone (IMPAC models) or the entire IMPAC dataset (ABIDE 1 and 2 datasets), and the TSE values per-ROI timeseries for the ABIDE dataset were calculated.",
+      "section": "methods",
+      "claim": "Processing pipeline (fconn1000) and feature-embedding (TSE) procedure for IMPAC and ABIDE connectivity features.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "The features were standard scaled by the mean and standard deviation of the IMPAC dataset.",
+      "section": "methods",
+      "claim": "ABIDE features were scaled using the IMPAC (training) dataset's mean/SD, not refit on ABIDE itself, limiting cross-dataset leakage.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The top single model trained using IMPAC attained 80.4% AUROC on IMPAC held-out test data. When tested on ABIDE I, it achieved an AUROC of 86.0% (Table 2 underlined) and when tested on the ABIDE II it achieved a performance of 79.2%.",
+      "section": "results",
+      "claim": "The top IMPAC-trained model achieved 86.0% AUROC on ABIDE I and 79.2% AUROC on ABIDE II without adaptation.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "These tuned models achieved AUROC as high as 93.2% on ABIDE-I and 90.5% on ABIDE-II, roughly a 4–9 basis point increase in performance relative to models without any adaptation.",
+      "section": "results",
+      "claim": "Supervised domain adaptation raised AUROC to 93.2% on ABIDE-I and 90.5% on ABIDE-II.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "we are pleased to provide full analysis source code, saved models, and pipeline parameters at:",
+      "section": "methods",
+      "claim": "Full analysis source code, saved models and pipeline parameters are released in a public repository.",
+      "relevance_score": 0.7
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "ABIDE I/II inclusion rule and resulting N are explicit: \"Participants from all sites of the ABIDE I and ABIDE II were included for external validation, provided both sMRI and rsfMRI were obtained on the same visit. The first avail- able pair of sMRI and rsfMRI scans were used per subject. 1045 subjects from ABIDE I and 761 subjects from ABIDE II met this criteria.\""
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "Pipeline (fconn1000), seven atlases, and feature standardisation procedure are described in detail."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "Diagnostic label source for ABIDE participants is not described in this paper beyond citing the ABIDE/IMPAC releases."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Low",
+        "support": "ABIDE I/II used purely as external, untouched test sets (\"not used during model training and hyperparameter optimization\"); features were scaled using IMPAC statistics rather than refit on ABIDE (The features were standard scaled by the mean and standard deviation of the IMPAC dataset.), avoiding test-set leakage into preprocessing."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Cohort definition, pipeline and external-validation design are clearly reported and leakage-conscious (scaling fit on the training/IMPAC data only); the only gap is the diagnostic label source for ABIDE, which is not described."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "48% of 1045 (ABIDE I); 52% of 761 (ABIDE II) — exact integer N by diagnosis not reported, only percentages (Table 3)",
+    "n_controls": "52% of 1045 (ABIDE I); 48% of 761 (ABIDE II) — exact integer N by diagnosis not reported, only percentages (Table 3)",
+    "data_types": "resting-state fMRI, structural MRI",
+    "feature_extraction_tools": "fconn1000 pipeline (open-source; same pipeline used for the IMPAC challenge)",
+    "specific_features": "Functional connectivity (tangent space embedding, TSE) across seven atlases (3 BASC resolutions: 64/122/197 ROIs, Craddock 249-ROI atlas, and others) plus FreeSurfer structural volumetry/thickness features",
+    "model_category": "12 machine learning model types compared, including deep feedforward neural networks (DFNN) and classical ML",
+    "specific_algorithms": "Deep feedforward neural networks (best performing); 11 other classical ML model types (full list in supplement, not detailed in extracted text)",
+    "validation_methodology": "Models trained/hyperparameter-optimised on IMPAC only; ABIDE I and ABIDE II used as untouched external test sets; a second analysis applied supervised domain adaptation with 10-fold CV (early stopping on 10% of ABIDE data, tested on the remaining 90%)",
+    "performance_metrics": "AUROC, sensitivity/specificity, accuracy",
+    "key_performance_results": "Top IMPAC-trained model: 80.4% AUROC on IMPAC held-out test; 86.0% AUROC on ABIDE I and 79.2% AUROC on ABIDE II without adaptation; supervised domain adaptation raised these to 93.2% (ABIDE-I) and 90.5% (ABIDE-II).",
+    "features_associated_disorder": "Functional connectivity to/from the cerebellum (anterior and posterior) identified as reproducible discriminative features across atlases and models.",
+    "feature_change_direction": "",
+    "dataset_openly_available": "Yes — full analysis source code, saved models and pipeline parameters released in a public repository, plus links to the IMPAC and ABIDE data repositories.",
+    "custom_fields": {
+      "RQ1": "predictive, external validation only — all ABIDE I/II sites included, restricted to subjects with a paired same-visit sMRI+rsfMRI scan: 1045 ABIDE I and 761 ABIDE II subjects (Table 3: ASD% 48 and 52 respectively; exact integer N by diagnosis not given). | quote: \"Participants from all sites of the ABIDE I and ABIDE II were included for external validation, provided both sMRI and rsfMRI were obtained on the same visit. The first avail- able pair of sMRI and rsfMRI scans were used per subject. 1045 subjects from ABIDE I and 761 subjects from ABIDE II met this criteria.\"",
+      "RQ2": "fconn1000 pipeline (same as used for the IMPAC challenge); seven functional atlases (BASC at 64/122/197 ROIs, Craddock 249-ROI atlas, and others) plus FreeSurfer structural features. | quote: \"The IMPAC fMRI and sMRI were processed using the fconn1000 ­pipeline41. For the fMRI connectivity features, the TSE connectivity metric was fit on either the training data alone (IMPAC models) or the entire IMPAC dataset (ABIDE 1 and 2 datasets), and the TSE values per-ROI timeseries for the ABIDE dataset were calculated.\"",
+      "RQ3": "predictive — ASD vs. TD diagnostic classification, trained on IMPAC and externally validated on ABIDE I/II. | quote: \"Our model achieves state-of-the-art 80% area under the ROC curve (AUROC) in diagnosis on test data from the IMPAC dataset; and 86% and 79% AUROC on the external ABIDE I and ABIDE II datasets (with further improvement to 93% and 90% after supervised domain adaptation).\"",
+      "RQ4": "Models trained/tuned entirely on IMPAC; ABIDE I/II held out as external test sets with features scaled by IMPAC statistics; a second supervised-domain-adaptation analysis used 10-fold CV (early stopping on 10%, test on 90%). | quote: \"The features were standard scaled by the mean and standard deviation of the IMPAC dataset.\"",
+      "RQ5": "Without adaptation: 86.0% AUROC on ABIDE I, 79.2% AUROC on ABIDE II; with supervised domain adaptation: 93.2% (ABIDE-I) and 90.5% (ABIDE-II). Cerebellar connectivity identified as a reproducible discriminative feature. | quote: \"The top single model trained using IMPAC attained 80.4% AUROC on IMPAC held-out test data. When tested on ABIDE I, it achieved an AUROC of 86.0% (Table 2 underlined) and when tested on the ABIDE II it achieved a performance of 79.2%.\"",
+      "RQ6": "yes — exact rules — ABIDE inclusion rule (all sites, first available paired sMRI+rsfMRI scan per subject) stated exactly, with resulting Ns; demographic breakdown given in Table 3; code/pipeline publicly released. | quote: \"we are pleased to provide full analysis source code, saved models, and pipeline parameters at:\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — inclusion rule and total N given exactly (1045 ABIDE I, 761 ABIDE II) with ASD% by Table 3, but exact integer counts by diagnosis are not given, only percentages. | quote: \"Participants from all sites of the ABIDE I and ABIDE II were included for external validation, provided both sMRI and rsfMRI were obtained on the same visit. The first avail- able pair of sMRI and rsfMRI scans were used per subject. 1045 subjects from ABIDE I and 761 subjects from ABIDE II met this criteria.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion/FD-based QC rule is reported for the ABIDE external-validation subset; only the paired-scan-availability criterion is used.",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — the open-source fconn1000 pipeline is named with a link to the exact code version used. | quote: \"The IMPAC fMRI and sMRI were processed using the fconn1000 ­pipeline41. For the fMRI connectivity features, the TSE connectivity metric was fit on either the training data alone (IMPAC models) or the entire IMPAC dataset (ABIDE 1 and 2 datasets), and the TSE values per-ROI timeseries for the ABIDE dataset were calculated.\"",
+      "CL4 Atlas/parcellation reported?": "Yes — seven atlases named (three BASC resolutions, Craddock, and others). | quote: \"The rsfMRI was first parcellated into regions of interest (ROIs) using seven different atlases.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Yes — ABIDE features were standard-scaled using the IMPAC (training) dataset's own mean/SD rather than refitting on ABIDE, and ABIDE was explicitly excluded from model training and hyperparameter optimisation. | quote: \"The features were standard scaled by the mean and standard deviation of the IMPAC dataset.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — no site covariate, harmonisation, or leave-site-out scheme is reported; all ABIDE sites are pooled for external validation.",
+      "CL7 Code and/or participant list available?": "Yes — full analysis source code, saved models, and pipeline parameters are released publicly. | quote: \"we are pleased to provide full analysis source code, saved models, and pipeline parameters at:\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "rating": "Partial",
+      "overall_concern": "Low",
+      "support": "Inclusion rule and total analysed N are explicit, but exact per-diagnosis counts are given only as percentages (CL1); no motion/QC rule reported (CL2)."
+    },
+    "domain_2_predictors_preprocessing": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Pipeline and all seven atlases are clearly named (CL3, CL4)."
+    },
+    "domain_3_outcome_label_source": {
+      "rating": "Unclear",
+      "overall_concern": "Some",
+      "support": "Diagnostic label source for ABIDE participants is not described in this paper."
+    },
+    "domain_4_bias_transparency": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Leakage is explicitly controlled (scaling fit on IMPAC only, ABIDE untouched during training), code is openly released, though no site covariate/harmonisation is used (CL5-CL7)."
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction trained on the IMPAC dataset (n=915) and externally validated on ABIDE I (n=1045, all sites) and ABIDE II (n=761, all sites), restricted to subjects with a paired same-visit sMRI+rsfMRI scan.",
+    "methods": "fconn1000-derived functional connectivity (tangent-space embedding across seven atlases) plus FreeSurfer structural features; 12 ML model types trained/optimised on IMPAC only; ABIDE I/II used as untouched external test sets, with a secondary supervised-domain-adaptation analysis (10-fold CV).",
+    "outcomes": "Best IMPAC model: 80.4% AUROC (IMPAC); 86.0% AUROC (ABIDE I) and 79.2% AUROC (ABIDE II) without adaptation; 93.2%/90.5% after supervised domain adaptation. Cerebellar connectivity identified as a reproducible discriminative feature.",
+    "key_limitations": "Exact per-diagnosis Ns for ABIDE are not reported (percentages only); no motion/QC rule or site harmonisation reported for the ABIDE external-validation cohort; diagnostic label source not described.",
+    "relevance_notes": "A strong example of cross-dataset external validation (IMPAC-trained, ABIDE-tested) with openly released code, pipeline and model weights, directly linking the ABIDE releases to an independently trained predictive model.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1038/s41598-022-06459-2",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "All ABIDE I and ABIDE II sites, restricted to subjects with a paired same-visit sMRI and rsfMRI scan (first available pair per subject): 1045 ABIDE I subjects (48% ASD) and 761 ABIDE II subjects (52% ASD), used purely as an external test set for models trained on IMPAC.",
+    "n_by_dx": {
+      "ASD": null,
+      "TD": null,
+      "total": 1045
+    },
+    "sites": "all sites of ABIDE I and all sites of ABIDE II (exact site count not stated in text)",
+    "pipeline": "fconn1000 pipeline (open-source, same version as used in the IMPAC challenge)",
+    "atlas": "BASC (64, 122, 197 ROIs), Craddock (249 ROIs), and other atlases (seven total)",
+    "claim_type": "predictive",
+    "finding": "IMPAC-trained models achieved 86.0% AUROC on ABIDE I and 79.2% AUROC on ABIDE II without adaptation, rising to 93.2% and 90.5% respectively after supervised domain adaptation.",
+    "reconstructible": "yes — exact rules",
+    "evidence_quotes": [
+      "Participants from all sites of the ABIDE I and ABIDE II were included for external validation, provided both sMRI and rsfMRI were obtained on the same visit. The first avail- able pair of sMRI and rsfMRI scans were used per subject. 1045 subjects from ABIDE I and 761 subjects from ABIDE II met this criteria.",
+      "The top single model trained using IMPAC attained 80.4% AUROC on IMPAC held-out test data. When tested on ABIDE I, it achieved an AUROC of 86.0% (Table 2 underlined) and when tested on the ABIDE II it achieved a performance of 79.2%.",
+      "we are pleased to provide full analysis source code, saved models, and pipeline parameters at:"
+    ]
+  }
+}

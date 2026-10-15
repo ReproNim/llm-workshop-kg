@@ -1,0 +1,171 @@
+{
+  "source_id": "S-091",
+  "pmid": "local_6a54db71",
+  "doi": "10.1038/s41598-019-45465-9",
+  "screening": {
+    "decision": "include",
+    "reason": "Meets inclusion 2/3: derives 30 resting-state-network biomarkers from ABIDE I+II (group-difference analysis, ASD vs TD) and validates them against a local cohort with group-difference and ROC/AUC analyses.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "This study included 1112 ABIDE I datasets \nfrom 17 sites and 983 ABIDE II datasets from 16 sites. The ABIDE datasets were obtained online15. In total, 2095 \nABIDE datasets were used (ASD: 1001 and TD: 1094; 5\u201364 years).",
+      "section": "methods",
+      "claim": "Biomarkers were derived from the full ABIDE I+II release: 2095 subjects (1001 ASD, 1094 TD) across 33 sites.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "We recruited 21 patients with ASD and 23 individuals with neurotypical development (TD).",
+      "section": "abstract",
+      "claim": "Biomarkers were validated on an independent local cohort of 21 ASD and 23 TD participants.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We subsequently applied \ndual-regression analysis18 by using the FSL general linear model (GLM) and the 10-brain resting-state networks \n(RSN10), \u201cPNAS_Smith09_rsn10.nii.gz,\u201d provided by Smith et. al.19,20 as a reference.",
+      "section": "methods",
+      "claim": "A lab-made FSL pipeline with ICA dual-regression against the Smith09 RSN10 template was used (no ROI atlas).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "(1) FC val-\nues significantly different [family-wise error (FWE)-corrected p < 0.05] between the ASD and TD groups and (2) \nvoxels inside the corresponding R-masks to create A1\u2013A20 masks (ASD > TD: A1 to A10 and ASD < TD: A11 to \nA20).",
+      "section": "methods",
+      "claim": "Biomarker masks (A1-A20) were derived from FWE-corrected two-sample t-test group differences between ASD and TD in ABIDE, with explicit direction (A1-A10: ASD>TD; A11-A20: ASD<TD).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The results indicated that the biomarkers \ngenerated from the default mode and executive control networks significantly differed between the \nparticipants with ASD and TD. In particular, the biomarkers derived from the default mode network \nwere negatively correlated with the raw scores and model factors of the SRS.",
+      "section": "abstract",
+      "claim": "DMN- and executive-control-network-derived biomarkers differed between ASD and TD and correlated negatively with SRS severity scores.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "The results of this study indicate that the FC of DMN in the ASD group was \nweaker than that of the TD group.",
+      "section": "discussion",
+      "claim": "DMN functional connectivity was weaker (hypoconnectivity) in ASD than TD.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The areas \nunder the curve (AUCs) for the biomarkers were (0.590, 0.745, p\u2009<\u20090.05), (0.588, 0.646), and (0.646, 0.677) for \n(R4, A4), (R5, A15), and (R8, A18), respectively.",
+      "section": "results",
+      "claim": "ROC analysis on the local cohort gave AUCs up to 0.745 (A4, DMN-derived biomarker), significantly higher than its R-template counterpart.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The pipelines, as well as the 30 masks of this study, are available28. The \nopen-science materials and tools, including the RSN10 template, C-PAC, ABIDE, and our pipeline, can be used \nto replicate the methods of this study.",
+      "section": "methods",
+      "claim": "The 30 biomarker masks (not the local participant data) are shared publicly, aiding methodological but not full cohort reproducibility.",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "Data Availability\nThe datasets generated during and/or analyzed during the current study are available from the corresponding \nauthor on reasonable request.",
+      "section": "methods",
+      "claim": "Underlying datasets (including the local KMUH cohort) are available only on reasonable request, not as an open participant list.",
+      "relevance_score": 0.5
+    }
+  ],
+  "risk_of_bias": {
+    "rob_tool": "JBI Critical Appraisal",
+    "assessments": [
+      {"domain": "Inclusion criteria defined", "judgment": "Low", "support": "ABIDE I+II full release composition (2095, 17+16 sites) is given, and the local KMUH cohort has explicit inclusion criteria (age 12-22, IQ>70, DSM-IV-TR/ADOS diagnosis): \"Both groups of participants \nwere between 12 and 22 years old and had scores of >70 in either the full-scale Wechsler Adult Intelligence \nScale or full-scale Wechsler Intelligence Scale for Children, Fourth Edition.\""},
+      {"domain": "Subjects and setting described", "judgment": "Low", "support": "Local cohort recruitment (active follow-up psychiatric clinic and community at KMUH) and ABIDE source are both described."},
+      {"domain": "Exposure measured validly (rs-fMRI pipeline)", "judgment": "Low", "support": "FSL-based pipeline (FSL-BET, FSL-BBreg, FSL-FNIRT, CompCor, dual regression against RSN10) is described step by step."},
+      {"domain": "Condition measured (diagnosis source)", "judgment": "Low", "support": "Local ASD diagnosis is explicitly based on DSM-IV-TR criteria and the Autism Diagnostic Observation Schedule; ABIDE diagnoses are the contributing sites' own clinical diagnoses."},
+      {"domain": "Confounders identified (age, sex, site, motion)", "judgment": "Unclear", "support": "24 motion parameters and CompCor components are regressed at the individual level, but no age/sex/site covariate adjustment is reported for the pooled ABIDE I+II group-difference analysis."},
+      {"domain": "Confounders handled", "judgment": "High", "support": "No site-harmonisation or covariate-adjustment step is described when pooling ABIDE I (17 sites) and ABIDE II (16 sites) for the two-sample t-test used to derive the A-masks."},
+      {"domain": "Outcomes measured validly (connectivity metric)", "judgment": "Low", "support": "Dual-regression functional connectivity against the validated Smith09 RSN10 template is a standard, well-described outcome measure."},
+      {"domain": "Appropriate statistical analysis (multiple comparisons)", "judgment": "Low", "support": "FWE-corrected two-sample t-tests (FSL-randomise, 5000 permutations) for group differences, and FDR-adjusted p-values for the SRS/SNAP correlation analysis."}
+    ],
+    "overall": "Unclear",
+    "summary": "Cohort, pipeline and diagnosis sources are clearly described, and statistical correction is appropriate, but no age/sex/site covariate handling is reported when pooling ABIDE I and ABIDE II across 33 sites to derive the biomarker masks."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "study_design": "Both",
+    "n_disordered": "1001 (ABIDE I+II derivation); 21 (local KMUH validation cohort)",
+    "n_controls": "1094 (ABIDE I+II derivation); 23 (local KMUH validation cohort)",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Lab-made pipeline based on FSL (FSL-BET, FSL-BBreg, FSL-FNIRT, CompCor, dual regression), noted as methodologically similar to C-PAC",
+    "specific_features": "Dual-regression functional connectivity against the Smith et al. 2009 RSN10 resting-state network template (no discrete ROI atlas)",
+    "model_category": "Univariate biomarker / ROC analysis",
+    "specific_algorithms": "Two-sample t-test (FWE-corrected) for group differences; receiver operating characteristic (ROC) analysis of individual biomarkers",
+    "validation_methodology": "Biomarkers derived from the full ABIDE I+II dataset, then independently validated (group difference, correlation, and ROC/AUC) on a separate local (KMUH) cohort",
+    "performance_metrics": "AUC (ROC analysis), Pearson correlation coefficients, FDR-adjusted p-values",
+    "key_performance_results": "DMN-derived biomarker A4 AUC = 0.745 (significantly higher than the RSN-template-only biomarker R4, AUC = 0.590, p<0.05) for distinguishing ASD in the local cohort",
+    "features_associated_disorder": "Default mode network (DMN) and executive control network (ECN) biomarkers differed significantly between ASD and TD",
+    "feature_change_direction": "DMN functional connectivity was weaker (hypoconnectivity) in ASD than TD; A4 (DMN) biomarker negatively correlated with SRS severity scores",
+    "dataset_openly_available": "The 30 biomarker masks and pipeline are shared on GitHub (https://github.com/htygithub/ASDmask/); the underlying datasets (including the local cohort) are available only from the corresponding author on reasonable request",
+    "custom_fields": {
+      "RQ1": "ABIDE I (1112, 17 sites) + ABIDE II (983, 16 sites) for biomarker derivation (2095 total, 1001 ASD/1094 TD), plus an independent local KMUH cohort (21 ASD, 23 TD) for validation; no further ABIDE QC/exclusion rule reported beyond using the full obtained datasets. | quote: \"This study included 1112 ABIDE I datasets \nfrom 17 sites and 983 ABIDE II datasets from 16 sites.\"",
+      "RQ2": "Lab-made FSL pipeline (FSL-BET, FSL-BBreg, FSL-FNIRT, CompCor, dual regression), noted as similar to C-PAC; no ROI atlas, instead the Smith et al. 2009 RSN10 ICA template. | quote: \"We subsequently applied \ndual-regression analysis18 by using the FSL general linear model (GLM) and the 10-brain resting-state networks \n(RSN10)\"",
+      "RQ3": "both \u2014 derives group-difference biomarkers (ASD vs TD, FWE-corrected t-test) in ABIDE and evaluates their diagnostic utility (ROC/AUC) in an independent local cohort. | quote: \"a receiver operating characteristic analysis to evaluate the classification performances of the \nbiomarkers.\"",
+      "RQ4": "Two-sample t-tests with FWE correction (FSL-randomise, 5000 permutations) for ABIDE group differences; Pearson correlation with FDR-adjusted p-values and ROC/AUC analysis in the KMUH validation cohort; no site covariate or leave-site-out scheme for the pooled ABIDE derivation step. | quote: \"FC val-\nues significantly different [family-wise error (FWE)-corrected p < 0.05] between the ASD and TD groups\"",
+      "RQ5": "DMN functional connectivity was weaker in ASD than TD; DMN-derived biomarker A4 achieved AUC 0.745 in the local cohort (vs 0.590 for its RSN-template counterpart R4, p<0.05); DMN biomarkers correlated negatively with SRS severity. | quote: \"The results of this study indicate that the FC of DMN in the ASD group was \nweaker than that of the TD group.\"",
+      "RQ6": "partly \u2014 the ABIDE-level N and sites are reported and the 30 biomarker masks/pipeline are public, but the underlying datasets (including the local cohort) are available only on reasonable request, not as an open participant list. | quote: \"The datasets generated during and/or analyzed during the current study are available from the corresponding \nauthor on reasonable request.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes \u2014 ABIDE I+II N by diagnosis given (1001 ASD/1094 TD), and the local cohort has explicit inclusion criteria and resulting N (21 ASD/23 TD). | quote: \"In total, 2095 \nABIDE datasets were used (ASD: 1001 and TD: 1094; 5\u201364 years).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly \u2014 24 motion parameters are regressed out, but no subject-exclusion motion threshold (e.g. mean FD cut-off) is reported. | quote: \"regressing out 24 motion parameters obtained \nafter the realignment procedure16\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes \u2014 a detailed FSL-based lab-made pipeline is described step by step. | quote: \"Anatomical 3D volumes and R-fMRI 4D volumes were \nprocessed in the FMRIB Software Library (FSL) environment.\"",
+      "CL4 Atlas/parcellation reported?": "Partly \u2014 no discrete ROI atlas is used; instead the Smith et al. 2009 RSN10 ICA network template defines the networks. | quote: \"the 10-brain resting-state networks \n(RSN10), \u201cPNAS_Smith09_rsn10.nii.gz,\u201d provided by Smith et. al.19,20 as a reference.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Partly \u2014 biomarkers (A-masks) are derived entirely from ABIDE and then validated on the fully independent local KMUH cohort, which avoids a direct train/test leakage, but no leakage-control statement is given for the ABIDE-internal statistics themselves. | quote: \"the A-masks were derived from the group analysis of the ABIDE \nRSN10 FC maps\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No \u2014 ABIDE I (17 sites) and ABIDE II (16 sites) are pooled for the group-difference analysis with no site covariate, harmonisation, or leave-site-out evaluation reported. | quote: \"This study included 1112 ABIDE I datasets \nfrom 17 sites and 983 ABIDE II datasets from 16 sites.\"",
+      "CL7 Code and/or participant list available?": "Partly \u2014 the 30 biomarker masks and pipeline are shared on GitHub, but the underlying datasets/participant list are available only on reasonable request. | quote: \"The pipelines, as well as the 30 masks of this study, are available28.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"we applied information from a \nlarge-scale dataset, the Autism Brain Imaging Data Exchange (ABIDE), to clinical applications.\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "items": [
+        {"item": "CL1", "rating": "Yes", "support": "N by diagnosis given for both ABIDE I+II and the local cohort, with explicit local inclusion criteria."},
+        {"item": "CL2", "rating": "Partial", "support": "Motion parameters regressed but no subject-exclusion motion threshold given."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_predictors_features": {
+      "items": [
+        {"item": "CL3", "rating": "Yes", "support": "Detailed FSL-based pipeline described."},
+        {"item": "CL4", "rating": "Partial", "support": "ICA/RSN10 template used instead of a discrete ROI atlas."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_outcome_labels": {
+      "items": [
+        {"item": "diagnosis source", "rating": "Yes", "support": "Local diagnosis explicitly based on DSM-IV-TR criteria and ADOS; ABIDE diagnoses are the contributing sites' own clinical diagnoses."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "items": [
+        {"item": "CL5", "rating": "Partial", "support": "Independent local validation cohort avoids direct leakage, but no leakage-control statement for the ABIDE-internal derivation."},
+        {"item": "CL6", "rating": "No", "support": "ABIDE I and II pooled across 33 sites with no site covariate or harmonisation."},
+        {"item": "CL7", "rating": "Partial", "support": "Biomarker masks/pipeline public; underlying data only on reasonable request."}
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Both (biomarker group-difference derivation + ROC/AUC validation); ABIDE I+II (2095 subjects, 1001 ASD/1094 TD, 33 sites) for derivation, local KMUH cohort (21 ASD, 23 TD) for validation.",
+    "methods": "FSL-based lab-made pipeline; dual-regression functional connectivity against the Smith09 RSN10 template; FWE-corrected two-sample t-tests to derive 30 biomarker masks (R1-R10, A1-A20); ROC/AUC and FDR-corrected correlation analyses in the local cohort against SRS/SNAP-IV scores.",
+    "outcomes": "DMN and executive-control-network biomarkers differed significantly between ASD and TD; DMN connectivity was weaker in ASD; DMN-derived biomarker A4 reached AUC 0.745 in the local cohort, significantly outperforming its RSN-template-only counterpart (AUC 0.590); DMN biomarkers correlated negatively with SRS severity.",
+    "key_limitations": "No age/sex/site covariate handling when pooling ABIDE I and II across 33 sites for the derivation step; no motion-exclusion threshold reported; underlying datasets available only on reasonable request (biomarker masks/pipeline are public).",
+    "relevance_notes": "A clear example of deriving a biomarker from the full ABIDE I+II release and testing its transfer to an independent, non-ABIDE clinical cohort, including an explicit ROC/AUC diagnostic-utility evaluation.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1038/s41598-019-45465-9",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "Full ABIDE I (1112, 17 sites) and ABIDE II (983, 16 sites) releases used for biomarker derivation: 2095 subjects total, 1001 ASD and 1094 TD, ages 5-64.",
+    "n_by_dx": {"ASD": 1001, "TD": 1094, "total": 2095},
+    "sites": "33 (17 ABIDE I + 16 ABIDE II)",
+    "pipeline": "Lab-made FSL-based pipeline (FSL-BET, FSL-BBreg, FSL-FNIRT, CompCor, dual regression), methodologically similar to C-PAC",
+    "atlas": "Smith et al. 2009 RSN10 ICA network template (no discrete ROI atlas)",
+    "claim_type": "both",
+    "finding": "DMN and executive-control-network biomarkers differed significantly between ASD and TD in ABIDE (weaker DMN connectivity in ASD); the DMN-derived biomarker A4 achieved AUC 0.745 for distinguishing ASD in an independent local validation cohort, significantly higher than its RSN-template-only counterpart (AUC 0.590).",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "This study included 1112 ABIDE I datasets \nfrom 17 sites and 983 ABIDE II datasets from 16 sites. The ABIDE datasets were obtained online15. In total, 2095 \nABIDE datasets were used (ASD: 1001 and TD: 1094; 5\u201364 years).",
+      "The areas \nunder the curve (AUCs) for the biomarkers were (0.590, 0.745, p\u2009<\u20090.05), (0.588, 0.646), and (0.646, 0.677) for \n(R4, A4), (R5, A15), and (R8, A18), respectively."
+    ]
+  }
+}

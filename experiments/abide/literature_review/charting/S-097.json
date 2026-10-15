@@ -1,0 +1,243 @@
+{
+  "source_id": "S-097",
+  "pmid": "local_1a3d5c74",
+  "doi": "10.30880/ijie.2021.13.05.006",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a diagnostic-prediction (ASD vs NC classification) analysis of ABIDE resting-state fMRI DMN BOLD signals, satisfying inclusion 2-3.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The sample size is 82 subjects (41 ASD and 41 normal cases) collected from three different sites  of Autism Brain Imaging Data Exchange (ABIDE).",
+      "section": "abstract",
+      "claim": "Cohort: 82 subjects (41 ASD/41 NC) from three ABIDE sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The resting-state fMRI data of 41 ASD and 41 normal control (NC) cases were gathered from the Autism Brain  Image Data Exchange (ABIDE) sources [16], taken from multiple independent neuroimaging sites.",
+      "section": "methods",
+      "claim": "Final sample confirmed as 41 ASD/41 NC across independent sites.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "The DPARSF is a MATLAB toolbox for fMRI data pre-\nprocessing and analysing [17].",
+      "section": "methods",
+      "claim": "Preprocessing pipeline was DPARSF.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "The  automated anatomical labelling (AAL) is selected as the standard brain atlas to divide the brain into 116 regions of  interest (ROIs)",
+      "section": "methods",
+      "claim": "Used the AAL atlas (116 ROIs), with 22 DMN ROIs selected for analysis.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The extracted features are trained  using two classifiers: support vector machine (SVM) and K-nearest neighbours (KNN). The best prediction results  are 85.9% accuracy achieved by extracted the features from DenseNet201 network and classified these features by  KNN classifier.",
+      "section": "abstract",
+      "claim": "Best classification result: 85.9% accuracy using DenseNet201-extracted features with a KNN classifier.",
+      "relevance_score": 0.9
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Unclear",
+        "support": "Site-level N given (CALTECH, CMU, KKI) but no explicit inclusion/exclusion criteria beyond sourcing from ABIDE are described."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "DPARSF preprocessing steps and AAL-atlas DMN ROI selection described in detail; scalogram time-frequency feature extraction via pretrained CNNs is clearly specified."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD/NC diagnosis is taken from the ABIDE source without restating the diagnostic instrument."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "No explicit motion/FD-based quality-control threshold is reported; the headline 85.9% accuracy figure appears to be from a single evaluation while k-fold (5/10/15-fold) cross-validation results are reported separately in a table at similar accuracy (~85-87%), but with only N=82 total subjects and no leave-site-out evaluation across the three pooled sites."
+      }
+    ],
+    "overall": "High",
+    "summary": "A small (N=82), three-site pooled ABIDE classification study with a clearly described CNN-feature/KNN pipeline but no motion-QC threshold, no leave-site-out evaluation, and reliance on a relatively small sample for deep pretrained-CNN feature extraction."
+  },
+  "charting": {
+    "source_id": "S-097",
+    "title": "Autism Spectrum Disorder Detection Based on Wavelet Transform of BOLD fMRI Signals Using Pre-trained Convolution Neural Network",
+    "authors": "",
+    "year": "2021",
+    "journal_conference": "International Journal of Integrated Engineering",
+    "doi": "10.30880/ijie.2021.13.05.006",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "CALTECH, CMU, KKI (ABIDE sites)",
+    "country_region": "United States",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "41",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "41",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "no",
+    "dataset_openly_available": "Uses public ABIDE data; no data/code availability statement or repository link found in the text",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "time-frequency (wavelet scalogram) BOLD signal features",
+    "specific_features": "DMN (22 ROIs from AAL 116-ROI atlas) BOLD signal time series converted to scalogram images via wavelet transform",
+    "feature_extraction_tools": "DPARSF preprocessing; AAL atlas; pretrained CNNs (GoogLeNet, DenseNet201, ResNet18, ResNet101) for feature extraction from scalograms",
+    "feature_importance_reported": "no",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Pretrained CNN feature extraction + SVM/KNN classifier",
+    "specific_algorithms": "DenseNet201/ResNet18/ResNet101/GoogLeNet feature extraction; SVM and KNN classifiers",
+    "validation_methodology": "k-fold cross-validation (5-, 10-, 15-fold reported in a results table)",
+    "performance_metrics": "Accuracy, sensitivity, specificity, precision",
+    "key_performance_results": "Best result: 85.9% accuracy (DenseNet201 features + KNN); 10-fold CV DenseNet201+KNN: 86.5 +/- 2.4% accuracy, 86.6 +/- 3.4% sensitivity, 86.6 +/- 2.3% specificity, 86.6 +/- 2.5% precision",
+    "summary_key_findings": "Using DMN BOLD signals from 41 ASD and 41 NC subjects (3 ABIDE sites), wavelet scalogram images classified via pretrained-CNN (DenseNet201) features and a KNN classifier achieved up to 85.9% accuracy (86.5% with 10-fold cross-validation), outperforming prior functional-connectivity-based ABIDE classifiers cited by the authors (66.9-70.2%).",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "A larger sample across more ABIDE sites recommended by the authors for a more robust model",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE, 3 sites (CALTECH, CMU, KKI): 41 ASD, 41 NC (N=82); no explicit QC/exclusion rule beyond site/subject counts reported. | quote: \"The sample size is 82 subjects (41 ASD and 41 normal cases) collected from three different sites  of Autism Brain Imaging Data Exchange (ABIDE).\"",
+      "RQ2": "DPARSF preprocessing (discard first 5 volumes, slice-timing, motion realignment, MNI normalization, 8mm FWHM smoothing); AAL atlas (116 ROIs, 22 DMN ROIs used). | quote: \"The DPARSF is a MATLAB toolbox for fMRI data pre-\nprocessing and analysing [17].\"",
+      "RQ3": "predictive — ASD vs NC classification using CNN-extracted scalogram features. | quote: \"The best prediction results  are 85.9% accuracy achieved by extracted the features from DenseNet201 network and classified these features by  KNN classifier.\"",
+      "RQ4": "k-fold cross-validation (5-, 10-, 15-fold reported); no leave-site-out evaluation across the three pooled sites. | quote: \"Percentage of accuracy, sensitivity, specificity, and precision (± standard deviation) for DenseNet-\n201+KNN model using k-fold cross-validation\"",
+      "RQ5": "Best accuracy 85.9% (DenseNet201 + KNN); 10-fold CV gave 86.5 +/- 2.4% accuracy. | quote: \"The best prediction results  are 85.9% accuracy achieved by extracted the features from DenseNet201 network and classified these features by  KNN classifier.\"",
+      "RQ6": "no — site and subject counts are given but no participant ID list or code repository link is provided.",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — site-level N by diagnosis given (Table 1), but no explicit inclusion/exclusion criteria beyond sourcing from ABIDE. | quote: \"The sample size is 82 subjects (41 ASD and 41 normal cases) collected from three different sites  of Autism Brain Imaging Data Exchange (ABIDE).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — motion realignment is performed as a preprocessing step but no quantitative FD/QC exclusion threshold is reported.",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — DPARSF named as the preprocessing toolbox. | quote: \"The DPARSF is a MATLAB toolbox for fMRI data pre-\nprocessing and analysing [17].\"",
+      "CL4 Atlas/parcellation reported?": "Yes — AAL atlas (116 ROIs; 22 DMN ROIs used). | quote: \"The  automated anatomical labelling (AAL) is selected as the standard brain atlas to divide the brain into 116 regions of  interest (ROIs)\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not explicitly described; pretrained ImageNet CNNs are used as fixed feature extractors but no statement confines any fitting step to training folds only.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — three sites pooled with no site covariate, harmonisation, or leave-site-out evaluation reported.",
+      "CL7 Code and/or participant list available?": "No — no code repository or participant list link found in the text.",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-097",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Partial",
+          "notes": "Site/N given, no explicit inclusion/exclusion criteria."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "No",
+          "notes": "No quantitative threshold."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported",
+          "rating": "Yes",
+          "notes": "DPARSF."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "AAL, DMN subset."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "Relies on ABIDE labels, not restated."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "No",
+          "notes": "Not explicitly addressed."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "No",
+          "notes": "Pooled, no harmonisation/leave-site-out."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "No",
+          "notes": "No link found."
+        }
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-097",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE, 3 sites (CALTECH, CMU, KKI); n=41 ASD / 41 NC (N=82).",
+    "methods": "DPARSF preprocessing; AAL atlas (22 DMN ROIs); BOLD time series converted to wavelet scalogram images; pretrained CNN (DenseNet201/ResNet/GoogLeNet) feature extraction; SVM/KNN classification with k-fold cross-validation.",
+    "outcomes": "Best accuracy 85.9% (DenseNet201 + KNN), 86.5% with 10-fold cross-validation, exceeding cited prior ABIDE functional-connectivity classifiers (66.9-70.2%).",
+    "key_limitations": "Small sample (N=82) from only 3 sites; no motion/QC threshold reported; no leave-site-out evaluation; no code/data release.",
+    "relevance_notes": "A DMN time-frequency/CNN-transfer-learning approach to ABIDE ASD classification, with a small, modest, non-reconstructible cohort.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.30880/ijie.2021.13.05.006",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Three ABIDE sites (CALTECH, CMU, KKI); 41 ASD and 41 NC subjects; no explicit exclusion rule beyond site/subject counts.",
+    "n_by_dx": {
+      "ASD": 41,
+      "TD": 41,
+      "total": 82
+    },
+    "sites": "3 (CALTECH, CMU, KKI)",
+    "pipeline": "DPARSF",
+    "atlas": "AAL (116 ROIs; 22 DMN ROIs used)",
+    "claim_type": "predictive",
+    "finding": "DMN BOLD scalogram images classified via pretrained DenseNet201 features and a KNN classifier achieved 85.9% accuracy (86.5% with 10-fold cross-validation) for ASD vs NC classification.",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "The sample size is 82 subjects (41 ASD and 41 normal cases) collected from three different sites  of Autism Brain Imaging Data Exchange (ABIDE).",
+      "The best prediction results  are 85.9% accuracy achieved by extracted the features from DenseNet201 network and classified these features by  KNN classifier."
+    ]
+  }
+}

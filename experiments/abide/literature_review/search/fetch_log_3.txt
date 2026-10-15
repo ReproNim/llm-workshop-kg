@@ -1,0 +1,49 @@
+Open access: Unpaywall → OpenAlex → Semantic Scholar
+Institutional access: disabled (--oa-only)
+40 DOI(s) to fetch into literature_review/pdfs_part3
+  OK    10.1016/j.bpsc.2020.08.008 → 10.1016_j.bpsc.2020.08.008.pdf [Unpaywall (open access)]
+  OK    10.1007/978-3-030-00889-5_16 → 10.1007_978-3-030-00889-5_16.pdf [Unpaywall (open access)]
+  OK    10.1186/s13229-020-00397-4 → 10.1186_s13229-020-00397-4.pdf [Unpaywall (open access)]
+  MISS  10.1016/j.rasd.2019.03.005
+  OK    10.1038/s41467-022-31053-5 → 10.1038_s41467-022-31053-5.pdf [Unpaywall (open access)]
+  MISS  10.1016/j.bpsc.2017.10.006
+  MISS  10.1016/j.nicl.2017.08.017
+  MISS  10.1016/j.neuroimage.2017.12.052
+  MISS  10.1016/j.neuroimage.2020.116604
+  OK    10.3389/fnins.2018.00491 → 10.3389_fnins.2018.00491.pdf [Unpaywall (open access)]
+  OK    10.3389/fncom.2021.654315 → 10.3389_fncom.2021.654315.pdf [Unpaywall (open access)]
+  OK    10.1371/journal.pone.0166934 → 10.1371_journal.pone.0166934.pdf [Unpaywall (open access)]
+  MISS  10.1109/access.2019.2940198
+  MISS  10.1109/jbhi.2020.2998603
+  OK    10.1002/hbm.23084 → 10.1002_hbm.23084.pdf [Unpaywall (open access)]
+  OK    10.1016/j.biopsych.2017.09.029 → 10.1016_j.biopsych.2017.09.029.pdf [Unpaywall (open access)]
+  MISS  10.1016/j.nicl.2015.04.021
+  MISS  10.1017/s0954579420000772
+  OK    10.1371/journal.pone.0190081 → 10.1371_journal.pone.0190081.pdf [Unpaywall (open access)]
+  MISS  10.1007/s10278-018-0093-8
+  MISS  10.1016/j.pscychresns.2016.04.003
+  MISS  10.1016/j.neuroimage.2022.119699
+  OK    10.1016/j.media.2023.102799 → 10.1016_j.media.2023.102799.pdf [Unpaywall (open access)]
+  MISS  10.1002/hbm.25776
+  MISS  10.1016/j.artmed.2022.102475
+  OK    10.1007/978-3-030-32695-1_11 → 10.1007_978-3-030-32695-1_11.pdf [Unpaywall (open access)]
+  MISS  10.3390/diagnostics12010165
+  MISS  10.1007/978-3-030-00755-3_9
+  OK    10.3389/frai.2025.1594372 → 10.3389_frai.2025.1594372.pdf [Unpaywall (open access)]
+  OK    10.3389/fnins.2021.756868 → 10.3389_fnins.2021.756868.pdf [Unpaywall (open access)]
+  MISS  10.1109/access.2024.3441248
+  OK    10.1109/tmi.2023.3337362 → 10.1109_tmi.2023.3337362.pdf [Unpaywall (open access)]
+  OK    10.3389/fnagi.2022.948704 → 10.3389_fnagi.2022.948704.pdf [Unpaywall (open access)]
+  MISS  10.1016/j.bbr.2023.114603
+  OK    10.3389/fams.2018.00025 → 10.3389_fams.2018.00025.pdf [Unpaywall (open access)]
+  OK    10.3389/fnins.2017.00125 → 10.3389_fnins.2017.00125.pdf [Unpaywall (open access)]
+  OK    10.3897/rio.3.e12733 → 10.3897_rio.3.e12733.pdf [Unpaywall (open access)]
+  OK    10.1016/j.media.2021.102191 → 10.1016_j.media.2021.102191.pdf [Unpaywall (open access)]
+  MISS  10.3389/fnhum.2021.745671
+  OK    10.1016/j.neunet.2025.107450 → 10.1016_j.neunet.2025.107450.pdf [Unpaywall (open access)]
+
+Retrieved 21, failed 19.
+   21  Unpaywall (open access)
+21 of these were open access — retrieved without touching the institutional proxy.
+Wrote literature_review/pdfs_part3/retrieval_manifest.json (DOI + retrieval route per file)
+Next: python build_corpus.py --dir literature_review/pdfs_part3 --manifest literature_review/pdfs_part3/retrieval_manifest.json --out corpus.json

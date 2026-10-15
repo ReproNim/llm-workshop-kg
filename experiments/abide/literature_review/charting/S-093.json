@@ -1,0 +1,281 @@
+{
+  "source_id": "S-093",
+  "pmid": "local_cb451a29",
+  "doi": "10.1038/s41598-022-12171-y",
+  "screening": {
+    "decision": "include",
+    "reason": "Analyses raw ABIDE-I resting-state fMRI, builds functional connectivity networks via a uniform pipeline, and compares ASD vs TD graph Ricci curvature measures; satisfies inclusion 2-3.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "we apply Forman–Ricci and Ollivier–Ricci curvatures to compare  networks of ASD and typically developing individuals (N = 1112) from the Autism Brain Imaging  Data Exchange I (ABIDE-I) dataset.",
+      "section": "abstract",
+      "claim": "Study compares ASD and TD networks from ABIDE-I (starting N=1112 before QC).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "First, the subjects with missing anatomical or functional files were \nexcluded. Second, all subjects from the imaging site Stanford were excluded as it is the only site with spiral image \nacquisition protocol. Third, all subjects from the imaging site Leuven-1 were excluded due to unknown repeti-\ntion times for the functional scans.",
+      "section": "methods",
+      "claim": "Explicit site/QC exclusion rules: missing files, Stanford (spiral acquisition), Leuven-1 (unknown TR).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "After removing subjects based on these exclusion criteria, we were left with 395 subjects in the ASD group and \n425 subjects in the TD group",
+      "section": "methods",
+      "claim": "Final analysed sample: 395 ASD and 425 TD (820 total).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Subsequently, 200 regions of interest (ROIs)  or nodes were defined in the brain using the Schaefer atlas, and a 200 × 200 functional connectivity (FC) matrix  was generated for each subject by computing the Pearson correlation coefficient between the time-series of all  pairs of nodes.",
+      "section": "methods",
+      "claim": "Used the Schaefer 200-ROI atlas and Pearson correlation FC matrices.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "We used the CONN functional connectivity ­toolbox69 to process the rs- fMRI data from ABIDE-I.",
+      "section": "methods",
+      "claim": "Preprocessing pipeline was the CONN toolbox.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "average edge FRC is significantly lower ( p < 0.05 , FDR-corrected) in the ASD group compared to the TD group \nin the graph density range 5–50%",
+      "section": "results",
+      "claim": "Average edge Forman-Ricci curvature is significantly lower in ASD vs TD across most graph densities.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We find brain-wide and region-specific ASD-related differences  for both Forman–Ricci and Ollivier–Ricci curvatures, with region-specific differences concentrated  in Default Mode, S",
+      "section": "abstract",
+      "claim": "Region-specific ASD-related curvature differences concentrated in Default Mode and Somatomotor (and other) networks.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Functional connectivity matrices and networks generated in our study, and all original codes are deposited  on GitHub and are publically available at https://​github.​com/​asama​llab/​Curva​ture-​FCN-​ASD as of the date of  publication.",
+      "section": "methods",
+      "claim": "FC matrices, networks and all analysis code were released on GitHub.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "Explicit, multi-step QA/exclusion criteria (missing files, site-specific acquisition issues, PCP rater quality fail, QC-FC association checks) with resulting N by group."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Demographic/clinical Table 1 referenced; whole ABIDE-I (minus excluded sites) used."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "CONN toolbox pipeline fully diagrammed (motion correction, slice-timing, outlier detection, segmentation/normalization, denoising, bandpass) with explicit QC-FC association checks."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "Relies on ABIDE-I diagnostic labels; diagnostic instrument not restated in the sections read."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Motion covariates, outlier scans, and QC-FC distance-dependence explicitly checked and used as exclusion criteria; IQ deliberately not matched/excluded on, explained as a generalizability choice."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "Linear regression to remove motion/WM/CSF confounds from BOLD signal; subjects with residual QC-FC correlation or distance-dependence excluded."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Standard Pearson correlation FC plus graph Ricci curvature (FRC/ORC) measures, computed across 49 graph densities for robustness."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "Two-sample t-tests with FDR correction (alpha=0.05) applied for both brain-wide and node-level comparisons."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Large, whole-ABIDE-I analysis with explicit, well-documented multi-step QC/exclusion criteria, a named preprocessing toolbox, FDR-corrected statistics, and full public release of FC matrices, networks and code."
+  },
+  "charting": {
+    "source_id": "S-093",
+    "title": "Graph Ricci curvatures reveal atypical functional connectivity in autism spectrum disorder",
+    "authors": "",
+    "year": "2022",
+    "journal_conference": "Scientific Reports",
+    "doi": "10.1038/s41598-022-12171-y",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "395",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "IQ was deliberately not used as an exclusion/matching criterion, to preserve generalizability to the typical ASD population",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "425",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI, structural MRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "no — releases derived FC matrices/networks and code, not new raw data",
+    "dataset_openly_available": "Yes — FC matrices, generated networks and all analysis code deposited on GitHub (https://github.com/asamallab/Curvature-FCN-ASD)",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity, graph curvature",
+    "specific_features": "Pearson correlation FC among Schaefer 200-ROI atlas nodes; Forman-Ricci (FRC) and Ollivier-Ricci (ORC) edge/node curvatures computed across 49 graph densities (2-50%)",
+    "feature_extraction_tools": "CONN functional connectivity toolbox; Schaefer 200-parcel atlas; custom FRC/ORC code (NetworkX)",
+    "feature_importance_reported": "yes",
+    "importance_method": "Node-level FRC/ORC and clustering-coefficient comparisons with FDR correction",
+    "top_features_identified": "Region-specific differences concentrated in Default Mode, Somatomotor and other resting-state networks (e.g. LH_SomMot_1, LH_SomMot_3, LH_Default_PFC_4)",
+    "feature_change_direction": "Lower average edge Forman-Ricci and Ollivier-Ricci curvature in ASD vs TD (both brain-wide and region-specific), concentrated in Default Mode and Somatomotor networks",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "In 395 ASD and 425 TD individuals from ABIDE-I, average edge Forman-Ricci curvature was significantly lower in ASD than TD across most graph densities (5-50%, FDR-corrected), with a similar but less consistent pattern for Ollivier-Ricci curvature; region-specific curvature differences were concentrated in Default Mode, Somatomotor and other networks, and several node-level findings aligned with brain regions targeted by non-invasive brain stimulation (TMS/tDCS) studies in ASD.",
+    "features_associated_disorder": "Reduced Forman-Ricci and Ollivier-Ricci graph curvature in ASD, concentrated in Default Mode and Somatomotor networks",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE-I, N=1112 initially; excluded for missing files, Stanford site (spiral acquisition), Leuven-1 site (unknown TR), PCP rater quality fail, and QC-FC association/distance-dependence checks; final n=395 ASD/425 TD (820 total). | quote: \"After removing subjects based on these exclusion criteria, we were left with 395 subjects in the ASD group and \n425 subjects in the TD group\"",
+      "RQ2": "CONN toolbox pipeline (motion correction, slice-timing correction, outlier detection, segmentation/normalization, denoising, 0.008Hz high-pass filter); Schaefer 200-parcel atlas. | quote: \"We used the CONN functional connectivity ​toolbox69 to process the rs- fMRI data from ABIDE-I.\"",
+      "RQ3": "associational — brain-wide and region-specific group-difference analysis of graph Ricci curvature between ASD and TD. | quote: \"we apply Forman–Ricci and Ollivier–Ricci curvatures to compare  networks of ASD and typically developing individuals\"",
+      "RQ4": "Two-tailed two-sample t-tests with FDR correction (alpha=0.05) for brain-wide and node-level curvature comparisons across 49 graph densities (2-50%); single cohort analysis (not cross-validated/predictive, no leave-site-out). | quote: \"we employed a two-tailed two-sample t test \nfollowed by FDR correction\"",
+      "RQ5": "Average edge Forman-Ricci curvature significantly lower in ASD vs TD across most graph densities (5-50%, FDR p<0.05); Ollivier-Ricci curvature showed a similar but less consistent pattern; region-specific differences concentrated in Default Mode and Somatomotor networks. | quote: \"average edge FRC is significantly lower ( p < 0.05 , FDR-corrected) in the ASD group compared to the TD group \nin the graph density range 5–50%\"",
+      "RQ6": "yes — exact rules: explicit site/QC/exclusion criteria given, and the derived FC matrices, networks and all code are publicly released on GitHub. | quote: \"Functional connectivity matrices and networks generated in our study, and all original codes are deposited  on GitHub and are publically available at https://​github.​com/​asama​llab/​Curva​ture-​FCN-​ASD as of the date of  publication.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — detailed, multi-step exclusion criteria with resulting N (395 ASD/425 TD). | quote: \"After removing subjects based on these exclusion criteria, we were left with 395 subjects in the ASD group and \n425 subjects in the TD group\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes — PCP rater quality-fail exclusion and QC-FC association/distance-dependence checks described, plus motion covariates in denoising. | quote: \"We additionally excluded subjects that showed a noticeable correlation between quality  control (QC) variables and FC values, or if the QC-FC correlations showed a noticeable distance ­dependence\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — CONN toolbox pipeline with a full diagrammed processing sequence. | quote: \"We used the CONN functional connectivity ​toolbox69 to process the rs- fMRI data from ABIDE-I.\"",
+      "CL4 Atlas/parcellation reported?": "Yes — Schaefer 200-parcel atlas. | quote: \"Subsequently, 200 regions of interest (ROIs)  or nodes were defined in the brain using the Schaefer atlas\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not a predictive/ML study; no train/test split.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly — problematic sites (Stanford, Leuven-1) excluded outright, but no formal multi-site harmonisation (e.g. ComBat) or leave-site-out evaluation across the remaining sites.",
+      "CL7 Code and/or participant list available?": "Yes — FC matrices, generated networks and all analysis code publicly deposited on GitHub. | quote: \"Functional connectivity matrices and networks generated in our study, and all original codes are deposited  on GitHub and are publically available at https://​github.​com/​asama​llab/​Curva​ture-​FCN-​ASD as of the date of  publication.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-093",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "Detailed exclusion criteria and N."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Yes",
+          "notes": "PCP rater QC + QC-FC association checks."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported",
+          "rating": "Yes",
+          "notes": "CONN toolbox, full pipeline diagram."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "Schaefer 200 parcels."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "ABIDE-I labels used; instrument not restated."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "N/A",
+          "notes": "Not a predictive/ML study."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "Partial",
+          "notes": "Problem sites excluded, no formal harmonisation."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "Yes",
+          "notes": "Full GitHub data+code release."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-093",
+    "study_design_sample_dataset": "Group-difference (associational); ABIDE-I; n=395 ASD / 425 TD (820 total) after QC exclusions from an initial N=1112.",
+    "methods": "CONN toolbox preprocessing; Schaefer 200-parcel atlas; Pearson FC; Forman-Ricci and Ollivier-Ricci graph curvature computed across 49 graph densities; two-sample t-tests with FDR correction.",
+    "outcomes": "ASD showed significantly lower average edge Forman-Ricci curvature than TD across most graph densities, with a similar but less consistent Ollivier-Ricci pattern; region-specific differences concentrated in Default Mode and Somatomotor networks, overlapping with NIBS (TMS/tDCS) target regions in the literature.",
+    "key_limitations": "IQ not matched/excluded on (a deliberate choice for generalizability); diagnostic instrument not restated; no formal multi-site harmonisation.",
+    "relevance_notes": "A fully reconstructible, whole-ABIDE-I graph-curvature analysis with public FC matrices, networks and code — a strong candidate for cross-study replication in the knowledge graph.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1038/s41598-022-12171-y",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Whole ABIDE-I release (N=1112 initial), excluding Stanford (spiral acquisition) and Leuven-1 (unknown TR) sites, missing-file subjects, PCP rater quality-fail subjects, and QC-FC association/distance-dependence outliers; final n=395 ASD/425 TD.",
+    "n_by_dx": {
+      "ASD": 395,
+      "TD": 425,
+      "total": 820
+    },
+    "sites": "ABIDE-I sites excluding Stanford and Leuven-1",
+    "pipeline": "CONN functional connectivity toolbox",
+    "atlas": "Schaefer 200-parcel atlas",
+    "claim_type": "associational",
+    "finding": "Average edge Forman-Ricci curvature was significantly lower in ASD than TD across most graph densities (5-50%, FDR-corrected), with region-specific curvature differences concentrated in Default Mode and Somatomotor networks.",
+    "reconstructible": "yes — exact rules",
+    "evidence_quotes": [
+      "After removing subjects based on these exclusion criteria, we were left with 395 subjects in the ASD group and \n425 subjects in the TD group",
+      "average edge FRC is significantly lower ( p < 0.05 , FDR-corrected) in the ASD group compared to the TD group \nin the graph density range 5–50%"
+    ]
+  }
+}

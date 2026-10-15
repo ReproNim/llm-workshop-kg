@@ -1,0 +1,13 @@
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT (COUNT(DISTINCT ?both) AS ?overlap) (COUNT(DISTINCT ?dropped) AS ?bTestExcludedByV2) WHERE { GRAPH <urn:repronim:abide:graph/core> {
+  { <urn:repronim:abide:cohort/A_v1> prov:hadMember ?both . <urn:repronim:abide:cohort/B_v1> prov:hadMember ?both . }
+  UNION
+  { <urn:repronim:abide:cohort/B_v1> prov:hadMember ?dropped .
+     FILTER NOT EXISTS { <urn:repronim:abide:cohort/B_v2> prov:hadMember ?dropped }
+     FILTER EXISTS { ?fold dct:isPartOf <urn:repronim:abide:analysis/B_v1> ; ex:testedOn ?c . ?c ex:participant ?dropped } }
+} }

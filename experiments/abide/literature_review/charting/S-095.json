@@ -1,0 +1,26 @@
+{
+  "source_id": "S-095",
+  "pmid": "local_0c37289a",
+  "doi": "10.1101/2021.02.09.430363",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: develops and validates a hierarchical Bayesian site-harmonization/normative model of cortical thickness (structural MRI) from ABIDE; although it compares atypical z-score rates between autism and control samples, the analysed measure is structural (cortical thickness), not resting-state functional connectivity",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1101/2021.02.09.430363",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": []
+  }
+}

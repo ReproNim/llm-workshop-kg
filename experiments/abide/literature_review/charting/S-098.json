@@ -1,0 +1,100 @@
+{
+  "source_id": "S-098",
+  "pmid": "local_1ee6bb17",
+  "doi": "10.3389/fncom.2021.762781",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2,3: resting-state fMRI group-difference analysis (ASD vs HC) on ABIDE I, used as one of two multi-site test cases for a site-effect mitigation method (site-wise de-meaning), with an ASD-vs-control effect-size evaluation (not a software-only benchmark, since it quantifies preservation of a known autism-vs-control FC finding).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {"text": "We present a site-wise de-meaning (SWD) strategy in multi-site FC analysis and compare its performance with two common site-effect mitigation methods, i.e., generalized linear model (GLM) and Combining Batches (ComBat) Harmonization.", "section": "abstract", "claim": "Main method: site-wise de-meaning (SWD) compared against GLM and ComBat for multi-site FC harmonisation.", "relevance_score": 0.8},
+    {"text": "Resting-state fMRI data from 850 subjects in ABIDE I with an ASD DSM-IV-TR diagnosis (n = 355) and the corresponding HCs (n = 495) from the same sites were used in this study", "section": "methods", "claim": "Analysed ABIDE I cohort: 355 ASD, 495 HC (850 total).", "relevance_score": 1.0},
+    {"text": "The resting-state fMRI data was preprocessed using the\nConnectome Computation System pipeline (Zuo et al., 2013).", "section": "methods", "claim": "Preprocessing pipeline: Connectome Computation System (CCS).", "relevance_score": 0.8},
+    {"text": "The resting state fMRI data was then parcellated into\n200 regions of interest (ROIs) using a spatially constrained\nspectral clustering algorithm based on functional parcellations by\nCameron Craddock (Craddock et al., 2012).", "section": "methods", "claim": "Parcellation: Craddock 200 (CC200) atlas.", "relevance_score": 0.8},
+    {"text": "The most common resting state\nfMRI ﬁnding regarding ASD FC was anterior-posterior DMN\nhypoconnectivity", "section": "results", "claim": "Literature-anchored ASD finding used as the test feature: anterior-posterior default mode network hypoconnectivity (MPFC-PCC/precuneus).", "relevance_score": 0.8},
+    {"text": "For the ABIDE dataset, SWD improved the effect size between autistic and control subjects by 2.9–5.3%, while GLM and ComBat decreased the effect size by up to 11.4%.", "section": "abstract", "claim": "Main result: SWD improves ASD-vs-control effect size by 2.9-5.3%, while GLM/ComBat reduce it by up to 11.4%.", "relevance_score": 1.0},
+    {"text": "Autism data is publicly available from ABIDE (http://fcon_1000.projects.nitrc.org/indi/abide/)", "section": "discussion", "claim": "Data availability: ABIDE data publicly available at the stated URL.", "relevance_score": 0.4}
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Inclusion criteria defined", "judgment": "Low", "support": "\"Resting-state fMRI data from 850 subjects in ABIDE I with an ASD DSM-IV-TR diagnosis (n = 355) and the corresponding HCs (n = 495) from the same sites were used in this study\"."},
+      {"domain": "Subjects and setting described", "judgment": "Low", "support": "Demographic information including site, sample size, sex and age is given in a table, per the text referencing Table 1/Table 4 for ABIDE sites."},
+      {"domain": "Exposure measured validly (rs-fMRI pipeline)", "judgment": "Low", "support": "\"The resting-state fMRI data was preprocessed using the\nConnectome Computation System pipeline (Zuo et al., 2013).\" with full preprocessing steps listed (slice-timing, motion correction, nuisance regression, bandpass filtering)."},
+      {"domain": "Condition measured (diagnosis source)", "judgment": "Low", "support": "\"Resting-state fMRI data from 850 subjects in ABIDE I with an ASD DSM-IV-TR diagnosis (n = 355)\" — diagnosis source (DSM-IV-TR) explicitly stated."},
+      {"domain": "Confounders identified (age, sex, site, motion)", "judgment": "Low", "support": "Age and sex are regressed out (\"linear regression was used to regress out age\nand sex covariates\"); site is the central confounder the entire paper is designed to address."},
+      {"domain": "Confounders handled", "judgment": "Low", "support": "Site effects handled via three compared methods (GLM, ComBat, and the proposed site-wise de-meaning), directly testing which best preserves the diagnostic group effect."},
+      {"domain": "Outcomes measured validly (connectivity metric)", "judgment": "Low", "support": "Pearson correlation FC, Fisher z-transformed, with Hedge's g effect size relative to a literature-anchored finding (anterior-posterior DMN hypoconnectivity)."},
+      {"domain": "Appropriate statistical analysis (multiple comparisons)", "judgment": "Unclear", "support": "Effect sizes (Hedge's g) are reported for specific literature-selected ROI pairs rather than a whole-brain corrected statistical test, so multiple-comparison correction is not directly applicable/reported for this effect-size preservation analysis."}
+    ],
+    "overall": "Low",
+    "summary": "Cohort, diagnosis source, pipeline and atlas are all explicitly reported, and the paper's central contribution is a rigorous, quantitative comparison of site-effect handling methods (GLM, ComBat, SWD) on preserving a known ASD-vs-control connectivity effect; the main caveat is that the evaluation targets specific literature-anchored ROI pairs rather than a whole-brain multiple-comparison-corrected analysis."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Group-difference (associational)",
+    "n_disordered": "355",
+    "n_controls": "495",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Connectome Computation System (CCS) pipeline (slice-timing correction, motion correction, skull stripping, global mean intensity normalization, nuisance regression, 0.01-0.1Hz bandpass filtering)",
+    "specific_features": "Seed/ROI-to-ROI resting-state functional connectivity (Pearson correlation, Fisher z-transformed), Craddock 200 (CC200) atlas (200 ROIs)",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "Hedge's g effect size (patients vs. controls) compared across original data, GLM, ComBat, and the proposed site-wise de-meaning (SWD) method",
+    "key_performance_results": "SWD improved the ASD-vs-control effect size by 2.9-5.3% relative to the original data; GLM and ComBat decreased the effect size by up to 11.4% and 7.5%/5.1% respectively for the primary feature",
+    "features_associated_disorder": "Anterior-posterior default mode network connectivity: MPFC-PCC/precuneus and MPFC-MTG",
+    "feature_change_direction": "Hypoconnectivity in ASD (reduced MPFC-PCC/precuneus and MPFC-MTG connectivity), consistent with the literature-reported hypoconnectivity hypothesis of ASD",
+    "dataset_openly_available": "Yes — ABIDE data publicly available at http://fcon_1000.projects.nitrc.org/indi/abide/; no separate analysis code repository mentioned",
+    "custom_fields": {
+      "RQ1": "ABIDE I, 850 subjects (355 ASD with DSM-IV-TR diagnosis, 495 HC) from the same sites; no additional motion/QC exclusion rule beyond this stated in text. | quote: \"Resting-state fMRI data from 850 subjects in ABIDE I with an ASD DSM-IV-TR diagnosis (n = 355) and the corresponding HCs (n = 495) from the same sites were used in this study\"",
+      "RQ2": "Connectome Computation System (CCS) pipeline; Craddock 200 (CC200) atlas (200 ROIs). | quote: \"The resting state fMRI data was then parcellated into\n200 regions of interest (ROIs) using a spatially constrained\nspectral clustering algorithm based on functional parcellations by\nCameron Craddock (Craddock et al., 2012).\"",
+      "RQ3": "associational — comparison of site-effect mitigation methods on preserving the ASD-vs-control functional connectivity group difference (effect size), not a diagnostic classifier. | quote: \"Preservation of consistent FC alterations in patients were evaluated for each method through the effect sizes (Hedge’s g) of patients vs. controls.\"",
+      "RQ4": "Group difference evaluated via Hedge's g effect size at literature-selected ROI pairs (MPFC-PCC/precuneus; frontal pole-temporal lobe), comparing original data, GLM, ComBat, and the proposed site-wise de-meaning (SWD); age and sex regressed out beforehand; no whole-brain multiple-comparison-corrected statistical test reported for this analysis. | quote: \"The resting state fMRI data was then parcellated into\n200 regions of interest (ROIs)\"",
+      "RQ5": "SWD improved the ASD-vs-control effect size by 2.9-5.3% relative to the original (uncorrected) data, while GLM and ComBat decreased it by up to 11.4%, for the literature-anchored anterior-posterior DMN hypoconnectivity finding (MPFC-PCC/precuneus, MPFC-MTG). | quote: \"For the ABIDE dataset, SWD improved the effect size between autistic and control subjects by 2.9–5.3%, while GLM and ComBat decreased the effect size by up to 11.4%.\"",
+      "RQ6": "partly — exact N by diagnosis and diagnosis source (DSM-IV-TR) are reported, and the data is from the public ABIDE release, but no participant ID list or additional site-level inclusion/exclusion rule is given beyond the N. | quote: \"Autism data is publicly available from ABIDE (http://fcon_1000.projects.nitrc.org/indi/abide/)\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"Resting-state fMRI data from 850 subjects in ABIDE I with an ASD DSM-IV-TR diagnosis (n = 355) and the corresponding HCs (n = 495) from the same sites were used in this study\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — motion correction is listed as a preprocessing step, but no motion metric or exclusion threshold is reported",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"The resting-state fMRI data was preprocessed using the\nConnectome Computation System pipeline (Zuo et al., 2013).\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"The resting state fMRI data was then parcellated into\n200 regions of interest (ROIs) using a spatially constrained\nspectral clustering algorithm based on functional parcellations by\nCameron Craddock (Craddock et al., 2012).\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not applicable; this is a group-comparison/method-comparison study with no train/test classifier split",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes | quote: \"We present a site-wise de-meaning (SWD) strategy in multi-site FC analysis and compare its performance with two common site-effect mitigation methods, i.e., generalized linear model (GLM) and Combining Batches (ComBat) Harmonization.\"",
+      "CL7 Code and/or participant list available?": "Partly | quote: \"Autism data is publicly available from ABIDE (http://fcon_1000.projects.nitrc.org/indi/abide/)\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Resting-state fMRI data from 850 subjects in ABIDE I with an ASD DSM-IV-TR diagnosis (n = 355) and the corresponding HCs (n = 495) from the same sites were used in this study\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {"rating": "Yes", "notes": "N by diagnosis and diagnosis source (DSM-IV-TR) both reported (CL1 yes); no motion/QC threshold given (CL2 no).", "overall_concern": "Low"},
+    "domain_2_predictors_features": {"rating": "Yes", "notes": "CCS pipeline and CC200 atlas both explicitly reported.", "overall_concern": "Low"},
+    "domain_3_outcome_diagnosis": {"rating": "Yes", "notes": "Diagnosis explicitly sourced to DSM-IV-TR criteria via the ABIDE phenotype file.", "overall_concern": "Low"},
+    "domain_4_bias_transparency": {"rating": "Yes", "notes": "CL5 not applicable (no classifier); CL6 is the paper's central contribution (explicit multi-method site-effect comparison); CL7 data public, no separate code link found.", "overall_concern": "Low"}
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Group-difference (associational) / methods-comparison study; ABIDE I, 850 subjects (355 ASD, 495 HC) from multiple sites",
+    "methods": "CCS-preprocessed resting-state functional connectivity (CC200 atlas, Fisher z-transformed), compared across three site-effect mitigation strategies (GLM, ComBat, and the proposed site-wise de-meaning) using Hedge's g effect size on a literature-anchored ASD finding (anterior-posterior DMN hypoconnectivity)",
+    "outcomes": "Site-wise de-meaning (SWD) improved ASD-vs-control effect size by 2.9-5.3% relative to uncorrected data, while GLM and ComBat reduced it by up to 11.4% and 7.5% respectively, indicating SWD better preserves disorder-related connectivity signal under multi-site harmonisation",
+    "key_limitations": "Evaluation restricted to specific literature-selected ROI pairs rather than a whole-brain corrected analysis; no code repository identified beyond the public ABIDE data link",
+    "relevance_notes": "Directly addresses RQ on site handling (CL6) with a quantitative comparison of three site-effect mitigation strategies applied to ABIDE I resting-state connectivity.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fncom.2021.762781",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "850 subjects with resting-state fMRI from ABIDE I: 355 ASD (DSM-IV-TR diagnosis) and 495 HC from the same sites",
+    "n_by_dx": {"ASD": 355, "TD": 495, "total": 850},
+    "sites": "",
+    "pipeline": "Connectome Computation System (CCS)",
+    "atlas": "Craddock 200 (CC200), 200 ROIs",
+    "claim_type": "associational",
+    "finding": "Site-wise de-meaning (SWD) improved the ASD-vs-control functional connectivity effect size (Hedge's g) by 2.9-5.3% relative to uncorrected data, better preserving anterior-posterior DMN hypoconnectivity than GLM or ComBat harmonisation (which decreased effect size by up to 11.4%)",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "Resting-state fMRI data from 850 subjects in ABIDE I with an ASD DSM-IV-TR diagnosis (n = 355) and the corresponding HCs (n = 495) from the same sites were used in this study",
+      "For the ABIDE dataset, SWD improved the effect size between autistic and control subjects by 2.9–5.3%, while GLM and ComBat decreased the effect size by up to 11.4%.",
+      "Autism data is publicly available from ABIDE (http://fcon_1000.projects.nitrc.org/indi/abide/)"
+    ]
+  }
+}

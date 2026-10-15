@@ -1,0 +1,4 @@
+host node2803 start 2026-10-15T10:08:44-04:00
+HTTP/1.1 200 OK
+DONE {"Q1_B_cohort": {"total": 871, "ASD": 403, "TC": 468}, "Q2": {"A_cohort": {"total": 884, "ASD": 408, "TC": 476}, "A_tight_cohort": {"total": 633, "ASD": 274, "TC": 359}, "overlap_A_B": 780, "A_only": 104, "B_only": 91, "overlap_Atight_B": 571, "B_excluded_by_tight_QC": {"total": 300, "ASD": 163, "TC": 137}, "B_excluded_by_tight_QC_by_site": {"PITT": 33, "USM": 33, "NYU": 26, "UM_1": 25, "SBL": 23, "UCLA_1": 20, "OLIN": 19, "MAX_MUN": 17, "YALE": 15, "KKI": 15, "UCLA_2": 13, "TRINITY": 11, "CMU": 11, "LEUVEN_2": 8, "OHSU": 7, "SDSU": 6, "UM_2": 6, "LEUVEN_1": 5, "STANFORD": 4, "CALTECH": 3}, "B_excluded_by_original_A_QC": 91, "sweep_B_excluded": {"0.2": 91, "0.15": 155, "0.1": 300, "0.08": 425, "0.05": 637}}}
+end 2026-10-15T10:10:41-04:00

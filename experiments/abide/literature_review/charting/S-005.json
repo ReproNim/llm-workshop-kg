@@ -1,0 +1,289 @@
+{
+  "source_id": "S-005",
+  "pmid": "local_904dfa27",
+  "doi": "10.1016/j.biopsych.2021.12.004",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a mega- and meta-analysis of ABIDE I+II resting-state fMRI connectome dynamics comparing ASD vs HC, with SRS-score prediction; satisfies inclusion 1-4.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "we conducted mega- and meta-analyses of resting-state functional magnetic resonance imaging data of 939 participants (440 ASD patients and 499 healthy controls, all males) from 18 independent sites, selected from the ABIDE (Autism Brain Imaging Data Exchange) dataset.",
+      "section": "abstract",
+      "claim": "Study mega/meta-analyzed rsfMRI connectome dynamics in 939 ABIDE participants (440 ASD, 499 HC) from 18 sites.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "had maximal head motion of less than 5 mm and 5 degrees, and mean framewise displacement (FD) (1) of less than 0.5 mm",
+      "section": "methods",
+      "claim": "QC excluded scans with head motion >5mm/5deg or mean FD >0.5mm.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Thus, after all selection criteria had been applied, we obtained a dataset consisting of scans from 939 participants (ASD/HC, 440/499) taken from 18 different sites",
+      "section": "methods",
+      "claim": "Final analysed cohort was 939 participants (440 ASD/499 HC) across 18 sites after QC.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "All rsfMRI data were preprocessed with a standardized and harmonized pipeline using the GRETNA package (36).",
+      "section": "methods",
+      "claim": "Preprocessing used the GRETNA package pipeline.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "network nodes were defined as 512 regions of interest with uniform areas obtained from a random parcellation (38)",
+      "section": "methods",
+      "claim": "Dynamic connectomes used a 512-node random parcellation.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "the ASD group showed a higher mean value (Cohen\u2019s d = .18, p = .007) and a lower standard deviation (Cohen\u2019s d = -.19, p = .004) in whole-brain modular variability than the HC group",
+      "section": "results",
+      "claim": "ASD showed higher mean and lower SD of whole-brain modular variability than HC (Cohen's d=.18 and -.19).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "the ASD group showed higher modular variability mainly in several default-mode regions, including the medial prefrontal cortex, posterior cingulate gyrus, and angular gyrus (Cohen\u2019s d ranging from .19 to .33), and lower variability primarily in the visual cortex (Cohen\u2019s d ranging from -.24 to -.19) (FDR corrected p < .05)",
+      "section": "results",
+      "claim": "ASD showed higher modular variability in default-mode regions and lower variability in visual cortex vs HC (FDR p<.05).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "we found that brain dynamics was a significant predictor of SRS scores (r = .16, pperm = .002)",
+      "section": "results",
+      "claim": "Brain modular dynamics significantly predicted SRS social-impairment scores (r=.16, pperm=.002).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We performed a leave-one-site-out cross-validation to assess whether our main findings were biased by site specific sites.",
+      "section": "methods",
+      "claim": "Robustness of group differences was assessed with leave-one-site-out cross-validation.",
+      "relevance_score": 0.7
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "had maximal head motion of less than 5 mm and 5 degrees, and mean framewise displacement (FD) (1) of less than 0.5 mm ... Thus, after all selection criteria had been applied, we obtained a dataset consisting of scans from 939 participants (ASD/HC, 440/499) taken from 18 different sites"
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Table 1 reports age, sex, FIQ, ADOS-2, ADI-R, SRS by group; males only, 18 sites."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "All rsfMRI data were preprocessed with a standardized and harmonized pipeline using the GRETNA package (36)."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "Diagnosis is the ABIDE site clinical diagnosis; ADOS-2/ADI-R scores reported as characterization but not stated as the diagnostic criterion applied in this paper."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "GAM model includes age, age-by-group smooth terms and mean FD as covariate; ComBat used for site; q7"
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "ComBat harmonization for site effects; mean FD covariate; leave-one-site-out and age-restricted sensitivity analyses reported."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Dynamic modular variability from sliding-window multilayer network model, established method with citations."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "FDR correction applied (q8); mega- and meta-analysis cross-checked."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Large multi-site ABIDE cohort with explicit QC thresholds, site harmonisation (ComBat), motion covariate, FDR correction and leave-one-site-out sensitivity analysis; diagnosis source not explicitly re-validated beyond ABIDE's own clinical diagnosis."
+  },
+  "charting": {
+    "source_id": "S-005",
+    "title": "Alterations in Connectome Dynamics in Autism Spectrum Disorder: A Harmonized Mega- and Meta-analysis Study Using the Autism Brain Imaging Data Exchange Dataset",
+    "authors": "",
+    "year": "2021",
+    "journal_conference": "Biological Psychiatry",
+    "doi": "10.1016/j.biopsych.2021.12.004",
+    "database_retrieved": "ABIDE I+II",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "Characterise ASD-vs-HC alterations in resting-state dynamic connectome modular structure and link them to social-impairment severity and gene expression.",
+    "study_design": "Both",
+    "duration_frequency": "",
+    "subject_model": "Human",
+    "task_type": "Resting-state (eyes open/closed as per site protocol, not further specified)",
+    "study_setting": "Multi-site (18 sites)",
+    "country_region": "",
+    "disorder_diagnosis": "Autism spectrum disorder",
+    "diagnosis_assessment": "ABIDE site clinical diagnosis; ADOS-2 and ADI-R scores reported for characterization",
+    "n_disordered": "440",
+    "age_mean_sd": "",
+    "age_range": "5-35 years (initial ABIDE range before age<35 restriction)",
+    "gender_distribution": "All male",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "Medicated ASD individuals were not excluded (limited medication information available from ABIDE)",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "499",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "All male",
+    "age_matched": "No significant age difference between ASD and HC (p = .84)",
+    "gender_matched": "Yes (all male by design)",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Dynamic functional connectivity (sliding-window)",
+    "specific_features": "Modular variability of dynamic brain connectomes (512-node random parcellation, sliding-window multilayer network model)",
+    "feature_extraction_tools": "GRETNA package",
+    "feature_importance_reported": "Yes",
+    "importance_method": "Frequency of nodal selection as a feature during LOOCV",
+    "top_features_identified": "Medial prefrontal cortex and visual cortex nodes made the largest contribution to SRS prediction",
+    "feature_change_direction": "Higher modular variability in ASD in default-mode regions (medial prefrontal cortex, posterior cingulate, angular gyrus); lower modular variability in ASD in visual cortex",
+    "model_category": "Support vector regression",
+    "specific_algorithms": "Support vector regression (LIBSVM) predicting SRS score from whole-brain modular variability maps",
+    "validation_methodology": "Leave-one-out cross-validation (LOOCV) for SRS prediction; leave-one-site-out cross-validation as a sensitivity analysis for group differences",
+    "performance_metrics": "Correlation (r) between predicted and actual SRS scores, permutation test",
+    "key_performance_results": "we found that brain dynamics was a significant predictor of SRS scores (r = .16, pperm = .002)",
+    "summary_key_findings": "ASD showed higher mean and lower variance of whole-brain dynamic modular variability than HC, with regionally higher variability in default-mode regions and lower variability in visual cortex; modular variability predicted SRS social-impairment severity and correlated with ASD-risk gene expression patterns.",
+    "features_associated_disorder": "Dynamic modular variability in default-mode network regions (higher in ASD) and visual cortex (lower in ASD)",
+    "future_directions_recommended": "Extend to female participants and other age ranges; incorporate ASD-specific (not only healthy) gene expression data when available.",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE I+II, QC'd to 939 participants (440 ASD/499 HC) across 18 sites, males only, age<35, FIQ>70, FD<0.5mm, scan length>=5min, sites with <10 participants per group excluded | quote: \"Thus, after all selection criteria had been applied, we obtained a dataset consisting of scans from 939 participants (ASD/HC, 440/499) taken from 18 different sites\"",
+      "RQ2": "GRETNA pipeline; 512-region random parcellation for dynamic connectome nodes | quote: \"All rsfMRI data were preprocessed with a standardized and harmonized pipeline using the GRETNA package (36).\"",
+      "RQ3": "both \u2014 case-control group differences in modular dynamics (mega/meta-analysis) and prediction of SRS social-impairment severity via support vector regression | quote: \"we found that brain dynamics was a significant predictor of SRS scores (r = .16, pperm = .002)\"",
+      "RQ4": "GAM mega-analysis with ComBat site harmonisation, FDR correction, mean-FD covariate; meta-analysis across sites (inverse-variance random effects); leave-one-site-out cross-validation sensitivity analysis; LOOCV for SRS prediction with permutation testing | quote: \"We performed a leave-one-site-out cross-validation to assess whether our main findings were biased by site specific sites.\"",
+      "RQ5": "ASD showed higher mean (Cohen's d=.18) and lower SD (d=-.19) of whole-brain modular variability; regionally higher variability in default-mode regions (d=.19-.33) and lower in visual cortex (d=-.24 to -.19), FDR p<.05; modular variability predicted SRS scores (r=.16, pperm=.002) | quote: \"the ASD group showed higher modular variability mainly in several default-mode regions, including the medial prefrontal cortex, posterior cingulate gyrus, and angular gyrus (Cohen\u2019s d ranging from .19 to .33), and lower variability primarily in the visual cortex (Cohen\u2019s d ranging from -.24 to -.19) (FDR corrected p < .05)\"",
+      "RQ6": "partly \u2014 exact numeric QC thresholds and counts by site/diagnosis are given, but no participant list or code repository is provided | quote: \"Thus, after all selection criteria had been applied, we obtained a dataset consisting of scans from 939 participants (ASD/HC, 440/499) taken from 18 different sites\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"Thus, after all selection criteria had been applied, we obtained a dataset consisting of scans from 939 participants (ASD/HC, 440/499) taken from 18 different sites\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes | quote: \"had maximal head motion of less than 5 mm and 5 degrees, and mean framewise displacement (FD) (1) of less than 0.5 mm\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"All rsfMRI data were preprocessed with a standardized and harmonized pipeline using the GRETNA package (36).\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"network nodes were defined as 512 regions of interest with uniform areas obtained from a random parcellation (38)\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Yes | quote: \"In each LOOCV fold, we included the feature selection, model learning, and testing.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes | quote: \"We performed a leave-one-site-out cross-validation to assess whether our main findings were biased by site specific sites.\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Resting-state functional MRI (rsfMRI) data covering 2,156 participants was initially obtained from the ABIDE I (17 sites, ASD/HC: 539/573, 7-64 years) and ABIDE II (19 sites, ASD/HC: 487/557, 5-64 years) databases\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-005",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?",
+          "rating": "Yes",
+          "notes": "Exact QC thresholds and final N by site/diagnosis given. | quote: \"Thus, after all selection criteria had been applied, we obtained a dataset consisting of scans from 939 participants (ASD/HC, 440/499) taken from 18 different sites\""
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported (metric and threshold)?",
+          "rating": "Yes",
+          "notes": "FD<0.5mm, max motion <5mm/5deg. | quote: \"had maximal head motion of less than 5 mm and 5 degrees, and mean framewise displacement (FD) (1) of less than 0.5 mm\""
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported?",
+          "rating": "Yes",
+          "notes": "GRETNA package, full preprocessing steps listed. | quote: \"All rsfMRI data were preprocessed with a standardized and harmonized pipeline using the GRETNA package (36).\""
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "Yes",
+          "notes": "512-node random parcellation. | quote: \"network nodes were defined as 512 regions of interest with uniform areas obtained from a random parcellation (38)\""
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "Relies on ABIDE site clinical diagnosis; ADOS-2/ADI-R reported as descriptive characterization, not stated as the operational diagnostic criterion."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "Yes",
+          "notes": "Feature selection performed within each LOOCV fold."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "Yes",
+          "notes": "ComBat harmonisation and leave-one-site-out sensitivity analysis. | quote: \"We performed a leave-one-site-out cross-validation to assess whether our main findings were biased by site specific sites.\""
+        },
+        {
+          "item_text": "CL7 Code and/or participant list available?",
+          "rating": "No",
+          "notes": "No data/code availability statement found in the manuscript."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-005",
+    "study_design_sample_dataset": "Mega- and meta-analysis (associational) plus SVR prediction of SRS severity; ABIDE I+II, 939 participants (440 ASD/499 HC, all male), 18 sites",
+    "methods": "GRETNA-preprocessed rsfMRI, sliding-window dynamic connectomes (512-node random parcellation), multilayer-Louvain modular variability, GAM mega-analysis with ComBat site harmonisation and FDR correction, site-wise meta-analysis, SVR/LOOCV prediction of SRS scores, Allen Human Brain Atlas transcriptome association.",
+    "outcomes": "ASD showed higher mean / lower SD of whole-brain modular variability than HC; regionally higher variability in default-mode regions and lower in visual cortex (FDR p<.05); modular variability predicted SRS scores (r=.16, pperm=.002); alterations correlated with ASD-risk gene expression.",
+    "key_limitations": "Male-only sample; gene expression reference from only 5 healthy post-mortem brains; medicated individuals not excluded; cross-sectional.",
+    "relevance_notes": "Detailed, numerically explicit ABIDE I+II QC pipeline (motion, scan length, IQ, age, site size) giving a reconstructible cohort definition; demonstrates site-harmonised mega-analysis plus leave-one-site-out sensitivity check as a model for site handling.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1016/j.biopsych.2021.12.004",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "Thus, after all selection criteria had been applied, we obtained a dataset consisting of scans from 939 participants (ASD/HC, 440/499) taken from 18 different sites",
+    "n_by_dx": {
+      "ASD": 440,
+      "TD": 499,
+      "total": 939
+    },
+    "sites": "18",
+    "pipeline": "GRETNA package (custom dynamic-connectome pipeline)",
+    "atlas": "512-region random parcellation",
+    "claim_type": "both",
+    "finding": "ASD showed higher mean and lower SD of whole-brain dynamic modular variability than HC (Cohen's d=.18/-.19), with regional increases in default-mode regions and decreases in visual cortex (FDR p<.05); modular variability predicted SRS social-impairment scores (r=.16, pperm=.002).",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "Thus, after all selection criteria had been applied, we obtained a dataset consisting of scans from 939 participants (ASD/HC, 440/499) taken from 18 different sites",
+      "the ASD group showed a higher mean value (Cohen\u2019s d = .18, p = .007) and a lower standard deviation (Cohen\u2019s d = -.19, p = .004) in whole-brain modular variability than the HC group",
+      "the ASD group showed higher modular variability mainly in several default-mode regions, including the medial prefrontal cortex, posterior cingulate gyrus, and angular gyrus (Cohen\u2019s d ranging from .19 to .33), and lower variability primarily in the visual cortex (Cohen\u2019s d ranging from -.24 to -.19) (FDR corrected p < .05)",
+      "we found that brain dynamics was a significant predictor of SRS scores (r = .16, pperm = .002)"
+    ]
+  }
+}

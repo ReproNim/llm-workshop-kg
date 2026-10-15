@@ -1,0 +1,167 @@
+{
+  "source_id": "S-025",
+  "pmid": "local_2983df5d",
+  "doi": "10.3389/fnins.2018.00491",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a deep-transfer-learning diagnostic prediction (ASD vs. control) analysis of ABIDE resting-state fMRI functional connectivity across four ABIDE sites, with offline pretraining on the remaining ABIDE sites (Inclusion 2, 3).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "we compared the performance of our DTL-NN approach with a traditional deep neural network and support vector machine models across four ABIDE data sites that enrolled at least 60 subjects. As compared to traditional models, our DTL-NN approach achieved an improved performance in accuracy, sensitivity, speciﬁcity and area under receiver operating characteristic curve.",
+      "section": "abstract",
+      "claim": "DTL-NN was compared with a traditional DNN and SVM for ASD classification across four ABIDE sites with at least 60 subjects, achieving improved accuracy, sensitivity, specificity and AUC.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The rs- fMRI data were processed using Connectome Computation System (Xu et al., 2015) pipeline, which includes slice timing correction, motion realignment, and intensity normalization. Nuisance variable regression (Fox et al., 2005; Lund et al., 2005) was implemented through band-pass ﬁltering and global signal regression strategies to clean confounding variations introduced by heartbeats and respirations, head motion, and low frequency scanner drifts. Furthermore, boundary-based rigid body and FMRIB’s linear & nonlinear image registration tools (Andersson et al., 2008; Ratziu et al., 2008) were used to register functional to anatomical images. Then, both functional and anatomical images were normalized to a standard template space, the Automated Anatomical Labeling atlas (Tzourio-Mazoyer et al., 2002).",
+      "section": "methods",
+      "claim": "Data were preprocessed with the Connectome Computation System pipeline and parcellated with the AAL atlas into a 90x90 functional connectivity matrix.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Site bias was corrected among diﬀerent sites similar to an approach described previously by an ABIDE study (Heinsfeld et al., 2018). Speciﬁcally, a multiple regression analysis was conducted to control for potentially confounding variables (site, age, gender, and handedness). These variables were regressed from FC weights across connections among ROIs. When adjusting for the confounding factors, our regression model is: y = β0 + β1x1 + β2x2 + β3x3 + β4x4 + ε where y is the vector of FC weights, x1 to x4 represent the four explanatory variables, site, age, gender, and handedness. βi is the intercept and the corresponding regression coeﬃcients. ε is the residual vector. Using ordinary least squares (OLS) estimation, βi was estimated. Then, these cofounding variables were regressed out from the FC weights.",
+      "section": "methods",
+      "claim": "Site, age, gender and handedness were regressed out of FC weights via OLS multiple regression to correct for site bias.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "we performed ASD classiﬁcation experiments on four individual data sites with at least 60 subjects, including University of Michigan (UM), University of California, Los Angeles (UCLA), University of Utah School of Medicine (USM), and Katholieke Universiteit Leuven (LEUVEN).",
+      "section": "methods",
+      "claim": "ASD classification experiments were performed on four individual ABIDE sites with at least 60 subjects: UM, UCLA, USM and LEUVEN.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "the independent healthy FC data from the remaining 16 sites from the ABIDE repository were accumulated as pre- collected data to train an SSAE prototype during oﬄine learning. Then, we randomly split the data from the target site into training and testing set. The data from the training set were applied on an SSAE prototype in the prior knowledge aided training step. The hold-out testing data were then used to evaluate the trained DTL-NN model.",
+      "section": "methods",
+      "claim": "The offline SSAE prototype was pretrained on healthy subjects pooled from the 16 remaining (non-target) ABIDE sites, keeping the target site's data separate for training/testing.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "TABLE 2 | Demographic data of the healthy and autism spectrum disorder (ASD) subjects across seven data sites ordered by decreasing sample size. Site Class Target task sample size Age (years) Gender (male%) Handedness (right%)* Mean full-scale IQ* Ofﬂine learning sample size UM ASD 48 13.8 ± 2 81.30 75 107.6 ± 17.3 411 Healthy 65 15 ± 3.7 75.40 83.10 109 ± 9.5 UCLA ASD 36 13.3 ± 3 94.40 88.90 102.4 ± 12.8 437 Healthy 39 13.2 ± 1.8 84.60 92.30 106.4 ± 10.4 USM ASD 38 24.6 ± 9 100 92.10 99.7 ± 17.3 453 Healthy 23 22.3 ± 7.9 100 95.70 115.5 ± 15.6 LEUVEN ASD 27 18 ± 5 92.60 88.90 109.4 ± 13.1 442 Healthy 34 18.2 ± 5.1 85.30 85.30 114.8 ± 12.9 All ± values are mean ± SD. *Results were calculated after removing missing data. Number of IQ missing value: UM, ASD-1, Healthy-3; UCLA, ASD-0, Healthy-0; USM, ASD-0, Healthy-0; LEUVEN, ASD-13, Healthy-19",
+      "section": "table",
+      "claim": "Per-site ASD/healthy sample sizes and demographics across the four target sites and the offline-learning pool from the remaining sites.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "The highest ASD classiﬁcation performance metrics were observed from the USM site−70.4% accuracy, 72.5% sensitivity, 67.0% speciﬁcity and 0.73 AUC.",
+      "section": "results",
+      "claim": "The highest DTL-NN performance was observed at the USM site: 70.4% accuracy, 72.5% sensitivity, 67.0% specificity and 0.73 AUC.",
+      "relevance_score": 0.9
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "Per-site target and offline-learning sample sizes and demographics are explicit (Table 2): \"TABLE 2 | Demographic data of the healthy and autism spectrum disorder (ASD) subjects across seven data sites ordered by decreasing sample size. Site Class Target task sample size Age (years) Gender (male%) Handedness (right%)* Mean full-scale IQ* Ofﬂine learning sample size UM ASD 48 13.8 ± 2 81.30 75 107.6 ± 17.3 411 Healthy 65 15 ± 3.7 75.40 83.10 109 ± 9.5 UCLA ASD 36 13.3 ± 3 94.40 88.90 102.4 ± 12.8 437 Healthy 39 13.2 ± 1.8 84.60 92.30 106.4 ± 10.4 USM ASD 38 24.6 ± 9 100 92.10 99.7 ± 17.3 453 Healthy 23 22.3 ± 7.9 100 95.70 115.5 ± 15.6 LEUVEN ASD 27 18 ± 5 92.60 88.90 109.4 ± 13.1 442 Healthy 34 18.2 ± 5.1 85.30 85.30 114.8 ± 12.9 All ± values are mean ± SD. *Results were calculated after removing missing data. Number of IQ missing value: UM, ASD-1, Healthy-3; UCLA, ASD-0, Healthy-0; USM, ASD-0, Healthy-0; LEUVEN, ASD-13, Healthy-19\""
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "Pipeline (Connectome Computation System) and atlas (AAL, 90 ROIs) are specified: \"The rs- fMRI data were processed using Connectome Computation System (Xu et al., 2015) pipeline, which includes slice timing correction, motion realignment, and intensity normalization. Nuisance variable regression (Fox et al., 2005; Lund et al., 2005) was implemented through band-pass ﬁltering and global signal regression strategies to clean confounding variations introduced by heartbeats and respirations, head motion, and low frequency scanner drifts. Furthermore, boundary-based rigid body and FMRIB’s linear & nonlinear image registration tools (Andersson et al., 2008; Ratziu et al., 2008) were used to register functional to anatomical images. Then, both functional and anatomical images were normalized to a standard template space, the Automated Anatomical Labeling atlas (Tzourio-Mazoyer et al., 2002).\""
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "Diagnostic label source is not described in this paper beyond citing the ABIDE release."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Low",
+        "support": "Site, age, gender and handedness were explicitly regressed out of FC features (Site bias was corrected among diﬀerent sites similar to an approach described previously by an ABIDE study (Heinsfeld et al., 2018). Speciﬁcally, a multiple regression analysis was conducted to control for potentially confounding variables (site, age, gender, and handedness). These variables were regressed from FC weights across connections among ROIs. When adjusting for the confounding factors, our regression model is: y = β0 + β1x1 + β2x2 + β3x3 + β4x4 + ε where y is the vector of FC weights, x1 to x4 represent the four explanatory variables, site, age, gender, and handedness. βi is the intercept and the corresponding regression coeﬃcients. ε is the residual vector. Using ordinary least squares (OLS) estimation, βi was estimated. Then, these cofounding variables were regressed out from the FC weights.), and the offline SSAE pretraining pool was drawn only from the 16 non-target sites, keeping the target site's subjects out of pretraining (the independent healthy FC data from the remaining 16 sites from the ABIDE repository were accumulated as pre- collected data to train an SSAE prototype during oﬄine learning. Then, we randomly split the data from the target site into training and testing set. The data from the training set were applied on an SSAE prototype in the prior knowledge aided training step. The hold-out testing data were then used to evaluate the trained DTL-NN model.)."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Cohort composition, pipeline, atlas and an explicit site/age/gender/handedness covariate-regression step are all reported, and the offline pretraining pool for the transfer-learning step is explicitly drawn from non-target sites, reducing the risk that pretraining leaks target-site information; diagnostic label source is the main unreported item."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "149 across four target sites (UM 48, UCLA 36, USM 38, LEUVEN 27)",
+    "n_controls": "161 across four target sites (UM 65, UCLA 39, USM 23, LEUVEN 34)",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Connectome Computation System (CCS) pipeline (slice timing correction, motion realignment, intensity normalisation, nuisance regression with band-pass filtering and global signal regression, boundary-based and FSL linear/nonlinear registration)",
+    "specific_features": "Pearson-correlation ROI-wise functional connectivity (90x90 matrix, 4,005 unique FC links), Automated Anatomical Labeling (AAL) atlas; site/age/gender/handedness regressed out via OLS multiple regression",
+    "model_category": "Deep transfer learning neural network (stacked sparse autoencoder pretrained offline, then fine-tuned)",
+    "specific_algorithms": "Deep Transfer Learning Neural Network (DTL-NN, proposed); traditional Deep Neural Network (DNN); Support Vector Machine (SVM)",
+    "validation_methodology": "5-fold cross-validation (stratified by ASD/NC proportion) per target site; offline SSAE pretraining pool restricted to healthy subjects from the 16 non-target ABIDE sites; additional consistency tests varying the training-data percentage at the UM site",
+    "performance_metrics": "Accuracy, sensitivity, specificity, AUC",
+    "key_performance_results": "DTL-NN outperformed DNN and SVM at all four sites; best performance at USM (70.4% accuracy, 72.5% sensitivity, 67.0% specificity, 0.73 AUC); averaged across sites DTL-NN reached 67.1% accuracy, 65.7% sensitivity, 68.3% specificity and 0.71 AUC, significantly better than DNN for accuracy (p=0.03) and sensitivity (p=0.04).",
+    "features_associated_disorder": "The functional connection between the left superior occipital gyrus and right inferior occipital gyrus was consistently the top discriminative feature across sites for DTL-NN.",
+    "feature_change_direction": "",
+    "dataset_openly_available": "No statement of code or participant-list availability found in the text.",
+    "custom_fields": {
+      "RQ1": "ABIDE I — four target sites with >=60 subjects each (UM: 48 ASD/65 healthy; UCLA: 36/39; USM: 38/23; LEUVEN: 27/34), with offline SSAE pretraining drawn from healthy subjects pooled across the remaining 16 ABIDE sites. | quote: \"we performed ASD classiﬁcation experiments on four individual data sites with at least 60 subjects, including University of Michigan (UM), University of California, Los Angeles (UCLA), University of Utah School of Medicine (USM), and Katholieke Universiteit Leuven (LEUVEN).\"",
+      "RQ2": "Connectome Computation System (CCS) pipeline; Automated Anatomical Labeling (AAL) atlas (90 ROIs, 4,005 FC links); Pearson correlation connectivity with site/age/gender/handedness regressed out via OLS. | quote: \"The rs- fMRI data were processed using Connectome Computation System (Xu et al., 2015) pipeline, which includes slice timing correction, motion realignment, and intensity normalization. Nuisance variable regression (Fox et al., 2005; Lund et al., 2005) was implemented through band-pass ﬁltering and global signal regression strategies to clean confounding variations introduced by heartbeats and respirations, head motion, and low frequency scanner drifts. Furthermore, boundary-based rigid body and FMRIB’s linear & nonlinear image registration tools (Andersson et al., 2008; Ratziu et al., 2008) were used to register functional to anatomical images. Then, both functional and anatomical images were normalized to a standard template space, the Automated Anatomical Labeling atlas (Tzourio-Mazoyer et al., 2002).\"",
+      "RQ3": "predictive — ASD vs. healthy classification using a deep transfer learning neural network. | quote: \"we compared the performance of our DTL-NN approach with a traditional deep neural network and support vector machine models across four ABIDE data sites that enrolled at least 60 subjects. As compared to traditional models, our DTL-NN approach achieved an improved performance in accuracy, sensitivity, speciﬁcity and area under receiver operating characteristic curve.\"",
+      "RQ4": "5-fold stratified CV per target site; a multiple-regression site/age/gender/handedness correction applied to FC features; offline SSAE pretraining confined to the 16 non-target ABIDE sites to avoid leaking target-site data into pretraining. | quote: \"the independent healthy FC data from the remaining 16 sites from the ABIDE repository were accumulated as pre- collected data to train an SSAE prototype during oﬄine learning. Then, we randomly split the data from the target site into training and testing set. The data from the training set were applied on an SSAE prototype in the prior knowledge aided training step. The hold-out testing data were then used to evaluate the trained DTL-NN model.\"",
+      "RQ5": "DTL-NN outperformed DNN and SVM at all four sites, with the best result at USM (70.4% accuracy, 0.73 AUC) and an average across sites of 67.1% accuracy/0.71 AUC, significantly better than DNN for accuracy and sensitivity. | quote: \"The highest ASD classiﬁcation performance metrics were observed from the USM site−70.4% accuracy, 72.5% sensitivity, 67.0% speciﬁcity and 0.73 AUC.\"",
+      "RQ6": "partly — exact per-site target and offline-pool sample sizes and demographics are tabulated (Table 2), but no participant ID list or code repository is given. | quote: \"TABLE 2 | Demographic data of the healthy and autism spectrum disorder (ASD) subjects across seven data sites ordered by decreasing sample size. Site Class Target task sample size Age (years) Gender (male%) Handedness (right%)* Mean full-scale IQ* Ofﬂine learning sample size UM ASD 48 13.8 ± 2 81.30 75 107.6 ± 17.3 411 Healthy 65 15 ± 3.7 75.40 83.10 109 ± 9.5 UCLA ASD 36 13.3 ± 3 94.40 88.90 102.4 ± 12.8 437 Healthy 39 13.2 ± 1.8 84.60 92.30 106.4 ± 10.4 USM ASD 38 24.6 ± 9 100 92.10 99.7 ± 17.3 453 Healthy 23 22.3 ± 7.9 100 95.70 115.5 ± 15.6 LEUVEN ASD 27 18 ± 5 92.60 88.90 109.4 ± 13.1 442 Healthy 34 18.2 ± 5.1 85.30 85.30 114.8 ± 12.9 All ± values are mean ± SD. *Results were calculated after removing missing data. Number of IQ missing value: UM, ASD-1, Healthy-3; UCLA, ASD-0, Healthy-0; USM, ASD-0, Healthy-0; LEUVEN, ASD-13, Healthy-19\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — per-site ASD/healthy N for all four target sites, plus the offline-learning pool sizes, are tabulated. | quote: \"TABLE 2 | Demographic data of the healthy and autism spectrum disorder (ASD) subjects across seven data sites ordered by decreasing sample size. Site Class Target task sample size Age (years) Gender (male%) Handedness (right%)* Mean full-scale IQ* Ofﬂine learning sample size UM ASD 48 13.8 ± 2 81.30 75 107.6 ± 17.3 411 Healthy 65 15 ± 3.7 75.40 83.10 109 ± 9.5 UCLA ASD 36 13.3 ± 3 94.40 88.90 102.4 ± 12.8 437 Healthy 39 13.2 ± 1.8 84.60 92.30 106.4 ± 10.4 USM ASD 38 24.6 ± 9 100 92.10 99.7 ± 17.3 453 Healthy 23 22.3 ± 7.9 100 95.70 115.5 ± 15.6 LEUVEN ASD 27 18 ± 5 92.60 88.90 109.4 ± 13.1 442 Healthy 34 18.2 ± 5.1 85.30 85.30 114.8 ± 12.9 All ± values are mean ± SD. *Results were calculated after removing missing data. Number of IQ missing value: UM, ASD-1, Healthy-3; UCLA, ASD-0, Healthy-0; USM, ASD-0, Healthy-0; LEUVEN, ASD-13, Healthy-19\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion/FD-based numeric QC threshold is reported; motion correction is described as a preprocessing step only.",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — the Connectome Computation System pipeline is named with its processing steps, but no version number is given. | quote: \"The rs- fMRI data were processed using Connectome Computation System (Xu et al., 2015) pipeline, which includes slice timing correction, motion realignment, and intensity normalization. Nuisance variable regression (Fox et al., 2005; Lund et al., 2005) was implemented through band-pass ﬁltering and global signal regression strategies to clean confounding variations introduced by heartbeats and respirations, head motion, and low frequency scanner drifts. Furthermore, boundary-based rigid body and FMRIB’s linear & nonlinear image registration tools (Andersson et al., 2008; Ratziu et al., 2008) were used to register functional to anatomical images. Then, both functional and anatomical images were normalized to a standard template space, the Automated Anatomical Labeling atlas (Tzourio-Mazoyer et al., 2002).\"",
+      "CL4 Atlas/parcellation reported?": "Yes — Automated Anatomical Labeling (AAL) atlas (90 ROIs).",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Partly — the offline SSAE pretraining pool is explicitly restricted to non-target sites (avoiding target-site leakage into pretraining), and CV is stratified by diagnosis, but the text does not state whether the site/age/gender/handedness regression itself was refit within each CV fold. | quote: \"the independent healthy FC data from the remaining 16 sites from the ABIDE repository were accumulated as pre- collected data to train an SSAE prototype during oﬄine learning. Then, we randomly split the data from the target site into training and testing set. The data from the training set were applied on an SSAE prototype in the prior knowledge aided training step. The hold-out testing data were then used to evaluate the trained DTL-NN model.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — site (along with age, gender and handedness) was explicitly regressed out of FC weights via OLS multiple regression, following an approach from a prior ABIDE study. | quote: \"Site bias was corrected among diﬀerent sites similar to an approach described previously by an ABIDE study (Heinsfeld et al., 2018). Speciﬁcally, a multiple regression analysis was conducted to control for potentially confounding variables (site, age, gender, and handedness). These variables were regressed from FC weights across connections among ROIs. When adjusting for the confounding factors, our regression model is: y = β0 + β1x1 + β2x2 + β3x3 + β4x4 + ε where y is the vector of FC weights, x1 to x4 represent the four explanatory variables, site, age, gender, and handedness. βi is the intercept and the corresponding regression coeﬃcients. ε is the residual vector. Using ordinary least squares (OLS) estimation, βi was estimated. Then, these cofounding variables were regressed out from the FC weights.\"",
+      "CL7 Code and/or participant list available?": "No — no statement of code or participant-list availability was found in the text.",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Per-site target and offline-pool Ns and demographics are explicit (CL1); no motion-QC rule reported (CL2)."
+    },
+    "domain_2_predictors_preprocessing": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Pipeline and atlas are clearly named (CL3, CL4)."
+    },
+    "domain_3_outcome_label_source": {
+      "rating": "Unclear",
+      "overall_concern": "Some",
+      "support": "Diagnostic label source is not described beyond citing the ABIDE release."
+    },
+    "domain_4_bias_transparency": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Explicit site/demographic covariate regression and a non-target-site offline pretraining pool both support low leakage/confounding risk (CL5, CL6); no code/data availability statement (CL7)."
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction (deep transfer learning) using ABIDE I resting-state fMRI from four target sites (UM n=113: 48 ASD/65 healthy; UCLA n=75: 36/39; USM n=61: 38/23; LEUVEN n=61: 27/34), with offline SSAE pretraining on healthy subjects from the remaining 16 ABIDE sites.",
+    "methods": "CCS-preprocessed functional connectivity (AAL atlas, 90 ROIs) with site/age/gender/handedness regressed out via OLS; a stacked sparse autoencoder pretrained offline on non-target-site healthy subjects, transferred into a DTL-NN classifier and compared against DNN and SVM baselines via stratified 5-fold CV per site.",
+    "outcomes": "DTL-NN outperformed DNN and SVM at every site, with the best performance at USM (70.4% accuracy, 0.73 AUC) and an average of 67.1% accuracy/0.71 AUC across sites, significantly better than DNN for accuracy (p=0.03) and sensitivity (p=0.04).",
+    "key_limitations": "No motion/FD-based QC threshold or pipeline version reported; diagnostic label source not described; no code/participant-list availability statement; small per-site sample sizes (61-113).",
+    "relevance_notes": "Demonstrates a transfer-learning design that explicitly separates offline pretraining data (non-target ABIDE sites) from target-site evaluation data, alongside an explicit site-covariate regression, both directly relevant to site-leakage assessment in ABIDE-based prediction studies.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2018.00491",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Four ABIDE sites with at least 60 subjects each (UM, UCLA, USM, LEUVEN): 149 ASD / 161 healthy total across the four sites; offline SSAE pretraining pool drawn from healthy subjects across the remaining 16 ABIDE sites.",
+    "n_by_dx": {
+      "ASD": 149,
+      "TD": 161,
+      "total": 310
+    },
+    "sites": "4 target sites (UM, UCLA, USM, LEUVEN) out of 20 ABIDE I sites used overall (4 target + 16 for offline pretraining)",
+    "pipeline": "Connectome Computation System (CCS)",
+    "atlas": "Automated Anatomical Labeling (AAL), 90 ROIs",
+    "claim_type": "predictive",
+    "finding": "DTL-NN outperformed DNN and SVM at all four sites, with the highest performance at USM (70.4% accuracy, 72.5% sensitivity, 67.0% specificity, 0.73 AUC) and an average across sites of 67.1% accuracy and 0.71 AUC, significantly better than DNN for accuracy and sensitivity.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "we performed ASD classiﬁcation experiments on four individual data sites with at least 60 subjects, including University of Michigan (UM), University of California, Los Angeles (UCLA), University of Utah School of Medicine (USM), and Katholieke Universiteit Leuven (LEUVEN).",
+      "TABLE 2 | Demographic data of the healthy and autism spectrum disorder (ASD) subjects across seven data sites ordered by decreasing sample size. Site Class Target task sample size Age (years) Gender (male%) Handedness (right%)* Mean full-scale IQ* Ofﬂine learning sample size UM ASD 48 13.8 ± 2 81.30 75 107.6 ± 17.3 411 Healthy 65 15 ± 3.7 75.40 83.10 109 ± 9.5 UCLA ASD 36 13.3 ± 3 94.40 88.90 102.4 ± 12.8 437 Healthy 39 13.2 ± 1.8 84.60 92.30 106.4 ± 10.4 USM ASD 38 24.6 ± 9 100 92.10 99.7 ± 17.3 453 Healthy 23 22.3 ± 7.9 100 95.70 115.5 ± 15.6 LEUVEN ASD 27 18 ± 5 92.60 88.90 109.4 ± 13.1 442 Healthy 34 18.2 ± 5.1 85.30 85.30 114.8 ± 12.9 All ± values are mean ± SD. *Results were calculated after removing missing data. Number of IQ missing value: UM, ASD-1, Healthy-3; UCLA, ASD-0, Healthy-0; USM, ASD-0, Healthy-0; LEUVEN, ASD-13, Healthy-19",
+      "The highest ASD classiﬁcation performance metrics were observed from the USM site−70.4% accuracy, 72.5% sensitivity, 67.0% speciﬁcity and 0.73 AUC."
+    ]
+  }
+}

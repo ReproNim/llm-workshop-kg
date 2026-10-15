@@ -1,0 +1,721 @@
+{
+ "pulled_at": "2026-10-15T15:44:34+00:00",
+ "by_paper": {
+  "dimartino2014": {
+   "openalex_id": "W2167868121",
+   "cited_by_count": 2766,
+   "query": "https://api.openalex.org/works?filter=cites%3AW2167868121%2Ctitle_and_abstract.search%3AABIDE&per_page=50&sort=cited_by_count%3Adesc",
+   "count": 598,
+   "sample": [
+    {
+     "id": "https://openalex.org/W2752558629",
+     "doi": "https://doi.org/10.1016/j.nicl.2017.08.017",
+     "title": "Identification of autism spectrum disorder using deep learning and the ABIDE dataset",
+     "year": 2017,
+     "cited_by_count": 1008
+    },
+    {
+     "id": "https://openalex.org/W2806489700",
+     "doi": "https://doi.org/10.1016/j.media.2018.06.001",
+     "title": "Disease prediction using graph convolutional networks: Application to Autism Spectrum Disorder and Alzheimer\u2019s disease",
+     "year": 2018,
+     "cited_by_count": 794
+    },
+    {
+     "id": "https://openalex.org/W2590651237",
+     "doi": "https://doi.org/10.1038/sdata.2017.10",
+     "title": "Enhancing studies of the connectome in autism using the autism brain imaging data exchange II",
+     "year": 2017,
+     "cited_by_count": 710
+    },
+    {
+     "id": "https://openalex.org/W2522924024",
+     "doi": "https://doi.org/10.1016/j.neuroimage.2016.10.045",
+     "title": "Deriving reproducible biomarkers from multi-site resting-state data: An Autism-based example",
+     "year": 2016,
+     "cited_by_count": 697
+    },
+    {
+     "id": "https://openalex.org/W3040685212",
+     "doi": "https://doi.org/10.1016/j.media.2020.101765",
+     "title": "Multi-site fMRI analysis using privacy-preserving federated learning and domain adaptation: ABIDE results",
+     "year": 2020,
+     "cited_by_count": 477
+    },
+    {
+     "id": "https://openalex.org/W2611096323",
+     "doi": "https://doi.org/10.1016/j.neuroimage.2017.04.046",
+     "title": "High-resolution magnetic resonance imaging reveals nuclei of the human amygdala: manual segmentation to automatic atlas",
+     "year": 2017,
+     "cited_by_count": 467
+    },
+    {
+     "id": "https://openalex.org/W2567599812",
+     "doi": "https://doi.org/10.1016/j.neuroimage.2017.04.039",
+     "title": "3D fully convolutional networks for subcortical segmentation in MRI: A large-scale study",
+     "year": 2017,
+     "cited_by_count": 413
+    },
+    {
+     "id": "https://openalex.org/W2120759354",
+     "doi": "https://doi.org/10.3389/fnhum.2013.00599",
+     "title": "Multisite functional connectivity MRI classification of autism: ABIDE results",
+     "year": 2013,
+     "cited_by_count": 377
+    },
+    {
+     "id": "https://openalex.org/W2779020697",
+     "doi": "https://doi.org/10.1016/j.neuroimage.2017.12.052",
+     "title": "Metric learning with spectral graph convolutions on brain connectivity networks",
+     "year": 2017,
+     "cited_by_count": 376
+    },
+    {
+     "id": "https://openalex.org/W1823252948",
+     "doi": "https://doi.org/10.1001/jamapsychiatry.2015.0101",
+     "title": "Increased Functional Connectivity Between Subcortical and Cortical Resting-State Networks in Autism Spectrum Disorder",
+     "year": 2015,
+     "cited_by_count": 335
+    },
+    {
+     "id": "https://openalex.org/W2006591500",
+     "doi": "https://doi.org/10.1016/j.nicl.2014.12.013",
+     "title": "Functional connectivity classification of autism identifies highly predictive brain features but falls short of biomarker standards",
+     "year": 2014,
+     "cited_by_count": 334
+    },
+    {
+     "id": "https://openalex.org/W3000167727",
+     "doi": "https://doi.org/10.3389/fnins.2019.01325",
+     "title": "Automated Detection of Autism Spectrum Disorder Using a Convolutional Neural Network",
+     "year": 2020,
+     "cited_by_count": 278
+    },
+    {
+     "id": "https://openalex.org/W3095479837",
+     "doi": "https://doi.org/10.1016/j.compbiomed.2020.104096",
+     "title": "Hi-GCN: A hierarchical graph convolution network for graph embedding learning of brain network and brain disorders prediction",
+     "year": 2020,
+     "cited_by_count": 250
+    },
+    {
+     "id": "https://openalex.org/W3006025189",
+     "doi": "https://doi.org/10.1016/j.neuroimage.2020.116604",
+     "title": "Optimising network modelling methods for fMRI",
+     "year": 2020,
+     "cited_by_count": 234
+    },
+    {
+     "id": "https://openalex.org/W2751527031",
+     "doi": "https://doi.org/10.1007/978-3-319-67389-9_42",
+     "title": "Identifying Autism from Resting-State fMRI Using Long Short-Term Memory Networks",
+     "year": 2017,
+     "cited_by_count": 228
+    },
+    {
+     "id": "https://openalex.org/W2604525417",
+     "doi": "https://doi.org/10.1007/978-3-319-66179-7_21",
+     "title": "Spectral Graph Convolutions for Population-Based Disease Prediction",
+     "year": 2017,
+     "cited_by_count": 226
+    },
+    {
+     "id": "https://openalex.org/W2347013431",
+     "doi": "https://doi.org/10.1016/j.neuroimage.2016.05.005",
+     "title": "Motion and morphometry in clinical and nonclinical populations",
+     "year": 2016,
+     "cited_by_count": 189
+    },
+    {
+     "id": "https://openalex.org/W4206714166",
+     "doi": "https://doi.org/10.1016/j.compbiomed.2022.105239",
+     "title": "MVS-GCN: A prior brain structure learning-guided multi-view graph convolution network for autism spectrum disorder diagnosis",
+     "year": 2022,
+     "cited_by_count": 187
+    },
+    {
+     "id": "https://openalex.org/W2042273466",
+     "doi": "https://doi.org/10.1016/j.nicl.2015.04.002",
+     "title": "Diagnostic classification of intrinsic functional connectivity highlights somatosensory, default mode, and visual regions in autism",
+     "year": 2015,
+     "cited_by_count": 182
+    },
+    {
+     "id": "https://openalex.org/W3044779191",
+     "doi": "https://doi.org/10.1109/tnnls.2020.3007943",
+     "title": "Identifying Autism Spectrum Disorder From Resting-State fMRI Using Deep Belief Network",
+     "year": 2020,
+     "cited_by_count": 180
+    },
+    {
+     "id": "https://openalex.org/W2591711955",
+     "doi": "https://doi.org/10.1007/978-3-319-66182-7_54",
+     "title": "Distance Metric Learning Using Graph Convolutional Networks: Application to Functional Brain Networks",
+     "year": 2017,
+     "cited_by_count": 175
+    },
+    {
+     "id": "https://openalex.org/W2810012895",
+     "doi": "https://doi.org/10.3389/fnins.2018.00491",
+     "title": "A Novel Transfer Learning Approach to Enhance Deep Neural Network Classification of Brain Functional Connectomes",
+     "year": 2018,
+     "cited_by_count": 174
+    },
+    {
+     "id": "https://openalex.org/W2108573091",
+     "doi": "https://doi.org/10.1093/scan/nst156",
+     "title": "Underconnectivity of the superior temporal sulcus predicts emotion recognition deficits in autism",
+     "year": 2013,
+     "cited_by_count": 149
+    },
+    {
+     "id": "https://openalex.org/W2791126311",
+     "doi": "https://doi.org/10.3389/fgene.2018.00018",
+     "title": "Classification of Autism Spectrum Disorder Using Random Support Vector Machine Cluster",
+     "year": 2018,
+     "cited_by_count": 148
+    },
+    {
+     "id": "https://openalex.org/W2802789529",
+     "doi": "https://doi.org/10.1007/s10278-018-0093-8",
+     "title": "Combination of rs-fMRI and sMRI Data to Discriminate Autism Spectrum Disorders in Young Children Using Deep Belief Network",
+     "year": 2018,
+     "cited_by_count": 144
+    },
+    {
+     "id": "https://openalex.org/W3093225483",
+     "doi": "https://doi.org/10.1089/cmb.2020.0252",
+     "title": "Diagnosis of Autism Spectrum Disorder Based on Functional Brain Networks with Deep Learning",
+     "year": 2020,
+     "cited_by_count": 142
+    },
+    {
+     "id": "https://openalex.org/W2744921996",
+     "doi": "https://doi.org/10.1002/hbm.23764",
+     "title": "Intrinsic functional connectivity variance and state\u2010specific under\u2010connectivity in autism",
+     "year": 2017,
+     "cited_by_count": 137
+    },
+    {
+     "id": "https://openalex.org/W2523624904",
+     "doi": "https://doi.org/10.1016/j.bpsc.2016.09.002",
+     "title": "Thalamocortical Dysconnectivity in Autism Spectrum Disorder: An Analysis of the Autism Brain Imaging Data Exchange",
+     "year": 2016,
+     "cited_by_count": 137
+    },
+    {
+     "id": "https://openalex.org/W3155786160",
+     "doi": "https://doi.org/10.3389/fncom.2021.654315",
+     "title": "ASD-SAENet: A Sparse Autoencoder, and Deep-Neural Network Model for Detecting Autism Spectrum Disorder (ASD) Using fMRI Data",
+     "year": 2021,
+     "cited_by_count": 134
+    },
+    {
+     "id": "https://openalex.org/W2999255523",
+     "doi": "https://doi.org/10.1016/j.nicl.2020.102181",
+     "title": "Improving the detection of autism spectrum disorder by combining structural and functional MRI information",
+     "year": 2020,
+     "cited_by_count": 134
+    },
+    {
+     "id": "https://openalex.org/W2102724155",
+     "doi": "https://doi.org/10.1016/j.nicl.2013.05.006",
+     "title": "Abnormal brain synchrony in Down Syndrome",
+     "year": 2013,
+     "cited_by_count": 134
+    },
+    {
+     "id": "https://openalex.org/W2552047097",
+     "doi": "https://doi.org/10.3389/fpsyt.2016.00177",
+     "title": "Promises, Pitfalls, and Basic Guidelines for Applying Machine Learning Classifiers to Psychiatric Imaging Data, with Autism as an Example",
+     "year": 2016,
+     "cited_by_count": 132
+    },
+    {
+     "id": "https://openalex.org/W2161814901",
+     "doi": "https://doi.org/10.1186/s13229-015-0042-z",
+     "title": "Sex differences in structural organization of motor systems and their dissociable links with repetitive/restricted behaviors in children with autism",
+     "year": 2015,
+     "cited_by_count": 130
+    },
+    {
+     "id": "https://openalex.org/W2593997215",
+     "doi": "https://doi.org/10.1002/hbm.23084",
+     "title": "Reorganization of functionally connected brain subnetworks in high\u2010functioning autism",
+     "year": 2015,
+     "cited_by_count": 128
+    },
+    {
+     "id": "https://openalex.org/W3025027487",
+     "doi": "https://doi.org/10.3389/fpsyt.2020.00440",
+     "title": "Classifying Autism Spectrum Disorder Using the Temporal Statistics of Resting-State Functional MRI Data With 3D Convolutional Neural Networks",
+     "year": 2020,
+     "cited_by_count": 127
+    },
+    {
+     "id": "https://openalex.org/W2001233655",
+     "doi": "https://doi.org/10.1016/j.biopsych.2015.02.010",
+     "title": "Neuroanatomical Diversity of Corpus Callosum and Brain Volume in Autism: Meta-analysis, Analysis of the Autism Brain Imaging Data Exchange Project, and Simulation",
+     "year": 2015,
+     "cited_by_count": 123
+    },
+    {
+     "id": "https://openalex.org/W3081397765",
+     "doi": "https://doi.org/10.1016/j.bpsc.2020.08.008",
+     "title": "Atypical Brain Asymmetry in Autism\u2014A Candidate for Clinically Meaningful Stratification",
+     "year": 2020,
+     "cited_by_count": 122
+    },
+    {
+     "id": "https://openalex.org/W4388019035",
+     "doi": "https://doi.org/10.1109/tce.2023.3328479",
+     "title": "Analysis of Brain Imaging Data for the Detection of Early Age Autism Spectrum Disorder Using Transfer Learning Approaches for Internet of Things",
+     "year": 2023,
+     "cited_by_count": 121
+    },
+    {
+     "id": "https://openalex.org/W2561837554",
+     "doi": "https://doi.org/10.1371/journal.pone.0166934",
+     "title": "Using Functional or Structural Magnetic Resonance Images and Personal Characteristic Data to Identify ADHD and Autism",
+     "year": 2016,
+     "cited_by_count": 115
+    },
+    {
+     "id": "https://openalex.org/W3187525041",
+     "doi": "https://doi.org/10.1016/j.bspc.2021.103015",
+     "title": "Using DeepGCN to identify the autism spectrum disorder from multi-site resting-state data",
+     "year": 2021,
+     "cited_by_count": 112
+    },
+    {
+     "id": "https://openalex.org/W2910220482",
+     "doi": "https://doi.org/10.3389/fnins.2018.01018",
+     "title": "Topological Properties of Resting-State fMRI Functional Networks Improve Machine Learning-Based Autism Classification",
+     "year": 2019,
+     "cited_by_count": 109
+    },
+    {
+     "id": "https://openalex.org/W3162039091",
+     "doi": "https://doi.org/10.1109/tbme.2021.3080259",
+     "title": "Functional Connectivity-Based Prediction of Autism on Site Harmonized ABIDE Dataset",
+     "year": 2021,
+     "cited_by_count": 108
+    },
+    {
+     "id": "https://openalex.org/W4206777429",
+     "doi": "https://doi.org/10.1007/s12559-021-09981-z",
+     "title": "Detection of Autism Spectrum Disorder using fMRI Functional Connectivity with Feature Selection and Deep Learning",
+     "year": 2022,
+     "cited_by_count": 103
+    },
+    {
+     "id": "https://openalex.org/W3069503685",
+     "doi": "https://doi.org/10.1016/j.bspc.2020.102099",
+     "title": "Diagnostic prediction of autism spectrum disorder using complex network measures in a machine learning framework",
+     "year": 2020,
+     "cited_by_count": 102
+    },
+    {
+     "id": "https://openalex.org/W2792637345",
+     "doi": "https://doi.org/10.1016/j.neuroimage.2018.01.022",
+     "title": "Idiosyncratic organization of cortical networks in autism spectrum disorder",
+     "year": 2018,
+     "cited_by_count": 101
+    },
+    {
+     "id": "https://openalex.org/W2949392028",
+     "doi": "https://doi.org/10.1016/j.neuroimage.2016.09.049",
+     "title": "Predicting symptom severity in autism spectrum disorder based on cortical thickness measures in agglomerative data",
+     "year": 2016,
+     "cited_by_count": 93
+    },
+    {
+     "id": "https://openalex.org/W3200496752",
+     "doi": "https://doi.org/10.3389/fnins.2021.697870",
+     "title": "Autism Spectrum Disorder Studies Using fMRI Data and Machine Learning: A Review",
+     "year": 2021,
+     "cited_by_count": 92
+    },
+    {
+     "id": "https://openalex.org/W2518410112",
+     "doi": "https://doi.org/10.1016/j.media.2016.08.003",
+     "title": "Identifying differences in brain activities and an accurate detection of autism spectrum disorder using resting state functional-magnetic resonance imaging : A spatial filtering approach",
+     "year": 2016,
+     "cited_by_count": 91
+    },
+    {
+     "id": "https://openalex.org/W2555745147",
+     "doi": "https://doi.org/10.1038/srep37422",
+     "title": "Motor noise is rich signal in autism research and pharmacological treatments",
+     "year": 2016,
+     "cited_by_count": 90
+    },
+    {
+     "id": "https://openalex.org/W4312161096",
+     "doi": "https://doi.org/10.1016/j.biopsych.2022.12.018",
+     "title": "Connectome-wide Mega-analysis Reveals Robust Patterns of Atypical Functional Connectivity in Autism",
+     "year": 2022,
+     "cited_by_count": 88
+    }
+   ]
+  },
+  "abraham2017": {
+   "openalex_id": "W2522924024",
+   "cited_by_count": 697,
+   "query": "https://api.openalex.org/works?filter=cites%3AW2522924024%2Ctitle_and_abstract.search%3AABIDE&per_page=50&sort=cited_by_count%3Adesc",
+   "count": 220,
+   "sample": [
+    {
+     "id": "https://openalex.org/W2752558629",
+     "doi": "https://doi.org/10.1016/j.nicl.2017.08.017",
+     "title": "Identification of autism spectrum disorder using deep learning and the ABIDE dataset",
+     "year": 2017,
+     "cited_by_count": 1008
+    },
+    {
+     "id": "https://openalex.org/W2806489700",
+     "doi": "https://doi.org/10.1016/j.media.2018.06.001",
+     "title": "Disease prediction using graph convolutional networks: Application to Autism Spectrum Disorder and Alzheimer\u2019s disease",
+     "year": 2018,
+     "cited_by_count": 794
+    },
+    {
+     "id": "https://openalex.org/W2590651237",
+     "doi": "https://doi.org/10.1038/sdata.2017.10",
+     "title": "Enhancing studies of the connectome in autism using the autism brain imaging data exchange II",
+     "year": 2017,
+     "cited_by_count": 710
+    },
+    {
+     "id": "https://openalex.org/W2779020697",
+     "doi": "https://doi.org/10.1016/j.neuroimage.2017.12.052",
+     "title": "Metric learning with spectral graph convolutions on brain connectivity networks",
+     "year": 2017,
+     "cited_by_count": 376
+    },
+    {
+     "id": "https://openalex.org/W3000167727",
+     "doi": "https://doi.org/10.3389/fnins.2019.01325",
+     "title": "Automated Detection of Autism Spectrum Disorder Using a Convolutional Neural Network",
+     "year": 2020,
+     "cited_by_count": 278
+    },
+    {
+     "id": "https://openalex.org/W3095479837",
+     "doi": "https://doi.org/10.1016/j.compbiomed.2020.104096",
+     "title": "Hi-GCN: A hierarchical graph convolution network for graph embedding learning of brain network and brain disorders prediction",
+     "year": 2020,
+     "cited_by_count": 250
+    },
+    {
+     "id": "https://openalex.org/W3006025189",
+     "doi": "https://doi.org/10.1016/j.neuroimage.2020.116604",
+     "title": "Optimising network modelling methods for fMRI",
+     "year": 2020,
+     "cited_by_count": 234
+    },
+    {
+     "id": "https://openalex.org/W2751527031",
+     "doi": "https://doi.org/10.1007/978-3-319-67389-9_42",
+     "title": "Identifying Autism from Resting-State fMRI Using Long Short-Term Memory Networks",
+     "year": 2017,
+     "cited_by_count": 228
+    },
+    {
+     "id": "https://openalex.org/W2604525417",
+     "doi": "https://doi.org/10.1007/978-3-319-66179-7_21",
+     "title": "Spectral Graph Convolutions for Population-Based Disease Prediction",
+     "year": 2017,
+     "cited_by_count": 226
+    },
+    {
+     "id": "https://openalex.org/W2801745895",
+     "doi": "https://doi.org/10.1371/journal.pone.0194856",
+     "title": "A general prediction model for the detection of ADHD and Autism using structural and functional MRI",
+     "year": 2018,
+     "cited_by_count": 196
+    },
+    {
+     "id": "https://openalex.org/W3044779191",
+     "doi": "https://doi.org/10.1109/tnnls.2020.3007943",
+     "title": "Identifying Autism Spectrum Disorder From Resting-State fMRI Using Deep Belief Network",
+     "year": 2020,
+     "cited_by_count": 180
+    },
+    {
+     "id": "https://openalex.org/W2591711955",
+     "doi": "https://doi.org/10.1007/978-3-319-66182-7_54",
+     "title": "Distance Metric Learning Using Graph Convolutional Networks: Application to Functional Brain Networks",
+     "year": 2017,
+     "cited_by_count": 175
+    },
+    {
+     "id": "https://openalex.org/W3093225483",
+     "doi": "https://doi.org/10.1089/cmb.2020.0252",
+     "title": "Diagnosis of Autism Spectrum Disorder Based on Functional Brain Networks with Deep Learning",
+     "year": 2020,
+     "cited_by_count": 142
+    },
+    {
+     "id": "https://openalex.org/W3155786160",
+     "doi": "https://doi.org/10.3389/fncom.2021.654315",
+     "title": "ASD-SAENet: A Sparse Autoencoder, and Deep-Neural Network Model for Detecting Autism Spectrum Disorder (ASD) Using fMRI Data",
+     "year": 2021,
+     "cited_by_count": 134
+    },
+    {
+     "id": "https://openalex.org/W2999255523",
+     "doi": "https://doi.org/10.1016/j.nicl.2020.102181",
+     "title": "Improving the detection of autism spectrum disorder by combining structural and functional MRI information",
+     "year": 2020,
+     "cited_by_count": 134
+    },
+    {
+     "id": "https://openalex.org/W2912080696",
+     "doi": "https://doi.org/10.3389/fncom.2019.00009",
+     "title": "Enhancing Diagnosis of Autism With Optimized Machine Learning Models and Personal Characteristic Data",
+     "year": 2019,
+     "cited_by_count": 127
+    },
+    {
+     "id": "https://openalex.org/W3187525041",
+     "doi": "https://doi.org/10.1016/j.bspc.2021.103015",
+     "title": "Using DeepGCN to identify the autism spectrum disorder from multi-site resting-state data",
+     "year": 2021,
+     "cited_by_count": 112
+    },
+    {
+     "id": "https://openalex.org/W2910220482",
+     "doi": "https://doi.org/10.3389/fnins.2018.01018",
+     "title": "Topological Properties of Resting-State fMRI Functional Networks Improve Machine Learning-Based Autism Classification",
+     "year": 2019,
+     "cited_by_count": 109
+    },
+    {
+     "id": "https://openalex.org/W3162039091",
+     "doi": "https://doi.org/10.1109/tbme.2021.3080259",
+     "title": "Functional Connectivity-Based Prediction of Autism on Site Harmonized ABIDE Dataset",
+     "year": 2021,
+     "cited_by_count": 108
+    },
+    {
+     "id": "https://openalex.org/W4206777429",
+     "doi": "https://doi.org/10.1007/s12559-021-09981-z",
+     "title": "Detection of Autism Spectrum Disorder using fMRI Functional Connectivity with Feature Selection and Deep Learning",
+     "year": 2022,
+     "cited_by_count": 103
+    },
+    {
+     "id": "https://openalex.org/W3069503685",
+     "doi": "https://doi.org/10.1016/j.bspc.2020.102099",
+     "title": "Diagnostic prediction of autism spectrum disorder using complex network measures in a machine learning framework",
+     "year": 2020,
+     "cited_by_count": 102
+    },
+    {
+     "id": "https://openalex.org/W3040879299",
+     "doi": "https://doi.org/10.1016/j.jneumeth.2020.108840",
+     "title": "AIMAFE: Autism spectrum disorder identification with multi-atlas deep feature representation and ensemble learning",
+     "year": 2020,
+     "cited_by_count": 95
+    },
+    {
+     "id": "https://openalex.org/W3200496752",
+     "doi": "https://doi.org/10.3389/fnins.2021.697870",
+     "title": "Autism Spectrum Disorder Studies Using fMRI Data and Machine Learning: A Review",
+     "year": 2021,
+     "cited_by_count": 92
+    },
+    {
+     "id": "https://openalex.org/W3163463488",
+     "doi": "https://doi.org/10.1007/s11571-021-09683-0",
+     "title": "Classification of ASD based on fMRI data with deep learning",
+     "year": 2021,
+     "cited_by_count": 87
+    },
+    {
+     "id": "https://openalex.org/W3209594421",
+     "doi": "https://doi.org/10.1016/j.media.2021.102279",
+     "title": "Multi-site clustering and nested feature extraction for identifying autism spectrum disorder with resting-state fMRI",
+     "year": 2021,
+     "cited_by_count": 85
+    },
+    {
+     "id": "https://openalex.org/W3206202156",
+     "doi": "https://doi.org/10.1016/j.compbiomed.2021.104963",
+     "title": "Autism spectrum disorder diagnosis using graph attention network based on spatial-constrained sparse functional brain networks",
+     "year": 2021,
+     "cited_by_count": 84
+    },
+    {
+     "id": "https://openalex.org/W2972996185",
+     "doi": "https://doi.org/10.1109/access.2019.2940198",
+     "title": "Diagnosis of Autism Spectrum Disorder Based on Eigenvalues of Brain Networks",
+     "year": 2019,
+     "cited_by_count": 84
+    },
+    {
+     "id": "https://openalex.org/W2608333859",
+     "doi": "https://doi.org/10.1109/icassp.2019.8683547",
+     "title": "Bootstrapping Graph Convolutional Neural Networks for Autism Spectrum Disorder Classification",
+     "year": 2019,
+     "cited_by_count": 83
+    },
+    {
+     "id": "https://openalex.org/W3029963245",
+     "doi": "https://doi.org/10.1109/jbhi.2020.2998603",
+     "title": "Single Volume Image Generator and Deep Learning-Based ASD Classification",
+     "year": 2020,
+     "cited_by_count": 81
+    },
+    {
+     "id": "https://openalex.org/W3171183426",
+     "doi": "https://doi.org/10.3389/fnins.2021.674055",
+     "title": "Explainable Deep Learning for Personalized Age Prediction With Brain Morphology",
+     "year": 2021,
+     "cited_by_count": 80
+    },
+    {
+     "id": "https://openalex.org/W2807933635",
+     "doi": "https://doi.org/10.1007/978-3-030-00889-5_16",
+     "title": "3D Convolutional Neural Networks for Classification of Functional Connectomes",
+     "year": 2018,
+     "cited_by_count": 80
+    },
+    {
+     "id": "https://openalex.org/W3185956502",
+     "doi": "https://doi.org/10.1016/j.neucom.2020.06.152",
+     "title": "MAGE: Automatic diagnosis of autism spectrum disorders using multi-atlas graph convolutional networks and ensemble learning",
+     "year": 2021,
+     "cited_by_count": 79
+    },
+    {
+     "id": "https://openalex.org/W3133989655",
+     "doi": "https://doi.org/10.1186/s13229-021-00415-z",
+     "title": "Towards robust and replicable sex differences in the intrinsic brain function of autism",
+     "year": 2021,
+     "cited_by_count": 74
+    },
+    {
+     "id": "https://openalex.org/W4286382578",
+     "doi": "https://doi.org/10.1016/j.compbiomed.2022.105823",
+     "title": "MAMF-GCN: Multi-scale adaptive multi-channel fusion deep graph convolutional network for predicting mental disorder",
+     "year": 2022,
+     "cited_by_count": 70
+    },
+    {
+     "id": "https://openalex.org/W3149668772",
+     "doi": "https://doi.org/10.1016/j.asoc.2021.107375",
+     "title": "Multi-atlas classification of autism spectrum disorder with hinge loss trained deep architectures: ABIDE I results",
+     "year": 2021,
+     "cited_by_count": 70
+    },
+    {
+     "id": "https://openalex.org/W4220662520",
+     "doi": "https://doi.org/10.1016/j.mlwa.2022.100290",
+     "title": "A study of brain networks for autism spectrum disorder classification using resting-state functional connectivity",
+     "year": 2022,
+     "cited_by_count": 69
+    },
+    {
+     "id": "https://openalex.org/W3041361970",
+     "doi": "https://doi.org/10.1016/j.patrec.2020.07.005",
+     "title": "Improved ASD classification using dynamic functional connectivity and multi-task feature selection",
+     "year": 2020,
+     "cited_by_count": 65
+    },
+    {
+     "id": "https://openalex.org/W4294310988",
+     "doi": "https://doi.org/10.1109/tmi.2022.3203899",
+     "title": "Improving Multi-Site Autism Classification via Site-Dependence Minimization and Second-Order Functional Connectivity",
+     "year": 2022,
+     "cited_by_count": 64
+    },
+    {
+     "id": "https://openalex.org/W3009544884",
+     "doi": "https://doi.org/10.5607/en.2020.29.1.27",
+     "title": "Attentional Connectivity-based Prediction of Autism Using Heterogeneous rs-fMRI Data from CC200 Atlas",
+     "year": 2020,
+     "cited_by_count": 64
+    },
+    {
+     "id": "https://openalex.org/W3212514517",
+     "doi": "https://doi.org/10.1007/s12021-021-09548-1",
+     "title": "TE-HI-GCN: An Ensemble of Transfer Hierarchical Graph Convolutional Networks for Disorder Diagnosis",
+     "year": 2021,
+     "cited_by_count": 60
+    },
+    {
+     "id": "https://openalex.org/W4225141725",
+     "doi": "https://doi.org/10.1371/journal.pbio.3001627",
+     "title": "Population heterogeneity in clinical cohorts affects the predictive accuracy of brain imaging",
+     "year": 2022,
+     "cited_by_count": 54
+    },
+    {
+     "id": "https://openalex.org/W3176112874",
+     "doi": "https://doi.org/10.3389/fninf.2021.635657",
+     "title": "DarkASDNet: Classification of ASD on Functional MRI Using Deep Neural Network",
+     "year": 2021,
+     "cited_by_count": 53
+    },
+    {
+     "id": "https://openalex.org/W3128956043",
+     "doi": "https://doi.org/10.1016/j.media.2021.101986",
+     "title": "Combining anatomical and functional networks for neuropathology identification: A case study on autism spectrum disorder",
+     "year": 2021,
+     "cited_by_count": 52
+    },
+    {
+     "id": "https://openalex.org/W3159196951",
+     "doi": "https://doi.org/10.11113/jurnalteknologi.v83.16389",
+     "title": "FUNCTIONAL MAGNETIC RESONANCE IMAGING FOR AUTISM SPECTRUM DISORDER DETECTION USING DEEP LEARNING",
+     "year": 2021,
+     "cited_by_count": 50
+    },
+    {
+     "id": "https://openalex.org/W2796879336",
+     "doi": "https://doi.org/10.1016/j.nicl.2018.04.013",
+     "title": "Aberrant hemodynamic responses in autism: Implications for resting state fMRI functional connectivity studies",
+     "year": 2018,
+     "cited_by_count": 49
+    },
+    {
+     "id": "https://openalex.org/W4402184853",
+     "doi": "https://doi.org/10.1016/j.compbiomed.2024.109083",
+     "title": "MADE-for-ASD: A multi-atlas deep ensemble network for diagnosing Autism Spectrum Disorder",
+     "year": 2024,
+     "cited_by_count": 48
+    },
+    {
+     "id": "https://openalex.org/W2979717766",
+     "doi": "https://doi.org/10.1007/978-3-030-32695-1_11",
+     "title": "A Hybrid 3DCNN and 3DC-LSTM Based Model for 4D Spatio-Temporal fMRI Data: An ABIDE Autism Classification Study",
+     "year": 2019,
+     "cited_by_count": 48
+    },
+    {
+     "id": "https://openalex.org/W3003326784",
+     "doi": "https://doi.org/10.1016/j.media.2020.101662",
+     "title": "Self-weighted adaptive structure learning for ASD diagnosis via multi-template multi-center representation",
+     "year": 2020,
+     "cited_by_count": 45
+    },
+    {
+     "id": "https://openalex.org/W2805625726",
+     "doi": "https://doi.org/10.1109/isbi.2018.8363534",
+     "title": "Connectome priors in deep neural networks to predict autism",
+     "year": 2018,
+     "cited_by_count": 42
+    },
+    {
+     "id": "https://openalex.org/W4282977711",
+     "doi": "https://doi.org/10.1016/j.nicl.2022.103082",
+     "title": "Multi-site harmonization of MRI data uncovers machine-learning discrimination capability in barely separable populations: An example from the ABIDE dataset",
+     "year": 2022,
+     "cited_by_count": 41
+    }
+   ]
+  }
+ }
+}

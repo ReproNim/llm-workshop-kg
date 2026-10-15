@@ -1,0 +1,170 @@
+{
+ "schema": "PyNIDM v4.5.5 src/nidm/experiment/schema/nidm_schema.yaml (LinkML 0.1.0)",
+ "pynidm_commit": "74793553f2ef0884602c4383fe8dbe8c74e3dcb8",
+ "targets": {
+  "abide_core": {
+   "file": "graph/abide_kg.ttl",
+   "triples": 292437,
+   "open": {
+    "conforms": false,
+    "n_results": 11491,
+    "by_shape_path_constraint": {
+     "Activity | wasAssociatedWith | ClassConstraintComponent": 5267,
+     "Activity | wasAssociatedWith | MaxCountConstraintComponent": 2074,
+     "Association | agent | ClassConstraintComponent": 2070,
+     "Activity | used | MaxCountConstraintComponent": 1045,
+     "Derivative | used | MaxCountConstraintComponent": 1035
+    },
+    "seconds": 5.8
+   },
+   "closed": {
+    "conforms": false,
+    "n_results": 226807,
+    "by_shape_path_constraint": {
+     "AcquisitionObject | urn:repronim:abide:missingVariable | ClosedConstraintComponent": 62781,
+     "Activity | urn:repronim:abide:trainedOn | ClosedConstraintComponent": 27949,
+     "Activity | isPartOf | ClosedConstraintComponent": 7393,
+     "Activity | qualifiedAssociation | ClosedConstraintComponent": 7337,
+     "Activity | wasAssociatedWith | ClassConstraintComponent": 5267,
+     "Derivative | wasAssociatedWith | ClosedConstraintComponent": 5129,
+     "Derivative | qualifiedAssociation | ClosedConstraintComponent": 4140,
+     "Acquisition | wasAssociatedWith | ClosedConstraintComponent": 3182,
+     "AcquisitionObject | urn:repronim:abide:participant | ClosedConstraintComponent": 3182,
+     "DerivativeObject | sha256 | ClosedConstraintComponent": 3059,
+     "DerivativeObject | wasDerivedFrom | ClosedConstraintComponent": 3059,
+     "DerivativeObject | urn:repronim:abide:participant | ClosedConstraintComponent": 3059,
+     "Activity | wasAssociatedWith | MaxCountConstraintComponent": 2074,
+     "DerivativeObject | label | ClosedConstraintComponent": 2070,
+     "DerivativeObject | atLocation | ClosedConstraintComponent": 2070,
+     "Association | agent | ClassConstraintComponent": 2070,
+     "AcquisitionObject | label | ClosedConstraintComponent": 2070,
+     "AcquisitionObject | atLocation | ClosedConstraintComponent": 2070,
+     "AcquisitionObject | urn:repronim:abide:contentRetrieved | ClosedConstraintComponent": 2070,
+     "Activity | urn:repronim:abide:testedOn | ClosedConstraintComponent": 1471,
+     "Person | label | ClosedConstraintComponent": 1114,
+     "Person | urn:repronim:abide:site | ClosedConstraintComponent": 1112,
+     "Person | urn:repronim:abide:subId | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | wasDerivedFrom | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | urn:repronim:abide:sourceRow | ClosedConstraintComponent": 1112
+    },
+    "seconds": 29.3
+   }
+  },
+  "pynidm_csv2nidm_phenotype": {
+   "file": "data/derived/pynidm/phenotype_pynidm.ttl",
+   "triples": 105641,
+   "open": {
+    "conforms": false,
+    "n_results": 134,
+    "by_shape_path_constraint": {
+     "PersonalDataElement | choices | DatatypeConstraintComponent": 26,
+     "PersonalDataElement | choices | NodeKindConstraintComponent": 26,
+     "DataElement | choices | DatatypeConstraintComponent": 26,
+     "DataElement | choices | NodeKindConstraintComponent": 26,
+     "PersonalDataElement | choices | MaxCountConstraintComponent": 14,
+     "DataElement | choices | MaxCountConstraintComponent": 14,
+     "Activity | startedAtTime | DatatypeConstraintComponent": 1,
+     "Activity | endedAtTime | DatatypeConstraintComponent": 1
+    },
+    "seconds": 1.3
+   },
+   "closed": {
+    "conforms": false,
+    "n_results": 85030,
+    "by_shape_path_constraint": {
+     "Activity | isPartOf | ClosedConstraintComponent": 2224,
+     "AcquisitionObject | ADI_R_SOCIAL_TOTAL_A_oa4kt1 | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | ADOS_GOTHAM_SEVERITY_3d9oct2 | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | ADOS_MODULE_lgv0jh | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | AGE_AT_MPRAGE_13q93m6 | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | AGE_AT_SCAN_3nnia3l | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | AQ_TOTAL_3alsd04 | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | BMI_1vn4o0m | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | COMORBIDITY_fmukvk | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | CURRENT_MED_STATUS_1vc6meg | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | DX_GROUP_3rnktc5 | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | EYE_STATUS_AT_SCAN_31nh9cg | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | FILE_ID_1ou8vde | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | FIQ_2gtns2q | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | FIQ_TEST_TYPE_21vpgsg | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | HANDEDNESS_CATEGORY_crg13 | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | MEDICATION_NAME_3dtsrca | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | PIQ_3rhjp1l | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | PIQ_TEST_TYPE_5oan7a | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | SEX_33lb1ms | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | SITE_ID_1f5ks6j | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | SRS_AWARENESS_2bhs1h6 | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | SRS_VERSION_1jbchah | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | VINELAND_ABC_STANDARD_ltkhqg | ClosedConstraintComponent": 1112,
+     "AcquisitionObject | VINELAND_COMMUNICATION_STANDARD_ocmdai | ClosedConstraintComponent": 1112
+    },
+    "seconds": 13.9
+   }
+  },
+  "repronim_simple2_Caltech": {
+   "file": "data/repronim_simple2/datasets.datalad.org/abide/RawDataBIDS/Caltech/nidm.ttl",
+   "triples": 22747,
+   "open": {
+    "conforms": false,
+    "n_results": 114,
+    "by_shape_path_constraint": {
+     "Association | agent | ClassConstraintComponent": 76,
+     "AcquisitionObject | AcquisitionObject | DatatypeConstraintComponent": 38
+    },
+    "seconds": 0.2
+   },
+   "closed": {
+    "conforms": false,
+    "n_results": 5394,
+    "by_shape_path_constraint": {
+     "Activity | isPartOf | ClosedConstraintComponent": 266,
+     "Activity | qualifiedAssociation | ClosedConstraintComponent": 266,
+     "Association | agent | ClassConstraintComponent": 76,
+     "AcquisitionObject | EchoTime | ClosedConstraintComponent": 76,
+     "AcquisitionObject | FlipAngle | ClosedConstraintComponent": 76,
+     "AcquisitionObject | PhaseEncodingDirection | ClosedConstraintComponent": 76,
+     "AcquisitionObject | AcquisitionMatrix | ClosedConstraintComponent": 76,
+     "AcquisitionObject | Manufacturer | ClosedConstraintComponent": 76,
+     "AcquisitionObject | PixelBandwidth | ClosedConstraintComponent": 76,
+     "AcquisitionObject | RepetitionTime | ClosedConstraintComponent": 76,
+     "AcquisitionObject | ScanOptions | ClosedConstraintComponent": 76,
+     "Activity | description | ClosedConstraintComponent": 76,
+     "PersonalDataElement | ilx_0739289 | ClosedConstraintComponent": 72,
+     "DataElement | ilx_0739289 | ClosedConstraintComponent": 72,
+     "AcquisitionObject | ADI_RRB_TOTAL_C_2d39cnp | ClosedConstraintComponent": 38,
+     "AcquisitionObject | ADI_R_ONSET_TOTAL_D_37q4luk | ClosedConstraintComponent": 38,
+     "AcquisitionObject | ADI_R_RSRCH_RELIABLE_2610g8s | ClosedConstraintComponent": 38,
+     "AcquisitionObject | ADI_R_SOCIAL_TOTAL_A_2ctlbue | ClosedConstraintComponent": 38,
+     "AcquisitionObject | ADI_R_VERBAL_TOTAL_BV_3pllqi5 | ClosedConstraintComponent": 38,
+     "AcquisitionObject | ADOS_COMM_3hoo72g | ClosedConstraintComponent": 38,
+     "AcquisitionObject | ADOS_GOTHAM_RRB_3m5khg5 | ClosedConstraintComponent": 38,
+     "AcquisitionObject | ADOS_GOTHAM_SEVERITY_1un43l0 | ClosedConstraintComponent": 38,
+     "AcquisitionObject | ADOS_GOTHAM_SOCAFFECT_6l2lhu | ClosedConstraintComponent": 38,
+     "AcquisitionObject | ADOS_GOTHAM_TOTAL_2lnpcqf | ClosedConstraintComponent": 38,
+     "AcquisitionObject | ADOS_MODULE_2du0ask | ClosedConstraintComponent": 38
+    },
+    "seconds": 0.8
+   }
+  }
+ },
+ "extension": {
+  "file": "graph/abide_extension.ttl",
+  "n_classes": 13,
+  "n_properties": 191,
+  "classes": [
+   "ex:Claim",
+   "ex:Cohort",
+   "ex:EvidenceAssessment",
+   "ex:EvidenceSpan",
+   "ex:Fold",
+   "ex:InclusionCriterion",
+   "ex:MeasuredChange",
+   "ex:Method",
+   "ex:Publication",
+   "ex:ReportedCohort",
+   "ex:ResearchQuestion",
+   "ex:Result",
+   "ex:SelectionRule"
+  ]
+ }
+}

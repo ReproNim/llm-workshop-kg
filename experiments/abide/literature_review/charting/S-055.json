@@ -1,0 +1,261 @@
+{
+  "source_id": "S-055",
+  "pmid": "local_19021604",
+  "doi": "10.1016/j.media.2021.101986",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2/3: analyses ABIDE I resting-state fMRI (C-PAC-preprocessed BOLD time series) explicitly, combined with an anatomical-distance graph topology, and reports a diagnostic prediction (ASD vs. neurotypical classification) analysis.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "In this study, we consider the ABIDE I preprocessed dataset (Di Martino\net al., 2014; Craddock et al., 2013). It includes BOLD time-series extracted\nfrom rs-fMRI through a preprocessing pipeline which is fully detailed on the web\nplatforms related to the ABIDE collection",
+      "section": "methods",
+      "claim": "Uses the ABIDE I Preprocessed Connectomes Project dataset of rs-fMRI BOLD time series.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The time-series consid-\nered in our work were preprocessed according to the C-PAC pipeline, which\ninvolves the following main steps: basic processing, noise signal removal, global\nregression, band-pass ﬁltering (0.01-0.1 Hz), registration, time-series extrac-\ntion",
+      "section": "methods",
+      "claim": "Preprocessing pipeline: C-PAC (basic processing, nuisance/global signal regression, band-pass filtering 0.01-0.1 Hz, registration).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The selected mean time-series\ncorrespond to the Automated Anatomical Labeling atlas on 90 regions of interest\n(AAL90)",
+      "section": "methods",
+      "claim": "AAL90 atlas used for ROI time-series extraction.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "we consider patients who meet\nthe following inclusion criteria:\n• eyes opened during fMRI acquisition;\n• less than 18 years old;\n• less than 0.2 mm in mean framewise displacement.",
+      "section": "methods",
+      "claim": "Explicit inclusion criteria: eyes-open scans, age under 18, mean framewise displacement under 0.2 mm.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The corresponding data subset consists of a total of 452 subjects, with respec-\ntively 251 NT and 201 ASD subjects.",
+      "section": "methods",
+      "claim": "Primary analysed cohort: 452 ABIDE I adolescent subjects (201 ASD, 251 neurotypical).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Given the limited size of the dataset, we\nco",
+      "section": "methods",
+      "claim": "A Leave-One-Out Cross-Validation (LOOCV) procedure is used given the limited sample size.",
+      "relevance_score": 0.5
+    },
+    {
+      "text": "In terms of classiﬁcation\naccuracy, our framework outperforms other state-\nof-the-art methods that are based on either the structural or the functional connectivity, i.e., the Graph Fourier Transform - GFT",
+      "section": "results",
+      "claim": "The proposed combined structural+functional graph-signal-processing framework outperforms GFT and single-modality state-of-the-art classification methods.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The analysis of the results reveals the inﬂuence of the frontal and temporal\nlobes in the diagnosis of the disorder.\nThis\nﬁnding is consistent with\nprevious reports of the literature of neuroscience.",
+      "section": "discussion",
+      "claim": "Predictive markers implicate frontal and temporal lobe regions in ASD classification, consistent with prior neuroscience literature.",
+      "relevance_score": 0.7
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "452 ABIDE I adolescents (201 ASD, 251 NT) selected via explicit inclusion criteria (eyes-open, age<18, mean FD<0.2mm); a separate 130-subject adult subsample (63 ASD, 67 NT) used for generalization assessment."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "C-PAC pipeline and AAL90 atlas named explicitly; anatomical k-nearest-neighbor graph topology for the 'structural' component fully described."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD/NT labels drawn from the ABIDE phenotypic file; the paper does not restate the diagnostic instrument/criteria used to assign group membership."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Unclear",
+        "support": "Leave-One-Out Cross-Validation is used given the small sample, with inner cross-validation for hyperparameter tuning on each training split (reducing leakage risk), but no site-aware (leave-site-out) evaluation is reported despite the dataset spanning 17 ABIDE sites."
+      }
+    ],
+    "overall": "Low",
+    "summary": "A well-documented predictive ABIDE I study combining structural (anatomical-distance graph) and functional (rs-fMRI) information, with explicit motion/age/eyes-open inclusion criteria and inner cross-validated hyperparameter tuning, though site heterogeneity (17 sites) is not addressed via leave-site-out evaluation."
+  },
+  "charting": {
+    "source_id": "S-055",
+    "title": "Combining Anatomical and Functional Networks for Neuropathology Identification: A Case Study on Autism Spectrum Disorder",
+    "authors": "Itani S; Thanou D",
+    "year": "2021",
+    "journal_conference": "Medical Image Analysis",
+    "doi": "10.1016/j.media.2021.101986",
+    "database_retrieved": "unpaywall",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "201",
+    "age_mean_sd": "",
+    "age_range": "under 18 years (primary sample); 18-50 years (adult generalization subsample)",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "251",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI; anatomical (geometric distance) graph topology",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "graph signal processing features (frequency content of rs-fMRI signals on a brain graph)",
+    "specific_features": "Graph Fourier Transform (GFT) coefficients of rs-fMRI BOLD signals over an anatomical k-nearest-neighbor brain graph (AAL90 ROIs), projected via an extended Fukunaga-Koontz transform",
+    "feature_extraction_tools": "C-PAC (Preprocessed Connectomes Project)",
+    "feature_importance_reported": "Yes",
+    "importance_method": "Decision-tree interpretable splits on graph-frequency features",
+    "top_features_identified": "Frontal and temporal lobe regions",
+    "feature_change_direction": "",
+    "model_category": "Interpretable decision tree classifier",
+    "specific_algorithms": "Graph Signal Processing (Fukunaga-Koontz transform extension) feature extraction + decision tree classifier, compared against GFT and Structural Feature Method (SFM) baselines",
+    "validation_methodology": "Leave-One-Out Cross-Validation with inner cross-validation for hyperparameter tuning on each training split",
+    "performance_metrics": "Averaged test accuracy",
+    "key_performance_results": "Averaged test accuracy of 73.5% (m=2), 74.8% (m=3), 73.0% (m=4) and 71.3% (m=5), significantly outperforming the SFM baseline (e.g. 69.1%-70.4%) at 95% training set size (p<=0.026); on an adult generalization subsample the proposed framework outperformed SFM by up to a 15-percentage-point gap",
+    "summary_key_findings": "A graph-signal-processing framework combining an anatomical (geometric nearest-neighbor) brain graph with rs-fMRI BOLD signal frequency content, classified via an interpretable decision tree, outperforms structural-only (SFM) and functional-only (GFT) state-of-the-art baselines on a 452-subject ABIDE I adolescent cohort (201 ASD, 251 NT), with predictive markers implicating frontal and temporal lobe regions.",
+    "features_associated_disorder": "Frontal and temporal lobe graph-frequency features",
+    "future_directions_recommended": "",
+    "reviewer_notes": "A secondary 130-subject adult ABIDE I subsample (63 ASD, 67 NT, ages 18-50) was used only to assess generalization of the framework, not as the primary analysed cohort.",
+    "custom_fields": {
+      "RQ1": "predictive | ABIDE I, primary sample of 452 adolescents (201 ASD, 251 NT) from 17 sites, selected via eyes-open, age<18, mean-FD<0.2mm inclusion criteria; secondary adult generalization subsample of 130 (63 ASD, 67 NT). | quote: \"The corresponding data subset consists of a total of 452 subjects, with respec-\ntively 251 NT and 201 ASD subjects.\"",
+      "RQ2": "C-PAC pipeline; AAL90 atlas (90 ROIs). | quote: \"The selected mean time-series\ncorrespond to the Automated Anatomical Labeling atlas on 90 regions of interest\n(AAL90)\"",
+      "RQ3": "predictive — classification of ASD vs. neurotypical subjects combining structural (anatomical graph) and functional (rs-fMRI) information. | quote: \"The present work addresses the classiﬁcation of neu-\nrotypical and ASD subjects by combining knowledge about both the structure\nand the functional activity of the brain.\"",
+      "RQ4": "Leave-One-Out Cross-Validation with inner cross-validation for hyperparameter tuning on each training split; no leave-site-out evaluation reported despite 17 contributing sites. | quote: \"Tuning is performed through an inner\ncross-validation launched on each training split to select the best corresponding parameter value.\"",
+      "RQ5": "Averaged test accuracy up to 74.8% (m=3), significantly outperforming the SFM structural-only baseline; frontal and temporal lobes identified as most predictive regions. | quote: \"m SFM (%) Ours (%) p-value 2 69.1 ± 7.4 73.5 ± 6.9 0.026 3 70.4 ± 10.3 74.8 ± 9.5 0.016\"",
+      "RQ6": "partly — exact inclusion rules (eyes-open, age, mean FD threshold) and resulting N by diagnosis reported, but no participant-ID list given. | quote: \"we consider patients who meet\nthe following inclusion criteria:\n• eyes opened during fMRI acquisition;\n• less than 18 years old;\n• less than 0.2 mm in mean framewise displacement.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"The corresponding data subset consists of a total of 452 subjects, with respec-\ntively 251 NT and 201 ASD subjects.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes | quote: \"less than 0.2 mm in mean framewise displacement.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"The time-series consid-\nered in our work were preprocessed according to the C-PAC pipeline\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"The selected mean time-series\ncorrespond to the Automated Anatomical Labeling atlas on 90 regions of interest\n(AAL90)\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Yes | quote: \"Tuning is performed through an inner\ncross-validation launched on each training split to select the best corresponding parameter value.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No | quote: \"our sample is heterogeneous by the range of the patients’ ages (between 6 and 18 years old), the multisite nature of the data (seventeen sites contributed to the ABIDE-I dataset)\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"In this study, we consider the ABIDE I preprocessed dataset (Di Martino\net al., 2014; Craddock et al., 2013).\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"In this study, we consider the ABIDE I preprocessed dataset (Di Martino\net al., 2014; Craddock et al., 2013).\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-055",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Yes",
+          "notes": "452 adolescents (201 ASD, 251 NT) from 17 sites, with an explicit secondary adult subsample for generalization."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "Yes",
+          "notes": "Mean framewise displacement < 0.2mm, eyes-open acquisition, age < 18 years."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Pipeline and version reported?",
+          "rating": "Yes",
+          "notes": "C-PAC pipeline steps enumerated (nuisance/global regression, band-pass filter 0.01-0.1Hz)."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "Yes",
+          "notes": "AAL90 atlas used for all ROI time-series extraction."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "ASD/NT labels inherited from the ABIDE phenotypic file without restating the diagnostic instrument."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "Yes",
+          "notes": "Inner cross-validation for hyperparameter tuning performed separately on each training split within the LOOCV procedure."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "No",
+          "notes": "17-site heterogeneity acknowledged as a limitation but no leave-site-out evaluation or site covariate/harmonisation applied."
+        },
+        {
+          "item_text": "CL7 Code/participant list available?",
+          "rating": "No",
+          "notes": "No code repository or participant-ID list found in the text."
+        }
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-055",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I; 452 adolescents (201 ASD, 251 neurotypical) from 17 sites (primary sample), plus a 130-subject adult generalization subsample (63 ASD, 67 NT)",
+    "methods": "C-PAC-preprocessed rs-fMRI BOLD signals over AAL90 ROIs combined with an anatomical k-nearest-neighbor brain graph; Graph Signal Processing (extended Fukunaga-Koontz transform) features classified via an interpretable decision tree; Leave-One-Out Cross-Validation with inner CV for hyperparameter tuning",
+    "outcomes": "Averaged test accuracy up to 74.8% (m=3), significantly outperforming a structural-only (SFM) baseline and a functional-only (GFT) baseline; predictive markers implicate frontal and temporal lobe regions; framework also generalizes to an independent adult subsample with up to a 15-point accuracy gap over SFM",
+    "key_limitations": "No leave-site-out evaluation despite 17-site heterogeneity; diagnostic-instrument source not restated; 'structural' network is an anatomical-distance graph rather than a diffusion-derived structural connectome",
+    "relevance_notes": "Demonstrates that combining a geometric/anatomical brain graph with rs-fMRI graph-signal features improves interpretable ASD classification over single-modality baselines on a well-specified ABIDE I adolescent subset",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1016/j.media.2021.101986",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "452 ABIDE I adolescent participants (201 ASD, 251 neurotypical) from 17 sites, selected for eyes-open acquisition, age under 18, and mean framewise displacement under 0.2mm; a secondary 130-subject adult subsample (63 ASD, 67 NT) used for generalization",
+    "n_by_dx": {
+      "ASD": 201,
+      "TD": 251,
+      "total": 452
+    },
+    "sites": "17",
+    "pipeline": "C-PAC (Preprocessed Connectomes Project)",
+    "atlas": "AAL90 (Automated Anatomical Labeling, 90 ROIs)",
+    "claim_type": "predictive",
+    "finding": "A graph-signal-processing framework combining an anatomical brain graph with rs-fMRI BOLD signal frequency content achieves up to 74.8% averaged test accuracy classifying ASD vs. neurotypical participants, outperforming structural-only and functional-only baselines, with frontal and temporal lobe regions identified as most predictive.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "The corresponding data subset consists of a total of 452 subjects, with respec-\ntively 251 NT and 201 ASD subjects.",
+      "m SFM (%) Ours (%) p-value 2 69.1 ± 7.4 73.5 ± 6.9 0.026 3 70.4 ± 10.3 74.8 ± 9.5 0.016"
+    ]
+  }
+}

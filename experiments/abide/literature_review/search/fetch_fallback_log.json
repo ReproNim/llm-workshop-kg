@@ -1,0 +1,410 @@
+[
+  {
+    "doi": "10.1016/j.rasd.2019.03.005",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.bpsc.2017.10.006",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.nicl.2017.08.017",
+    "status": "MISS",
+    "tried": [
+      "https://www.sciencedirect.com/science/article/pii/S2213158217302073/pdf"
+    ]
+  },
+  {
+    "doi": "10.1016/j.neuroimage.2017.12.052",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.neuroimage.2020.116604",
+    "status": "MISS",
+    "tried": [
+      "https://www.sciencedirect.com/science/article/pii/S1053811920300914/pdf"
+    ]
+  },
+  {
+    "doi": "10.1109/access.2019.2940198",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1109/jbhi.2020.2998603",
+    "status": "OK",
+    "route": "openalex_pdf",
+    "url": "https://www.biorxiv.org/content/biorxiv/early/2019/09/09/763292.full.pdf"
+  },
+  {
+    "doi": "10.1016/j.nicl.2015.04.021",
+    "status": "MISS",
+    "tried": [
+      "https://www.sciencedirect.com/science/article/pii/S2213158215000881/pdf"
+    ]
+  },
+  {
+    "doi": "10.1017/s0954579420000772",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1007/s10278-018-0093-8",
+    "status": "MISS",
+    "tried": [
+      "https://link.springer.com/content/pdf/10.1007/s10278-018-0093-8.pdf"
+    ]
+  },
+  {
+    "doi": "10.1016/j.pscychresns.2016.04.003",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.neuroimage.2022.119699",
+    "status": "MISS",
+    "tried": [
+      "https://www.sciencedirect.com/science/article/pii/S1053811922008205/pdf"
+    ]
+  },
+  {
+    "doi": "10.1002/hbm.25776",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.artmed.2022.102475",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.3390/diagnostics12010165",
+    "status": "MISS",
+    "tried": [
+      "https://www.mdpi.com/2075-4418/12/1/165/pdf?version=1641973250"
+    ]
+  },
+  {
+    "doi": "10.1007/978-3-030-00755-3_9",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1109/access.2024.3441248",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.bbr.2023.114603",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.3389/fnhum.2021.745671",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1038/mp.2013.78",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.brainres.2018.10.029",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1001/jamapsychiatry.2015.0101",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1002/hbm.23764",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.biopsych.2015.02.010",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.3390/diagnostics9010032",
+    "status": "MISS",
+    "tried": [
+      "https://www.mdpi.com/2075-4418/9/1/32/pdf?version=1553153757"
+    ]
+  },
+  {
+    "doi": "10.1016/j.neuroimage.2017.04.046",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.bpsc.2016.09.002",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.mlwa.2022.100290",
+    "status": "MISS",
+    "tried": [
+      "https://www.sciencedirect.com/science/article/pii/S2666827022000226/pdf"
+    ]
+  },
+  {
+    "doi": "10.3390/children10101654",
+    "status": "MISS",
+    "tried": [
+      "https://www.mdpi.com/2227-9067/10/10/1654/pdf?version=1696516628"
+    ]
+  },
+  {
+    "doi": "10.1016/j.spen.2020.100805",
+    "status": "MISS",
+    "tried": [
+      "https://www.sciencedirect.com/science/article/pii/S1071909120300115/pdf"
+    ]
+  },
+  {
+    "doi": "10.3390/s20216001",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1007/s12021-017-9346-9",
+    "status": "MISS",
+    "tried": [
+      "https://www.biorxiv.org/content/biorxiv/early/2017/01/09/099309.full.pdf"
+    ]
+  },
+  {
+    "doi": "10.1002/hbm.25660",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1007/s11571-022-09828-9",
+    "status": "MISS",
+    "tried": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10050260/pdf/11571_2022_Article_9828.pdf"
+    ]
+  },
+  {
+    "doi": "10.1016/j.nicl.2015.10.017",
+    "status": "MISS",
+    "tried": [
+      "https://www.sciencedirect.com/science/article/pii/S2213158215300176/pdf"
+    ]
+  },
+  {
+    "doi": "10.1038/s41598-024-64299-8",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1109/access.2025.3532302",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1161/circulationaha.120.048202",
+    "status": "MISS",
+    "tried": [
+      "https://www.ahajournals.org/doi/pdf/10.1161/CIRCULATIONAHA.120.048202?download=true"
+    ]
+  },
+  {
+    "doi": "10.1177/1362361320938194",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.nicl.2020.102181",
+    "status": "MISS",
+    "tried": [
+      "https://www.sciencedirect.com/science/article/pii/S221315822030019X/pdf"
+    ]
+  },
+  {
+    "doi": "10.1007/s11571-021-09683-0",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1007/s10278-019-00196-1",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1186/s13229-015-0035-y",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1001/jamanetworkopen.2018.4777",
+    "status": "MISS",
+    "tried": [
+      "https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2714506/king_2018_oi_180208.pdf"
+    ]
+  },
+  {
+    "doi": "10.1007/978-3-319-67389-9_42",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1007/s11682-016-9534-5",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1093/gigascience/giaa155",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.neuroimage.2017.03.055",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.media.2024.103144",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.pnpbp.2020.109989",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1002/aur.2577",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1007/s11682-016-9587-5",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.3389/fnsys.2022.904770",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.3390/s21248171",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.bbr.2023.114458",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1001/jamapsychiatry.2023.0409",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1049/ccs2.12108",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1109/tbme.2021.3080259",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.nicl.2018.04.013",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.biopsych.2022.02.005",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.nicl.2014.12.013",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.nicl.2015.04.002",
+    "status": "MISS",
+    "tried": [
+      "https://www.sciencedirect.com/science/article/pii/S2213158215000698/pdf"
+    ]
+  },
+  {
+    "doi": "10.1016/j.neuroimage.2016.09.049",
+    "status": "MISS",
+    "tried": [
+      "https://www.biorxiv.org/content/biorxiv/early/2016/08/29/039180.full.pdf"
+    ]
+  },
+  {
+    "doi": "10.1080/08839514.2021.2004655",
+    "status": "OK",
+    "route": "openalex_pdf",
+    "url": "https://arxiv.org/pdf/1903.11323"
+  },
+  {
+    "doi": "10.1016/j.nicl.2013.05.006",
+    "status": "MISS",
+    "tried": [
+      "https://www.sciencedirect.com/science/article/pii/S2213158213000624/pdf"
+    ]
+  },
+  {
+    "doi": "10.1016/j.jaac.2015.05.011",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1155/2015/174371",
+    "status": "MISS",
+    "tried": [
+      "https://downloads.hindawi.com/journals/bmri/2015/174371.pdf"
+    ]
+  },
+  {
+    "doi": "10.3390/brainsci13050779",
+    "status": "MISS",
+    "tried": [
+      "https://www.mdpi.com/2076-3425/13/5/779/pdf?version=1683718230"
+    ]
+  },
+  {
+    "doi": "10.1002/jmri.26693",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.1016/j.artmed.2020.101870",
+    "status": "MISS",
+    "tried": []
+  },
+  {
+    "doi": "10.3390/bioengineering10010056",
+    "status": "MISS",
+    "tried": [
+      "https://www.mdpi.com/2306-5354/10/1/56/pdf?version=1673607285"
+    ]
+  },
+  {
+    "doi": "10.1155/2020/1394830",
+    "status": "MISS",
+    "tried": [
+      "https://downloads.hindawi.com/journals/cmmm/2020/1394830.pdf"
+    ]
+  }
+]

@@ -1,0 +1,274 @@
+{
+  "source_id": "S-011",
+  "pmid": "local_748c6bc3",
+  "doi": "10.1371/journal.pbio.3001627",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2-3: ABIDE I+II rs-fMRI functional connectivity used to classify ASD vs TD and to study how population diversity affects predictive accuracy and pattern stability.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "procedures resulted in a total of 297 par-\nticipants (151 ASD and 146 TD) from 4 different sites (i.e., New York University Langone\nMedical Center [NYU], University of Pittsburgh, School of Medicine [PITT], University of\nUtah, School of Medicine [USM], and Trinity Centre for Health Sciences [TCD]) in ABIDE.",
+      "section": "methods",
+      "claim": "Final ABIDE sample: 297 participants (151 ASD, 146 TD) from 4 sites (NYU, PITT, USM, TCD).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "For ABIDE, we considered data from all acquisition sites with at least 10 participants per\ngroup and with both children and adults. After detailed quality control, only cases with accept-\nable T1-weighted (T1w) MRI, surface extraction, and head motion in rs-fMRI were included.",
+      "section": "methods",
+      "claim": "ABIDE sites required at least 10 participants per group and both children and adults; QC required acceptable T1w MRI, surface extraction, and acceptable head motion in rs-fMRI.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Participants with ASD were diagnosed based on an in-person interview administered by\nboard-certified mental health professionals using the gold standard diagnostics of the Autism\nDiagnostic Observation Schedule (ADOS) [51] and/or Autism Diagnostic Interview-Revised\n(ADI-R) [52,53].",
+      "section": "methods",
+      "claim": "ASD diagnosis was based on an in-person interview using ADOS and/or ADI-R gold-standard diagnostics.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "For the resting-state functional brain scans in ABIDE, we built on data previously made\navailable by the Preprocessed Connectomes initiative (http://preprocessed-connectomes-\nproject.org/abide). The preprocessing was performed with C-PAC (https://fcp-indi.github.io)\nand included slice time correction, head motion correction, skull stripping, and intensity nor-\nmalization. The rs-fMRI data were detrended and adjusted for common nuisance effects\nrelated to head motion, white matter, and cerebrospinal fluid signals using CompCor [58], fol-\nlowed by band-pass filtering (0.01 to 0.1 Hz).",
+      "section": "methods",
+      "claim": "ABIDE rs-fMRI was preprocessed via the Preprocessed Connectomes initiative using C-PAC (slice-time correction, motion correction, skull stripping, intensity normalization, CompCor, band-pass filtering).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Func-\ntional connectivity matrices were calculated at a single-participant level based on a widely used\nparcellation atlas with 100 cortical regions [61].",
+      "section": "methods",
+      "claim": "Functional connectivity matrices were computed using a 100-region (Schaefer-Yeo) cortical parcellation atlas.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "After matching, we ended up with 290 participants (145 participants per group)\nin ABIDE and 126 (63 participants per group) in HBN, which were used subsequently for the\nclassification of ASD versus TD in both datasets.",
+      "section": "methods",
+      "claim": "After propensity-score matching on age, sex and site, 290 ABIDE participants (145 per group) were used for classification.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "Similar to the computation of the pro-\npensity scores, we performed deconfounding prior to our analyses, based on all the available\nparticipants instead of using only the training",
+      "section": "methods",
+      "claim": "Propensity scores and deconfounding were computed using all available participants rather than training data only.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "In the ABIDE cohort, when we trained and\ntested on data with similar distributions (first column), the contiguous scheme reached better\nprediction performance than the diverse scheme, with the random scheme lying in between.\nThis trend remained stable as we increased the number of strata used for training.",
+      "section": "results",
+      "claim": "In ABIDE, training and testing on similarly-distributed (contiguous) strata achieved better prediction than diverse strata.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "we can observe a decline in performance in ABIDE as diversity increased in both within\n(AUC: r = −0.630, F1 score: r = −0.568) and out-of-distribution (AUC: r = −0.671, F1 score:\nr = −0.579) predictions.",
+      "section": "results",
+      "claim": "In ABIDE, prediction performance declined as participant diversity increased, both within-distribution (AUC r=-0.630) and out-of-distribution (AUC r=-0.671).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Data Availability Statement: The imaging and\nphenotypic data were provided, in part, by the\nAutism Brain Imaging Data Exchange initiative\n(ABIDE-I and II; https://fcon_1000.projects.nitrc.\norg/indi/abide) and the Healthy Brain Network\n(https://fcon_1000.projects.nitrc.org/indi/cmi_\nhealthy_brain_network). All imaging features,\nphenotypic data, and code are openly available at\nhttps://github.com/OualidBenkarim/ps_diversity.",
+      "section": "methods",
+      "claim": "ABIDE/HBN imaging and phenotypic data, all imaging features, phenotypic data, and analysis code are openly available on GitHub.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "Explicit per-site inclusion threshold (>=10/group), QC criteria, diagnosis via ADOS/ADI-R, and final N by diagnosis and site are all reported."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "C-PAC preprocessing pipeline and a named 100-region (Schaefer-Yeo) atlas are explicitly reported."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Low",
+        "support": "Binary ASD vs TD classification with diagnosis sourced from gold-standard ADOS/ADI-R instruments."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "The paper explicitly states that propensity-score computation and deconfounding (linear regression and ComBat) were performed using all available participants rather than confined to the training data, a form of information leakage the authors themselves flag and partially probe (Fig 4)."
+      }
+    ],
+    "overall": "High",
+    "summary": "Methodologically rich and transparent (open code/data, explicit QC, named pipeline/atlas), but the authors' own text documents that propensity-score and deconfounding computations used the full sample rather than training folds only, a PROBAST-relevant leakage concern in the Analysis domain."
+  },
+  "charting": {
+    "source_id": "S-011",
+    "title": "Population heterogeneity in clinical cohorts affects the predictive accuracy of brain imaging",
+    "authors": "Oualid Benkarim; Casey Paquola; Bo-yong Park; et al.",
+    "year": "2022",
+    "journal_conference": "PLOS Biology",
+    "doi": "10.1371/journal.pbio.3001627",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "primary_focus": "Effect of population heterogeneity/diversity on predictive accuracy and pattern stability",
+    "primary_goal": "Quantify how demographic/site diversity (via propensity scores) affects cross-validated prediction accuracy and biomarker pattern stability in ASD classification",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "Multi-site (4 ABIDE sites: NYU, PITT, USM, TCD)",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "ADOS and/or ADI-R gold-standard diagnostics via in-person interview by board-certified mental health professionals",
+    "n_disordered": "151 (297 total before matching); 145 after propensity-score matching",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "Negligible proportion female (<0.02%, 5/290 after matching)",
+    "comorbidities_included_excluded": "Excluded: genetic disorders associated with autism (e.g. Fragile X), MRI contraindications, current pregnancy",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "true",
+    "healthy_status_confirmed": "No history of mental disorders",
+    "n_controls": "146 (297 total before matching); 145 after propensity-score matching",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "true (propensity-score matched on age, sex, site)",
+    "gender_matched": "true (propensity-score matched)",
+    "neurodevelopmentally_typical": "true",
+    "data_types": "resting-state fMRI, cortical thickness (structural MRI)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "",
+    "dataset_openly_available": "Yes — all imaging features, phenotypic data and analysis code openly available at https://github.com/OualidBenkarim/ps_diversity; figure data in S1 Data",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Functional connectivity matrices; cortical thickness",
+    "specific_features": "Region-to-region functional connectivity using a 100-region Schaefer-Yeo cortical parcellation atlas",
+    "feature_extraction_tools": "C-PAC (Preprocessed Connectomes Project pipeline: slice-time correction, motion correction, skull stripping, intensity normalization, CompCor, band-pass filtering 0.01-0.1 Hz); FreeSurfer for structural/cortical thickness",
+    "feature_importance_reported": "true",
+    "importance_method": "Model coefficient (weight vector) consistency via Pearson correlation across resampled models",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Linear classifier (predictive modeling of ASD vs TD from functional connectivity)",
+    "specific_algorithms": "",
+    "validation_methodology": "Propensity-score-based stratified train/holdout partitioning (contiguous, diverse, random sampling schemes) with 10-fold CV within training strata; out-of-distribution evaluation on held-out strata",
+    "performance_metrics": "AUC, F1 score",
+    "key_performance_results": "ABIDE: prediction performance declined as diversity increased — within-distribution AUC r=-0.630, F1 r=-0.568; out-of-distribution AUC r=-0.671, F1 r=-0.579. Deconfounding (linear regression r=-0.539; ComBat r=-0.599) only slightly reduced this correlation versus raw data (r=-0.671).",
+    "summary_key_findings": "In ABIDE (and oppositely in HBN), predictive accuracy and pattern stability for ASD vs TD classification decline substantially as population diversity (quantified via propensity scores on age, sex, site) increases, and this effect persists after standard deconfounding (linear regression or ComBat), which were themselves computed using all participants rather than training data only.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "Important methodological finding: propensity-score and deconfounding computations used the full dataset (not train-only), a leakage concern the authors themselves report.",
+    "custom_fields": {
+      "RQ1": "predictive — ABIDE I+II combined (\"both waves of the openly shared ABIDE initiative\"), final N=297 (151 ASD, 146 TD) from 4 sites (NYU, PITT, USM, TCD); QC: sites with >=10/group and both children+adults, acceptable T1w MRI/surface extraction/head motion; after propensity matching N=290 (145/145) | quote: \"procedures resulted in a total of 297 par- ticipants (151 ASD and 146 TD) from 4 different sites (i.e., New York University Langone Medical Center [NYU], University of Pittsburgh, School of Medicine [PITT], University of Utah, School of Medicine [USM], and Trinity Centre for Health Sciences [TCD]) in ABIDE.\"",
+      "RQ2": "C-PAC pipeline (Preprocessed Connectomes Project) for rs-fMRI; FreeSurfer for structural; 100-region Schaefer-Yeo cortical parcellation atlas for connectivity | quote: \"For the resting-state functional brain scans in ABIDE, we built on data previously made available by the Preprocessed Connectomes initiative (http://preprocessed-connectomes- project.org/abide). The preprocessing was performed with C-PAC (https://fcp-indi.github.io) and included slice time correction, head motion correction, skull stripping, and intensity nor- malization. The rs-fMRI data were detrended and adjusted for common nuisance effects related to head motion, white matter, and cerebrospinal fluid signals using CompCor [58], fol- lowed by band-pass filtering (0.01 to 0.1 Hz).\"",
+      "RQ3": "predictive — classification of ASD vs TD using functional connectivity, studying how population diversity affects prediction accuracy | quote: \"In the ABIDE cohort, when we trained and tested on data with similar distributions (first column), the contiguous scheme reached better prediction performance than the diverse scheme, with the random scheme lying in between. This trend remained stable as we increased the number of strata used for training.\"",
+      "RQ4": "Propensity-score stratified train/holdout partitioning (contiguous/diverse/random schemes) with 10-fold CV within training strata; out-of-distribution evaluation in held-out strata; no explicit leave-site-out, but site is one of the matched/propensity covariates; deconfounding (linear regression, ComBat) tested but computed on all participants rather than training folds only | quote: \"Similar to the computation of the pro- pensity scores, we performed deconfounding prior to our analyses, based on all the available participants instead of using only the training\"",
+      "RQ5": "In ABIDE, prediction performance declined as diversity increased: within-distribution AUC r=-0.630 (F1 r=-0.568), out-of-distribution AUC r=-0.671 (F1 r=-0.579); opposite relationship found in the HBN cohort | quote: \"we can observe a decline in performance in ABIDE as diversity increased in both within (AUC: r = −0.630, F1 score: r = −0.568) and out-of-distribution (AUC: r = −0.671, F1 score: r = −0.579) predictions.\"",
+      "RQ6": "yes — participant list — analysis code, imaging features and phenotypic data are openly released on GitHub, and figure-underlying data in supplementary S1 Data | quote: \"Data Availability Statement: The imaging and phenotypic data were provided, in part, by the Autism Brain Imaging Data Exchange initiative (ABIDE-I and II; https://fcon_1000.projects.nitrc. org/indi/abide) and the Healthy Brain Network (https://fcon_1000.projects.nitrc.org/indi/cmi_ healthy_brain_network). All imaging features, phenotypic data, and code are openly available at https://github.com/OualidBenkarim/ps_diversity.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"procedures resulted in a total of 297 par- ticipants (151 ASD and 146 TD) from 4 different sites (i.e., New York University Langone Medical Center [NYU], University of Pittsburgh, School of Medicine [PITT], University of Utah, School of Medicine [USM], and Trinity Centre for Health Sciences [TCD]) in ABIDE.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — \"head motion in rs-fMRI\" quality control is stated as an inclusion criterion but no specific FD metric/threshold value is given in the main text | quote: \"For ABIDE, we considered data from all acquisition sites with at least 10 participants per group and with both children and adults. After detailed quality control, only cases with accept- able T1-weighted (T1w) MRI, surface extraction, and head motion in rs-fMRI were included.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — C-PAC (Preprocessed Connectomes Project) | quote: \"For the resting-state functional brain scans in ABIDE, we built on data previously made available by the Preprocessed Connectomes initiative (http://preprocessed-connectomes- project.org/abide). The preprocessing was performed with C-PAC (https://fcp-indi.github.io) and included slice time correction, head motion correction, skull stripping, and intensity nor- malization. The rs-fMRI data were detrended and adjusted for common nuisance effects related to head motion, white matter, and cerebrospinal fluid signals using CompCor [58], fol- lowed by band-pass filtering (0.01 to 0.1 Hz).\"",
+      "CL4 Atlas/parcellation reported?": "Yes — 100-region Schaefer-Yeo parcellation | quote: \"Func- tional connectivity matrices were calculated at a single-participant level based on a widely used parcellation atlas with 100 cortical regions [61].\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — the authors explicitly report that propensity-score computation and deconfounding (linear regression, ComBat) used all available participants rather than training data only | quote: \"Similar to the computation of the pro- pensity scores, we performed deconfounding prior to our analyses, based on all the available participants instead of using only the training\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — site is one of the matched propensity-score covariates, and ComBat site harmonisation is tested as a deconfounding approach | quote: \"Similar to the computation of the pro- pensity scores, we performed deconfounding prior to our analyses, based on all the available participants instead of using only the training\"",
+      "CL7 Code and/or participant list available?": "Yes — code, imaging features and phenotypic data openly available on GitHub | quote: \"Data Availability Statement: The imaging and phenotypic data were provided, in part, by the Autism Brain Imaging Data Exchange initiative (ABIDE-I and II; https://fcon_1000.projects.nitrc. org/indi/abide) and the Healthy Brain Network (https://fcon_1000.projects.nitrc.org/indi/cmi_ healthy_brain_network). All imaging features, phenotypic data, and code are openly available at https://github.com/OualidBenkarim/ps_diversity.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"We examined resting-state functional MRI (rs-fMRI) and cortical thickness data from both waves of the openly shared ABIDE initiative (ABIDE I and II; http://fcon_1000.projects.nitrc. org/indi/abide) [29,30] and the HBN dataset [26], releases 1–8 collected between June 2017 and January 2020.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-011",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "Explicit N by diagnosis/site and per-site minimum-N criterion."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Partial",
+          "notes": "QC on head motion stated as inclusion criterion but no numeric FD threshold given in main text."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline reported",
+          "rating": "Yes",
+          "notes": "C-PAC pipeline fully specified."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "100-region Schaefer-Yeo atlas named."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source reported",
+          "rating": "Yes",
+          "notes": "ADOS/ADI-R gold-standard interview-based diagnosis explicitly reported."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "No",
+          "notes": "Authors explicitly state propensity scores and deconfounding were computed using all participants, not training folds only."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "Yes",
+          "notes": "Site is a matched covariate; ComBat harmonisation also tested."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "Yes",
+          "notes": "Code and data openly released on GitHub."
+        }
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-011",
+    "study_design_sample_dataset": "Diagnostic prediction study; ABIDE I+II, final N=297 (151 ASD, 146 TD) from 4 sites (NYU, PITT, USM, TCD), reduced to N=290 (145/145) after propensity-score matching on age, sex and site.",
+    "methods": "Rs-fMRI preprocessed with C-PAC (Preprocessed Connectomes Project); functional connectivity via a 100-region Schaefer-Yeo atlas; ASD vs TD classification under contiguous/diverse/random training-stratum sampling schemes with 10-fold CV, evaluated within- and out-of-distribution; linear-regression and ComBat deconfounding tested.",
+    "outcomes": "Prediction accuracy (AUC, F1) and extracted-pattern stability declined as participant diversity increased in ABIDE (opposite direction to HBN); deconfounding only partially reduced this diversity-performance relationship.",
+    "key_limitations": "Propensity-score and deconfounding computations used the full sample rather than training-fold-only data, a leakage concern flagged by the authors; negligible female representation in ABIDE (<0.02%) limited sex-related analysis.",
+    "relevance_notes": "Directly interrogates how ABIDE's site/demographic composition (diversity) affects reproducibility of predictive findings; open code and data make the analysed cohort reconstructible; illustrates a leakage pattern (full-sample deconfounding) relevant to RQ4/CL5 across the corpus.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1371/journal.pbio.3001627",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "297 participants (151 ASD, 146 TD) from 4 ABIDE sites (NYU, PITT, USM, TCD) meeting per-site N>=10/group and QC criteria; reduced to 290 (145/145) after propensity-score matching on age, sex, site.",
+    "n_by_dx": {
+      "ASD": 151,
+      "TD": 146,
+      "total": 297
+    },
+    "sites": "4 (NYU, PITT, USM, TCD)",
+    "pipeline": "C-PAC (Preprocessed Connectomes Project)",
+    "atlas": "Schaefer-Yeo, 100 cortical regions",
+    "claim_type": "predictive",
+    "finding": "ASD vs TD classification accuracy and extracted-pattern stability decline as participant diversity (propensity-score based) increases in ABIDE (within-distribution AUC r=-0.630; out-of-distribution AUC r=-0.671), the opposite relationship found in the HBN cohort.",
+    "reconstructible": "yes — participant list",
+    "evidence_quotes": [
+      "procedures resulted in a total of 297 par-\nticipants (151 ASD and 146 TD) from 4 different sites (i.e., New York University Langone\nMedical Center [NYU], University of Pittsburgh, School of Medicine [PITT], University of\nUtah, School of Medicine [USM], and Trinity Centre for Health Sciences [TCD]) in ABIDE.",
+      "Similar to the computation of the pro-\npensity scores, we performed deconfounding prior to our analyses, based on all the available\nparticipants instead of using only the training",
+      "we can observe a decline in performance in ABIDE as diversity increased in both within\n(AUC: r = −0.630, F1 score: r = −0.568) and out-of-distribution (AUC: r = −0.671, F1 score:\nr = −0.579) predictions."
+    ]
+  }
+}

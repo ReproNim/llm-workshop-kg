@@ -1,0 +1,620 @@
+@prefix ex: <urn:repronim:abide:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:ASD a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:Claim a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:Cohort a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:EvidenceAssessment a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:EvidenceSpan a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:Fold a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:InclusionCriterion a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:MeasuredChange a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:Method a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:Publication a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:ReportedCohort a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:ResearchQuestion a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:Result a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:SelectionRule a owl:Class ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:TD a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:accuracy a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:addresses a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:auc a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:auc_ci_high a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:auc_ci_low a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:bandpassHz a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:caveat a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:charOffset a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:claimType a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:comparison a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:contentRetrieved a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:cv a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:definition a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:dependsOn a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:evidenceStatus a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:executionRecord a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:expected_overlap_if_independent a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:flaggedForReassessmentBy a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:fullRoiCoverage a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:globalSignalRegression a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:hasEvidence a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:heldOutSite a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:hypergeometric_p a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:hypo_fraction a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:hypo_fraction_ci_high a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:hypo_fraction_ci_low a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:interhemispheric_fraction_hypo_edges a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:locator a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:materialChange a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:meanCorticalThickness a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:meanFisherZ a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:median_abs_d_significant a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:membership a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:method a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:missingVariable a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:model a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:modelledOn a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:n a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:nTest a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:nTimepoints a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:nZeroVarianceRois a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:n_fdr_significant a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:n_hyper a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:n_hypo a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:n_independent_participants a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:n_sites_direction_consistent a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:n_sites_usable a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:nuisance a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:overlap_with_A_significant a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:participant a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:pooled_d_fixed_effect a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:quote a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:reconstructedAs a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:reconstructionStatus a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:registration a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:reported_n a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:resultFile a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:revisedAs a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:scenarioStatus a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:scope a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:scrubbing a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:selectedUsing a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:signature_vs_global_mean_connectivity_r a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:site a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:sites a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:sites_text a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:sourceRow a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:statedIn a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:status a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:strategy a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:subId a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:summary a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:summaryDefinition a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:target a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:termMapping a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:testedOn a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:textSha256 a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:threshold a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:top_k_edges a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:trainedOn a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:variable a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADI_RRB_TOTAL_C> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADI_R_ONSET_TOTAL_D> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADI_R_RSRCH_RELIABLE> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADI_R_SOCIAL_TOTAL_A> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADI_R_VERBAL_TOTAL_BV> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADOS_COMM> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADOS_GOTHAM_RRB> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADOS_GOTHAM_SEVERITY> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADOS_GOTHAM_SOCAFFECT> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADOS_GOTHAM_TOTAL> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADOS_MODULE> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADOS_RSRCH_RELIABLE> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADOS_SOCIAL> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADOS_STEREO_BEHAV> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ADOS_TOTAL> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/AGE_AT_MPRAGE> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/AGE_AT_SCAN> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/AQ_TOTAL> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/BMI> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/COMORBIDITY> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/CURRENT_MED_STATUS> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/DSM_IV_TR> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/DX_GROUP> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/EYE_STATUS_AT_SCAN> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/FILE_ID> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/FIQ> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/FIQ_TEST_TYPE> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/HANDEDNESS_CATEGORY> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/HANDEDNESS_SCORES> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/MEDICATION_NAME> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/OFF_STIMULANTS_AT_SCAN> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/PIQ> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/PIQ_TEST_TYPE> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SCQ_TOTAL> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SEX> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SITE_ID> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SRS_AWARENESS> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SRS_COGNITION> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SRS_COMMUNICATION> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SRS_MANNERISMS> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SRS_MOTIVATION> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SRS_RAW_TOTAL> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SRS_VERSION> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SUB_ID> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/SUB_IN_SMP> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_ABC_STANDARD> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_COMMUNICATION_STANDARD> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_COMMUNITY_V_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_COPING_V_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_DAILYLVNG_STANDARD> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_DOMESTIC_V_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_EXPRESSIVE_V_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_INFORMANT> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_INTERPERSONAL_V_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_PERSONAL_V_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_PLAY_V_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_RECEPTIVE_V_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_SOCIAL_STANDARD> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_SUM_SCORES> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VINELAND_WRITTEN_V_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VIQ> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/VIQ_TEST_TYPE> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_BLK_DSN_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_CODING_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_DIGIT_SPAN_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_INFO_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_LET_NUM_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_MATRIX_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_PIC_CON_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_PRI> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_PSI> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_SIM_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_SYM_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_VCI> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_VOCAB_SCALED> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/WISC_IV_WMI> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/anat_cnr> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/anat_efc> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/anat_fber> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/anat_fwhm> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/anat_qi1> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/anat_snr> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/ants_mean_cortical_thickness> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/cc200_mean_fisher_z> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/func_dvars> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/func_efc> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/func_fber> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/func_fwhm> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/func_gsr> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/func_mean_fd> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/func_num_fd> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/func_outlier> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/func_perc_fd> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/func_quality> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/qc_anat_notes_rater_2> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/qc_anat_notes_rater_3> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/qc_anat_rater_2> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/qc_anat_rater_3> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/qc_func_notes_rater_2> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/qc_func_notes_rater_3> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/qc_func_rater_2> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/qc_func_rater_3> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/qc_notes_rater_1> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/qc_rater_1> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+<urn:repronim:abide:variable/subject> a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:verbatimMatch a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:verdict a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:versionNote a rdf:Property ;
+    rdfs:isDefinedBy ex:extension .
+
+ex:extension a owl:Ontology ;
+    rdfs:comment "Terms used by this experiment that NIDM LinkML schema 0.1.0 (PyNIDM v4.5.5) has no class or slot for." .
+

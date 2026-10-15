@@ -1,0 +1,274 @@
+{
+  "source_id": "S-029",
+  "pmid": "local_f02fbc88",
+  "doi": "10.3389/fpsyt.2016.00177",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2-3: a tutorial paper that performs an original ASD vs TD classification analysis on ABIDE rs-fMRI connectivity data, comparing six classifiers and explicitly demonstrating cross-validation/leakage pitfalls.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The inputs to the classification pipeline \nare the 77 ASD and 77 TD connectivity matrices (hence 154 data \nsamples in total), where each connectivity matrix consists of \n19,900 features.",
+      "section": "methods",
+      "claim": "154 ABIDE subjects (77 ASD, 77 TD) with 19,900 connectivity features (200x200 Craddock-atlas matrix) were used.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "We balance the data per site, meaning that we take the same \nnumber of ASD subjects as TD subjects per site. Furthermore, \nwe ensure that the 2 resulting classes (TD and ASD) with 77 \nsubjects each are similar on average with respect to IQ, age, and \nhead movements. This prevents the classifier from separating",
+      "section": "methods",
+      "claim": "Data were balanced per site (equal ASD/TD counts) and matched on IQ, age and head movement.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "Two hundred ROIs are determined from the Craddock atlas (15) (A). For each subject, the time series of voxel \nintensities are averaged over voxels with an ROI, and Pearson correlation coefficients are computed for all pairs of averaged time series (B), resulting in a 200",
+      "section": "methods",
+      "claim": "200 ROIs were derived from the Craddock atlas to compute connectivity matrices.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "Data presented in this study underwent standard fMRI pre-\nprocessing (i.e., realignment, normalization, and smoothing) \nimplemented in SPM12b. Data were preprocessed according to \nstandard SPM protocols including realignment, normalization \nto a study specific template using DARTEL, smoothing, band-\npass filtering (0.01–0.05 Hz), and scrubbing to account for head \nmovements (63).",
+      "section": "methods",
+      "claim": "Data were preprocessed with SPM12 (realignment, DARTEL normalization, smoothing, band-pass filtering, motion scrubbing).",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "The performance of each classifier is assessed by nested cross-\nvalidation: 10-folds are used in the outer cross-validation loop for \nthe performance estimation, and 10-folds are used in the inner \ncross-validation loop to determine the optimal threshold value \nt for feature selection, or the optimal regularization parameter \nfor lasso-regularized",
+      "section": "methods",
+      "claim": "Nested 10x10-fold cross-validation was used: outer loop for performance estimation, inner loop for feature-selection/tuning-parameter selection.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "One pitfall is given when feature \nselection or selection of tuning parameters is performed on the full \ndata, i.e., on data samples from both the training and the test set.",
+      "section": "results",
+      "claim": "The paper explicitly identifies the 'peeking'/double-dipping pitfall of performing feature selection on the full dataset rather than training data only.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "If, however, we use the entire dataset to select the \nfeatures with a mean difference above a threshold value t = 0.10, \nclassification with a linear SVM yields a test accuracy of 91%. If \nthe feature selection is correctly applied using only the training \n\n\n9\nKassraian-Fard et al.\nClassification of Psychiatric Imaging Data \nFrontiers in Psychiatry  |  www.frontiersin.org\nDecember 2016  |  Volume 7  |  Article 177\nset, the classification accuracy is between 45 and 56%.",
+      "section": "results",
+      "claim": "A simulation shows that incorrect (whole-dataset) feature selection can inflate accuracy to 91% versus 45-56% when feature selection is correctly confined to the training set.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "We took the so far best performing classifier – the support \nvector machine – and applied it to the data set after this stand-\nardization was performed. The resulting classification accuracy \nincreased from 63 to 68%.",
+      "section": "results",
+      "claim": "Per-site z-standardization (train-only mean/SD) improved the best classifier's (SVM) accuracy from 63% to 68%.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Another possibility to assess the generalizability of the clas-\nsifier to data from different sites is to form training and test sets \nfrom different sites. An example of this approach is leave-one-\nsite-out cross-validation, where the test set contains data from a \nsite that has not been used in the training set (36).",
+      "section": "discussion",
+      "claim": "Leave-one-site-out cross-validation is described as an approach to assess generalizability across sites.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "The MATLAB code as discussed is available at http://www.ncm.\nhest.ethz.ch/downloads/software.html under “ABIDE 1 classifi-\ncation and pitfalls.",
+      "section": "methods",
+      "claim": "The MATLAB code for all discussed pipelines is publicly available.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "N (77 ASD, 77 TD) and per-site balancing/matching on IQ, age and head movement are explicitly reported."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "SPM12/DARTEL preprocessing pipeline and the 200-ROI Craddock atlas are explicitly described."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD/TD labels are taken from the ABIDE repository; the diagnostic-instrument source is not independently restated in the main text."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Low",
+        "support": "The paper explicitly uses nested 10x10 cross-validation to avoid optimistic bias, demonstrates via simulation the magnitude of the 'peeking' leakage problem, and describes train-only standardization to avoid double-dipping — an explicit positive example of leakage control."
+      }
+    ],
+    "overall": "Low",
+    "summary": "A methodologically rigorous tutorial that both applies and explicitly teaches leakage-avoidance (nested CV, train-only standardization) on a real ABIDE classification pipeline; main residual gap is that the diagnosis-source instrument is not independently restated."
+  },
+  "charting": {
+    "source_id": "S-029",
+    "title": "Promises, Pitfalls, and Basic Guidelines for Applying Machine Learning Classifiers to Psychiatric Imaging Data, with Autism as an Example",
+    "authors": "Kassraian-Fard et al.",
+    "year": "2016",
+    "journal_conference": "Frontiers in Psychiatry",
+    "doi": "10.3389/fpsyt.2016.00177",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis / methodological tutorial on ML classification pitfalls",
+    "primary_goal": "Demonstrate and compare ML classification pipelines for ASD vs TD using ABIDE RS-fMRI data, while teaching methodological pitfalls (peeking/double-dipping, site effects)",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "Multi-site (ABIDE)",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "77",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "true",
+    "healthy_status_confirmed": "",
+    "n_controls": "77",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "true",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "true",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "",
+    "dataset_openly_available": "MATLAB code for all pipelines publicly available (ETH website)",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Region-based functional connectivity",
+    "specific_features": "200x200 Craddock-atlas ROI-to-ROI Pearson correlation matrix (19,900 features)",
+    "feature_extraction_tools": "SPM12 (realignment, DARTEL normalization, smoothing, band-pass filter 0.01-0.05Hz, motion scrubbing)",
+    "feature_importance_reported": "",
+    "importance_method": "Mean-difference threshold feature selection (t-value threshold), with nested CV for threshold tuning",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Multiple classical ML classifiers compared",
+    "specific_algorithms": "Logistic regression, lasso-regularized logistic regression, linear SVM, probabilistic neural network, linear discriminant analysis, Gaussian naive Bayes",
+    "validation_methodology": "Nested 10x10-fold cross-validation (outer loop for performance, inner loop for feature-selection/tuning-parameter selection); explicit avoidance of double-dipping via train-only feature selection and standardization",
+    "performance_metrics": "Accuracy, sensitivity, specificity, p-value",
+    "key_performance_results": "LR 58%, LassoLR 58%, SVM 63% (best out-of-the-box), PNN 58%, LDA 57%, GNB 61% accuracy; SVM accuracy increased to 68% after per-site (train-only) z-standardization; all classifiers significantly better than chance (p<0.001).",
+    "summary_key_findings": "Out-of-the-box ML classifiers applied correctly (nested CV) to ABIDE rs-fMRI connectivity achieve about 60-70% accuracy (best: SVM 63%, improving to 68% with site standardization); incorrect feature selection on the full dataset ('peeking'/double-dipping) can spuriously inflate accuracy to 91% in a null simulation, illustrating a major pitfall in the field.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "Leave-one-site-out cross-validation and further site-effect correction beyond linear z-transformation; stable feature selection methods for biomarker interpretation.",
+    "reviewer_notes": "A methods/tutorial paper that nonetheless performs an original classification analysis on real ABIDE data; valuable as a positive worked example of leakage-avoidance practice for the review's CL5 checklist item.",
+    "custom_fields": {
+      "RQ1": "predictive — ABIDE (release not specified as I vs II in extracted text, but cites ABIDE/Nielsen 2013 ABIDE results), N=154 (77 ASD, 77 TD), balanced per site and matched on IQ/age/head-movement; subjects with strong motion artifacts excluded | quote: \"The inputs to the classification pipeline are the 77 ASD and 77 TD connectivity matrices (hence 154 data samples in total), where each connectivity matrix consists of 19,900 features.\"",
+      "RQ2": "Custom SPM12/DARTEL preprocessing pipeline (realignment, normalization, smoothing, band-pass filter, scrubbing); 200-ROI Craddock atlas for connectivity matrices | quote: \"Data presented in this study underwent standard fMRI pre- processing (i.e., realignment, normalization, and smoothing) implemented in SPM12b. Data were preprocessed according to standard SPM protocols including realignment, normalization to a study specific template using DARTEL, smoothing, band- pass filtering (0.01–0.05 Hz), and scrubbing to account for head movements (63).\"",
+      "RQ3": "predictive — ASD vs TD classification comparing six ML classifiers | quote: \"The inputs to the classification pipeline are the 77 ASD and 77 TD connectivity matrices (hence 154 data samples in total), where each connectivity matrix consists of 19,900 features.\"",
+      "RQ4": "Nested 10x10-fold cross-validation (outer loop for performance estimation, inner loop for feature-selection/tuning-parameter optimisation); per-site z-standardization using train-only mean/SD; leave-one-site-out CV discussed as a further option but not reported as the authors' own primary result | quote: \"The performance of each classifier is assessed by nested cross- validation: 10-folds are used in the outer cross-validation loop for the performance estimation, and 10-folds are used in the inner cross-validation loop to determine the optimal threshold value t for feature selection, or the optimal regularization parameter for lasso-regularized\"",
+      "RQ5": "Out-of-the-box classifiers achieved 57-63% accuracy (best: linear SVM at 63%), improving to 68% after per-site train-only standardization; all classifiers significantly above chance (p<0.001); a null-data simulation showed incorrect whole-dataset feature selection inflates accuracy to 91% vs. 45-56% when correctly confined to training data | quote: \"\"",
+      "RQ6": "partly — N, site-balancing/matching procedure, and full pipeline/code are reported, but no explicit participant ID list is given | quote: \"We balance the data per site, meaning that we take the same number of ASD subjects as TD subjects per site. Furthermore, we ensure that the 2 resulting classes (TD and ASD) with 77 subjects each are similar on average with respect to IQ, age, and head movements. This prevents the classifier from separating\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"We balance the data per site, meaning that we take the same number of ASD subjects as TD subjects per site. Furthermore, we ensure that the 2 resulting classes (TD and ASD) with 77 subjects each are similar on average with respect to IQ, age, and head movements. This prevents the classifier from separating\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes — subjects with strong head-movement artifacts excluded, and movement >0.5mm scrubbing applied; groups matched on head movement | quote: \"Data presented in this study underwent standard fMRI pre- processing (i.e., realignment, normalization, and smoothing) implemented in SPM12b. Data were preprocessed according to standard SPM protocols including realignment, normalization to a study specific template using DARTEL, smoothing, band- pass filtering (0.01–0.05 Hz), and scrubbing to account for head movements (63).\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — SPM12/DARTEL pipeline fully described | quote: \"Data presented in this study underwent standard fMRI pre- processing (i.e., realignment, normalization, and smoothing) implemented in SPM12b. Data were preprocessed according to standard SPM protocols including realignment, normalization to a study specific template using DARTEL, smoothing, band- pass filtering (0.01–0.05 Hz), and scrubbing to account for head movements (63).\"",
+      "CL4 Atlas/parcellation reported?": "Yes — 200-ROI Craddock atlas | quote: \"Two hundred ROIs are determined from the Craddock atlas (15) (A). For each subject, the time series of voxel intensities are averaged over voxels with an ROI, and Pearson correlation coefficients are computed for all pairs of averaged time series (B), resulting in a 200\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Yes — nested cross-validation explicitly used for feature selection/tuning, and standardization is explicitly stated to use only training-set mean/SD to avoid double-dipping; the paper also demonstrates via simulation the magnitude of leakage if this rule is violated | quote: \"The performance of each classifier is assessed by nested cross- validation: 10-folds are used in the outer cross-validation loop for the performance estimation, and 10-folds are used in the inner cross-validation loop to determine the optimal threshold value t for feature selection, or the optimal regularization parameter for lasso-regularized\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — per-site z-standardization (train-only) applied, improving SVM accuracy from 63% to 68%; leave-one-site-out cross-validation discussed as a further approach | quote: \"We took the so far best performing classifier – the support vector machine – and applied it to the data set after this stand- ardization was performed. The resulting classification accuracy increased from 63 to 68%.\"",
+      "CL7 Code and/or participant list available?": "Yes — MATLAB code for all discussed pipelines publicly available | quote: \"The MATLAB code as discussed is available at http://www.ncm. hest.ethz.ch/downloads/software.html under “ABIDE 1 classifi- cation and pitfalls.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The inputs to the classification pipeline are the 77 ASD and 77 TD connectivity matrices (hence 154 data samples in total), where each connectivity matrix consists of 19,900 features.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-029",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "N=154 (77/77), balanced and matched per site on IQ, age, head movement."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Yes",
+          "notes": "Explicit exclusion of strong-motion subjects and >0.5mm scrubbing."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline reported",
+          "rating": "Yes",
+          "notes": "SPM12/DARTEL pipeline fully specified."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "200-ROI Craddock atlas."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source reported",
+          "rating": "Unclear",
+          "notes": "Labels from ABIDE repository; instrument not independently restated."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "Yes",
+          "notes": "Nested CV and train-only standardization explicitly applied and justified via simulation."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "Yes",
+          "notes": "Per-site train-only z-standardization applied; LOSO CV discussed."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "Yes",
+          "notes": "MATLAB code publicly released."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-029",
+    "study_design_sample_dataset": "Diagnostic prediction / methodological tutorial; ABIDE, N=154 (77 ASD, 77 TD), balanced and matched per site.",
+    "methods": "SPM12/DARTEL-preprocessed rs-fMRI; 200-ROI Craddock-atlas connectivity (19,900 features); six classifiers (LR, LassoLR, SVM, PNN, LDA, GNB) compared via nested 10x10-fold cross-validation with train-only feature selection and standardization.",
+    "outcomes": "Best out-of-the-box accuracy 63% (linear SVM), improving to 68% with per-site train-only standardization; a simulation shows incorrect whole-dataset feature selection can inflate accuracy to 91%, illustrating the 'peeking'/double-dipping pitfall.",
+    "key_limitations": "Diagnosis-source instrument not independently restated; leave-one-site-out CV discussed but not reported as the authors' own executed analysis; relatively modest sample size (N=154).",
+    "relevance_notes": "A rare positive methodological exemplar in this corpus: explicitly demonstrates and guards against the leakage patterns (whole-dataset feature selection/standardization) that affect several other ABIDE predictive papers in this review.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fpsyt.2016.00177",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "154 ABIDE subjects (77 ASD, 77 TD), balanced per site and matched on IQ, age and head movement; subjects with strong motion artifacts excluded.",
+    "n_by_dx": {
+      "ASD": 77,
+      "TD": 77,
+      "total": 154
+    },
+    "sites": "",
+    "pipeline": "SPM12/DARTEL (custom)",
+    "atlas": "Craddock 200-ROI atlas",
+    "claim_type": "predictive",
+    "finding": "Nested-cross-validated classifiers achieve 57-63% accuracy (best: linear SVM 63%, improving to 68% with per-site train-only standardization); a simulation demonstrates that incorrect whole-dataset feature selection can inflate accuracy to 91%, illustrating the 'peeking'/double-dipping pitfall in ABIDE-based ML classification.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "The inputs to the classification pipeline \nare the 77 ASD and 77 TD connectivity matrices (hence 154 data \nsamples in total), where each connectivity matrix consists of \n19,900 features.",
+      "",
+      "If, however, we use the entire dataset to select the \nfeatures with a mean difference above a threshold value t = 0.10, \nclassification with a linear SVM yields a test accuracy of 91%. If \nthe feature selection is correctly applied using only the training \n\n\n9\nKassraian-Fard et al.\nClassification of Psychiatric Imaging Data \nFrontiers in Psychiatry  |  www.frontiersin.org\nDecember 2016  |  Volume 7  |  Article 177\nset, the classification accuracy is between 45 and 56%."
+    ]
+  }
+}

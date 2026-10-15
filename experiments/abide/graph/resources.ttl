@@ -1,0 +1,1490 @@
+@prefix codemeta: <https://codemeta.github.io/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix edam: <http://edamontology.org/> .
+@prefix ex: <urn:repronim:abide:> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:repronim:abide:resource/abide-preprocessed> a schema1:Dataset,
+        dcat:Dataset,
+        ex:Resource ;
+    rdfs:label "ABIDE Preprocessed (PCP)" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:description "Preprocessed ABIDE I resting-state fMRI and structural derivatives from the Preprocessed Connectomes Project: four pipelines (C-PAC, CCS, DPARSF, NIAK), several strategies and atlases, ROI time series, FreeSurfer and ANTs outputs, and a phenotype table with three-rater QC. Public on S3 (fcp-indi)." ;
+    schema1:name "ABIDE Preprocessed (PCP)" ;
+    schema1:url <http://preprocessed-connectomes-project.org/abide/> ;
+    ex:descriptionSource <http://preprocessed-connectomes-project.org/abide/> ;
+    ex:edamTopic edam:topic_3419,
+        edam:topic_3444 ;
+    ex:modality "MRI",
+        "fMRI",
+        "phenotype" ;
+    ex:openalexSearch "Preprocessed Connectomes Project ABIDE" ;
+    ex:outputFormat edam:format_3549,
+        edam:format_3752 ;
+    ex:produces "nidm:AcquisitionObject",
+        "nidm:DerivativeObject" ;
+    ex:resourceType "Dataset" ;
+    ex:usageInExperiment "data_source" ;
+    ex:usageNote "Phenotype table, CC200 time series (C-PAC filt_noglobal), ANTs ROI thickness and the C-PAC config were downloaded and hashed." ;
+    ex:workflowStep <urn:repronim:abide:step/data_source>,
+        <urn:repronim:abide:step/preprocessing> .
+
+<urn:repronim:abide:resource/abide-raw-bids> a schema1:Dataset,
+        dcat:Dataset,
+        ex:Resource ;
+    rdfs:label "ABIDE I raw data (BIDS, S3)" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:description "Raw ABIDE I T1w and resting BOLD scans from 1,112 participants at 17 international sites, in BIDS on S3 (fcp-indi RawDataBIDS)." ;
+    schema1:name "ABIDE I raw data (BIDS, S3)" ;
+    schema1:url <https://fcon_1000.projects.nitrc.org/indi/abide/> ;
+    ex:descriptionSource <https://fcon_1000.projects.nitrc.org/indi/abide/> ;
+    ex:edamTopic edam:topic_3419,
+        edam:topic_3444 ;
+    ex:modality "MRI",
+        "fMRI" ;
+    ex:outputFormat edam:format_3549 ;
+    ex:produces "nidm:AcquisitionObject" ;
+    ex:resourceType "Dataset" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Referenced by URL as source scans; not downloaded." ;
+    ex:workflowStep <urn:repronim:abide:step/acquisition>,
+        <urn:repronim:abide:step/data_source> .
+
+<urn:repronim:abide:resource/abraham2017> a schema1:ScholarlyArticle,
+        ex:Resource ;
+    rdfs:label "Abraham et al. 2017 (inter-site prediction)" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:description "Shows inter-site prediction of autism diagnosis from functional connectomes on 871 ABIDE participants (about 67% accuracy) and that region definition matters most among pipeline choices." ;
+    schema1:identifier <https://doi.org/10.1016/j.neuroimage.2016.10.045> ;
+    schema1:name "Abraham et al. 2017 (inter-site prediction)" ;
+    schema1:url <https://doi.org/10.1016/j.neuroimage.2016.10.045> ;
+    ex:descriptionSource <https://doi.org/10.1016/j.neuroimage.2016.10.045> ;
+    ex:doi "10.1016/j.neuroimage.2016.10.045" ;
+    ex:edamTopic edam:topic_3419,
+        edam:topic_3474 ;
+    ex:modality "fMRI" ;
+    ex:produces "ex:Claim",
+        "ex:ResearchQuestion" ;
+    ex:resourceType "ScholarlyArticle" ;
+    ex:usageInExperiment "data_source" ;
+    ex:usageNote "Question, claims, cohort and methods extracted with verbatim quotes (arXiv v1)." ;
+    ex:workflowStep <urn:repronim:abide:step/data_source>,
+        <urn:repronim:abide:step/statistics_results> .
+
+<urn:repronim:abide:resource/ants-nidm_bidsapp> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "ANTs NIDM BIDS App" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/ants-nidm_bidsapp> ;
+    schema1:description "A BIDS App that segments a T1w image into about 100 labelled structures with multi-atlas joint label fusion (GPU registration via FireANTs) and writes per-structure volumes as CSV and NIDM Turtle. Use it for ANTs volumes that pool across studies. Needs a GPU for registration." ;
+    schema1:license "MIT" ;
+    schema1:name "ANTs NIDM BIDS App" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/ants-nidm_bidsapp> ;
+    schema1:version "25c7a29340c968edd5677e590af50715206b3ecf" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:consumes "BIDS dataset" ;
+    ex:descriptionSource <https://github.com/ReproNim/ants-nidm_bidsapp/blob/25c7a29340c968edd5677e590af50715206b3ecf/README.md> ;
+    ex:edamOperation edam:operation_3443 ;
+    ex:edamTopic edam:topic_3382 ;
+    ex:githubRepo "ReproNim/ants-nidm_bidsapp" ;
+    ex:inputFormat edam:format_3549 ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255,
+        edam:format_3752 ;
+    ex:pinnedCommit "25c7a29340c968edd5677e590af50715206b3ecf" ;
+    ex:produces "ex:BrainVolume",
+        "nidm:DerivativeObject" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Would regenerate ANTs volumes with NIDM output; not run here." ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution>,
+        <urn:repronim:abide:step/idp_extraction_to_nidm> .
+
+<urn:repronim:abide:resource/ants_seg_to_nidm> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "ants_seg_to_nidm" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/ants_seg_to_nidm> ;
+    schema1:description "Exports ANTs-based structural segmentation volumes to NIDM, with a CDE file (ants_cde.ttl) that maps each ANTs measure to anatomy and units. Use it to add ANTs volumes to a NIDM dataset graph. Does not run ANTs." ;
+    schema1:license "MIT" ;
+    schema1:name "ants_seg_to_nidm" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/ants_seg_to_nidm> ;
+    schema1:version "97e6257b0827a0e6bcc78c179f83168c83397f39" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:consumes "ANTs segmentation outputs" ;
+    ex:descriptionSource <https://github.com/ReproNim/ants_seg_to_nidm/blob/97e6257b0827a0e6bcc78c179f83168c83397f39/README.md> ;
+    ex:edamOperation edam:operation_3434 ;
+    ex:githubRepo "ReproNim/ants_seg_to_nidm" ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255 ;
+    ex:pinnedCommit "97e6257b0827a0e6bcc78c179f83168c83397f39" ;
+    ex:produces "ex:BrainVolume",
+        "nidm:DataElement" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "data_source" ;
+    ex:usageNote "ants_cde.ttl at a pinned commit was loaded to interpret ANTs volumes in the simple2 graphs." ;
+    ex:workflowStep <urn:repronim:abide:step/idp_extraction_to_nidm> .
+
+<urn:repronim:abide:resource/babs-demo-ohbm2025> a schema1:LearningResource,
+        ex:Resource ;
+    rdfs:label "BABS demo (OHBM 2025)" ;
+    schema1:audience "HPC users",
+        "students" ;
+    schema1:codeRepository <https://github.com/ReproNim/babs-demo-ohbm2025> ;
+    schema1:description "Course demo of BIDS App Bootstrap (BABS) on Slurm with a toy BIDS App that counts T1w volumes on ABIDE-I. Use it to learn how to run a BIDS App over a dataset on HPC with DataLad provenance." ;
+    schema1:license "MIT" ;
+    schema1:name "BABS demo (OHBM 2025)" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/babs-demo-ohbm2025> ;
+    schema1:version "b4ac4f63acf5e8ce6209f07283bd73f3e9df3975" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/babs-demo-ohbm2025/blob/b4ac4f63acf5e8ce6209f07283bd73f3e9df3975/README.md> ;
+    ex:githubRepo "ReproNim/babs-demo-ohbm2025" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "b4ac4f63acf5e8ce6209f07283bd73f3e9df3975" ;
+    ex:resourceType "TrainingMaterial" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution>,
+        <urn:repronim:abide:step/training> .
+
+<urn:repronim:abide:resource/bids-ld> a schema1:CreativeWork,
+        ex:Resource ;
+    rdfs:label "BIDS-LD" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/incf-nidash/bids-ld> ;
+    schema1:description "Linked-data (JSON-LD) context and terms for BIDS entities, so BIDS metadata can be read as RDF. Use it to map BIDS fields to IRIs. Repository has had no pushes since 2019." ;
+    schema1:license "MIT" ;
+    schema1:name "BIDS-LD" ;
+    schema1:url <https://github.com/incf-nidash/bids-ld> ;
+    schema1:version "a413386cf7cac2dea15103440c04cf939e5853d0" ;
+    codemeta:maintainer "incf-nidash" ;
+    ex:descriptionSource <https://github.com/incf-nidash/bids-ld/blob/a413386cf7cac2dea15103440c04cf939e5853d0/README.md> ;
+    ex:edamTopic edam:topic_0089 ;
+    ex:githubRepo "incf-nidash/bids-ld" ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3749 ;
+    ex:pinnedCommit "a413386cf7cac2dea15103440c04cf939e5853d0" ;
+    ex:resourceType "Specification" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Dormant; listed for completeness." ;
+    ex:workflowStep <urn:repronim:abide:step/conversion_to_bids>,
+        <urn:repronim:abide:step/provenance_capture> .
+
+<urn:repronim:abide:resource/containers> a schema1:Dataset,
+        dcat:Dataset,
+        ex:Resource ;
+    rdfs:label "ReproNim containers" ;
+    schema1:audience "HPC users",
+        "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/containers> ;
+    schema1:description "A DataLad dataset of versioned Singularity/Apptainer images of popular neuroimaging tools, meant to be installed as a subdataset so data, code and exact environment stay linked (YODA). Use it to run a pinned tool version on HPC with datalad containers-run. Provides images, not workflows." ;
+    schema1:license "Apache-2.0" ;
+    schema1:name "ReproNim containers" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/containers> ;
+    schema1:version "69c11f98218bfc93b9ed3dace3fb19cbef3f6cf2" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/containers/blob/69c11f98218bfc93b9ed3dace3fb19cbef3f6cf2/README.md> ;
+    ex:githubRepo "ReproNim/containers" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "69c11f98218bfc93b9ed3dace3fb19cbef3f6cf2" ;
+    ex:resourceType "Dataset" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution> .
+
+<urn:repronim:abide:resource/cpac> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "C-PAC" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/FCP-INDI/C-PAC> ;
+    schema1:description "Configurable Pipeline for the Analysis of Connectomes; produced the ABIDE Preprocessed filt_noglobal CC200 time series used here (config hashed)." ;
+    schema1:license "LGPL-3.0" ;
+    schema1:name "C-PAC" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/FCP-INDI/C-PAC> ;
+    schema1:version "96db8b0b65ab1d5f55fb3b895855af34d72c17e4" ;
+    codemeta:maintainer "FCP-INDI" ;
+    ex:descriptionSource <https://github.com/FCP-INDI/C-PAC/blob/96db8b0b65ab1d5f55fb3b895855af34d72c17e4/README.md> ;
+    ex:edamOperation edam:operation_3443 ;
+    ex:githubRepo "FCP-INDI/C-PAC" ;
+    ex:modality "fMRI" ;
+    ex:pinnedCommit "96db8b0b65ab1d5f55fb3b895855af34d72c17e4" ;
+    ex:produces "nidm:DerivativeObject" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "data_source" ;
+    ex:usageNote "Outputs used as released; not run here." ;
+    ex:workflowStep <urn:repronim:abide:step/preprocessing> .
+
+<urn:repronim:abide:resource/dimartino2014> a schema1:ScholarlyArticle,
+        ex:Resource ;
+    rdfs:label "Di Martino et al. 2014 (ABIDE)" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:description "Introduces ABIDE and reports whole-brain functional connectivity differences in 763 males: both hypo- and hyperconnectivity, with hypoconnectivity dominating, especially cortico-cortical and interhemispheric." ;
+    schema1:identifier <https://doi.org/10.1038/mp.2013.78> ;
+    schema1:name "Di Martino et al. 2014 (ABIDE)" ;
+    schema1:url <https://doi.org/10.1038/mp.2013.78> ;
+    ex:descriptionSource <https://doi.org/10.1038/mp.2013.78> ;
+    ex:doi "10.1038/mp.2013.78" ;
+    ex:edamTopic edam:topic_3419,
+        edam:topic_3444 ;
+    ex:modality "fMRI" ;
+    ex:produces "ex:Claim",
+        "ex:ResearchQuestion" ;
+    ex:resourceType "ScholarlyArticle" ;
+    ex:usageInExperiment "data_source" ;
+    ex:usageNote "Question, claim, cohort and methods extracted with verbatim quotes." ;
+    ex:workflowStep <urn:repronim:abide:step/data_source>,
+        <urn:repronim:abide:step/statistics_results> .
+
+<urn:repronim:abide:resource/fair_neuroimaging_with_nidm> a schema1:LearningResource,
+        ex:Resource ;
+    rdfs:label "FAIR neuroimaging with NIDM and PyNIDM" ;
+    schema1:audience "neuroimaging researchers",
+        "students" ;
+    schema1:codeRepository <https://github.com/ReproNim/FAIR_neuroimaging_with_NIDM> ;
+    schema1:description "Tutorial and paper materials (Zenodo 10.5281/zenodo.15850765) on producing a FAIR neuroimaging study with NIDM: recording study, acquisition, phenotype and derived data as a knowledge graph and querying it with PyNIDM. Use it to learn the NIDM workflow end to end." ;
+    schema1:license "none declared" ;
+    schema1:name "FAIR neuroimaging with NIDM and PyNIDM" ;
+    schema1:programmingLanguage "Shell" ;
+    schema1:url <https://github.com/ReproNim/FAIR_neuroimaging_with_NIDM> ;
+    schema1:version "fc13c66c1747255bb1efda7d748723fe5d989c79" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/FAIR_neuroimaging_with_NIDM/blob/fc13c66c1747255bb1efda7d748723fe5d989c79/README.md> ;
+    ex:edamTopic edam:topic_0219 ;
+    ex:githubRepo "ReproNim/FAIR_neuroimaging_with_NIDM" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "fc13c66c1747255bb1efda7d748723fe5d989c79" ;
+    ex:resourceType "TrainingMaterial" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Training counterpart of this experiment." ;
+    ex:workflowStep <urn:repronim:abide:step/query_merge>,
+        <urn:repronim:abide:step/training> .
+
+<urn:repronim:abide:resource/freesurfer-nidm_bidsapp> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "FreeSurfer NIDM BIDS App" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/freesurfer-nidm_bidsapp> ;
+    schema1:description "A BIDS App that runs only FreeSurfer 8.0.0 recon-all on T1w (and optional T2w) images and writes BIDS derivatives plus NIDM output with version tracking. Use it to produce FreeSurfer morphometry with provenance in one containerized step. It does not expose other FreeSurfer tools." ;
+    schema1:license "MIT" ;
+    schema1:name "FreeSurfer NIDM BIDS App" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/freesurfer-nidm_bidsapp> ;
+    schema1:version "f80755be15959545bbdc5d2f018dec934be4ce18" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:consumes "BIDS dataset" ;
+    ex:descriptionSource <https://github.com/ReproNim/freesurfer-nidm_bidsapp/blob/f80755be15959545bbdc5d2f018dec934be4ce18/README.md> ;
+    ex:edamOperation edam:operation_3443 ;
+    ex:edamTopic edam:topic_3382 ;
+    ex:githubRepo "ReproNim/freesurfer-nidm_bidsapp" ;
+    ex:inputFormat edam:format_3549 ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255 ;
+    ex:pinnedCommit "f80755be15959545bbdc5d2f018dec934be4ce18" ;
+    ex:produces "ex:BrainVolume",
+        "nidm:DerivativeObject" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Would regenerate FreeSurfer volumes for ABIDE with NIDM output; not run here." ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution>,
+        <urn:repronim:abide:step/idp_extraction_to_nidm> .
+
+<urn:repronim:abide:resource/fsl_seg_to_nidm> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "fsl_seg_to_nidm" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/fsl_seg_to_nidm> ;
+    schema1:description "Converts FSL FIRST (subcortical) and FAST (tissue) segmentation outputs to NIDM via fslsegstats2nidm, optionally appending them to a dataset's NIDM file; ships fsl_cde.ttl. Use it to add FSL volumes. Expects outputs of the ReproNim simple1 workflow." ;
+    schema1:license "MIT" ;
+    schema1:name "fsl_seg_to_nidm" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/fsl_seg_to_nidm> ;
+    schema1:version "54f91ec7c5c10837d1970bcbd2e39add6a5a3530" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:consumes "FSL FIRST/FAST outputs" ;
+    ex:descriptionSource <https://github.com/ReproNim/fsl_seg_to_nidm/blob/54f91ec7c5c10837d1970bcbd2e39add6a5a3530/README.md> ;
+    ex:edamOperation edam:operation_3434 ;
+    ex:githubRepo "ReproNim/fsl_seg_to_nidm" ;
+    ex:inputFormat edam:format_3464 ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255 ;
+    ex:pinnedCommit "54f91ec7c5c10837d1970bcbd2e39add6a5a3530" ;
+    ex:produces "ex:BrainVolume",
+        "nidm:DataElement" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "data_source" ;
+    ex:usageNote "fsl_cde.ttl at a pinned commit was loaded to interpret FSL volumes in the simple2 graphs." ;
+    ex:workflowStep <urn:repronim:abide:step/idp_extraction_to_nidm> .
+
+<urn:repronim:abide:resource/module-FAIR-data> a schema1:LearningResource,
+        ex:Resource ;
+    rdfs:label "ReproNim module-FAIR-data" ;
+    schema1:audience "students" ;
+    schema1:codeRepository <https://github.com/ReproNim/module-FAIR-data> ;
+    schema1:description "ReproNim teaching module on FAIR data and data sharing, built from the ReproNim lesson template." ;
+    schema1:license "NOASSERTION" ;
+    schema1:name "ReproNim module-FAIR-data" ;
+    schema1:programmingLanguage "JavaScript" ;
+    schema1:url <https://github.com/ReproNim/module-FAIR-data> ;
+    schema1:version "f95145ea0d9f385643749422bc24baa0204c167e" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/module-FAIR-data/blob/f95145ea0d9f385643749422bc24baa0204c167e/README.md> ;
+    ex:githubRepo "ReproNim/module-FAIR-data" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "f95145ea0d9f385643749422bc24baa0204c167e" ;
+    ex:resourceType "TrainingMaterial" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/training> .
+
+<urn:repronim:abide:resource/module-dataprocessing> a schema1:LearningResource,
+        ex:Resource ;
+    rdfs:label "ReproNim module-dataprocessing" ;
+    schema1:audience "students" ;
+    schema1:codeRepository <https://github.com/ReproNim/module-dataprocessing> ;
+    schema1:description "ReproNim teaching module on reproducible data processing, built from the ReproNim lesson template." ;
+    schema1:license "NOASSERTION" ;
+    schema1:name "ReproNim module-dataprocessing" ;
+    schema1:programmingLanguage "JavaScript" ;
+    schema1:url <https://github.com/ReproNim/module-dataprocessing> ;
+    schema1:version "a91e88faa8eaf71e4aa48de47a47b9352bd46314" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/module-dataprocessing/blob/a91e88faa8eaf71e4aa48de47a47b9352bd46314/README.md> ;
+    ex:githubRepo "ReproNim/module-dataprocessing" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "a91e88faa8eaf71e4aa48de47a47b9352bd46314" ;
+    ex:resourceType "TrainingMaterial" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/training> .
+
+<urn:repronim:abide:resource/module-intro> a schema1:LearningResource,
+        ex:Resource ;
+    rdfs:label "ReproNim module-intro" ;
+    schema1:audience "students" ;
+    schema1:codeRepository <https://github.com/ReproNim/module-intro> ;
+    schema1:description "ReproNim teaching module on introduction to reproducible neuroimaging, built from the ReproNim lesson template." ;
+    schema1:license "NOASSERTION" ;
+    schema1:name "ReproNim module-intro" ;
+    schema1:programmingLanguage "JavaScript" ;
+    schema1:url <https://github.com/ReproNim/module-intro> ;
+    schema1:version "4e755b9b2ccd8c1697e9cb9fbfb0403386ee1d84" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/module-intro/blob/4e755b9b2ccd8c1697e9cb9fbfb0403386ee1d84/README.md> ;
+    ex:githubRepo "ReproNim/module-intro" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "4e755b9b2ccd8c1697e9cb9fbfb0403386ee1d84" ;
+    ex:resourceType "TrainingMaterial" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/training> .
+
+<urn:repronim:abide:resource/module-reproducible-basics> a schema1:LearningResource,
+        ex:Resource ;
+    rdfs:label "ReproNim module-reproducible-basics" ;
+    schema1:audience "students" ;
+    schema1:codeRepository <https://github.com/ReproNim/module-reproducible-basics> ;
+    schema1:description "ReproNim teaching module on reproducible computational basics (shell, version control, environments), built from the ReproNim lesson template." ;
+    schema1:license "NOASSERTION" ;
+    schema1:name "ReproNim module-reproducible-basics" ;
+    schema1:programmingLanguage "JavaScript" ;
+    schema1:url <https://github.com/ReproNim/module-reproducible-basics> ;
+    schema1:version "b6ed82761e10d0930467e3d5c701a4da99f9af2e" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/module-reproducible-basics/blob/b6ed82761e10d0930467e3d5c701a4da99f9af2e/README.md> ;
+    ex:githubRepo "ReproNim/module-reproducible-basics" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "b6ed82761e10d0930467e3d5c701a4da99f9af2e" ;
+    ex:resourceType "TrainingMaterial" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/training> .
+
+<urn:repronim:abide:resource/module-stats> a schema1:LearningResource,
+        ex:Resource ;
+    rdfs:label "ReproNim module-stats" ;
+    schema1:audience "students" ;
+    schema1:codeRepository <https://github.com/ReproNim/module-stats> ;
+    schema1:description "ReproNim teaching module on statistics for reproducible neuroimaging, built from the ReproNim lesson template." ;
+    schema1:license "NOASSERTION" ;
+    schema1:name "ReproNim module-stats" ;
+    schema1:programmingLanguage "Jupyter Notebook" ;
+    schema1:url <https://github.com/ReproNim/module-stats> ;
+    schema1:version "ccef0fa1d23d0023db4cbbfc1e3091037df77f3b" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/module-stats/blob/ccef0fa1d23d0023db4cbbfc1e3091037df77f3b/README.md> ;
+    ex:githubRepo "ReproNim/module-stats" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "ccef0fa1d23d0023db4cbbfc1e3091037df77f3b" ;
+    ex:resourceType "TrainingMaterial" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/training> .
+
+<urn:repronim:abide:resource/mriqc-nidm_bidsapp> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "MRIQC NIDM BIDS App" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/mriqc-nidm_bidsapp> ;
+    schema1:description "A BIDS App that runs MRIQC and converts its image-quality metrics to NIDM (Turtle or JSON-LD), optionally augmenting existing NIDM files. Use it to make QC metrics queryable alongside phenotype and IDPs. It does not make QC decisions." ;
+    schema1:license "MIT" ;
+    schema1:name "MRIQC NIDM BIDS App" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/mriqc-nidm_bidsapp> ;
+    schema1:version "79f782635d41b8ebfc6f1ddb23acdd32cac56af8" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:consumes "BIDS dataset" ;
+    ex:descriptionSource <https://github.com/ReproNim/mriqc-nidm_bidsapp/blob/79f782635d41b8ebfc6f1ddb23acdd32cac56af8/README.md> ;
+    ex:edamOperation edam:operation_2428 ;
+    ex:edamTopic edam:topic_3382,
+        edam:topic_3393 ;
+    ex:githubRepo "ReproNim/mriqc-nidm_bidsapp" ;
+    ex:inputFormat edam:format_3464,
+        edam:format_3549 ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255,
+        edam:format_3749 ;
+    ex:pinnedCommit "79f782635d41b8ebfc6f1ddb23acdd32cac56af8" ;
+    ex:produces "nidm:DerivativeObject" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "QC metrics would complement the rater QC used to select cohorts here; not run." ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution>,
+        <urn:repronim:abide:step/qc_to_nidm> .
+
+<urn:repronim:abide:resource/neurobagel-api> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "Neurobagel node API" ;
+    schema1:audience "data stewards" ;
+    schema1:codeRepository <https://github.com/neurobagel/api> ;
+    schema1:description "The API a single Neurobagel node (a ReproPond) exposes over its graph database of harmonized participant-level phenotype and imaging metadata. Use it to make a local store queryable by the federation. Returns participant-level or aggregate results as the node is configured." ;
+    schema1:license "MIT" ;
+    schema1:name "Neurobagel node API" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/neurobagel/api> ;
+    schema1:version "f49e7622889834ac1f71939defb24e6ae02dd9be" ;
+    codemeta:maintainer "neurobagel" ;
+    ex:descriptionSource <https://github.com/neurobagel/api/blob/f49e7622889834ac1f71939defb24e6ae02dd9be/README.md> ;
+    ex:edamOperation edam:operation_0224 ;
+    ex:githubRepo "neurobagel/api" ;
+    ex:modality "MRI",
+        "phenotype" ;
+    ex:pinnedCommit "f49e7622889834ac1f71939defb24e6ae02dd9be" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/query_merge> .
+
+<urn:repronim:abide:resource/neurobagel-bagel-cli> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "Neurobagel bagel-cli" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/neurobagel/bagel-cli> ;
+    schema1:description "Command-line tool that turns a phenotype table plus its annotated data dictionary (and optionally BIDS and derivatives) into Neurobagel graph-ready JSON-LD. Use it to put a local dataset into a Neurobagel node." ;
+    schema1:license "MIT" ;
+    schema1:name "Neurobagel bagel-cli" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/neurobagel/bagel-cli> ;
+    schema1:version "68443b3a145a7bfe31407c84348cd3d556ac1e6e" ;
+    codemeta:maintainer "neurobagel" ;
+    ex:consumes "phenotype table" ;
+    ex:descriptionSource <https://github.com/neurobagel/bagel-cli/blob/68443b3a145a7bfe31407c84348cd3d556ac1e6e/README.md> ;
+    ex:edamOperation edam:operation_3434 ;
+    ex:githubRepo "neurobagel/bagel-cli" ;
+    ex:modality "phenotype" ;
+    ex:outputFormat edam:format_3749 ;
+    ex:pinnedCommit "68443b3a145a7bfe31407c84348cd3d556ac1e6e" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/phenotype_assessment_schema>,
+        <urn:repronim:abide:step/query_merge> .
+
+<urn:repronim:abide:resource/neurobagel-federation-api> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "Neurobagel federation API" ;
+    schema1:audience "consortia",
+        "data stewards" ;
+    schema1:codeRepository <https://github.com/neurobagel/federation-api> ;
+    schema1:description "REST API that federates a query over many Neurobagel graph databases (nodes), so a question travels to each pond and only the answers each node permits come back. Use it to search across sites without pooling participant data. Each node decides what it returns." ;
+    schema1:license "MIT" ;
+    schema1:name "Neurobagel federation API" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/neurobagel/federation-api> ;
+    schema1:version "f961c7f03371179b1f66cb1331a6b81b1b1c30cb" ;
+    codemeta:maintainer "neurobagel" ;
+    ex:consumes "nidm:AcquisitionObject" ;
+    ex:descriptionSource <https://github.com/neurobagel/federation-api/blob/f961c7f03371179b1f66cb1331a6b81b1b1c30cb/README.md> ;
+    ex:edamOperation edam:operation_0224 ;
+    ex:githubRepo "neurobagel/federation-api" ;
+    ex:modality "MRI",
+        "phenotype" ;
+    ex:pinnedCommit "f961c7f03371179b1f66cb1331a6b81b1b1c30cb" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "The federation mechanism between ReproPonds and the ReproLake; not deployed here." ;
+    ex:workflowStep <urn:repronim:abide:step/query_merge> .
+
+<urn:repronim:abide:resource/neurobagel-query-tool> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "Neurobagel query tool" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/neurobagel/query-tool> ;
+    schema1:description "Web interface for cohort discovery across Neurobagel nodes: filter by age, sex, diagnosis, assessment and imaging modality, then download matching participant or dataset results. Use it to find participants across ponds and the lake." ;
+    schema1:license "MIT" ;
+    schema1:name "Neurobagel query tool" ;
+    schema1:programmingLanguage "TypeScript" ;
+    schema1:url <https://github.com/neurobagel/query-tool> ;
+    schema1:version "257e103ebd44ed4f387d6406123832a60470a98e" ;
+    codemeta:maintainer "neurobagel" ;
+    ex:descriptionSource <https://github.com/neurobagel/query-tool/blob/257e103ebd44ed4f387d6406123832a60470a98e/README.md> ;
+    ex:githubRepo "neurobagel/query-tool" ;
+    ex:modality "MRI",
+        "phenotype" ;
+    ex:pinnedCommit "257e103ebd44ed4f387d6406123832a60470a98e" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/query_merge> .
+
+<urn:repronim:abide:resource/neurodocker> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "Neurodocker" ;
+    schema1:audience "developers",
+        "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/neurodocker> ;
+    schema1:description "Command-line generator of Dockerfiles and Singularity recipes for neuroimaging software (FSL, FreeSurfer, ANTs, AFNI, conda environments and more), and a container minifier. Use it to build a reproducible image for a pipeline. Compatibility depends on the base image; check its build matrix." ;
+    schema1:license "Apache-2.0" ;
+    schema1:name "Neurodocker" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/neurodocker> ;
+    schema1:version "2087a0e1cfef91312ba2feb069bab5fe83a5c110" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/neurodocker/blob/2087a0e1cfef91312ba2feb069bab5fe83a5c110/README.md> ;
+    ex:edamOperation edam:operation_0335 ;
+    ex:edamTopic edam:topic_3372 ;
+    ex:githubRepo "ReproNim/neurodocker" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "2087a0e1cfef91312ba2feb069bab5fe83a5c110" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution> .
+
+<urn:repronim:abide:resource/nidm-experiment> a schema1:DefinedTermSet,
+        ex:Resource ;
+    rdfs:label "NIDM-Experiment terms" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/incf-nidash/nidm-experiment> ;
+    schema1:description "Controlled terminology for describing neuroscience experiments, initially MRI studies, built from existing ontologies with new terms only where none exist; every term has a resolvable URL. Use it to annotate acquisitions and data elements with stable term IRIs. It is a vocabulary under construction, not a validator." ;
+    schema1:license "none declared" ;
+    schema1:name "NIDM-Experiment terms" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/incf-nidash/nidm-experiment> ;
+    schema1:version "7ec1c44de69020cbf2f78542815ad59ca6e74421" ;
+    codemeta:maintainer "incf-nidash" ;
+    ex:descriptionSource <https://github.com/incf-nidash/nidm-experiment/blob/7ec1c44de69020cbf2f78542815ad59ca6e74421/README.md> ;
+    ex:edamTopic edam:topic_0089 ;
+    ex:githubRepo "incf-nidash/nidm-experiment" ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_2197,
+        edam:format_3255 ;
+    ex:pinnedCommit "7ec1c44de69020cbf2f78542815ad59ca6e74421" ;
+    ex:produces "nidm:DataElement" ;
+    ex:resourceType "Vocabulary" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Source of nidm: term IRIs referenced in the graph." ;
+    ex:workflowStep <urn:repronim:abide:step/phenotype_assessment_schema>,
+        <urn:repronim:abide:step/provenance_capture> .
+
+<urn:repronim:abide:resource/nidm-experiment-cob> a schema1:DefinedTermSet,
+        ex:Resource ;
+    rdfs:label "NIDM-Experiment based on COB (NEC)" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/incf-nidash/NIDM-Experiment-COB> ;
+    schema1:description "Ongoing conversion of NIDM-Experiment from a PROV-based terminology to an ontology grounded in BFO and the Core Ontology for Biology and Biomedicine. Use when you need ontologically sound experiment terms. Under construction; terms may be missing." ;
+    schema1:license "none declared" ;
+    schema1:name "NIDM-Experiment based on COB (NEC)" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/incf-nidash/NIDM-Experiment-COB> ;
+    schema1:version "4e24603d218e068021b92341fd6cf445c027f604" ;
+    codemeta:maintainer "incf-nidash" ;
+    ex:descriptionSource <https://github.com/incf-nidash/NIDM-Experiment-COB/blob/4e24603d218e068021b92341fd6cf445c027f604/README.md> ;
+    ex:edamTopic edam:topic_0089 ;
+    ex:githubRepo "incf-nidash/NIDM-Experiment-COB" ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_2197 ;
+    ex:pinnedCommit "4e24603d218e068021b92341fd6cf445c027f604" ;
+    ex:resourceType "Vocabulary" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Successor ontology for NIDM-E terms." ;
+    ex:workflowStep <urn:repronim:abide:step/provenance_capture> .
+
+<urn:repronim:abide:resource/nidm-specs> a schema1:CreativeWork,
+        ex:Resource ;
+    rdfs:label "NIDM specifications" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/incf-nidash/nidm-specs> ;
+    schema1:description "The Neuroimaging Data Model: PROV-based models for neuroimaging. NIDM-Results (released) describes mass-univariate results such as fMRI statistic maps; NIDM-Experiment and NIDM-Workflows describe raw data and workflows. Use it to decide which classes and relations to emit when describing studies, acquisitions and results as a knowledge graph. It is a specification, not software that converts your data." ;
+    schema1:license "NOASSERTION" ;
+    schema1:name "NIDM specifications" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/incf-nidash/nidm-specs> ;
+    schema1:version "b568043b81e75110d63b994c00aa17275a5f4614" ;
+    codemeta:maintainer "incf-nidash" ;
+    ex:descriptionSource <https://github.com/incf-nidash/nidm-specs/blob/b568043b81e75110d63b994c00aa17275a5f4614/README.md> ;
+    ex:edamTopic edam:topic_0089,
+        edam:topic_3334 ;
+    ex:githubRepo "incf-nidash/nidm-specs" ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255,
+        edam:format_3749 ;
+    ex:pinnedCommit "b568043b81e75110d63b994c00aa17275a5f4614" ;
+    ex:produces "nidm:Acquisition",
+        "nidm:AcquisitionObject",
+        "nidm:DataElement",
+        "nidm:Derivative" ;
+    ex:resourceType "Specification" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Defines the nidm: classes this graph uses (Acquisition, AcquisitionObject, DataElement, Derivative)." ;
+    ex:workflowStep <urn:repronim:abide:step/provenance_capture>,
+        <urn:repronim:abide:step/statistics_results> .
+
+<urn:repronim:abide:resource/nidm-terms> a schema1:DefinedTermSet,
+        ex:Resource ;
+    rdfs:label "NIDM-Terms" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/NIDM-Terms/terms> ;
+    schema1:description "Collaborative terminology work from the NIDM FAIR descriptors project (NIH RF1 MH120021): shared, defined terms for assessment and imaging variables so datasets can be queried together. Use it to find or propose a term for a variable before inventing a local one. Not a data converter." ;
+    schema1:license "none declared" ;
+    schema1:name "NIDM-Terms" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/NIDM-Terms/terms> ;
+    schema1:version "51c82a81af84900ec1412211e4bb315eb1bb97ad" ;
+    codemeta:maintainer "NIDM-Terms" ;
+    ex:consumes "nidm:DataElement" ;
+    ex:descriptionSource <https://github.com/NIDM-Terms/terms/blob/51c82a81af84900ec1412211e4bb315eb1bb97ad/README.md> ;
+    ex:edamTopic edam:topic_0089,
+        edam:topic_3345 ;
+    ex:githubRepo "NIDM-Terms/terms" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "51c82a81af84900ec1412211e4bb315eb1bb97ad" ;
+    ex:produces "nidm:DataElement" ;
+    ex:resourceType "Vocabulary" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Where variable-level isAbout terms come from or are proposed." ;
+    ex:workflowStep <urn:repronim:abide:step/phenotype_assessment_schema>,
+        <urn:repronim:abide:step/query_merge> .
+
+<urn:repronim:abide:resource/nidmresults> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "nidmresults" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/incf-nidash/nidmresults> ;
+    schema1:description "Python library to read and write NIDM-Results packs, the standard representation of mass-univariate (voxelwise) statistical results with their maps. Use it to load or produce results packs from SPM/FSL group analyses. It does not cover ROI or connectivity results like the ones in this experiment." ;
+    schema1:license "MIT" ;
+    schema1:name "nidmresults" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/incf-nidash/nidmresults> ;
+    schema1:version "a3c3bee3aabef14d0889540e04522d3349fe4c28" ;
+    codemeta:maintainer "incf-nidash" ;
+    ex:descriptionSource <https://github.com/incf-nidash/nidmresults/blob/a3c3bee3aabef14d0889540e04522d3349fe4c28/README.md> ;
+    ex:edamTopic edam:topic_3334 ;
+    ex:githubRepo "incf-nidash/nidmresults" ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255 ;
+    ex:pinnedCommit "a3c3bee3aabef14d0889540e04522d3349fe4c28" ;
+    ex:produces "ex:Result" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Results-level NIDM; our edgewise and classification results are not voxelwise maps." ;
+    ex:workflowStep <urn:repronim:abide:step/statistics_results> .
+
+<urn:repronim:abide:resource/nidmresults-fsl> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "NIDM-Results for FSL" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/incf-nidash/nidmresults-fsl> ;
+    schema1:description "Command-line exporter (nidmfsl) that turns an FSL FEAT directory into a NIDM-Results pack. Use it to share FSL task-fMRI results with provenance. Only for FEAT outputs." ;
+    schema1:license "MIT" ;
+    schema1:name "NIDM-Results for FSL" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/incf-nidash/nidmresults-fsl> ;
+    schema1:version "18c07ab33dffeb6c9367c7873d8f6c975d78b717" ;
+    codemeta:maintainer "incf-nidash" ;
+    ex:consumes "FSL FEAT directory" ;
+    ex:descriptionSource <https://github.com/incf-nidash/nidmresults-fsl/blob/18c07ab33dffeb6c9367c7873d8f6c975d78b717/README.md> ;
+    ex:edamOperation edam:operation_3434 ;
+    ex:githubRepo "incf-nidash/nidmresults-fsl" ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255 ;
+    ex:pinnedCommit "18c07ab33dffeb6c9367c7873d8f6c975d78b717" ;
+    ex:produces "ex:Result" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Not applicable to resting-state connectivity here." ;
+    ex:workflowStep <urn:repronim:abide:step/statistics_results> .
+
+<urn:repronim:abide:resource/nilearn> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "nilearn" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/nilearn/nilearn> ;
+    schema1:description "Python machine learning and statistics for neuroimaging; used here for the tangent-space connectivity embedding fitted inside each training fold." ;
+    schema1:license "BSD-3-Clause" ;
+    schema1:name "nilearn" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/nilearn/nilearn> ;
+    schema1:version "cf91993d617bf5bb052bd3017cfa05246f7d8213" ;
+    codemeta:maintainer "nilearn" ;
+    ex:descriptionSource <https://github.com/nilearn/nilearn/blob/cf91993d617bf5bb052bd3017cfa05246f7d8213/README.md> ;
+    ex:edamOperation edam:operation_2238 ;
+    ex:githubRepo "nilearn/nilearn" ;
+    ex:modality "software" ;
+    ex:pinnedCommit "cf91993d617bf5bb052bd3017cfa05246f7d8213" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "executed" ;
+    ex:usageNote "Executed in this experiment (version pinned in uv.lock)." ;
+    ex:workflowStep <urn:repronim:abide:step/statistics_results> .
+
+<urn:repronim:abide:resource/openneuroderivatives-nidm> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "OpenNeuroDerivatives-NIDM" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/OpenNeuroDerivatives-NIDM> ;
+    schema1:description "Experiments extracting NIDM descriptors for all OpenNeuroDerivatives datasets, starting with FreeSurfer outputs via segstats_jsonld, organised as DataLad/YODA datasets. Use it as a model for NIDM-ifying many derivative datasets at once." ;
+    schema1:license "none declared" ;
+    schema1:name "OpenNeuroDerivatives-NIDM" ;
+    schema1:programmingLanguage "Dockerfile" ;
+    schema1:url <https://github.com/ReproNim/OpenNeuroDerivatives-NIDM> ;
+    schema1:version "9121a3e5673f4c68f40159d1dd65510d70ab78d5" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/OpenNeuroDerivatives-NIDM/blob/9121a3e5673f4c68f40159d1dd65510d70ab78d5/README.md> ;
+    ex:githubRepo "ReproNim/OpenNeuroDerivatives-NIDM" ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255 ;
+    ex:pinnedCommit "9121a3e5673f4c68f40159d1dd65510d70ab78d5" ;
+    ex:produces "ex:BrainVolume" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Pattern for scaling the simple2 approach beyond ABIDE." ;
+    ex:workflowStep <urn:repronim:abide:step/idp_extraction_to_nidm>,
+        <urn:repronim:abide:step/query_merge> .
+
+<urn:repronim:abide:resource/pynidm> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "PyNIDM" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/incf-nidash/PyNIDM> ;
+    schema1:description "Python library and CLI for the Neuroimaging Data Model: bidsmri2nidm converts a BIDS dataset to NIDM, csv2nidm annotates tabular phenotype data with terms, and pynidm query runs SPARQL over NIDM files; it also has linear-regression and merge tools. Use it to build or query NIDM graphs from BIDS plus spreadsheets. Its in-memory query is slow on many files (the simple2 README warns it is too long beyond ~10 files)." ;
+    schema1:license "NOASSERTION" ;
+    schema1:name "PyNIDM" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/incf-nidash/PyNIDM> ;
+    schema1:version "74793553f2ef0884602c4383fe8dbe8c74e3dcb8" ;
+    codemeta:maintainer "incf-nidash" ;
+    ex:consumes "BIDS dataset",
+        "phenotype table" ;
+    ex:descriptionSource <https://github.com/incf-nidash/PyNIDM/blob/74793553f2ef0884602c4383fe8dbe8c74e3dcb8/README.md> ;
+    ex:edamOperation edam:operation_0224,
+        edam:operation_0226,
+        edam:operation_3434 ;
+    ex:edamTopic edam:topic_0219 ;
+    ex:githubRepo "incf-nidash/PyNIDM" ;
+    ex:inputFormat edam:format_3475,
+        edam:format_3549,
+        edam:format_3752 ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255,
+        edam:format_3749 ;
+    ex:pinnedCommit "74793553f2ef0884602c4383fe8dbe8c74e3dcb8" ;
+    ex:produces "nidm:AcquisitionObject",
+        "nidm:DataElement",
+        "prov:Activity" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Produced the BIDS and phenotype parts of the simple2 graphs (bidsmri2nidm + csv2nidm); not run here." ;
+    ex:workflowStep <urn:repronim:abide:step/provenance_capture>,
+        <urn:repronim:abide:step/query_merge>,
+        <urn:repronim:abide:step/statistics_results> .
+
+<urn:repronim:abide:resource/pyoxigraph> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "Oxigraph (pyoxigraph)" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/oxigraph/oxigraph> ;
+    schema1:description "SPARQL 1.1 store and query engine in Rust with Python bindings; used to load named graphs and run all queries, including ReproNim's simple2 query unmodified." ;
+    schema1:license "Apache-2.0" ;
+    schema1:name "Oxigraph (pyoxigraph)" ;
+    schema1:programmingLanguage "Rust" ;
+    schema1:url <https://github.com/oxigraph/oxigraph> ;
+    schema1:version "2283f42a7eb4ae40330a9c9ce7ee9585ff72daee" ;
+    codemeta:maintainer "oxigraph" ;
+    ex:descriptionSource <https://github.com/oxigraph/oxigraph/blob/2283f42a7eb4ae40330a9c9ce7ee9585ff72daee/README.md> ;
+    ex:edamOperation edam:operation_0224 ;
+    ex:githubRepo "oxigraph/oxigraph" ;
+    ex:modality "software" ;
+    ex:pinnedCommit "2283f42a7eb4ae40330a9c9ce7ee9585ff72daee" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "executed" ;
+    ex:usageNote "Executed in this experiment (version pinned in uv.lock)." ;
+    ex:workflowStep <urn:repronim:abide:step/query_merge> .
+
+<urn:repronim:abide:resource/pyshacl> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "pySHACL" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/RDFLib/pySHACL> ;
+    schema1:description "SHACL validator for RDF graphs; used for the local shape profile and mutation tests." ;
+    schema1:license "Apache-2.0" ;
+    schema1:name "pySHACL" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/RDFLib/pySHACL> ;
+    schema1:version "469cca7a22a078b36c167c1e8dadecf5e5ec6c75" ;
+    codemeta:maintainer "RDFLib" ;
+    ex:descriptionSource <https://github.com/RDFLib/pySHACL/blob/469cca7a22a078b36c167c1e8dadecf5e5ec6c75/README.md> ;
+    ex:edamOperation edam:operation_2428 ;
+    ex:githubRepo "RDFLib/pySHACL" ;
+    ex:modality "software" ;
+    ex:pinnedCommit "469cca7a22a078b36c167c1e8dadecf5e5ec6c75" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "executed" ;
+    ex:usageNote "Executed in this experiment (version pinned in uv.lock)." ;
+    ex:workflowStep <urn:repronim:abide:step/provenance_capture> .
+
+<urn:repronim:abide:resource/rdflib> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "RDFLib" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/RDFLib/rdflib> ;
+    schema1:description "Python RDF library; used to construct the graph and run SHACL. Its in-memory SPARQL did not finish the simple2 query on one site in 27 minutes." ;
+    schema1:license "BSD-3-Clause" ;
+    schema1:name "RDFLib" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/RDFLib/rdflib> ;
+    schema1:version "9099a782e5ed38ee11a41aaad2c1071a3b89437a" ;
+    codemeta:maintainer "RDFLib" ;
+    ex:descriptionSource <https://github.com/RDFLib/rdflib/blob/9099a782e5ed38ee11a41aaad2c1071a3b89437a/README.md> ;
+    ex:edamOperation edam:operation_0224 ;
+    ex:githubRepo "RDFLib/rdflib" ;
+    ex:modality "software" ;
+    ex:pinnedCommit "9099a782e5ed38ee11a41aaad2c1071a3b89437a" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "executed" ;
+    ex:usageNote "Executed in this experiment (version pinned in uv.lock)." ;
+    ex:workflowStep <urn:repronim:abide:step/provenance_capture>,
+        <urn:repronim:abide:step/query_merge> .
+
+<urn:repronim:abide:resource/reproin> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "ReproIn" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/reproin> ;
+    schema1:description "A turnkey setup (HeuDiConv heuristic plus DataLad) that converts scanner DICOMs into version-controlled BIDS datasets automatically, based on how sequences are named at the scanner. Use it to get BIDS at acquisition time. Requires following its scanner naming convention." ;
+    schema1:license "MIT" ;
+    schema1:name "ReproIn" ;
+    schema1:programmingLanguage "Shell" ;
+    schema1:url <https://github.com/ReproNim/reproin> ;
+    schema1:version "2f3d6a6db272d615ce3b243184131050603cfcd8" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/reproin/blob/2f3d6a6db272d615ce3b243184131050603cfcd8/README.md> ;
+    ex:edamOperation edam:operation_3434 ;
+    ex:edamTopic edam:topic_3077,
+        edam:topic_3444 ;
+    ex:githubRepo "ReproNim/reproin" ;
+    ex:inputFormat edam:format_3548 ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3464,
+        edam:format_3549 ;
+    ex:pinnedCommit "2f3d6a6db272d615ce3b243184131050603cfcd8" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/acquisition>,
+        <urn:repronim:abide:step/conversion_to_bids> .
+
+<urn:repronim:abide:resource/reproinventory> a schema1:LearningResource,
+        ex:Resource ;
+    rdfs:label "ReproInventory" ;
+    schema1:audience "students",
+        "teachers" ;
+    schema1:codeRepository <https://github.com/ReproNim/ReproInventory> ;
+    schema1:description "A searchable inventory of ReproNim and community training resources, so teachers can find, reuse and adapt material instead of starting from scratch." ;
+    schema1:license "MIT" ;
+    schema1:name "ReproInventory" ;
+    schema1:programmingLanguage "TypeScript" ;
+    schema1:url <https://github.com/ReproNim/ReproInventory> ;
+    schema1:version "06d6e3bf50e9e2298763c9a0f7dec29a1764541d" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/ReproInventory/blob/06d6e3bf50e9e2298763c9a0f7dec29a1764541d/README.md> ;
+    ex:githubRepo "ReproNim/ReproInventory" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "06d6e3bf50e9e2298763c9a0f7dec29a1764541d" ;
+    ex:resourceType "TrainingMaterial" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/training> .
+
+<urn:repronim:abide:resource/reprolake> a schema1:Dataset,
+        dcat:Dataset,
+        ex:Resource ;
+    rdfs:label "ReproLake" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:description "ReproNim's semantically aligned store of publicly available datasets (OpenNeuro and others), queryable with Neurobagel. Use it as the public, lake-scoped counterpart of local ReproPonds." ;
+    schema1:name "ReproLake" ;
+    schema1:url <https://www.repronim.org/resources/tools/reprolake/> ;
+    ex:descriptionSource <https://www.repronim.org/resources/tools/reprolake/> ;
+    ex:modality "MRI",
+        "phenotype" ;
+    ex:resourceType "Dataset" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Target scope for promoted, egress-permitted knowledge." ;
+    ex:workflowStep <urn:repronim:abide:step/data_source>,
+        <urn:repronim:abide:step/query_merge> .
+
+<urn:repronim:abide:resource/reproman> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "ReproMan" ;
+    schema1:audience "HPC users",
+        "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/reproman> ;
+    schema1:description "Tool to create and manage computing environments and run analyses on them (local, remote, cloud, HPC) while recording what was run. Use it to submit and track jobs with their environment. Linux and macOS only." ;
+    schema1:license "NOASSERTION" ;
+    schema1:name "ReproMan" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/reproman> ;
+    schema1:version "328cc57c11661f022a8d18dc40e2f5e0555541d6" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/reproman/blob/328cc57c11661f022a8d18dc40e2f5e0555541d6/README.md> ;
+    ex:githubRepo "ReproNim/reproman" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "328cc57c11661f022a8d18dc40e2f5e0555541d6" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution>,
+        <urn:repronim:abide:step/provenance_capture> .
+
+<urn:repronim:abide:resource/repronim-pond-lake-tutorial> a schema1:LearningResource,
+        ex:Resource ;
+    rdfs:label "Tutorial: ReproPond and ReproLake" ;
+    schema1:audience "data stewards",
+        "students" ;
+    schema1:description "ReproNim tutorial on sharing and searching metadata with a local ReproPond (NIDM served by a Neurobagel node, federable across sites) and the public ReproLake." ;
+    schema1:name "Tutorial: ReproPond and ReproLake" ;
+    schema1:url <https://repronim.org/resources/tutorials/pond-lake/> ;
+    ex:descriptionSource <https://repronim.org/resources/tutorials/pond-lake/> ;
+    ex:modality "MRI" ;
+    ex:resourceType "TrainingMaterial" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Source of the pond/lake scope terms used in this graph." ;
+    ex:workflowStep <urn:repronim:abide:step/query_merge>,
+        <urn:repronim:abide:step/training> .
+
+<urn:repronim:abide:resource/repronim-skills> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "ReproNim skills" ;
+    schema1:audience "AI coding agents",
+        "developers" ;
+    schema1:codeRepository <https://github.com/ReproNim/skills> ;
+    schema1:description "Repository intended for AI-agent skills (Agent Skills format) covering ReproNim tools such as DataLad, Neurodocker and ReproSchema. At the pinned commit it contains only a README and an empty skills/ directory: no skills yet." ;
+    schema1:license "MIT" ;
+    schema1:name "ReproNim skills" ;
+    schema1:url <https://github.com/ReproNim/skills> ;
+    schema1:version "faef6c04ccf5976ecfa019a717270f382e7014b9" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/skills/blob/faef6c04ccf5976ecfa019a717270f382e7014b9/README.md> ;
+    ex:githubRepo "ReproNim/skills" ;
+    ex:modality "software" ;
+    ex:pinnedCommit "faef6c04ccf5976ecfa019a717270f382e7014b9" ;
+    ex:resourceType "SkillCollection" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Inspected: 0 skill files at the pinned commit." ;
+    ex:workflowStep <urn:repronim:abide:step/agent_skills> .
+
+<urn:repronim:abide:resource/reproschema> a schema1:CreativeWork,
+        ex:Resource ;
+    rdfs:label "ReproSchema" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/reproschema> ;
+    schema1:description "A schema for standardized survey and assessment data collection: items, activities and protocols as linked data with versioning, so questionnaires and their responses are harmonized across studies. Use it to define phenotype instruments once and reuse them. It defines forms and responses; it does not score or analyse them." ;
+    schema1:license "NOASSERTION" ;
+    schema1:name "ReproSchema" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/reproschema> ;
+    schema1:version "ac35394773e66e2aab8a3d26e4acce1fabb1ce63" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/reproschema/blob/ac35394773e66e2aab8a3d26e4acce1fabb1ce63/README.md> ;
+    ex:edamTopic edam:topic_0219 ;
+    ex:githubRepo "ReproNim/reproschema" ;
+    ex:modality "assessment" ;
+    ex:outputFormat edam:format_3749 ;
+    ex:pinnedCommit "ac35394773e66e2aab8a3d26e4acce1fabb1ce63" ;
+    ex:produces "nidm:DataElement" ;
+    ex:resourceType "Specification" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Would give ABIDE's phenotype instruments (ADOS, SRS, IQ) explicit, versioned definitions; not used here." ;
+    ex:workflowStep <urn:repronim:abide:step/phenotype_assessment_schema> .
+
+<urn:repronim:abide:resource/reproschema-library> a schema1:Dataset,
+        dcat:Dataset,
+        ex:Resource ;
+    rdfs:label "ReproSchema library" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/reproschema-library> ;
+    schema1:description "A library of reusable, form-based clinical, behavioural and neuropsychological assessments in ReproSchema (for example ASSQ, a screening checklist for autism spectrum characteristics). Use it to pick an existing instrument definition instead of writing your own." ;
+    schema1:license "Apache-2.0" ;
+    schema1:name "ReproSchema library" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/reproschema-library> ;
+    schema1:version "3de0133fd131087c94d8ce5f09df4636f529a9c8" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/reproschema-library/blob/3de0133fd131087c94d8ce5f09df4636f529a9c8/README.md> ;
+    ex:githubRepo "ReproNim/reproschema-library" ;
+    ex:modality "assessment" ;
+    ex:outputFormat edam:format_3749 ;
+    ex:pinnedCommit "3de0133fd131087c94d8ce5f09df4636f529a9c8" ;
+    ex:resourceType "Dataset" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Contains autism-related instruments relevant to ABIDE phenotypes." ;
+    ex:workflowStep <urn:repronim:abide:step/phenotype_assessment_schema> .
+
+<urn:repronim:abide:resource/reproschema-py> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "reproschema-py" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/reproschema-py> ;
+    schema1:description "Python library and CLI for ReproSchema: create, validate and convert protocols and activities (YAML-based authoring). Use it to validate an assessment schema or convert to and from other formats such as REDCap. Requires Python 3.10+." ;
+    schema1:license "Apache-2.0" ;
+    schema1:name "reproschema-py" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/reproschema-py> ;
+    schema1:version "ffa345afbf25ce6cdf829945b71c181d4aeacd7d" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/reproschema-py/blob/ffa345afbf25ce6cdf829945b71c181d4aeacd7d/README.md> ;
+    ex:edamOperation edam:operation_2428,
+        edam:operation_3434 ;
+    ex:githubRepo "ReproNim/reproschema-py" ;
+    ex:inputFormat edam:format_3750 ;
+    ex:modality "assessment" ;
+    ex:outputFormat edam:format_3749 ;
+    ex:pinnedCommit "ffa345afbf25ce6cdf829945b71c181d4aeacd7d" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/phenotype_assessment_schema> .
+
+<urn:repronim:abide:resource/reproschema-ui> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "ReproSchema UI" ;
+    schema1:audience "participants",
+        "study coordinators" ;
+    schema1:codeRepository <https://github.com/ReproNim/reproschema-ui> ;
+    schema1:description "Web user interface that renders ReproSchema protocols and activities for participants to complete (text, numeric, audio, date and choice inputs). Use it to run a ReproSchema questionnaire in a browser." ;
+    schema1:license "NOASSERTION" ;
+    schema1:name "ReproSchema UI" ;
+    schema1:programmingLanguage "Vue" ;
+    schema1:url <https://github.com/ReproNim/reproschema-ui> ;
+    schema1:version "562c4bbe8a51ff98e9ec5cc3e3bb8fd21467f0e7" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/reproschema-ui/blob/562c4bbe8a51ff98e9ec5cc3e3bb8fd21467f0e7/README.md> ;
+    ex:githubRepo "ReproNim/reproschema-ui" ;
+    ex:modality "assessment" ;
+    ex:pinnedCommit "562c4bbe8a51ff98e9ec5cc3e3bb8fd21467f0e7" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/acquisition>,
+        <urn:repronim:abide:step/phenotype_assessment_schema> .
+
+<urn:repronim:abide:resource/reproseed> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "reproseed" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/reproseed> ;
+    schema1:description "A POSIX shell script that sets one REPROSEED value into the many tool-specific random-seed environment variables, so non-deterministic tools become reproducible where seeding allows. Use it around pipelines with random initialisation (e.g. UMAP, registration). Cannot fix nondeterminism from parallel reduction order." ;
+    schema1:license "Unlicense" ;
+    schema1:name "reproseed" ;
+    schema1:programmingLanguage "Shell" ;
+    schema1:url <https://github.com/ReproNim/reproseed> ;
+    schema1:version "1ba8815bcfd45039b622b3b2508d583537ca281b" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/reproseed/blob/1ba8815bcfd45039b622b3b2508d583537ca281b/README.md> ;
+    ex:githubRepo "ReproNim/reproseed" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "1ba8815bcfd45039b622b3b2508d583537ca281b" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Relevant to the UMAP seed handling here; we seed in code instead." ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution> .
+
+<urn:repronim:abide:resource/reprostim> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "ReproStim" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/reprostim> ;
+    schema1:description "Video and audio capture suite that records the actual stimuli shown to each participant during a session and stores them alongside behavioural or imaging data in BIDS. Use it to keep a faithful record of what was presented." ;
+    schema1:license "none declared" ;
+    schema1:name "ReproStim" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/reprostim> ;
+    schema1:version "aa82b86f3a7b5acea653bf5dbe5e71c648baa9ce" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/reprostim/blob/aa82b86f3a7b5acea653bf5dbe5e71c648baa9ce/README.md> ;
+    ex:edamTopic edam:topic_3077 ;
+    ex:githubRepo "ReproNim/reprostim" ;
+    ex:modality "MRI",
+        "behaviour" ;
+    ex:pinnedCommit "aa82b86f3a7b5acea653bf5dbe5e71c648baa9ce" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/acquisition> .
+
+<urn:repronim:abide:resource/reprozip> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "ReproZip (ReproNim fork)" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/reprozip> ;
+    schema1:description "Traces operating-system calls during a command-line run and packs every binary, file and dependency into a bundle that others can unpack and re-execute. Use it to capture an analysis you cannot easily containerize. Linux tracing only." ;
+    schema1:license "BSD-3-Clause" ;
+    schema1:name "ReproZip (ReproNim fork)" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/reprozip> ;
+    schema1:version "e88219b1bf1da0f7c5b0b4f96e115c1eb4ec9154" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/reprozip/blob/e88219b1bf1da0f7c5b0b4f96e115c1eb4ec9154/README.md> ;
+    ex:githubRepo "ReproNim/reprozip" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "e88219b1bf1da0f7c5b0b4f96e115c1eb4ec9154" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution>,
+        <urn:repronim:abide:step/provenance_capture> .
+
+<urn:repronim:abide:resource/scikit-learn> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "scikit-learn" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/scikit-learn/scikit-learn> ;
+    schema1:description "General machine learning library; used for scaling, logistic regression, cross-validation metrics, PCA and trustworthiness." ;
+    schema1:license "BSD-3-Clause" ;
+    schema1:name "scikit-learn" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/scikit-learn/scikit-learn> ;
+    schema1:version "d0e22aee7bbef7b310a2f08227c214ff6df9a526" ;
+    codemeta:maintainer "scikit-learn" ;
+    ex:descriptionSource <https://github.com/scikit-learn/scikit-learn/blob/d0e22aee7bbef7b310a2f08227c214ff6df9a526/README.md> ;
+    ex:edamOperation edam:operation_2238 ;
+    ex:githubRepo "scikit-learn/scikit-learn" ;
+    ex:modality "software" ;
+    ex:pinnedCommit "d0e22aee7bbef7b310a2f08227c214ff6df9a526" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "executed" ;
+    ex:usageNote "Executed in this experiment (version pinned in uv.lock)." ;
+    ex:workflowStep <urn:repronim:abide:step/statistics_results> .
+
+<urn:repronim:abide:resource/segstats_jsonld> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "segstats_jsonld" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/segstats_jsonld> ;
+    schema1:description "Exports FreeSurfer segmentation and parcellation statistics (aseg/aparc stats from mri_segstats) with provenance as JSON-LD and NIDM, mapping each measure to a common data element with anatomical isAbout terms. Use it to make FreeSurfer volumes queryable next to other tools. Needs a finished FreeSurfer subject directory; it does not run FreeSurfer." ;
+    schema1:license "MIT" ;
+    schema1:name "segstats_jsonld" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/segstats_jsonld> ;
+    schema1:version "de217d09fb6246fa7677306cb3b19cd05dd1bbc4" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:consumes "FreeSurfer stats files" ;
+    ex:descriptionSource <https://github.com/ReproNim/segstats_jsonld/blob/de217d09fb6246fa7677306cb3b19cd05dd1bbc4/README.md> ;
+    ex:edamOperation edam:operation_3434 ;
+    ex:edamTopic edam:topic_3334,
+        edam:topic_3382 ;
+    ex:githubRepo "ReproNim/segstats_jsonld" ;
+    ex:inputFormat edam:format_3475 ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255,
+        edam:format_3749 ;
+    ex:pinnedCommit "de217d09fb6246fa7677306cb3b19cd05dd1bbc4" ;
+    ex:produces "ex:BrainVolume",
+        "nidm:DataElement" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "data_source" ;
+    ex:usageNote "Its FreeSurfer CDEs and outputs appear in the simple2 ABIDE graphs used here (fs: measures)." ;
+    ex:workflowStep <urn:repronim:abide:step/idp_extraction_to_nidm> .
+
+<urn:repronim:abide:resource/sensein-agent-skills> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "sensein agent_skills" ;
+    schema1:audience "AI coding agents",
+        "developers" ;
+    schema1:codeRepository <https://github.com/sensein/agent_skills> ;
+    schema1:description "A collection of agent skills (duct, kya, labnb, orcd-remote, structsense, synthscholar, brainkb and others), each a SKILL.md with optional scripts, for resource logging, lab notebooks, structured extraction and HPC execution. Use to give coding agents reusable, reviewable procedures." ;
+    schema1:license "Apache-2.0" ;
+    schema1:name "sensein agent_skills" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/sensein/agent_skills> ;
+    schema1:version "dde54251a5a70f55d0b9bbbaab0dd21013b1bbfc" ;
+    codemeta:maintainer "sensein" ;
+    ex:descriptionSource <https://github.com/sensein/agent_skills/blob/dde54251a5a70f55d0b9bbbaab0dd21013b1bbfc/README.md> ;
+    ex:githubRepo "sensein/agent_skills" ;
+    ex:modality "software" ;
+    ex:pinnedCommit "dde54251a5a70f55d0b9bbbaab0dd21013b1bbfc" ;
+    ex:resourceType "SkillCollection" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "orcd-remote informed the ORCD job; structsense was used in the earlier CNP package." ;
+    ex:workflowStep <urn:repronim:abide:step/agent_skills>,
+        <urn:repronim:abide:step/containerized_execution>,
+        <urn:repronim:abide:step/provenance_capture> .
+
+<urn:repronim:abide:resource/simple2_bidsapp_babs> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "simple2 BABS scripts" ;
+    schema1:audience "HPC users",
+        "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/simple2_bidsapp_babs> ;
+    schema1:description "Scripts that run the FreeSurfer, ANTs and MRIQC NIDM BIDS Apps on HPC with BABS and DataLad, site by site, on SIMPLE2-layout study datasets; validated end to end on the 38-subject ABIDE Caltech site. Use it to batch the NIDM BIDS Apps over a cohort on Slurm. Requires DataLad, BABS and container images." ;
+    schema1:license "MIT" ;
+    schema1:name "simple2 BABS scripts" ;
+    schema1:programmingLanguage "Shell" ;
+    schema1:url <https://github.com/ReproNim/simple2_bidsapp_babs> ;
+    schema1:version "24f4c7afcb59a4e24c02e6fb0a1b05f3e00dd74c" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:consumes "BIDS dataset" ;
+    ex:descriptionSource <https://github.com/ReproNim/simple2_bidsapp_babs/blob/24f4c7afcb59a4e24c02e6fb0a1b05f3e00dd74c/README.md> ;
+    ex:edamOperation edam:operation_3443 ;
+    ex:githubRepo "ReproNim/simple2_bidsapp_babs" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "24f4c7afcb59a4e24c02e6fb0a1b05f3e00dd74c" ;
+    ex:produces "ex:BrainVolume" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "The HPC route to regenerate simple2 IDPs; not run here." ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution>,
+        <urn:repronim:abide:step/idp_extraction_to_nidm> .
+
+<urn:repronim:abide:resource/simple2_nidm_examples> a schema1:Dataset,
+        dcat:Dataset,
+        ex:Resource ;
+    rdfs:label "simple2 NIDM examples (ABIDE, ADHD200)" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/simple2_NIDM_examples> ;
+    schema1:description "NIDM Turtle for ABIDE and ADHD200 built with bidsmri2nidm and csv2nidm (age, sex, diagnosis, FIQ/PIQ/VIQ) plus ANTs, FSL and FreeSurfer brain volumes, with example SPARQL queries (simple2_query.sparql, get_volumes.sparql). Use it as a ready-made, queryable phenotype + IDP graph for ABIDE. Volumes were computed by ReproNim, not re-derived here." ;
+    schema1:license "none declared" ;
+    schema1:name "simple2 NIDM examples (ABIDE, ADHD200)" ;
+    schema1:programmingLanguage "Shell" ;
+    schema1:url <https://github.com/ReproNim/simple2_NIDM_examples> ;
+    schema1:version "e0dff17629bd5031e246c05ff4bed174597552a2" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/simple2_NIDM_examples/blob/e0dff17629bd5031e246c05ff4bed174597552a2/README.md> ;
+    ex:edamOperation edam:operation_0224 ;
+    ex:githubRepo "ReproNim/simple2_NIDM_examples" ;
+    ex:loadedAs <urn:repronim:abide:activity/identity_join_simple2> ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255,
+        edam:format_3752 ;
+    ex:pinnedCommit "e0dff17629bd5031e246c05ff4bed174597552a2" ;
+    ex:produces "ex:BrainVolume",
+        "nidm:AcquisitionObject",
+        "nidm:DataElement" ;
+    ex:resourceType "Dataset" ;
+    ex:usageInExperiment "data_source" ;
+    ex:usageNote "24 ABIDE site graphs loaded unmodified as named graphs; simple2_query.sparql executed unmodified; identity-joined to ABIDE Preprocessed." ;
+    ex:workflowStep <urn:repronim:abide:step/data_source>,
+        <urn:repronim:abide:step/query_merge> .
+
+<urn:repronim:abide:resource/simple_workflow> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "simple_workflow" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/simple_workflow> ;
+    schema1:description "Code for 'A very simple, re-executable neuroimaging publication' (Ghosh et al., F1000Research): a small FSL-based analysis packaged to re-run in Docker or Singularity. Use it as a minimal template for a re-executable paper." ;
+    schema1:identifier <https://doi.org/10.12688/f1000research.10783.2> ;
+    schema1:license "NOASSERTION" ;
+    schema1:name "simple_workflow" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/simple_workflow> ;
+    schema1:version "225f1dc06fb734ad86afb1d074b5ae2692d8b9c3" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/simple_workflow/blob/225f1dc06fb734ad86afb1d074b5ae2692d8b9c3/README.md> ;
+    ex:doi "10.12688/f1000research.10783.2" ;
+    ex:githubRepo "ReproNim/simple_workflow" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "225f1dc06fb734ad86afb1d074b5ae2692d8b9c3" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "Ancestor of the simple2 NIDM work." ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution>,
+        <urn:repronim:abide:step/statistics_results>,
+        <urn:repronim:abide:step/training> .
+
+<urn:repronim:abide:resource/stuff2nidm> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "stuff2NIDM" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/stuff2NIDM> ;
+    schema1:description "Worked recipe for adding any tool's results (e.g. fMRIPrep) to a NIDM graph: write results, a data dictionary and a tool description as three CSVs, then run pynidm csv2nidm. Use it when no dedicated exporter exists for your tool. It is a pattern with examples, not a converter for every tool." ;
+    schema1:license "MIT" ;
+    schema1:name "stuff2NIDM" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/stuff2NIDM> ;
+    schema1:version "c609c8a01e8b6ed4d98bacc3e9f0f8907ba1cdcb" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:consumes "data dictionary",
+        "results table" ;
+    ex:descriptionSource <https://github.com/ReproNim/stuff2NIDM/blob/c609c8a01e8b6ed4d98bacc3e9f0f8907ba1cdcb/README.md> ;
+    ex:edamOperation edam:operation_3434 ;
+    ex:githubRepo "ReproNim/stuff2NIDM" ;
+    ex:inputFormat edam:format_3752 ;
+    ex:modality "MRI" ;
+    ex:outputFormat edam:format_3255 ;
+    ex:pinnedCommit "c609c8a01e8b6ed4d98bacc3e9f0f8907ba1cdcb" ;
+    ex:produces "nidm:DataElement",
+        "nidm:DerivativeObject" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:usageNote "The route to put this experiment's connectivity summaries into NIDM; not run here." ;
+    ex:workflowStep <urn:repronim:abide:step/idp_extraction_to_nidm>,
+        <urn:repronim:abide:step/qc_to_nidm> .
+
+<urn:repronim:abide:resource/testkraken> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "TestKraken" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/ReproNim/testkraken> ;
+    schema1:description "Tests a scientific workflow across a matrix of parametrised environments (software versions, base images) and compares outputs. Use it to see how results move with the environment. Not maintained since 2021." ;
+    schema1:license "none declared" ;
+    schema1:name "TestKraken" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/ReproNim/testkraken> ;
+    schema1:version "d2410997e3ab230e99278649e6ef8b8daee00667" ;
+    codemeta:maintainer "ReproNim" ;
+    ex:descriptionSource <https://github.com/ReproNim/testkraken/blob/d2410997e3ab230e99278649e6ef8b8daee00667/README.md> ;
+    ex:githubRepo "ReproNim/testkraken" ;
+    ex:modality "MRI" ;
+    ex:pinnedCommit "d2410997e3ab230e99278649e6ef8b8daee00667" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "pointer" ;
+    ex:workflowStep <urn:repronim:abide:step/containerized_execution>,
+        <urn:repronim:abide:step/statistics_results> .
+
+<urn:repronim:abide:resource/umap-learn> a schema1:SoftwareSourceCode,
+        ex:Resource ;
+    rdfs:label "UMAP" ;
+    schema1:audience "neuroimaging researchers" ;
+    schema1:codeRepository <https://github.com/lmcinnes/umap> ;
+    schema1:description "Uniform Manifold Approximation and Projection for dimension reduction; used for the phenotype embedding (seeded)." ;
+    schema1:license "BSD-3-Clause" ;
+    schema1:name "UMAP" ;
+    schema1:programmingLanguage "Python" ;
+    schema1:url <https://github.com/lmcinnes/umap> ;
+    schema1:version "7a39d04186a8d20fe38b0146f36119b0c6d23a50" ;
+    codemeta:maintainer "lmcinnes" ;
+    ex:descriptionSource <https://github.com/lmcinnes/umap/blob/7a39d04186a8d20fe38b0146f36119b0c6d23a50/README.md> ;
+    ex:edamOperation edam:operation_0337 ;
+    ex:githubRepo "lmcinnes/umap" ;
+    ex:modality "software" ;
+    ex:pinnedCommit "7a39d04186a8d20fe38b0146f36119b0c6d23a50" ;
+    ex:resourceType "SoftwareSourceCode" ;
+    ex:usageInExperiment "executed" ;
+    ex:usageNote "Executed in this experiment (version pinned in uv.lock)." ;
+    ex:workflowStep <urn:repronim:abide:step/statistics_results> .
+
+edam:format_3548 rdfs:label "DICOM format" .
+
+edam:format_3750 rdfs:label "YAML" .
+
+edam:operation_0226 rdfs:label "Annotation" .
+
+edam:operation_0335 rdfs:label "Formatting" .
+
+edam:operation_0337 rdfs:label "Visualisation" .
+
+edam:topic_3345 rdfs:label "Data identity and mapping" .
+
+edam:topic_3372 rdfs:label "Software engineering" .
+
+edam:topic_3393 rdfs:label "Quality affairs" .
+
+edam:topic_3474 rdfs:label "Machine learning" .
+
+edam:format_2197 rdfs:label "OWL format" .
+
+edam:format_3475 rdfs:label "TSV" .
+
+edam:operation_2238 rdfs:label "Statistical calculation" .
+
+edam:topic_3077 rdfs:label "Data acquisition" .
+
+<urn:repronim:abide:step/agent_skills> a ex:WorkflowStep ;
+    rdfs:label "agent skills" ;
+    ex:order 12 .
+
+<urn:repronim:abide:step/conversion_to_bids> a ex:WorkflowStep ;
+    rdfs:label "conversion to bids" ;
+    ex:order 1 .
+
+<urn:repronim:abide:step/preprocessing> a ex:WorkflowStep ;
+    rdfs:label "preprocessing" ;
+    ex:order 5 .
+
+<urn:repronim:abide:step/qc_to_nidm> a ex:WorkflowStep ;
+    rdfs:label "qc to nidm" ;
+    ex:order 7 .
+
+edam:format_3464 rdfs:label "JSON" .
+
+edam:operation_2428 rdfs:label "Validation" .
+
+edam:topic_0219 rdfs:label "Data submission, annotation and curation" .
+
+edam:topic_3334 rdfs:label "Neurology" .
+
+edam:operation_3443 rdfs:label "Image analysis" .
+
+edam:topic_3382 rdfs:label "Imaging" .
+
+edam:topic_3419 rdfs:label "Psychiatry" .
+
+edam:topic_3444 rdfs:label "MRI" .
+
+<urn:repronim:abide:step/acquisition> a ex:WorkflowStep ;
+    rdfs:label "acquisition" ;
+    ex:order 0 .
+
+edam:format_3752 rdfs:label "CSV" .
+
+edam:topic_0089 rdfs:label "Ontology and terminology" .
+
+edam:operation_0224 rdfs:label "Query and retrieval" .
+
+<urn:repronim:abide:step/data_source> a ex:WorkflowStep ;
+    rdfs:label "data source" ;
+    ex:order 10 .
+
+edam:format_3549 rdfs:label "nii" .
+
+<urn:repronim:abide:step/phenotype_assessment_schema> a ex:WorkflowStep ;
+    rdfs:label "phenotype assessment schema" ;
+    ex:order 2 .
+
+<urn:repronim:abide:step/idp_extraction_to_nidm> a ex:WorkflowStep ;
+    rdfs:label "idp extraction to nidm" ;
+    ex:order 6 .
+
+edam:format_3749 rdfs:label "JSON-LD" .
+
+edam:operation_3434 rdfs:label "Conversion" .
+
+<urn:repronim:abide:step/provenance_capture> a ex:WorkflowStep ;
+    rdfs:label "provenance capture" ;
+    ex:order 4 .
+
+<urn:repronim:abide:step/training> a ex:WorkflowStep ;
+    rdfs:label "training" ;
+    ex:order 11 .
+
+<urn:repronim:abide:step/statistics_results> a ex:WorkflowStep ;
+    rdfs:label "statistics results" ;
+    ex:order 9 .
+
+<urn:repronim:abide:step/containerized_execution> a ex:WorkflowStep ;
+    rdfs:label "containerized execution" ;
+    ex:order 3 .
+
+<urn:repronim:abide:step/query_merge> a ex:WorkflowStep ;
+    rdfs:label "query merge" ;
+    ex:order 8 .
+
+edam:format_3255 rdfs:label "Turtle" .
+

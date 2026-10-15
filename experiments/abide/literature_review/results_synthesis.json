@@ -1,0 +1,2496 @@
+{
+ "_note": "Computed by phase3/s4_synthesis.py from charted values in phase3/records_verified.json. Counts are of included articles unless stated.",
+ "screening": {
+  "assessed_for_eligibility": 99,
+  "included": 74,
+  "excluded": 25,
+  "excluded_reasons": {
+   "Exclusion 3: structural/DTI/phenotype-only ABIDE use (no resting-state analysis)": 21,
+   "Exclusion 4: ABIDE used only for methods benchmarking, no autism-vs-control analysis": 4
+  },
+  "assessed_on": {
+   "full_text": 98,
+   "abstract_only": 1
+  },
+  "full_text_mismatched": [
+   "S-040"
+  ],
+  "excluded_ids": {
+   "Exclusion 3: structural/DTI/phenotype-only ABIDE use (no resting-state analysis)": [
+    "S-013",
+    "S-031",
+    "S-046",
+    "S-061",
+    "S-065",
+    "S-017",
+    "S-018",
+    "S-040",
+    "S-050",
+    "S-073",
+    "S-095",
+    "S-035",
+    "S-042",
+    "S-051",
+    "S-079",
+    "S-003",
+    "S-037",
+    "S-048",
+    "S-057",
+    "S-068",
+    "S-085"
+   ],
+   "Exclusion 4: ABIDE used only for methods benchmarking, no autism-vs-control analysis": [
+    "S-083",
+    "S-084",
+    "S-087",
+    "S-089"
+   ]
+  }
+ },
+ "release": {
+  "ABIDE II": 4,
+  "ABIDE I+II": 16,
+  "ABIDE I": 54
+ },
+ "claim_type": {
+  "descriptor": 1,
+  "predictive": 46,
+  "associational": 20,
+  "both": 7
+ },
+ "claim_type_rq3_crosscheck": {
+  "descriptor": 1,
+  "predictive": 46,
+  "associational": 20,
+  "both": 7
+ },
+ "evaluation": {
+  "n_predictive_or_both": 53,
+  "papers_per_scheme": {
+   "pooled k-fold CV": 26,
+   "leave-one-subject-out CV": 5,
+   "single train/test split": 9,
+   "leave-site-out": 6,
+   "external dataset": 4,
+   "within-site only": 12,
+   "other": 1,
+   "not reported": 2
+  },
+  "schemes_per_paper": {
+   "S-002": [
+    "leave-site-out",
+    "within-site only"
+   ],
+   "S-004": [
+    "not reported"
+   ],
+   "S-005": [
+    "leave-one-subject-out CV"
+   ],
+   "S-006": [
+    "pooled k-fold CV",
+    "external dataset"
+   ],
+   "S-009": [
+    "external dataset"
+   ],
+   "S-010": [
+    "external dataset"
+   ],
+   "S-011": [
+    "other"
+   ],
+   "S-014": [
+    "pooled k-fold CV",
+    "within-site only"
+   ],
+   "S-016": [
+    "pooled k-fold CV"
+   ],
+   "S-019": [
+    "pooled k-fold CV"
+   ],
+   "S-020": [
+    "within-site only"
+   ],
+   "S-021": [
+    "leave-one-subject-out CV"
+   ],
+   "S-022": [
+    "pooled k-fold CV",
+    "leave-site-out"
+   ],
+   "S-023": [
+    "single train/test split"
+   ],
+   "S-024": [
+    "single train/test split"
+   ],
+   "S-025": [
+    "within-site only"
+   ],
+   "S-027": [
+    "single train/test split"
+   ],
+   "S-028": [
+    "pooled k-fold CV",
+    "within-site only"
+   ],
+   "S-029": [
+    "pooled k-fold CV"
+   ],
+   "S-030": [
+    "pooled k-fold CV",
+    "leave-site-out"
+   ],
+   "S-032": [
+    "single train/test split"
+   ],
+   "S-033": [
+    "pooled k-fold CV"
+   ],
+   "S-034": [
+    "pooled k-fold CV"
+   ],
+   "S-036": [
+    "single train/test split",
+    "within-site only"
+   ],
+   "S-049": [
+    "pooled k-fold CV"
+   ],
+   "S-052": [
+    "pooled k-fold CV",
+    "within-site only"
+   ],
+   "S-053": [
+    "pooled k-fold CV"
+   ],
+   "S-054": [
+    "not reported"
+   ],
+   "S-055": [
+    "leave-one-subject-out CV"
+   ],
+   "S-056": [
+    "single train/test split"
+   ],
+   "S-058": [
+    "pooled k-fold CV",
+    "within-site only"
+   ],
+   "S-059": [
+    "within-site only"
+   ],
+   "S-060": [
+    "within-site only"
+   ],
+   "S-062": [
+    "leave-site-out"
+   ],
+   "S-063": [
+    "pooled k-fold CV"
+   ],
+   "S-064": [
+    "single train/test split"
+   ],
+   "S-066": [
+    "pooled k-fold CV"
+   ],
+   "S-067": [
+    "pooled k-fold CV"
+   ],
+   "S-069": [
+    "pooled k-fold CV"
+   ],
+   "S-070": [
+    "single train/test split"
+   ],
+   "S-071": [
+    "leave-site-out"
+   ],
+   "S-072": [
+    "pooled k-fold CV",
+    "leave-site-out"
+   ],
+   "S-074": [
+    "pooled k-fold CV"
+   ],
+   "S-076": [
+    "pooled k-fold CV",
+    "within-site only"
+   ],
+   "S-077": [
+    "pooled k-fold CV"
+   ],
+   "S-078": [
+    "leave-one-subject-out CV"
+   ],
+   "S-081": [
+    "single train/test split"
+   ],
+   "S-090": [
+    "pooled k-fold CV"
+   ],
+   "S-091": [
+    "external dataset"
+   ],
+   "S-092": [
+    "leave-one-subject-out CV"
+   ],
+   "S-096": [
+    "pooled k-fold CV"
+   ],
+   "S-097": [
+    "pooled k-fold CV"
+   ],
+   "S-099": [
+    "pooled k-fold CV",
+    "within-site only"
+   ]
+  },
+  "papers_with_leave_site_out": [
+   "S-002",
+   "S-022",
+   "S-030",
+   "S-062",
+   "S-071",
+   "S-072"
+  ],
+  "papers_with_charted_accuracy": 44,
+  "papers_without_charted_accuracy": {
+   "S-005": "regression of SRS (r)",
+   "S-009": "regression of ADOS/SRS",
+   "S-010": "AUROC only",
+   "S-011": "AUC/F1 correlations only",
+   "S-016": "AUC only",
+   "S-049": "no ASD accuracy table in text",
+   "S-063": "relative change only",
+   "S-091": "AUC only",
+   "S-092": "regression (rs)"
+  },
+  "accuracy_by_scheme": {
+   "pooled k-fold CV": {
+    "n_papers_with_accuracy": 23,
+    "min": 58.0,
+    "median": 73.3,
+    "max": 96.91,
+    "n_leakage_flagged": 4,
+    "median_excluding_leakage_flagged": 70.86
+   },
+   "leave-one-subject-out CV": {
+    "n_papers_with_accuracy": 3,
+    "min": 60.0,
+    "median": 74.8,
+    "max": 89.0,
+    "n_leakage_flagged": 0,
+    "median_excluding_leakage_flagged": 74.8
+   },
+   "single train/test split": {
+    "n_papers_with_accuracy": 8,
+    "min": 62.0,
+    "median": 68.72999999999999,
+    "max": 96.15,
+    "n_leakage_flagged": 1,
+    "median_excluding_leakage_flagged": 65.0
+   },
+   "leave-site-out": {
+    "n_papers_with_accuracy": 5,
+    "min": 56.0,
+    "median": 66.8,
+    "max": 73.4,
+    "n_leakage_flagged": 0,
+    "median_excluding_leakage_flagged": 66.8
+   },
+   "external dataset": {
+    "n_papers_with_accuracy": 1,
+    "min": 71.7,
+    "median": 71.7,
+    "max": 71.7,
+    "n_leakage_flagged": 0,
+    "median_excluding_leakage_flagged": 71.7
+   },
+   "within-site only": {
+    "n_papers_with_accuracy": 10,
+    "min": 64.42,
+    "median": 77.37,
+    "max": 96.4,
+    "n_leakage_flagged": 3,
+    "median_excluding_leakage_flagged": 77.0
+   },
+   "not reported": {
+    "n_papers_with_accuracy": 2,
+    "min": 81.56,
+    "median": 88.13,
+    "max": 94.7,
+    "n_leakage_flagged": 0,
+    "median_excluding_leakage_flagged": 88.13
+   }
+  },
+  "accuracy_rows": [
+   {
+    "source_id": "S-002",
+    "scheme": "leave-site-out",
+    "accuracy_pct": 66.8,
+    "charted_snippet": "Best inter-site accuracy 66.8%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "Deriving reproducible biomarkers from multi-site resting-state data: An Autism-based example",
+    "year": "2016",
+    "n_total": 871
+   },
+   {
+    "source_id": "S-004",
+    "scheme": "not reported",
+    "accuracy_pct": 81.56,
+    "charted_snippet": "ABIDE-I+II complete: CNN 81.56% acc",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "Analysis of Brain Imaging Data for the Detection of Early Age Autism Spectrum Disorder Using Transfer Learning Approaches for Internet of Things",
+    "year": "2023",
+    "n_total": null
+   },
+   {
+    "source_id": "S-006",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 73.3,
+    "charted_snippet": "73.3% 10-fold CV accuracy on ABIDE-I",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 774
+   },
+   {
+    "source_id": "S-006",
+    "scheme": "external dataset",
+    "accuracy_pct": 71.7,
+    "charted_snippet": "71.7% independent test accuracy on ABIDE-II",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 774
+   },
+   {
+    "source_id": "S-014",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 75.2,
+    "charted_snippet": "Whole dataset (N=1035): 75.20% accuracy",
+    "basis": "best",
+    "leakage_flag": "feature selection outside CV",
+    "title": "MADE-for-ASD: A multi-atlas deep ensemble network for diagnosing Autism Spectrum Disorder",
+    "year": "2024",
+    "n_total": 1035
+   },
+   {
+    "source_id": "S-014",
+    "scheme": "within-site only",
+    "accuracy_pct": 96.4,
+    "charted_snippet": "NYU subset (N=175): 96.40% accuracy",
+    "basis": "single site",
+    "leakage_flag": "feature selection outside CV",
+    "title": "MADE-for-ASD: A multi-atlas deep ensemble network for diagnosing Autism Spectrum Disorder",
+    "year": "2024",
+    "n_total": 1035
+   },
+   {
+    "source_id": "S-019",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 70.4,
+    "charted_snippet": "70.4% accuracy",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "Disease prediction using graph convolutional networks: Application to Autism Spectrum Disorder and Alzheimer's disease",
+    "year": "2018",
+    "n_total": 871
+   },
+   {
+    "source_id": "S-020",
+    "scheme": "within-site only",
+    "accuracy_pct": 84.9,
+    "charted_snippet": "USM 0.849",
+    "basis": "best single site (no average reported)",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 370
+   },
+   {
+    "source_id": "S-021",
+    "scheme": "leave-one-subject-out CV",
+    "accuracy_pct": 60.0,
+    "charted_snippet": "Best whole-brain classification accuracy was 60%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "Multisite functional connectivity MRI classification of autism: ABIDE results",
+    "year": "2013",
+    "n_total": 964
+   },
+   {
+    "source_id": "S-022",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 70.22,
+    "charted_snippet": "CNN achieved 70.22% 10-fold CV accuracy",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 871
+   },
+   {
+    "source_id": "S-023",
+    "scheme": "single train/test split",
+    "accuracy_pct": 64.3,
+    "charted_snippet": "hold-out accuracy on ABIDE = 0.643",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 1111
+   },
+   {
+    "source_id": "S-024",
+    "scheme": "single train/test split",
+    "accuracy_pct": 62.9,
+    "charted_snippet": "62.9% across all sites",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "Distance Metric Learning Using Graph Convolutional Networks: Application to Functional Brain Networks",
+    "year": "2017",
+    "n_total": 871
+   },
+   {
+    "source_id": "S-025",
+    "scheme": "within-site only",
+    "accuracy_pct": 67.1,
+    "charted_snippet": "averaged across sites DTL-NN reached 67.1% accuracy",
+    "basis": "average across sites",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 310
+   },
+   {
+    "source_id": "S-027",
+    "scheme": "single train/test split",
+    "accuracy_pct": 96.15,
+    "charted_snippet": "96.15% accuracy",
+    "basis": "best",
+    "leakage_flag": "tuning on the test set",
+    "title": "",
+    "year": "",
+    "n_total": 84
+   },
+   {
+    "source_id": "S-028",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 70.8,
+    "charted_snippet": "comparable accuracy (70.8%)",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "ASD-SAENet: A Sparse Autoencoder, and Deep-Neural Network Model for Detecting Autism Spectrum Disorder (ASD) Using fMRI Data",
+    "year": "2021",
+    "n_total": 1035
+   },
+   {
+    "source_id": "S-028",
+    "scheme": "within-site only",
+    "accuracy_pct": 64.42,
+    "charted_snippet": "The average accuracy achieved by ASD-SAENet model was 64.42%",
+    "basis": "average across sites",
+    "leakage_flag": "",
+    "title": "ASD-SAENet: A Sparse Autoencoder, and Deep-Neural Network Model for Detecting Autism Spectrum Disorder (ASD) Using fMRI Data",
+    "year": "2021",
+    "n_total": 1035
+   },
+   {
+    "source_id": "S-029",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 68.0,
+    "charted_snippet": "SVM accuracy increased to 68%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "Promises, Pitfalls, and Basic Guidelines for Applying Machine Learning Classifiers to Psychiatric Imaging Data, with Autism as an Example",
+    "year": "2016",
+    "n_total": 154
+   },
+   {
+    "source_id": "S-030",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 64.0,
+    "charted_snippet": "balanced accuracy 64%",
+    "basis": "best (balanced accuracy)",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 2085
+   },
+   {
+    "source_id": "S-030",
+    "scheme": "leave-site-out",
+    "accuracy_pct": 56.0,
+    "charted_snippet": "dropped to 56% balanced accuracy",
+    "basis": "best (balanced accuracy)",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 2085
+   },
+   {
+    "source_id": "S-032",
+    "scheme": "single train/test split",
+    "accuracy_pct": 65.0,
+    "charted_snippet": "Functional+PCD 65.0% (best)",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "Using Functional or Structural Magnetic Resonance Images and Personal Characteristic Data to Identify ADHD and Autism",
+    "year": "2016",
+    "n_total": 1111
+   },
+   {
+    "source_id": "S-033",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 95.0,
+    "charted_snippet": "~95% accuracy",
+    "basis": "best age group",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 816
+   },
+   {
+    "source_id": "S-034",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 70.86,
+    "charted_snippet": "accuracy 70.86%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "Bootstrapping Graph Convolutional Neural Networks for Autism Spectrum Disorder Classification",
+    "year": "2019",
+    "n_total": 872
+   },
+   {
+    "source_id": "S-036",
+    "scheme": "within-site only",
+    "accuracy_pct": 85.0,
+    "charted_snippet": "Unit-site classification accuracy up to 85%",
+    "basis": "best single site (no average reported)",
+    "leakage_flag": "",
+    "title": "Single Volume Image Generator and Deep Learning-Based ASD Classification",
+    "year": "2020",
+    "n_total": 1102
+   },
+   {
+    "source_id": "S-052",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 72.2,
+    "charted_snippet": "Pooled 10-fold CV: accuracy 72.2%",
+    "basis": "best",
+    "leakage_flag": "feature selection outside CV",
+    "title": "Attentional Connectivity-based Prediction of Autism Using Heterogeneous rs-fMRI Data from CC200 Atlas",
+    "year": "2020",
+    "n_total": 1054
+   },
+   {
+    "source_id": "S-052",
+    "scheme": "within-site only",
+    "accuracy_pct": 67.7,
+    "charted_snippet": "mean accuracy 67.7%",
+    "basis": "average across sites",
+    "leakage_flag": "feature selection outside CV",
+    "title": "Attentional Connectivity-based Prediction of Autism Using Heterogeneous rs-fMRI Data from CC200 Atlas",
+    "year": "2020",
+    "n_total": 1054
+   },
+   {
+    "source_id": "S-053",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 68.02,
+    "charted_snippet": "accuracy 68.02%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 1035
+   },
+   {
+    "source_id": "S-054",
+    "scheme": "not reported",
+    "accuracy_pct": 94.7,
+    "charted_snippet": "Accuracy 94.7%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 184
+   },
+   {
+    "source_id": "S-055",
+    "scheme": "leave-one-subject-out CV",
+    "accuracy_pct": 74.8,
+    "charted_snippet": "74.8% (m=3)",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "Combining Anatomical and Functional Networks for Neuropathology Identification: A Case Study on Autism Spectrum Disorder",
+    "year": "2021",
+    "n_total": 452
+   },
+   {
+    "source_id": "S-056",
+    "scheme": "single train/test split",
+    "accuracy_pct": 87.0,
+    "charted_snippet": "ResNet-50 test accuracy 87.0%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 2226
+   },
+   {
+    "source_id": "S-058",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 58.0,
+    "charted_snippet": "accuracy 0.58",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 1100
+   },
+   {
+    "source_id": "S-058",
+    "scheme": "within-site only",
+    "accuracy_pct": 77.0,
+    "charted_snippet": "NYU accuracy 0.77",
+    "basis": "best single site (no average reported)",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 1100
+   },
+   {
+    "source_id": "S-059",
+    "scheme": "within-site only",
+    "accuracy_pct": 79.5,
+    "charted_snippet": "accuracy 0.795",
+    "basis": "best single site (no average reported)",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 184
+   },
+   {
+    "source_id": "S-060",
+    "scheme": "within-site only",
+    "accuracy_pct": 77.74,
+    "charted_snippet": "77.74% accuracy",
+    "basis": "single site",
+    "leakage_flag": "unsupervised feature derivation on full sample",
+    "title": "Large-Scale Brain Functional Network Integration for Discrimination of Autism Using a 3-D Deep Learning Model",
+    "year": "2021",
+    "n_total": 184
+   },
+   {
+    "source_id": "S-062",
+    "scheme": "leave-site-out",
+    "accuracy_pct": 71.0,
+    "charted_snippet": "accuracy 0.71",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 190
+   },
+   {
+    "source_id": "S-064",
+    "scheme": "single train/test split",
+    "accuracy_pct": 73.5,
+    "charted_snippet": "Average accuracy 0.735",
+    "basis": "average across atlases",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 1035
+   },
+   {
+    "source_id": "S-066",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 88.09,
+    "charted_snippet": "accuracy 88.09",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 871
+   },
+   {
+    "source_id": "S-067",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 73.71,
+    "charted_snippet": "accuracy 73.71",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 880
+   },
+   {
+    "source_id": "S-069",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 74.74,
+    "charted_snippet": "accuracy 74.74%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 871
+   },
+   {
+    "source_id": "S-070",
+    "scheme": "single train/test split",
+    "accuracy_pct": 72.46,
+    "charted_snippet": "accuracy of 72.46%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "CNNG: A Convolutional Neural Networks With Gated Recurrent Units for Autism Spectrum Disorder Classification",
+    "year": "2022",
+    "n_total": 871
+   },
+   {
+    "source_id": "S-071",
+    "scheme": "leave-site-out",
+    "accuracy_pct": 73.4,
+    "charted_snippet": "73.4% (CC200 atlas)",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 1102
+   },
+   {
+    "source_id": "S-072",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 60.0,
+    "charted_snippet": "intra-site 5-fold CV ~60% accuracy",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 293
+   },
+   {
+    "source_id": "S-072",
+    "scheme": "leave-site-out",
+    "accuracy_pct": 62.0,
+    "charted_snippet": "MLP accuracy ~62%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 293
+   },
+   {
+    "source_id": "S-074",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 83.7,
+    "charted_snippet": "accuracy 83.7",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 882
+   },
+   {
+    "source_id": "S-076",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 82.9,
+    "charted_snippet": "Average ACC 82.9%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 871
+   },
+   {
+    "source_id": "S-076",
+    "scheme": "within-site only",
+    "accuracy_pct": 75.6,
+    "charted_snippet": "75.6%",
+    "basis": "average across sites",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 871
+   },
+   {
+    "source_id": "S-077",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 96.91,
+    "charted_snippet": "96.91% accuracy",
+    "basis": "best",
+    "leakage_flag": "feature selection outside CV",
+    "title": "Classification of Developmental and Brain Disorders via Graph Convolutional Aggregation",
+    "year": "2023",
+    "n_total": 871
+   },
+   {
+    "source_id": "S-078",
+    "scheme": "leave-one-subject-out CV",
+    "accuracy_pct": 89.0,
+    "charted_snippet": "accuracy rates are 89 and 84%",
+    "basis": "best (single site)",
+    "leakage_flag": "",
+    "title": "Latent and Abnormal Functional Connectivity Circuits in Autism Spectrum Disorder",
+    "year": "2017",
+    "n_total": 113
+   },
+   {
+    "source_id": "S-081",
+    "scheme": "single train/test split",
+    "accuracy_pct": 62.0,
+    "charted_snippet": "~62% accuracy",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "Developing predictive imaging biomarkers using whole-brain classifiers: Application to the ABIDE I dataset",
+    "year": "2017",
+    "n_total": 1112
+   },
+   {
+    "source_id": "S-090",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 73.57,
+    "charted_snippet": "accuracy 73.57%",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "",
+    "year": "",
+    "n_total": 848
+   },
+   {
+    "source_id": "S-096",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 69.2,
+    "charted_snippet": "69.2% accuracy",
+    "basis": "best",
+    "leakage_flag": "",
+    "title": "Autism Classification Using Topological Features and Deep Learning: A Cautionary Tale",
+    "year": "2019",
+    "n_total": 1035
+   },
+   {
+    "source_id": "S-097",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 86.5,
+    "charted_snippet": "86.5 +/- 2.4% accuracy",
+    "basis": "10-fold CV",
+    "leakage_flag": "",
+    "title": "Autism Spectrum Disorder Detection Based on Wavelet Transform of BOLD fMRI Signals Using Pre-trained Convolution Neural Network",
+    "year": "2021",
+    "n_total": 82
+   },
+   {
+    "source_id": "S-099",
+    "scheme": "pooled k-fold CV",
+    "accuracy_pct": 82.0,
+    "charted_snippet": "combined 17-site dataset: 82%",
+    "basis": "best",
+    "leakage_flag": "feature selection outside CV",
+    "title": "A Three-Stage Teacher, Student Neural Networks and Sequential Feed Forward Selection-Based Feature Selection Approach for the Classification of Autism Spectrum Disorder",
+    "year": "2020",
+    "n_total": 1035
+   }
+  ],
+  "within_paper_comparisons": [
+   {
+    "source_id": "S-006",
+    "pooled k-fold CV": 73.3,
+    "external dataset": 71.7
+   },
+   {
+    "source_id": "S-014",
+    "pooled k-fold CV": 75.2,
+    "within-site only": 96.4
+   },
+   {
+    "source_id": "S-028",
+    "pooled k-fold CV": 70.8,
+    "within-site only": 64.42
+   },
+   {
+    "source_id": "S-030",
+    "pooled k-fold CV": 64.0,
+    "leave-site-out": 56.0
+   },
+   {
+    "source_id": "S-052",
+    "pooled k-fold CV": 72.2,
+    "within-site only": 67.7
+   },
+   {
+    "source_id": "S-058",
+    "pooled k-fold CV": 58.0,
+    "within-site only": 77.0
+   },
+   {
+    "source_id": "S-072",
+    "pooled k-fold CV": 60.0,
+    "leave-site-out": 62.0
+   },
+   {
+    "source_id": "S-076",
+    "pooled k-fold CV": 82.9,
+    "within-site only": 75.6
+   }
+  ],
+  "probast_analysis_judgment": {
+   "High": 25,
+   "Low": 12,
+   "Unclear": 12,
+   "no PROBAST Analysis domain charted": 4
+  },
+  "probast_overall": {
+   "High": 24,
+   "Low": 19,
+   "Unclear": 10
+  },
+  "leakage_flagged": {
+   "S-011": "harmonisation/deconfounding outside CV",
+   "S-014": "feature selection outside CV",
+   "S-027": "tuning on the test set",
+   "S-052": "feature selection outside CV",
+   "S-060": "unsupervised feature derivation on full sample",
+   "S-077": "feature selection outside CV",
+   "S-016": "harmonisation/deconfounding outside CV",
+   "S-099": "feature selection outside CV"
+  },
+  "leakage_flag_rule": "PROBAST Analysis = High AND the charted support names feature selection, harmonisation/deconfounding, hyperparameter/feature-number tuning, or unsupervised feature derivation done on data outside the training folds."
+ },
+ "pipeline": {
+  "n_papers": 73,
+  "counts_multi_label": {
+   "CPAC": 34,
+   "custom (SPM/FSL/AFNI/in-house)": 17,
+   "DPARSF": 7,
+   "not reported": 5,
+   "CCS": 5,
+   "CONN": 2,
+   "GRETNA": 2,
+   "fMRIPrep": 1,
+   "Athena": 1,
+   "fconn1000": 1,
+   "NIAK": 1
+  }
+ },
+ "atlas": {
+  "n_papers": 73,
+  "counts_multi_label": {
+   "AAL": 20,
+   "CC200": 15,
+   "Harvard-Oxford": 14,
+   "not reported / not applicable": 11,
+   "none (voxel/seed/vertex-wise)": 11,
+   "ICA / data-driven networks": 4,
+   "Schaefer": 3,
+   "Eickhoff-Zilles (EZ)": 3,
+   "Dosenbach 160": 3,
+   "CC400": 3,
+   "Talairach (TT)": 2,
+   "BASC": 2,
+   "Power 264": 2,
+   "Craddock (other scale)": 1,
+   "MSDL": 1,
+   "Yeo": 1,
+   "random parcellation": 1,
+   "Brodmann": 1,
+   "Desikan-Killiany (structural)": 1,
+   "Shen 268": 1
+  }
+ },
+ "site_handling": {
+  "n_papers": 73,
+  "n_predictive": 53,
+  "counts_multi_label": {
+   "leave-site-out evaluation": 8,
+   "ComBat/NeuroHarmonize harmonisation": 7,
+   "site covariate / regressed out": 8,
+   "other site control": 11,
+   "per-site analyses": 7,
+   "site used as a model input or graph feature": 4,
+   "single site": 6,
+   "none reported": 28
+  },
+  "predictive_only": {
+   "leave-site-out evaluation": 8,
+   "ComBat/NeuroHarmonize harmonisation": 3,
+   "site covariate / regressed out": 2,
+   "other site control": 7,
+   "per-site analyses": 6,
+   "site used as a model input or graph feature": 4,
+   "single site": 4,
+   "none reported": 22
+  },
+  "other_site_control_detail": "site-wise z-scaling (S-029), de-meaning (S-098), masking site-differing edges (S-092), excluding problem sites (S-093), propensity/age matching (S-011, S-026, S-044), site-only confound check (S-023), site-stratified split (S-024), federated per-site training (S-020), site-balanced variant (S-072)"
+ },
+ "per_paper_categories": {
+  "S-004": {
+   "pipeline": [
+    "not reported"
+   ],
+   "atlas": [
+    "not reported / not applicable"
+   ],
+   "site_handling": [
+    "per-site analyses"
+   ]
+  },
+  "S-007": {
+   "pipeline": [
+    "fMRIPrep"
+   ],
+   "atlas": [
+    "not reported / not applicable"
+   ],
+   "site_handling": [
+    "site covariate / regressed out"
+   ]
+  },
+  "S-008": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "Harvard-Oxford"
+   ],
+   "site_handling": [
+    "ComBat/NeuroHarmonize harmonisation"
+   ]
+  },
+  "S-011": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "Schaefer"
+   ],
+   "site_handling": [
+    "ComBat/NeuroHarmonize harmonisation",
+    "other site control"
+   ]
+  },
+  "S-012": {
+   "pipeline": [
+    "Athena"
+   ],
+   "atlas": [
+    "not reported / not applicable"
+   ],
+   "site_handling": [
+    "site covariate / regressed out"
+   ]
+  },
+  "S-014": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "CC200",
+    "AAL",
+    "Eickhoff-Zilles (EZ)"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-029": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "CC200"
+   ],
+   "site_handling": [
+    "other site control"
+   ]
+  },
+  "S-032": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "not reported / not applicable"
+   ],
+   "site_handling": [
+    "site used as a model input or graph feature"
+   ]
+  },
+  "S-041": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "not reported / not applicable"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-043": {
+   "pipeline": [
+    "CONN"
+   ],
+   "atlas": [
+    "none (voxel/seed/vertex-wise)"
+   ],
+   "site_handling": [
+    "site covariate / regressed out"
+   ]
+  },
+  "S-053": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "AAL",
+    "Harvard-Oxford"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-054": {
+   "pipeline": [
+    "CCS"
+   ],
+   "atlas": [
+    "not reported / not applicable"
+   ],
+   "site_handling": [
+    "single site"
+   ]
+  },
+  "S-058": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "none (voxel/seed/vertex-wise)"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-059": {
+   "pipeline": [
+    "DPARSF"
+   ],
+   "atlas": [
+    "CC200",
+    "AAL"
+   ],
+   "site_handling": [
+    "per-site analyses"
+   ]
+  },
+  "S-066": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "CC200",
+    "AAL",
+    "Dosenbach 160"
+   ],
+   "site_handling": [
+    "site used as a model input or graph feature"
+   ]
+  },
+  "S-067": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "Harvard-Oxford"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-074": {
+   "pipeline": [
+    "DPARSF"
+   ],
+   "atlas": [
+    "CC200",
+    "AAL",
+    "Dosenbach 160"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-098": {
+   "pipeline": [
+    "CCS"
+   ],
+   "atlas": [
+    "CC200"
+   ],
+   "site_handling": [
+    "ComBat/NeuroHarmonize harmonisation",
+    "site covariate / regressed out",
+    "other site control"
+   ]
+  },
+  "S-006": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "CC200",
+    "CC400",
+    "AAL",
+    "Harvard-Oxford",
+    "Eickhoff-Zilles (EZ)",
+    "Talairach (TT)",
+    "Dosenbach 160"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-010": {
+   "pipeline": [
+    "fconn1000"
+   ],
+   "atlas": [
+    "BASC",
+    "Craddock (other scale)"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-020": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "CC200",
+    "Harvard-Oxford"
+   ],
+   "site_handling": [
+    "other site control"
+   ]
+  },
+  "S-022": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "CC400"
+   ],
+   "site_handling": [
+    "leave-site-out evaluation"
+   ]
+  },
+  "S-023": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "ICA / data-driven networks"
+   ],
+   "site_handling": [
+    "other site control"
+   ]
+  },
+  "S-025": {
+   "pipeline": [
+    "CCS"
+   ],
+   "atlas": [
+    "AAL"
+   ],
+   "site_handling": [
+    "site covariate / regressed out"
+   ]
+  },
+  "S-026": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "none (voxel/seed/vertex-wise)"
+   ],
+   "site_handling": [
+    "other site control"
+   ]
+  },
+  "S-027": {
+   "pipeline": [
+    "DPARSF"
+   ],
+   "atlas": [
+    "AAL"
+   ],
+   "site_handling": [
+    "single site"
+   ]
+  },
+  "S-030": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "none (voxel/seed/vertex-wise)"
+   ],
+   "site_handling": [
+    "leave-site-out evaluation"
+   ]
+  },
+  "S-033": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "AAL"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-034": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "Harvard-Oxford"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-039": {
+   "pipeline": [
+    "not reported"
+   ],
+   "atlas": [
+    "Harvard-Oxford",
+    "Schaefer"
+   ],
+   "site_handling": [
+    "ComBat/NeuroHarmonize harmonisation"
+   ]
+  },
+  "S-049": {
+   "pipeline": [
+    "not reported"
+   ],
+   "atlas": [
+    "not reported / not applicable"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-052": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "CC200"
+   ],
+   "site_handling": [
+    "per-site analyses"
+   ]
+  },
+  "S-060": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "ICA / data-driven networks"
+   ],
+   "site_handling": [
+    "single site"
+   ]
+  },
+  "S-075": {
+   "pipeline": [
+    "not reported"
+   ],
+   "atlas": [
+    "CC200"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-077": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "Harvard-Oxford"
+   ],
+   "site_handling": [
+    "site used as a model input or graph feature"
+   ]
+  },
+  "S-002": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "Harvard-Oxford",
+    "MSDL",
+    "ICA / data-driven networks",
+    "Yeo"
+   ],
+   "site_handling": [
+    "leave-site-out evaluation"
+   ]
+  },
+  "S-019": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "Harvard-Oxford"
+   ],
+   "site_handling": [
+    "site used as a model input or graph feature"
+   ]
+  },
+  "S-021": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "none (voxel/seed/vertex-wise)"
+   ],
+   "site_handling": [
+    "site covariate / regressed out"
+   ]
+  },
+  "S-024": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "Harvard-Oxford"
+   ],
+   "site_handling": [
+    "other site control"
+   ]
+  },
+  "S-036": {
+   "pipeline": [
+    "CPAC",
+    "DPARSF",
+    "CCS",
+    "NIAK"
+   ],
+   "atlas": [
+    "not reported / not applicable"
+   ],
+   "site_handling": [
+    "per-site analyses"
+   ]
+  },
+  "S-038": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "none (voxel/seed/vertex-wise)"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-044": {
+   "pipeline": [
+    "DPARSF"
+   ],
+   "atlas": [
+    "AAL"
+   ],
+   "site_handling": [
+    "site covariate / regressed out",
+    "other site control"
+   ]
+  },
+  "S-045": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "Talairach (TT)"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-047": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "not reported / not applicable"
+   ],
+   "site_handling": [
+    "per-site analyses"
+   ]
+  },
+  "S-055": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "AAL"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-056": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "not reported / not applicable"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-062": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "CC200",
+    "AAL",
+    "Harvard-Oxford",
+    "Power 264"
+   ],
+   "site_handling": [
+    "leave-site-out evaluation"
+   ]
+  },
+  "S-064": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "AAL",
+    "Eickhoff-Zilles (EZ)"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-069": {
+   "pipeline": [
+    "not reported"
+   ],
+   "atlas": [
+    "BASC"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-071": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "CC200",
+    "AAL"
+   ],
+   "site_handling": [
+    "leave-site-out evaluation"
+   ]
+  },
+  "S-072": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "CC200"
+   ],
+   "site_handling": [
+    "leave-site-out evaluation",
+    "other site control"
+   ]
+  },
+  "S-076": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "Harvard-Oxford"
+   ],
+   "site_handling": [
+    "per-site analyses"
+   ]
+  },
+  "S-090": {
+   "pipeline": [
+    "DPARSF"
+   ],
+   "atlas": [
+    "AAL"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-091": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "ICA / data-driven networks"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-005": {
+   "pipeline": [
+    "GRETNA"
+   ],
+   "atlas": [
+    "random parcellation"
+   ],
+   "site_handling": [
+    "ComBat/NeuroHarmonize harmonisation",
+    "leave-site-out evaluation"
+   ]
+  },
+  "S-009": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "none (voxel/seed/vertex-wise)"
+   ],
+   "site_handling": [
+    "leave-site-out evaluation"
+   ]
+  },
+  "S-015": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "Brodmann"
+   ],
+   "site_handling": [
+    "site covariate / regressed out"
+   ]
+  },
+  "S-016": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "Harvard-Oxford",
+    "Desikan-Killiany (structural)"
+   ],
+   "site_handling": [
+    "ComBat/NeuroHarmonize harmonisation"
+   ]
+  },
+  "S-028": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "CC200"
+   ],
+   "site_handling": [
+    "per-site analyses"
+   ]
+  },
+  "S-063": {
+   "pipeline": [
+    "CCS"
+   ],
+   "atlas": [
+    "none (voxel/seed/vertex-wise)"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-070": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "none (voxel/seed/vertex-wise)"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-078": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "AAL"
+   ],
+   "site_handling": [
+    "single site"
+   ]
+  },
+  "S-080": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "none (voxel/seed/vertex-wise)"
+   ],
+   "site_handling": [
+    "ComBat/NeuroHarmonize harmonisation"
+   ]
+  },
+  "S-081": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "none (voxel/seed/vertex-wise)"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-082": {
+   "pipeline": [
+    "GRETNA"
+   ],
+   "atlas": [
+    "AAL"
+   ],
+   "site_handling": [
+    "single site"
+   ]
+  },
+  "S-086": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "AAL"
+   ],
+   "site_handling": [
+    "single site"
+   ]
+  },
+  "S-088": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "not reported / not applicable"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-092": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "Shen 268"
+   ],
+   "site_handling": [
+    "other site control"
+   ]
+  },
+  "S-093": {
+   "pipeline": [
+    "CONN"
+   ],
+   "atlas": [
+    "Schaefer"
+   ],
+   "site_handling": [
+    "other site control"
+   ]
+  },
+  "S-094": {
+   "pipeline": [
+    "custom (SPM/FSL/AFNI/in-house)"
+   ],
+   "atlas": [
+    "Power 264"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-096": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "CC200",
+    "CC400"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-097": {
+   "pipeline": [
+    "DPARSF"
+   ],
+   "atlas": [
+    "AAL"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  },
+  "S-099": {
+   "pipeline": [
+    "CPAC"
+   ],
+   "atlas": [
+    "AAL"
+   ],
+   "site_handling": [
+    "none reported"
+   ]
+  }
+ },
+ "reconstructibility_RQ6": {
+  "detail": {
+   "yes — exact rules": 13,
+   "no": 15,
+   "partly": 42,
+   "yes — participant list": 4
+  },
+  "summary": {
+   "yes": 17,
+   "partly": 42,
+   "no": 15
+  }
+ },
+ "availability_CL7": {
+  "cl7_answer": {
+   "yes": 20,
+   "no": 41,
+   "partly": 13
+  },
+  "code_released_mentioned": 18,
+  "participant_list_released (RQ6)": 4
+ },
+ "shared_cohorts": {
+  "rule": "identical release + identical charted N by diagnosis (papers charting only a total N are attached when exactly one same-release group has that total)",
+  "groups": [
+   {
+    "cohort_id": "ABIDEI-N871-403ASD-468TD",
+    "release": "ABIDE I",
+    "n_total": 871,
+    "n_asd": 403,
+    "n_td": 468,
+    "n_papers": 9,
+    "pipelines": {
+     "CPAC": 8,
+     "not reported": 1
+    },
+    "same_pipeline": false,
+    "members": [
+     {
+      "source_id": "S-002",
+      "doi": "10.1016/j.neuroimage.2016.10.045",
+      "first_author": "Alexandre Abraham",
+      "year": "2016",
+      "title": "Deriving reproducible biomarkers from multi-site resting-state data: An Autism-based example",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "Harvard-Oxford",
+       "MSDL",
+       "ICA / data-driven networks",
+       "Yeo"
+      ],
+      "n_by_dx": {
+       "ASD": 403,
+       "TD": 468,
+       "total": 871
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     },
+     {
+      "source_id": "S-019",
+      "doi": "10.1016/j.media.2018.06.001",
+      "first_author": "Sarah Parisot",
+      "year": "2018",
+      "title": "Disease prediction using graph convolutional networks: Application to Autism Spectrum Disorder and Alzheimer’s disease",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "Harvard-Oxford"
+      ],
+      "n_by_dx": {
+       "ASD": 403,
+       "TD": 468,
+       "total": 871
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     },
+     {
+      "source_id": "S-022",
+      "doi": "10.3389/fnins.2019.01325",
+      "first_author": "Zeinab Sherkatghanad",
+      "year": "2020",
+      "title": "Automated Detection of Autism Spectrum Disorder Using a Convolutional Neural Network",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "CC400"
+      ],
+      "n_by_dx": {
+       "ASD": null,
+       "TD": null,
+       "total": 871
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     },
+     {
+      "source_id": "S-024",
+      "doi": "10.1007/978-3-319-66182-7_54",
+      "first_author": "Sofia Ira Ktena",
+      "year": "2017",
+      "title": "Distance Metric Learning Using Graph Convolutional Networks: Application to Functional Brain Networks",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "Harvard-Oxford"
+      ],
+      "n_by_dx": {
+       "ASD": 403,
+       "TD": 468,
+       "total": 871
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     },
+     {
+      "source_id": "S-066",
+      "doi": "10.1038/s41398-024-02972-2",
+      "first_author": "Wanyi Chen",
+      "year": "2024",
+      "title": "DeepASD: a deep adversarial-regularized graph learning method for ASD diagnosis with multimodal data",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "CC200",
+       "AAL",
+       "Dosenbach 160"
+      ],
+      "n_by_dx": {
+       "ASD": 403,
+       "TD": 468,
+       "total": 871
+      },
+      "claim_type": "predictive",
+      "reconstructible": "yes — exact rules"
+     },
+     {
+      "source_id": "S-069",
+      "doi": "10.35377/saucis.04.01.879735",
+      "first_author": "Muhammed Ali Bayram",
+      "year": "2021",
+      "title": "Deep Learning Methods for Autism Spectrum Disorder Diagnosis Based on fMRI Images",
+      "pipeline": [
+       "not reported"
+      ],
+      "atlas": [
+       "BASC"
+      ],
+      "n_by_dx": {
+       "ASD": 403,
+       "TD": 468,
+       "total": 871
+      },
+      "claim_type": "predictive",
+      "reconstructible": "no"
+     },
+     {
+      "source_id": "S-070",
+      "doi": "10.3389/fnagi.2022.948704",
+      "first_author": "Wenjing Jiang",
+      "year": "2022",
+      "title": "CNNG: A Convolutional Neural Networks With Gated Recurrent Units for Autism Spectrum Disorder Classification",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "none (voxel/seed/vertex-wise)"
+      ],
+      "n_by_dx": {
+       "ASD": 403,
+       "TD": 468,
+       "total": 871
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     },
+     {
+      "source_id": "S-076",
+      "doi": "10.1186/s12859-023-05495-7",
+      "first_author": "Lizhen Shao",
+      "year": "2023",
+      "title": "A heterogeneous graph convolutional attention network method for classification of autism spectrum disorder",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "Harvard-Oxford"
+      ],
+      "n_by_dx": {
+       "ASD": 403,
+       "TD": 468,
+       "total": 871
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     },
+     {
+      "source_id": "S-077",
+      "doi": "10.1007/s12559-023-10224-6",
+      "first_author": "Ibrahim Salim",
+      "year": "2023",
+      "title": "Classification of Developmental and Brain Disorders via Graph Convolutional Aggregation",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "Harvard-Oxford"
+      ],
+      "n_by_dx": {
+       "ASD": 403,
+       "TD": 468,
+       "total": 871
+      },
+      "claim_type": "predictive",
+      "reconstructible": "no"
+     }
+    ]
+   },
+   {
+    "cohort_id": "ABIDEI-N1035-505ASD-530TD",
+    "release": "ABIDE I",
+    "n_total": 1035,
+    "n_asd": 505,
+    "n_td": 530,
+    "n_papers": 6,
+    "pipelines": {
+     "CPAC": 6
+    },
+    "same_pipeline": true,
+    "members": [
+     {
+      "source_id": "S-014",
+      "doi": "10.1016/j.compbiomed.2024.109083",
+      "first_author": "Xuehan Liu",
+      "year": "2024",
+      "title": "MADE-for-ASD: A multi-atlas deep ensemble network for diagnosing Autism Spectrum Disorder",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "CC200",
+       "AAL",
+       "Eickhoff-Zilles (EZ)"
+      ],
+      "n_by_dx": {
+       "ASD": 505,
+       "TD": 530,
+       "total": 1035
+      },
+      "claim_type": "predictive",
+      "reconstructible": "yes — exact rules"
+     },
+     {
+      "source_id": "S-028",
+      "doi": "10.3389/fncom.2021.654315",
+      "first_author": "Fahad Almuqhim",
+      "year": "2021",
+      "title": "ASD-SAENet: A Sparse Autoencoder, and Deep-Neural Network Model for Detecting Autism Spectrum Disorder (ASD) Using fMRI Data",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "CC200"
+      ],
+      "n_by_dx": {
+       "ASD": 505,
+       "TD": 530,
+       "total": 1035
+      },
+      "claim_type": "predictive",
+      "reconstructible": "no"
+     },
+     {
+      "source_id": "S-053",
+      "doi": "10.1186/s12859-021-04295-1",
+      "first_author": "Jinlong Hu",
+      "year": "2021",
+      "title": "GAT-LI: a graph attention network based learning and interpreting method for functional brain network classification",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "AAL",
+       "Harvard-Oxford"
+      ],
+      "n_by_dx": {
+       "ASD": 505,
+       "TD": 530,
+       "total": 1035
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     },
+     {
+      "source_id": "S-064",
+      "doi": "10.3389/frai.2025.1594372",
+      "first_author": "Ibrahim Nafisah",
+      "year": "2025",
+      "title": "Deep learning-based feature selection for detection of autism spectrum disorder",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "AAL",
+       "Eickhoff-Zilles (EZ)"
+      ],
+      "n_by_dx": {
+       "ASD": 505,
+       "TD": 530,
+       "total": 1035
+      },
+      "claim_type": "predictive",
+      "reconstructible": "no"
+     },
+     {
+      "source_id": "S-096",
+      "doi": "10.1007/978-3-030-32248-9_82",
+      "first_author": "Archit Rathore",
+      "year": "2019",
+      "title": "Autism Classification Using Topological Features and Deep Learning: A Cautionary Tale",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "CC200",
+       "CC400"
+      ],
+      "n_by_dx": {
+       "ASD": 505,
+       "TD": 530,
+       "total": 1035
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     },
+     {
+      "source_id": "S-099",
+      "doi": "10.3390/brainsci10100754",
+      "first_author": "Naseer Ahmed Khan",
+      "year": "2020",
+      "title": "A Three-Stage Teacher, Student Neural Networks and Sequential Feed Forward Selection-Based Feature Selection Approach for the Classification of Autism Spectrum Disorder",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "AAL"
+      ],
+      "n_by_dx": {
+       "ASD": 505,
+       "TD": 530,
+       "total": 1035
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     }
+    ]
+   },
+   {
+    "cohort_id": "ABIDEI-N184-79ASD-105TD",
+    "release": "ABIDE I",
+    "n_total": 184,
+    "n_asd": 79,
+    "n_td": 105,
+    "n_papers": 3,
+    "pipelines": {
+     "CCS": 1,
+     "DPARSF": 1,
+     "CPAC": 1
+    },
+    "same_pipeline": false,
+    "members": [
+     {
+      "source_id": "S-054",
+      "doi": "10.3389/fninf.2021.635657",
+      "first_author": "Md Shale Ahammed",
+      "year": "2021",
+      "title": "DarkASDNet: Classification of ASD on Functional MRI Using Deep Neural Network",
+      "pipeline": [
+       "CCS"
+      ],
+      "atlas": [
+       "not reported / not applicable"
+      ],
+      "n_by_dx": {
+       "ASD": 79,
+       "TD": 105,
+       "total": 184
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     },
+     {
+      "source_id": "S-059",
+      "doi": "10.3389/fninf.2021.802305",
+      "first_author": "Ying Chu",
+      "year": "2022",
+      "title": "Multi-Scale Graph Representation Learning for Autism Identification With Functional MRI",
+      "pipeline": [
+       "DPARSF"
+      ],
+      "atlas": [
+       "CC200",
+       "AAL"
+      ],
+      "n_by_dx": {
+       "ASD": 79,
+       "TD": 105,
+       "total": 184
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     },
+     {
+      "source_id": "S-060",
+      "doi": "10.3389/fnhum.2021.687288",
+      "first_author": "Ming–Hsuan Yang",
+      "year": "2021",
+      "title": "Large-Scale Brain Functional Network Integration for Discrimination of Autism Using a 3-D Deep Learning Model",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "ICA / data-driven networks"
+      ],
+      "n_by_dx": {
+       "ASD": 79,
+       "TD": 105,
+       "total": 184
+      },
+      "claim_type": "predictive",
+      "reconstructible": "no"
+     }
+    ]
+   },
+   {
+    "cohort_id": "ABIDEI-N1112-539ASD-573TD",
+    "release": "ABIDE I",
+    "n_total": 1112,
+    "n_asd": 539,
+    "n_td": 573,
+    "n_papers": 2,
+    "pipelines": {
+     "CCS": 1,
+     "CPAC": 1
+    },
+    "same_pipeline": false,
+    "members": [
+     {
+      "source_id": "S-063",
+      "doi": "10.3390/diagnostics13172773",
+      "first_author": "Johan Jönemo",
+      "year": "2023",
+      "title": "Evaluation of Augmentation Methods in Classifying Autism Spectrum Disorders from fMRI Data with 3D Convolutional Neural Networks",
+      "pipeline": [
+       "CCS"
+      ],
+      "atlas": [
+       "none (voxel/seed/vertex-wise)"
+      ],
+      "n_by_dx": {
+       "ASD": 539,
+       "TD": 573,
+       "total": 1112
+      },
+      "claim_type": "predictive",
+      "reconstructible": "no"
+     },
+     {
+      "source_id": "S-081",
+      "doi": "10.3897/rio.3.e12733",
+      "first_author": "Swati Rane",
+      "year": "2017",
+      "title": "Developing predictive imaging biomarkers using whole-brain classifiers: Application to the ABIDE I dataset",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "none (voxel/seed/vertex-wise)"
+      ],
+      "n_by_dx": {
+       "ASD": 539,
+       "TD": 573,
+       "total": 1112
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     }
+    ]
+   },
+   {
+    "cohort_id": "ABIDEI-N1111-538ASD-573TD",
+    "release": "ABIDE I",
+    "n_total": 1111,
+    "n_asd": 538,
+    "n_td": 573,
+    "n_papers": 2,
+    "pipelines": {
+     "custom (SPM/FSL/AFNI/in-house)": 2
+    },
+    "same_pipeline": true,
+    "members": [
+     {
+      "source_id": "S-023",
+      "doi": "10.1371/journal.pone.0194856",
+      "first_author": "Bhaskar Sen",
+      "year": "2018",
+      "title": "A general prediction model for the detection of ADHD and Autism using structural and functional MRI",
+      "pipeline": [
+       "custom (SPM/FSL/AFNI/in-house)"
+      ],
+      "atlas": [
+       "ICA / data-driven networks"
+      ],
+      "n_by_dx": {
+       "ASD": 538,
+       "TD": 573,
+       "total": 1111
+      },
+      "claim_type": "predictive",
+      "reconstructible": "yes — exact rules"
+     },
+     {
+      "source_id": "S-032",
+      "doi": "10.1371/journal.pone.0166934",
+      "first_author": "Sina Ghiassian",
+      "year": "2016",
+      "title": "Using Functional or Structural Magnetic Resonance Images and Personal Characteristic Data to Identify ADHD and Autism",
+      "pipeline": [
+       "custom (SPM/FSL/AFNI/in-house)"
+      ],
+      "atlas": [
+       "not reported / not applicable"
+      ],
+      "n_by_dx": {
+       "ASD": 538,
+       "TD": 573,
+       "total": 1111
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     }
+    ]
+   },
+   {
+    "cohort_id": "ABIDEI-N1102-529ASD-573TD",
+    "release": "ABIDE I",
+    "n_total": 1102,
+    "n_asd": 529,
+    "n_td": 573,
+    "n_papers": 2,
+    "pipelines": {
+     "CPAC": 2,
+     "DPARSF": 1,
+     "CCS": 1,
+     "NIAK": 1
+    },
+    "same_pipeline": false,
+    "members": [
+     {
+      "source_id": "S-036",
+      "doi": "10.1109/jbhi.2020.2998603",
+      "first_author": "Md Rishad Ahmed",
+      "year": "2020",
+      "title": "Single Volume Image Generator and Deep Learning-Based ASD Classification",
+      "pipeline": [
+       "CPAC",
+       "DPARSF",
+       "CCS",
+       "NIAK"
+      ],
+      "atlas": [
+       "not reported / not applicable"
+      ],
+      "n_by_dx": {
+       "ASD": 529,
+       "TD": 573,
+       "total": 1102
+      },
+      "claim_type": "predictive",
+      "reconstructible": "no"
+     },
+     {
+      "source_id": "S-071",
+      "doi": "10.1109/tnsre.2022.3233656",
+      "first_author": "Xingdan Liu",
+      "year": "2023",
+      "title": "Domain Adaptation via Low Rank and Class Discriminative Representation for Autism Spectrum Disorder Identification: A Multi-Site fMRI Study",
+      "pipeline": [
+       "CPAC"
+      ],
+      "atlas": [
+       "CC200",
+       "AAL"
+      ],
+      "n_by_dx": {
+       "ASD": null,
+       "TD": null,
+       "total": 1102
+      },
+      "claim_type": "predictive",
+      "reconstructible": "partly"
+     }
+    ]
+   }
+  ]
+ },
+ "analysed_n": {
+  "n_with_total": 71,
+  "min": 27,
+  "median": 871,
+  "max": 2226,
+  "not_reported": 2
+ }
+}

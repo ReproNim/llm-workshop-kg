@@ -1,0 +1,255 @@
+{
+  "source_id": "S-096",
+  "pmid": "local_757f29e4",
+  "doi": "10.1007/978-3-030-32248-9_82",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a diagnostic-prediction (ASD vs TD classification) analysis of ABIDE I resting-state fMRI (CC200/CC400 C-PAC-derived correlation matrices plus topological features); satisfies inclusion 2-3.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "ABIDE dataset [4,7] consists of resting state fMRI brain scans from 16 diﬀerent imaging sites.",
+      "section": "methods",
+      "claim": "Cohort was ABIDE I, 16 imaging sites.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "We use Craddock 200 (CC200) data set, where the\nimaging data is ﬁrst preprocessed using the Conﬁgurable Pipeline for Analysis\nof Connectomes (CPAC) and then the mean blood oxygenation level dependent\n(BOLD) signals for 200 regions of interest (ROIs) are extracted. After ﬁltering\nfor missing and invalid data, it contains 1035 subjects, of which 505 are ASD\npatients and 530 are TDC (typically developing control subjects).",
+      "section": "methods",
+      "claim": "Used the CC200 (and CC400) C-PAC-derived parcellation; after filtering, N=1035 (505 ASD/530 TDC).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The present state-of-the-art machine learning model using deep learning has a\nclassiﬁcation accuracy of 70.2% on the ABIDE (Autism Brain Imaging Data Exchange) data\nset.",
+      "section": "abstract",
+      "claim": "Cites prior state-of-the-art deep-learning accuracy of 70.2% on ABIDE (Heinsfeld et al.) as benchmark.",
+      "relevance_score": 0.5
+    },
+    {
+      "text": "With this approach, even with a simple 3-layer neural network, we are able to achieve a\nclassiﬁcation accuracy of 69.2% on the\nABIDE data set.",
+      "section": "abstract",
+      "claim": "The hybrid topological+correlation 3-layer neural network achieved 69.2% classification accuracy.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "However, our experiments also show that the improvement due to topological features is not always statisti-\ncally signiﬁcant. Therefore, we oﬀer a cautionary tale to the practitioners\nregarding the limited discriminative power of topological features derived from\nfMRI data for the classiﬁcation of autism.",
+      "section": "abstract",
+      "claim": "Main finding: topological-feature improvements over correlation-only features are not always statistically significant.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "All results are\nobtained by running a 5-fold stratiﬁed cross-validation scheme where we report the mean classiﬁca-\ntion accuracy over all folds.",
+      "section": "methods",
+      "claim": "Evaluation used 5-fold stratified cross-validation.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "we esti-\nmate the p-values using a Monte-Carlo approximation with 100, 000 samples.",
+      "section": "methods",
+      "claim": "Statistical significance of accuracy improvements assessed via a Monte-Carlo permutation test (100,000 samples).",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "Full ABIDE I (16 sites), N and diagnosis breakdown (505 ASD/530 TDC) given after filtering for missing/invalid data."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "CC200/CC400 C-PAC-derived parcellations named; correlation matrices plus topological (persistence diagram/image/landscape) features clearly described."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "Diagnostic labels taken from ABIDE as distributed; diagnostic instrument not restated in this paper."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Low",
+        "support": "5-fold stratified cross-validation with a Monte-Carlo permutation test for statistical significance of model comparisons; the paper explicitly reports that topological-feature gains are often not significant, avoiding overstated single-split claims; however no leave-site-out evaluation or explicit site handling is reported for the pooled 16-site CV."
+      }
+    ],
+    "overall": "Low",
+    "summary": "A methodologically careful, self-critical predictive-modelling paper (explicitly testing and reporting non-significance of claimed improvements) using stratified cross-validation and permutation testing, though without leave-site-out evaluation across the pooled 16-site ABIDE sample."
+  },
+  "charting": {
+    "source_id": "S-096",
+    "title": "Autism Classification Using Topological Features and Deep Learning: A Cautionary Tale",
+    "authors": "",
+    "year": "2019",
+    "journal_conference": "MICCAI (Medical Image Computing and Computer Assisted Intervention)",
+    "doi": "10.1007/978-3-030-32248-9_82",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "505",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "530",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "no",
+    "dataset_openly_available": "Uses the publicly available Preprocessed Connectomes Project ABIDE CC200/CC400 derivatives; no study-specific code/participant-list repository link found in the text",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity, topological features",
+    "specific_features": "ROI-pairwise Pearson correlation matrices (CC200/CC400) combined with persistence diagrams/images/landscapes (topological data analysis) of the correlation-derived point cloud",
+    "feature_extraction_tools": "C-PAC pipeline (CC200 and CC400 Craddock parcellations, Preprocessed Connectomes Project); sklearn-tda for topological features",
+    "feature_importance_reported": "no",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "SVM, Random Forest, Neural Network (including a hybrid correlation+topological NN)",
+    "specific_algorithms": "Linear SVM, Random Forest (500 trees, depth 5), fully-connected NN, hybrid NN combining correlation and persistence-diagram features",
+    "validation_methodology": "5-fold stratified cross-validation; Monte-Carlo permutation testing (100,000 samples) for statistical comparison between models",
+    "performance_metrics": "Classification accuracy",
+    "key_performance_results": "Hybrid topological+correlation 3-layer NN: 69.2% accuracy (vs cited prior state-of-the-art of 70.2% using deep learning alone on ABIDE); improvement from adding topological features was not always statistically significant",
+    "summary_key_findings": "On ABIDE I CC200/CC400 data (N=1035; 505 ASD/530 TDC), combining topological (persistence-diagram/landscape) features with functional-connectivity correlation features in SVM/RF/NN classifiers achieved up to 69.2% accuracy with a simple 3-layer neural network, but permutation testing showed the improvement from adding topological features over correlation features alone was not always statistically significant, offering a cautionary methodological conclusion for TDA-based autism classification.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "A methods-cautionary paper explicitly testing (and often rejecting) the claimed benefit of topological features for ASD classification.",
+    "custom_fields": {
+      "RQ1": "ABIDE I, 16 sites, C-PAC-derived CC200/CC400 Preprocessed Connectomes Project release; after filtering for missing/invalid data, N=1035 (505 ASD/530 TDC); no further custom exclusion rule described. | quote: \"After ﬁltering\nfor missing and invalid data, it contains 1035 subjects, of which 505 are ASD\npatients and 530 are TDC (typically developing control subjects).\"",
+      "RQ2": "C-PAC pipeline; Craddock CC200 and CC400 parcellations (Preprocessed Connectomes Project ABIDE derivatives). | quote: \"We use Craddock 200 (CC200) data set, where the\nimaging data is ﬁrst preprocessed using the Conﬁgurable Pipeline for Analysis\nof Connectomes (CPAC)\"",
+      "RQ3": "predictive — ASD vs TDC classification using correlation and topological features. | quote: \"we explore the utility of topological features in the classiﬁcation of ASD versus typically developing control subjects.\"",
+      "RQ4": "5-fold stratified cross-validation reporting mean accuracy across folds; statistical significance of accuracy differences between models assessed via Monte-Carlo permutation testing (100,000 samples); no leave-site-out evaluation reported across the pooled 16-site sample. | quote: \"All results are\nobtained by running a 5-fold stratiﬁed cross-validation scheme where we report the mean classiﬁca-\ntion accuracy over all folds.\"",
+      "RQ5": "Best accuracy 69.2% (hybrid topological+correlation 3-layer NN); improvement due to topological features over correlation-only features was not always statistically significant. | quote: \"However, our experiments also show that the improvement due to topological features is not always statisti-\ncally signiﬁcant.\"",
+      "RQ6": "partly — uses the fully public PCP ABIDE CC200/CC400 release with a stated filtering step, but no participant ID list or study-specific code repository link is given.",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis after filtering is given, but the specific \"missing and invalid data\" filter is not quantified in detail. | quote: \"After ﬁltering\nfor missing and invalid data, it contains 1035 subjects, of which 505 are ASD\npatients and 530 are TDC (typically developing control subjects).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no explicit motion/FD threshold is reported in this paper (relies on the upstream CC200/CC400 PCP release).",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — C-PAC pipeline named via CC200/CC400, no version number given. | quote: \"the\nimaging data is ﬁrst preprocessed using the Conﬁgurable Pipeline for Analysis\nof Connectomes (CPAC)\"",
+      "CL4 Atlas/parcellation reported?": "Yes — Craddock CC200 and CC400 parcellations. | quote: \"We use Craddock 200 (CC200) data set\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Partly — 5-fold stratified cross-validation and permutation significance testing are used, but no explicit statement that feature/hyperparameter selection (grid search) was confined strictly within training folds only. | quote: \"For both models, parameter estimation is done using grid search.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — 16 sites pooled with stratified (not leave-site-out) cross-validation; no site covariate or harmonisation reported.",
+      "CL7 Code and/or participant list available?": "No — no study-specific code repository or participant list link found (only a general TDA library, sklearn-tda, is cited).",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-096",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Partial",
+          "notes": "N by diagnosis given, filtering criteria not fully detailed."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "No",
+          "notes": "Relies on upstream PCP release, no explicit threshold here."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported",
+          "rating": "Partial",
+          "notes": "C-PAC named, no version."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "CC200/CC400."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "ABIDE labels used as distributed, not restated."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "Partial",
+          "notes": "Stratified CV and permutation testing; grid search leakage not explicitly addressed."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "No",
+          "notes": "Pooled, stratified (not leave-site-out) CV."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "No",
+          "notes": "No study-specific repository found."
+        }
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-096",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I, 16 sites (CC200/CC400 C-PAC derivatives); n=505 ASD / 530 TDC (N=1035).",
+    "methods": "C-PAC-derived CC200/CC400 correlation matrices combined with topological features (persistence diagrams/images/landscapes); SVM, Random Forest, and hybrid NN classifiers; 5-fold stratified cross-validation with Monte-Carlo permutation significance testing.",
+    "outcomes": "Best accuracy 69.2% using a hybrid topological+correlation 3-layer NN; improvement from topological features over correlation alone was not always statistically significant.",
+    "key_limitations": "No leave-site-out evaluation despite 16 pooled sites; no quantitative motion/QC threshold reported in this paper; no study-specific code/data release; authors themselves caution against overinterpreting topological-feature gains.",
+    "relevance_notes": "A self-critical benchmark of topological-data-analysis features for ABIDE ASD classification, useful as a cautionary methodological reference in the knowledge graph.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1007/978-3-030-32248-9_82",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "ABIDE I, 16 sites, C-PAC-preprocessed CC200/CC400 (Preprocessed Connectomes Project); after filtering missing/invalid data, N=1035 (505 ASD/530 TDC).",
+    "n_by_dx": {
+      "ASD": 505,
+      "TD": 530,
+      "total": 1035
+    },
+    "sites": "16",
+    "pipeline": "C-PAC (Craddock CC200 and CC400 parcellations)",
+    "atlas": "Craddock CC200 and CC400",
+    "claim_type": "predictive",
+    "finding": "A hybrid model combining functional-connectivity correlation features with topological (persistence-diagram) features achieved 69.2% classification accuracy with a simple 3-layer neural network, but permutation testing showed the improvement from topological features over correlation-only features was not always statistically significant.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "After ﬁltering\nfor missing and invalid data, it contains 1035 subjects, of which 505 are ASD\npatients and 530 are TDC (typically developing control subjects).",
+      "With this approach, even with a simple 3-layer neural network, we are able to achieve a\nclassiﬁcation accuracy of 69.2% on the\nABIDE data set."
+    ]
+  }
+}

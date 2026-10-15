@@ -1,0 +1,1017 @@
+{
+ "simple2_commit": "e0dff17629bd5031e246c05ff4bed174597552a2",
+ "named_graphs": [
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/CMU_a/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/CMU_a/nidm.ttl",
+   "sha256": "8e680c0148f50d0e169496ea4bfd9560bf32db428c9726d41536b3f9064cde2b",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/CMU_b/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/CMU_b/nidm.ttl",
+   "sha256": "d8074354cb1e9f3fd9d17aa01fb2226401dbd50996344310b088f0773a9390a2",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Caltech/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/Caltech/nidm.ttl",
+   "sha256": "2f69400bbb2eb9cdbed52e23c3e6b3e4d60d0b878adb45cf8def586f867871a9",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/KKI/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/KKI/nidm.ttl",
+   "sha256": "b0f95d8485962b32afcecfde058ece3d579546491a0b567d596d4429455ee283",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Leuven_1/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/Leuven_1/nidm.ttl",
+   "sha256": "9cd964b14c2d827df687a3ec9007e2b5dbae068d4d62a8960e173caae3bc88ed",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Leuven_2/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/Leuven_2/nidm.ttl",
+   "sha256": "c8712a4aa36a773e06162ec007ac57c72bb252497b26d816803773de30aa1164",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_a/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/MaxMun_a/nidm.ttl",
+   "sha256": "b474cb5b21881c60a59211565deae0dd726f01e091f370e4db8cb4e616506336",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_b/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/MaxMun_b/nidm.ttl",
+   "sha256": "29f45e4f867c8079e61ef771d84d88e3f483bcb2c2ae0109d66659c93cc7fc25",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl",
+   "sha256": "f39fcc54c970683d55d1c9b0f40d97762fa78d9b58cc6f5d0e9fce053694793f",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_d/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/MaxMun_d/nidm.ttl",
+   "sha256": "930aaa002f42b01946b46b04ab146b48f1e6411bbd674340a0a6f182734f54e4",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/NYU/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/NYU/nidm.ttl",
+   "sha256": "ee520e21c3b829dc32b71548ab22abe911d4837ca9c976f24da7a83957841fd2",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/OHSU/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/OHSU/nidm.ttl",
+   "sha256": "fe6aae85deb39f3a93b70e881eb6a0f8f5db83c283f2dfccd9225aceb52ddf39",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Olin/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/Olin/nidm.ttl",
+   "sha256": "79a532ac39a5836ea9782365dcc231c220f447bcae50d76d748fb76c4a8ba0c2",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Pitt/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/Pitt/nidm.ttl",
+   "sha256": "0086a07ee4db00fd9c675d826002e4b89203cfa8a1fdca5cba0eb129a86c2154",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/SBL/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/SBL/nidm.ttl",
+   "sha256": "b73d72e71e49ea7ef24d70b4dc16d8a794d4ab4fd7d81e907b813968c91fa424",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/SDSU/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/SDSU/nidm.ttl",
+   "sha256": "8ff563f811560b9b5c69b66ab154e7cd0c3565bd87358dae039f121b9d0e4f7e",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Stanford/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/Stanford/nidm.ttl",
+   "sha256": "33feaf7a40b9500f2028ca4978d48433073426e586f67177de2c41683167dbc9",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Trinity/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/Trinity/nidm.ttl",
+   "sha256": "d69fc1154b3ed76242732d5ef255eac68698c89e2bcd6937ed53e66f55312bdb",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/UCLA_1/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/UCLA_1/nidm.ttl",
+   "sha256": "f76a7b087e49d89e6fff26513a689a4b40223440e7cbdd375b3ba7a5c9a0657d",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/UCLA_2/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/UCLA_2/nidm.ttl",
+   "sha256": "bcfc94af1b15d10da5ba46388385f2b826545e31d7e67ce650836486a398ae75",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/UM_1/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/UM_1/nidm.ttl",
+   "sha256": "8088ba2a3bcd01bb400ade2f88f68f1136accb7105301cf032af23fe14f92b5d",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/UM_2/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/UM_2/nidm.ttl",
+   "sha256": "855f8e2ab42328d94b752ba6a3c130d87e75a547d25ae853f61253916b9e0199",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/USM/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/USM/nidm.ttl",
+   "sha256": "8f2f2b296aad67887116faba1977cf2a484b1df23c97880a7a3eb158d02de940",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/Yale/nidm.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/datasets.datalad.org/abide/RawDataBIDS/Yale/nidm.ttl",
+   "sha256": "682cd2dab1869e2f2412be168cfcfff80b9b381f519744c955999b7def1b5ed3",
+   "kind": "site NIDM"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:cde_tools/ants_cde.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/ants_seg_to_nidm/97e6257b0827a0e6bcc78c179f83168c83397f39/ants_seg_to_nidm/mapping_data/ants_cde.ttl",
+   "sha256": "5c92fd46bd1a1a5dd247340bd35aa3ee21a187f4a0829406520cdf8f0b2cb4a4",
+   "kind": "tool CDE"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:cde_tools/fsl_cde.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/fsl_seg_to_nidm/54f91ec7c5c10837d1970bcbd2e39add6a5a3530/fsl_seg_to_nidm/mapping_data/fsl_cde.ttl",
+   "sha256": "767e8cb3e3d49b9d2fc62d281edfdb9796c51664436feb7d1c0c4c697baedcf2",
+   "kind": "tool CDE"
+  },
+  {
+   "named_graph": "urn:repronim:simple2:cde_tools/fs_cde.ttl",
+   "source": "https://raw.githubusercontent.com/ReproNim/simple2_NIDM_examples/e0dff17629bd5031e246c05ff4bed174597552a2/cde/fs_cde.ttl",
+   "sha256": "6f81ff71342a421796934e7002b1f4ac36aff4b079483e26c030f7f2e7b9b82e",
+   "kind": "tool CDE"
+  }
+ ],
+ "n_named_graphs": 27,
+ "store_quads": 761582,
+ "verbatim_query": {
+  "query": "data/repronim_simple2/queries/simple2_query.sparql (unmodified)",
+  "engine": "pyoxigraph 0.5.11",
+  "seconds": 117.4,
+  "rows": 155528,
+  "participants": 989,
+  "rows_by_tool": {
+   "ANTs": 76953,
+   "FreeSurfer": 60884,
+   "FSL": 17691
+  },
+  "shipped_output_rows_total": 13199,
+  "shipped_output_ids_total": 73,
+  "shipped_ids_also_in_ours": 73,
+  "participant_label_keys_in_both": 12907,
+  "keys_with_equal_values_rtol_1e-6": 12907,
+  "labels_only_in_our_run": [
+   "CSFVOL (mm^3)",
+   "GMVOL (mm^3)",
+   "WMVOL (mm^3)"
+  ],
+  "labels_only_in_shipped_output": [
+   "CSF Volume (mm^3)",
+   "GVol (mm^3)",
+   "WVol (mm^3)"
+  ],
+  "label_drift_note": "shipped CSV predates a CDE relabel; same measures, different rdfs:label"
+ },
+ "identity_join": {
+  "query": "queries/simple2_identity.rq",
+  "rule": "integer(ndar:src_subject_id) == SUB_ID in Phenotypic_V1_0b_preprocessed1.csv; reviewed link, not owl:sameAs",
+  "simple2_ids": 1112,
+  "simple2_ids_in_more_than_one_site_graph": 0,
+  "phenotype_rows": 1112,
+  "matched": 1112,
+  "only_in_simple2": 0,
+  "only_in_phenotype": 0,
+  "matched_with_preprocessed_FILE_ID": 1035,
+  "matched_in_cohort_B_v1": 767,
+  "matched_in_cohort_A_v1": 441,
+  "conflicts": {
+   "age": 0,
+   "sex": 0,
+   "dx": 0,
+   "fiq": 0
+  },
+  "conflict_examples": [],
+  "n_participants_with_any_conflict": 0,
+  "fields_missing_in_simple2": 0
+ },
+ "tool_agreement": {
+  "regions_with_all_three_tools": 17,
+  "region_tool_pairs_ambiguous": [
+   {
+    "region": "UBERON_0000955",
+    "side": "both",
+    "tool_name": "FreeSurfer",
+    "n_labels": 4
+   }
+  ],
+  "pairwise": [
+   {
+    "region": "cerebral cortex grey matter",
+    "uberon": "UBERON_0000956",
+    "side": "both",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.7159796256242295,
+    "median_ratio": 0.8438490116415962,
+    "mean_abs_pct_diff": 17.355675540795577
+   },
+   {
+    "region": "cerebral cortex grey matter",
+    "uberon": "UBERON_0000956",
+    "side": "both",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.8491501446986889,
+    "median_ratio": 1.0080342820673005,
+    "mean_abs_pct_diff": 5.040772838803693
+   },
+   {
+    "region": "cerebral cortex grey matter",
+    "uberon": "UBERON_0000956",
+    "side": "both",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.6064773121774585,
+    "median_ratio": 1.1861648231943034,
+    "mean_abs_pct_diff": 17.032635186943807
+   },
+   {
+    "region": "CSF",
+    "uberon": "UBERON_0001359",
+    "side": "both",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.23371424757764656,
+    "median_ratio": 0.004750527276808125,
+    "mean_abs_pct_diff": 198.0098083335025
+   },
+   {
+    "region": "CSF",
+    "uberon": "UBERON_0001359",
+    "side": "both",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.9027822725887344,
+    "median_ratio": 1.0553213222525428,
+    "mean_abs_pct_diff": 10.473678178401524
+   },
+   {
+    "region": "CSF",
+    "uberon": "UBERON_0001359",
+    "side": "both",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.3243658089265664,
+    "median_ratio": 224.1180854112926,
+    "mean_abs_pct_diff": 198.14881217984245
+   },
+   {
+    "region": "caudate",
+    "uberon": "UBERON_0001873",
+    "side": "Left",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.6554661252533343,
+    "median_ratio": 0.9116876934063318,
+    "mean_abs_pct_diff": 11.755350042131221
+   },
+   {
+    "region": "caudate",
+    "uberon": "UBERON_0001873",
+    "side": "Left",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.9506611886795743,
+    "median_ratio": 0.9191875,
+    "mean_abs_pct_diff": 8.534692603613845
+   },
+   {
+    "region": "caudate",
+    "uberon": "UBERON_0001873",
+    "side": "Left",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.6809876293385881,
+    "median_ratio": 1.0062792653241868,
+    "mean_abs_pct_diff": 7.449126400959173
+   },
+   {
+    "region": "caudate",
+    "uberon": "UBERON_0001873",
+    "side": "Right",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.5972814394403262,
+    "median_ratio": 0.9119893980931858,
+    "mean_abs_pct_diff": 12.437128588523755
+   },
+   {
+    "region": "caudate",
+    "uberon": "UBERON_0001873",
+    "side": "Right",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.930170960150558,
+    "median_ratio": 0.9236650735784466,
+    "mean_abs_pct_diff": 8.120220599411065
+   },
+   {
+    "region": "caudate",
+    "uberon": "UBERON_0001873",
+    "side": "Right",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.6545000825897281,
+    "median_ratio": 1.0105851600714304,
+    "mean_abs_pct_diff": 7.799494098108135
+   },
+   {
+    "region": "putamen",
+    "uberon": "UBERON_0001874",
+    "side": "Left",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.5818924208249242,
+    "median_ratio": 0.8869243479171285,
+    "mean_abs_pct_diff": 14.279211659289587
+   },
+   {
+    "region": "putamen",
+    "uberon": "UBERON_0001874",
+    "side": "Left",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.8748358689793283,
+    "median_ratio": 0.8742394731441577,
+    "mean_abs_pct_diff": 13.182506790675653
+   },
+   {
+    "region": "putamen",
+    "uberon": "UBERON_0001874",
+    "side": "Left",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.5441290638476467,
+    "median_ratio": 0.9894534253619176,
+    "mean_abs_pct_diff": 8.45726454327981
+   },
+   {
+    "region": "putamen",
+    "uberon": "UBERON_0001874",
+    "side": "Right",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.6177103531086596,
+    "median_ratio": 0.8698496905393457,
+    "mean_abs_pct_diff": 15.688512422981427
+   },
+   {
+    "region": "putamen",
+    "uberon": "UBERON_0001874",
+    "side": "Right",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.8341121485017712,
+    "median_ratio": 0.8640330160260271,
+    "mean_abs_pct_diff": 14.860545204332798
+   },
+   {
+    "region": "putamen",
+    "uberon": "UBERON_0001874",
+    "side": "Right",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.5641338318086005,
+    "median_ratio": 0.9951591411270599,
+    "mean_abs_pct_diff": 7.851737271391493
+   },
+   {
+    "region": "amygdala",
+    "uberon": "UBERON_0001876",
+    "side": "Left",
+    "pair": "ANTs vs FSL",
+    "n": 760,
+    "pearson_r": 0.10869978964728351,
+    "median_ratio": 1.0744779612366016,
+    "mean_abs_pct_diff": 27.98395830545773
+   },
+   {
+    "region": "amygdala",
+    "uberon": "UBERON_0001876",
+    "side": "Left",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.5183321962239524,
+    "median_ratio": 0.6639175257731958,
+    "mean_abs_pct_diff": 40.28429703785268
+   },
+   {
+    "region": "amygdala",
+    "uberon": "UBERON_0001876",
+    "side": "Left",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.23823134277156496,
+    "median_ratio": 0.632638776718893,
+    "mean_abs_pct_diff": 48.790769375767795
+   },
+   {
+    "region": "amygdala",
+    "uberon": "UBERON_0001876",
+    "side": "Right",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.14903884485446373,
+    "median_ratio": 1.0667177914110428,
+    "mean_abs_pct_diff": 32.44676138425459
+   },
+   {
+    "region": "amygdala",
+    "uberon": "UBERON_0001876",
+    "side": "Right",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.5373528937437412,
+    "median_ratio": 0.6141409817076113,
+    "mean_abs_pct_diff": 48.07159803895673
+   },
+   {
+    "region": "amygdala",
+    "uberon": "UBERON_0001876",
+    "side": "Right",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.21316850866769416,
+    "median_ratio": 0.5875359163837295,
+    "mean_abs_pct_diff": 56.66866187113343
+   },
+   {
+    "region": "accumbens",
+    "uberon": "UBERON_0001882",
+    "side": "Left",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.43584989730751145,
+    "median_ratio": 0.8975903614457832,
+    "mean_abs_pct_diff": 23.283846752305404
+   },
+   {
+    "region": "accumbens",
+    "uberon": "UBERON_0001882",
+    "side": "Left",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.6753760000545161,
+    "median_ratio": 0.7375478927203065,
+    "mean_abs_pct_diff": 30.729734401736735
+   },
+   {
+    "region": "accumbens",
+    "uberon": "UBERON_0001882",
+    "side": "Left",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.24356917594694388,
+    "median_ratio": 0.8267610380856084,
+    "mean_abs_pct_diff": 30.18413836093955
+   },
+   {
+    "region": "accumbens",
+    "uberon": "UBERON_0001882",
+    "side": "Right",
+    "pair": "ANTs vs FSL",
+    "n": 758,
+    "pearson_r": 0.42520330297436565,
+    "median_ratio": 1.0735851529265397,
+    "mean_abs_pct_diff": 23.01107090364841
+   },
+   {
+    "region": "accumbens",
+    "uberon": "UBERON_0001882",
+    "side": "Right",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.7704202828630972,
+    "median_ratio": 0.7127702285056716,
+    "mean_abs_pct_diff": 33.84099233509532
+   },
+   {
+    "region": "accumbens",
+    "uberon": "UBERON_0001882",
+    "side": "Right",
+    "pair": "FSL vs FreeSurfer",
+    "n": 975,
+    "pearson_r": 0.3062368682743514,
+    "median_ratio": 0.6747627129337539,
+    "mean_abs_pct_diff": 43.54428255579395
+   },
+   {
+    "region": "thalamus",
+    "uberon": "UBERON_0001897",
+    "side": "Left",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.5827797981004461,
+    "median_ratio": 1.02661169191541,
+    "mean_abs_pct_diff": 7.706601726229822
+   },
+   {
+    "region": "thalamus",
+    "uberon": "UBERON_0001897",
+    "side": "Left",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.8209117992244543,
+    "median_ratio": 1.096874488627066,
+    "mean_abs_pct_diff": 9.110588201470392
+   },
+   {
+    "region": "thalamus",
+    "uberon": "UBERON_0001897",
+    "side": "Left",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.5234561162695941,
+    "median_ratio": 1.0533459223415556,
+    "mean_abs_pct_diff": 9.539552682870864
+   },
+   {
+    "region": "thalamus",
+    "uberon": "UBERON_0001897",
+    "side": "Right",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.5950327938281942,
+    "median_ratio": 1.033352679338628,
+    "mean_abs_pct_diff": 7.745309739168965
+   },
+   {
+    "region": "thalamus",
+    "uberon": "UBERON_0001897",
+    "side": "Right",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.8430074571068866,
+    "median_ratio": 1.0978056512371517,
+    "mean_abs_pct_diff": 9.618193132567926
+   },
+   {
+    "region": "thalamus",
+    "uberon": "UBERON_0001897",
+    "side": "Right",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.5569292230960982,
+    "median_ratio": 1.0522990429020815,
+    "mean_abs_pct_diff": 9.09428999994349
+   },
+   {
+    "region": "hippocampus",
+    "uberon": "UBERON_0001954",
+    "side": "Left",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.4620054515121684,
+    "median_ratio": 0.9822373636076173,
+    "mean_abs_pct_diff": 11.804963299184825
+   },
+   {
+    "region": "hippocampus",
+    "uberon": "UBERON_0001954",
+    "side": "Left",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.7225400582809838,
+    "median_ratio": 0.9033149171270718,
+    "mean_abs_pct_diff": 11.121086179547833
+   },
+   {
+    "region": "hippocampus",
+    "uberon": "UBERON_0001954",
+    "side": "Left",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.4984087709836581,
+    "median_ratio": 0.9202468772376483,
+    "mean_abs_pct_diff": 13.872763889979508
+   },
+   {
+    "region": "hippocampus",
+    "uberon": "UBERON_0001954",
+    "side": "Right",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.5324613178079263,
+    "median_ratio": 0.997155858930603,
+    "mean_abs_pct_diff": 10.976661635819427
+   },
+   {
+    "region": "hippocampus",
+    "uberon": "UBERON_0001954",
+    "side": "Right",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.7028997030710309,
+    "median_ratio": 0.9229340255793339,
+    "mean_abs_pct_diff": 9.411846909092487
+   },
+   {
+    "region": "hippocampus",
+    "uberon": "UBERON_0001954",
+    "side": "Right",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.5369947159684825,
+    "median_ratio": 0.9212208413001912,
+    "mean_abs_pct_diff": 13.408409013731223
+   },
+   {
+    "region": "cerebral white matter",
+    "uberon": "UBERON_0002437",
+    "side": "both",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.8722436573942731,
+    "median_ratio": 0.8217250878892501,
+    "mean_abs_pct_diff": 19.641653652460874
+   },
+   {
+    "region": "cerebral white matter",
+    "uberon": "UBERON_0002437",
+    "side": "both",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.8931779577712322,
+    "median_ratio": 0.94273668040534,
+    "mean_abs_pct_diff": 7.009425696653255
+   },
+   {
+    "region": "cerebral white matter",
+    "uberon": "UBERON_0002437",
+    "side": "both",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.8122427433260575,
+    "median_ratio": 1.156870671118826,
+    "mean_abs_pct_diff": 16.199245593172797
+   },
+   {
+    "region": "pallidum",
+    "uberon": "UBERON_0006514",
+    "side": "Left",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.5011028541999366,
+    "median_ratio": 0.8763440860215054,
+    "mean_abs_pct_diff": 15.867438695921235
+   },
+   {
+    "region": "pallidum",
+    "uberon": "UBERON_0006514",
+    "side": "Left",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.7133705584147608,
+    "median_ratio": 0.7772707240756247,
+    "mean_abs_pct_diff": 25.694809897761434
+   },
+   {
+    "region": "pallidum",
+    "uberon": "UBERON_0006514",
+    "side": "Left",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.49708015346526363,
+    "median_ratio": 0.8932169241101411,
+    "mean_abs_pct_diff": 15.461370388053005
+   },
+   {
+    "region": "pallidum",
+    "uberon": "UBERON_0006514",
+    "side": "Right",
+    "pair": "ANTs vs FSL",
+    "n": 761,
+    "pearson_r": 0.5322871646336208,
+    "median_ratio": 0.8156028368794326,
+    "mean_abs_pct_diff": 21.121637897500733
+   },
+   {
+    "region": "pallidum",
+    "uberon": "UBERON_0006514",
+    "side": "Right",
+    "pair": "ANTs vs FreeSurfer",
+    "n": 759,
+    "pearson_r": 0.7249289902813969,
+    "median_ratio": 0.7952476505818767,
+    "mean_abs_pct_diff": 23.70595983342594
+   },
+   {
+    "region": "pallidum",
+    "uberon": "UBERON_0006514",
+    "side": "Right",
+    "pair": "FSL vs FreeSurfer",
+    "n": 977,
+    "pearson_r": 0.4605698630839503,
+    "median_ratio": 0.9696463089702733,
+    "mean_abs_pct_diff": 11.881337825295851
+   }
+  ],
+  "median_r_by_pair": {
+   "ANTs vs FSL": 0.5324613178079263,
+   "ANTs vs FreeSurfer": 0.8209117992244543,
+   "FSL vs FreeSurfer": 0.5234561162695941
+  },
+  "median_abs_pct_diff_by_pair": {
+   "ANTs vs FSL": 15.867438695921235,
+   "ANTs vs FreeSurfer": 11.121086179547833,
+   "FSL vs FreeSurfer": 13.872763889979508
+  }
+ },
+ "Q8": {
+  "participant": "MaxMun_c_0051332",
+  "src_subject_id": "51332",
+  "rows": 95,
+  "named_graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl",
+  "three_tool_regions": [
+   {
+    "region": "cerebral cortex grey matter",
+    "side": "both",
+    "volumes_mm3": {
+     "ANTs": 667230.0,
+     "FSL": 784086.25,
+     "FreeSurfer": 681902.56
+    },
+    "max_over_min": 1.1751363847548821,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "CSF",
+    "side": "both",
+    "volumes_mm3": {
+     "ANTs": 1519.2031,
+     "FSL": 224763.88,
+     "FreeSurfer": 1137.7
+    },
+    "max_over_min": 197.5598839764437,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "caudate",
+    "side": "Left",
+    "volumes_mm3": {
+     "ANTs": 4232.4067,
+     "FSL": 4677.7725,
+     "FreeSurfer": 4521.3
+    },
+    "max_over_min": 1.105227552919241,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "caudate",
+    "side": "Right",
+    "volumes_mm3": {
+     "ANTs": 4364.9673,
+     "FSL": 4604.34,
+     "FreeSurfer": 4432.0
+    },
+    "max_over_min": 1.0548395173544598,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "putamen",
+    "side": "Left",
+    "volumes_mm3": {
+     "ANTs": 5410.1943,
+     "FSL": 6408.6914,
+     "FreeSurfer": 5870.9
+    },
+    "max_over_min": 1.1845584547675116,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "putamen",
+    "side": "Right",
+    "volumes_mm3": {
+     "ANTs": 5416.87,
+     "FSL": 6770.134,
+     "FreeSurfer": 5637.6
+    },
+    "max_over_min": 1.2498239758384455,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "amygdala",
+    "side": "Left",
+    "volumes_mm3": {
+     "ANTs": 1342.7734,
+     "FSL": 1681.3279,
+     "FreeSurfer": 2013.5
+    },
+    "max_over_min": 1.4995084055135437,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "amygdala",
+    "side": "Right",
+    "volumes_mm3": {
+     "ANTs": 1426.6968,
+     "FSL": 1760.4828,
+     "FreeSurfer": 2078.9
+    },
+    "max_over_min": 1.4571421201757795,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "accumbens",
+    "side": "Left",
+    "volumes_mm3": {
+     "ANTs": 659.9426,
+     "FSL": 432.01447,
+     "FreeSurfer": 516.9
+    },
+    "max_over_min": 1.5275937400893076,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "accumbens",
+    "side": "Right",
+    "volumes_mm3": {
+     "ANTs": 538.826,
+     "FSL": 584.60236,
+     "FreeSurfer": 742.6
+    },
+    "max_over_min": 1.3781814537531596,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "thalamus",
+    "side": "Left",
+    "volumes_mm3": {
+     "ANTs": 10512.352,
+     "FSL": 10451.316,
+     "FreeSurfer": 10378.4
+    },
+    "max_over_min": 1.0129068064441533,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "thalamus",
+    "side": "Right",
+    "volumes_mm3": {
+     "ANTs": 10320.663,
+     "FSL": 10354.996,
+     "FreeSurfer": 11576.2
+    },
+    "max_over_min": 1.1216527465338224,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "hippocampus",
+    "side": "Left",
+    "volumes_mm3": {
+     "ANTs": 4406.929,
+     "FSL": 4116.0586,
+     "FreeSurfer": 4597.9
+    },
+    "max_over_min": 1.117063785243485,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "hippocampus",
+    "side": "Right",
+    "volumes_mm3": {
+     "ANTs": 4509.926,
+     "FSL": 4370.6895,
+     "FreeSurfer": 4929.6
+    },
+    "max_over_min": 1.1278769631198922,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "cerebral white matter",
+    "side": "both",
+    "volumes_mm3": {
+     "ANTs": 559789.0,
+     "FSL": 731300.4,
+     "FreeSurfer": 588786.4
+    },
+    "max_over_min": 1.3063857989349559,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "pallidum",
+    "side": "Left",
+    "volumes_mm3": {
+     "ANTs": 1712.7991,
+     "FSL": 2295.4941,
+     "FreeSurfer": 2491.1
+    },
+    "max_over_min": 1.4544029127525815,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   },
+   {
+    "region": "pallidum",
+    "side": "Right",
+    "volumes_mm3": {
+     "ANTs": 1675.6057,
+     "FSL": 2124.7864,
+     "FreeSurfer": 2154.1
+    },
+    "max_over_min": 1.2855649751012423,
+    "producers": {
+     "ANTs": "ReproNim/ants_seg_to_nidm",
+     "FSL": "ReproNim/fsl_seg_to_nidm",
+     "FreeSurfer": "ReproNim/segstats_jsonld"
+    }
+   }
+  ]
+ },
+ "link_graph_triples": 8373,
+ "seconds": 127.5
+}

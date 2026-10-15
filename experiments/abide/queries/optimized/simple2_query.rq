@@ -1,0 +1,33 @@
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+prefix nidm: <http://purl.org/nidash/nidm#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix ilx: <http://uri.interlex.org/>
+prefix ncit: <http://ncitt.ncit.nih.gov/>
+# Same result set as ReproNim simple2_query.sparql. Changes: the six demographic data elements are bound
+# first through one VALUES block instead of six disconnected groups; the a/rdfs:subClassOf path is read
+# from the materialized type_closure view; tool and subject are reached from the activity node.
+select distinct ?study ?ID ?Age ?dx ?Gender ?FIQ ?PIQ ?VIQ ?tool ?softwareLabel ?federatedLabel ?laterality ?volume
+where {
+  VALUES (?ageC ?sexC ?dxC ?fiqC ?piqC ?viqC) { (ilx:ilx_0100400 <http://uri.interlex.org/base/ilx_0101292> ncit:Diagnosis
+      <http://uri.interlex.org/base/ilx_0739365> <http://uri.interlex.org/base/ilx_0739363> <http://uri.interlex.org/base/ilx_0739359>) }
+  ?age_measure a nidm:PersonalDataElement ; nidm:isAbout ?ageC .
+  ?sex_measure a nidm:PersonalDataElement ; nidm:isAbout ?sexC .
+  ?DX_measure a nidm:PersonalDataElement ; nidm:isAbout ?dxC .
+  ?FIQ_measure a nidm:PersonalDataElement ; nidm:isAbout ?fiqC .
+  ?PIQ_measure a nidm:PersonalDataElement ; nidm:isAbout ?piqC .
+  ?VIQ_measure a nidm:PersonalDataElement ; nidm:isAbout ?viqC .
+  ?as_entity ?age_measure ?Age ; ?sex_measure ?GenderCoded ; ?FIQ_measure ?FIQ ; ?PIQ_measure ?PIQ ; ?VIQ_measure ?VIQ ; ?DX_measure ?dx ;
+             prov:wasGeneratedBy ?as_activity .
+  ?as_activity prov:qualifiedAssociation ?asA . ?asA prov:agent ?asAgent . ?asAgent ndar:src_subject_id ?ID .
+  ?subj ndar:src_subject_id ?ID .
+  ?a2 prov:agent ?subj . ?tool_act prov:qualifiedAssociation ?a2 , ?a1 ; a prov:Activity .
+  ?a1 prov:agent ?sw . ?sw nidm:NIDM_0000164 ?tool .
+  ?tool_entity prov:wasGeneratedBy ?tool_act ; a prov:Entity ; ?measure ?volume .
+  GRAPH <urn:repronim:abide:graph/view/type_closure> { ?measure a nidm:DataElement }
+  ?measure rdfs:label ?softwareLabel ; nidm:measureOf <http://uri.interlex.org/base/ilx_0112559> ; nidm:datumType <http://uri.interlex.org/base/ilx_0738276> .
+  OPTIONAL { ?measure nidm:isAbout ?federatedLabel }
+  OPTIONAL { ?measure nidm:hasLaterality ?laterality }
+  bind(IF((?GenderCoded = "1" || ?GenderCoded = "Male"^^xsd:string), "Male"^^xsd:string, "Female"^^xsd:string) as ?Gender) .
+} order by ?study

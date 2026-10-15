@@ -1,0 +1,15 @@
+OK  included publications: kg=74 synthesis=74
+OK  excluded publications: kg=25 synthesis=25
+OK  release distribution (included): kg={'ABIDE I': 54, 'ABIDE I+II': 16, 'ABIDE II': 4} synthesis={'ABIDE II': 4, 'ABIDE I+II': 16, 'ABIDE I': 54}
+OK  included linked to dataset/abide_i: kg=70 synthesis=70
+OK  claim types: kg={'associational': 20, 'predictive': 46, 'both': 7, 'descriptor': 1} synthesis={'descriptor': 1, 'predictive': 46, 'associational': 20, 'both': 7}
+OK  papers with leave-site-out evaluation: kg=6 synthesis=6
+OK  leakage-flagged: kg=8 synthesis=8
+OK  reconstructible: kg={'yes — exact rules': 13, 'partly': 42, 'no': 15, 'yes — participant list': 4} synthesis={'yes — exact rules': 13, 'no': 15, 'partly': 42, 'yes — participant list': 4}
+OK  shared cohort membership: kg=[9, 6, 3, 2, 2, 2] synthesis=[9, 6, 3, 2, 2, 2]
+OK  pooled-CV accuracy rows: kg=23 synthesis=23
+OK  unverified quotes: kg=0 synthesis=0
+OK  quotes traceable to the intake session (quote -> charting activity -> plan -> protocol -> intake): kg=610 synthesis=610
+871 cohort members: ['S-002', 'S-019', 'S-022', 'S-024', 'S-066', 'S-069', 'S-070', 'S-076', 'S-077']
+publications cross-linked to ../graph nodes (skos:exactMatch): 37
+triples: 10779

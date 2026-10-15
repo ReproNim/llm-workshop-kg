@@ -1,0 +1,26 @@
+{
+  "source_id": "S-073",
+  "pmid": "local_25744754",
+  "doi": "10.1038/s41598-023-43478-z",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: classifies ASD severity using structural MRI (FreeSurfer cortical morphological features, Desikan-Killiany atlas) from ABIDE II; no resting-state functional connectivity analysis is performed. Note: the paper's \"Data availability\" statement anomalously says \"This work uses rs-fMRI data from the ABIDE-II dataset\", which contradicts the abstract (\"Morphological features are extracted from magnetic resonance imaging (MRI) scans\") and the full methods (cortical thickness/curvature percentiles via FreeSurfer, DK atlas) — treated as a boilerplate/template error, not evidence of a resting-state analysis.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1038/s41598-023-43478-z",
+    "dataset": "ABIDE II",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": []
+  }
+}

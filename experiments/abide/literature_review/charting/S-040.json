@@ -1,0 +1,26 @@
+{
+  "source_id": "S-040",
+  "pmid": "local_6411cb49",
+  "doi": "10.1016/j.biopsych.2017.09.029",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Abstract only — Exclusion 3: analyses structural (cerebellar volume) MRI from the ABIDE cohort; no resting-state functional connectivity analysis reported. (Note: the full_text extracted for this corpus entry does not match the article's title/abstract — it is an unrelated paper on 3D motion/form perception — so screening was based on the corpus abstract.)",
+    "stage": "full_text",
+    "assessed_on": "abstract_only",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1016/j.biopsych.2017.09.029",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": []
+  }
+}

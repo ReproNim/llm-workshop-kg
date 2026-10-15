@@ -1,0 +1,186 @@
+{
+ "records": [
+  {
+   "id": "DM_Q",
+   "paper": "dimartino2014",
+   "kind": "ResearchQuestion",
+   "claim_type": null,
+   "locator": "Methods, Analytic Strategy",
+   "quote": "To understand the relative contributions of hypo and hyperconnectivity in ASD, we carried out whole-brain iFC analyses",
+   "verbatim_match": true
+  },
+  {
+   "id": "DM_C1",
+   "paper": "dimartino2014",
+   "kind": "Claim",
+   "claim_type": "associational",
+   "locator": "Abstract",
+   "quote": "both were detected, though hypoconnectivity dominated, particularly for cortico-cortical and interhemispheric functional connectivity",
+   "verbatim_match": true
+  },
+  {
+   "id": "DM_cohort",
+   "paper": "dimartino2014",
+   "kind": "ReportedCohort",
+   "claim_type": null,
+   "locator": "Methods, Participants",
+   "quote": "This yielded data for 763 individuals (ASD=360, TC=403) from 17 sites",
+   "verbatim_match": true
+  },
+  {
+   "id": "DM_motion",
+   "paper": "dimartino2014",
+   "kind": "InclusionCriterion",
+   "claim_type": null,
+   "locator": "Methods, Participants",
+   "quote": "less than two SD above the sample mean (0.23\u00b10.27mm",
+   "verbatim_match": true
+  },
+  {
+   "id": "DM_fiq",
+   "paper": "dimartino2014",
+   "kind": "InclusionCriterion",
+   "claim_type": null,
+   "locator": "Methods, Participants",
+   "quote": "individuals with FIQ within two SD of the overall ABIDE sample mean (108\u00b115)",
+   "verbatim_match": true
+  },
+  {
+   "id": "DM_preproc",
+   "paper": "dimartino2014",
+   "kind": "Method",
+   "claim_type": null,
+   "locator": "Methods, Image Preprocessing",
+   "quote": "R-fMRI scans were preprocessed with an alpha version of the Configurable Pipeline for the Analysis of Connectomes",
+   "verbatim_match": true
+  },
+  {
+   "id": "DM_nuisance",
+   "paper": "dimartino2014",
+   "kind": "Method",
+   "claim_type": null,
+   "locator": "Methods, Image Preprocessing",
+   "quote": "nuisance signal regression (including 6 motion parameters, 5 CompCorr signals",
+   "verbatim_match": true
+  },
+  {
+   "id": "DM_glm",
+   "paper": "dimartino2014",
+   "kind": "Method",
+   "claim_type": null,
+   "locator": "Methods, Group-level Analyses",
+   "quote": "(covariates: age, FIQ, site, and mean FD)",
+   "verbatim_match": true
+  },
+  {
+   "id": "DM_fdr",
+   "paper": "dimartino2014",
+   "kind": "Method",
+   "claim_type": null,
+   "locator": "Methods, Group-level Analyses",
+   "quote": "we corrected for multiple comparisons using false discovery rate (FDR; q<0.05)",
+   "verbatim_match": true
+  },
+  {
+   "id": "AB_Q",
+   "paper": "abraham2017",
+   "kind": "ResearchQuestion",
+   "claim_type": null,
+   "locator": "Abstract",
+   "quote": "we demonstrate the feasibility of inter-site classification of neuropsychiatric status",
+   "verbatim_match": true
+  },
+  {
+   "id": "AB_C1",
+   "paper": "abraham2017",
+   "kind": "Claim",
+   "claim_type": "predictive",
+   "locator": "Abstract",
+   "quote": "Good choices of methods for the various steps of the pipeline lead to 67% prediction accuracy on the full ABIDE data",
+   "verbatim_match": true
+  },
+  {
+   "id": "AB_C2",
+   "paper": "abraham2017",
+   "kind": "Claim",
+   "claim_type": "predictive",
+   "locator": "Abstract",
+   "quote": "the definition of functional brain areas is of paramount importance for biomarker discovery",
+   "verbatim_match": true
+  },
+  {
+   "id": "AB_C3",
+   "paper": "abraham2017",
+   "kind": "Claim",
+   "claim_type": "predictive",
+   "locator": "Abstract",
+   "quote": "prediction accuracy improves as we include more subjects",
+   "verbatim_match": true
+  },
+  {
+   "id": "AB_cohort",
+   "paper": "abraham2017",
+   "kind": "ReportedCohort",
+   "claim_type": null,
+   "locator": "Section 2.1",
+   "quote": "This yielded 871 subjects out of the initial 1112.",
+   "verbatim_match": true
+  },
+  {
+   "id": "AB_qc",
+   "paper": "abraham2017",
+   "kind": "InclusionCriterion",
+   "claim_type": null,
+   "locator": "Section 2.1",
+   "quote": "Data were selected based on the results of quality visual inspection by three human experts",
+   "verbatim_match": true
+  },
+  {
+   "id": "AB_cv",
+   "paper": "abraham2017",
+   "kind": "Method",
+   "claim_type": null,
+   "locator": "Introduction",
+   "quote": "we left out entire sites to measure performance in the presence of uncontrolled variability",
+   "verbatim_match": true
+  },
+  {
+   "id": "AB_motion",
+   "paper": "abraham2017",
+   "kind": "Method",
+   "claim_type": null,
+   "locator": "Section 2.1",
+   "quote": "Head motion was modeled using 24 regressors derived from the parameters estimated during motion realignment",
+   "verbatim_match": true
+  },
+  {
+   "id": "AB_tangent",
+   "paper": "abraham2017",
+   "kind": "Method",
+   "claim_type": null,
+   "locator": "Section 3.3",
+   "quote": "Among all matrix types, tangent embedding is the best on all ABIDE subsets.",
+   "verbatim_match": true
+  }
+ ],
+ "n_verbatim": 18,
+ "n": 18,
+ "sources": {
+  "dimartino2014": {
+   "title": "The autism brain imaging data exchange: towards a large-scale evaluation of the intrinsic brain architecture in autism",
+   "doi": "https://doi.org/10.1038/mp.2013.78",
+   "text_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4162310/fullTextXML",
+   "file": "papers/dimartino2014_PMC4162310.xml",
+   "version_note": "PMC author manuscript PMC4162310",
+   "sha256": "ba9ce3661fdd85292d18b9c65c7cdd73d0fd8dae260a49591f01c225026e24b4"
+  },
+  "abraham2017": {
+   "title": "Deriving reproducible biomarkers from multi-site resting-state data: An Autism-based example",
+   "doi": "https://doi.org/10.1016/j.neuroimage.2016.10.045",
+   "text_url": "https://arxiv.org/pdf/1611.06066v1",
+   "file": "papers/abraham2017_arxiv1611.06066v1.pdf",
+   "version_note": "arXiv v1 preprint (18 Nov 2016); published NeuroImage text not compared",
+   "sha256": "7fdaac96a9c57f04f0c128d08d49ec96e8f93721b7ed0fcdfd8f2db7eed58616"
+  }
+ }
+}

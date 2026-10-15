@@ -1,0 +1,11 @@
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX schema: <http://schema.org/>
+SELECT ?candidate ?item ?registry ?status ?gateType ?gateStatus ?evidence WHERE { GRAPH <urn:repronim:abide:graph/scope> {
+  ?candidate a ex:PromotionCandidate ; prov:used ?item ; ex:targetRegistry ?registry ; ex:promotionStatus ?status ; ex:gate ?g .
+  ?g ex:gateType ?gateType ; ex:status ?gateStatus ; ex:evidence ?evidence .
+  FILTER (?gateStatus != "pass")
+} } ORDER BY ?candidate ?gateType

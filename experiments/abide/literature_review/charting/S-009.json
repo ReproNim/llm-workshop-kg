@@ -1,0 +1,296 @@
+{
+  "source_id": "S-009",
+  "pmid": "local_d46bcf61",
+  "doi": "10.1186/s13229-020-00397-4",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a resting-state fALFF + structural-MRI fusion analysis of ABIDE II (discovery) and ABIDE I (replication) comparing ASD subtypes to typically developing controls and predicting ADOS/SRS scores; satisfies inclusion 1-4.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "DSM-IV-TR diagnosed Asperger\u2019s disorder (n = 79), pervasive developmental disorder-not otherwise specified [PDD-NOS] (n = 58) and Autistic disorder (n = 92) from ABIDE II were used as discovery cohort, and ABIDE I (n = 400) was used for replication.",
+      "section": "abstract",
+      "claim": "ABIDE II ASD subtype groups (Asperger's n=79, PDD-NOS n=58, Autistic n=92) used as discovery cohort, ABIDE I (n=400) as replication.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Subjects with ASD (n = 229) and the corresponding TDCs (n = 126) were selected from the ABIDE II [29, 30], which is hosted by the 1000 Functional Connectome Project/International Neuroimaging Data-sharing Ini- tiative (INDI) from multiple international sites (9 sites, Additional file 1: Table S1).",
+      "section": "methods",
+      "claim": "ABIDE II discovery sample: 229 ASD, 126 TDC from 9 sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "we removed outlier datasets with mean FD exceeding 1 mm, as well as head motion exceeding 2.0 mm of maximal translation (in any direction of x, y or z) or 1.0\u00b0 of maximal rotation through- out the course of scanning.",
+      "section": "methods",
+      "claim": "Motion QC excluded scans with mean FD>1mm or motion >2.0mm/1.0 degree.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "to calculate fALFF [34], the sum of the spectral amplitude values in the 0.01\u20130.08 Hz low-frequency power range was divided by the sum of the amplitudes over the entire detectable power spectrum (range: 0\u20130.25 Hz).",
+      "section": "methods",
+      "claim": "fALFF computed as ratio of low-frequency (0.01-0.08Hz) spectral power to total power (0-0.25Hz).",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "the preprocessed multimodal MRI features were jointly analyzed by a fusion-with-reference model called \u201cMCCAR + jICA\u201d",
+      "section": "methods",
+      "claim": "Fusion of fALFF and GM voxel maps used MCCAR+jICA, guided by ADOS scores.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Dorsolateral prefrontal cortex and superior/middle temporal cortex are the primary common functional\u2013 structural covarying cortical brain areas shared among Asperger\u2019s, PDD-NOS and Autistic subgroups.",
+      "section": "results",
+      "claim": "DLPFC and superior/middle temporal cortex are common functional-structural covarying areas across ASD subtypes.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "negative fALFF in anterior cingulate cortex unique to PDD-NOS subtype; and negative thalamus\u2013amygdala\u2013caudate fALFF unique to the Autistic subtype.",
+      "section": "abstract",
+      "claim": "Subtype-unique negative fALFF patterns: ACC for PDD-NOS, thalamus-amygdala-caudate for Autistic subtype (putamen-parahippocampus for Asperger's).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The identified subtype-specific patterns are only predictive for ASD symptoms manifested in the corresponding subtypes, but not the other subtypes.",
+      "section": "abstract",
+      "claim": "Subtype-specific brain patterns predict only the corresponding subtype's symptoms, not other subtypes.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "models can be generalized to predict ADOS and SRS scores for the corresponding subgroup from ABIDE I, but not for the other groups",
+      "section": "results",
+      "claim": "Prediction models trained on ABIDE II generalized to predict ADOS/SRS in ABIDE I for the matching subgroup only.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "site-out analysis (details can be found in Additional file 1: \u201cReproducibility\u201d section) in the ADOS-guided fALFF and GMV fusion on the whole ASD group to check whether the site effect will contribute to current ASD pattern.",
+      "section": "results",
+      "claim": "Leave-one-site-out analysis showed ASD covarying pattern consistent across sites.",
+      "relevance_score": 0.7
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "Subjects with ASD (n = 229) and the corresponding TDCs (n = 126) were selected from the ABIDE II [29, 30], which is hosted by the 1000 Functional Connectome Project/International Neuroimaging Data-sharing Ini- tiative (INDI) from multiple international sites (9 sites, Additional file 1: Table S1). Selection criteria also required age <35 and males only."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Table 1 reports demographic/clinical info by subtype and TDC; ABIDE II (9 sites) discovery, ABIDE I (17 sites) replication."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "SPM12-based preprocessing with motion correction, slice-timing, normalization, smoothing, nuisance regression, then fALFF computed per voxel. | quote: \"to calculate fALFF [34], the sum of the spectral amplitude values in the 0.01\u20130.08 Hz low-frequency power range was divided by the sum of the amplitudes over the entire detectable power spectrum (range: 0\u20130.25 Hz).\""
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Low",
+        "support": "most of the sites used the ADOS and Autism Diagnostic Interview-Revised (ADI-R) scores to diagnose ASD"
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Age, handedness, IQ and acquisition site regressed out from fALFF and GM data prior to fusion; motion/FD checked for group differences."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "Site, age, handedness and IQ regressed out; leave-one-site-out and cross-cohort (ABIDE II to ABIDE I) replication performed."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Unclear",
+        "support": "fALFF (voxel-wise spectral power ratio) used rather than a connectivity matrix; no standard atlas/parcellation applied."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "FDR correction noted for subdomain correlations (Table 2); multivariate linear regression cross-validated across independent cohort."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Detailed ABIDE II discovery / ABIDE I replication design with explicit motion QC thresholds, site/age/IQ deconfounding, leave-one-site-out and cross-cohort checks; feature is voxel-wise fALFF rather than an atlas-based connectivity measure."
+  },
+  "charting": {
+    "source_id": "S-009",
+    "title": "Common and unique multimodal covarying patterns in autism spectrum disorder subtypes",
+    "authors": "",
+    "year": "2020",
+    "journal_conference": "Molecular Autism",
+    "doi": "10.1186/s13229-020-00397-4",
+    "database_retrieved": "ABIDE I+II",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "Identify common and subtype-unique functional (fALFF) and structural (GM) covarying brain patterns among Asperger's, PDD-NOS and Autistic subgroups, and test their ability to predict ADOS/SRS symptom scores in an independent cohort.",
+    "study_design": "Both",
+    "duration_frequency": "",
+    "subject_model": "Human",
+    "task_type": "Resting-state",
+    "study_setting": "Multi-site (9 sites ABIDE II discovery; 17 sites ABIDE I replication)",
+    "country_region": "",
+    "disorder_diagnosis": "Asperger's disorder, PDD-NOS, Autistic disorder (DSM-IV-TR)",
+    "diagnosis_assessment": "most of the sites used the ADOS and Autism Diagnostic Interview-Revised (ADI-R) scores to diagnose ASD",
+    "n_disordered": "229",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "All male",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "Medication use of participants reported in Table 1",
+    "severity_levels": "ADOS and SRS total/subdomain scores used as severity measures",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "126",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "All male",
+    "age_matched": "",
+    "gender_matched": "Yes (all male by selection criteria)",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI, structural MRI (T1)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "The supervised fusion code has been released and integrated in the Fusion ICA Toolbox (FIT), which can be downloaded and used directly by users worldwide. The multimodal MRI data used in this study can be accessed upon application from ABIDE consortium.",
+    "dataset_available_request": "ABIDE data accessible upon application from the ABIDE consortium",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Voxel-wise fALFF (functional) and GM volume (structural) maps",
+    "specific_features": "fALFF and GM voxel maps fused via MCCAR+jICA guided by ADOS scores; no atlas/parcellation (voxel-wise analysis)",
+    "feature_extraction_tools": "SPM12 (MATLAB 2019)",
+    "feature_importance_reported": "Yes",
+    "importance_method": "Back-reconstruction of group differences and correlation of components with ADOS subdomains",
+    "top_features_identified": "DLPFC and superior/middle temporal cortex common across subtypes; subcortical regions unique per subtype (putamen-parahippocampus Asperger's, ACC PDD-NOS, thalamus-amygdala-caudate Autistic)",
+    "feature_change_direction": "negative fALFF in anterior cingulate cortex unique to PDD-NOS subtype; and negative thalamus\u2013amygdala\u2013caudate fALFF unique to the Autistic subtype.",
+    "model_category": "Multivariate linear regression",
+    "specific_algorithms": "MCCAR+jICA fusion (discovery) + multiple linear regression (cross-cohort symptom-score prediction)",
+    "validation_methodology": "Discovery in ABIDE II, cross-cohort replication/prediction in independent ABIDE I sample; leave-one-site-out sensitivity analysis",
+    "performance_metrics": "Correlation between predicted and true symptom scores; normalized root mean squared prediction error (NRMSE)",
+    "key_performance_results": "models can be generalized to predict ADOS and SRS scores for the corresponding subgroup from ABIDE I, but not for the other groups",
+    "summary_key_findings": "DLPFC and superior/middle temporal cortex are shared functional-structural covarying areas across ASD subtypes; each subtype shows unique subcortical fALFF alterations correlated with distinct ADOS subdomains, and subtype-specific brain patterns predict symptom severity only within the matching subtype when generalized from ABIDE II to ABIDE I.",
+    "features_associated_disorder": "negative fALFF in anterior cingulate cortex unique to PDD-NOS subtype; and negative thalamus\u2013amygdala\u2013caudate fALFF unique to the Autistic subtype.",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE II (9 sites, discovery: ASD n=229 [Asperger's 79, PDD-NOS 58, Autistic 92], TDC n=126) and ABIDE I (17 sites, n=400, replication), males only, age<35 | quote: \"Subjects with ASD (n = 229) and the corresponding TDCs (n = 126) were selected from the ABIDE II [29, 30], which is hosted by the 1000 Functional Connectome Project/International Neuroimaging Data-sharing Ini- tiative (INDI) from multiple international sites (9 sites, Additional file 1: Table S1).\"",
+      "RQ2": "SPM12-based preprocessing producing voxel-wise fALFF (functional) and GM volume (structural) maps; no atlas/parcellation used (voxel-wise, fused via MCCAR+jICA) | quote: \"SPM12, wherein the above steps are integrated into a unified model [39].\"",
+      "RQ3": "both \u2014 group differences (ASD subtypes vs TDC) via back-reconstruction and dimensional prediction of ADOS/SRS scores via multivariate linear regression | quote: \"The identified subtype-specific patterns are only predictive for ASD symptoms manifested in the corresponding subtypes, but not the other subtypes.\"",
+      "RQ4": "ADOS-guided MCCAR+jICA fusion with back-reconstruction for group comparison; multiple linear regression trained on ABIDE II and cross-validated on independent ABIDE I; leave-one-site-out analysis for site-effect check | quote: \"site-out analysis (details can be found in Additional file 1: \u201cReproducibility\u201d section) in the ADOS-guided fALFF and GMV fusion on the whole ASD group to check whether the site effect will contribute to current ASD pattern.\"",
+      "RQ5": "Subtype-unique subcortical fALFF alterations (direction given in q8) correlated with ADOS subdomains (social interaction common to all subtypes); prediction models generalized from ABIDE II to ABIDE I only for the matching subtype | quote: \"models can be generalized to predict ADOS and SRS scores for the corresponding subgroup from ABIDE I, but not for the other groups\"",
+      "RQ6": "partly \u2014 exact numeric inclusion rules (age<35, male only, DSM-IV-TR diagnosis, FD/motion thresholds) given and analysis code released, but no explicit participant list published | quote: \"The multimodal MRI data used in this study can be accessed upon application from ABIDE consortium.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"Subjects with ASD (n = 229) and the corresponding TDCs (n = 126) were selected from the ABIDE II [29, 30], which is hosted by the 1000 Functional Connectome Project/International Neuroimaging Data-sharing Ini- tiative (INDI) from multiple international sites (9 sites, Additional file 1: Table S1).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes | quote: \"we removed outlier datasets with mean FD exceeding 1 mm, as well as head motion exceeding 2.0 mm of maximal translation (in any direction of x, y or z) or 1.0\u00b0 of maximal rotation through- out the course of scanning.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"SPM12, wherein the above steps are integrated into a unified model [39].\"",
+      "CL4 Atlas/parcellation reported?": "No | quote: \"\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Partly | quote: \"a multiple linear regression model was trained on ABIDE II.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes | quote: \"site-out analysis (details can be found in Additional file 1: \u201cReproducibility\u201d section) in the ADOS-guided fALFF and GMV fusion on the whole ASD group to check whether the site effect will contribute to current ASD pattern.\"",
+      "CL7 Code and/or participant list available?": "Yes | quote: \"The supervised fusion code has been released and integrated in the Fusion ICA Toolbox (FIT\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"DSM-IV-TR diagnosed Asperger\u2019s disorder (n = 79), pervasive developmental disorder-not otherwise specified [PDD-NOS] (n = 58) and Autistic disorder (n = 92) from ABIDE II were used as discovery cohort, and ABIDE I (n = 400) was used for replication.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-009",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Yes",
+          "notes": "Explicit inclusion rules, N by subtype/diagnosis and site counts given. | quote: \"Subjects with ASD (n = 229) and the corresponding TDCs (n = 126) were selected from the ABIDE II [29, 30], which is hosted by the 1000 Functional Connectome Project/International Neuroimaging Data-sharing Ini- tiative (INDI) from multiple international sites (9 sites, Additional file 1: Table S1).\""
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "Yes",
+          "notes": "Numeric FD and motion thresholds given. | quote: \"we removed outlier datasets with mean FD exceeding 1 mm, as well as head motion exceeding 2.0 mm of maximal translation (in any direction of x, y or z) or 1.0\u00b0 of maximal rotation through- out the course of scanning.\""
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported?",
+          "rating": "Yes",
+          "notes": "SPM12/MATLAB 2019 pipeline described step by step."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "No",
+          "notes": "Voxel-wise fALFF and GM maps used; no parcellation/atlas applied."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Yes",
+          "notes": "DSM-IV-TR clinician diagnosis with ADOS/ADI-R as the site-level diagnostic instruments. | quote: \"most of the sites used the ADOS and Autism Diagnostic Interview-Revised (ADI-R) scores to diagnose ASD\""
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "Partial",
+          "notes": "Prediction model trained on ABIDE II and tested on independent ABIDE I, but feature extraction (ADOS-guided fusion) was performed on the same ABIDE II data later used to define the predictive features."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "Yes",
+          "notes": "Site regressed out prior to fusion; leave-one-site-out sensitivity analysis performed."
+        },
+        {
+          "item_text": "CL7 Code and/or participant list available?",
+          "rating": "Yes",
+          "notes": "Fusion code released in the FIT toolbox; raw ABIDE data available upon application to the ABIDE consortium."
+        }
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-009",
+    "study_design_sample_dataset": "Both associational (subtype vs TDC) and predictive (ADOS/SRS regression); ABIDE II discovery (229 ASD: 79 Asperger's/58 PDD-NOS/92 Autistic, 126 TDC, 9 sites) and ABIDE I replication (n=400, 17 sites)",
+    "methods": "SPM12 preprocessing, voxel-wise fALFF (functional) and GM volume (structural) maps, ADOS-guided MCCAR+jICA multimodal fusion, back-reconstruction for group differences, multiple linear regression cross-cohort prediction of ADOS/SRS, leave-one-site-out sensitivity analysis.",
+    "outcomes": "DLPFC and superior/middle temporal cortex are shared covarying regions across subtypes; each ASD subtype shows a unique subcortical fALFF alteration pattern linked to distinct ADOS subdomains; subtype-specific patterns predict symptoms only within the matching subtype when generalised from ABIDE II to ABIDE I.",
+    "key_limitations": "Male-only sample, not generalisable to females or the general ASD population; voxel-wise fALFF rather than atlas-based connectivity; feature definition and prediction both drew on ABIDE II data before independent ABIDE I testing.",
+    "relevance_notes": "Demonstrates a discovery/replication design spanning ABIDE II and ABIDE I with explicit QC thresholds and code release (FIT toolbox), useful for cohort reconstructibility assessment; illustrates subtype-stratified (rather than binary ASD/TDC) analysis.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1186/s13229-020-00397-4",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "Subjects with ASD (n = 229) and the corresponding TDCs (n = 126) were selected from the ABIDE II [29, 30], which is hosted by the 1000 Functional Connectome Project/International Neuroimaging Data-sharing Ini- tiative (INDI) from multiple international sites (9 sites, Additional file 1: Table S1). Replication: ABIDE I (17 sites, n=400), same selection criteria.",
+    "n_by_dx": {
+      "ASD": 229,
+      "TD": 126,
+      "total": 355
+    },
+    "sites": "9 (ABIDE II discovery); 17 (ABIDE I replication)",
+    "pipeline": "SPM12 (MATLAB 2019) custom pipeline; fALFF + voxel-based morphometry, MCCAR+jICA fusion",
+    "atlas": "none (voxel-wise)",
+    "claim_type": "both",
+    "finding": "The identified subtype-specific patterns are only predictive for ASD symptoms manifested in the corresponding subtypes, but not the other subtypes.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "DSM-IV-TR diagnosed Asperger\u2019s disorder (n = 79), pervasive developmental disorder-not otherwise specified [PDD-NOS] (n = 58) and Autistic disorder (n = 92) from ABIDE II were used as discovery cohort, and ABIDE I (n = 400) was used for replication.",
+      "Subjects with ASD (n = 229) and the corresponding TDCs (n = 126) were selected from the ABIDE II [29, 30], which is hosted by the 1000 Functional Connectome Project/International Neuroimaging Data-sharing Ini- tiative (INDI) from multiple international sites (9 sites, Additional file 1: Table S1).",
+      "negative fALFF in anterior cingulate cortex unique to PDD-NOS subtype; and negative thalamus\u2013amygdala\u2013caudate fALFF unique to the Autistic subtype.",
+      "The identified subtype-specific patterns are only predictive for ASD symptoms manifested in the corresponding subtypes, but not the other subtypes.",
+      "models can be generalized to predict ADOS and SRS scores for the corresponding subgroup from ABIDE I, but not for the other groups"
+    ]
+  }
+}

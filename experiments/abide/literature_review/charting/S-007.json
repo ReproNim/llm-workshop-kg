@@ -1,0 +1,282 @@
+{
+  "source_id": "S-007",
+  "pmid": "local_04f9ab5b",
+  "doi": "10.1038/s41398-021-01221-0",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2-3: a secondary/validation cohort drawn from ABIDE rs-fMRI data is analysed for thalamocortical group-difference (ASD vs TD) connectivity.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The secondary cohort was a subset of the ABIDE database\nconsisting of 58 HFASD (25.4[7.8] years, 37.9% female) and 51 typically developing controls (24.4[6.7] years, 39.2%\nfemale).",
+      "section": "abstract",
+      "claim": "The secondary (ABIDE) cohort consisted of 58 high-functioning ASD and 51 typically developing controls.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "To validate our ﬁndings in a separate cohort, we iden-\ntiﬁed 58 ASD and 51 TD individuals from ABIDE mat-\nched to the HFASD cohort by age, sex, and IQ (Table 2).\nThe selection process is detailed in Supplemental Infor-\nmation.",
+      "section": "methods",
+      "claim": "58 ASD and 51 TD individuals were identified from ABIDE, matched to the primary HFASD cohort by age, sex and IQ.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Func-\ntional data from both the HFASD and ABIDE cohorts\nwere preprocessed identically using fMRIPrep v1.3.152, a\npipeline that uses a combination of tools from existing\nneuroimaging software packages.",
+      "section": "methods",
+      "claim": "ABIDE (and HFASD) functional data were preprocessed identically using the fMRIPrep v1.3.1 pipeline.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "In the ABIDE cohort, group-mean FD was\n0.124 for ASD and 0.123 for TD (two sample t-test p =\n0.8679).",
+      "section": "methods",
+      "claim": "Group-mean framewise displacement in the ABIDE cohort was 0.124 (ASD) and 0.123 (TD), not significantly different.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Frames that exhibited an FD of over 0.5 mm were\ncensored from the timeseries, as well as one before and\ntwo after the offending frame.",
+      "section": "methods",
+      "claim": "Frames with FD over 0.5 mm (plus one before and two after) were censored (scrubbed) from the timeseries.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "Participants with <80% of\ntheir TRs retained after motion scrubbing were removed\nfrom the analysis. As a result, a total of 20 TD participants\nand 23 ASD participants were analyzed from the HFASD\ncohort (Table 1). From ABIDE, 51 TD participants and 58\nASD participants were analyzed (Table 2).",
+      "section": "methods",
+      "claim": "Participants retaining under 80% of TRs after motion scrubbing were excluded, leaving 51 TD and 58 ASD from ABIDE.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "To account for potential con-\nfounding effects from differences in scan acquisition\nparameters, we included site as a covariate in our ABIDE\nGLM analysis as one-hot encoded variables.",
+      "section": "methods",
+      "claim": "Site was included as a one-hot-encoded covariate in the ABIDE GLM analysis to account for differences in scan acquisition parameters.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "In the ABIDE GLM analysis, clusters were found that\nhad greater connectivity with the right thalamus in the\nASD group compared to the TD group. Two of these\nclusters were located in the right precentral (p = 0.019)\nand postcentral gyri (p = 0.028), validating the observed\nhyperconnectivity of the same regions in our HFASD\ncohort.",
+      "section": "results",
+      "claim": "In the ABIDE validation analysis, right thalamus connectivity with right precentral (p=0.019) and postcentral gyri (p=0.028) was greater in ASD than TD, replicating the primary-cohort finding.",
+      "relevance_score": 1.0
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Unclear",
+        "support": "ABIDE subset selection is matched by age, sex and IQ, but the full selection process is deferred to Supplemental Information not present in the extracted full text."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "ABIDE demographics (N, age, sex, FSIQ) are tabulated (Table 2) with between-group p-values."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "ABIDE data preprocessed identically to the primary cohort with fMRIPrep v1.3.1, with explicit FD-based scrubbing and retention thresholds."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "Diagnosis source for the ABIDE subset specifically (vs. the primary HFASD cohort's ADI-R/ADOS confirmation) is not restated in the main text."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Age, sex, IQ matching and motion (FD) are reported and compared between groups; site is explicitly modeled."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "Site included as one-hot-encoded covariate in the ABIDE GLM; motion handled via scrubbing and a TR-retention threshold."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Seed-based whole-brain GLM connectivity analysis with the same five a priori seeds as the primary cohort."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "Bonferroni correction for five seeds (p=0.01 cluster threshold) is explicitly applied."
+      }
+    ],
+    "overall": "Low",
+    "summary": "ABIDE validation cohort is matched and preprocessed identically to the primary cohort with documented motion QC, site covariate handling, and multiple-comparisons correction; main uncertainty is that exact ABIDE inclusion/exclusion selection is deferred to an unretrieved supplement."
+  },
+  "charting": {
+    "source_id": "S-007",
+    "title": "Thalamocortical connectivity is associated with autism symptoms in high-functioning adults with autism and typically developing adults",
+    "authors": "",
+    "year": "2021",
+    "journal_conference": "Translational Psychiatry",
+    "doi": "10.1038/s41398-021-01221-0",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "primary_focus": "Group-difference connectivity and symptom-severity association",
+    "primary_goal": "Validate thalamocortical hyperconnectivity findings from a primary HFASD cohort in an independent ABIDE-derived cohort",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state (eyes-open fixation)",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder (high-functioning)",
+    "diagnosis_assessment": "",
+    "n_disordered": "58",
+    "age_mean_sd": "25.40 ± 7.81",
+    "age_range": "",
+    "gender_distribution": "37.93% female",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "true",
+    "healthy_status_confirmed": "",
+    "n_controls": "51",
+    "age_mean_sd_controls": "24.37 ± 6.69",
+    "age_range_controls": "",
+    "gender_distribution_controls": "39.22% female",
+    "age_matched": "true",
+    "gender_matched": "true",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "",
+    "dataset_openly_available": "",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "seed-based functional connectivity",
+    "specific_features": "Whole-thalamus seed-based connectivity (5 seeds: left/right thalamus and others) to whole-brain voxelwise GLM",
+    "feature_extraction_tools": "fMRIPrep v1.3.1 (preprocessing); FSL (seed-based GLM, Featquery)",
+    "feature_importance_reported": "",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "Hyperconnectivity (ASD > TD) between right thalamus and right precentral/postcentral gyri in the ABIDE validation cohort",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "In an independent ABIDE-derived cohort (58 ASD, 51 TD) matched for age, sex and IQ, right thalamus hyperconnectivity with right precentral and postcentral gyri in ASD vs TD replicated the primary HFASD cohort's finding (p=0.019 and p=0.028 respectively, after site-covariate adjustment and Bonferroni correction).",
+    "features_associated_disorder": "Right thalamus to right precentral gyrus and right postcentral gyrus hyperconnectivity in ASD vs TD",
+    "future_directions_recommended": "",
+    "reviewer_notes": "ABIDE is used only as a secondary/validation cohort; the primary cohort (23 ASD, 20 TD) is the lab's own non-ABIDE sample.",
+    "custom_fields": {
+      "RQ1": "associational — ABIDE subset: 58 ASD, 51 TD, matched to primary cohort by age/sex/IQ; participants with <80% TRs retained after motion scrubbing excluded; release (I vs II) not specified, both ABIDE I and ABIDE II papers cited as the data source | quote: \"To validate our ﬁndings in a separate cohort, we iden- tiﬁed 58 ASD and 51 TD individuals from ABIDE mat- ched to the HFASD cohort by age, sex, and IQ (Table 2). The selection process is detailed in Supplemental Infor- mation.\"",
+      "RQ2": "fMRIPrep v1.3.1 pipeline; no parcellation/atlas used (whole-thalamus seed-based voxelwise GLM, not a parcellation-based connectome) | quote: \"Func- tional data from both the HFASD and ABIDE cohorts were preprocessed identically using fMRIPrep v1.3.152, a pipeline that uses a combination of tools from existing neuroimaging software packages.\"",
+      "RQ3": "associational — group-difference seed-based connectivity analysis (ABIDE used to validate a primary-cohort finding) | quote: \"The secondary cohort was a subset of the ABIDE database consisting of 58 HFASD (25.4[7.8] years, 37.9% female) and 51 typically developing controls (24.4[6.7] years, 39.2% female).\"",
+      "RQ4": "Whole-brain seed-based GLM per seed, with site as a one-hot-encoded covariate in the ABIDE analysis; Bonferroni correction for five seeds (cluster threshold p=0.01); no leave-site-out evaluation | quote: \"To account for potential con- founding effects from differences in scan acquisition parameters, we included site as a covariate in our ABIDE GLM analysis as one-hot encoded variables.\"",
+      "RQ5": "Hyperconnectivity (ASD > TD) between right thalamus and right precentral gyrus (p=0.019) and right postcentral gyrus (p=0.028) in the ABIDE cohort, replicating the primary HFASD cohort's finding; other ABIDE clusters (insula, cuneus) did not match the primary cohort regions and did not correlate with clinical measures | quote: \"In the ABIDE GLM analysis, clusters were found that had greater connectivity with the right thalamus in the ASD group compared to the TD group. Two of these clusters were located in the right precentral (p = 0.019) and postcentral gyri (p = 0.028), validating the observed hyperconnectivity of the same regions in our HFASD cohort.\"",
+      "RQ6": "partly — N, matching criteria and FD/QC statistics are reported, but the exact ABIDE participant selection process is deferred to Supplemental Information not present in the retrieved full text | quote: \"To validate our ﬁndings in a separate cohort, we iden- tiﬁed 58 ASD and 51 TD individuals from ABIDE mat- ched to the HFASD cohort by age, sex, and IQ (Table 2). The selection process is detailed in Supplemental Infor- mation.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly | quote: \"To validate our ﬁndings in a separate cohort, we iden- tiﬁed 58 ASD and 51 TD individuals from ABIDE mat- ched to the HFASD cohort by age, sex, and IQ (Table 2). The selection process is detailed in Supplemental Infor- mation.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes | quote: \"Frames that exhibited an FD of over 0.5 mm were censored from the timeseries, as well as one before and two after the offending frame. In the HFASD cohort, group-mean number of remaining frames out of 240 was 220.96 for ASD and 222.24 for TD (two sample t-test p = 0.8954). In the ABIDE cohort, group-mean percentage of frames remaining was 96.25% for ASD and 97.16% for TD (two sample t-test p = 0.2806). Participants with <80% of their TRs retained after motion scrubbing were removed from the analysis.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"Func- tional data from both the HFASD and ABIDE cohorts were preprocessed identically using fMRIPrep v1.3.152, a pipeline that uses a combination of tools from existing neuroimaging software packages.\"",
+      "CL4 Atlas/parcellation reported?": "No — whole-thalamus seed-based analysis, not an atlas-based parcellation | quote: \"\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not applicable, this is a group-difference GLM analysis, not a predictive model with train/test folds | quote: \"\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes — site included as a one-hot-encoded covariate in the ABIDE GLM analysis | quote: \"To account for potential con- founding effects from differences in scan acquisition parameters, we included site as a covariate in our ABIDE GLM analysis as one-hot encoded variables.\"",
+      "CL7 Code and/or participant list available?": "No — no code repository or participant ID list is mentioned for the ABIDE subset | quote: \"\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The secondary cohort was a subset of the ABIDE database consisting of 58 HFASD (25.4[7.8] years, 37.9% female) and 51 typically developing controls (24.4[6.7] years, 39.2% female).\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-007",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Partial",
+          "notes": "N and matching reported; exact selection rule deferred to an unretrieved supplement."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Yes",
+          "notes": "FD>0.5mm scrubbing with neighbour-frame removal, and <80% TR-retention exclusion, explicitly reported with group means."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline reported",
+          "rating": "Yes",
+          "notes": "fMRIPrep v1.3.1 applied identically to both cohorts."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "N/A",
+          "notes": "Seed-based (whole-thalamus) analysis, not parcellation-based."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source reported",
+          "rating": "Unclear",
+          "notes": "Diagnosis confirmation method (ADI-R/ADOS) stated for the primary HFASD cohort; not explicitly restated for the ABIDE subset."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "N/A",
+          "notes": "Not a predictive model."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "Yes",
+          "notes": "Site modeled as a covariate in the ABIDE GLM."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "No",
+          "notes": "Not mentioned."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-007",
+    "study_design_sample_dataset": "Group-difference (associational) seed-based connectivity study; primary cohort is the authors' own lab sample (23 ASD, 20 TD); ABIDE-derived secondary/validation cohort: 58 ASD, 51 TD, matched by age/sex/IQ.",
+    "methods": "Both cohorts preprocessed identically with fMRIPrep v1.3.1; FD-based scrubbing (>0.5mm) and <80% TR-retention exclusion; whole-thalamus seed-based whole-brain GLM connectivity with site as a covariate in the ABIDE analysis; Bonferroni correction for five seeds.",
+    "outcomes": "Right thalamus hyperconnectivity with right precentral/postcentral gyri in ASD vs TD replicated in the ABIDE cohort (p=0.019, p=0.028), supporting thalamocortical hyperconnectivity in high-functioning adult ASD.",
+    "key_limitations": "ABIDE selection process detailed only in an unretrieved supplement; diagnosis source for ABIDE subset not independently restated; whole-thalamus (not nuclei-specific) seeds used due to low-resolution imaging.",
+    "relevance_notes": "Demonstrates use of ABIDE as an independent validation cohort for an associational finding originating in a non-ABIDE sample, with explicit site-covariate handling and motion QC thresholds applied to the ABIDE subset.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1038/s41398-021-01221-0",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "58 ASD and 51 TD individuals selected from ABIDE, matched to a separate primary HFASD cohort by age, sex and IQ; participants with <80% TRs retained after motion scrubbing excluded.",
+    "n_by_dx": {
+      "ASD": 58,
+      "TD": 51,
+      "total": 109
+    },
+    "sites": "",
+    "pipeline": "fMRIPrep v1.3.1",
+    "atlas": "",
+    "claim_type": "associational",
+    "finding": "Right thalamus connectivity with right precentral gyrus (p=0.019) and right postcentral gyrus (p=0.028) was greater in ASD than TD in the ABIDE cohort, replicating hyperconnectivity found in an independent primary HFASD cohort.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "The secondary cohort was a subset of the ABIDE database\nconsisting of 58 HFASD (25.4[7.8] years, 37.9% female) and 51 typically developing controls (24.4[6.7] years, 39.2%\nfemale).",
+      "Func-\ntional data from both the HFASD and ABIDE cohorts\nwere preprocessed identically using fMRIPrep v1.3.152, a\npipeline that uses a combination of tools from existing\nneuroimaging software packages.",
+      "In the ABIDE GLM analysis, clusters were found that\nhad greater connectivity with the right thalamus in the\nASD group compared to the TD group. Two of these\nclusters were located in the right precentral (p = 0.019)\nand postcentral gyri (p = 0.028), validating the observed\nhyperconnectivity of the same regions in our HFASD\ncohort."
+    ]
+  }
+}

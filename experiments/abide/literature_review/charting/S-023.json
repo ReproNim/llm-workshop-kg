@@ -1,0 +1,167 @@
+{
+  "source_id": "S-023",
+  "pmid": "local_0a18ed38",
+  "doi": "10.1371/journal.pone.0194856",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a diagnostic prediction (ASD vs. control) analysis using resting-state fMRI (plus structural MRI) functional connectivity/ICA features from ABIDE, alongside an ADHD-200 analysis (Inclusion 2, 3).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "achieving an accuracy of 0.673 on the ADHD-200 holdout data and 0.643 on the ABIDE holdout data. Both of these results, obtained with the same LEFMSF framework, are the best known, over all hold-out accuracies on these datasets when only using imaging data—exceeding previously-published results by 0.012 for ADHD and 0.042 for Autism.",
+      "section": "abstract",
+      "claim": "The combined structural+functional learner (LEFMSF) achieves 0.643 hold-out accuracy on ABIDE, the best known result using imaging data alone at the time, exceeding prior work by 0.042.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "The ABIDE dataset consists of 1111 scans, taken from 17 sites consisting of 573 healthy controls and 538 patients with autism. To evaluate each learning model, we use 800 subjects (70%) for model training and 311 subjects (30%) for hold-out testing. We use the same case/control ratio (0.5157) for both training and test set.",
+      "section": "methods",
+      "claim": "ABIDE: 1111 scans from 17 sites (573 HC, 538 ASD), split 800 (70%) training / 311 (30%) hold-out test, preserving the case:control ratio in both sets.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "For preprocessing fMRI and MRI scans, we used SPM8 (http://www.fil.ion.ucl.ac.uk/spm/ software/spm8/) and our own in-house MATLAB code. Preprocessing was identical to that used in Ghiassian et al. [13].",
+      "section": "methods",
+      "claim": "Preprocessing used SPM8 plus in-house MATLAB code, identical to a prior published pipeline (Ghiassian et al.).",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "the resulting hold-out accuracy for ADHD was 0.6491 (baseline 0.5497) and was 0.6233 for ABIDE (baseline 0.5157). The specificity, sensitivity and Jstat for ADHD (resp., ABIDE) are 0.8191, 0.4416 and 0.2607 (respectively, 0.6768, 0.5533 and 0.2301). To our knowl- edge, our holdout accuracies achieved on ADHD-200 test data and the ABIDE test data are the best known when only using fMRI scans.",
+      "section": "results",
+      "claim": "Hold-out accuracy was 0.6233 for ABIDE (baseline 0.5157), described as the best known result using fMRI scans alone.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We found that models trained using only site information achieved an accuracy of 66.0% on the ADHD data and 55.0% on the ABIDE data, while our models trained on MRI data achieved much higher accuracies: 67.4% and 64.3%, respectively.",
+      "section": "results",
+      "claim": "A model using only site identity achieved just 55.0% accuracy on ABIDE, far below the 64.3% achieved using MRI-derived features, indicating the classifier is not simply exploiting site identity.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We then tested those previously-trained classifiers on these new “site-balanced test sets” and found that the accuracies did not differ significantly from the original test set results: here, it was 69.88% for ADHD-200 and 63.46% for ABIDE.",
+      "section": "results",
+      "claim": "Accuracy on site-balanced (50:50 case:control per site) test sets was 63.46% for ABIDE, not significantly different from the original test set, confirming the result is not a site-composition artifact.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Both datasets are available online publicly. The ADHD-200 dataset is available at: http://fcon_1000.projects.nitrc.org/ indi/adhd200/ The ABIDE dataset is available at: (http://fcon_1000.projects.nitrc.org/indi/abide/).",
+      "section": "methods",
+      "claim": "Both the ADHD-200 and ABIDE datasets used are publicly available online.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "ABIDE cohort composition, sites, and the train/hold-out split (preserving case:control ratio) are explicit: \"The ABIDE dataset consists of 1111 scans, taken from 17 sites consisting of 573 healthy controls and 538 patients with autism. To evaluate each learning model, we use 800 subjects (70%) for model training and 311 subjects (30%) for hold-out testing. We use the same case/control ratio (0.5157) for both training and test set.\""
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Unclear",
+        "support": "Preprocessing software (SPM8) and steps are described by reference to a prior paper's pipeline, but no atlas/parcellation is used (features are ICA spatial components and texture filters) and no CPAC/DPARSF pipeline version is reported."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "Diagnosis source is not described in this paper beyond citing the ABIDE release."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Low",
+        "support": "Hyperparameters were selected via 5-fold CV restricted to the training set only, with a held-out test set reserved for final evaluation, and an explicit site-confound check (site-only baseline accuracy near chance; site-balanced test sets gave similar accuracy to the original): \"We then tested those previously-trained classifiers on these new “site-balanced test sets” and found that the accuracies did not differ significantly from the original test set results: here, it was 69.88% for ADHD-200 and 63.46% for ABIDE.\""
+      }
+    ],
+    "overall": "Low",
+    "summary": "Cohort, train/test split and site-confound checks are all explicit and leakage-conscious (CV confined to training data, a site-balanced test replication); the main gaps are the absence of a named atlas/standard connectivity pipeline and an undescribed diagnostic label source."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "538 (ABIDE I total); hold-out test set preserved a 0.5157 case:control ratio across 311 test subjects (exact test-set ASD count not given)",
+    "n_controls": "573 (ABIDE I total); hold-out test set preserved a 0.5157 case:control ratio across 311 test subjects (exact test-set TD count not given)",
+    "data_types": "resting-state fMRI, structural MRI",
+    "feature_extraction_tools": "SPM8 plus in-house MATLAB preprocessing (identical to Ghiassian et al.); spatial non-stationary independent component analysis (ICA) for fMRI features; sparse-autoencoder texture filters for structural MRI",
+    "specific_features": "Time courses of subject-level spatial ICA components (functional); autoencoder-derived texture features convolved with structural MRI (no atlas/ROI parcellation used)",
+    "model_category": "Linear support vector machine (SVM) ensembles combining structural and functional feature learners",
+    "specific_algorithms": "LEFMS (structural texture + SVM), LEFMF (ICA time-course features + SVM), LEFMSF (combined structural+functional features + SVM)",
+    "validation_methodology": "70/30 train/hold-out split (case:control ratio preserved); 5-fold CV within the training set for hyperparameter selection; binomial and McNemar significance tests; permutation tests; a site-confound check (site-only classifier baseline, and re-evaluation on site-balanced test sets)",
+    "performance_metrics": "Accuracy, sensitivity, specificity, J-statistic",
+    "key_performance_results": "LEFMSF (combined) hold-out accuracy on ABIDE = 0.643 (specificity 0.683, sensitivity 0.600, J-stat 0.283), described as the best known result using only imaging data, exceeding prior published results by 0.042; LEFMF (fMRI only) hold-out accuracy = 0.6233 (baseline 0.5157); site-only baseline accuracy was 55.0%, and accuracy on a site-balanced test set was 63.46%, similar to the original test accuracy.",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "Yes — ABIDE (and ADHD-200) are stated to be publicly available online, with the ABIDE source URL given.",
+    "custom_fields": {
+      "RQ1": "ABIDE I: 1111 scans from 17 sites (573 HC, 538 ASD); split into 800 (70%) training and 311 (30%) hold-out test subjects, preserving the overall case:control ratio (0.5157) in both sets. | quote: \"The ABIDE dataset consists of 1111 scans, taken from 17 sites consisting of 573 healthy controls and 538 patients with autism. To evaluate each learning model, we use 800 subjects (70%) for model training and 311 subjects (30%) for hold-out testing. We use the same case/control ratio (0.5157) for both training and test set.\"",
+      "RQ2": "SPM8 plus in-house MATLAB code (preprocessing identical to a prior published pipeline); no named ROI atlas — functional features come from subject-level spatial ICA components rather than an ROI parcellation. | quote: \"For preprocessing fMRI and MRI scans, we used SPM8 (http://www.fil.ion.ucl.ac.uk/spm/ software/spm8/) and our own in-house MATLAB code. Preprocessing was identical to that used in Ghiassian et al. [13].\"",
+      "RQ3": "predictive — ASD vs. control classification using combined structural-texture and functional-ICA features with an SVM. | quote: \"achieving an accuracy of 0.673 on the ADHD-200 holdout data and 0.643 on the ABIDE holdout data. Both of these results, obtained with the same LEFMSF framework, are the best known, over all hold-out accuracies on these datasets when only using imaging data—exceeding previously-published results by 0.012 for ADHD and 0.042 for Autism.\"",
+      "RQ4": "5-fold CV within the 70% training set for hyperparameter selection, with final evaluation on a untouched 30% hold-out set; significance assessed via binomial tests (vs. chance and vs. prior state-of-the-art) and McNemar tests; an explicit site-confound check compared a site-only baseline classifier and re-evaluated on site-balanced test sets. | quote: \"We found that models trained using only site information achieved an accuracy of 66.0% on the ADHD data and 55.0% on the ABIDE data, while our models trained on MRI data achieved much higher accuracies: 67.4% and 64.3%, respectively.\"",
+      "RQ5": "Combined model (LEFMSF) achieved 0.643 hold-out accuracy on ABIDE, the best known result using imaging data alone, exceeding prior published results by 0.042; a site-only classifier achieved only 55.0% accuracy on ABIDE (near chance) and accuracy on a site-balanced test set (63.46%) was similar to the original, indicating the result is not a site-composition artifact. | quote: \"achieving an accuracy of 0.673 on the ADHD-200 holdout data and 0.643 on the ABIDE holdout data. Both of these results, obtained with the same LEFMSF framework, are the best known, over all hold-out accuracies on these datasets when only using imaging data—exceeding previously-published results by 0.012 for ADHD and 0.042 for Autism.\"",
+      "RQ6": "yes — exact rules — exact total N, site count, class counts and the train/hold-out split rule are given, and both datasets are stated to be publicly available at their ABIDE/ADHD-200 source URLs. | quote: \"Both datasets are available online publicly. The ADHD-200 dataset is available at: http://fcon_1000.projects.nitrc.org/ indi/adhd200/ The ABIDE dataset is available at: (http://fcon_1000.projects.nitrc.org/indi/abide/).\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — total ABIDE N (1111: 573 HC/538 ASD, 17 sites) and the train/hold-out split rule are given, though the exact ASD/TD counts within the 311-subject hold-out set are not individually stated. | quote: \"The ABIDE dataset consists of 1111 scans, taken from 17 sites consisting of 573 healthy controls and 538 patients with autism. To evaluate each learning model, we use 800 subjects (70%) for model training and 311 subjects (30%) for hold-out testing. We use the same case/control ratio (0.5157) for both training and test set.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion/FD-based QC threshold is reported; preprocessing includes rigid-body motion correction but no exclusion rule based on a motion metric.",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — SPM8 and in-house MATLAB code are named (by reference to a prior paper's identical pipeline), but no CPAC/DPARSF-style named pipeline or version number is given. | quote: \"For preprocessing fMRI and MRI scans, we used SPM8 (http://www.fil.ion.ucl.ac.uk/spm/ software/spm8/) and our own in-house MATLAB code. Preprocessing was identical to that used in Ghiassian et al. [13].\"",
+      "CL4 Atlas/parcellation reported?": "No — features are derived from subject-level spatial ICA components and structural texture filters, not a named ROI atlas/parcellation.",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Yes — hyperparameters were selected via 5-fold CV confined to the 70% training set, with the 30% hold-out set reserved untouched for final evaluation. | quote: \"The ABIDE dataset consists of 1111 scans, taken from 17 sites consisting of 573 healthy controls and 538 patients with autism. To evaluate each learning model, we use 800 subjects (70%) for model training and 311 subjects (30%) for hold-out testing. We use the same case/control ratio (0.5157) for both training and test set.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly — no ComBat/covariate harmonisation or leave-site-out scheme is used, but the authors explicitly test for site confounding via a site-only baseline classifier and a site-balanced test-set re-evaluation, both of which argue against a site-driven result. | quote: \"We then tested those previously-trained classifiers on these new “site-balanced test sets” and found that the accuracies did not differ significantly from the original test set results: here, it was 69.88% for ADHD-200 and 63.46% for ABIDE.\"",
+      "CL7 Code and/or participant list available?": "Partly — the ABIDE and ADHD-200 datasets are stated to be publicly available (with source URLs), but no analysis code repository or participant ID list specific to this study is given. | quote: \"Both datasets are available online publicly. The ADHD-200 dataset is available at: http://fcon_1000.projects.nitrc.org/ indi/adhd200/ The ABIDE dataset is available at: (http://fcon_1000.projects.nitrc.org/indi/abide/).\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Cohort totals, sites, and the train/hold-out split rule are explicit (CL1); no motion-QC rule reported (CL2)."
+    },
+    "domain_2_predictors_preprocessing": {
+      "rating": "Partial",
+      "overall_concern": "Some",
+      "support": "Preprocessing software is named via a prior paper, but no standard atlas/parcellation or pipeline version is reported (CL3, CL4)."
+    },
+    "domain_3_outcome_label_source": {
+      "rating": "Unclear",
+      "overall_concern": "Some",
+      "support": "Diagnostic label source is not described beyond citing the ABIDE release."
+    },
+    "domain_4_bias_transparency": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "CV confined to the training set, an untouched hold-out test set, and an explicit site-confound check (site-only baseline and site-balanced re-test) together give strong leakage/confound transparency (CL5, CL6); dataset openness is reported, though no dedicated code repository is given (CL7)."
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction (SVM on combined structural-texture and functional-ICA features) using ABIDE I (1111 scans, 573 HC/538 ASD, 17 sites), split 800 training / 311 hold-out test (case:control ratio preserved).",
+    "methods": "SPM8-preprocessed structural and resting-state fMRI; structural texture features from a sparse-autoencoder convolutional model and functional features from subject-level spatial ICA time courses, combined via linear SVM (LEFMSF); 5-fold CV for hyperparameter tuning within the training set, evaluated on an untouched hold-out set; explicit site-confound checks.",
+    "outcomes": "LEFMSF achieved 0.643 hold-out accuracy on ABIDE (specificity 0.683, sensitivity 0.600), the best known result using imaging data alone at publication, exceeding prior work by 0.042; a site-only baseline classifier scored only 55.0% and a site-balanced re-test gave 63.46%, arguing against a site-driven result.",
+    "key_limitations": "No named ROI atlas/standard connectivity pipeline (features are ICA/texture-based); no motion/FD-based QC rule reported; diagnostic label source not described; exact ASD/TD counts within the hold-out test set not individually reported.",
+    "relevance_notes": "A methodologically careful example combining structural and functional ABIDE I features with an explicit, quantitative check that model performance is not driven by site identity, directly relevant to confound/leakage assessment in ABIDE-based prediction studies.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1371/journal.pone.0194856",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Full ABIDE I release (1111 scans, 573 HC/538 ASD, 17 sites), split into an 800-subject (70%) training set and a 311-subject (30%) hold-out test set, preserving the overall case:control ratio (0.5157) in both.",
+    "n_by_dx": {
+      "ASD": 538,
+      "TD": 573,
+      "total": 1111
+    },
+    "sites": "17",
+    "pipeline": "SPM8 plus in-house MATLAB preprocessing (rigid-body motion correction and further steps identical to Ghiassian et al.)",
+    "atlas": "None — subject-level spatial ICA components used in place of an ROI atlas",
+    "claim_type": "predictive",
+    "finding": "Combined structural+functional model (LEFMSF) achieved 0.643 hold-out accuracy on ABIDE, the best known imaging-only result at publication (0.042 above prior work); a site-only baseline classifier scored only 55.0% and a site-balanced re-test gave 63.46%, indicating the result is not driven by site identity.",
+    "reconstructible": "yes — exact rules",
+    "evidence_quotes": [
+      "The ABIDE dataset consists of 1111 scans, taken from 17 sites consisting of 573 healthy controls and 538 patients with autism. To evaluate each learning model, we use 800 subjects (70%) for model training and 311 subjects (30%) for hold-out testing. We use the same case/control ratio (0.5157) for both training and test set.",
+      "achieving an accuracy of 0.673 on the ADHD-200 holdout data and 0.643 on the ABIDE holdout data. Both of these results, obtained with the same LEFMSF framework, are the best known, over all hold-out accuracies on these datasets when only using imaging data—exceeding previously-published results by 0.012 for ADHD and 0.042 for Autism.",
+      "We then tested those previously-trained classifiers on these new “site-balanced test sets” and found that the accuracies did not differ significantly from the original test set results: here, it was 69.88% for ADHD-200 and 63.46% for ABIDE."
+    ]
+  }
+}

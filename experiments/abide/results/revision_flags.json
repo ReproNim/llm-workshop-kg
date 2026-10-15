@@ -1,0 +1,393 @@
+{
+ "graph": "graph/abide_kg_v1.ttl (before recomputation)",
+ "affected_participants_by_cohort": {
+  "B_v1": 63,
+  "A_v1": 38
+ },
+ "affected_participants": {
+  "B_v1": [
+   "urn:repronim:abide:participant/KKI_0050792",
+   "urn:repronim:abide:participant/KKI_0050800",
+   "urn:repronim:abide:participant/KKI_0050821",
+   "urn:repronim:abide:participant/Leuven_1_0050700",
+   "urn:repronim:abide:participant/Leuven_2_0050737",
+   "urn:repronim:abide:participant/Leuven_2_0050751",
+   "urn:repronim:abide:participant/MaxMun_a_0051607",
+   "urn:repronim:abide:participant/MaxMun_c_0051336",
+   "urn:repronim:abide:participant/MaxMun_d_0051329",
+   "urn:repronim:abide:participant/NYU_0050979",
+   "urn:repronim:abide:participant/NYU_0050984",
+   "urn:repronim:abide:participant/NYU_0050997",
+   "urn:repronim:abide:participant/NYU_0051011",
+   "urn:repronim:abide:participant/NYU_0051012",
+   "urn:repronim:abide:participant/NYU_0051033",
+   "urn:repronim:abide:participant/NYU_0051035",
+   "urn:repronim:abide:participant/NYU_0051077",
+   "urn:repronim:abide:participant/OHSU_0050161",
+   "urn:repronim:abide:participant/OHSU_0050169",
+   "urn:repronim:abide:participant/Olin_0050102",
+   "urn:repronim:abide:participant/Olin_0050112",
+   "urn:repronim:abide:participant/Olin_0050119",
+   "urn:repronim:abide:participant/Pitt_0050007",
+   "urn:repronim:abide:participant/Pitt_0050008",
+   "urn:repronim:abide:participant/Pitt_0050031",
+   "urn:repronim:abide:participant/Pitt_0050034",
+   "urn:repronim:abide:participant/Pitt_0050035",
+   "urn:repronim:abide:participant/Pitt_0050042",
+   "urn:repronim:abide:participant/Pitt_0050046",
+   "urn:repronim:abide:participant/Pitt_0050048",
+   "urn:repronim:abide:participant/Pitt_0050056",
+   "urn:repronim:abide:participant/SBL_0051564",
+   "urn:repronim:abide:participant/SBL_0051567",
+   "urn:repronim:abide:participant/SBL_0051576",
+   "urn:repronim:abide:participant/SBL_0051580",
+   "urn:repronim:abide:participant/SBL_0051582",
+   "urn:repronim:abide:participant/SBL_0051585",
+   "urn:repronim:abide:participant/Stanford_0051185",
+   "urn:repronim:abide:participant/Trinity_0050232",
+   "urn:repronim:abide:participant/Trinity_0050245",
+   "urn:repronim:abide:participant/Trinity_0050247",
+   "urn:repronim:abide:participant/UCLA_1_0051236",
+   "urn:repronim:abide:participant/UCLA_2_0051294",
+   "urn:repronim:abide:participant/UCLA_2_0051301",
+   "urn:repronim:abide:participant/UM_1_0050278",
+   "urn:repronim:abide:participant/UM_1_0050292",
+   "urn:repronim:abide:participant/UM_1_0050297",
+   "urn:repronim:abide:participant/UM_1_0050343",
+   "urn:repronim:abide:participant/UM_1_0050364",
+   "urn:repronim:abide:participant/UM_2_0050411",
+   "urn:repronim:abide:participant/USM_0050437",
+   "urn:repronim:abide:participant/USM_0050445",
+   "urn:repronim:abide:participant/USM_0050448",
+   "urn:repronim:abide:participant/USM_0050463",
+   "urn:repronim:abide:participant/USM_0050483",
+   "urn:repronim:abide:participant/USM_0050487",
+   "urn:repronim:abide:participant/USM_0050490",
+   "urn:repronim:abide:participant/USM_0050496",
+   "urn:repronim:abide:participant/USM_0050504",
+   "urn:repronim:abide:participant/USM_0050507",
+   "urn:repronim:abide:participant/USM_0050530",
+   "urn:repronim:abide:participant/Yale_0050624",
+   "urn:repronim:abide:participant/Yale_0050626"
+  ],
+  "A_v1": [
+   "urn:repronim:abide:participant/Leuven_1_0050700",
+   "urn:repronim:abide:participant/MaxMun_a_0051607",
+   "urn:repronim:abide:participant/MaxMun_c_0051336",
+   "urn:repronim:abide:participant/MaxMun_d_0051329",
+   "urn:repronim:abide:participant/NYU_0050979",
+   "urn:repronim:abide:participant/NYU_0050984",
+   "urn:repronim:abide:participant/NYU_0050997",
+   "urn:repronim:abide:participant/NYU_0051011",
+   "urn:repronim:abide:participant/NYU_0051012",
+   "urn:repronim:abide:participant/NYU_0051033",
+   "urn:repronim:abide:participant/NYU_0051035",
+   "urn:repronim:abide:participant/NYU_0051077",
+   "urn:repronim:abide:participant/Pitt_0050007",
+   "urn:repronim:abide:participant/Pitt_0050008",
+   "urn:repronim:abide:participant/Pitt_0050031",
+   "urn:repronim:abide:participant/Pitt_0050034",
+   "urn:repronim:abide:participant/Pitt_0050035",
+   "urn:repronim:abide:participant/Pitt_0050042",
+   "urn:repronim:abide:participant/Pitt_0050046",
+   "urn:repronim:abide:participant/Pitt_0050048",
+   "urn:repronim:abide:participant/Pitt_0050056",
+   "urn:repronim:abide:participant/Trinity_0050232",
+   "urn:repronim:abide:participant/Trinity_0050247",
+   "urn:repronim:abide:participant/UCLA_1_0051236",
+   "urn:repronim:abide:participant/UM_1_0050292",
+   "urn:repronim:abide:participant/UM_1_0050297",
+   "urn:repronim:abide:participant/UM_1_0050364",
+   "urn:repronim:abide:participant/UM_2_0050411",
+   "urn:repronim:abide:participant/USM_0050437",
+   "urn:repronim:abide:participant/USM_0050445",
+   "urn:repronim:abide:participant/USM_0050463",
+   "urn:repronim:abide:participant/USM_0050483",
+   "urn:repronim:abide:participant/USM_0050487",
+   "urn:repronim:abide:participant/USM_0050490",
+   "urn:repronim:abide:participant/USM_0050496",
+   "urn:repronim:abide:participant/USM_0050504",
+   "urn:repronim:abide:participant/USM_0050507",
+   "urn:repronim:abide:participant/USM_0050530"
+  ]
+ },
+ "folds": [
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/CALTECH",
+   "site": "CALTECH",
+   "affected_in_test": 0,
+   "affected_in_train": 63
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/CMU",
+   "site": "CMU",
+   "affected_in_test": 0,
+   "affected_in_train": 63
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/KKI",
+   "site": "KKI",
+   "affected_in_test": 3,
+   "affected_in_train": 60
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/LEUVEN_1",
+   "site": "LEUVEN_1",
+   "affected_in_test": 1,
+   "affected_in_train": 62
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/LEUVEN_2",
+   "site": "LEUVEN_2",
+   "affected_in_test": 2,
+   "affected_in_train": 61
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/MAX_MUN",
+   "site": "MAX_MUN",
+   "affected_in_test": 3,
+   "affected_in_train": 60
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/NYU",
+   "site": "NYU",
+   "affected_in_test": 8,
+   "affected_in_train": 55
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/OHSU",
+   "site": "OHSU",
+   "affected_in_test": 2,
+   "affected_in_train": 61
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/OLIN",
+   "site": "OLIN",
+   "affected_in_test": 3,
+   "affected_in_train": 60
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/PITT",
+   "site": "PITT",
+   "affected_in_test": 9,
+   "affected_in_train": 54
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/SBL",
+   "site": "SBL",
+   "affected_in_test": 6,
+   "affected_in_train": 57
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/SDSU",
+   "site": "SDSU",
+   "affected_in_test": 0,
+   "affected_in_train": 63
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/STANFORD",
+   "site": "STANFORD",
+   "affected_in_test": 1,
+   "affected_in_train": 62
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/TRINITY",
+   "site": "TRINITY",
+   "affected_in_test": 3,
+   "affected_in_train": 60
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/UCLA_1",
+   "site": "UCLA_1",
+   "affected_in_test": 1,
+   "affected_in_train": 62
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/UCLA_2",
+   "site": "UCLA_2",
+   "affected_in_test": 2,
+   "affected_in_train": 61
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/UM_1",
+   "site": "UM_1",
+   "affected_in_test": 5,
+   "affected_in_train": 58
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/UM_2",
+   "site": "UM_2",
+   "affected_in_test": 1,
+   "affected_in_train": 62
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/USM",
+   "site": "USM",
+   "affected_in_test": 11,
+   "affected_in_train": 52
+  },
+  {
+   "fold": "urn:repronim:abide:fold/B_v1/YALE",
+   "site": "YALE",
+   "affected_in_test": 2,
+   "affected_in_train": 61
+  }
+ ],
+ "n_folds_with_affected_test": 17,
+ "n_folds_with_affected_train": 20,
+ "n_folds_total": 20,
+ "cohort_A_site_counts_under_v2": {
+  "LEUVEN_1": {
+   "ASD": 13,
+   "TD": 13
+  },
+  "MAX_MUN": {
+   "ASD": 9,
+   "TD": 22
+  },
+  "NYU": {
+   "ASD": 52,
+   "TD": 66
+  },
+  "PITT": {
+   "ASD": 13,
+   "TD": 12
+  },
+  "TRINITY": {
+   "ASD": 16,
+   "TD": 21
+  },
+  "UCLA_1": {
+   "ASD": 24,
+   "TD": 23
+  },
+  "UM_1": {
+   "ASD": 18,
+   "TD": 28
+  },
+  "UM_2": {
+   "ASD": 10,
+   "TD": 18
+  },
+  "USM": {
+   "ASD": 27,
+   "TD": 18
+  }
+ },
+ "cohort_A_sites_falling_below_minimum": [
+  "MAX_MUN"
+ ],
+ "flagged_by_kind": {
+  "claim_or_review": 6,
+  "result": 2,
+  "fold_result": 80,
+  "pooled_result": 4
+ },
+ "flagged_entities": [
+  "urn:repronim:abide:assessment/A_vs_paper",
+  "urn:repronim:abide:assessment/B_vs_paper",
+  "urn:repronim:abide:claim/A_v1",
+  "urn:repronim:abide:claim/B_v1",
+  "urn:repronim:abide:result/A_v1",
+  "urn:repronim:abide:result/B_v1/CALTECH/correlation",
+  "urn:repronim:abide:result/B_v1/CALTECH/demographic",
+  "urn:repronim:abide:result/B_v1/CALTECH/demographic_fd",
+  "urn:repronim:abide:result/B_v1/CALTECH/tangent",
+  "urn:repronim:abide:result/B_v1/CMU/correlation",
+  "urn:repronim:abide:result/B_v1/CMU/demographic",
+  "urn:repronim:abide:result/B_v1/CMU/demographic_fd",
+  "urn:repronim:abide:result/B_v1/CMU/tangent",
+  "urn:repronim:abide:result/B_v1/KKI/correlation",
+  "urn:repronim:abide:result/B_v1/KKI/demographic",
+  "urn:repronim:abide:result/B_v1/KKI/demographic_fd",
+  "urn:repronim:abide:result/B_v1/KKI/tangent",
+  "urn:repronim:abide:result/B_v1/LEUVEN_1/correlation",
+  "urn:repronim:abide:result/B_v1/LEUVEN_1/demographic",
+  "urn:repronim:abide:result/B_v1/LEUVEN_1/demographic_fd",
+  "urn:repronim:abide:result/B_v1/LEUVEN_1/tangent",
+  "urn:repronim:abide:result/B_v1/LEUVEN_2/correlation",
+  "urn:repronim:abide:result/B_v1/LEUVEN_2/demographic",
+  "urn:repronim:abide:result/B_v1/LEUVEN_2/demographic_fd",
+  "urn:repronim:abide:result/B_v1/LEUVEN_2/tangent",
+  "urn:repronim:abide:result/B_v1/MAX_MUN/correlation",
+  "urn:repronim:abide:result/B_v1/MAX_MUN/demographic",
+  "urn:repronim:abide:result/B_v1/MAX_MUN/demographic_fd",
+  "urn:repronim:abide:result/B_v1/MAX_MUN/tangent",
+  "urn:repronim:abide:result/B_v1/NYU/correlation",
+  "urn:repronim:abide:result/B_v1/NYU/demographic",
+  "urn:repronim:abide:result/B_v1/NYU/demographic_fd",
+  "urn:repronim:abide:result/B_v1/NYU/tangent",
+  "urn:repronim:abide:result/B_v1/OHSU/correlation",
+  "urn:repronim:abide:result/B_v1/OHSU/demographic",
+  "urn:repronim:abide:result/B_v1/OHSU/demographic_fd",
+  "urn:repronim:abide:result/B_v1/OHSU/tangent",
+  "urn:repronim:abide:result/B_v1/OLIN/correlation",
+  "urn:repronim:abide:result/B_v1/OLIN/demographic",
+  "urn:repronim:abide:result/B_v1/OLIN/demographic_fd",
+  "urn:repronim:abide:result/B_v1/OLIN/tangent",
+  "urn:repronim:abide:result/B_v1/PITT/correlation",
+  "urn:repronim:abide:result/B_v1/PITT/demographic",
+  "urn:repronim:abide:result/B_v1/PITT/demographic_fd",
+  "urn:repronim:abide:result/B_v1/PITT/tangent",
+  "urn:repronim:abide:result/B_v1/SBL/correlation",
+  "urn:repronim:abide:result/B_v1/SBL/demographic",
+  "urn:repronim:abide:result/B_v1/SBL/demographic_fd",
+  "urn:repronim:abide:result/B_v1/SBL/tangent",
+  "urn:repronim:abide:result/B_v1/SDSU/correlation",
+  "urn:repronim:abide:result/B_v1/SDSU/demographic",
+  "urn:repronim:abide:result/B_v1/SDSU/demographic_fd",
+  "urn:repronim:abide:result/B_v1/SDSU/tangent",
+  "urn:repronim:abide:result/B_v1/STANFORD/correlation",
+  "urn:repronim:abide:result/B_v1/STANFORD/demographic",
+  "urn:repronim:abide:result/B_v1/STANFORD/demographic_fd",
+  "urn:repronim:abide:result/B_v1/STANFORD/tangent",
+  "urn:repronim:abide:result/B_v1/TRINITY/correlation",
+  "urn:repronim:abide:result/B_v1/TRINITY/demographic",
+  "urn:repronim:abide:result/B_v1/TRINITY/demographic_fd",
+  "urn:repronim:abide:result/B_v1/TRINITY/tangent",
+  "urn:repronim:abide:result/B_v1/UCLA_1/correlation",
+  "urn:repronim:abide:result/B_v1/UCLA_1/demographic",
+  "urn:repronim:abide:result/B_v1/UCLA_1/demographic_fd",
+  "urn:repronim:abide:result/B_v1/UCLA_1/tangent",
+  "urn:repronim:abide:result/B_v1/UCLA_2/correlation",
+  "urn:repronim:abide:result/B_v1/UCLA_2/demographic",
+  "urn:repronim:abide:result/B_v1/UCLA_2/demographic_fd",
+  "urn:repronim:abide:result/B_v1/UCLA_2/tangent",
+  "urn:repronim:abide:result/B_v1/UM_1/correlation",
+  "urn:repronim:abide:result/B_v1/UM_1/demographic",
+  "urn:repronim:abide:result/B_v1/UM_1/demographic_fd",
+  "urn:repronim:abide:result/B_v1/UM_1/tangent",
+  "urn:repronim:abide:result/B_v1/UM_2/correlation",
+  "urn:repronim:abide:result/B_v1/UM_2/demographic",
+  "urn:repronim:abide:result/B_v1/UM_2/demographic_fd",
+  "urn:repronim:abide:result/B_v1/UM_2/tangent",
+  "urn:repronim:abide:result/B_v1/USM/correlation",
+  "urn:repronim:abide:result/B_v1/USM/demographic",
+  "urn:repronim:abide:result/B_v1/USM/demographic_fd",
+  "urn:repronim:abide:result/B_v1/USM/tangent",
+  "urn:repronim:abide:result/B_v1/YALE/correlation",
+  "urn:repronim:abide:result/B_v1/YALE/demographic",
+  "urn:repronim:abide:result/B_v1/YALE/demographic_fd",
+  "urn:repronim:abide:result/B_v1/YALE/tangent",
+  "urn:repronim:abide:result/B_v1/pooled/correlation",
+  "urn:repronim:abide:result/B_v1/pooled/demographic",
+  "urn:repronim:abide:result/B_v1/pooled/demographic_fd",
+  "urn:repronim:abide:result/B_v1/pooled/tangent",
+  "urn:repronim:abide:review/A_reviews_B_v1",
+  "urn:repronim:abide:review/B_reviews_A_v1",
+  "urn:repronim:abide:review/B_reviews_A_v1"
+ ],
+ "queries": [
+  "queries/revision_participants.rq",
+  "queries/revision_folds.rq",
+  "queries/revision_downstream.rq",
+  "queries/revision_site_eligibility.rq"
+ ],
+ "engine": "pyoxigraph 0.5.11 (in memory)",
+ "query_seconds": {
+  "participants": 0.0116,
+  "folds": 0.0331,
+  "downstream": 0.0009,
+  "site_eligibility": 0.0059
+ }
+}

@@ -1,0 +1,256 @@
+{
+  "source_id": "S-032",
+  "pmid": "local_bfdf942b",
+  "doi": "10.1371/journal.pone.0166934",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2-3: uses ABIDE resting-state fMRI (HOG features) in combination with structural MRI and personal characteristic data for ASD vs control diagnostic prediction.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "This\ndataset is comprised of resting state fMRI and T1-weighted structural MRI scans from 1112\nsubjects, including patients with autism and healthy controls. ABIDE participant data was col-\nlected at 17 different institutions in North America and Europe.",
+      "section": "methods",
+      "claim": "ABIDE comprises resting-state fMRI and T1 structural MRI from 1112 subjects across 17 institutions.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "We had to exclude one subject whose\ndata could not be preprocessed with our preprocessing pipeline, leaving us with a dataset of\n1111 individuals, including 573 healthy controls and 538 patients with autism.",
+      "section": "methods",
+      "claim": "One subject was excluded for failing preprocessing, leaving 1111 individuals (573 controls, 538 ASD).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Therefore, we divided the ABIDE dataset into training and test sets by ran-\ndomly selecting a label-balanced 889 (4/5) of the ABIDE subjects as the training set, leaving\nthe remaining 222 (1/5) ABIDE subjects as the testing set.",
+      "section": "methods",
+      "claim": "The ABIDE dataset was randomly split into a label-balanced 889-subject training set and a 222-subject hold-out test set.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Testing on the hold-out test set Dtest protected against overfitting in terms of algo-\nrithm choice, feature selection, parameter values, a",
+      "section": "methods",
+      "claim": "A fully held-out test set was used to protect against overfitting from algorithm choice, feature selection, and parameter/weight learning.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "For preprocessing, we used SPM8, a software package designed for analyzing brain imaging\ndata and also for preprocessing fMRI data [27, 28] and our own in-house MATLAB code.",
+      "section": "methods",
+      "claim": "Preprocessing used SPM8 plus in-house MATLAB code, including motion correction, co-registration, and spatial normalization.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "Table 16. ABIDE results summary.\nData Source(s)\nAccuracy\nSensitivity\nSpeciﬁcity\nFunctional MRI\n59.2%\n72.2%\n45.4%\nStructural MRI\n60.1%\n70.4%\n49.1%\nPersonal Characteristic\n59.6%\n60.9%\n58.3%\nStructural MRI + Personal Characteristic\n64.1%\n75.7%\n51.9%\nFunctional MRI + Personal Characteristic\n65.0%\n71.3%\n58.3%",
+      "section": "results",
+      "claim": "ABIDE hold-out results: functional MRI 59.2%, structural MRI 60.1%, personal characteristics 59.6%, structural+PCD 64.1%, functional+PCD 65.0% accuracy (best).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Data Availability Statement: All data used in this\npaper are publicly available as follows: The ADHD-\n200 dataset is available online at http://fcon_1000.\nprojects.nitrc.org/indi/adhd200/ The ABIDE dataset\nis available online at http://fcon_1000.projects.\nnitrc.org/indi/abide/.",
+      "section": "methods",
+      "claim": "ABIDE and ADHD-200 datasets used are both publicly available online.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "Raw N (1112) and post-QC N (1111: 573 controls, 538 ASD) by diagnosis are reported, with training/test split sizes given."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Unclear",
+        "support": "A custom SPM8-based preprocessing pipeline with HOG voxel-based features is described, but no atlas/parcellation is used since features are image-texture based rather than ROI connectivity."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD/control labels taken from ABIDE; diagnostic-instrument source not independently restated beyond a reference citation."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Low",
+        "support": "Feature selection (MRMR) and hyperparameter tuning were performed via 5-fold cross-validation strictly on the training set, with final evaluation on a completely held-out test set never used during model/feature selection — an explicit leakage-avoidance design. However, site was used directly as an input feature rather than harmonised or held out, which could allow the classifier to partly exploit site identity rather than disorder-related signal."
+      }
+    ],
+    "overall": "Low",
+    "summary": "Methodologically careful train/hold-out split with feature selection and tuning confined to the training set (avoiding peeking), but site is included as a raw predictive feature rather than harmonised, and no connectivity atlas/parcellation or explicit motion-metric threshold is reported."
+  },
+  "charting": {
+    "source_id": "S-032",
+    "title": "Using Functional or Structural Magnetic Resonance Images and Personal Characteristic Data to Identify ADHD and Autism",
+    "authors": "",
+    "year": "2016",
+    "journal_conference": "PLOS ONE",
+    "doi": "10.1371/journal.pone.0166934",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "Build a single automated learning pipeline (MHPC) to classify ADHD (ADHD-200) and autism (ABIDE) from functional/structural MRI and personal characteristic data",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "Multi-site (17 institutions, North America and Europe)",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "538",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "true",
+    "healthy_status_confirmed": "",
+    "n_controls": "573",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI, structural MRI, personal characteristic data (age, sex, handedness, IQ measures, site, eye status)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "",
+    "dataset_openly_available": "Yes — ABIDE and ADHD-200 datasets are both publicly available online; no separate analysis code repository mentioned",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Voxel-based image texture (3D Histogram of Oriented Gradients) + personal characteristic data",
+    "specific_features": "3D-HOG features extracted from functional or structural MRI (no ROI/atlas parcellation); feature selection via minimum-redundancy-maximum-relevance (MRMR)",
+    "feature_extraction_tools": "SPM8 + in-house MATLAB preprocessing pipeline (motion correction, co-registration, spatial normalization to MNI)",
+    "feature_importance_reported": "true",
+    "importance_method": "MRMR feature selection; features mapped back to brain regions",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "Ensemble of classical ML base learners (MHPC system)",
+    "specific_algorithms": "Linear SVM, RBF-kernel SVM, decision trees, k-nearest neighbours, naive Bayes",
+    "validation_methodology": "5-fold cross-validation on the training set for feature selection (MRMR) and hyperparameter tuning; final single evaluation on a held-out test set (889 train / 222 test, label-balanced random split)",
+    "performance_metrics": "Accuracy, sensitivity, specificity",
+    "key_performance_results": "ABIDE hold-out: Functional MRI 59.2% (baseline 51.6%), Structural MRI 60.1%, Personal Characteristic 59.6%, Structural+PCD 64.1%, Functional+PCD 65.0% (best) accuracy.",
+    "summary_key_findings": "Combining resting-state fMRI-derived HOG features with personal characteristic data achieved the best ABIDE hold-out accuracy of 65.0% (baseline 51.6%), outperforming functional MRI alone (59.2%), structural MRI alone (60.1%), and PCD alone (59.6%), and outperforming the then-best published ABIDE result (60.0% over a 53.6% baseline).",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "Site of imaging is used as an input feature rather than harmonised away or held out, which may let the classifier partly learn site identity rather than purely disorder-related signal.",
+    "custom_fields": {
+      "RQ1": "predictive — ABIDE (1112 raw, 1 excluded for preprocessing failure, 1111 final: 573 controls, 538 ASD) across 17 institutions; randomly split into label-balanced 889-subject training and 222-subject hold-out test sets | quote: \"Therefore, we divided the ABIDE dataset into training and test sets by ran- domly selecting a label-balanced 889 (4/5) of the ABIDE subjects as the training set, leaving the remaining 222 (1/5) ABIDE subjects as the testing set.\"",
+      "RQ2": "Custom SPM8 + in-house MATLAB preprocessing pipeline (motion correction, co-registration, MNI normalization); no atlas/parcellation — features are 3D-HOG voxel-based image-texture descriptors, not ROI connectivity | quote: \"For preprocessing, we used SPM8, a software package designed for analyzing brain imaging data and also for preprocessing fMRI data [27, 28] and our own in-house MATLAB code.\"",
+      "RQ3": "predictive — ASD vs control classification combining functional/structural MRI with personal characteristic data | quote: \"This dataset is comprised of resting state fMRI and T1-weighted structural MRI scans from 1112 subjects, including patients with autism and healthy controls. ABIDE participant data was col- lected at 17 different institutions in North America and Europe.\"",
+      "RQ4": "5-fold cross-validation on the training set only for feature selection (MRMR) and hyperparameter tuning, followed by a single evaluation on a completely held-out test set never used in model/feature selection; no leave-site-out evaluation — site is instead included as an input feature | quote: \"Testing on the hold-out test set Dtest protected against overfitting in terms of algo- rithm choice, feature selection, parameter values, a\"",
+      "RQ5": "predictive — best ABIDE hold-out accuracy 65.0% (baseline 51.6%) combining functional MRI with personal characteristic data; functional MRI alone 59.2%, structural MRI alone 60.1%, PCD alone 59.6%, structural+PCD 64.1% | quote: \"Table 16. ABIDE results summary. Data Source(s) Accuracy Sensitivity Speciﬁcity Functional MRI 59.2% 72.2% 45.4% Structural MRI 60.1% 70.4% 49.1% Personal Characteristic 59.6% 60.9% 58.3% Structural MRI + Personal Characteristic 64.1% 75.7% 51.9% Functional MRI + Personal Characteristic 65.0% 71.3% 58.3%\"",
+      "RQ6": "partly — N, QC exclusions, and the train/test split procedure (random, label-balanced) are reported, but the exact 889/222 participant assignment is not published as an ID list | quote: \"Therefore, we divided the ABIDE dataset into training and test sets by ran- domly selecting a label-balanced 889 (4/5) of the ABIDE subjects as the training set, leaving the remaining 222 (1/5) ABIDE subjects as the testing set.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"We had to exclude one subject whose data could not be preprocessed with our preprocessing pipeline, leaving us with a dataset of 1111 individuals, including 573 healthy controls and 538 patients with autism.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — one subject excluded for a general preprocessing failure; no specific motion-metric (e.g. FD) threshold value is given in the main text | quote: \"We had to exclude one subject whose data could not be preprocessed with our preprocessing pipeline, leaving us with a dataset of 1111 individuals, including 573 healthy controls and 538 patients with autism.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — SPM8 plus in-house MATLAB pipeline | quote: \"For preprocessing, we used SPM8, a software package designed for analyzing brain imaging data and also for preprocessing fMRI data [27, 28] and our own in-house MATLAB code.\"",
+      "CL4 Atlas/parcellation reported?": "No — voxel-based HOG texture features are used, not an ROI/atlas-based parcellation | quote: \"\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Yes — MRMR feature selection and hyperparameter tuning were performed via cross-validation strictly on the training set, with a single final evaluation on a held-out test set | quote: \"Testing on the hold-out test set Dtest protected against overfitting in terms of algo- rithm choice, feature selection, parameter values, a\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly — site of imaging is included as a personal-characteristic input feature rather than harmonised or evaluated via leave-site-out | quote: \"The ABIDE dataset also provided an extensive array of non-imaging, personal characteristic information from which we used age, sex, handedness, full scale IQ, verbal IQ, performance IQ, site of the imaging and eyestat (which indicated whether the person kept his eyes open or not during the scan).\"",
+      "CL7 Code and/or participant list available?": "Partly — the ABIDE and ADHD-200 datasets are publicly available online, but no separate analysis code repository is mentioned | quote: \"Data Availability Statement: All data used in this paper are publicly available as follows: The ADHD- 200 dataset is available online at http://fcon_1000. projects.nitrc.org/indi/adhd200/ The ABIDE dataset is available online at http://fcon_1000.projects. nitrc.org/indi/abide/.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"This dataset is comprised of resting state fMRI and T1-weighted structural MRI scans from 1112 subjects, including patients with autism and healthy controls. ABIDE participant data was col- lected at 17 different institutions in North America and Europe.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-032",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "Raw and post-QC N by diagnosis, plus train/test split sizes."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Partial",
+          "notes": "General preprocessing-failure exclusion stated; no specific motion metric/threshold."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline reported",
+          "rating": "Yes",
+          "notes": "SPM8 + in-house pipeline described."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "No",
+          "notes": "Voxel-based HOG features, no ROI atlas."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source reported",
+          "rating": "Unclear",
+          "notes": "Labels from ABIDE; diagnostic instrument not independently restated."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "Yes",
+          "notes": "Feature selection/tuning confined to training-set CV; held-out test set used once."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "Partial",
+          "notes": "Site used as an input feature rather than harmonised or leave-site-out evaluated."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "Partial",
+          "notes": "Datasets public; no code repository mentioned."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-032",
+    "study_design_sample_dataset": "Diagnostic prediction (MHPC ensemble); ABIDE, N=1111 (573 controls, 538 ASD) from 17 institutions, split into 889 training / 222 hold-out test subjects.",
+    "methods": "SPM8-based preprocessing; 3D-HOG voxel-texture features from functional and/or structural MRI combined with personal characteristic data; MRMR feature selection and classifier/hyperparameter tuning via training-set cross-validation; single evaluation on a held-out test set.",
+    "outcomes": "Best ABIDE accuracy 65.0% (functional MRI + personal characteristics) vs 51.6% baseline, exceeding functional MRI alone (59.2%), structural MRI alone (60.1%) and PCD alone (59.6%).",
+    "key_limitations": "No connectivity atlas/parcellation used; site of imaging used as a raw feature rather than harmonised; no specific motion-metric threshold reported.",
+    "relevance_notes": "A clear example of hold-out-set discipline (feature selection/tuning strictly on training data) for ABIDE predictive modelling, though site handling via raw feature inclusion is methodologically distinct from harmonisation or leave-site-out approaches used elsewhere in this corpus.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1371/journal.pone.0166934",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "1111 individuals (573 controls, 538 ASD) from 17 institutions, after excluding 1 of 1112 subjects for a preprocessing failure; randomly split into an 889-subject training set and a 222-subject hold-out test set.",
+    "n_by_dx": {
+      "ASD": 538,
+      "TD": 573,
+      "total": 1111
+    },
+    "sites": "17",
+    "pipeline": "SPM8 + in-house MATLAB (custom)",
+    "atlas": "",
+    "claim_type": "predictive",
+    "finding": "Combining resting-state fMRI (3D-HOG features) with personal characteristic data achieves 65.0% hold-out accuracy on ABIDE (baseline 51.6%), the best of five feature combinations tested and an improvement over the prior best published ABIDE result.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "This\ndataset is comprised of resting state fMRI and T1-weighted structural MRI scans from 1112\nsubjects, including patients with autism and healthy controls. ABIDE participant data was col-\nlected at 17 different institutions in North America and Europe.",
+      "Therefore, we divided the ABIDE dataset into training and test sets by ran-\ndomly selecting a label-balanced 889 (4/5) of the ABIDE subjects as the training set, leaving\nthe remaining 222 (1/5) ABIDE subjects as the testing set.",
+      "Table 16. ABIDE results summary.\nData Source(s)\nAccuracy\nSensitivity\nSpeciﬁcity\nFunctional MRI\n59.2%\n72.2%\n45.4%\nStructural MRI\n60.1%\n70.4%\n49.1%\nPersonal Characteristic\n59.6%\n60.9%\n58.3%\nStructural MRI + Personal Characteristic\n64.1%\n75.7%\n51.9%\nFunctional MRI + Personal Characteristic\n65.0%\n71.3%\n58.3%"
+    ]
+  }
+}

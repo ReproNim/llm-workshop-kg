@@ -1,0 +1,55 @@
+query: "convert FreeSurfer stats to NIDM"  facets: none
+1. FreeSurfer NIDM BIDS App (SoftwareSourceCode; used here: pointer) score=5.872 (bm25 5.888 x freshness 0.995)
+   commits 90d=13, 365d=18, contributors 365d=2, last default-branch commit 2026-10-13T11:33:11Z (2 d before snapshot; last push 2026-10-13T13:19:15Z), release v0.1.1, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+2. segstats_jsonld (SoftwareSourceCode; used here: data_source) score=5.645 (bm25 7.96 x freshness 0.418)
+   commits 90d=0, 365d=11, contributors 365d=2, last default-branch commit 2025-11-30T19:34:41Z (318 d before snapshot; last push 2025-11-30T19:34:41Z), release None, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+3. MRIQC NIDM BIDS App (SoftwareSourceCode; used here: pointer) score=4.222 (bm25 4.234 x freshness 0.995)
+   commits 90d=10, 365d=20, contributors 365d=1, last default-branch commit 2026-10-13T04:20:29Z (2 d before snapshot; last push 2026-10-15T14:05:13Z), release v0.1.1, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+4. OpenNeuroDerivatives-NIDM (SoftwareSourceCode; used here: pointer) score=3.888 (bm25 4.375 x freshness 0.777)
+   commits 90d=0, 365d=2, contributors 365d=1, last default-branch commit 2026-07-14T18:05:08Z (92 d before snapshot; last push 2026-07-14T18:05:10Z), release None, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+5. simple2 BABS scripts (SoftwareSourceCode; used here: pointer) score=3.835 (bm25 3.851 x freshness 0.992)
+   commits 90d=8, 365d=19, contributors 365d=2, last default-branch commit 2026-10-12T10:35:28Z (3 d before snapshot; last push 2026-10-13T02:34:12Z), release None, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+
+query: "containerised reproducible execution on HPC"  facets: none
+1. simple2 BABS scripts (SoftwareSourceCode; used here: pointer) score=5.874 (bm25 5.899 x freshness 0.992)
+   commits 90d=8, 365d=19, contributors 365d=2, last default-branch commit 2026-10-12T10:35:28Z (3 d before snapshot; last push 2026-10-13T02:34:12Z), release None, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+2. ReproNim containers (Dataset; used here: pointer) score=4.963 (bm25 4.963 x freshness 1.0)
+   commits 90d=461, 365d=839, contributors 365d=5, last default-branch commit 2026-10-15T02:17:42Z (0 d before snapshot; last push 2026-10-15T02:21:57Z), release 1.20260903.0, OpenAlex=2 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+3. Neurodocker (SoftwareSourceCode; used here: pointer) score=4.695 (bm25 4.836 x freshness 0.942)
+   commits 90d=7, 365d=40, contributors 365d=11, last default-branch commit 2026-09-23T12:33:13Z (22 d before snapshot; last push 2026-10-01T04:46:18Z), release 2.1.2, OpenAlex=6 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+4. ReproMan (SoftwareSourceCode; used here: pointer) score=4.376 (bm25 5.446 x freshness 0.607)
+   commits 90d=0, 365d=5, contributors 365d=1, last default-branch commit 2026-04-16T13:19:29Z (182 d before snapshot; last push 2026-04-16T13:19:29Z), release v0.4.1, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+5. sensein agent_skills (SkillCollection; used here: pointer) score=4.082 (bm25 4.116 x freshness 0.984)
+   commits 90d=179, 365d=240, contributors 365d=5, last default-branch commit 2026-10-08T19:11:39Z (6 d before snapshot; last push 2026-10-15T14:45:48Z), release None, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+
+query: "harmonised assessment schema for phenotype questionnaires"  facets: none
+1. ReproSchema UI (SoftwareSourceCode; used here: pointer) score=7.089 (bm25 10.735 x freshness 0.321)
+   commits 90d=0, 365d=0, contributors 365d=0, last default-branch commit 2025-08-25T18:59:27Z (415 d before snapshot; last push 2025-08-25T19:00:24Z), release None, OpenAlex=1 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+2. ReproSchema (Specification; used here: pointer) score=6.668 (bm25 10.294 x freshness 0.295)
+   commits 90d=0, 365d=0, contributors 365d=0, last default-branch commit 2025-07-27T04:08:28Z (445 d before snapshot; last push 2026-03-06T17:38:50Z), release 1.0.0, OpenAlex=2 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+3. Neurobagel bagel-cli (SoftwareSourceCode; used here: pointer) score=6.262 (bm25 6.27 x freshness 0.997)
+   commits 90d=32, 365d=124, contributors 365d=8, last default-branch commit 2026-10-14T02:50:28Z (1 d before snapshot; last push 2026-10-14T19:09:07Z), release v0.11.6, OpenAlex=0 [as of 2026-10-15T15:12:34Z, 0.21 h old]
+4. reproschema-py (SoftwareSourceCode; used here: pointer) score=6.039 (bm25 8.089 x freshness 0.493)
+   commits 90d=0, 365d=7, contributors 365d=2, last default-branch commit 2026-01-29T19:59:42Z (258 d before snapshot; last push 2026-10-12T16:23:44Z), release 1.1.0, OpenAlex=1 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+5. NIDM-Experiment terms (Vocabulary; used here: pointer) score=5.121 (bm25 5.269 x freshness 0.944)
+   commits 90d=2, 365d=2, contributors 365d=1, last default-branch commit 2026-09-23T23:15:19Z (21 d before snapshot; last push 2026-09-23T23:15:19Z), release None, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+
+query: "query brain volumes across software"  facets: {'step': 'query_merge'}
+1. simple2 NIDM examples (ABIDE, ADHD200) (Dataset; used here: data_source) score=3.372 (bm25 5.142 x freshness 0.311)
+   commits 90d=0, 365d=0, contributors 365d=0, last default-branch commit 2025-08-14T16:05:07Z (426 d before snapshot; last push 2025-08-14T16:05:32Z), release None, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+2. Neurobagel query tool (SoftwareSourceCode; used here: pointer) score=2.262 (bm25 2.265 x freshness 0.997)
+   commits 90d=61, 365d=193, contributors 365d=10, last default-branch commit 2026-10-14T06:55:49Z (1 d before snapshot; last push 2026-10-14T19:34:59Z), release v0.17.0, OpenAlex=0 [as of 2026-10-15T15:12:34Z, 0.21 h old]
+3. Neurobagel federation API (SoftwareSourceCode; used here: pointer) score=1.384 (bm25 1.386 x freshness 0.997)
+   commits 90d=35, 365d=78, contributors 365d=7, last default-branch commit 2026-10-13T20:37:49Z (1 d before snapshot; last push 2026-10-14T05:27:38Z), release v0.10.0, OpenAlex=0 [as of 2026-10-15T15:12:34Z, 0.21 h old]
+4. Tutorial: ReproPond and ReproLake (TrainingMaterial; used here: pointer) score=1.213 (bm25 1.617 x freshness 0.5)
+   commits 90d=None, 365d=None, contributors 365d=None, last default-branch commit n/a (None d before snapshot; last push None), release None, OpenAlex=None [as of 2026-10-15T15:12:34Z, 0.21 h old]
+5. Oxigraph (pyoxigraph) (SoftwareSourceCode; used here: executed) score=0.069 (bm25 0.07 x freshness 0.995)
+   commits 90d=103, 365d=297, contributors 365d=15, last default-branch commit 2026-10-12T16:19:56Z (2 d before snapshot; last push 2026-10-12T16:19:59Z), release v0.5.11, OpenAlex=16 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+
+query: "quality control metrics"  facets: none
+1. MRIQC NIDM BIDS App (SoftwareSourceCode; used here: pointer) score=9.406 (bm25 9.431 x freshness 0.995)
+   commits 90d=10, 365d=20, contributors 365d=1, last default-branch commit 2026-10-13T04:20:29Z (2 d before snapshot; last push 2026-10-15T14:05:13Z), release v0.1.1, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+2. scikit-learn (SoftwareSourceCode; used here: executed) score=3.883 (bm25 3.888 x freshness 0.997)
+   commits 90d=237, 365d=1037, contributors 365d=194, last default-branch commit 2026-10-14T13:00:43Z (1 d before snapshot; last push 2026-10-14T13:00:44Z), release 1.9.1, OpenAlex=380 [as of 2026-10-15T14:57:37Z, 0.46 h old]
+3. ReproNim module-reproducible-basics (TrainingMaterial; used here: pointer) score=2.482 (bm25 4.943 x freshness 0.004)
+   commits 90d=0, 365d=0, contributors 365d=0, last default-branch commit 2021-04-28T12:33:17Z (1996 d before snapshot; last push 2021-04-28T12:33:17Z), release None, OpenAlex=0 [as of 2026-10-15T14:57:37Z, 0.46 h old]

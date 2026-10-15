@@ -1,0 +1,3633 @@
+@prefix ex: <urn:repronim:abide:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:repronim:abide:snapshot/abide-preprocessed/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "abide-preprocessed activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:openalex_count 8 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22Preprocessed+Connectomes+Project+ABIDE%22&per_page=1> ;
+    ex:snapshotOf <urn:repronim:abide:resource/abide-preprocessed> .
+
+<urn:repronim:abide:snapshot/abide-preprocessed/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "abide-preprocessed activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:openalex_count 8 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22Preprocessed+Connectomes+Project+ABIDE%22&per_page=1> ;
+    ex:snapshotOf <urn:repronim:abide:resource/abide-preprocessed> .
+
+<urn:repronim:abide:snapshot/abide-preprocessed/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "abide-preprocessed activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:openalex_count 8 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22Preprocessed+Connectomes+Project+ABIDE%22&per_page=1> ;
+    ex:snapshotOf <urn:repronim:abide:resource/abide-preprocessed> .
+
+<urn:repronim:abide:snapshot/abide-raw-bids/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "abide-raw-bids activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:snapshotOf <urn:repronim:abide:resource/abide-raw-bids> .
+
+<urn:repronim:abide:snapshot/abide-raw-bids/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "abide-raw-bids activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:snapshotOf <urn:repronim:abide:resource/abide-raw-bids> .
+
+<urn:repronim:abide:snapshot/abide-raw-bids/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "abide-raw-bids activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:snapshotOf <urn:repronim:abide:resource/abide-raw-bids> .
+
+<urn:repronim:abide:snapshot/abraham2017/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "abraham2017 activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:openalex_count 697 ;
+    ex:openalex_measure "cited_by_count of the DOI" ;
+    ex:openalex_query <https://api.openalex.org/works?filter=cites:W2522924024&per_page=1> ;
+    ex:snapshotOf <urn:repronim:abide:resource/abraham2017> .
+
+<urn:repronim:abide:snapshot/abraham2017/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "abraham2017 activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:openalex_count 697 ;
+    ex:openalex_measure "cited_by_count of the DOI" ;
+    ex:openalex_query <https://api.openalex.org/works?filter=cites:W2522924024&per_page=1> ;
+    ex:snapshotOf <urn:repronim:abide:resource/abraham2017> .
+
+<urn:repronim:abide:snapshot/abraham2017/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "abraham2017 activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:openalex_count 697 ;
+    ex:openalex_measure "cited_by_count of the DOI" ;
+    ex:openalex_query <https://api.openalex.org/works?filter=cites:W2522924024&per_page=1> ;
+    ex:snapshotOf <urn:repronim:abide:resource/abraham2017> .
+
+<urn:repronim:abide:snapshot/ants-nidm_bidsapp/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "ants-nidm_bidsapp activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 33 ;
+    ex:commits_90d 10 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 3 ;
+    ex:issues_opened_90d 5 ;
+    ex:last_push "2026-10-13T12:56:47+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.2.1" ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fants-nidm_bidsapp%22&per_page=1> ;
+    ex:prs_closed_90d 14 ;
+    ex:prs_opened_90d 12 ;
+    ex:snapshotOf <urn:repronim:abide:resource/ants-nidm_bidsapp> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/ants-nidm_bidsapp/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "ants-nidm_bidsapp activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 33 ;
+    ex:commits_90d 10 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 3 ;
+    ex:issues_opened_90d 5 ;
+    ex:last_commit_default_branch "2026-10-13T12:56:46+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-13T12:56:47+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.2.1" ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fants-nidm_bidsapp%22&per_page=1> ;
+    ex:prs_closed_90d 14 ;
+    ex:prs_opened_90d 12 ;
+    ex:snapshotOf <urn:repronim:abide:resource/ants-nidm_bidsapp> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/ants-nidm_bidsapp/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "ants-nidm_bidsapp activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 33 ;
+    ex:commits_90d 10 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 3 ;
+    ex:issues_opened_90d 5 ;
+    ex:last_commit_default_branch "2026-10-13T12:56:46+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-13T12:56:47+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.2.1" ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fants-nidm_bidsapp%22&per_page=1> ;
+    ex:prs_closed_90d 14 ;
+    ex:prs_opened_90d 12 ;
+    ex:snapshotOf <urn:repronim:abide:resource/ants-nidm_bidsapp> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/ants_seg_to_nidm/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "ants_seg_to_nidm activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 11 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2025-12-02T16:53:45+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fants_seg_to_nidm%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/ants_seg_to_nidm> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/ants_seg_to_nidm/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "ants_seg_to_nidm activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 11 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-12-02T16:53:45+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-12-02T16:53:45+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fants_seg_to_nidm%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/ants_seg_to_nidm> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/ants_seg_to_nidm/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "ants_seg_to_nidm activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 11 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-12-02T16:53:45+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-12-02T16:53:45+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fants_seg_to_nidm%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/ants_seg_to_nidm> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/babs-demo-ohbm2025/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "babs-demo-ohbm2025 activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2026-05-03T03:23:01+00:00"^^xsd:dateTime ;
+    ex:latest_release "v1.0-ohbm2025" ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fbabs-demo-ohbm2025%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/babs-demo-ohbm2025> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/babs-demo-ohbm2025/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "babs-demo-ohbm2025 activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-06-23T02:21:36+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-05-03T03:23:01+00:00"^^xsd:dateTime ;
+    ex:latest_release "v1.0-ohbm2025" ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fbabs-demo-ohbm2025%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/babs-demo-ohbm2025> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/babs-demo-ohbm2025/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "babs-demo-ohbm2025 activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-06-23T02:21:36+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-05-03T03:23:01+00:00"^^xsd:dateTime ;
+    ex:latest_release "v1.0-ohbm2025" ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fbabs-demo-ohbm2025%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/babs-demo-ohbm2025> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/bids-ld/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "bids-ld activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2019-08-13T09:22:47+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fbids-ld%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/bids-ld> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/bids-ld/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "bids-ld activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2019-08-07T12:57:24+00:00"^^xsd:dateTime ;
+    ex:last_push "2019-08-13T09:22:47+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fbids-ld%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/bids-ld> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/bids-ld/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "bids-ld activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2019-08-07T12:57:24+00:00"^^xsd:dateTime ;
+    ex:last_push "2019-08-13T09:22:47+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fbids-ld%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/bids-ld> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/containers/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "containers activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 839 ;
+    ex:commits_90d 461 ;
+    ex:contributors_365d 5 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_push "2026-10-15T02:21:57+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.20260903.0" ;
+    ex:latest_release_date "2026-09-04T14:07:44+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 48 ;
+    ex:openalex_count 2 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fcontainers%22&per_page=1> ;
+    ex:prs_closed_90d 8 ;
+    ex:prs_opened_90d 6 ;
+    ex:snapshotOf <urn:repronim:abide:resource/containers> ;
+    ex:stars 32 .
+
+<urn:repronim:abide:snapshot/containers/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "containers activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 839 ;
+    ex:commits_90d 461 ;
+    ex:contributors_365d 5 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-15T02:17:42+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T02:21:57+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.20260903.0" ;
+    ex:latest_release_date "2026-09-04T14:07:44+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 48 ;
+    ex:openalex_count 2 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fcontainers%22&per_page=1> ;
+    ex:prs_closed_90d 8 ;
+    ex:prs_opened_90d 6 ;
+    ex:snapshotOf <urn:repronim:abide:resource/containers> ;
+    ex:stars 32 .
+
+<urn:repronim:abide:snapshot/containers/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "containers activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 839 ;
+    ex:commits_90d 461 ;
+    ex:contributors_365d 5 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-15T02:17:42+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T02:21:57+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.20260903.0" ;
+    ex:latest_release_date "2026-09-04T14:07:44+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 48 ;
+    ex:openalex_count 2 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fcontainers%22&per_page=1> ;
+    ex:prs_closed_90d 8 ;
+    ex:prs_opened_90d 6 ;
+    ex:snapshotOf <urn:repronim:abide:resource/containers> ;
+    ex:stars 32 .
+
+<urn:repronim:abide:snapshot/cpac/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "cpac activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2025-10-31T17:08:20+00:00"^^xsd:dateTime ;
+    ex:latest_release "v1.3.0.post2" ;
+    ex:latest_release_date "2024-05-14T19:56:06+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 433 ;
+    ex:openalex_count 9 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FFCP-INDI%2FC-PAC%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/cpac> ;
+    ex:stars 82 .
+
+<urn:repronim:abide:snapshot/cpac/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "cpac activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2024-05-03T21:22:36+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-10-31T17:08:20+00:00"^^xsd:dateTime ;
+    ex:latest_release "v1.3.0.post2" ;
+    ex:latest_release_date "2024-05-14T19:56:06+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 433 ;
+    ex:openalex_count 9 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FFCP-INDI%2FC-PAC%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/cpac> ;
+    ex:stars 82 .
+
+<urn:repronim:abide:snapshot/cpac/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "cpac activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2024-05-03T21:22:36+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-10-31T17:08:20+00:00"^^xsd:dateTime ;
+    ex:latest_release "v1.3.0.post2" ;
+    ex:latest_release_date "2024-05-14T19:56:06+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 433 ;
+    ex:openalex_count 9 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FFCP-INDI%2FC-PAC%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/cpac> ;
+    ex:stars 82 .
+
+<urn:repronim:abide:snapshot/dimartino2014/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "dimartino2014 activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:openalex_count 2766 ;
+    ex:openalex_measure "cited_by_count of the DOI" ;
+    ex:openalex_query <https://api.openalex.org/works?filter=cites:W2167868121&per_page=1> ;
+    ex:snapshotOf <urn:repronim:abide:resource/dimartino2014> .
+
+<urn:repronim:abide:snapshot/dimartino2014/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "dimartino2014 activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:openalex_count 2766 ;
+    ex:openalex_measure "cited_by_count of the DOI" ;
+    ex:openalex_query <https://api.openalex.org/works?filter=cites:W2167868121&per_page=1> ;
+    ex:snapshotOf <urn:repronim:abide:resource/dimartino2014> .
+
+<urn:repronim:abide:snapshot/dimartino2014/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "dimartino2014 activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:openalex_count 2766 ;
+    ex:openalex_measure "cited_by_count of the DOI" ;
+    ex:openalex_query <https://api.openalex.org/works?filter=cites:W2167868121&per_page=1> ;
+    ex:snapshotOf <urn:repronim:abide:resource/dimartino2014> .
+
+<urn:repronim:abide:snapshot/fair_neuroimaging_with_nidm/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "fair_neuroimaging_with_nidm activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2025-09-03T19:36:36+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.2" ;
+    ex:latest_release_date "2025-07-09T19:03:37+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2FFAIR_neuroimaging_with_NIDM%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/fair_neuroimaging_with_nidm> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/fair_neuroimaging_with_nidm/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "fair_neuroimaging_with_nidm activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-09-03T19:36:32+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-09-03T19:36:36+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.2" ;
+    ex:latest_release_date "2025-07-09T19:03:37+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2FFAIR_neuroimaging_with_NIDM%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/fair_neuroimaging_with_nidm> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/fair_neuroimaging_with_nidm/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "fair_neuroimaging_with_nidm activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-09-03T19:36:32+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-09-03T19:36:36+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.2" ;
+    ex:latest_release_date "2025-07-09T19:03:37+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2FFAIR_neuroimaging_with_NIDM%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/fair_neuroimaging_with_nidm> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/freesurfer-nidm_bidsapp/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "freesurfer-nidm_bidsapp activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 18 ;
+    ex:commits_90d 13 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_push "2026-10-13T13:19:15+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.1.1" ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Ffreesurfer-nidm_bidsapp%22&per_page=1> ;
+    ex:prs_closed_90d 10 ;
+    ex:prs_opened_90d 10 ;
+    ex:snapshotOf <urn:repronim:abide:resource/freesurfer-nidm_bidsapp> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/freesurfer-nidm_bidsapp/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "freesurfer-nidm_bidsapp activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 18 ;
+    ex:commits_90d 13 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-13T11:33:11+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-13T13:19:15+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.1.1" ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Ffreesurfer-nidm_bidsapp%22&per_page=1> ;
+    ex:prs_closed_90d 10 ;
+    ex:prs_opened_90d 10 ;
+    ex:snapshotOf <urn:repronim:abide:resource/freesurfer-nidm_bidsapp> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/freesurfer-nidm_bidsapp/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "freesurfer-nidm_bidsapp activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 18 ;
+    ex:commits_90d 13 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-13T11:33:11+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-13T13:19:15+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.1.1" ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Ffreesurfer-nidm_bidsapp%22&per_page=1> ;
+    ex:prs_closed_90d 10 ;
+    ex:prs_opened_90d 10 ;
+    ex:snapshotOf <urn:repronim:abide:resource/freesurfer-nidm_bidsapp> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/fsl_seg_to_nidm/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "fsl_seg_to_nidm activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2022-05-18T10:43:08+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Ffsl_seg_to_nidm%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/fsl_seg_to_nidm> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/fsl_seg_to_nidm/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "fsl_seg_to_nidm activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2022-05-18T10:43:08+00:00"^^xsd:dateTime ;
+    ex:last_push "2022-05-18T10:43:08+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Ffsl_seg_to_nidm%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/fsl_seg_to_nidm> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/fsl_seg_to_nidm/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "fsl_seg_to_nidm activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2022-05-18T10:43:08+00:00"^^xsd:dateTime ;
+    ex:last_push "2022-05-18T10:43:08+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Ffsl_seg_to_nidm%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/fsl_seg_to_nidm> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/module-FAIR-data/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-FAIR-data activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2022-07-01T11:01:41+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 7 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-FAIR-data%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-FAIR-data> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/module-FAIR-data/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-FAIR-data activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2020-06-11T15:39:40+00:00"^^xsd:dateTime ;
+    ex:last_push "2022-07-01T11:01:41+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 7 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-FAIR-data%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-FAIR-data> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/module-FAIR-data/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-FAIR-data activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2020-06-11T15:39:40+00:00"^^xsd:dateTime ;
+    ex:last_push "2022-07-01T11:01:41+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 7 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-FAIR-data%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-FAIR-data> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/module-dataprocessing/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-dataprocessing activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2020-06-11T15:38:19+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 9 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-dataprocessing%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-dataprocessing> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/module-dataprocessing/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-dataprocessing activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2020-06-11T15:38:17+00:00"^^xsd:dateTime ;
+    ex:last_push "2020-06-11T15:38:19+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 9 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-dataprocessing%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-dataprocessing> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/module-dataprocessing/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-dataprocessing activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2020-06-11T15:38:17+00:00"^^xsd:dateTime ;
+    ex:last_push "2020-06-11T15:38:19+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 9 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-dataprocessing%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-dataprocessing> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/module-intro/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-intro activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2025-05-09T20:37:18+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-intro%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-intro> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/module-intro/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-intro activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-05-09T20:37:15+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-05-09T20:37:18+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-intro%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-intro> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/module-intro/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-intro activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-05-09T20:37:15+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-05-09T20:37:18+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-intro%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-intro> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/module-reproducible-basics/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-reproducible-basics activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2021-04-28T12:33:17+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 25 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-reproducible-basics%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-reproducible-basics> ;
+    ex:stars 5 .
+
+<urn:repronim:abide:snapshot/module-reproducible-basics/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-reproducible-basics activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2021-04-28T12:33:17+00:00"^^xsd:dateTime ;
+    ex:last_push "2021-04-28T12:33:17+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 25 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-reproducible-basics%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-reproducible-basics> ;
+    ex:stars 5 .
+
+<urn:repronim:abide:snapshot/module-reproducible-basics/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-reproducible-basics activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2021-04-28T12:33:17+00:00"^^xsd:dateTime ;
+    ex:last_push "2021-04-28T12:33:17+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 25 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-reproducible-basics%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-reproducible-basics> ;
+    ex:stars 5 .
+
+<urn:repronim:abide:snapshot/module-stats/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-stats activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2024-06-29T14:09:31+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 10 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-stats%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-stats> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/module-stats/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-stats activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2021-06-16T01:42:58+00:00"^^xsd:dateTime ;
+    ex:last_push "2024-06-29T14:09:31+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 10 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-stats%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-stats> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/module-stats/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "module-stats activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2021-06-16T01:42:58+00:00"^^xsd:dateTime ;
+    ex:last_push "2024-06-29T14:09:31+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 10 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmodule-stats%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/module-stats> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/mriqc-nidm_bidsapp/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "mriqc-nidm_bidsapp activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 20 ;
+    ex:commits_90d 10 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 2 ;
+    ex:issues_opened_90d 5 ;
+    ex:last_push "2026-10-15T14:05:13+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.1.1" ;
+    ex:open_issues_and_prs 4 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmriqc-nidm_bidsapp%22&per_page=1> ;
+    ex:prs_closed_90d 12 ;
+    ex:prs_opened_90d 13 ;
+    ex:snapshotOf <urn:repronim:abide:resource/mriqc-nidm_bidsapp> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/mriqc-nidm_bidsapp/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "mriqc-nidm_bidsapp activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 20 ;
+    ex:commits_90d 10 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 2 ;
+    ex:issues_opened_90d 5 ;
+    ex:last_commit_default_branch "2026-10-13T04:20:29+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T14:05:13+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.1.1" ;
+    ex:open_issues_and_prs 4 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmriqc-nidm_bidsapp%22&per_page=1> ;
+    ex:prs_closed_90d 12 ;
+    ex:prs_opened_90d 13 ;
+    ex:snapshotOf <urn:repronim:abide:resource/mriqc-nidm_bidsapp> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/mriqc-nidm_bidsapp/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "mriqc-nidm_bidsapp activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 20 ;
+    ex:commits_90d 10 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 2 ;
+    ex:issues_opened_90d 5 ;
+    ex:last_commit_default_branch "2026-10-13T04:20:29+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T14:05:13+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.1.1" ;
+    ex:open_issues_and_prs 4 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fmriqc-nidm_bidsapp%22&per_page=1> ;
+    ex:prs_closed_90d 12 ;
+    ex:prs_opened_90d 13 ;
+    ex:snapshotOf <urn:repronim:abide:resource/mriqc-nidm_bidsapp> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/neurobagel-api/20261015T151234Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "neurobagel-api activity as of 2026-10-15T15:12:34+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:12:34+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T151234Z> ;
+    ex:archived false ;
+    ex:commits_365d 101 ;
+    ex:commits_90d 38 ;
+    ex:contributors_365d 10 ;
+    ex:issues_closed_90d 11 ;
+    ex:issues_opened_90d 5 ;
+    ex:last_commit_default_branch "2026-10-14T22:02:42+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T07:03:16+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.11.0" ;
+    ex:latest_release_date "2026-09-14T22:01:13+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 24 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fneurobagel%2Fapi%22&per_page=1> ;
+    ex:prs_closed_90d 42 ;
+    ex:prs_opened_90d 38 ;
+    ex:snapshotOf <urn:repronim:abide:resource/neurobagel-api> ;
+    ex:stars 7 .
+
+<urn:repronim:abide:snapshot/neurobagel-api/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "neurobagel-api activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 101 ;
+    ex:commits_90d 38 ;
+    ex:contributors_365d 10 ;
+    ex:issues_closed_90d 11 ;
+    ex:issues_opened_90d 5 ;
+    ex:last_commit_default_branch "2026-10-14T22:02:42+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T07:03:16+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.11.0" ;
+    ex:latest_release_date "2026-09-14T22:01:13+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 24 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fneurobagel%2Fapi%22&per_page=1> ;
+    ex:prs_closed_90d 42 ;
+    ex:prs_opened_90d 38 ;
+    ex:snapshotOf <urn:repronim:abide:resource/neurobagel-api> ;
+    ex:stars 7 .
+
+<urn:repronim:abide:snapshot/neurobagel-bagel-cli/20261015T151234Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "neurobagel-bagel-cli activity as of 2026-10-15T15:12:34+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:12:34+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T151234Z> ;
+    ex:archived false ;
+    ex:commits_365d 124 ;
+    ex:commits_90d 32 ;
+    ex:contributors_365d 8 ;
+    ex:issues_closed_90d 4 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-14T02:50:28+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T19:09:07+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.11.6" ;
+    ex:latest_release_date "2026-09-16T19:14:22+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 36 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fneurobagel%2Fbagel-cli%22&per_page=1> ;
+    ex:prs_closed_90d 37 ;
+    ex:prs_opened_90d 34 ;
+    ex:snapshotOf <urn:repronim:abide:resource/neurobagel-bagel-cli> ;
+    ex:stars 5 .
+
+<urn:repronim:abide:snapshot/neurobagel-bagel-cli/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "neurobagel-bagel-cli activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 124 ;
+    ex:commits_90d 32 ;
+    ex:contributors_365d 8 ;
+    ex:issues_closed_90d 4 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-14T02:50:28+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T19:09:07+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.11.6" ;
+    ex:latest_release_date "2026-09-16T19:14:22+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 36 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fneurobagel%2Fbagel-cli%22&per_page=1> ;
+    ex:prs_closed_90d 37 ;
+    ex:prs_opened_90d 34 ;
+    ex:snapshotOf <urn:repronim:abide:resource/neurobagel-bagel-cli> ;
+    ex:stars 5 .
+
+<urn:repronim:abide:snapshot/neurobagel-federation-api/20261015T151234Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "neurobagel-federation-api activity as of 2026-10-15T15:12:34+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:12:34+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T151234Z> ;
+    ex:archived false ;
+    ex:commits_365d 78 ;
+    ex:commits_90d 35 ;
+    ex:contributors_365d 7 ;
+    ex:issues_closed_90d 9 ;
+    ex:issues_opened_90d 6 ;
+    ex:last_commit_default_branch "2026-10-13T20:37:49+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T05:27:38+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.10.0" ;
+    ex:latest_release_date "2026-09-14T22:01:41+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 13 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fneurobagel%2Ffederation-api%22&per_page=1> ;
+    ex:prs_closed_90d 35 ;
+    ex:prs_opened_90d 32 ;
+    ex:snapshotOf <urn:repronim:abide:resource/neurobagel-federation-api> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/neurobagel-federation-api/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "neurobagel-federation-api activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 78 ;
+    ex:commits_90d 35 ;
+    ex:contributors_365d 7 ;
+    ex:issues_closed_90d 9 ;
+    ex:issues_opened_90d 6 ;
+    ex:last_commit_default_branch "2026-10-13T20:37:49+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T05:27:38+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.10.0" ;
+    ex:latest_release_date "2026-09-14T22:01:41+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 13 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fneurobagel%2Ffederation-api%22&per_page=1> ;
+    ex:prs_closed_90d 35 ;
+    ex:prs_opened_90d 32 ;
+    ex:snapshotOf <urn:repronim:abide:resource/neurobagel-federation-api> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/neurobagel-query-tool/20261015T151234Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "neurobagel-query-tool activity as of 2026-10-15T15:12:34+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:12:34+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T151234Z> ;
+    ex:archived false ;
+    ex:commits_365d 193 ;
+    ex:commits_90d 61 ;
+    ex:contributors_365d 10 ;
+    ex:issues_closed_90d 12 ;
+    ex:issues_opened_90d 12 ;
+    ex:last_commit_default_branch "2026-10-14T06:55:49+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T19:34:59+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.17.0" ;
+    ex:latest_release_date "2026-09-15T16:16:58+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 52 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fneurobagel%2Fquery-tool%22&per_page=1> ;
+    ex:prs_closed_90d 61 ;
+    ex:prs_opened_90d 58 ;
+    ex:snapshotOf <urn:repronim:abide:resource/neurobagel-query-tool> ;
+    ex:stars 6 .
+
+<urn:repronim:abide:snapshot/neurobagel-query-tool/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "neurobagel-query-tool activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 193 ;
+    ex:commits_90d 61 ;
+    ex:contributors_365d 10 ;
+    ex:issues_closed_90d 12 ;
+    ex:issues_opened_90d 12 ;
+    ex:last_commit_default_branch "2026-10-14T06:55:49+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T19:34:59+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.17.0" ;
+    ex:latest_release_date "2026-09-15T16:16:58+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 52 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fneurobagel%2Fquery-tool%22&per_page=1> ;
+    ex:prs_closed_90d 61 ;
+    ex:prs_opened_90d 58 ;
+    ex:snapshotOf <urn:repronim:abide:resource/neurobagel-query-tool> ;
+    ex:stars 6 .
+
+<urn:repronim:abide:snapshot/neurodocker/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "neurodocker activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 40 ;
+    ex:commits_90d 7 ;
+    ex:contributors_365d 11 ;
+    ex:issues_closed_90d 4 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_push "2026-10-01T04:46:18+00:00"^^xsd:dateTime ;
+    ex:latest_release "2.1.2" ;
+    ex:latest_release_date "2026-04-15T23:13:50+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 1 ;
+    ex:openalex_count 6 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fneurodocker%22&per_page=1> ;
+    ex:prs_closed_90d 8 ;
+    ex:prs_opened_90d 2 ;
+    ex:snapshotOf <urn:repronim:abide:resource/neurodocker> ;
+    ex:stars 361 .
+
+<urn:repronim:abide:snapshot/neurodocker/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "neurodocker activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 40 ;
+    ex:commits_90d 7 ;
+    ex:contributors_365d 11 ;
+    ex:issues_closed_90d 4 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_commit_default_branch "2026-09-23T12:33:13+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-01T04:46:18+00:00"^^xsd:dateTime ;
+    ex:latest_release "2.1.2" ;
+    ex:latest_release_date "2026-04-15T23:13:50+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 1 ;
+    ex:openalex_count 6 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fneurodocker%22&per_page=1> ;
+    ex:prs_closed_90d 8 ;
+    ex:prs_opened_90d 2 ;
+    ex:snapshotOf <urn:repronim:abide:resource/neurodocker> ;
+    ex:stars 361 .
+
+<urn:repronim:abide:snapshot/neurodocker/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "neurodocker activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 40 ;
+    ex:commits_90d 7 ;
+    ex:contributors_365d 11 ;
+    ex:issues_closed_90d 4 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_commit_default_branch "2026-09-23T12:33:13+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-01T04:46:18+00:00"^^xsd:dateTime ;
+    ex:latest_release "2.1.2" ;
+    ex:latest_release_date "2026-04-15T23:13:50+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 1 ;
+    ex:openalex_count 6 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fneurodocker%22&per_page=1> ;
+    ex:prs_closed_90d 8 ;
+    ex:prs_opened_90d 2 ;
+    ex:snapshotOf <urn:repronim:abide:resource/neurodocker> ;
+    ex:stars 361 .
+
+<urn:repronim:abide:snapshot/nidm-experiment-cob/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-experiment-cob activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 2 ;
+    ex:commits_90d 2 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_push "2026-09-21T20:38:05+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2FNIDM-Experiment-COB%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 1 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-experiment-cob> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/nidm-experiment-cob/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-experiment-cob activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 2 ;
+    ex:commits_90d 2 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_commit_default_branch "2026-09-21T20:38:04+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-09-21T20:38:05+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2FNIDM-Experiment-COB%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 1 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-experiment-cob> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/nidm-experiment-cob/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-experiment-cob activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 2 ;
+    ex:commits_90d 2 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_commit_default_branch "2026-09-21T20:38:04+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-09-21T20:38:05+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 3 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2FNIDM-Experiment-COB%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 1 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-experiment-cob> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/nidm-experiment/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-experiment activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 2 ;
+    ex:commits_90d 2 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_push "2026-09-23T23:15:19+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 4 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidm-experiment%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 2 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-experiment> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/nidm-experiment/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-experiment activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 2 ;
+    ex:commits_90d 2 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_commit_default_branch "2026-09-23T23:15:19+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-09-23T23:15:19+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 4 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidm-experiment%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 2 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-experiment> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/nidm-experiment/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-experiment activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 2 ;
+    ex:commits_90d 2 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_commit_default_branch "2026-09-23T23:15:19+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-09-23T23:15:19+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 4 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidm-experiment%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 2 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-experiment> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/nidm-specs/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-specs activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2023-03-22T15:46:01+00:00"^^xsd:dateTime ;
+    ex:latest_release "NIDM-Results_1.3.0" ;
+    ex:open_issues_and_prs 58 ;
+    ex:openalex_count 2 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidm-specs%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-specs> ;
+    ex:stars 33 .
+
+<urn:repronim:abide:snapshot/nidm-specs/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-specs activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2023-03-22T15:46:01+00:00"^^xsd:dateTime ;
+    ex:last_push "2023-03-22T15:46:01+00:00"^^xsd:dateTime ;
+    ex:latest_release "NIDM-Results_1.3.0" ;
+    ex:open_issues_and_prs 58 ;
+    ex:openalex_count 2 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidm-specs%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-specs> ;
+    ex:stars 33 .
+
+<urn:repronim:abide:snapshot/nidm-specs/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-specs activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2023-03-22T15:46:01+00:00"^^xsd:dateTime ;
+    ex:last_push "2023-03-22T15:46:01+00:00"^^xsd:dateTime ;
+    ex:latest_release "NIDM-Results_1.3.0" ;
+    ex:open_issues_and_prs 58 ;
+    ex:openalex_count 2 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidm-specs%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-specs> ;
+    ex:stars 33 .
+
+<urn:repronim:abide:snapshot/nidm-terms/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-terms activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2023-05-10T00:05:10+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FNIDM-Terms%2Fterms%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-terms> ;
+    ex:stars 5 .
+
+<urn:repronim:abide:snapshot/nidm-terms/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-terms activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2023-01-30T19:27:39+00:00"^^xsd:dateTime ;
+    ex:last_push "2023-05-10T00:05:10+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FNIDM-Terms%2Fterms%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-terms> ;
+    ex:stars 5 .
+
+<urn:repronim:abide:snapshot/nidm-terms/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidm-terms activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2023-01-30T19:27:39+00:00"^^xsd:dateTime ;
+    ex:last_push "2023-05-10T00:05:10+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FNIDM-Terms%2Fterms%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidm-terms> ;
+    ex:stars 5 .
+
+<urn:repronim:abide:snapshot/nidmresults-fsl/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidmresults-fsl activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2024-02-20T21:17:00+00:00"^^xsd:dateTime ;
+    ex:latest_release "2.1.0" ;
+    ex:latest_release_date "2018-09-25T13:25:06+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 29 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidmresults-fsl%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidmresults-fsl> ;
+    ex:stars 5 .
+
+<urn:repronim:abide:snapshot/nidmresults-fsl/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidmresults-fsl activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2019-06-02T19:28:35+00:00"^^xsd:dateTime ;
+    ex:last_push "2024-02-20T21:17:00+00:00"^^xsd:dateTime ;
+    ex:latest_release "2.1.0" ;
+    ex:latest_release_date "2018-09-25T13:25:06+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 29 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidmresults-fsl%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidmresults-fsl> ;
+    ex:stars 5 .
+
+<urn:repronim:abide:snapshot/nidmresults-fsl/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidmresults-fsl activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2019-06-02T19:28:35+00:00"^^xsd:dateTime ;
+    ex:last_push "2024-02-20T21:17:00+00:00"^^xsd:dateTime ;
+    ex:latest_release "2.1.0" ;
+    ex:latest_release_date "2018-09-25T13:25:06+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 29 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidmresults-fsl%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidmresults-fsl> ;
+    ex:stars 5 .
+
+<urn:repronim:abide:snapshot/nidmresults/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidmresults activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 7 ;
+    ex:commits_90d 7 ;
+    ex:contributors_365d 3 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2026-10-12T22:43:26+00:00"^^xsd:dateTime ;
+    ex:latest_release "2.1.0" ;
+    ex:latest_release_date "2024-02-20T06:46:18+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 12 ;
+    ex:openalex_count 3 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidmresults%22&per_page=1> ;
+    ex:prs_closed_90d 6 ;
+    ex:prs_opened_90d 4 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidmresults> ;
+    ex:stars 7 .
+
+<urn:repronim:abide:snapshot/nidmresults/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidmresults activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 7 ;
+    ex:commits_90d 7 ;
+    ex:contributors_365d 3 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2026-07-23T13:03:24+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-12T22:43:26+00:00"^^xsd:dateTime ;
+    ex:latest_release "2.1.0" ;
+    ex:latest_release_date "2024-02-20T06:46:18+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 12 ;
+    ex:openalex_count 3 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidmresults%22&per_page=1> ;
+    ex:prs_closed_90d 6 ;
+    ex:prs_opened_90d 4 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidmresults> ;
+    ex:stars 7 .
+
+<urn:repronim:abide:snapshot/nidmresults/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nidmresults activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 7 ;
+    ex:commits_90d 7 ;
+    ex:contributors_365d 3 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2026-07-23T13:03:24+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-12T22:43:26+00:00"^^xsd:dateTime ;
+    ex:latest_release "2.1.0" ;
+    ex:latest_release_date "2024-02-20T06:46:18+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 12 ;
+    ex:openalex_count 3 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2Fnidmresults%22&per_page=1> ;
+    ex:prs_closed_90d 6 ;
+    ex:prs_opened_90d 4 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nidmresults> ;
+    ex:stars 7 .
+
+<urn:repronim:abide:snapshot/nilearn/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nilearn activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 592 ;
+    ex:commits_90d 145 ;
+    ex:contributors_365d 53 ;
+    ex:issues_closed_90d 56 ;
+    ex:issues_opened_90d 58 ;
+    ex:last_push "2026-10-15T13:36:17+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.14.1" ;
+    ex:latest_release_date "2026-09-04T08:12:50+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 283 ;
+    ex:openalex_count 40 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fnilearn%2Fnilearn%22&per_page=1> ;
+    ex:prs_closed_90d 160 ;
+    ex:prs_opened_90d 153 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nilearn> ;
+    ex:stars 1445 .
+
+<urn:repronim:abide:snapshot/nilearn/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nilearn activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 592 ;
+    ex:commits_90d 145 ;
+    ex:contributors_365d 53 ;
+    ex:issues_closed_90d 56 ;
+    ex:issues_opened_90d 58 ;
+    ex:last_commit_default_branch "2026-10-15T13:36:16+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T13:36:17+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.14.1" ;
+    ex:latest_release_date "2026-09-04T08:12:50+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 283 ;
+    ex:openalex_count 40 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fnilearn%2Fnilearn%22&per_page=1> ;
+    ex:prs_closed_90d 160 ;
+    ex:prs_opened_90d 153 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nilearn> ;
+    ex:stars 1445 .
+
+<urn:repronim:abide:snapshot/nilearn/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "nilearn activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 592 ;
+    ex:commits_90d 145 ;
+    ex:contributors_365d 53 ;
+    ex:issues_closed_90d 56 ;
+    ex:issues_opened_90d 58 ;
+    ex:last_commit_default_branch "2026-10-15T13:36:16+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T13:36:17+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.14.1" ;
+    ex:latest_release_date "2026-09-04T08:12:50+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 283 ;
+    ex:openalex_count 40 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fnilearn%2Fnilearn%22&per_page=1> ;
+    ex:prs_closed_90d 160 ;
+    ex:prs_opened_90d 153 ;
+    ex:snapshotOf <urn:repronim:abide:resource/nilearn> ;
+    ex:stars 1445 .
+
+<urn:repronim:abide:snapshot/openneuroderivatives-nidm/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "openneuroderivatives-nidm activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 2 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2026-07-14T18:05:10+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2FOpenNeuroDerivatives-NIDM%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/openneuroderivatives-nidm> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/openneuroderivatives-nidm/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "openneuroderivatives-nidm activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 2 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2026-07-14T18:05:08+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-07-14T18:05:10+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2FOpenNeuroDerivatives-NIDM%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/openneuroderivatives-nidm> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/openneuroderivatives-nidm/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "openneuroderivatives-nidm activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 2 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2026-07-14T18:05:08+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-07-14T18:05:10+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2FOpenNeuroDerivatives-NIDM%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/openneuroderivatives-nidm> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/pynidm/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "pynidm activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 103 ;
+    ex:commits_90d 17 ;
+    ex:contributors_365d 4 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_push "2026-09-14T23:59:08+00:00"^^xsd:dateTime ;
+    ex:latest_release "v4.5.5" ;
+    ex:latest_release_date "2026-09-14T23:59:09+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 65 ;
+    ex:openalex_count 6 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2FPyNIDM%22&per_page=1> ;
+    ex:prs_closed_90d 9 ;
+    ex:prs_opened_90d 10 ;
+    ex:snapshotOf <urn:repronim:abide:resource/pynidm> ;
+    ex:stars 24 .
+
+<urn:repronim:abide:snapshot/pynidm/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "pynidm activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 103 ;
+    ex:commits_90d 17 ;
+    ex:contributors_365d 4 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_commit_default_branch "2026-09-14T23:58:03+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-09-14T23:59:08+00:00"^^xsd:dateTime ;
+    ex:latest_release "v4.5.5" ;
+    ex:latest_release_date "2026-09-14T23:59:09+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 65 ;
+    ex:openalex_count 6 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2FPyNIDM%22&per_page=1> ;
+    ex:prs_closed_90d 9 ;
+    ex:prs_opened_90d 10 ;
+    ex:snapshotOf <urn:repronim:abide:resource/pynidm> ;
+    ex:stars 24 .
+
+<urn:repronim:abide:snapshot/pynidm/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "pynidm activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 103 ;
+    ex:commits_90d 17 ;
+    ex:contributors_365d 4 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 1 ;
+    ex:last_commit_default_branch "2026-09-14T23:58:03+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-09-14T23:59:08+00:00"^^xsd:dateTime ;
+    ex:latest_release "v4.5.5" ;
+    ex:latest_release_date "2026-09-14T23:59:09+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 65 ;
+    ex:openalex_count 6 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fincf-nidash%2FPyNIDM%22&per_page=1> ;
+    ex:prs_closed_90d 9 ;
+    ex:prs_opened_90d 10 ;
+    ex:snapshotOf <urn:repronim:abide:resource/pynidm> ;
+    ex:stars 24 .
+
+<urn:repronim:abide:snapshot/pyoxigraph/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "pyoxigraph activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 297 ;
+    ex:commits_90d 103 ;
+    ex:contributors_365d 15 ;
+    ex:issues_closed_90d 20 ;
+    ex:issues_opened_90d 40 ;
+    ex:last_push "2026-10-12T16:19:59+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.5.11" ;
+    ex:latest_release_date "2026-09-02T19:18:29+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 156 ;
+    ex:openalex_count 16 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Foxigraph%2Foxigraph%22&per_page=1> ;
+    ex:prs_closed_90d 107 ;
+    ex:prs_opened_90d 110 ;
+    ex:snapshotOf <urn:repronim:abide:resource/pyoxigraph> ;
+    ex:stars 1991 .
+
+<urn:repronim:abide:snapshot/pyoxigraph/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "pyoxigraph activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 297 ;
+    ex:commits_90d 103 ;
+    ex:contributors_365d 15 ;
+    ex:issues_closed_90d 20 ;
+    ex:issues_opened_90d 40 ;
+    ex:last_commit_default_branch "2026-10-12T16:19:56+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-12T16:19:59+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.5.11" ;
+    ex:latest_release_date "2026-09-02T19:18:29+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 156 ;
+    ex:openalex_count 16 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Foxigraph%2Foxigraph%22&per_page=1> ;
+    ex:prs_closed_90d 107 ;
+    ex:prs_opened_90d 110 ;
+    ex:snapshotOf <urn:repronim:abide:resource/pyoxigraph> ;
+    ex:stars 1991 .
+
+<urn:repronim:abide:snapshot/pyoxigraph/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "pyoxigraph activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 297 ;
+    ex:commits_90d 103 ;
+    ex:contributors_365d 15 ;
+    ex:issues_closed_90d 20 ;
+    ex:issues_opened_90d 40 ;
+    ex:last_commit_default_branch "2026-10-12T16:19:56+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-12T16:19:59+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.5.11" ;
+    ex:latest_release_date "2026-09-02T19:18:29+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 156 ;
+    ex:openalex_count 16 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Foxigraph%2Foxigraph%22&per_page=1> ;
+    ex:prs_closed_90d 107 ;
+    ex:prs_opened_90d 110 ;
+    ex:snapshotOf <urn:repronim:abide:resource/pyoxigraph> ;
+    ex:stars 1991 .
+
+<urn:repronim:abide:snapshot/pyshacl/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "pyshacl activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 32 ;
+    ex:commits_90d 4 ;
+    ex:contributors_365d 4 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 7 ;
+    ex:last_push "2026-07-28T01:35:01+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.40.1" ;
+    ex:latest_release_date "2026-07-28T01:37:42+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 50 ;
+    ex:openalex_count 22 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FRDFLib%2FpySHACL%22&per_page=1> ;
+    ex:prs_closed_90d 2 ;
+    ex:prs_opened_90d 3 ;
+    ex:snapshotOf <urn:repronim:abide:resource/pyshacl> ;
+    ex:stars 360 .
+
+<urn:repronim:abide:snapshot/pyshacl/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "pyshacl activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 32 ;
+    ex:commits_90d 4 ;
+    ex:contributors_365d 4 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 7 ;
+    ex:last_commit_default_branch "2026-07-28T01:34:29+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-07-28T01:35:01+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.40.1" ;
+    ex:latest_release_date "2026-07-28T01:37:42+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 50 ;
+    ex:openalex_count 22 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FRDFLib%2FpySHACL%22&per_page=1> ;
+    ex:prs_closed_90d 2 ;
+    ex:prs_opened_90d 3 ;
+    ex:snapshotOf <urn:repronim:abide:resource/pyshacl> ;
+    ex:stars 360 .
+
+<urn:repronim:abide:snapshot/pyshacl/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "pyshacl activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 32 ;
+    ex:commits_90d 4 ;
+    ex:contributors_365d 4 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 7 ;
+    ex:last_commit_default_branch "2026-07-28T01:34:29+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-07-28T01:35:01+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.40.1" ;
+    ex:latest_release_date "2026-07-28T01:37:42+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 50 ;
+    ex:openalex_count 22 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FRDFLib%2FpySHACL%22&per_page=1> ;
+    ex:prs_closed_90d 2 ;
+    ex:prs_opened_90d 3 ;
+    ex:snapshotOf <urn:repronim:abide:resource/pyshacl> ;
+    ex:stars 360 .
+
+<urn:repronim:abide:snapshot/rdflib/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "rdflib activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 82 ;
+    ex:commits_90d 25 ;
+    ex:contributors_365d 18 ;
+    ex:issues_closed_90d 26 ;
+    ex:issues_opened_90d 21 ;
+    ex:last_push "2026-10-14T19:38:40+00:00"^^xsd:dateTime ;
+    ex:latest_release "7.6.0" ;
+    ex:latest_release_date "2026-02-13T07:37:31+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 385 ;
+    ex:openalex_count 111 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FRDFLib%2Frdflib%22&per_page=1> ;
+    ex:prs_closed_90d 60 ;
+    ex:prs_opened_90d 69 ;
+    ex:snapshotOf <urn:repronim:abide:resource/rdflib> ;
+    ex:stars 2529 .
+
+<urn:repronim:abide:snapshot/rdflib/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "rdflib activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 82 ;
+    ex:commits_90d 25 ;
+    ex:contributors_365d 18 ;
+    ex:issues_closed_90d 26 ;
+    ex:issues_opened_90d 21 ;
+    ex:last_commit_default_branch "2026-10-13T07:13:18+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T19:38:40+00:00"^^xsd:dateTime ;
+    ex:latest_release "7.6.0" ;
+    ex:latest_release_date "2026-02-13T07:37:31+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 385 ;
+    ex:openalex_count 111 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FRDFLib%2Frdflib%22&per_page=1> ;
+    ex:prs_closed_90d 60 ;
+    ex:prs_opened_90d 69 ;
+    ex:snapshotOf <urn:repronim:abide:resource/rdflib> ;
+    ex:stars 2529 .
+
+<urn:repronim:abide:snapshot/rdflib/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "rdflib activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 82 ;
+    ex:commits_90d 25 ;
+    ex:contributors_365d 18 ;
+    ex:issues_closed_90d 26 ;
+    ex:issues_opened_90d 21 ;
+    ex:last_commit_default_branch "2026-10-13T07:13:18+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T19:38:40+00:00"^^xsd:dateTime ;
+    ex:latest_release "7.6.0" ;
+    ex:latest_release_date "2026-02-13T07:37:31+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 385 ;
+    ex:openalex_count 111 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FRDFLib%2Frdflib%22&per_page=1> ;
+    ex:prs_closed_90d 60 ;
+    ex:prs_opened_90d 69 ;
+    ex:snapshotOf <urn:repronim:abide:resource/rdflib> ;
+    ex:stars 2529 .
+
+<urn:repronim:abide:snapshot/reproin/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproin activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2025-05-12T14:40:11+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.11.6.2" ;
+    ex:latest_release_date "2023-05-26T17:50:45+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 41 ;
+    ex:openalex_count 3 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproin%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproin> ;
+    ex:stars 56 .
+
+<urn:repronim:abide:snapshot/reproin/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproin activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-05-12T14:39:53+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-05-12T14:40:11+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.11.6.2" ;
+    ex:latest_release_date "2023-05-26T17:50:45+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 41 ;
+    ex:openalex_count 3 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproin%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproin> ;
+    ex:stars 56 .
+
+<urn:repronim:abide:snapshot/reproin/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproin activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-05-12T14:39:53+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-05-12T14:40:11+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.11.6.2" ;
+    ex:latest_release_date "2023-05-26T17:50:45+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 41 ;
+    ex:openalex_count 3 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproin%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproin> ;
+    ex:stars 56 .
+
+<urn:repronim:abide:snapshot/reproinventory/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproinventory activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 97 ;
+    ex:commits_90d 36 ;
+    ex:contributors_365d 5 ;
+    ex:issues_closed_90d 7 ;
+    ex:issues_opened_90d 6 ;
+    ex:last_push "2026-10-15T12:21:41+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2FReproInventory%22&per_page=1> ;
+    ex:prs_closed_90d 17 ;
+    ex:prs_opened_90d 16 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproinventory> ;
+    ex:stars 6 .
+
+<urn:repronim:abide:snapshot/reproinventory/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproinventory activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 97 ;
+    ex:commits_90d 36 ;
+    ex:contributors_365d 5 ;
+    ex:issues_closed_90d 7 ;
+    ex:issues_opened_90d 6 ;
+    ex:last_commit_default_branch "2026-10-15T12:20:28+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T12:21:41+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2FReproInventory%22&per_page=1> ;
+    ex:prs_closed_90d 17 ;
+    ex:prs_opened_90d 16 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproinventory> ;
+    ex:stars 6 .
+
+<urn:repronim:abide:snapshot/reproinventory/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproinventory activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 97 ;
+    ex:commits_90d 36 ;
+    ex:contributors_365d 5 ;
+    ex:issues_closed_90d 7 ;
+    ex:issues_opened_90d 6 ;
+    ex:last_commit_default_branch "2026-10-15T12:20:28+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T12:21:41+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2FReproInventory%22&per_page=1> ;
+    ex:prs_closed_90d 17 ;
+    ex:prs_opened_90d 16 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproinventory> ;
+    ex:stars 6 .
+
+<urn:repronim:abide:snapshot/reprolake/20261015T151234Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reprolake activity as of 2026-10-15T15:12:34+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:12:34+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T151234Z> ;
+    ex:snapshotOf <urn:repronim:abide:resource/reprolake> .
+
+<urn:repronim:abide:snapshot/reprolake/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reprolake activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:snapshotOf <urn:repronim:abide:resource/reprolake> .
+
+<urn:repronim:abide:snapshot/reproman/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproman activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 5 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2026-04-16T13:19:29+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.4.1" ;
+    ex:latest_release_date "2023-01-17T16:56:51+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 164 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproman%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproman> ;
+    ex:stars 24 .
+
+<urn:repronim:abide:snapshot/reproman/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproman activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 5 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2026-04-16T13:19:29+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-04-16T13:19:29+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.4.1" ;
+    ex:latest_release_date "2023-01-17T16:56:51+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 164 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproman%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproman> ;
+    ex:stars 24 .
+
+<urn:repronim:abide:snapshot/reproman/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproman activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 5 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2026-04-16T13:19:29+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-04-16T13:19:29+00:00"^^xsd:dateTime ;
+    ex:latest_release "v0.4.1" ;
+    ex:latest_release_date "2023-01-17T16:56:51+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 164 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproman%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproman> ;
+    ex:stars 24 .
+
+<urn:repronim:abide:snapshot/repronim-pond-lake-tutorial/20261015T151234Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "repronim-pond-lake-tutorial activity as of 2026-10-15T15:12:34+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:12:34+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T151234Z> ;
+    ex:snapshotOf <urn:repronim:abide:resource/repronim-pond-lake-tutorial> .
+
+<urn:repronim:abide:snapshot/repronim-pond-lake-tutorial/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "repronim-pond-lake-tutorial activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:snapshotOf <urn:repronim:abide:resource/repronim-pond-lake-tutorial> .
+
+<urn:repronim:abide:snapshot/repronim-skills/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "repronim-skills activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 3 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2026-03-04T19:25:59+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fskills%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/repronim-skills> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/repronim-skills/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "repronim-skills activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 3 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2026-03-04T19:25:59+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-03-04T19:25:59+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fskills%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/repronim-skills> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/repronim-skills/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "repronim-skills activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 3 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2026-03-04T19:25:59+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-03-04T19:25:59+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fskills%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/repronim-skills> ;
+    ex:stars 0 .
+
+<urn:repronim:abide:snapshot/reproschema-library/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema-library activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2025-07-27T18:01:56+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 5 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema-library%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema-library> ;
+    ex:stars 10 .
+
+<urn:repronim:abide:snapshot/reproschema-library/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema-library activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-07-27T17:53:44+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-07-27T18:01:56+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 5 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema-library%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema-library> ;
+    ex:stars 10 .
+
+<urn:repronim:abide:snapshot/reproschema-library/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema-library activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-07-27T17:53:44+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-07-27T18:01:56+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 5 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema-library%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema-library> ;
+    ex:stars 10 .
+
+<urn:repronim:abide:snapshot/reproschema-py/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema-py activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 7 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2026-10-12T16:23:44+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.1.0" ;
+    ex:latest_release_date "2026-01-29T20:05:15+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 20 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema-py%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema-py> ;
+    ex:stars 2 .
+
+<urn:repronim:abide:snapshot/reproschema-py/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema-py activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 7 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2026-01-29T19:59:42+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-12T16:23:44+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.1.0" ;
+    ex:latest_release_date "2026-01-29T20:05:15+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 20 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema-py%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema-py> ;
+    ex:stars 2 .
+
+<urn:repronim:abide:snapshot/reproschema-py/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema-py activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 7 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2026-01-29T19:59:42+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-12T16:23:44+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.1.0" ;
+    ex:latest_release_date "2026-01-29T20:05:15+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 20 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema-py%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema-py> ;
+    ex:stars 2 .
+
+<urn:repronim:abide:snapshot/reproschema-ui/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema-ui activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2025-08-25T19:00:24+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 49 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema-ui%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema-ui> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/reproschema-ui/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema-ui activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-08-25T18:59:27+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-08-25T19:00:24+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 49 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema-ui%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema-ui> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/reproschema-ui/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema-ui activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-08-25T18:59:27+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-08-25T19:00:24+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 49 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema-ui%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema-ui> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/reproschema/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2026-03-06T17:38:50+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.0.0" ;
+    ex:latest_release_date "2024-06-21T15:22:23+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 25 ;
+    ex:openalex_count 2 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema> ;
+    ex:stars 18 .
+
+<urn:repronim:abide:snapshot/reproschema/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-07-27T04:08:28+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-03-06T17:38:50+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.0.0" ;
+    ex:latest_release_date "2024-06-21T15:22:23+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 25 ;
+    ex:openalex_count 2 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema> ;
+    ex:stars 18 .
+
+<urn:repronim:abide:snapshot/reproschema/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproschema activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-07-27T04:08:28+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-03-06T17:38:50+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.0.0" ;
+    ex:latest_release_date "2024-06-21T15:22:23+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 25 ;
+    ex:openalex_count 2 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproschema%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproschema> ;
+    ex:stars 18 .
+
+<urn:repronim:abide:snapshot/reproseed/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproseed activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 3 ;
+    ex:commits_90d 3 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_push "2026-10-05T19:28:08+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.1" ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproseed%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 3 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproseed> ;
+    ex:stars 9 .
+
+<urn:repronim:abide:snapshot/reproseed/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproseed activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 3 ;
+    ex:commits_90d 3 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-05T14:50:51+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-05T19:28:08+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.1" ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproseed%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 3 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproseed> ;
+    ex:stars 9 .
+
+<urn:repronim:abide:snapshot/reproseed/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reproseed activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 3 ;
+    ex:commits_90d 3 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-05T14:50:51+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-05T19:28:08+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.1" ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freproseed%22&per_page=1> ;
+    ex:prs_closed_90d 1 ;
+    ex:prs_opened_90d 3 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reproseed> ;
+    ex:stars 9 .
+
+<urn:repronim:abide:snapshot/reprostim/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reprostim activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 511 ;
+    ex:commits_90d 91 ;
+    ex:contributors_365d 4 ;
+    ex:issues_closed_90d 6 ;
+    ex:issues_opened_90d 11 ;
+    ex:last_push "2026-10-14T11:15:13+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.7.37" ;
+    ex:latest_release_date "2026-09-16T10:54:01+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 57 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freprostim%22&per_page=1> ;
+    ex:prs_closed_90d 14 ;
+    ex:prs_opened_90d 14 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reprostim> ;
+    ex:stars 8 .
+
+<urn:repronim:abide:snapshot/reprostim/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reprostim activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 511 ;
+    ex:commits_90d 91 ;
+    ex:contributors_365d 4 ;
+    ex:issues_closed_90d 6 ;
+    ex:issues_opened_90d 11 ;
+    ex:last_commit_default_branch "2026-09-30T10:15:51+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T11:15:13+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.7.37" ;
+    ex:latest_release_date "2026-09-16T10:54:01+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 57 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freprostim%22&per_page=1> ;
+    ex:prs_closed_90d 14 ;
+    ex:prs_opened_90d 14 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reprostim> ;
+    ex:stars 8 .
+
+<urn:repronim:abide:snapshot/reprostim/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reprostim activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 511 ;
+    ex:commits_90d 91 ;
+    ex:contributors_365d 4 ;
+    ex:issues_closed_90d 6 ;
+    ex:issues_opened_90d 11 ;
+    ex:last_commit_default_branch "2026-09-30T10:15:51+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T11:15:13+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.7.37" ;
+    ex:latest_release_date "2026-09-16T10:54:01+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 57 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freprostim%22&per_page=1> ;
+    ex:prs_closed_90d 14 ;
+    ex:prs_opened_90d 14 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reprostim> ;
+    ex:stars 8 .
+
+<urn:repronim:abide:snapshot/reprozip/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reprozip activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2025-07-29T18:31:10+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.0.6" ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freprozip%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reprozip> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/reprozip/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reprozip activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-07-29T18:31:02+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-07-29T18:31:10+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.0.6" ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freprozip%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reprozip> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/reprozip/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "reprozip activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-07-29T18:31:02+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-07-29T18:31:10+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.0.6" ;
+    ex:open_issues_and_prs 0 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Freprozip%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/reprozip> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/scikit-learn/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "scikit-learn activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 1037 ;
+    ex:commits_90d 237 ;
+    ex:contributors_365d 194 ;
+    ex:issues_closed_90d 132 ;
+    ex:issues_opened_90d 145 ;
+    ex:last_push "2026-10-14T13:00:44+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.9.1" ;
+    ex:latest_release_date "2026-09-11T09:38:12+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2155 ;
+    ex:openalex_count 380 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fscikit-learn%2Fscikit-learn%22&per_page=1> ;
+    ex:prs_closed_90d 465 ;
+    ex:prs_opened_90d 490 ;
+    ex:snapshotOf <urn:repronim:abide:resource/scikit-learn> ;
+    ex:stars 67612 .
+
+<urn:repronim:abide:snapshot/scikit-learn/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "scikit-learn activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 1037 ;
+    ex:commits_90d 237 ;
+    ex:contributors_365d 194 ;
+    ex:issues_closed_90d 132 ;
+    ex:issues_opened_90d 145 ;
+    ex:last_commit_default_branch "2026-10-14T13:00:43+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T13:00:44+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.9.1" ;
+    ex:latest_release_date "2026-09-11T09:38:12+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2155 ;
+    ex:openalex_count 380 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fscikit-learn%2Fscikit-learn%22&per_page=1> ;
+    ex:prs_closed_90d 465 ;
+    ex:prs_opened_90d 490 ;
+    ex:snapshotOf <urn:repronim:abide:resource/scikit-learn> ;
+    ex:stars 67612 .
+
+<urn:repronim:abide:snapshot/scikit-learn/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "scikit-learn activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 1037 ;
+    ex:commits_90d 237 ;
+    ex:contributors_365d 194 ;
+    ex:issues_closed_90d 132 ;
+    ex:issues_opened_90d 145 ;
+    ex:last_commit_default_branch "2026-10-14T13:00:43+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-14T13:00:44+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.9.1" ;
+    ex:latest_release_date "2026-09-11T09:38:12+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2155 ;
+    ex:openalex_count 380 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fscikit-learn%2Fscikit-learn%22&per_page=1> ;
+    ex:prs_closed_90d 465 ;
+    ex:prs_opened_90d 489 ;
+    ex:snapshotOf <urn:repronim:abide:resource/scikit-learn> ;
+    ex:stars 67613 .
+
+<urn:repronim:abide:snapshot/segstats_jsonld/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "segstats_jsonld activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 11 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2025-11-30T19:34:41+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 11 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fsegstats_jsonld%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/segstats_jsonld> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/segstats_jsonld/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "segstats_jsonld activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 11 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-11-30T19:34:41+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-11-30T19:34:41+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 11 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fsegstats_jsonld%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/segstats_jsonld> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/segstats_jsonld/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "segstats_jsonld activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 11 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-11-30T19:34:41+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-11-30T19:34:41+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 11 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fsegstats_jsonld%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/segstats_jsonld> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/sensein-agent-skills/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "sensein-agent-skills activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 240 ;
+    ex:commits_90d 179 ;
+    ex:contributors_365d 5 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_push "2026-10-15T14:45:48+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fsensein%2Fagent_skills%22&per_page=1> ;
+    ex:prs_closed_90d 25 ;
+    ex:prs_opened_90d 30 ;
+    ex:snapshotOf <urn:repronim:abide:resource/sensein-agent-skills> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/sensein-agent-skills/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "sensein-agent-skills activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 240 ;
+    ex:commits_90d 179 ;
+    ex:contributors_365d 5 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-08T19:11:39+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T14:45:48+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fsensein%2Fagent_skills%22&per_page=1> ;
+    ex:prs_closed_90d 25 ;
+    ex:prs_opened_90d 30 ;
+    ex:snapshotOf <urn:repronim:abide:resource/sensein-agent-skills> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/sensein-agent-skills/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "sensein-agent-skills activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 240 ;
+    ex:commits_90d 179 ;
+    ex:contributors_365d 5 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-08T19:11:39+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T15:19:30+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 6 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Fsensein%2Fagent_skills%22&per_page=1> ;
+    ex:prs_closed_90d 25 ;
+    ex:prs_opened_90d 30 ;
+    ex:snapshotOf <urn:repronim:abide:resource/sensein-agent-skills> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/simple2_bidsapp_babs/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "simple2_bidsapp_babs activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 19 ;
+    ex:commits_90d 8 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_push "2026-10-13T02:34:12+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 5 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fsimple2_bidsapp_babs%22&per_page=1> ;
+    ex:prs_closed_90d 10 ;
+    ex:prs_opened_90d 10 ;
+    ex:snapshotOf <urn:repronim:abide:resource/simple2_bidsapp_babs> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/simple2_bidsapp_babs/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "simple2_bidsapp_babs activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 19 ;
+    ex:commits_90d 8 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-12T10:35:28+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-13T02:34:12+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 5 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fsimple2_bidsapp_babs%22&per_page=1> ;
+    ex:prs_closed_90d 10 ;
+    ex:prs_opened_90d 10 ;
+    ex:snapshotOf <urn:repronim:abide:resource/simple2_bidsapp_babs> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/simple2_bidsapp_babs/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "simple2_bidsapp_babs activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 19 ;
+    ex:commits_90d 8 ;
+    ex:contributors_365d 2 ;
+    ex:issues_closed_90d 1 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-12T10:35:28+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-13T02:34:12+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 5 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fsimple2_bidsapp_babs%22&per_page=1> ;
+    ex:prs_closed_90d 10 ;
+    ex:prs_opened_90d 10 ;
+    ex:snapshotOf <urn:repronim:abide:resource/simple2_bidsapp_babs> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/simple2_nidm_examples/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "simple2_nidm_examples activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2025-08-14T16:05:32+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 5 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fsimple2_NIDM_examples%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/simple2_nidm_examples> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/simple2_nidm_examples/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "simple2_nidm_examples activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-08-14T16:05:07+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-08-14T16:05:32+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 5 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fsimple2_NIDM_examples%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/simple2_nidm_examples> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/simple2_nidm_examples/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "simple2_nidm_examples activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-08-14T16:05:07+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-08-14T16:05:32+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 5 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fsimple2_NIDM_examples%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/simple2_nidm_examples> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/simple_workflow/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "simple_workflow activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2022-02-09T21:53:23+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.1.0" ;
+    ex:latest_release_date "2017-05-30T22:37:04+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 9 ;
+    ex:openalex_count 14 ;
+    ex:openalex_measure "cited_by_count of the DOI" ;
+    ex:openalex_query <https://api.openalex.org/works?filter=cites:W2586125788&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/simple_workflow> ;
+    ex:stars 8 .
+
+<urn:repronim:abide:snapshot/simple_workflow/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "simple_workflow activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2022-02-09T21:53:23+00:00"^^xsd:dateTime ;
+    ex:last_push "2022-02-09T21:53:23+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.1.0" ;
+    ex:latest_release_date "2017-05-30T22:37:04+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 9 ;
+    ex:openalex_count 14 ;
+    ex:openalex_measure "cited_by_count of the DOI" ;
+    ex:openalex_query <https://api.openalex.org/works?filter=cites:W2586125788&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/simple_workflow> ;
+    ex:stars 8 .
+
+<urn:repronim:abide:snapshot/simple_workflow/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "simple_workflow activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2022-02-09T21:53:23+00:00"^^xsd:dateTime ;
+    ex:last_push "2022-02-09T21:53:23+00:00"^^xsd:dateTime ;
+    ex:latest_release "1.1.0" ;
+    ex:latest_release_date "2017-05-30T22:37:04+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 9 ;
+    ex:openalex_count 14 ;
+    ex:openalex_measure "cited_by_count of the DOI" ;
+    ex:openalex_query <https://api.openalex.org/works?filter=cites:W2586125788&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/simple_workflow> ;
+    ex:stars 8 .
+
+<urn:repronim:abide:snapshot/stuff2nidm/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "stuff2nidm activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 1 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2025-11-18T22:23:47+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fstuff2NIDM%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/stuff2nidm> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/stuff2nidm/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "stuff2nidm activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 1 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-11-18T22:23:46+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-11-18T22:23:47+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fstuff2NIDM%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/stuff2nidm> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/stuff2nidm/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "stuff2nidm activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 1 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 1 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2025-11-18T22:23:46+00:00"^^xsd:dateTime ;
+    ex:last_push "2025-11-18T22:23:47+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 2 ;
+    ex:openalex_count 0 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Fstuff2NIDM%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/stuff2nidm> ;
+    ex:stars 1 .
+
+<urn:repronim:abide:snapshot/testkraken/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "testkraken activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_push "2021-06-02T04:21:05+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.1.5" ;
+    ex:latest_release_date "2020-03-13T15:10:27+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 30 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Ftestkraken%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/testkraken> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/testkraken/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "testkraken activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2021-06-02T04:21:05+00:00"^^xsd:dateTime ;
+    ex:last_push "2021-06-02T04:21:05+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.1.5" ;
+    ex:latest_release_date "2020-03-13T15:10:27+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 30 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Ftestkraken%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/testkraken> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/testkraken/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "testkraken activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 0 ;
+    ex:commits_90d 0 ;
+    ex:contributors_365d 0 ;
+    ex:issues_closed_90d 0 ;
+    ex:issues_opened_90d 0 ;
+    ex:last_commit_default_branch "2021-06-02T04:21:05+00:00"^^xsd:dateTime ;
+    ex:last_push "2021-06-02T04:21:05+00:00"^^xsd:dateTime ;
+    ex:latest_release "0.1.5" ;
+    ex:latest_release_date "2020-03-13T15:10:27+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 30 ;
+    ex:openalex_count 1 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2FReproNim%2Ftestkraken%22&per_page=1> ;
+    ex:prs_closed_90d 0 ;
+    ex:prs_opened_90d 0 ;
+    ex:snapshotOf <urn:repronim:abide:resource/testkraken> ;
+    ex:stars 3 .
+
+<urn:repronim:abide:snapshot/umap-learn/20261015T145547Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "umap-learn activity as of 2026-10-15T14:55:47+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145547Z> ;
+    ex:archived false ;
+    ex:commits_365d 145 ;
+    ex:commits_90d 35 ;
+    ex:contributors_365d 15 ;
+    ex:issues_closed_90d 5 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_push "2026-10-15T14:04:37+00:00"^^xsd:dateTime ;
+    ex:latest_release "release-0.5.12" ;
+    ex:latest_release_date "2026-04-08T19:37:19+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 530 ;
+    ex:openalex_count 186 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Flmcinnes%2Fumap%22&per_page=1> ;
+    ex:prs_closed_90d 17 ;
+    ex:prs_opened_90d 27 ;
+    ex:snapshotOf <urn:repronim:abide:resource/umap-learn> ;
+    ex:stars 8277 .
+
+<urn:repronim:abide:snapshot/umap-learn/20261015T145737Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "umap-learn activity as of 2026-10-15T14:57:37+00:00" ;
+    prov:generatedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T145737Z> ;
+    ex:archived false ;
+    ex:commits_365d 145 ;
+    ex:commits_90d 35 ;
+    ex:contributors_365d 15 ;
+    ex:issues_closed_90d 5 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-08T18:06:55+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T14:04:37+00:00"^^xsd:dateTime ;
+    ex:latest_release "release-0.5.12" ;
+    ex:latest_release_date "2026-04-08T19:37:19+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 530 ;
+    ex:openalex_count 186 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Flmcinnes%2Fumap%22&per_page=1> ;
+    ex:prs_closed_90d 17 ;
+    ex:prs_opened_90d 27 ;
+    ex:snapshotOf <urn:repronim:abide:resource/umap-learn> ;
+    ex:stars 8277 .
+
+<urn:repronim:abide:snapshot/umap-learn/20261015T152823Z> a prov:Entity,
+        ex:ResourceActivitySnapshot ;
+    rdfs:label "umap-learn activity as of 2026-10-15T15:28:23+00:00" ;
+    prov:generatedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/refresh/20261015T152823Z> ;
+    ex:archived false ;
+    ex:commits_365d 145 ;
+    ex:commits_90d 35 ;
+    ex:contributors_365d 15 ;
+    ex:issues_closed_90d 5 ;
+    ex:issues_opened_90d 2 ;
+    ex:last_commit_default_branch "2026-10-08T18:06:55+00:00"^^xsd:dateTime ;
+    ex:last_push "2026-10-15T14:04:37+00:00"^^xsd:dateTime ;
+    ex:latest_release "release-0.5.12" ;
+    ex:latest_release_date "2026-04-08T19:37:19+00:00"^^xsd:dateTime ;
+    ex:open_issues_and_prs 530 ;
+    ex:openalex_count 186 ;
+    ex:openalex_measure "works matching the quoted phrase (title, abstract, full text)" ;
+    ex:openalex_query <https://api.openalex.org/works?search=%22github.com%2Flmcinnes%2Fumap%22&per_page=1> ;
+    ex:prs_closed_90d 17 ;
+    ex:prs_opened_90d 27 ;
+    ex:snapshotOf <urn:repronim:abide:resource/umap-learn> ;
+    ex:stars 8277 .
+
+<urn:repronim:abide:activity/refresh/20261015T151234Z> a prov:Activity,
+        ex:RefreshActivity ;
+    prov:endedAtTime "2026-10-15T15:12:41+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-15T15:12:34+00:00"^^xsd:dateTime ;
+    ex:codeCommit "not a git checkout" ;
+    ex:nResources 6 ;
+    ex:script "code/refresh_activity.py" ;
+    ex:scriptSha256 "62725c0cd572d91318003b07825075387ce5ed28428fd5a6e2e24d8eeb08ab79" .
+
+<urn:repronim:abide:activity/refresh/20261015T145547Z> a prov:Activity,
+        ex:RefreshActivity ;
+    prov:endedAtTime "2026-10-15T14:56:52+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-15T14:55:47+00:00"^^xsd:dateTime ;
+    ex:codeCommit "not a git checkout" ;
+    ex:nResources 52 ;
+    ex:script "code/refresh_activity.py" ;
+    ex:scriptSha256 "6fd18dc66daca4f8796bc7a68fe5392c69bb711b596c942cfb65afe3b390575a" .
+
+<urn:repronim:abide:activity/refresh/20261015T145737Z> a prov:Activity,
+        ex:RefreshActivity ;
+    prov:endedAtTime "2026-10-15T14:58:42+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-15T14:57:37+00:00"^^xsd:dateTime ;
+    ex:codeCommit "not a git checkout" ;
+    ex:nResources 52 ;
+    ex:script "code/refresh_activity.py" ;
+    ex:scriptSha256 "62725c0cd572d91318003b07825075387ce5ed28428fd5a6e2e24d8eeb08ab79" .
+
+<urn:repronim:abide:activity/refresh/20261015T152823Z> a prov:Activity,
+        ex:RefreshActivity ;
+    prov:endedAtTime "2026-10-15T15:29:39+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-15T15:28:23+00:00"^^xsd:dateTime ;
+    ex:codeCommit "not a git checkout" ;
+    ex:nResources 58 ;
+    ex:script "code/refresh_activity.py" ;
+    ex:scriptSha256 "3e0aa8fca53d3f38502c4aedc56ddbc473b6c7903a96f75c85230ec512a20a72" .
+

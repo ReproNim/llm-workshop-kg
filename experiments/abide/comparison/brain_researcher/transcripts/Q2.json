@@ -1,0 +1,308 @@
+{
+ "id": "Q2",
+ "question": "What is the overlap between Analyst A's and Analyst B's cohorts, and how many of B's test participants are excluded by A's tightened motion QC?",
+ "date": "2026-10-15",
+ "client": "Claude Code 2.1.282 subagent (model sonnet)",
+ "tool_calls": [
+  {
+   "seq": 1,
+   "tool": "kg_search_datasets",
+   "arguments": {
+    "text": "ABIDE",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"dataset_id\":\"ds:manual:abide\",\"title\":\"ABIDE (I & II)\",\"tasks\":[\"resting state\",\"reading span task\"],\"modalities\":[\"MRI\"],\"n_subjects\":2226,\"species\":[\"human\"],\"kg_id\":\"4:61f2a6e6-9289-4db3-a996-562b57f61fe1:489281\"}, ... (9 ABIDE site-level sub-datasets with n_subjects/modalities null, e.g. abide1: CMU_b, abide2: ONRC_2, abide1: UM_2, abide1: UM_1, abide2: TCD_1, abide2: UCLA_1, abide1: Leuven_2, abide1: Stanford, abide1: UCLA_2)]}",
+   "response_chars": 1450,
+   "ok": true,
+   "note": "Locate the ABIDE dataset node as an entry point; found one aggregate ABIDE(I&II) Dataset node (2226 subjects, ABIDE I+II combined, no CC200/filt_noglobal pipeline distinction) plus bare per-site stub nodes with no subject counts."
+  },
+  {
+   "seq": 2,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "ABIDE I Di Martino 2014 connectivity",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"ds:manual:abide\",...,\"node_type\":\"Dataset\",\"score\":13.34},{\"kg_id\":\"ds:manual:allen_mouse_conn\",...},{\"kg_id\":\"a5729d3497a126f6a667828b461ea9f5\",\"label\":\"2014\",\"node_type\":\"Term\"},{\"kg_id\":\"10.1136/jnnp-2014-310142\",\"label\":\"DIR-visible grey matter lesions...\",\"node_type\":\"Publication\"},{\"kg_id\":\"e2df2436a59dce58a002bbae3cebd84e\",\"label\":\"Longitudinal Functional MRI... Breast Cancer Survivors...\",\"node_type\":\"Publication\"}, ... reading/dyslexia connectivity papers unrelated to ABIDE/autism]}",
+   "response_chars": 1700,
+   "ok": true,
+   "note": "No Di Martino 2014 / ABIDE autism Publication node surfaced; top hits are unrelated papers matched on generic terms ('connectivity', '2014')."
+  },
+  {
+   "seq": 3,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Abraham 2017 diagnosis prediction leave-site-out ABIDE",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"ds:manual:abide\",...,\"score\":17.64},{\"kg_id\":\"tf_paradigm:...baroreflex...\",\"node_type\":\"Task\"},{\"kg_id\":\"tf_paradigm:...drug-challenge...\",\"node_type\":\"Task\"},{\"kg_id\":\"trm_...\",\"label\":\"reversal weather prediction\",\"node_type\":\"Concept\"}, ... unrelated cognitive-task concepts matched on 'diagnosis'/'prediction']}",
+   "response_chars": 1550,
+   "ok": true,
+   "note": "No Abraham 2017 Publication node found either; hits are unrelated task/concept nodes matched on generic keyword overlap."
+  },
+  {
+   "seq": 4,
+   "tool": "kg_get_node",
+   "arguments": {
+    "kg_id": "ds:manual:abide"
+   },
+   "response_truncated": "{\"ok\":true,\"node\":{\"kg_id\":\"ds:manual:abide\",\"label\":\"ABIDE (I & II)\",\"node_type\":\"Dataset\",\"properties\":{\"description\":\"Multi-site ASD vs control resting-state fMRI and structural MRI\",\"subjects_count\":2226,\"tasks\":[\"resting-state\"],\"neighbors\":[{\"target\":\"ONVOC_0000184\",\"rel\":\"ABOUT\"},{\"target\":\"task__resting_state\",\"rel\":\"HAS_TASK\"},{\"target\":\"ONVOC_0000005\",\"rel\":\"IN_ONVOC\"},{\"target\":\"species:human\",\"rel\":\"INVOLVES_SPECIES\"},{\"target\":\"modality:mri\",\"rel\":\"HAS_MODALITY\"},{\"target\":\"consortium:abide\",\"rel\":\"PART_OF\"},{\"target\":\"repo:nitrc_/_indi\",\"rel\":\"HOSTED_AT\"}]}}}",
+   "response_chars": 1250,
+   "ok": true,
+   "note": "The ABIDE node has no link to any Publication, Analysis, Cohort, or QC-threshold node -- only consortium/modality/species/task/repo metadata."
+  },
+  {
+   "seq": 5,
+   "tool": "kg_neighbors",
+   "arguments": {
+    "kg_id": "ds:manual:abide",
+    "direction": "both",
+    "limit": 25
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"consortium:abide\",...,\"relation\":\"PART_OF\"},{\"kg_id\":\"ONVOC_0000184\",\"label\":\"Down Syndrome\",\"relation\":\"ABOUT\",...confidence 0.35 fuzzy backfill...},{\"kg_id\":\"modality:mri\",...},{\"kg_id\":\"repo:nitrc_/_indi\",...},{\"kg_id\":\"ONVOC_0000005\",\"label\":\"Psychological Concepts\",...},{\"kg_id\":\"species:human\",...},{\"kg_id\":\"trm_4c40d168898db\",\"label\":\"reading span task\",...low-confidence fuzzy match...},{\"kg_id\":\"task__resting_state\",...}]}",
+   "response_chars": 5200,
+   "ok": true,
+   "note": "Confirms: 8 neighbors total, none a Publication, Cohort, Analysis, or QC-parameter node. No path from the Dataset node to either paper or to any cohort/participant structure."
+  },
+  {
+   "seq": 6,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "10.1038/mp.2013.78",
+    "limit": 5
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"kg_query_timeout\",\"message\":\"kg_search_nodes produced a degraded result (mcp_timeout) but degraded responses are disabled by default. Re-run with allow_degraded=True.\",\"query_time_s\":15.971}",
+   "response_chars": 300,
+   "ok": false,
+   "note": "Searching by the Di Martino 2014 DOI string timed out server-side."
+  },
+  {
+   "seq": 7,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "10.1016/j.neuroimage.2016.10.045",
+    "limit": 5
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"kg_query_timeout\",\"message\":\"kg_search_nodes produced a degraded result (mcp_timeout) but degraded responses are disabled by default. Re-run with allow_degraded=True.\",\"query_time_s\":15.987}",
+   "response_chars": 300,
+   "ok": false,
+   "note": "Searching by the Abraham 2017 DOI string also timed out server-side."
+  },
+  {
+   "seq": 8,
+   "tool": "kg_multihop_qa",
+   "arguments": {
+    "question": "In ABIDE I, what is the overlap between the cohort used by Di Martino et al. 2014 (group connectivity differences) and the cohort used by Abraham et al. 2017 (leave-site-out diagnosis prediction), and how many of Abraham et al.'s test participants would be excluded if Di Martino's motion QC threshold of mean framewise displacement < 0.2 mm is tightened to a stricter threshold?",
+    "max_hops": 3,
+    "max_results": 30
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"kg_query_degraded\",\"message\":\"...batched_seed_lookup_timeout...\",\"diagnostics\":{\"summary\":{\"hops_used\":0,\"n_seed_entities\":0,\"n_paths\":0},\"warnings\":[\"Seed lookup terms capped at 6 from 8\",\"Batched seed lookup failed: Neo.ClientError.Transaction.TransactionTimedOutClientConfiguration\"],\"provenance\":[{\"stage\":\"seed_search\",\"seed_hits_by_term\":[{\"term\":\"Cohort Study\",\"direct_hits\":0},{\"term\":\"cohort used by Di Martino et al. 2014\",\"direct_hits\":0},{\"term\":\"cohort used by Abraham et al\",\"direct_hits\":0}]}]}}",
+   "response_chars": 1900,
+   "ok": false,
+   "note": "Direct multi-hop question failed: 0 seed entities found for any term in the question (Neo4j transaction timeout on batched seed lookup), so traversal never started."
+  },
+  {
+   "seq": 9,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Di Martino Abraham ABIDE functional connectomics autism",
+    "limit": 10,
+    "allow_degraded": true
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"trm_51d6fe3f3942f\",\"label\":\"autism spectrum quotient\",\"node_type\":\"Concept\"},{\"kg_id\":\"ds:manual:abide\",...},{\"kg_id\":\"trm_523dfd5b7a9f1\",\"label\":\"broad autism phenotype questionnaire\"},{\"kg_id\":\"trm_525d847e2bd0b\",\"label\":\"autism diagnostic interview - revised\"},{\"kg_id\":\"ONVOC_0000215\",\"label\":\"Autism Spectrum Disorder\",\"node_type\":\"Concept\"}, ... no author or paper nodes]}",
+   "response_chars": 1300,
+   "ok": true,
+   "note": "Only generic autism-phenotyping-instrument Concept nodes and the one aggregate ABIDE Dataset node; no author nodes for Di Martino or Abraham, no paper nodes."
+  },
+  {
+   "seq": 10,
+   "tool": "kg_get_node",
+   "arguments": {
+    "kg_id": "10.1038/mp.2013.78"
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"node not found: 10.1038/mp.2013.78\"}",
+   "response_chars": 58,
+   "ok": false,
+   "note": "Di Martino et al. 2014 is not a node in BR-KG under its DOI."
+  },
+  {
+   "seq": 11,
+   "tool": "kg_get_node",
+   "arguments": {
+    "kg_id": "10.1016/j.neuroimage.2016.10.045"
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"node not found: 10.1016/j.neuroimage.2016.10.045\"}",
+   "response_chars": 73,
+   "ok": false,
+   "note": "Abraham et al. 2017 is not a node in BR-KG under its DOI either."
+  },
+  {
+   "seq": 12,
+   "tool": "kg_method_condition_coverage_guard",
+   "arguments": {
+    "paper_id": "10.1038/mp.2013.78",
+    "requested_fields": [
+     "cohort_sample_size",
+     "preprocessing",
+     "statistical_model"
+    ],
+    "dry_run": true
+   },
+   "response_truncated": "{\"ok\":false,\"result\":{\"status\":\"publication_not_found\",\"paper_id\":\"10.1038/mp.2013.78\"}}",
+   "response_chars": 92,
+   "ok": false,
+   "note": "Confirms via the dedicated method-conditions tool (stored BR-KG -> GABRIEL cache -> NeuroStore ladder) that Di Martino 2014 is unresolvable: no cohort size, preprocessing, or statistical-model fields available anywhere in BR for this paper."
+  },
+  {
+   "seq": 13,
+   "tool": "kg_method_condition_coverage_guard",
+   "arguments": {
+    "paper_id": "10.1016/j.neuroimage.2016.10.045",
+    "requested_fields": [
+     "cohort_sample_size",
+     "preprocessing",
+     "statistical_model"
+    ],
+    "dry_run": true
+   },
+   "response_truncated": "{\"ok\":false,\"result\":{\"status\":\"publication_not_found\",\"paper_id\":\"10.1016/j.neuroimage.2016.10.045\"}}",
+   "response_chars": 104,
+   "ok": false,
+   "note": "Same ladder, same result, for Abraham 2017: no cohort/sample-size or method fields resolvable."
+  },
+  {
+   "seq": 14,
+   "tool": "kg_verify_hypothesis",
+   "arguments": {
+    "hypothesis": "The ABIDE I cohort used by Di Martino et al. 2014 for group connectivity analysis and the ABIDE I cohort used by Abraham et al. 2017 for leave-site-out diagnosis prediction substantially overlap, and tightening the motion QC threshold from mean FD < 0.2 mm would exclude a nontrivial number of Abraham et al.'s test participants.",
+    "entity_hints": [
+     "ABIDE",
+     "Di Martino 2014",
+     "Abraham 2017",
+     "motion QC",
+     "framewise displacement"
+    ],
+    "use_external_literature": false,
+    "include_subgraph": false,
+    "max_evidence": 20,
+    "hypothesis_budget_seconds": 45
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"{neo4j_code: Neo.ClientError.Procedure.ProcedureCallFailed} ... Caused by: org.apache.lucene.search.IndexSearcher$TooManyNestedClauses: Query contains too many nested clauses; maxClauseCount is set to 1024 ...\"}",
+   "response_chars": 420,
+   "ok": false,
+   "note": "Hypothesis verification failed outright on a backend Lucene query-construction error (too many nested clauses), returning no evidence for or against."
+  },
+  {
+   "seq": 15,
+   "tool": "kg_neighbors",
+   "arguments": {
+    "kg_id": "consortium:abide",
+    "direction": "both",
+    "limit": 25
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[]}",
+   "response_chars": 22,
+   "ok": true,
+   "note": "The ABIDE Consortium node itself has zero neighbors -- no path to any publication through the consortium node either."
+  },
+  {
+   "seq": 16,
+   "tool": "dataset_get_resources",
+   "arguments": {
+    "dataset_ref": "ds:manual:abide",
+    "analysis_goal": "generic"
+   },
+   "response_truncated": "{\"ok\":true,\"resources\":{\"dataset_id\":\"ds:manual:abide\",\"is_bids_available\":false,\"available_derivatives\":[],\"remote_urls\":{\"primary\":\"http://fcon_1000.projects.nitrc.org/indi/abide\"},\"required_files\":{\"missing_patterns\":[\"dataset_description.json\"],\"all_required_passed\":false},\"readiness\":{\"status\":\"blocked\",\"reason\":\"Dataset path not available on mounts/cache\",\"local_path_available\":false},\"mount_status\":{\"mounted\":false},\"dataset_metadata\":{\"tasks\":[\"resting-state\"],\"modalities\":[\"MRI\"],\"license\":\"CC-BY\"}}}",
+   "response_chars": 1900,
+   "ok": true,
+   "note": "No phenotype CSV, no participants.tsv, no CPAC/CC200 derivatives are mounted or indexed for BR; readiness is 'blocked'. BR has no participant-level file to join cohorts against."
+  },
+  {
+   "seq": 17,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "ABIDE motion framewise displacement quality control threshold",
+    "limit": 10,
+    "allow_degraded": true
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"concept:framewise_displacement\",\"label\":\"Framewise Displacement\",\"node_type\":\"Concept\",\"score\":32.9},{\"kg_id\":\"ds:manual:abide\",...},{\"kg_id\":\"method_motion_confounds\",\"label\":\"Head motion can bias fMRI connectivity and activation results\",\"node_type\":\"Concept\"}, ... unrelated 'threshold' task nodes from other paradigms]}",
+   "response_chars": 1250,
+   "ok": true,
+   "note": "A generic Framewise Displacement concept node exists, plus a generic motion-confound concept; neither carries a numeric threshold or a link to ABIDE-specific QC criteria."
+  },
+  {
+   "seq": 18,
+   "tool": "kg_get_node",
+   "arguments": {
+    "kg_id": "concept:framewise_displacement"
+   },
+   "response_truncated": "{\"ok\":true,\"node\":{\"kg_id\":\"concept:framewise_displacement\",\"label\":\"Framewise Displacement\",\"node_type\":\"Concept\",\"properties\":{\"aliases\":[\"framewise displacement\",\"fd\"],\"neighbors\":[]}}}",
+   "response_chars": 200,
+   "ok": true,
+   "note": "Confirmed: this Concept node has zero neighbors -- no edge to ABIDE, to either paper, or to any numeric threshold value. Dead end."
+  }
+ ],
+ "final_answer": "Brain Researcher cannot answer this question. BR-KG has no Publication node for either Di Martino et al. 2014 (doi:10.1038/mp.2013.78) or Abraham et al. 2017 (doi:10.1016/j.neuroimage.2016.10.045) -- both kg_get_node and the dedicated kg_method_condition_coverage_guard tool returned 'not found'/'publication_not_found' for both DOIs. The only ABIDE object in BR-KG is one aggregate Dataset node (ds:manual:abide, 2226 subjects pooling ABIDE I+II) with no links to any cohort, analysis, QC-threshold, or participant-level node, and dataset_get_resources confirms no phenotype file or BIDS derivatives are mounted/indexed (readiness: blocked, missing dataset_description.json). A generic 'Framewise Displacement' concept node exists but is unconnected to any numeric threshold or to either paper. kg_multihop_qa and kg_verify_hypothesis both failed outright (seed-lookup timeout; Lucene too-many-clauses error) rather than returning partial evidence. BR therefore cannot state the overlap between Analyst A's and Analyst B's cohorts, nor how many of B's test participants would be excluded by A's tightened motion QC -- this requires participant-level ABIDE phenotype data (Phenotypic_V1_0b_preprocessed1.csv) and each paper's stated inclusion/exclusion criteria, neither of which BR holds.",
+ "evidence": [
+  {
+   "claim": "BR-KG holds no node for Di Martino et al. 2014",
+   "source": "kg_get_node(10.1038/mp.2013.78) -> 'node not found'; kg_method_condition_coverage_guard(10.1038/mp.2013.78) -> 'publication_not_found'"
+  },
+  {
+   "claim": "BR-KG holds no node for Abraham et al. 2017",
+   "source": "kg_get_node(10.1016/j.neuroimage.2016.10.045) -> 'node not found'; kg_method_condition_coverage_guard(10.1016/j.neuroimage.2016.10.045) -> 'publication_not_found'"
+  },
+  {
+   "claim": "The only ABIDE entity in BR-KG is one aggregate Dataset node with no cohort/analysis/QC-threshold links",
+   "source": "kg_get_node(ds:manual:abide) and kg_neighbors(ds:manual:abide) -- 8 neighbors, none a Publication/Cohort/Analysis node"
+  },
+  {
+   "claim": "No ABIDE phenotype/participant file is accessible to BR",
+   "source": "dataset_get_resources(ds:manual:abide) -> readiness.status='blocked', available_derivatives=[], required_files.missing_patterns=['dataset_description.json']"
+  },
+  {
+   "claim": "Multi-hop and hypothesis-verification traversal both failed to find any path relevant to this question",
+   "source": "kg_multihop_qa (batched_seed_lookup_timeout, n_seed_entities=0); kg_verify_hypothesis (Neo4j/Lucene TooManyNestedClauses error)"
+  }
+ ],
+ "br_limitations": "No participant-level ABIDE phenotype or QC data (mean FD per subject, site, DX_GROUP) is held or joinable in BR; no Publication nodes exist for either Di Martino 2014 or Abraham 2017 (both DOIs resolve to 'not found'); no Cohort/Analyst/Analysis node type links a paper to its specific inclusion criteria or to the generic ABIDE Dataset node; no stored numeric motion-QC threshold value anywhere in the KG (the Framewise Displacement concept node is a bare, unlinked term); kg_multihop_qa and kg_verify_hypothesis both failed with backend errors rather than returning a 'not found' answer grounded in partial evidence.",
+ "confidence": "high",
+ "computation_phase": {
+  "source": "NOT BR output. Computation run by the operating agent on ORCD (MIT Engaging, partition pi_satra). BR returned only the NITRC landing page; the fcp-indi S3 paths are the operator's prior knowledge.",
+  "scripts": "jobs/ (abide_compute.py, abide_compute.sbatch)",
+  "jobs": {
+   "25932392": "FAILED (NaN correlations from constant ROIs)",
+   "25932776": "COMPLETED 1m57s, but connectivity used only 49/200 CC200 ROIs (ROIs constant in any subject were dropped) -> results_49roi_superseded_job25932776.json",
+   "25933294": "TIMEOUT at 2h (200-ROI rerun with constant-ROI subjects excluded); no output",
+   "rerun": "staged (6h, 8 CPU, folds parallel) but NOT submitted: ORCD login refused (Duo session expired), stopped after 2 failed logins per rule"
+  },
+  "data": {
+   "phenotype": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Phenotypic_V1_0b_preprocessed1.csv",
+   "roi_template": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/rois_cc200/{fid}_rois_cc200.1D"
+  },
+  "answer": "A (mean FD<0.2 mm, assumed no rater QC) = {'total': 884, 'ASD': 408, 'TC': 476}; B = 871. Overlap A∩B = 780 (A-only 104, B-only 91). Tightened QC (ASSUMED FD<0.1 mm; threshold not given): A_tight = {'total': 633, 'ASD': 274, 'TC': 359}; it excludes 300 of B's participants (163 ASD, 137 TC). In leave-site-out CV every B participant is a test participant once, so all 300 are test participants. Sweep of B exclusions by threshold: {'0.2': 91, '0.15': 155, '0.1': 300, '0.08': 425, '0.05': 637}.",
+  "valid": "final (independent of ROI handling); tightened threshold is an assumption",
+  "by_site": {
+   "PITT": 33,
+   "USM": 33,
+   "NYU": 26,
+   "UM_1": 25,
+   "SBL": 23,
+   "UCLA_1": 20,
+   "OLIN": 19,
+   "MAX_MUN": 17,
+   "YALE": 15,
+   "KKI": 15,
+   "UCLA_2": 13,
+   "TRINITY": 11,
+   "CMU": 11,
+   "LEUVEN_2": 8,
+   "OHSU": 7,
+   "SDSU": 6,
+   "UM_2": 6,
+   "LEUVEN_1": 5,
+   "STANFORD": 4,
+   "CALTECH": 3
+  }
+ }
+}

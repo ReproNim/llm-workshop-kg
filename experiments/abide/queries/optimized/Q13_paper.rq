@@ -1,0 +1,8 @@
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT ?paper ?title ?cohortNode WHERE { GRAPH <urn:repronim:abide:graph/core> { ?cohortNode prov:hadMember <urn:repronim:abide:participant/MaxMun_c_0051332> .
+        ?reported ex:reconstructedAs ?cohortNode ; ex:statedIn ?paper . ?paper rdfs:label ?title } }

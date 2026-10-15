@@ -1,0 +1,103 @@
+{
+  "source_id": "S-043",
+  "pmid": "local_307f3aad",
+  "doi": "10.3389/fnhum.2018.00454",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2,3: reports a resting-state fMRI group-difference (ASD vs TD) analysis; the original 21-ASD cohort is the authors' own (non-ABIDE) sample, but a 42 ASD / 88 TD replication cohort is drawn directly from ABIDE II resting-state data with an explicit site-selection and QC rule.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {"text": "extracted from the Autism Brain Imaging Data Exchange (ABIDE) II", "section": "abstract", "claim": "The study's replication cohort is drawn from ABIDE II.", "relevance_score": 0.9},
+    {"text": "The ABIDE II consists of datasets from 487 individuals with ASD and 557 controls collected across 16 imaging sites.", "section": "methods", "claim": "States the full ABIDE II release size and number of sites.", "relevance_score": 0.6},
+    {"text": "in order to collect samples similar to our original samples, we selected subjects who met following criteria: boys with FSIQ ≥80, age range: 6–16 years, right handed, with scores recorded on the SRS", "section": "methods", "claim": "Explicit selection rule applied to the ABIDE II subset (sex, FSIQ, age, handedness, behavioural-score availability).", "relevance_score": 0.9},
+    {"text": "Since no participants in the NYU_2 dataset had complete cerebellar coverage, this dataset was excluded. In addition, participants with excessive maximum head motion (>3 mm) or failure of normalization were excluded.", "section": "methods", "claim": "Additional exclusion rules (imaging coverage, motion >3mm, normalization failure) applied to the ABIDE II subset.", "relevance_score": 0.9},
+    {"text": "The ﬁnal replication dataset consisted of 42 boys with ASD (mean age: 10.7 ± 1.8 years, range: 7.2–14.4 years) and 88 TD boys", "section": "methods", "claim": "Final analysed ABIDE II N: 42 ASD, 88 TD.", "relevance_score": 1.0},
+    {"text": "Preprocessing for functional images consisted of realignment for motion correction, slice-timing correction, normalization to the standard MNI space, and smoothing with a 4-mm full width at half- maximum ﬁlter.", "section": "methods", "claim": "Preprocessing pipeline (CONN toolbox/SPM12-based, not CPAC/DPARSF).", "relevance_score": 0.8},
+    {"text": "Seed ROIs in the cerebellum were created using the probabilistic MR Atlas of the human cerebellum", "section": "methods", "claim": "Parcellation used is a cerebellar seed atlas (Diedrichsen probabilistic atlas), not a whole-brain functional atlas.", "relevance_score": 0.7},
+    {"text": "mean FD scores were included as a nuisance covariate in t-tests. In addition, FSIQ and imaging sites were included as nuisance covariates. Bonferroni correction was performed for multiple comparisons (p = 0.004).", "section": "methods", "claim": "Site and motion were handled as covariates; multiple comparisons corrected by Bonferroni in the replication analysis.", "relevance_score": 0.8},
+    {"text": "decreased FCs were identiﬁed between the following regions: the right lobule IX and right lobule VI; vermis VI and left MFG, left ITG, and right MdFG; right dentate nucleus and left IFG, left IPL", "section": "results", "claim": "Original-dataset finding: mixture of increased and decreased cerebellar-cerebral connectivity in ASD.", "relevance_score": 0.9},
+    {"text": "the ASD group showed signiﬁcantly decreased FC between the right dentate nucleus and left IPL (p = 0.039, Figure 4)", "section": "results", "claim": "One of the 12 original findings (dentate nucleus-left IPL decreased FC) was replicated in the ABIDE II sample.", "relevance_score": 1.0}
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Inclusion criteria defined", "judgment": "Low", "support": "\"we selected subjects who met following criteria: boys with FSIQ ≥80, age range: 6–16 years, right handed, with scores recorded on the SRS\" plus motion/coverage exclusions reported."},
+      {"domain": "Subjects and setting described", "judgment": "Low", "support": "Per-site N and demographics reported for the five selected ABIDE II sites (GU, KKI, NYU_1, NYU_2, SDSU)."},
+      {"domain": "Exposure measured validly (rs-fMRI pipeline)", "judgment": "Low", "support": "\"Preprocessing for functional images consisted of realignment for motion correction, slice-timing correction, normalization to the standard MNI space, and smoothing with a 4-mm full width at half- maximum ﬁlter.\""},
+      {"domain": "Condition measured (diagnosis source)", "judgment": "Low", "support": "\"Diagnosis of ASD was made using ADOS-G or ADOS-2 (Lord et al., 2012).\""},
+      {"domain": "Confounders identified (age, sex, site, motion)", "judgment": "Low", "support": "\"mean FD scores were included as a nuisance covariate in t-tests. In addition, FSIQ and imaging sites were included as nuisance covariates.\""},
+      {"domain": "Confounders handled", "judgment": "Low", "support": "Same quote: FD, FSIQ and site entered as covariates; group difference in FD tested and found non-significant (\"There were no signiﬁcant diﬀerences between groups in mean FD scores (p = 0.140)\")."},
+      {"domain": "Outcomes measured validly (connectivity metric)", "judgment": "Low", "support": "\"Correlation coeﬃcients were converted to normally distributed Z-scores using Fisher’s transformation\""},
+      {"domain": "Appropriate statistical analysis (multiple comparisons)", "judgment": "Low", "support": "\"All results were reported using a voxel-height threshold set at uncorrected p < 0.001, with a cluster-extent threshold at a FDR-corrected p < 0.05\" and Bonferroni correction for the ROI-to-ROI replication test."}
+    ],
+    "overall": "Low",
+    "summary": "Well-described cohort, pipeline, diagnosis source and covariate handling for the ABIDE II replication subset; main limitation is a small replication effect (only 1/12 findings surviving Bonferroni correction, one trend-level)."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE II)",
+    "study_design": "Group-difference (associational)",
+    "n_disordered": "42",
+    "n_controls": "88",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "CONN toolbox with SPM12 (realignment, slice-timing correction, normalization to MNI, 4mm FWHM smoothing, CompCor nuisance regression, band-pass 0.008-0.09 Hz)",
+    "specific_features": "Seed-to-voxel / ROI-to-ROI functional connectivity using cerebellar seed ROIs from the Diedrichsen probabilistic MR atlas of the human cerebellum",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "features_associated_disorder": "Cerebellar hemispheric (Crus I/II, lobules VI/IX) and vermal (VI, VIIIa, VIIIb, X) and right dentate nucleus connectivity with cerebral regions (insula, MFG, SMG, AG, MTG, ITG, IFG, IPL, MdFG)",
+    "feature_change_direction": "Mixed: increased FC between cerebellar Crus I/II and vermis regions with insula/MFG/SMG/AG/MTG; decreased FC between lobule IX-VI, vermis VI, and right dentate nucleus with IFG/IPL/ITG/MdFG; decreased FC between right dentate nucleus and left IPL replicated in ABIDE II (p=0.039)",
+    "dataset_openly_available": "Not reported for this paper's own analysis code or participant list; selection rules and per-site Ns are given in text and Supplementary Table S1",
+    "custom_fields": {
+      "RQ1": "ABIDE II used as a replication cohort (not the primary dataset): 5 of 16 ABIDE II sites selected (GU, KKI, NYU_1, NYU_2, SDSU) with sex/FSIQ/age/handedness/behavioural-score filters, then NYU_2 and motion/normalization failures excluded, yielding 42 ASD and 88 TD boys. | quote: \"The ﬁnal replication dataset consisted of 42 boys with ASD (mean age: 10.7 ± 1.8 years, range: 7.2–14.4 years) and 88 TD boys\"",
+      "RQ2": "CONN toolbox/SPM12 pipeline (realignment, slice-timing, MNI normalization, 4mm smoothing, CompCor); cerebellar seed ROIs from the Diedrichsen probabilistic MR atlas of the human cerebellum, not a whole-brain parcellation. | quote: \"Seed ROIs in the cerebellum were created using the probabilistic MR Atlas of the human cerebellum\"",
+      "RQ3": "associational — group-difference analysis of ASD vs TD cerebellar-cerebral connectivity, with a replication test in ABIDE II; no classifier or prediction model. | quote: \"The ASD group showed signiﬁcantly increased or decreased FCs between the cerebellar subregions and cerebral cortices, relative to the TD group in the original dataset.\"",
+      "RQ4": "Two-sample t-tests on ROI-to-ROI connectivity; mean FD, FSIQ and imaging site included as nuisance covariates; Bonferroni correction (p=0.004) in the ABIDE II replication test; original dataset used voxel-height p<0.001 with FDR-corrected cluster threshold p<0.05. | quote: \"mean FD scores were included as a nuisance covariate in t-tests. In addition, FSIQ and imaging sites were included as nuisance covariates. Bonferroni correction was performed for multiple comparisons (p = 0.004).\"",
+      "RQ5": "Of the 12 aberrant cerebellar-cerebral FCs found in the original (non-ABIDE) dataset, decreased FC between right dentate nucleus and left IPL replicated significantly in the ABIDE II sample (p=0.039), with a non-significant trend for vermis VI-left MFG (p=0.071) that did not survive Bonferroni correction. | quote: \"the ASD group showed signiﬁcantly decreased FC between the right dentate nucleus and left IPL (p = 0.039, Figure 4)\"",
+      "RQ6": "partly — exact numeric selection rules (sex, FSIQ≥80, age range, handedness, behavioural score availability, motion >3mm, cerebellar coverage) and per-site Ns are reported, but no participant ID list is published. | quote: \"we selected subjects who met following criteria: boys with FSIQ ≥80, age range: 6–16 years, right handed, with scores recorded on the SRS\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"The ﬁnal replication dataset consisted of 42 boys with ASD (mean age: 10.7 ± 1.8 years, range: 7.2–14.4 years) and 88 TD boys\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes | quote: \"participants with excessive maximum head motion (>3 mm) or failure of normalization were excluded\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"All analyses were performed using the CONN toolbox2 and the Statistical Parametric Mapping 12 software.\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"Seed ROIs in the cerebellum were created using the probabilistic MR Atlas of the human cerebellum\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not applicable; this is a group-comparison study with no classifier, feature selection or scaling step reported",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes | quote: \"FSIQ and imaging sites were included as nuisance covariates\"",
+      "CL7 Code and/or participant list available?": "No — no code repository, data-availability statement or participant-ID list found in the full text",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"extracted from the Autism Brain Imaging Data Exchange (ABIDE) II\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {"rating": "Yes", "notes": "CL1/CL2 both reported with explicit numeric criteria and per-site breakdown.", "overall_concern": "Low"},
+    "domain_2_predictors_features": {"rating": "Yes", "notes": "CL3/CL4: CONN/SPM12 pipeline and cerebellar probabilistic atlas both specified.", "overall_concern": "Low"},
+    "domain_3_outcome_diagnosis": {"rating": "Yes", "notes": "Diagnosis via ADOS-G/ADOS-2 for the ABIDE II subset; label source clearly stated.", "overall_concern": "Low"},
+    "domain_4_bias_transparency": {"rating": "Partial", "notes": "CL5 not applicable (no ML/classifier); CL6 site handled as covariate; CL7 no code/participant list released.", "overall_concern": "Some"}
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Group-difference (associational) study; original non-ABIDE cohort (21 ASD/24 TD, Japan) plus an ABIDE II replication cohort of 42 ASD / 88 TD boys drawn from 5 sites (GU, KKI, NYU_1, NYU_2 [excluded], SDSU)",
+    "methods": "Seed-based ROI-to-ROI resting-state functional connectivity from cerebellar subregions (Diedrichsen probabilistic atlas) to cerebral cortex, using CONN toolbox/SPM12 preprocessing; two-sample t-tests with FD, FSIQ and site as covariates, FDR-corrected (original) / Bonferroni-corrected (replication) thresholds",
+    "outcomes": "12 cerebellar-cerebral FC group differences found in the original dataset (mixed increased/decreased); one (right dentate nucleus-left IPL decreased FC, p=0.039) replicated significantly in ABIDE II; FC values correlated with motor, executive and socio-communicative measures in the original dataset",
+    "key_limitations": "Small original sample; only partial replication in ABIDE II (1/12 findings surviving correction); no code or participant-list release found",
+    "relevance_notes": "Demonstrates use of a specific ABIDE II site/criteria subset purely as an independent replication sample for an externally-derived finding, with exact numeric selection rules reported.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnhum.2018.00454",
+    "dataset": "ABIDE II",
+    "relation": "uses-data",
+    "cohort_description": "5 of 16 ABIDE II sites selected (GU, KKI, NYU_1, NYU_2, SDSU) for boys with FSIQ>=80, age 6-16, right-handed, with SRS/SRS2/BRIEF scores; NYU_2 excluded for incomplete cerebellar coverage; further excluded for head motion >3mm or normalization failure",
+    "n_by_dx": {"ASD": 42, "TD": 88, "total": 130},
+    "sites": "5 of 16 ABIDE II sites (GU, KKI, NYU_1, NYU_2 [excluded], SDSU)",
+    "pipeline": "CONN toolbox + SPM12 (realignment, slice-timing correction, MNI normalization, 4mm FWHM smoothing, CompCor nuisance regression, band-pass 0.008-0.09Hz)",
+    "atlas": "Diedrichsen probabilistic MR atlas of the human cerebellum (seed ROIs), cerebral targets from whole-brain voxelwise/cluster analysis",
+    "claim_type": "associational",
+    "finding": "Of 12 cerebellar-cerebral functional connectivity differences found between ASD and TD in the original (non-ABIDE) sample, decreased FC between the right dentate nucleus and left IPL replicated significantly in the ABIDE II sample (p=0.039)",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "extracted from the Autism Brain Imaging Data Exchange (ABIDE) II",
+      "The ﬁnal replication dataset consisted of 42 boys with ASD (mean age: 10.7 ± 1.8 years, range: 7.2–14.4 years) and 88 TD boys",
+      "the ASD group showed signiﬁcantly decreased FC between the right dentate nucleus and left IPL (p = 0.039, Figure 4)"
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "source_id": "S-058",
+  "pmid": "local_7c21219e",
+  "doi": "10.1007/978-3-030-32695-1_11",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2,3: resting-state fMRI diagnostic classification (ASD vs TD) on ABIDE-I single-site (NYU, UM) and multi-site subsets using a hybrid 3D CNN / 3D Convolutional LSTM model.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {"text": "Our results show that the proposed model achieves state of the art results on single sites with F1-scores of 0.78 and 0.7 on NYU and UM sites, respectively.", "section": "abstract", "claim": "Main predictive result: F1 0.78 (NYU) and 0.7 (UM) for single-site classification.", "relevance_score": 1.0},
+    {"text": "We preprocessed the data with the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC) and the fMRI volumes are downsampled to 4 mm in MNI.", "section": "methods", "claim": "Preprocessing pipeline is C-PAC with 4mm MNI downsampling; no ROI atlas used (raw 4D volumes).", "relevance_score": 0.8},
+    {"text": "For single sites experiments, we use the NYU and UM sites from ABIDE-I. Those provide the highest number of balanced (ASD/typically developing (TD)) subjects with 184 and 110 subjects respectively.", "section": "methods", "claim": "Single-site cohorts: NYU 184 subjects, UM 110 subjects.", "relevance_score": 0.9},
+    {"text": "For the multi-site experiment we used ABIDE-I with 19 sites and 1100 subjects.", "section": "methods", "claim": "Multi-site cohort: 19 ABIDE-I sites, 1100 subjects.", "relevance_score": 0.9},
+    {"text": "We report 5-fold cross validation mean F1-score and accuracy for the experiments in Table 1.", "section": "results", "claim": "Evaluation uses 5-fold cross-validation (no leave-site-out scheme described).", "relevance_score": 0.7},
+    {"text": "The results show that the proposed architecture 3DCNN C-LSTM outperforms other models on single site experiments by achieving mean test accuracies and F1 scores of 0.77 and 0.78 respectively for the NYU site and 0.71 and 0.7 on the UM site.", "section": "results", "claim": "3DCNN C-LSTM: NYU accuracy 0.77/F1 0.78; UM accuracy 0.71/F1 0.70.", "relevance_score": 1.0},
+    {"text": "3DCNN C-LSTM however also shows a degraded performance in multi-site\nenvironment as evidenced by the results on ABIDE-1 data that features 19 sites.", "section": "results", "claim": "Performance degrades on the multi-site ABIDE-I evaluation relative to single-site.", "relevance_score": 0.8},
+    {"text": "We attribute the loss of performance of our model to the heterogeneity of the\ndata acquired from diﬀerent scanners with diﬀerent scanning parameters.", "section": "discussion", "claim": "Authors attribute multi-site performance loss to scanner/acquisition heterogeneity.", "relevance_score": 0.6}
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Unclear", "support": "N per site is reported (NYU 184, UM 110, multi-site 1100 across 19 sites) but no explicit QC/motion exclusion rule is stated for arriving at these counts."},
+      {"domain": "Predictors", "judgment": "Low", "support": "\"We preprocessed the data with the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC) and the fMRI volumes are downsampled to 4 mm in MNI.\" — full pipeline specified; no atlas needed since raw 4D volumes are used."},
+      {"domain": "Outcome", "judgment": "Unclear", "support": "ASD/TD labels are taken from the ABIDE-I phenotype files; the specific diagnostic instrument/criteria are not described in this paper."},
+      {"domain": "Analysis", "judgment": "High", "support": "Multi-site evaluation uses pooled 5-fold cross-validation with no leave-site-out scheme or site covariate/harmonisation, despite the authors themselves attributing degraded multi-site performance to site/scanner heterogeneity."}
+    ],
+    "overall": "High",
+    "summary": "Pipeline and per-site Ns are clearly reported, but no motion/QC rule is given, diagnostic label source is not elaborated, and the multi-site model is evaluated with pooled cross-validation rather than a leave-site-out design, despite acknowledged site heterogeneity effects."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "",
+    "n_controls": "",
+    "data_types": "resting-state fMRI (raw 4D spatio-temporal volumes)",
+    "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (C-PAC), fMRI volumes downsampled to 4mm in MNI space",
+    "specific_features": "Raw 4D (3D space + time) BOLD volumes, no ROI/connectivity feature extraction or atlas used by the proposed model",
+    "model_category": "Deep learning — hybrid 3D convolutional neural network and 3D convolutional LSTM",
+    "specific_algorithms": "3DCNN C-LSTM and 3DCNN 1D (proposed), compared against AE MLP, SVM, 1D Conv, CNN3D TC/MS, convGRU-CNN3D, CNN4D baselines",
+    "validation_methodology": "5-fold cross-validation, run separately for the NYU single-site, UM single-site, and ABIDE-I 19-site multi-site cohorts; no leave-site-out scheme",
+    "performance_metrics": "Accuracy, F1-score (mean ± SD over 5-fold CV)",
+    "key_performance_results": "3DCNN C-LSTM: NYU accuracy 0.77±0.05/F1 0.78; UM accuracy 0.71±0.06/F1 0.70; ABIDE-I multi-site (19 sites, 1100 subjects) accuracy 0.58±0.03/F1 0.53",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "Not reported — no data-availability statement or code repository found in the full text",
+    "custom_fields": {
+      "RQ1": "ABIDE-I single-site cohorts (NYU: 184 subjects; UM: 110 subjects) and a multi-site cohort (19 sites, 1100 subjects); no explicit motion/QC exclusion rule stated. | quote: \"For single sites experiments, we use the NYU and UM sites from ABIDE-I. Those provide the highest number of balanced (ASD/typically developing (TD)) subjects with 184 and 110 subjects respectively.\"",
+      "RQ2": "C-PAC pipeline, volumes downsampled to 4mm MNI; no ROI atlas or connectivity feature extraction — the model operates on raw 4D volumes. | quote: \"We preprocessed the data with the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC) and the fMRI volumes are downsampled to 4 mm in MNI.\"",
+      "RQ3": "predictive — binary classification of ASD vs TD from raw 4D resting-state fMRI using a hybrid 3DCNN/3D-ConvLSTM. | quote: \"We evaluate our proposed model on the publicly available ABIDE dataset to demonstrate the capability of our model to classify Autism Spectrum Disorder (ASD) from resting-state fMRI data.\"",
+      "RQ4": "5-fold cross-validation reported separately for each single site (NYU, UM) and for the pooled 19-site ABIDE-I multi-site cohort; no leave-site-out evaluation or site covariate/harmonisation described. | quote: \"We report 5-fold cross validation mean F1-score and accuracy for the experiments in Table 1.\"",
+      "RQ5": "3DCNN C-LSTM outperformed compared models on single sites (NYU accuracy 0.77/F1 0.78; UM accuracy 0.71/F1 0.70) but showed degraded performance on the multi-site ABIDE-I evaluation (accuracy 0.58/F1 0.53), attributed to scanner/acquisition heterogeneity. | quote: \"The results show that the proposed architecture 3DCNN C-LSTM outperforms other models on single site experiments by achieving mean test accuracies and F1 scores of 0.77 and 0.78 respectively for the NYU site and 0.71 and 0.7 on the UM site.\"",
+      "RQ6": "partly — exact per-site Ns (NYU 184, UM 110, multi-site 1100/19 sites) are given, but no participant ID list, no code repository, and no explicit QC/exclusion rule are reported. | quote: \"For the multi-site experiment we used ABIDE-I with 19 sites and 1100 subjects.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly | quote: \"For single sites experiments, we use the NYU and UM sites from ABIDE-I. Those provide the highest number of balanced (ASD/typically developing (TD)) subjects with 184 and 110 subjects respectively.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no motion metric or threshold is stated",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"We preprocessed the data with the Conﬁgurable Pipeline for the Analysis of Connectomes (C-PAC) and the fMRI volumes are downsampled to 4 mm in MNI.\"",
+      "CL4 Atlas/parcellation reported?": "No — no ROI atlas or parcellation is used; raw 4D volumes are fed to the model",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — no statement that any scaling or feature construction step was confined to training folds",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — multi-site evaluation uses pooled 5-fold cross-validation with no site covariate or leave-site-out scheme, despite acknowledged scanner heterogeneity effects",
+      "CL7 Code and/or participant list available?": "No — no data-availability statement or code repository link found in the full text",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"We evaluate our proposed model on the publicly available ABIDE dataset to demonstrate the capability of our model to classify Autism Spectrum Disorder (ASD) from resting-state fMRI data.\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {"rating": "Partial", "notes": "Per-site Ns reported (CL1 partly) but no QC/motion rule given (CL2 no).", "overall_concern": "Some"},
+    "domain_2_predictors_features": {"rating": "Partial", "notes": "Pipeline fully specified (CL3 yes); no atlas used/applicable since raw 4D volumes are the model input (CL4 no).", "overall_concern": "Some"},
+    "domain_3_outcome_diagnosis": {"rating": "Unclear", "notes": "Diagnosis presumably from ABIDE-I phenotype files; instrument/criteria not described in this paper.", "overall_concern": "Some"},
+    "domain_4_bias_transparency": {"rating": "No", "notes": "CL5 not addressed; CL6 site ignored in multi-site pooled CV despite acknowledged heterogeneity; CL7 no code/data release found.", "overall_concern": "High"}
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction study; ABIDE-I single-site cohorts (NYU 184, UM 110 subjects) and a multi-site cohort (19 sites, 1100 subjects)",
+    "methods": "C-PAC-preprocessed raw 4D resting-state fMRI volumes (4mm MNI) classified end-to-end with a hybrid 3D CNN + bidirectional 3D convolutional LSTM, evaluated with 5-fold cross-validation and compared against several published deep-learning ABIDE classifiers",
+    "outcomes": "3DCNN C-LSTM achieved state-of-the-art single-site performance (NYU F1 0.78, UM F1 0.70), surpassing prior methods by 8-10%, but performance degraded substantially on the pooled multi-site ABIDE-I evaluation (F1 0.53), attributed to scanner/acquisition heterogeneity",
+    "key_limitations": "No leave-site-out evaluation despite multi-site heterogeneity being identified as the cause of degraded performance; no motion/QC rule or diagnostic-instrument description reported; no code or data-availability statement",
+    "relevance_notes": "Illustrates that an end-to-end raw-4D-volume classifier that performs well at single sites degrades sharply under multi-site heterogeneity when evaluated with ordinary (non-site-stratified) cross-validation.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1007/978-3-030-32695-1_11",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Single-site cohorts (NYU, UM) and a 19-site multi-site cohort from ABIDE-I; no stated QC/exclusion rule beyond site selection for balanced ASD/TD counts",
+    "n_by_dx": {"ASD": null, "TD": null, "total": 1100},
+    "sites": "NYU (184 subjects), UM (110 subjects) individually; 19 sites pooled (1100 subjects) for the multi-site experiment",
+    "pipeline": "C-PAC (Configurable Pipeline for the Analysis of Connectomes), 4mm MNI downsampling",
+    "atlas": "none (raw 4D volumes used directly)",
+    "claim_type": "predictive",
+    "finding": "Hybrid 3DCNN C-LSTM achieved F1 0.78 (NYU) and 0.70 (UM) for single-site ASD classification, but F1 dropped to 0.53 on the pooled 19-site ABIDE-I multi-site evaluation",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "For single sites experiments, we use the NYU and UM sites from ABIDE-I. Those provide the highest number of balanced (ASD/typically developing (TD)) subjects with 184 and 110 subjects respectively.",
+      "For the multi-site experiment we used ABIDE-I with 19 sites and 1100 subjects.",
+      "The results show that the proposed architecture 3DCNN C-LSTM outperforms other models on single site experiments by achieving mean test accuracies and F1 scores of 0.77 and 0.78 respectively for the NYU site and 0.71 and 0.7 on the UM site."
+    ]
+  }
+}

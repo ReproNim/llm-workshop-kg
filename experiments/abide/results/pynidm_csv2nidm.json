@@ -1,0 +1,13 @@
+{
+ "pynidm": "pynidm==4.5.5",
+ "command": "uvx --python 3.12 --from pynidm==4.5.5 csv2nidm -csv phenotype_for_csv2nidm.csv -json_map data/repronim_simple2/bids_nidm_scripts/abide_phenotypic_v1_0b_vars_to_terms_v5.json -no_concepts -out phenotype_pynidm.ttl -log .",
+ "returncode": 0,
+ "seconds": 21.8,
+ "child_peak_rss_mb": 509.7,
+ "mapped_variables": 75,
+ "columns_converted": 75,
+ "output_bytes": 5427318,
+ "stderr_tail": [
+  "[2026-10-15 11:24:24,639] -  WARNING -       ontquery -      interlex.py:81   - You have not set an API key for the SciCrunch API! InterLexRemote will error if you try to use it."
+ ]
+}

@@ -1,0 +1,8 @@
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX schema: <http://schema.org/>
+SELECT ?change ?summary ?material WHERE { GRAPH <urn:repronim:abide:graph/core> {
+  ?change a ex:MeasuredChange ; ex:summary ?summary ; ex:materialChange ?material . } } ORDER BY ?change

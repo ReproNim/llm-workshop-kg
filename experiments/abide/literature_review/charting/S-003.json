@@ -1,0 +1,32 @@
+{
+  "source_id": "S-003",
+  "pmid": "local_88ad98ff",
+  "doi": "10.1016/j.bpsc.2020.08.008",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: ABIDE I and II data used only for a structural-MRI (voxel-based-morphometry grey-matter asymmetry / normative-model) replication analysis; no resting-state functional analysis of ABIDE data is reported.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1016/j.bpsc.2020.08.008",
+    "dataset": "ABIDE I+II",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {
+      "ASD": null,
+      "TD": null,
+      "total": null
+    },
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "we selected a sample from the publically available Autism Brain Imaging Data Exchange (ABIDE) I and II (50,51) to examine extreme right- and leftward deviations in an independent datasets."
+    ]
+  }
+}

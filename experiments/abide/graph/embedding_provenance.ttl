@@ -1,0 +1,32 @@
+@prefix ex: <urn:repronim:abide:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:repronim:abide:embedding/umap_primary> a prov:Entity ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/umap_primary> ;
+    ex:nParticipants 604 ;
+    ex:sha256 "2c5d66f776ae36224cc5e753fa3c79eb915b9cce9a95a6e5d04808821985aaa7" .
+
+<urn:repronim:abide:embedding/umap_with_srs> a prov:Entity ;
+    prov:wasGeneratedBy <urn:repronim:abide:activity/umap_with_srs> ;
+    ex:nParticipants 255 ;
+    ex:sha256 "ed3389225c68e98fa4144a7fd4189fe8507029eb698ffbfe83e6a2d0e4923e82" .
+
+<urn:repronim:abide:activity/umap_primary> a prov:Activity ;
+    prov:used <urn:repronim:abide:cohort/B_v1> ;
+    ex:excludedFromInputs "diagnosis, sex, site" ;
+    ex:features "AGE_AT_SCAN, FIQ, VIQ, PIQ" ;
+    ex:missingness "complete cases only; -9999 and empty treated as missing; no imputation" ;
+    ex:query "queries/phenotype_matrix.rq" ;
+    ex:scaling "z-score per feature on complete cases" ;
+    ex:umapParams "{\"n_neighbors\": 15, \"min_dist\": 0.1, \"metric\": \"euclidean\", \"random_state\": 42}" .
+
+<urn:repronim:abide:activity/umap_with_srs> a prov:Activity ;
+    prov:used <urn:repronim:abide:cohort/B_v1> ;
+    ex:excludedFromInputs "diagnosis, sex, site" ;
+    ex:features "AGE_AT_SCAN, FIQ, VIQ, PIQ, SRS_RAW_TOTAL" ;
+    ex:missingness "complete cases only; -9999 and empty treated as missing; no imputation" ;
+    ex:query "queries/phenotype_matrix.rq" ;
+    ex:scaling "z-score per feature on complete cases" ;
+    ex:umapParams "{\"n_neighbors\": 15, \"min_dist\": 0.1, \"metric\": \"euclidean\", \"random_state\": 42}" .
+

@@ -1,0 +1,59 @@
+{
+ "n_resources": 58,
+ "by_type": {
+  "SoftwareSourceCode": 33,
+  "TrainingMaterial": 9,
+  "Dataset": 6,
+  "Specification": 3,
+  "Vocabulary": 3,
+  "SkillCollection": 2,
+  "ScholarlyArticle": 2
+ },
+ "by_usage": {
+  "pointer": 44,
+  "data_source": 8,
+  "executed": 6
+ },
+ "by_step": {
+  "query_merge": 13,
+  "containerized_execution": 13,
+  "statistics_results": 11,
+  "provenance_capture": 10,
+  "training": 10,
+  "idp_extraction_to_nidm": 8,
+  "phenotype_assessment_schema": 7,
+  "data_source": 6,
+  "acquisition": 4,
+  "conversion_to_bids": 2,
+  "qc_to_nidm": 2,
+  "agent_skills": 2,
+  "preprocessing": 2
+ },
+ "edam_terms_used": 28,
+ "pins_fetched_at": "2026-10-15T15:11:09+00:00",
+ "executed": [
+  "nilearn",
+  "scikit-learn",
+  "umap-learn",
+  "rdflib",
+  "pyshacl",
+  "pyoxigraph"
+ ],
+ "data_source": [
+  "segstats_jsonld",
+  "ants_seg_to_nidm",
+  "fsl_seg_to_nidm",
+  "simple2_nidm_examples",
+  "abide-preprocessed",
+  "dimartino2014",
+  "abraham2017",
+  "cpac"
+ ],
+ "edam_labels_without_term": [
+  "BIDS",
+  "container",
+  "provenance",
+  "segmentation"
+ ],
+ "triples": 1383
+}

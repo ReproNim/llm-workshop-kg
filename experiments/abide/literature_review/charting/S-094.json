@@ -1,0 +1,275 @@
+{
+  "source_id": "S-094",
+  "pmid": "local_ddf52058",
+  "doi": "10.3389/fnins.2018.00869",
+  "screening": {
+    "decision": "include",
+    "reason": "Analyses multi-site ABIDE resting-state fMRI functional connectivity and temporal entropy in an ASD-vs-control group-difference analysis; satisfies inclusion 2-3.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "Resting-state fMRI (rs-fMRI) and structural imaging data of 85 individuals with ASD and 163 matched controls from multiple sites of the ABIDE data set (Di Martino et al., 2014) were included in this study for a total of N = 248 individuals.",
+      "section": "methods",
+      "claim": "Final analysed cohort: 85 ASD and 163 matched controls (N=248) from multiple ABIDE sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Frames with excessive motion were identiﬁed and scrubbed  (Power et al., 2012) if the framewise displacement exceeded  0.3 mm. Individuals with >10% of their frames ﬂagged for  scrubbing were excluded.",
+      "section": "methods",
+      "claim": "Motion scrubbing threshold: FD>0.3mm flagged frames; individuals with >10% flagged frames excluded.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "ROIs were deﬁned as 10 mm diameter spheres whose center coordinates are given in MNI atlas space (Power et al., 2011).",
+      "section": "methods",
+      "claim": "Used the Power et al. (2011) 264-ROI functional atlas organized into 11 resting-state networks.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "We observed that an imbalance in intra- and inter-network FC across 11 RSNs in ASD individuals (p = 0.002) corresponds to a weakened relationship with RSN\ntemporal entropy (p = 0.02).",
+      "section": "abstract",
+      "claim": "Main finding: FC imbalance across 11 RSNs in ASD corresponds to a weaker FC-entropy relationship than in controls.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Further, we observed that an estimated RSN entropy model\nsigniﬁcantly distinguished ASD from controls (p = 0.01) and was associated with level of\nASD symptom severity (p = 0.003).",
+      "section": "abstract",
+      "claim": "The entropy-model fit (not diagnosis-trained) significantly differed between ASD and control groups and correlated with ASD symptom severity.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Importantly, no information about group membership (i.e., ASD or control) has been explicitly passed to the model.",
+      "section": "methods",
+      "claim": "The elastic-net entropy model was fit without using diagnostic group membership, i.e. it is an associational not a diagnostic-classification model.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "The minimum MSE computed from a 10-fold cross validation\nwas 11.4 ± 7.2% of c1 variance, and was observed for α = 0.15.",
+      "section": "results",
+      "claim": "Elastic-net model of FC from RSN entropy was fit with 10-fold cross-validation.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "Explicit inclusion criteria (structural/functional scan requirements, full-scale IQ>100, FD threshold, minimum per-site N) stated."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Multi-site ABIDE cohort with per-site minimum (>=7 ASD and 7 control), demographic Table 1 referenced."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "Detailed custom FSL-based pipeline (MCFLIRT, registration, scrubbing, band-pass filter, nuisance regression) fully described."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "Refers to ABIDE site-specific diagnostic criteria rather than restating the diagnostic instrument directly."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Motion (FD) explicitly compared between groups and shown not significantly different (W=7,135, p=0.74); IQ>100 required as inclusion criterion."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "Nuisance regression (motion, WM, CSF, global signal), scrubbing of high-motion frames, and explicit motion-equivalence check between groups."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "FC (Power 264-ROI, 11 RSN) and wavelet-based entropy are both established and previously validated measures, cited and described in detail."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Unclear",
+        "support": "Wilcoxon rank-sum and multilinear regression with cross-validated elastic net are used, but explicit multiple-comparison correction across the many statistical tests reported is not detailed in the sections read."
+      }
+    ],
+    "overall": "Low",
+    "summary": "A methodologically careful multi-site ABIDE associational study with explicit motion thresholds, motion-equivalence testing between groups, and a diagnosis-blind entropy model later compared post hoc between groups."
+  },
+  "charting": {
+    "source_id": "S-094",
+    "title": "Imbalance of Functional Connectivity and Temporal Entropy in Resting-State Networks in Autism Spectrum Disorder: A Machine Learning Approach",
+    "authors": "",
+    "year": "2018",
+    "journal_conference": "Frontiers in Neuroscience",
+    "doi": "10.3389/fnins.2018.00869",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "85",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "163",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "controls described as matched",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI, structural MRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "no",
+    "dataset_openly_available": "Uses public ABIDE data; no code/data repository link found in the text",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity, temporal entropy",
+    "specific_features": "264x264 FC matrix (Power 264-ROI atlas, 11 RSNs) PCA scores; wavelet-based regularity (temporal entropy) per RSN",
+    "feature_extraction_tools": "Custom FSL-based pipeline (MCFLIRT, FLIRT registration, nuisance regression); Power et al. (2011) 264-ROI/11-RSN atlas; elastic net (glmnet, R)",
+    "feature_importance_reported": "yes",
+    "importance_method": "Elastic-net model coefficients across 11 RSNs",
+    "top_features_identified": "DMN exhibited the strongest weighting; sensory networks (SM, SM-lat, VIS, AUD, SUB) positively weighted, higher-order cognitive networks (DMN, SAL, CO, DAN, VAN, FP) negatively weighted",
+    "feature_change_direction": "Weaker FC-entropy relationship in ASD vs controls; FC PCA scores (c1) significantly differed between ASD and control groups",
+    "model_category": "Elastic-net regularized linear regression (not a diagnostic classifier — group membership not used as a predictor)",
+    "specific_algorithms": "Elastic net (R glmnet package)",
+    "validation_methodology": "10-fold cross-validation (for the FC~entropy regression, not a diagnosis classifier)",
+    "performance_metrics": "Mean squared error (MSE) of cross-validated regression (11.4 +/- 7.2% of c1 variance explained)",
+    "key_performance_results": "Minimum MSE from 10-fold CV = 11.4 +/- 7.2% of c1 variance at alpha=0.15; entropy-model fit differed significantly between ASD and control groups (p=0.01) and correlated with ASD symptom severity (p=0.003)",
+    "summary_key_findings": "In 85 ASD and 163 matched controls from multiple ABIDE sites, an imbalance in intra- and inter-network functional connectivity across 11 resting-state networks in ASD (p=0.002) corresponded to a significantly weaker FC-entropy relationship (p=0.02); a diagnosis-blind entropy model of FC nonetheless differed significantly between ASD and controls (p=0.01) and was associated with ASD symptom severity (p=0.003).",
+    "features_associated_disorder": "Imbalanced intra-/inter-network FC and weakened FC-temporal-entropy coupling across 11 RSNs, with DMN showing the strongest model weighting",
+    "future_directions_recommended": "",
+    "reviewer_notes": "Despite the 'machine learning' title, the elastic-net model is used as an associational regression tool (diagnosis-blind) rather than a diagnostic classifier.",
+    "custom_fields": {
+      "RQ1": "Multi-site ABIDE: 85 ASD, 163 matched controls, N=248; inclusion required T1 + rs-fMRI full coverage, full-scale IQ>100, a framewise-displacement criterion, and >=7 ASD/7 control per site; individuals with >10% scrubbed frames excluded. | quote: \"Resting-state fMRI (rs-fMRI) and structural imaging data of 85 individuals with ASD and 163 matched controls from multiple sites of the ABIDE data set (Di Martino et al., 2014) were included in this study for a total of N = 248 individuals.\"",
+      "RQ2": "Custom FSL-based pipeline (MCFLIRT motion correction, FLIRT registration, scrubbing, 0.01-0.1Hz band-pass, nuisance regression); Power et al. (2011) 264-ROI atlas organized into 11 RSNs. | quote: \"ROIs were deﬁned as 10 mm diameter spheres whose center coordinates are given in MNI atlas space (Power et al., 2011).\"",
+      "RQ3": "associational — group-difference analysis of FC imbalance and FC-entropy coupling between ASD and control groups (the predictive elastic-net model is diagnosis-blind, used to relate entropy to connectivity, not to classify diagnosis). | quote: \"Importantly, no information about group membership (i.e., ASD or control) has been explicitly passed to the model.\"",
+      "RQ4": "Wilcoxon rank-sum tests for group comparisons (FC PCA scores, motion equivalence); multilinear/elastic-net regression of FC-PCA scores on RSN entropy with 10-fold cross-validation; single ABIDE cohort pooled across sites, no leave-site-out evaluation. | quote: \"The minimum MSE computed from a 10-fold cross validation\nwas 11.4 ± 7.2% of c1 variance, and was observed for α = 0.15.\"",
+      "RQ5": "FC imbalance across 11 RSNs in ASD (p=0.002) corresponded to a weaker FC-entropy relationship (p=0.02); entropy-model fit distinguished ASD from controls (p=0.01) and correlated with ASD symptom severity (p=0.003). | quote: \"Further, we observed that an estimated RSN entropy model\nsigniﬁcantly distinguished ASD from controls (p = 0.01) and was associated with level of\nASD symptom severity (p = 0.003).\"",
+      "RQ6": "partly — explicit inclusion/exclusion and motion-scrubbing rules are given, but no participant ID list or code repository link is found in the text.",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — explicit inclusion criteria and resulting N by diagnosis given. | quote: \"Resting-state fMRI (rs-fMRI) and structural imaging data of 85 individuals with ASD and 163 matched controls from multiple sites of the ABIDE data set (Di Martino et al., 2014) were included in this study for a total of N = 248 individuals.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes — explicit FD scrubbing threshold (0.3mm) and a >10% flagged-frames exclusion rule, plus a reported FD inclusion criterion. | quote: \"Frames with excessive motion were identiﬁed and scrubbed  (Power et al., 2012) if the framewise displacement exceeded  0.3 mm. Individuals with >10% of their frames ﬂagged for  scrubbing were excluded.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — a detailed custom FSL-based pipeline is described (tools named with citations) but not presented as a single named/versioned pipeline (e.g. C-PAC).",
+      "CL4 Atlas/parcellation reported?": "Yes — Power et al. (2011) 264-ROI functional atlas, 11 RSNs. | quote: \"ROIs were deﬁned as 10 mm diameter spheres whose center coordinates are given in MNI atlas space (Power et al., 2011).\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Partly — the elastic-net regression (FC from entropy) used 10-fold cross-validation, but this model is diagnosis-blind; no leakage-control statement is given for the subsequent group-comparison of model fit.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — sites pooled with a per-site minimum-N inclusion rule but no explicit site covariate, harmonisation, or leave-site-out evaluation.",
+      "CL7 Code and/or participant list available?": "No — no code repository or participant list link found in the text.",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-094",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "Explicit inclusion criteria and N by group."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Yes",
+          "notes": "FD scrubbing threshold and >10% exclusion rule."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported",
+          "rating": "Partial",
+          "notes": "Custom pipeline described step-by-step, not a single named/versioned pipeline."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "Power 264-ROI atlas, 11 RSNs."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "Refers to ABIDE site-specific diagnostic criteria, not restated directly."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "Partial",
+          "notes": "10-fold CV for entropy-FC regression; model is diagnosis-blind."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "No",
+          "notes": "Sites pooled, no covariate/harmonisation/leave-site-out."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "No",
+          "notes": "No link found."
+        }
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-094",
+    "study_design_sample_dataset": "Group-difference (associational); multi-site ABIDE; n=85 ASD / 163 matched controls (N=248).",
+    "methods": "Custom FSL-based rs-fMRI preprocessing; Power 264-ROI/11-RSN atlas; PCA of FC matrices; wavelet-based temporal entropy; elastic-net (10-fold CV) regression of FC on RSN entropy, diagnosis-blind, compared post hoc between groups.",
+    "outcomes": "FC imbalance across 11 RSNs in ASD corresponded to a weaker FC-entropy relationship than controls; the diagnosis-blind entropy-model fit differed significantly between ASD and controls and correlated with ASD symptom severity.",
+    "key_limitations": "No named/versioned preprocessing pipeline; no site covariate/harmonisation; diagnostic instrument not restated; no code/participant-list release found.",
+    "relevance_notes": "A methodologically detailed multi-site ABIDE example linking connectivity and temporal-entropy dynamics, using an elastic-net model as an associational (not diagnostic) tool.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2018.00869",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Multiple ABIDE sites; inclusion required T1 + full-coverage rs-fMRI, full-scale IQ>100, a framewise-displacement criterion, >=7 ASD/7 control per site; scrubbing of frames with FD>0.3mm, excluding individuals with >10% flagged frames; final n=85 ASD/163 controls (N=248).",
+    "n_by_dx": {
+      "ASD": 85,
+      "TD": 163,
+      "total": 248
+    },
+    "sites": "multiple ABIDE sites (exact count not stated as a single figure in the text read)",
+    "pipeline": "custom FSL-based pipeline (MCFLIRT, FLIRT registration, scrubbing, band-pass filter, nuisance regression)",
+    "atlas": "Power et al. (2011) 264-ROI functional atlas, 11 RSNs",
+    "claim_type": "associational",
+    "finding": "FC imbalance across 11 RSNs in ASD (p=0.002) corresponded to a weaker FC-entropy relationship (p=0.02); a diagnosis-blind entropy model of FC differed significantly between ASD and controls (p=0.01) and correlated with ASD symptom severity (p=0.003).",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "Resting-state fMRI (rs-fMRI) and structural imaging data of 85 individuals with ASD and 163 matched controls from multiple sites of the ABIDE data set (Di Martino et al., 2014) were included in this study for a total of N = 248 individuals.",
+      "Further, we observed that an estimated RSN entropy model\nsigniﬁcantly distinguished ASD from controls (p = 0.01) and was associated with level of\nASD symptom severity (p = 0.003)."
+    ]
+  }
+}

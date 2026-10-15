@@ -1,0 +1,26 @@
+{
+  "source_id": "S-083",
+  "pmid": "local_e77ce533",
+  "doi": "10.1016/j.media.2021.102191",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 4: uses ABIDE I structural T1 images purely as a multi-site intensity-normalization/segmentation benchmark (FreeSurfer segmentation maps as ground truth), with no autism-vs-control analysis and no resting-state functional data used",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1016/j.media.2021.102191",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "no",
+    "evidence_quotes": []
+  }
+}

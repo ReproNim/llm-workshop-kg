@@ -1,0 +1,945 @@
+{
+ "assumptions": "ABIDE I compute phase for the Brain Researcher arm of the comparison.\n\nNot BR output: BR only returned the NITRC landing page; the fcp-indi S3 layout below is the\noperator's prior knowledge. Cohort definitions are stated assumptions, written to results.json.\n\nAnalyst B (Abraham-style): phenotype row with FILE_ID + CC200 file + nilearn `quality_checked`\n  rater filter (qc_rater_1=OK, qc_anat_rater_2 in OK/maybe, qc_func_rater_2 in OK/maybe,\n  qc_anat_rater_3=OK, qc_func_rater_3=OK); leave-one-site-out, tangent connectivity + l2 logistic.\nAnalyst A (Di Martino-style): phenotype row with FILE_ID + CC200 file + func_mean_fd < 0.2 mm;\n  edgewise OLS of Fisher-z correlation on DX + age + sex + mean FD + site, BH-FDR q<0.05.\nTightened QC: func_mean_fd < TIGHT (default 0.1 mm), sweep reported.\n",
+ "tight_fd_mm": 0.1,
+ "urls": {
+  "phenotype": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Phenotypic_V1_0b_preprocessed1.csv",
+  "roi_template": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/rois_cc200/{fid}_rois_cc200.1D"
+ },
+ "n_phenotype_rows": 1112,
+ "n_with_file_id": 1035,
+ "s3_listing": {
+  "data/Projects/ABIDE_Initiative/": {
+   "prefixes": [
+    "data/Projects/ABIDE_Initiative/Derivatives/",
+    "data/Projects/ABIDE_Initiative/Outputs/",
+    "data/Projects/ABIDE_Initiative/PhenotypicData/",
+    "data/Projects/ABIDE_Initiative/RawData/",
+    "data/Projects/ABIDE_Initiative/RawDataBIDS/",
+    "data/Projects/ABIDE_Initiative/Resources/"
+   ],
+   "keys": [
+    "data/Projects/ABIDE_Initiative/Phenotypic_V1_0b.csv",
+    "data/Projects/ABIDE_Initiative/Phenotypic_V1_0b_preprocessed.csv",
+    "data/Projects/ABIDE_Initiative/Phenotypic_V1_0b_preprocessed1.csv"
+   ]
+  },
+  "data/Projects/ABIDE_Initiative/Outputs/": {
+   "prefixes": [
+    "data/Projects/ABIDE_Initiative/Outputs/ants/",
+    "data/Projects/ABIDE_Initiative/Outputs/ccs/",
+    "data/Projects/ABIDE_Initiative/Outputs/civet/",
+    "data/Projects/ABIDE_Initiative/Outputs/cpac/",
+    "data/Projects/ABIDE_Initiative/Outputs/dparsf/",
+    "data/Projects/ABIDE_Initiative/Outputs/freesurfer/",
+    "data/Projects/ABIDE_Initiative/Outputs/lle/",
+    "data/Projects/ABIDE_Initiative/Outputs/niak/",
+    "data/Projects/ABIDE_Initiative/Outputs/qap/"
+   ],
+   "keys": []
+  },
+  "data/Projects/ABIDE_Initiative/Outputs/cpac/": {
+   "prefixes": [
+    "data/Projects/ABIDE_Initiative/Outputs/cpac/filt_global/",
+    "data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/",
+    "data/Projects/ABIDE_Initiative/Outputs/cpac/func_minimal/",
+    "data/Projects/ABIDE_Initiative/Outputs/cpac/nofilt_global/",
+    "data/Projects/ABIDE_Initiative/Outputs/cpac/nofilt_noglobal/",
+    "data/Projects/ABIDE_Initiative/Outputs/cpac/raw_crashes_rerun/",
+    "data/Projects/ABIDE_Initiative/Outputs/cpac/raw_outputs_eigen/",
+    "data/Projects/ABIDE_Initiative/Outputs/cpac/raw_outputs_jpooley/",
+    "data/Projects/ABIDE_Initiative/Outputs/cpac/raw_outputs_rerun/"
+   ],
+   "keys": []
+  },
+  "data/Projects/ABIDE_Initiative/Resources/": {
+   "prefixes": [],
+   "keys": [
+    "data/Projects/ABIDE_Initiative/Resources/CC200_ROI_labels.csv",
+    "data/Projects/ABIDE_Initiative/Resources/CC400_ROI_labels.csv",
+    "data/Projects/ABIDE_Initiative/Resources/CPAC_subject_list_abide_test.yml",
+    "data/Projects/ABIDE_Initiative/Resources/aal_labels.csv",
+    "data/Projects/ABIDE_Initiative/Resources/aal_roi_atlas.nii.gz",
+    "data/Projects/ABIDE_Initiative/Resources/abide_85percent_gmmask.nii.gz",
+    "data/Projects/ABIDE_Initiative/Resources/cc200_roi_atlas.nii.gz",
+    "data/Projects/ABIDE_Initiative/Resources/cc400_roi_atlas.nii.gz",
+    "data/Projects/ABIDE_Initiative/Resources/coins_abide_map.yml",
+    "data/Projects/ABIDE_Initiative/Resources/dos160_labels.csv",
+    "data/Projects/ABIDE_Initiative/Resources/dos160_roi_atlas.nii.gz",
+    "data/Projects/ABIDE_Initiative/Resources/ez_labels.csv",
+    "data/Projects/ABIDE_Initiative/Resources/ez_roi_atlas.nii.gz",
+    "data/Projects/ABIDE_Initiative/Resources/ho_labels.csv",
+    "data/Projects/ABIDE_Initiative/Resources/ho_roi_atlas.nii.gz",
+    "data/Projects/ABIDE_Initiative/Resources/pipeline_config.yml",
+    "data/Projects/ABIDE_Initiative/Resources/s3_sublist.yml",
+    "data/Projects/ABIDE_Initiative/Resources/scan_parameters_abide.csv",
+    "data/Projects/ABIDE_Initiative/Resources/tt_labels.csv",
+    "data/Projects/ABIDE_Initiative/Resources/tt_roi_atlas.nii.gz"
+   ]
+  }
+ },
+ "n_with_cc200": 1035,
+ "Q1_B_cohort": {
+  "total": 871,
+  "ASD": 403,
+  "TC": 468
+ },
+ "Q1_B_by_site": {
+  "CALTECH": {
+   "ASD": 5,
+   "TC": 10
+  },
+  "CMU": {
+   "ASD": 6,
+   "TC": 5
+  },
+  "KKI": {
+   "ASD": 12,
+   "TC": 21
+  },
+  "LEUVEN_1": {
+   "ASD": 14,
+   "TC": 14
+  },
+  "LEUVEN_2": {
+   "ASD": 12,
+   "TC": 16
+  },
+  "MAX_MUN": {
+   "ASD": 19,
+   "TC": 27
+  },
+  "NYU": {
+   "ASD": 74,
+   "TC": 98
+  },
+  "OHSU": {
+   "ASD": 12,
+   "TC": 13
+  },
+  "OLIN": {
+   "ASD": 14,
+   "TC": 14
+  },
+  "PITT": {
+   "ASD": 24,
+   "TC": 26
+  },
+  "SBL": {
+   "ASD": 12,
+   "TC": 14
+  },
+  "SDSU": {
+   "ASD": 8,
+   "TC": 19
+  },
+  "STANFORD": {
+   "ASD": 12,
+   "TC": 13
+  },
+  "TRINITY": {
+   "ASD": 19,
+   "TC": 25
+  },
+  "UCLA_1": {
+   "ASD": 37,
+   "TC": 27
+  },
+  "UCLA_2": {
+   "ASD": 11,
+   "TC": 10
+  },
+  "UM_1": {
+   "ASD": 34,
+   "TC": 52
+  },
+  "UM_2": {
+   "ASD": 13,
+   "TC": 21
+  },
+  "USM": {
+   "ASD": 43,
+   "TC": 24
+  },
+  "YALE": {
+   "ASD": 22,
+   "TC": 19
+  }
+ },
+ "Q2": {
+  "A_cohort": {
+   "total": 884,
+   "ASD": 408,
+   "TC": 476
+  },
+  "A_tight_cohort": {
+   "total": 633,
+   "ASD": 274,
+   "TC": 359
+  },
+  "overlap_A_B": 780,
+  "A_only": 104,
+  "B_only": 91,
+  "overlap_Atight_B": 571,
+  "B_excluded_by_tight_QC": {
+   "total": 300,
+   "ASD": 163,
+   "TC": 137
+  },
+  "B_excluded_by_tight_QC_by_site": {
+   "PITT": 33,
+   "USM": 33,
+   "NYU": 26,
+   "UM_1": 25,
+   "SBL": 23,
+   "UCLA_1": 20,
+   "OLIN": 19,
+   "MAX_MUN": 17,
+   "YALE": 15,
+   "KKI": 15,
+   "UCLA_2": 13,
+   "TRINITY": 11,
+   "CMU": 11,
+   "LEUVEN_2": 8,
+   "OHSU": 7,
+   "SDSU": 6,
+   "UM_2": 6,
+   "LEUVEN_1": 5,
+   "STANFORD": 4,
+   "CALTECH": 3
+  },
+  "B_excluded_by_original_A_QC": 91,
+  "sweep_B_excluded": {
+   "0.2": 91,
+   "0.15": 155,
+   "0.1": 300,
+   "0.08": 425,
+   "0.05": 637
+  }
+ },
+ "Q3_example": {
+  "FILE_ID": "CMU_a_0050642",
+  "row": {
+   "Unnamed: 0.1": 497,
+   "Unnamed: 0": 498,
+   "SUB_ID": 50642,
+   "X": 498,
+   "subject": 50642,
+   "SITE_ID": "CMU",
+   "FILE_ID": "CMU_a_0050642",
+   "DX_GROUP": 1,
+   "DSM_IV_TR": 1,
+   "AGE_AT_SCAN": 33.0,
+   "SEX": 1,
+   "HANDEDNESS_CATEGORY": "R",
+   "HANDEDNESS_SCORES": NaN,
+   "FIQ": 103.0,
+   "VIQ": 98.0,
+   "PIQ": 107.0,
+   "FIQ_TEST_TYPE": "WISC",
+   "VIQ_TEST_TYPE": "WISC",
+   "PIQ_TEST_TYPE": "WISC",
+   "ADI_R_SOCIAL_TOTAL_A": 19.0,
+   "ADI_R_VERBAL_TOTAL_BV": 16.0,
+   "ADI_RRB_TOTAL_C": 8.0,
+   "ADI_R_ONSET_TOTAL_D": 3.0,
+   "ADI_R_RSRCH_RELIABLE": 1.0,
+   "ADOS_MODULE": 4.0,
+   "ADOS_TOTAL": 12.0,
+   "ADOS_COMM": 5.0,
+   "ADOS_SOCIAL": 7.0,
+   "ADOS_STEREO_BEHAV": 1.0,
+   "ADOS_RSRCH_RELIABLE": 1.0,
+   "ADOS_GOTHAM_SOCAFFECT": NaN,
+   "ADOS_GOTHAM_RRB": NaN,
+   "ADOS_GOTHAM_TOTAL": NaN,
+   "ADOS_GOTHAM_SEVERITY": NaN,
+   "SRS_VERSION": NaN,
+   "SRS_RAW_TOTAL": NaN,
+   "SRS_AWARENESS": NaN,
+   "SRS_COGNITION": NaN,
+   "SRS_COMMUNICATION": NaN,
+   "SRS_MOTIVATION": NaN,
+   "SRS_MANNERISMS": NaN,
+   "SCQ_TOTAL": NaN,
+   "AQ_TOTAL": NaN,
+   "COMORBIDITY": NaN,
+   "CURRENT_MED_STATUS": "1",
+   "MEDICATION_NAME": "Atomoxetine; Sertraline",
+   "OFF_STIMULANTS_AT_SCAN": -9999.0,
+   "VINELAND_RECEPTIVE_V_SCALED": NaN,
+   "VINELAND_EXPRESSIVE_V_SCALED": NaN,
+   "VINELAND_WRITTEN_V_SCALED": NaN,
+   "VINELAND_COMMUNICATION_STANDARD": NaN,
+   "VINELAND_PERSONAL_V_SCALED": NaN,
+   "VINELAND_DOMESTIC_V_SCALED": NaN,
+   "VINELAND_COMMUNITY_V_SCALED": NaN,
+   "VINELAND_DAILYLVNG_STANDARD": NaN,
+   "VINELAND_INTERPERSONAL_V_SCALED": NaN,
+   "VINELAND_PLAY_V_SCALED": NaN,
+   "VINELAND_COPING_V_SCALED": NaN,
+   "VINELAND_SOCIAL_STANDARD": NaN,
+   "VINELAND_SUM_SCORES": NaN,
+   "VINELAND_ABC_STANDARD": NaN,
+   "VINELAND_INFORMANT": NaN,
+   "WISC_IV_VCI": NaN,
+   "WISC_IV_PRI": NaN,
+   "WISC_IV_WMI": NaN,
+   "WISC_IV_PSI": NaN,
+   "WISC_IV_SIM_SCALED": NaN,
+   "WISC_IV_VOCAB_SCALED": NaN,
+   "WISC_IV_INFO_SCALED": NaN,
+   "WISC_IV_BLK_DSN_SCALED": NaN,
+   "WISC_IV_PIC_CON_SCALED": NaN,
+   "WISC_IV_MATRIX_SCALED": NaN,
+   "WISC_IV_DIGIT_SPAN_SCALED": NaN,
+   "WISC_IV_LET_NUM_SCALED": NaN,
+   "WISC_IV_CODING_SCALED": NaN,
+   "WISC_IV_SYM_SCALED": NaN,
+   "EYE_STATUS_AT_SCAN": 2,
+   "AGE_AT_MPRAGE": NaN,
+   "BMI": NaN,
+   "anat_cnr": 10.1527555662,
+   "anat_efc": 3.801519042,
+   "anat_fber": 21.657415288,
+   "anat_fwhm": 3.33854,
+   "anat_qi1": 0.2207413965,
+   "anat_snr": 28.870332467,
+   "func_efc": 0.5898590983,
+   "func_fber": 48.6628620802,
+   "func_fwhm": 1.6837709698,
+   "func_dvars": 1.287511797,
+   "func_outlier": 0.0086929583,
+   "func_quality": 0.0125823686,
+   "func_mean_fd": 0.387846805,
+   "func_num_fd": 128.0,
+   "func_perc_fd": 53.112033195,
+   "func_gsr": 0.0659275204,
+   "qc_rater_1": "OK",
+   "qc_notes_rater_1": NaN,
+   "qc_anat_rater_2": "OK",
+   "qc_anat_notes_rater_2": NaN,
+   "qc_func_rater_2": "OK",
+   "qc_func_notes_rater_2": NaN,
+   "qc_anat_rater_3": "OK",
+   "qc_anat_notes_rater_3": NaN,
+   "qc_func_rater_3": "OK",
+   "qc_func_notes_rater_3": NaN,
+   "SUB_IN_SMP": 0,
+   "has_cc200": true
+  },
+  "cc200_url": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/rois_cc200/CMU_a_0050642_rois_cc200.1D",
+  "cc200_shape": [
+   236,
+   200
+  ]
+ },
+ "dropped_constant_rois": {
+  "n_dropped": 151,
+  "roi_indices_0based": [
+   0,
+   1,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   14,
+   15,
+   18,
+   19,
+   20,
+   21,
+   22,
+   23,
+   26,
+   27,
+   29,
+   30,
+   31,
+   32,
+   33,
+   35,
+   37,
+   38,
+   40,
+   41,
+   42,
+   43,
+   44,
+   46,
+   49,
+   50,
+   51,
+   52,
+   53,
+   55,
+   56,
+   59,
+   60,
+   62,
+   63,
+   64,
+   66,
+   69,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   77,
+   78,
+   79,
+   80,
+   81,
+   83,
+   84,
+   85,
+   86,
+   87,
+   89,
+   90,
+   91,
+   92,
+   94,
+   95,
+   96,
+   98,
+   100,
+   101,
+   102,
+   103,
+   105,
+   107,
+   108,
+   109,
+   110,
+   111,
+   112,
+   113,
+   114,
+   115,
+   116,
+   119,
+   120,
+   121,
+   122,
+   123,
+   124,
+   126,
+   128,
+   129,
+   130,
+   131,
+   132,
+   133,
+   135,
+   138,
+   139,
+   140,
+   141,
+   144,
+   145,
+   146,
+   148,
+   149,
+   150,
+   153,
+   155,
+   156,
+   157,
+   158,
+   159,
+   160,
+   161,
+   162,
+   164,
+   165,
+   166,
+   167,
+   168,
+   169,
+   170,
+   172,
+   174,
+   175,
+   176,
+   179,
+   180,
+   181,
+   182,
+   183,
+   185,
+   186,
+   187,
+   188,
+   190,
+   191,
+   192,
+   194,
+   195,
+   196,
+   197,
+   199
+  ],
+  "n_subjects_affected": 37
+ },
+ "A_group_effect": {
+  "n": {
+   "total": 884,
+   "ASD": 408,
+   "TC": 476
+  },
+  "n_edges": 1176,
+  "n_fdr_sig": 207,
+  "n_sig_ASD_gt_TC": 19,
+  "n_sig_ASD_lt_TC": 188,
+  "min_p": 9.32524934134957e-08
+ },
+ "A_tight_group_effect": {
+  "n": {
+   "total": 633,
+   "ASD": 274,
+   "TC": 359
+  },
+  "n_edges": 1176,
+  "n_fdr_sig": 168,
+  "n_sig_ASD_gt_TC": 13,
+  "n_sig_ASD_lt_TC": 155,
+  "min_p": 2.497791593664391e-08
+ },
+ "A_vs_A_tight_sig_edge_overlap": 134,
+ "B_original": {
+  "per_site": {
+   "CALTECH": {
+    "n_test": 15,
+    "accuracy": 0.6667
+   },
+   "CMU": {
+    "n_test": 11,
+    "accuracy": 0.7273
+   },
+   "KKI": {
+    "n_test": 33,
+    "accuracy": 0.6364
+   },
+   "LEUVEN_1": {
+    "n_test": 28,
+    "accuracy": 0.5
+   },
+   "LEUVEN_2": {
+    "n_test": 28,
+    "accuracy": 0.6786
+   },
+   "MAX_MUN": {
+    "n_test": 46,
+    "accuracy": 0.587
+   },
+   "NYU": {
+    "n_test": 172,
+    "accuracy": 0.6221
+   },
+   "OHSU": {
+    "n_test": 25,
+    "accuracy": 0.56
+   },
+   "OLIN": {
+    "n_test": 28,
+    "accuracy": 0.6429
+   },
+   "PITT": {
+    "n_test": 50,
+    "accuracy": 0.58
+   },
+   "SBL": {
+    "n_test": 26,
+    "accuracy": 0.6154
+   },
+   "SDSU": {
+    "n_test": 27,
+    "accuracy": 0.7037
+   },
+   "STANFORD": {
+    "n_test": 25,
+    "accuracy": 0.48
+   },
+   "TRINITY": {
+    "n_test": 44,
+    "accuracy": 0.6136
+   },
+   "UCLA_1": {
+    "n_test": 64,
+    "accuracy": 0.6562
+   },
+   "UCLA_2": {
+    "n_test": 21,
+    "accuracy": 0.7143
+   },
+   "UM_1": {
+    "n_test": 86,
+    "accuracy": 0.5581
+   },
+   "UM_2": {
+    "n_test": 34,
+    "accuracy": 0.7647
+   },
+   "USM": {
+    "n_test": 67,
+    "accuracy": 0.7313
+   },
+   "YALE": {
+    "n_test": 41,
+    "accuracy": 0.6585
+   }
+  },
+  "mean_site_accuracy": 0.6348,
+  "pooled_accuracy": 0.6292
+ },
+ "B_revised_tightQC": {
+  "per_site": {
+   "CALTECH": {
+    "n_test": 12,
+    "accuracy": 0.5
+   },
+   "KKI": {
+    "n_test": 18,
+    "accuracy": 0.6111
+   },
+   "LEUVEN_1": {
+    "n_test": 23,
+    "accuracy": 0.5217
+   },
+   "LEUVEN_2": {
+    "n_test": 20,
+    "accuracy": 0.65
+   },
+   "MAX_MUN": {
+    "n_test": 29,
+    "accuracy": 0.5172
+   },
+   "NYU": {
+    "n_test": 146,
+    "accuracy": 0.6301
+   },
+   "OHSU": {
+    "n_test": 18,
+    "accuracy": 0.6667
+   },
+   "OLIN": {
+    "n_test": 9,
+    "accuracy": 0.7778
+   },
+   "PITT": {
+    "n_test": 17,
+    "accuracy": 0.5882
+   },
+   "SBL": {
+    "n_test": 3,
+    "accuracy": 1.0
+   },
+   "SDSU": {
+    "n_test": 21,
+    "accuracy": 0.7619
+   },
+   "STANFORD": {
+    "n_test": 21,
+    "accuracy": 0.5714
+   },
+   "TRINITY": {
+    "n_test": 33,
+    "accuracy": 0.7273
+   },
+   "UCLA_1": {
+    "n_test": 44,
+    "accuracy": 0.6591
+   },
+   "UCLA_2": {
+    "n_test": 8,
+    "accuracy": 0.5
+   },
+   "UM_1": {
+    "n_test": 61,
+    "accuracy": 0.5574
+   },
+   "UM_2": {
+    "n_test": 28,
+    "accuracy": 0.8929
+   },
+   "USM": {
+    "n_test": 34,
+    "accuracy": 0.6176
+   },
+   "YALE": {
+    "n_test": 26,
+    "accuracy": 0.6923
+   }
+  },
+  "mean_site_accuracy": 0.6549,
+  "pooled_accuracy": 0.6375
+ },
+ "Q5": {
+  "sites_with_test_participants_excluded": [
+   "CALTECH",
+   "CMU",
+   "KKI",
+   "LEUVEN_1",
+   "LEUVEN_2",
+   "MAX_MUN",
+   "NYU",
+   "OHSU",
+   "OLIN",
+   "PITT",
+   "SBL",
+   "SDSU",
+   "STANFORD",
+   "TRINITY",
+   "UCLA_1",
+   "UCLA_2",
+   "UM_1",
+   "UM_2",
+   "USM",
+   "YALE"
+  ],
+  "note": "every fold's training set loses excluded participants, so every per-site result and the aggregate are in scope for reassessment",
+  "sites_whose_accuracy_changed": {
+   "CALTECH": {
+    "before": 0.6667,
+    "after": 0.5
+   },
+   "CMU": {
+    "before": 0.7273,
+    "after": null
+   },
+   "KKI": {
+    "before": 0.6364,
+    "after": 0.6111
+   },
+   "LEUVEN_1": {
+    "before": 0.5,
+    "after": 0.5217
+   },
+   "LEUVEN_2": {
+    "before": 0.6786,
+    "after": 0.65
+   },
+   "MAX_MUN": {
+    "before": 0.587,
+    "after": 0.5172
+   },
+   "NYU": {
+    "before": 0.6221,
+    "after": 0.6301
+   },
+   "OHSU": {
+    "before": 0.56,
+    "after": 0.6667
+   },
+   "OLIN": {
+    "before": 0.6429,
+    "after": 0.7778
+   },
+   "PITT": {
+    "before": 0.58,
+    "after": 0.5882
+   },
+   "SBL": {
+    "before": 0.6154,
+    "after": 1.0
+   },
+   "SDSU": {
+    "before": 0.7037,
+    "after": 0.7619
+   },
+   "STANFORD": {
+    "before": 0.48,
+    "after": 0.5714
+   },
+   "TRINITY": {
+    "before": 0.6136,
+    "after": 0.7273
+   },
+   "UCLA_1": {
+    "before": 0.6562,
+    "after": 0.6591
+   },
+   "UCLA_2": {
+    "before": 0.7143,
+    "after": 0.5
+   },
+   "UM_1": {
+    "before": 0.5581,
+    "after": 0.5574
+   },
+   "UM_2": {
+    "before": 0.7647,
+    "after": 0.8929
+   },
+   "USM": {
+    "before": 0.7313,
+    "after": 0.6176
+   },
+   "YALE": {
+    "before": 0.6585,
+    "after": 0.6923
+   }
+  },
+  "aggregate_before_after": [
+   0.6348,
+   0.6549
+  ]
+ },
+ "Q6": {
+  "per_site": {
+   "CALTECH": {
+    "n_test": 15,
+    "n_sig_train": 179,
+    "sign_agreement": 0.648,
+    "composite_t": 0.516,
+    "composite_p": 0.6276678224430293
+   },
+   "CMU": {
+    "n_test": 11,
+    "n_sig_train": 220,
+    "sign_agreement": 0.709,
+    "composite_t": 1.037,
+    "composite_p": 0.3356745963874463
+   },
+   "KKI": {
+    "n_test": 33,
+    "n_sig_train": 209,
+    "sign_agreement": 0.316,
+    "composite_t": -0.605,
+    "composite_p": 0.5543999898915114
+   },
+   "LEUVEN_1": {
+    "n_test": 28,
+    "n_sig_train": 200,
+    "sign_agreement": 0.74,
+    "composite_t": 1.051,
+    "composite_p": 0.30350213536622817
+   },
+   "LEUVEN_2": {
+    "n_test": 28,
+    "n_sig_train": 187,
+    "sign_agreement": 0.786,
+    "composite_t": 1.497,
+    "composite_p": 0.14840225139216037
+   },
+   "MAX_MUN": {
+    "n_test": 46,
+    "n_sig_train": 197,
+    "sign_agreement": 0.533,
+    "composite_t": 0.153,
+    "composite_p": 0.8793808657129001
+   },
+   "NYU": {
+    "n_test": 172,
+    "n_sig_train": 141,
+    "sign_agreement": 0.582,
+    "composite_t": 0.553,
+    "composite_p": 0.5813473181372514
+   },
+   "OHSU": {
+    "n_test": 25,
+    "n_sig_train": 202,
+    "sign_agreement": 0.703,
+    "composite_t": 2.361,
+    "composite_p": 0.027093666136950648
+   },
+   "OLIN": {
+    "n_test": 28,
+    "n_sig_train": 204,
+    "sign_agreement": 0.863,
+    "composite_t": 2.194,
+    "composite_p": 0.03788064323639886
+   },
+   "PITT": {
+    "n_test": 50,
+    "n_sig_train": 200,
+    "sign_agreement": 0.42,
+    "composite_t": -0.227,
+    "composite_p": 0.821412836349242
+   },
+   "SBL": {
+    "n_test": 26,
+    "n_sig_train": 211,
+    "sign_agreement": 0.649,
+    "composite_t": 0.48,
+    "composite_p": 0.6354360129907771
+   },
+   "SDSU": {
+    "n_test": 27,
+    "n_sig_train": 194,
+    "sign_agreement": 0.851,
+    "composite_t": 2.385,
+    "composite_p": 0.03111500649415954
+   },
+   "STANFORD": {
+    "n_test": 25,
+    "n_sig_train": 224,
+    "sign_agreement": 0.46,
+    "composite_t": -0.243,
+    "composite_p": 0.8099499281267015
+   },
+   "TRINITY": {
+    "n_test": 44,
+    "n_sig_train": 152,
+    "sign_agreement": 0.796,
+    "composite_t": 2.222,
+    "composite_p": 0.03189387961545038
+   },
+   "UCLA_1": {
+    "n_test": 64,
+    "n_sig_train": 151,
+    "sign_agreement": 0.629,
+    "composite_t": 0.634,
+    "composite_p": 0.5282929071606833
+   },
+   "UCLA_2": {
+    "n_test": 21,
+    "n_sig_train": 227,
+    "sign_agreement": 0.427,
+    "composite_t": -0.445,
+    "composite_p": 0.6631147786889825
+   },
+   "UM_1": {
+    "n_test": 86,
+    "n_sig_train": 147,
+    "sign_agreement": 0.728,
+    "composite_t": 0.938,
+    "composite_p": 0.35087747410725006
+   },
+   "UM_2": {
+    "n_test": 34,
+    "n_sig_train": 160,
+    "sign_agreement": 0.863,
+    "composite_t": 1.937,
+    "composite_p": 0.06359977388720477
+   },
+   "USM": {
+    "n_test": 67,
+    "n_sig_train": 206,
+    "sign_agreement": 0.68,
+    "composite_t": 0.607,
+    "composite_p": 0.5472487939128226
+   },
+   "YALE": {
+    "n_test": 41,
+    "n_sig_train": 215,
+    "sign_agreement": 0.609,
+    "composite_t": 0.499,
+    "composite_p": 0.6208777039474767
+   }
+  },
+  "n_sites_tested": 20,
+  "n_sites_composite_p_lt_05_same_direction": 4,
+  "n_sites_composite_t_positive": 16,
+  "median_sign_agreement": 0.6645000000000001
+ }
+}

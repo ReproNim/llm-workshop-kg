@@ -1,0 +1,333 @@
+{
+ "id": "Q1",
+ "question": "How many ABIDE I participants have phenotype + CC200 time series passing the functional QC used by Analyst B? Break down by diagnosis.",
+ "date": "2026-10-15",
+ "client": "Claude Code 2.1.282 subagent (model sonnet)",
+ "tool_calls": [
+  {
+   "seq": 1,
+   "tool": "kg_search_datasets",
+   "arguments": {
+    "text": "ABIDE",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"dataset_id\":\"ds:manual:abide\",\"title\":\"ABIDE (I & II)\",\"tasks\":[\"resting state\",\"reading span task\"],\"modalities\":[\"MRI\"],\"n_subjects\":2226,\"species\":[\"human\"],\"kg_id\":\"4:61f2a6e6-9289-4db3-a996-562b57f61fe1:489281\"},{\"dataset_id\":\"4:61f2a6e6-9289-4db3-a996-562b57f61fe1:497343\",\"title\":\"abide1: CMU_b\",...} (plus per-site sub-dataset stubs with null n_subjects)",
+   "response_chars": 1500,
+   "ok": true,
+   "note": "Located the single ABIDE (I & II) dataset node and several per-site sub-nodes with no subject counts, to orient on the dataset's KG id."
+  },
+  {
+   "seq": 2,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "ABIDE preprocessed CC200",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"ds:manual:abide\",...,\"node_type\":\"Dataset\",...},{\"kg_id\":\"ds:openneuro:ds004368\",...},{\"kg_id\":\"pmid:32122106\",\"label\":\"Attentional Connectivity-based Prediction of Autism Using Heterogeneous rs-fMRI Data from CC200 Atlas\",\"node_type\":\"Publication\",...},{...GM asymmetry ABIDE I paper...},{...gray matter ASD symptoms paper...}]}",
+   "response_chars": 1400,
+   "ok": true,
+   "note": "Checking whether CC200/CPAC preprocessing pipeline is represented as its own KG node; only unrelated secondary-analysis publications surfaced, no CPAC/CC200 pipeline or QC node."
+  },
+  {
+   "seq": 3,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Abraham 2017 Machine learning diagnosis ABIDE prediction",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"ds:manual:abide\",...},{\"kg_id\":\"trm_5181fb7bf350b\",\"label\":\"reversal weather prediction\",\"node_type\":\"Concept\",...},{...\"Observational slot machine learning paradigm\"...},{...\"single-task weather prediction\"...},{...\"dual-task weather prediction\"...},{...\"episodic prediction\"...},{...\"Observational Reinforcement Learning\"...},{...\"Difficult Diagnosis Task\"...},{...\"Medical Diagnosis Task\"...},{...\"auditory learning\"...}]}",
+   "response_chars": 1300,
+   "ok": true,
+   "note": "Searched for the Abraham et al. 2017 paper itself; no matching Publication node returned (all hits are unrelated cognitive-task concepts)."
+  },
+  {
+   "seq": 4,
+   "tool": "kg_get_node",
+   "arguments": {
+    "kg_id": "ds:manual:abide"
+   },
+   "response_truncated": "{\"ok\":true,\"node\":{\"kg_id\":\"ds:manual:abide\",...,\"properties\":{\"modalities\":[\"MRI\"],\"description\":\"Multi-site ASD vs control resting-state fMRI and structural MRI\",\"name\":\"ABIDE (I & II)\",\"subjects_count\":2226,\"species\":[\"human\"],\"short_name\":\"ABIDE\",\"tasks\":[\"resting-state\"],\"neighbors\":[{\"target\":\"ONVOC_0000184\",\"rel\":\"ABOUT\"},{\"target\":\"task__resting_state\",\"rel\":\"HAS_TASK\"},{\"target\":\"consortium:abide\",\"rel\":\"PART_OF\"},{\"target\":\"repo:nitrc_/_indi\",\"rel\":\"HOSTED_AT\"}]}}}",
+   "response_chars": 900,
+   "ok": true,
+   "note": "subjects_count=2226 is the combined ABIDE I+II total with no QC/pipeline/diagnosis breakdown fields; no CC200, CPAC, phenotype-CSV, or QC-threshold properties exist on this node."
+  },
+  {
+   "seq": 5,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "10.1016/j.neuroimage.2016.10.045",
+    "limit": 5
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"kg_query_timeout\",\"message\":\"kg_search_nodes produced a degraded result (mcp_timeout) but degraded responses are disabled by default. Re-run with allow_degraded=True.\",\"degraded_reason\":\"mcp_timeout\",\"query_time_s\":16.683}",
+   "response_chars": 300,
+   "ok": false,
+   "note": "Tried to find the Abraham et al. 2017 NeuroImage paper by DOI; query timed out/degraded, not retried with allow_degraded given low prior yield."
+  },
+  {
+   "seq": 6,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "10.1038/mp.2013.78 Di Martino ABIDE",
+    "limit": 5
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"ds:manual:abide\",...},{\"kg_id\":\"10.1038/mp.2011.106\",...unrelated serotonin paper...},{\"kg_id\":\"10.1038/mp.2012.166\",\"label\":\"\",...},{\"kg_id\":\"10.1038/mp.2009.121\",...unrelated anterior cingulate schizophrenia paper...},{\"kg_id\":\"10.1038/s41597-019-0113-7\",...}]}",
+   "response_chars": 700,
+   "ok": true,
+   "note": "Di Martino et al. 2014 (mp.2013.78) does not appear as a node; only unrelated Molecular Psychiatry DOIs from the same journal prefix matched lexically."
+  },
+  {
+   "seq": 7,
+   "tool": "kg_get_node",
+   "arguments": {
+    "kg_id": "10.1038/mp.2013.78"
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"node not found: 10.1038/mp.2013.78\"}",
+   "response_chars": 58,
+   "ok": false,
+   "note": "Confirmed Di Martino et al. 2014 is not a stored Publication node in BR-KG."
+  },
+  {
+   "seq": 8,
+   "tool": "kg_get_node",
+   "arguments": {
+    "kg_id": "10.1016/j.neuroimage.2016.10.045"
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"node not found: 10.1016/j.neuroimage.2016.10.045\"}",
+   "response_chars": 72,
+   "ok": false,
+   "note": "Confirmed Abraham et al. 2017 is not a stored Publication node in BR-KG either."
+  },
+  {
+   "seq": 9,
+   "tool": "kg_method_condition_coverage_guard",
+   "arguments": {
+    "paper_id": "10.1016/j.neuroimage.2016.10.045",
+    "requested_fields": [
+     "cohort_sample_size",
+     "preprocessing",
+     "statistical_model"
+    ]
+   },
+   "response_truncated": "{\"ok\":false,\"result\":{\"status\":\"publication_not_found\",\"paper_id\":\"10.1016/j.neuroimage.2016.10.045\"}}",
+   "response_chars": 105,
+   "ok": false,
+   "note": "Used the recommended method-condition tool (per server instructions) to try to pull Abraham 2017's cohort size / preprocessing / QC off BR-KG/GABRIEL/NeuroStore; not found in any tier."
+  },
+  {
+   "seq": 10,
+   "tool": "kg_method_condition_coverage_guard",
+   "arguments": {
+    "paper_id": "10.1038/mp.2013.78",
+    "requested_fields": [
+     "cohort_sample_size",
+     "preprocessing",
+     "statistical_model"
+    ]
+   },
+   "response_truncated": "{\"ok\":false,\"result\":{\"status\":\"publication_not_found\",\"paper_id\":\"10.1038/mp.2013.78\"}}",
+   "response_chars": 90,
+   "ok": false,
+   "note": "Same check for Di Martino et al. 2014; also not found."
+  },
+  {
+   "seq": 11,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Abraham leave-site-out cross validation autism prediction machine learning multisite",
+    "limit": 8
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"neurostore_task:9v27HG2q3b9a:fmri:1\",\"label\":\"Cross Out\",...},{\"label\":\"autism spectrum quotient\",...},{\"label\":\"broad autism phenotype questionnaire\",...},{\"label\":\"autism diagnostic interview - revised\",...},{\"label\":\"broader phenotype autism symptom scale\",...},{...Baroreflex task...},{\"label\":\"autism diagnostic observation schedule\",...},{\"label\":\"TractoInferno...multi-site...\",\"node_type\":\"Dataset\",...}]}",
+   "response_chars": 1200,
+   "ok": true,
+   "note": "No node for the Abraham 2017 leave-site-out CV method or its ABIDE cohort; only loosely-matched autism-assessment concepts and an unrelated multi-site dMRI dataset."
+  },
+  {
+   "seq": 12,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "Di Martino autism brain imaging data exchange distinctive intrinsic functional connectivity multisite",
+    "limit": 8
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"label\":\"Intrinsic Functional Connectivity\",\"node_type\":\"Task\",...},{\"label\":\"Intrinsic functional connectivity MRI\",...},{\"label\":\"fMRI tasks for intrinsic functional connectivity\",...},{\"kg_id\":\"concept:intrinsic_brain_functional_connectivity\",...},{\"label\":\"PRIME-DE (PRIMate Data Exchange)\",\"node_type\":\"Dataset\",...},{...Modafinil rs-fMRI dataset...},{\"label\":\"Allen Mouse Brain Connectivity Atlas\",...},{\"label\":\"Intrinsic Connectivity Analysis\",...}]}",
+   "response_chars": 1000,
+   "ok": true,
+   "note": "No node for the Di Martino 2014 paper or its ABIDE I cohort/QC; only generic 'intrinsic functional connectivity' concept/task nodes."
+  },
+  {
+   "seq": 13,
+   "tool": "dataset_get_resources",
+   "arguments": {
+    "dataset_ref": "ds:manual:abide"
+   },
+   "response_truncated": "{\"ok\":true,\"resources\":{\"dataset_id\":\"ds:manual:abide\",...,\"bids_path\":null,\"is_bids_available\":false,\"derivatives\":{},\"available_derivatives\":[],\"remote_urls\":{\"primary\":\"http://fcon_1000.projects.nitrc.org/indi/abide\"},...,\"readiness\":{\"status\":\"blocked\",\"reason\":\"Dataset path not available on mounts/cache\",...},\"dataset_metadata\":{\"tasks\":[\"resting-state\"],\"modalities\":[\"MRI\"],\"license\":\"CC-BY\"},...}}",
+   "response_chars": 2200,
+   "ok": true,
+   "note": "Checked whether BR had direct access to ABIDE derivatives (CC200 time series, phenotype CSV) on a mounted path; dataset is not locally mounted and no derivative file listing (e.g. CC200 ROI time series, Phenotypic_V1_0b_preprocessed1.csv) is resolvable through BR."
+  },
+  {
+   "seq": 14,
+   "tool": "kg_multihop_qa",
+   "arguments": {
+    "question": "How many ABIDE I participants have phenotype data and CC200 time series passing functional quality control (mean framewise displacement / motion threshold) used in Abraham et al. 2017 leave-site-out diagnosis prediction? Break down by diagnosis (autism vs control).",
+    "max_hops": 3,
+    "max_results": 30
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"kg_query_degraded\",\"message\":\"kg_multihop_qa produced a degraded result (runtime_budget_exhausted:traversal_budget)...\",\"diagnostics\":{\"summary\":{\"hops_used\":2,\"n_seed_entities\":6,\"completion_state\":\"degraded\",\"status\":\"degraded_timeout\"},\"seed_entities\":[{\"kg_id\":\"ONVOC_0000215\",\"label\":\"Autism Spectrum Disorder\"},{\"kg_id\":\"ONVOC_0000438\",\"label\":\"Motor Control\"},...],\"top_paths\":[{...\"Motor Control\"->\"An fMRI dataset for whole-body somatotopic mapping\"...},{...\"Motor Control\"->\"Goal-directed motor task\"...},{...\"Motor Control\"->\"Tidying Up White Matter...slackline...\"...}]}}",
+   "response_chars": 4800,
+   "ok": false,
+   "note": "Direct natural-language question to the multi-hop QA engine; it timed out/degraded and, even in its partial output, the traversal seeds drifted to an unrelated 'Motor Control' concept and unrelated motor-task OpenNeuro datasets rather than ABIDE QC/phenotype nodes -- confirms BR-KG has no path encoding this participant-count fact."
+  },
+  {
+   "seq": 15,
+   "tool": "kg_neighbors",
+   "arguments": {
+    "kg_id": "ds:manual:abide",
+    "direction": "both",
+    "limit": 25
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"consortium:abide\",\"relation\":\"PART_OF\",...},{\"kg_id\":\"ONVOC_0000184\",\"label\":\"Down Syndrome\",\"relation\":\"ABOUT\",...(confidence 0.35, weak text-match)...},{\"kg_id\":\"modality:mri\",\"relation\":\"HAS_MODALITY\",...},{\"kg_id\":\"repo:nitrc_/_indi\",\"relation\":\"HOSTED_AT\",...},{\"kg_id\":\"ONVOC_0000005\",\"label\":\"Psychological Concepts\",\"relation\":\"IN_ONVOC\",...},{\"kg_id\":\"species:human\",\"relation\":\"INVOLVES_SPECIES\",...},{\"kg_id\":\"trm_4c40d168898db\",\"label\":\"reading span task\",\"relation\":\"HAS_TASK\",...},{\"kg_id\":\"task__resting_state\",\"label\":\"resting state\",\"relation\":\"HAS_TASK\",...}]}",
+   "response_chars": 2900,
+   "ok": true,
+   "note": "Full neighbor list of the ABIDE dataset node: consortium, modality, repo, species, ontology, and two task links only. No edges to a phenotype file, CC200 atlas/pipeline, QC/motion-threshold node, publication, or per-diagnosis subject counts."
+  },
+  {
+   "seq": 16,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "mean framewise displacement motion quality control threshold CPAC filt_noglobal",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"concept:framewise_displacement\",\"label\":\"Framewise Displacement\",\"node_type\":\"Concept\",...},{\"kg_id\":\"method_motion_confounds\",\"label\":\"Head motion can bias fMRI connectivity and activation results\",...},{...Pittsburgh Sleep Quality Index...},{...Motion-Acuity Threshold Assessment...},{...Inspiratory Threshold Loading...},{...motion detection...},{...vestibular control...},{...Unidimensional Threshold Rule...},{...Waitlist Control...},{...Naturalistic Biological Motion...}]}",
+   "response_chars": 1200,
+   "ok": true,
+   "note": "A generic 'Framewise Displacement' concept node exists, but it is not linked to ABIDE, CPAC filt_noglobal, or any specific mm/mean-FD cutoff value; no CC200 or CPAC pipeline node exists at all."
+  }
+ ],
+ "final_answer": "BR could not provide this number. BR-KG holds only one ABIDE node ('ABIDE (I & II)', kg_id ds:manual:abide) with a single aggregate subjects_count of 2226 across ABIDE I and ABIDE II combined, no per-diagnosis (ASD vs control) split, no CC200/CPAC-pipeline node, no phenotype-file node, and no motion/QC-threshold value attached to ABIDE. Neither source paper (Di Martino et al. 2014, doi:10.1038/mp.2013.78; Abraham et al. 2017, doi:10.1016/j.neuroimage.2016.10.045) exists as a Publication node in BR-KG (kg_get_node: 'node not found' for both DOIs), and kg_method_condition_coverage_guard returned 'publication_not_found' for both, so BR cannot resolve Abraham et al.'s actual QC/motion threshold or sample size either. kg_multihop_qa timed out/degraded on the direct question and its partial traversal drifted to unrelated 'Motor Control' concept nodes, confirming no KG path encodes this fact. No BR tool call returned a QC-passing N, nor a diagnosis breakdown, for ABIDE I under any functional-QC definition.",
+ "evidence": [
+  {
+   "claim": "ABIDE is represented in BR-KG as a single combined dataset node with 2226 total subjects (ABIDE I + II), no diagnosis or QC breakdown.",
+   "source": "kg_get_node ds:manual:abide"
+  },
+  {
+   "claim": "Di Martino et al. 2014 (doi:10.1038/mp.2013.78) is not a node in BR-KG.",
+   "source": "kg_get_node 10.1038/mp.2013.78 -> node not found"
+  },
+  {
+   "claim": "Abraham et al. 2017 (doi:10.1016/j.neuroimage.2016.10.045) is not a node in BR-KG.",
+   "source": "kg_get_node 10.1016/j.neuroimage.2016.10.045 -> node not found"
+  },
+  {
+   "claim": "BR's dedicated method-condition resolver also cannot find either paper, so it cannot surface Abraham et al.'s QC/cohort parameters from any backend tier.",
+   "source": "kg_method_condition_coverage_guard (both DOIs) -> status: publication_not_found"
+  },
+  {
+   "claim": "No BR-KG edge connects the ABIDE dataset node to a CC200 atlas/pipeline, a phenotype file, or a motion/QC threshold node.",
+   "source": "kg_neighbors ds:manual:abide (full neighbor list)"
+  },
+  {
+   "claim": "A generic Framewise Displacement concept node exists in BR-KG but carries no ABIDE-specific threshold value or linkage.",
+   "source": "kg_search_nodes 'mean framewise displacement ... CPAC filt_noglobal' -> concept:framewise_displacement"
+  }
+ ],
+ "br_limitations": "BR-KG has no participant-level data at all (no per-subject rows, no phenotype CSV join, no ABIDE I vs ABIDE II split, no diagnosis field), no ingested node for either source publication (Di Martino 2014 or Abraham 2017), no CC200/CPAC-pipeline derivative node, and no QC/motion-threshold value tied to ABIDE. dataset_get_resources confirms the dataset is not locally mounted through BR, so it cannot even enumerate derivative files (e.g., CC200 ROI time series or Phenotypic_V1_0b_preprocessed1.csv) to count rows. kg_multihop_qa could not route to anything ABIDE-QC-relevant and degraded on budget. In short: BR can identify that ABIDE exists and has ~2226 total subjects, but cannot answer any question requiring the actual phenotype table, the CC200/QC pipeline specifics, or a diagnosis-stratified post-QC count.",
+ "confidence": "low",
+ "computation_phase": {
+  "source": "NOT BR output. Computation run by the operating agent on ORCD (MIT Engaging, partition pi_satra). BR returned only the NITRC landing page; the fcp-indi S3 paths are the operator's prior knowledge.",
+  "scripts": "jobs/ (abide_compute.py, abide_compute.sbatch)",
+  "jobs": {
+   "25932392": "FAILED (NaN correlations from constant ROIs)",
+   "25932776": "COMPLETED 1m57s, but connectivity used only 49/200 CC200 ROIs (ROIs constant in any subject were dropped) -> results_49roi_superseded_job25932776.json",
+   "25933294": "TIMEOUT at 2h (200-ROI rerun with constant-ROI subjects excluded); no output",
+   "rerun": "staged (6h, 8 CPU, folds parallel) but NOT submitted: ORCD login refused (Duo session expired), stopped after 2 failed logins per rule"
+  },
+  "data": {
+   "phenotype": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Phenotypic_V1_0b_preprocessed1.csv",
+   "roi_template": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/Outputs/cpac/filt_noglobal/rois_cc200/{fid}_rois_cc200.1D"
+  },
+  "answer": "871 participants (403 ASD, 468 TC) have phenotype + CC200 (cpac/filt_noglobal) and pass the nilearn quality_checked rater filter assumed for Analyst B; matches the 871 reported by Abraham et al. 2017. Of 1112 phenotype rows, 1035 have a FILE_ID and all 1035 have a CC200 file.",
+  "valid": "final (independent of ROI handling)",
+  "by_site": {
+   "CALTECH": {
+    "ASD": 5,
+    "TC": 10
+   },
+   "CMU": {
+    "ASD": 6,
+    "TC": 5
+   },
+   "KKI": {
+    "ASD": 12,
+    "TC": 21
+   },
+   "LEUVEN_1": {
+    "ASD": 14,
+    "TC": 14
+   },
+   "LEUVEN_2": {
+    "ASD": 12,
+    "TC": 16
+   },
+   "MAX_MUN": {
+    "ASD": 19,
+    "TC": 27
+   },
+   "NYU": {
+    "ASD": 74,
+    "TC": 98
+   },
+   "OHSU": {
+    "ASD": 12,
+    "TC": 13
+   },
+   "OLIN": {
+    "ASD": 14,
+    "TC": 14
+   },
+   "PITT": {
+    "ASD": 24,
+    "TC": 26
+   },
+   "SBL": {
+    "ASD": 12,
+    "TC": 14
+   },
+   "SDSU": {
+    "ASD": 8,
+    "TC": 19
+   },
+   "STANFORD": {
+    "ASD": 12,
+    "TC": 13
+   },
+   "TRINITY": {
+    "ASD": 19,
+    "TC": 25
+   },
+   "UCLA_1": {
+    "ASD": 37,
+    "TC": 27
+   },
+   "UCLA_2": {
+    "ASD": 11,
+    "TC": 10
+   },
+   "UM_1": {
+    "ASD": 34,
+    "TC": 52
+   },
+   "UM_2": {
+    "ASD": 13,
+    "TC": 21
+   },
+   "USM": {
+    "ASD": 43,
+    "TC": 24
+   },
+   "YALE": {
+    "ASD": 22,
+    "TC": 19
+   }
+  }
+ }
+}

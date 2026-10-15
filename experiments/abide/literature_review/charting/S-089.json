@@ -1,0 +1,32 @@
+{
+  "source_id": "S-089",
+  "pmid": "local_4e65d68a",
+  "doi": "10.1162/netn_a_00222",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 4 (no autism-vs-control analysis): the ABIDE I/II resting-state fMRI analysis is restricted to 172 autistic participants only, relating an ADI-R symptom network to connectome edges via connectome-based predictive modelling; it contains no typically-developing control group, no group-difference test and no diagnostic prediction/classification, so inclusion criterion 3 is not met.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1162/netn_a_00222",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "172 male autistic participants aged 10-21 (ABIDE: n=127, ABIDE-II: n=45) with ADI-R scores; no control group.",
+    "n_by_dx": {
+      "ASD": 172,
+      "TD": null,
+      "total": 172
+    },
+    "sites": "19 international sites",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "",
+    "evidence_quotes": [
+      "we utilise data from 172 male autistic participants (10–21 years) from the autism brain data exchange (ABIDE, ABIDE-II) that completed resting-state fMRI and were assessed using the autism diagnostic interview (ADI-R)."
+    ]
+  }
+}

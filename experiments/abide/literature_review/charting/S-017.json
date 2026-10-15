@@ -1,0 +1,26 @@
+{
+  "source_id": "S-017",
+  "pmid": "local_ea6d4995",
+  "doi": "10.1038/s41598-020-67507-3",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: uses only structural (T1-weighted) MRI from ABIDE I/II to study cortical-thickness age trajectories; no resting-state functional MRI analysis is reported anywhere in the text.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.1038/s41598-020-67507-3",
+    "dataset": "ABIDE I+II",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "",
+    "evidence_quotes": []
+  }
+}

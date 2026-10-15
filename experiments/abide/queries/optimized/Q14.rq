@@ -1,0 +1,90 @@
+# base
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT ?p ?site ?dx WHERE { GRAPH <urn:repronim:abide:graph/core> { ?rec a nidm:AcquisitionObject ; ex:participant ?p ; <urn:repronim:abide:variable/DX_GROUP> ?dx . ?p ex:site ?site } }
+
+# AGE_AT_SCAN
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH <urn:repronim:abide:graph/core> { ?rec <urn:repronim:abide:variable/AGE_AT_SCAN> ?x ; ex:participant ?p } }
+
+# FIQ
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH <urn:repronim:abide:graph/core> { ?rec <urn:repronim:abide:variable/FIQ> ?x ; ex:participant ?p } }
+
+# VIQ
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH <urn:repronim:abide:graph/core> { ?rec <urn:repronim:abide:variable/VIQ> ?x ; ex:participant ?p } }
+
+# PIQ
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH <urn:repronim:abide:graph/core> { ?rec <urn:repronim:abide:variable/PIQ> ?x ; ex:participant ?p } }
+
+# ADOS_TOTAL
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH <urn:repronim:abide:graph/core> { ?rec <urn:repronim:abide:variable/ADOS_TOTAL> ?x ; ex:participant ?p } }
+
+# SRS_RAW_TOTAL
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH <urn:repronim:abide:graph/core> { ?rec <urn:repronim:abide:variable/SRS_RAW_TOTAL> ?x ; ex:participant ?p } }
+
+# func_mean_fd
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH <urn:repronim:abide:graph/core> { ?rec <urn:repronim:abide:variable/func_mean_fd> ?x ; ex:participant ?p } }
+
+# CC200_timeseries
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH <urn:repronim:abide:graph/core> { ?ts ex:fullRoiCoverage true ; ex:participant ?p } }
+
+# L_hippocampus_ANTs
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH <urn:repronim:abide:graph/view/volumes> { ?o ex:region <http://purl.obolibrary.org/obo/UBERON_0001954> ; ex:tool <http://stnava.github.io/ANTs/> ; ex:side ?sd ; ex:participant ?p . FILTER(STRENDS(STR(?sd), "Left")) } }
+
+# L_hippocampus_FSL
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH <urn:repronim:abide:graph/view/volumes> { ?o ex:region <http://purl.obolibrary.org/obo/UBERON_0001954> ; ex:tool <http://purl.org/nidash/fsl#> ; ex:side ?sd ; ex:participant ?p . FILTER(STRENDS(STR(?sd), "Left")) } }
+
+# L_hippocampus_FreeSurfer
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH <urn:repronim:abide:graph/view/volumes> { ?o ex:region <http://purl.obolibrary.org/obo/UBERON_0001954> ; ex:tool <https://surfer.nmr.mgh.harvard.edu/> ; ex:side ?sd ; ex:participant ?p . FILTER(STRENDS(STR(?sd), "Left")) } }
+
+# ReproNim_DX
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT DISTINCT ?p WHERE { GRAPH ?sg { ?dxm a nidm:PersonalDataElement ; nidm:isAbout <http://ncitt.ncit.nih.gov/Diagnosis> . ?e ?dxm ?dxv ; prov:wasGeneratedBy ?act . ?act prov:qualifiedAssociation ?a . ?a prov:agent ?subj . ?subj ndar:src_subject_id ?id } GRAPH <urn:repronim:abide:graph/core> { ?p ndar:src_subject_id ?id } FILTER(STRSTARTS(STR(?sg), "urn:repronim:simple2:")) }

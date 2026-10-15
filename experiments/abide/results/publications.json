@@ -1,0 +1,48 @@
+{
+ "abstractatlas": {
+  "bundle": "https://aadata.cirrusscience.org/dd1a1a8d88f7f505128733bf789c6a3fa4f48ed62e546bebfab2453587b0149f/ohbm2026.parquet",
+  "repo_commit": "181652e2be0902a4926d292d9ec0e230dfd97b96",
+  "n_abstracts": 3240,
+  "n_claims_total": 55713,
+  "by_dataset": {
+   "abide": {
+    "abstracts_matching": 35,
+    "uses_data_stated": 17,
+    "mentions_only": 18,
+    "claims": 541,
+    "release_named": {
+     "ABIDE I": 9,
+     "ABIDE I, ABIDE II": 6,
+     "ABIDE II": 4,
+     "release not named": 16
+    },
+    "hand_check_of_stated": "17 'uses-data (stated)' links read by hand on 2026-10-15: 15 correct; posters 1217 and 639 are not ABIDE data use (a regex match on a long sentence and a reference title)"
+   },
+   "cnp_ds000030": {
+    "abstracts_matching": 9,
+    "uses_data_stated": 3,
+    "mentions_only": 6,
+    "claims": 139
+   }
+  }
+ },
+ "openalex": {
+  "dimartino2014": {
+   "openalex_id": "W2167868121",
+   "cited_by_count": 2766,
+   "count": 598,
+   "query": "https://api.openalex.org/works?filter=cites%3AW2167868121%2Ctitle_and_abstract.search%3AABIDE&per_page=50&sort=cited_by_count%3Adesc",
+   "sample_n": 50
+  },
+  "abraham2017": {
+   "openalex_id": "W2522924024",
+   "cited_by_count": 697,
+   "count": 220,
+   "query": "https://api.openalex.org/works?filter=cites%3AW2522924024%2Ctitle_and_abstract.search%3AABIDE&per_page=50&sort=cited_by_count%3Adesc",
+   "sample_n": 50
+  }
+ },
+ "openalex_pulled_at": "2026-10-15T15:44:34+00:00",
+ "snapshots": 2,
+ "triples": 6827
+}

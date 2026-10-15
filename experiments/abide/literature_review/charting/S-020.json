@@ -1,0 +1,167 @@
+{
+  "source_id": "S-020",
+  "pmid": "local_c0ef18d3",
+  "doi": "10.1016/j.media.2020.101765",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a federated-learning diagnostic prediction (ASD vs. HC) analysis of resting-state fMRI functional connectivity from four ABIDE I sites (Inclusion 2, 3).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "we downloaded Re- gions of Interests (ROIs) fMRI series of the top four largest sites (UM1, NYU, USM, UCLA1) from the preprocessed ABIDE dataset with Conﬁgurable Pipeline for the Analysis of Connec- tomes (CPAC), band-pass ﬁltering (0.01 - 0.1 Hz), no global signal regression, parcellated by Harvard-Oxford (HO) atlas.",
+      "section": "methods",
+      "claim": "ROI time series for four ABIDE sites were taken from the CPAC-preprocessed ABIDE release (band-pass 0.01-0.1Hz, no GSR, Harvard-Oxford atlas).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Skipping subjects lacking ﬁlename, we downloaded 106, 175, 72, 71 subjects from UM1, NYU, USM, UCLA1 separately. HO parcellated each brain into 111 ROIs. Since some sub- jects did not contain complete ROIs, we removed the incom- plete data, resulting in 88, 167, 52, 63 subjects for UM1, NYU, USM, UCLA1 separately.",
+      "section": "methods",
+      "claim": "After removing subjects with incomplete ROI data, the analysed sample was 88 (UM1), 167 (NYU), 52 (USM), 63 (UCLA1) subjects.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "NYU UM USM UCLA Total Subject 167 88 52 63 ASD Subject 73 43 33 37 HC Subject 94 45 19 26 ASD Percentage 44% 49% 63% 59% fMRI Frames 176 296 236 116 Overlapping Trunc 145 265 205 85 Table 1: Data summary of the dataset used in our study",
+      "section": "table",
+      "claim": "Per-site total, ASD and HC subject counts and ASD percentage (Table 1).",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "The mean accuracy of Fed was higher than the best Cross learning case for each single site. In addition, Fed was signiﬁcantly bet- ter than Single by two sample t test with p < 0.001 for each site.",
+      "section": "results",
+      "claim": "The federated-learning model (Fed) achieved higher mean accuracy than the best cross-site transfer model and was significantly better than single-site training at every site.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "Single 0.601(0.064) 0.648(0.065) 0.695(0.108) 0.571(0.100) Ensemble 0.611(0.012) 0.638(0.054) 0.654(0.088) 0.634(0.064) Fed 0.647(0.049) 0.728(0.073) 0.849(0.124) 0.712(0.075) Fed-MoE 0.671(0.082) 0.728(0.083) 0.809(0.098) 0.744(0.130) Fed-Align 0.676(0.071) 0.751(0.053) 0.829(0.091) 0.712(0.089) Mix 0.671(0.035) 0.740(0.063) 0.829(0.137) 0.710(0.128) Table 3: Results of using diﬀerent training strategies",
+      "section": "table",
+      "claim": "Per-site classification accuracies for Single, Ensemble, Fed, Fed-MoE, Fed-Align and Mix strategies using the Harvard-Oxford atlas.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Overall, the accuracies of using CC200 was lower than the accuracies of us- ing HO. This could be caused by overﬁtting as the number of parameters required for training CC200 data is higher than HO due to the dimensionality of the input.",
+      "section": "results",
+      "claim": "Replicating the experiment with the CC200 functional atlas gave lower accuracies than the Harvard-Oxford atlas, though the same strategy ranking held.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Our results have demonstrated the advantage of using a fed- erated framework to utilize multi-site data without data shar- ing compared to alternative methods.",
+      "section": "discussion",
+      "claim": "The federated framework used multi-site data without data sharing and outperformed alternative (non-federated) training strategies.",
+      "relevance_score": 0.8
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "Site-level inclusion/exclusion and resulting N by diagnosis are explicit (Table 1): \"NYU UM USM UCLA Total Subject 167 88 52 63 ASD Subject 73 43 33 37 HC Subject 94 45 19 26 ASD Percentage 44% 49% 63% 59% fMRI Frames 176 296 236 116 Overlapping Trunc 145 265 205 85 Table 1: Data summary of the dataset used in our study\""
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "Pipeline (CPAC), band-pass filter, GSR setting and atlas (Harvard-Oxford, plus a CC200 replication) are all specified: \"we downloaded Re- gions of Interests (ROIs) fMRI series of the top four largest sites (UM1, NYU, USM, UCLA1) from the preprocessed ABIDE dataset with Conﬁgurable Pipeline for the Analysis of Connec- tomes (CPAC), band-pass ﬁltering (0.01 - 0.1 Hz), no global signal regression, parcellated by Harvard-Oxford (HO) atlas.\""
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "Diagnosis source is not described in this paper beyond citing the ABIDE release and reporting ADOS/IQ as phenotype covariates."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "Unclear",
+        "support": "Site-level test performance (Single/Cross/Fed/Mix) is reported with repeated runs (std), but there is no leave-site-out evaluation of a single pooled classifier, no explicit harmonisation/ComBat, and class balance differs noticeably by site (ASD% 44-63%, Table 1) without a stated correction."
+      }
+    ],
+    "overall": "Unclear",
+    "summary": "Cohort, pipeline and atlas are fully specified; site-wise accuracy comparisons (Single/Cross/Fed/Mix) are reported with variability, but diagnostic label source is not given and no explicit multi-site statistical harmonisation (e.g., ComBat) is used, relying instead on federated-learning/domain-adaptation as the site-handling strategy."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "186 total (NYU 73, UM1 43, USM 33, UCLA1 37)",
+    "n_controls": "184 total (NYU 94, UM1 45, USM 19, UCLA1 26)",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Preprocessed Connectomes Project CPAC pipeline (band-pass filter 0.01-0.1Hz, no global signal regression)",
+    "specific_features": "ROI-wise functional connectivity (correlation matrix of mean ROI time series), Harvard-Oxford atlas (111 ROIs, primary) and Craddock CC200 atlas (200 ROIs, replication)",
+    "model_category": "Federated deep learning (MLP) with domain adaptation",
+    "specific_algorithms": "Multi-layer perceptron under federated learning (Fed), federated learning + mixture-of-experts domain adaptation (Fed-MoE), federated learning + adversarial domain alignment (Fed-Align); compared against single-site (Single), cross-site (Cross), pooled (Mix) and ensemble baselines",
+    "validation_methodology": "5-fold cross-validation within each site/strategy; per-site held-out test accuracy reported as mean (std) across folds; two-sample t-tests comparing strategies",
+    "performance_metrics": "Classification accuracy (mean, std)",
+    "key_performance_results": "Fed accuracy (HO atlas): NYU 0.647, UM 0.728, USM 0.849, UCLA 0.712 — higher than the best Cross result for every site and significantly better than Single (p<0.001 each site); comparable to Mix (pooled, non-private) accuracy. CC200 replication gave the same strategy ranking but lower absolute accuracies.",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "No statement of code or participant-list availability found in the text (ABIDE itself is cited as the public source).",
+    "custom_fields": {
+      "RQ1": "ABIDE I — top four largest sites (UM1, NYU, USM, UCLA1): after excluding subjects with missing files or incomplete ROI time series, analysed N = 88 (UM1), 167 (NYU), 52 (USM), 63 (UCLA1); ASD/HC per site given in Table 1 (overall 186 ASD / 184 HC). | quote: \"Skipping subjects lacking ﬁlename, we downloaded 106, 175, 72, 71 subjects from UM1, NYU, USM, UCLA1 separately. HO parcellated each brain into 111 ROIs. Since some sub- jects did not contain complete ROIs, we removed the incom- plete data, resulting in 88, 167, 52, 63 subjects for UM1, NYU, USM, UCLA1 separately.\"",
+      "RQ2": "CPAC (Configurable Pipeline for Analysis of Connectomes) via the Preprocessed Connectomes Project, band-pass filter 0.01-0.1Hz, no global signal regression; Harvard-Oxford atlas (111 ROIs) primary, Craddock CC200 (200 ROIs) as a replication atlas. | quote: \"we downloaded Re- gions of Interests (ROIs) fMRI series of the top four largest sites (UM1, NYU, USM, UCLA1) from the preprocessed ABIDE dataset with Conﬁgurable Pipeline for the Analysis of Connec- tomes (CPAC), band-pass ﬁltering (0.01 - 0.1 Hz), no global signal regression, parcellated by Harvard-Oxford (HO) atlas.\"",
+      "RQ3": "predictive — ASD vs. HC classification using a privacy-preserving federated-learning framework with domain adaptation. | quote: \"The mean accuracy of Fed was higher than the best Cross learning case for each single site. In addition, Fed was signiﬁcantly bet- ter than Single by two sample t test with p < 0.001 for each site.\"",
+      "RQ4": "5-fold cross-validation per site; accuracy compared across Single/Cross/Ensemble/Fed/Fed-MoE/Fed-Align/Mix training strategies with two-sample t-tests; no leave-site-out pooled classifier or explicit statistical site harmonisation. | quote: \"The mean accuracy of Fed was higher than the best Cross learning case for each single site. In addition, Fed was signiﬁcantly bet- ter than Single by two sample t test with p < 0.001 for each site.\"",
+      "RQ5": "Federated learning (Fed) achieved higher accuracy than the best cross-site model at every site (NYU 0.647, UM 0.728, USM 0.849, UCLA 0.712 with the HO atlas) and was significantly better than single-site training (p<0.001), approaching pooled (Mix) performance without sharing raw data; domain adaptation (Fed-MoE/Fed-Align) gave further improvement at most sites. | quote: \"Single 0.601(0.064) 0.648(0.065) 0.695(0.108) 0.571(0.100) Ensemble 0.611(0.012) 0.638(0.054) 0.654(0.088) 0.634(0.064) Fed 0.647(0.049) 0.728(0.073) 0.849(0.124) 0.712(0.075) Fed-MoE 0.671(0.082) 0.728(0.083) 0.809(0.098) 0.744(0.130) Fed-Align 0.676(0.071) 0.751(0.053) 0.829(0.091) 0.712(0.089) Mix 0.671(0.035) 0.740(0.063) 0.829(0.137) 0.710(0.128) Table 3: Results of using diﬀerent training strategies\"",
+      "RQ6": "yes — exact rules — exact per-site inclusion numbers and the file/ROI-completeness exclusion rule are stated, and Table 1/2 give full per-site demographic and diagnostic breakdowns, though no public participant ID list or code repository is given. | quote: \"NYU UM USM UCLA Total Subject 167 88 52 63 ASD Subject 73 43 33 37 HC Subject 94 45 19 26 ASD Percentage 44% 49% 63% 59% fMRI Frames 176 296 236 116 Overlapping Trunc 145 265 205 85 Table 1: Data summary of the dataset used in our study\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — exact per-site N, ASD/HC counts and ASD percentage reported in Table 1. | quote: \"NYU UM USM UCLA Total Subject 167 88 52 63 ASD Subject 73 43 33 37 HC Subject 94 45 19 26 ASD Percentage 44% 49% 63% 59% fMRI Frames 176 296 236 116 Overlapping Trunc 145 265 205 85 Table 1: Data summary of the dataset used in our study\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — exclusion is based on missing filenames/incomplete ROI time series only; no motion/FD-based QC threshold is reported.",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — CPAC is named with band-pass filter and GSR settings, but no pipeline version number is given. | quote: \"we downloaded Re- gions of Interests (ROIs) fMRI series of the top four largest sites (UM1, NYU, USM, UCLA1) from the preprocessed ABIDE dataset with Conﬁgurable Pipeline for the Analysis of Connec- tomes (CPAC), band-pass ﬁltering (0.01 - 0.1 Hz), no global signal regression, parcellated by Harvard-Oxford (HO) atlas.\"",
+      "CL4 Atlas/parcellation reported?": "Yes — Harvard-Oxford (111 ROIs) as the primary atlas and Craddock CC200 (200 ROIs) as a replication atlas.",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Unclear — 5-fold CV is used per site/strategy, but the text does not state whether any feature selection/scaling step was fit only on training folds.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly — no statistical harmonisation (e.g. ComBat) is used; site heterogeneity is instead addressed via the federated-learning design itself plus two domain-adaptation strategies (Fed-MoE, Fed-Align), and Cross/Mix comparisons quantify cross-site generalisation. | quote: \"Overall, the accuracies of using CC200 was lower than the accuracies of us- ing HO. This could be caused by overﬁtting as the number of parameters required for training CC200 data is higher than HO due to the dimensionality of the input.\"",
+      "CL7 Code and/or participant list available?": "No — no statement of code or participant-list availability was found in the text.",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Per-site N and ASD/HC composition are explicitly tabulated (CL1); no motion-QC rule reported (CL2)."
+    },
+    "domain_2_predictors_preprocessing": {
+      "rating": "Yes",
+      "overall_concern": "Low",
+      "support": "Pipeline, filter settings and two atlases are specified (CL3, CL4)."
+    },
+    "domain_3_outcome_label_source": {
+      "rating": "Unclear",
+      "overall_concern": "Some",
+      "support": "Diagnostic label source is not described beyond citing the ABIDE release."
+    },
+    "domain_4_bias_transparency": {
+      "rating": "Partial",
+      "overall_concern": "Some",
+      "support": "No explicit statistical site harmonisation and unclear within-fold leakage control, though site heterogeneity is addressed via federated/domain-adaptation design and multiple strategies are compared transparently (CL5-CL7); no code/data availability statement."
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction (federated learning) using ABIDE I resting-state fMRI from four sites: NYU (n=167: 73 ASD/94 HC), UM1 (n=88: 43/45), USM (n=52: 33/19), UCLA1 (n=63: 37/26).",
+    "methods": "CPAC-preprocessed ROI time series (Harvard-Oxford atlas, 0.01-0.1Hz band-pass, no GSR; CC200 atlas as replication) fed into MLP classifiers trained under a privacy-preserving federated-learning framework, with two domain-adaptation extensions (MoE, adversarial alignment); compared against single-site, cross-site, ensemble and pooled (Mix) training via 5-fold CV.",
+    "outcomes": "Federated learning (Fed) outperformed single-site and best cross-site training at every site (accuracy 0.647-0.849 across sites, HO atlas) and approached pooled (Mix) accuracy without centralising data; domain adaptation further improved accuracy at most sites; results replicated (at lower absolute accuracy) with the CC200 atlas.",
+    "key_limitations": "No motion/FD-based QC rule or statistical site harmonisation (e.g. ComBat) reported; diagnostic label source not described; no code/participant-list availability statement; class balance (ASD%) varies by site (44-63%) without an explicit correction.",
+    "relevance_notes": "Demonstrates that privacy-preserving federated learning across four ABIDE I sites can approach the accuracy of pooled multi-site training without data sharing, directly relevant to the dataset's distributed, multi-site structure.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1016/j.media.2020.101765",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Four largest ABIDE I sites (UM1, NYU, USM, UCLA1), restricted to subjects with a filename and complete ROI time series after CPAC preprocessing: 88 (UM1), 167 (NYU), 52 (USM), 63 (UCLA1) subjects.",
+    "n_by_dx": {
+      "ASD": 186,
+      "TD": 184,
+      "total": 370
+    },
+    "sites": "4 (NYU, UM1, USM, UCLA1)",
+    "pipeline": "CPAC (Configurable Pipeline for the Analysis of Connectomes), band-pass filter 0.01-0.1Hz, no global signal regression",
+    "atlas": "Harvard-Oxford (111 ROIs, primary); Craddock CC200 (200 ROIs, replication)",
+    "claim_type": "predictive",
+    "finding": "Federated learning (Fed) achieved per-site accuracy of 0.647 (NYU), 0.728 (UM), 0.849 (USM), 0.712 (UCLA) with the Harvard-Oxford atlas, significantly outperforming single-site training (p<0.001 each site) and approaching pooled (Mix) accuracy without sharing raw data; domain adaptation gave further gains at most sites.",
+    "reconstructible": "yes — exact rules",
+    "evidence_quotes": [
+      "Skipping subjects lacking ﬁlename, we downloaded 106, 175, 72, 71 subjects from UM1, NYU, USM, UCLA1 separately. HO parcellated each brain into 111 ROIs. Since some sub- jects did not contain complete ROIs, we removed the incom- plete data, resulting in 88, 167, 52, 63 subjects for UM1, NYU, USM, UCLA1 separately.",
+      "NYU UM USM UCLA Total Subject 167 88 52 63 ASD Subject 73 43 33 37 HC Subject 94 45 19 26 ASD Percentage 44% 49% 63% 59% fMRI Frames 176 296 236 116 Overlapping Trunc 145 265 205 85 Table 1: Data summary of the dataset used in our study",
+      "The mean accuracy of Fed was higher than the best Cross learning case for each single site. In addition, Fed was signiﬁcantly bet- ter than Single by two sample t test with p < 0.001 for each site."
+    ]
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "source_id": "S-099",
+  "pmid": "local_606b4b83",
+  "doi": "10.3390/brainsci10100754",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports a diagnostic-prediction (ASD vs healthy-control classification) analysis of ABIDE-I preprocessed resting-state fMRI connectivity using a novel 3-stage feature-selection method, satisfying inclusion 2-3.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The original ABIDE dataset claimed to have 1112 subjects consisting of 539 ASD and 573 Healthy controls subjects. However, after removing subjects with missing information we have a total of 1035 subjects which is",
+      "section": "methods",
+      "claim": "Starting N=1112 (539 ASD/573 controls); after removing subjects with missing information, final N=1035.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We have used the ABIDE dataset that is pre-processed using Conﬁguration Pipeline for\nthe\nAnalysis of Connectome (CPAC) [54]",
+      "section": "methods",
+      "claim": "Preprocessing pipeline was C-PAC.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "We have used the brain Automated anatomical labelling (AAL) template which divides the brain\ninto 90 regions.",
+      "section": "methods",
+      "claim": "Used the AAL atlas (first 90 regions) to construct 90x90 functional connectivity matrices.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "On the combined site data across 17 sites, we achieved the maximum 10-fold accuracy of 82% and for the individual site-wise data, based on 5-fold accuracy, our results outperformed other state of the art methods in 13 out of the total 17 site-wise comparisons.",
+      "section": "abstract",
+      "claim": "Main finding: 82% maximum 10-fold accuracy on the combined 17-site dataset, outperforming prior methods in 13/17 individual sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "A comparison of our Stage feature selection-based classiﬁers with the state of the art methods is\npresented in Table 11.",
+      "section": "results",
+      "claim": "Table 11 compares the proposed method's 10-fold CV accuracy/sensitivity/specificity to prior published methods on the combined dataset.",
+      "relevance_score": 0.6
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Unclear",
+        "support": "Full 17-site ABIDE-I used (Table 1 gives per-site N), with only a 'missing information' exclusion rule stated, no further clinical/demographic inclusion criteria detailed."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "C-PAC pipeline and AAL (90-region) atlas named; connectivity-matrix feature construction clearly described."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD/control diagnosis labels taken as distributed by ABIDE; diagnostic instrument not restated in this paper."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "The Teacher/Student feature-ranking network and SFFS feature selection are both fit on the full dataset before the reported 10-fold cross-validation of the final classifier; the text does not describe the Teacher/Student training or feature selection being repeated within each CV fold, indicating a likely feature-selection leakage risk. All 17 sites are pooled for the headline accuracy with no leave-site-out evaluation or site covariate."
+      }
+    ],
+    "overall": "High",
+    "summary": "A large, full-ABIDE-I (17-site) classification study with named pipeline/atlas, but feature-selection (Teacher-Student + SFFS) appears to be performed prior to the reported cross-validation rather than nested within folds, and no leave-site-out or site-harmonisation evaluation is reported despite pooling all 17 sites."
+  },
+  "charting": {
+    "source_id": "S-099",
+    "title": "A Three-Stage Teacher, Student Neural Networks and Sequential Feed Forward Selection-Based Feature Selection Approach for the Classification of Autism Spectrum Disorder",
+    "authors": "",
+    "year": "2020",
+    "journal_conference": "Brain Sciences",
+    "doi": "10.3390/brainsci10100754",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "505",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "530",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "no",
+    "dataset_openly_available": "Uses the publicly available preprocessed ABIDE dataset; no study-specific code/participant-list repository link found in the text",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity",
+    "specific_features": "90x90 Pearson correlation functional connectivity matrix (AAL atlas, 90 regions), upper-triangular feature vector (4005 features), reduced via a Teacher-Student deep-learning feature-ranking method and Sequential Forward Feature Selection (SFFS)",
+    "feature_extraction_tools": "C-PAC pipeline; AAL atlas (90 regions); custom Teacher-Student neural network + SFFS feature-selection pipeline",
+    "feature_importance_reported": "yes",
+    "importance_method": "Student-network hidden-layer weight magnitude ranking, refined by SFFS",
+    "top_features_identified": "A set of 154 top-ranked connectivity features reported as common across classifiers (visualized via BrainNet-viewer connectogram)",
+    "feature_change_direction": "",
+    "model_category": "Deep-learning-based feature selection (Teacher-Student) + classical classifiers",
+    "specific_algorithms": "Teacher Neural Network, Student autoencoder, SFFS; final classifiers: Logistic Regression, Linear Discriminant, SVM, Random Forest, Decision Tree",
+    "validation_methodology": "10-fold cross-validation (combined all-site dataset) and 5-fold cross-validation (site-wise)",
+    "performance_metrics": "Accuracy, sensitivity, specificity",
+    "key_performance_results": "Maximum 10-fold accuracy on combined 17-site dataset: 82% (Logistic Regression and Linear Discriminant classifiers, sensitivity 0.83, specificity 0.84-0.88); outperformed prior published methods (e.g. Heinsfeld et al. 2018: 63%; Taban Eslami et al. 2019: 67%) in the same comparison table; outperformed state-of-the-art in 13 of 17 individual sites using 5-fold CV",
+    "summary_key_findings": "On the full preprocessed ABIDE-I dataset (17 sites, 505 ASD/530 controls after removing subjects with missing information), a novel 3-stage Teacher-Student-and-SFFS feature selection approach on 90x90 AAL-atlas connectivity matrices achieved a maximum 10-fold cross-validated accuracy of 82% on the combined dataset (Logistic Regression/Linear Discriminant classifiers) and outperformed prior state-of-the-art methods in 13 of 17 individual sites.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "Feature-ranking (Teacher-Student) and feature-selection (SFFS) steps appear to precede the reported cross-validation rather than being nested within folds, a potential leakage concern not explicitly addressed in the text read.",
+    "custom_fields": {
+      "RQ1": "ABIDE-I, all 17 sites; starting N=1112 (539 ASD/573 controls); after removing subjects with missing information, final N=1035 (505 ASD/530 controls); per-site breakdown given in Table 1. | quote: \"The original ABIDE dataset claimed to have 1112 subjects consisting of 539 ASD and 573 Healthy controls subjects. However, after removing subjects with missing information we have a total of 1035 subjects which is\"",
+      "RQ2": "C-PAC pipeline (structural: skull stripping, tissue segmentation, MNI normalization; functional: slice-time correction, motion correction, band-pass filtering, registration); AAL atlas, 90 regions, 90x90 connectivity matrix. | quote: \"We have used the brain Automated anatomical labelling (AAL) template which divides the brain\ninto 90 regions.\"",
+      "RQ3": "predictive — ASD vs healthy-control classification using a novel feature-selection (Teacher-Student + SFFS) approach. | quote: \"we have proposed a three-stage feature selection approach for the classiﬁcation of ASD on the preprocessed Autism Brain Imaging Data Exchange (ABIDE) rs-fMRI Dataset.\"",
+      "RQ4": "10-fold cross-validation on the combined all-17-site dataset and 5-fold cross-validation for individual site-wise comparisons; sites pooled (\"ignoring the sites intrinsic variability\") rather than evaluated with leave-site-out. | quote: \"A comparison of our Stage feature selection-based classiﬁers with the state of the art methods is\npresented in Table 11.\"",
+      "RQ5": "Maximum 10-fold accuracy of 82% on the combined 17-site dataset (LR/LD classifiers); outperformed state-of-the-art methods in 13/17 individual sites (5-fold accuracy). | quote: \"On the combined site data across 17 sites, we achieved the maximum 10-fold accuracy of 82% and for the individual site-wise data, based on 5-fold accuracy, our results outperformed other state of the art methods in 13 out of the total 17 site-wise comparisons.\"",
+      "RQ6": "partly — per-site N by diagnosis given (Table 1) and a stated missing-information exclusion rule, but no participant ID list or code repository link is found in the text.",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes — starting N, exclusion rule (missing information) and final per-site/total N by diagnosis given. | quote: \"The original ABIDE dataset claimed to have 1112 subjects consisting of 539 ASD and 573 Healthy controls subjects. However, after removing subjects with missing information we have a total of 1035 subjects which is\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No — no explicit motion/FD threshold given beyond relying on the upstream C-PAC-preprocessed ABIDE release.",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — C-PAC pipeline named with its general processing steps, but no version number given. | quote: \"We have used the ABIDE dataset that is pre-processed using Conﬁguration Pipeline for\nthe\nAnalysis of Connectome (CPAC) [54]\"",
+      "CL4 Atlas/parcellation reported?": "Yes — AAL atlas, 90 regions. | quote: \"We have used the brain Automated anatomical labelling (AAL) template which divides the brain\ninto 90 regions.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — the Teacher-Student feature-ranking and SFFS feature-selection steps are described as being performed on the dataset prior to the reported 10-fold cross-validation, with no statement that they were repeated within each training fold only.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — the combined-dataset analysis explicitly pools all 17 sites \"ignoring the sites intrinsic variability\"; no harmonisation or leave-site-out evaluation reported for this headline result (site-wise results are reported separately per site, not as leave-site-out). | quote: \"ﬁrst the correlation-based connectivity matrix is arranged on all the sites,\nignoring the sites intrinsic variability, then a 10-fold cross-validation-based accuracy, sensitivity and\nspeciﬁcity is given in the mentioned table.\"",
+      "CL7 Code and/or participant list available?": "No — no code repository or participant list link found in the text.",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-099",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "N by site/diagnosis and missing-information exclusion given."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "No",
+          "notes": "Not reported."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported",
+          "rating": "Partial",
+          "notes": "C-PAC named, no version."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "AAL, 90 regions."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "ABIDE labels used, instrument not restated."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "No",
+          "notes": "Feature selection appears to precede the reported CV."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "No",
+          "notes": "All sites pooled, intrinsic variability explicitly ignored."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "No",
+          "notes": "No link found."
+        }
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-099",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE-I, all 17 sites; n=505 ASD / 530 controls (N=1035) after removing subjects with missing information.",
+    "methods": "C-PAC-preprocessed data; AAL atlas (90 regions, 90x90 FC matrix); novel Teacher-Student deep-learning feature ranking plus Sequential Forward Feature Selection (SFFS); classifiers (LR, LD, SVM, RF, DT) evaluated with 10-fold (combined) and 5-fold (site-wise) cross-validation.",
+    "outcomes": "Maximum 82% 10-fold accuracy on the combined 17-site dataset (LR/LD), outperforming prior published ABIDE classifiers in the same comparison table, and outperforming state-of-the-art in 13/17 individual sites.",
+    "key_limitations": "Feature selection (Teacher-Student + SFFS) appears performed prior to, rather than nested within, the reported cross-validation folds (potential leakage); all 17 sites pooled with explicitly ignored site variability and no leave-site-out evaluation; no motion/QC threshold or code/data release reported.",
+    "relevance_notes": "A full-ABIDE-I (17-site) classification benchmark illustrating a novel feature-selection method, useful for the knowledge graph's predictive-methods comparisons but with notable risk-of-bias caveats around leakage and site pooling.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3390/brainsci10100754",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "Full ABIDE-I release, 17 sites; starting N=1112 (539 ASD/573 controls), after removing subjects with missing information final N=1035 (505 ASD/530 controls).",
+    "n_by_dx": {
+      "ASD": 505,
+      "TD": 530,
+      "total": 1035
+    },
+    "sites": "17",
+    "pipeline": "C-PAC",
+    "atlas": "AAL (90 regions)",
+    "claim_type": "predictive",
+    "finding": "A Teacher-Student deep-learning feature-ranking method combined with SFFS feature selection on AAL 90x90 connectivity matrices achieved a maximum 82% 10-fold cross-validated accuracy on the combined 17-site ABIDE-I dataset, outperforming prior published methods and achieving better results than the state of the art in 13 of 17 individual sites.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "The original ABIDE dataset claimed to have 1112 subjects consisting of 539 ASD and 573 Healthy controls subjects. However, after removing subjects with missing information we have a total of 1035 subjects which is",
+      "On the combined site data across 17 sites, we achieved the maximum 10-fold accuracy of 82% and for the individual site-wise data, based on 5-fold accuracy, our results outperformed other state of the art methods in 13 out of the total 17 site-wise comparisons."
+    ]
+  }
+}

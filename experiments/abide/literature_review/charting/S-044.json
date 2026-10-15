@@ -1,0 +1,281 @@
+{
+  "source_id": "S-044",
+  "pmid": "local_44b7e3b7",
+  "doi": "10.3389/fnhum.2022.774921",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2/3: analyses ABIDE resting-state fMRI explicitly using Hidden Markov Model dynamics and reports a group-difference analysis between ASD and healthy controls.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "Speciﬁcally, the 507 subjects included 209 subjects with ASD and 298 well-matched health controls across 14 sites from the Autism Brain Imaging Data Exchange (ABIDE).",
+      "section": "abstract",
+      "claim": "Cohort: 507 male subjects (209 ASD, 298 controls) from 14 ABIDE sites.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Only subjects with FIQ within 2 SD + mean across all the Autism Brain Imaging Data Exchange (ABIDE) samples and with mean framewise displacement (FD) below 2 SD + mean were included.",
+      "section": "methods",
+      "claim": "QC rule: FIQ and mean framewise displacement each within 2 SD of the sample mean.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "All the preprocessing of resting state-fMRI was performed using the Statistical Parameter Mapping 8 (SPM8)",
+      "section": "methods",
+      "claim": "Preprocessing pipeline: SPM8 and DPARSF.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "it was based on the automated anatomical labeling (AAL) template extract the averaged fMRI time series",
+      "section": "methods",
+      "claim": "AAL atlas used to extract regional time series.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "we ﬁrst applied a data-driven algorithm that maximized the p-values of the group diﬀerence of age, FIQ, and mean FD (using two-sample t-tests). Then, to exclude the inﬂuence of the site interaction eﬀect, we",
+      "section": "methods",
+      "claim": "Site-by-group interaction effects were explicitly checked and minimised via a data-driven subject-matching algorithm rather than a statistical harmonisation method such as ComBat.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "compared to HCs, we found that fractional occupancies of HMM states 4, 8, 9, and 10 for ASD subjects were signiﬁcantly decreased",
+      "section": "results",
+      "claim": "ASD subjects showed significantly decreased fractional occupancy in HMM brain states 4, 8, 9 and 10 relative to controls.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "And fractional occupancies 2, 3, 14, and 17 for ASD were signiﬁcantly increased",
+      "section": "results",
+      "claim": "ASD subjects showed significantly increased fractional occupancy in HMM brain states 2, 3, 14 and 17 relative to controls.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "two-tailed two-sample, Bonferroni correction",
+      "section": "methods",
+      "claim": "Group comparisons used two-tailed two-sample t-tests with Bonferroni correction for multiple comparisons.",
+      "relevance_score": 0.5
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "FIQ and mean-FD-based inclusion thresholds (within 2 SD of ABIDE-wide mean) explicitly stated; resulting N (209 ASD, 298 controls) across 14 sites reported."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Demographic/clinical table given (age, FIQ, mean FD, high-motion timepoints, ADI-R and ADOS subscale scores) with site x group interaction statistics."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Low",
+        "support": "SPM8/DPARSF preprocessing pipeline with nuisance regression (WM/CSF signals, 24 motion parameters) and AAL-based time series extraction fully specified."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Low",
+        "support": "ADI-R and ADOS subscale scores reported for the ASD group in the demographic table."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Age, FIQ, mean FD and site x group interaction effects all explicitly tested and reported (male-only sample removes sex as a confound)."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Low",
+        "support": "A data-driven subject-selection algorithm maximised p-values of group differences in age/FIQ/FD and of site x group interactions; results reported both with and without regressing out site and FIQ."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "HMM-derived dynamic brain-state metrics (fractional occupancy, lifetimes, interval times, transition probabilities) are described in methodological detail."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "Two-tailed two-sample t-tests with Bonferroni correction across the 19 HMM states."
+      }
+    ],
+    "overall": "Low",
+    "summary": "A well-controlled associational ABIDE study with explicit motion/FIQ-based inclusion thresholds, site x group interaction checks, a named pipeline/atlas, and multiple-comparison-corrected statistics."
+  },
+  "charting": {
+    "source_id": "S-044",
+    "title": "Reconfiguration of Brain Network Dynamics in Autism Spectrum Disorder Based on Hidden Markov Model",
+    "authors": "Lin P; Zang S; Bai Y; Wang H",
+    "year": "2022",
+    "journal_conference": "Frontiers in Human Neuroscience",
+    "doi": "10.3389/fnhum.2022.774921",
+    "database_retrieved": "unpaywall",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "ADI-R, ADOS (subscale scores reported)",
+    "n_disordered": "209",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "Male only",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "ADI-R Social/Communication/RRB and ADOS Total scores reported",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "298",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "Male only",
+    "age_matched": "Yes (p=0.7191 reported, no significant group difference)",
+    "gender_matched": "Yes (male-only sample)",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "Publicly available ABIDE dataset cited (http://fcon_1000.projects.nitrc.org/indi/abide/); no study-specific code repository mentioned",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "dynamic functional connectivity / brain states",
+    "specific_features": "Hidden Markov Model (HMM) brain states (19 states) over AAL-atlas regional time series; fractional occupancy, lifetime, interval time, and state-transition probabilities",
+    "feature_extraction_tools": "SPM8, DPARSF",
+    "feature_importance_reported": "No",
+    "importance_method": "",
+    "top_features_identified": "",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "Using a Hidden Markov Model over resting-state fMRI from 507 ABIDE participants (209 ASD, 298 matched controls, 14 sites), ASD subjects showed significantly decreased fractional occupancy in HMM states 4, 8, 9 and 10 and significantly increased fractional occupancy in states 2, 3, 14 and 17 compared to controls (Bonferroni-corrected two-sample t-tests), with the ASD-related module characterised by altered community structure of brain-state transitions.",
+    "features_associated_disorder": "HMM brain states 4, 8, 9, 10 (decreased fractional occupancy in ASD) and states 2, 3, 14, 17 (increased fractional occupancy in ASD)",
+    "feature_change_direction": "Mixed: decreased occupancy in states 4/8/9/10, increased occupancy in states 2/3/14/17 for ASD vs. controls",
+    "future_directions_recommended": "Brain dynamics should remain a prime target for further ASD research, especially regarding intrinsic states underlying brain activity",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "associational | ABIDE I, 507 male subjects (209 ASD, 298 controls) from 14 sites, with FIQ and mean-FD each within 2 SD of the ABIDE-wide mean. | quote: \"Speciﬁcally, the 507 subjects included 209 subjects with ASD and 298 well-matched health controls across 14 sites from the Autism Brain Imaging Data Exchange (ABIDE).\"",
+      "RQ2": "SPM8 and DPARSF pipeline; AAL atlas. | quote: \"it was based on the automated anatomical labeling (AAL) template extract the averaged fMRI time series\"",
+      "RQ3": "associational — group difference in dynamic brain-state statistics between ASD and healthy controls. | quote: \"we performed, respectively, two-tail two-sample t-tests for fractional occupancy, lifetimes, and interval times of HMM states between patients with subjects with ASD and HCs.\"",
+      "RQ4": "Two-tailed two-sample t-tests with Bonferroni correction across 19 HMM states, reported both with and without regressing out site and FIQ; site x group interaction effects explicitly checked via a data-driven subject-matching algorithm. | quote: \"two-tailed two-sample, Bonferroni correction\"",
+      "RQ5": "ASD showed decreased fractional occupancy in HMM states 4, 8, 9, 10 and increased occupancy in states 2, 3, 14, 17 versus controls. | quote: \"compared to HCs, we found that fractional occupancies of HMM states 4, 8, 9, and 10 for ASD subjects were signiﬁcantly decreased\"",
+      "RQ6": "partly — exact inclusion thresholds (FIQ and mean FD within 2 SD of mean) and resulting N by site/diagnosis reported, but no participant-ID list given. | quote: \"Only subjects with FIQ within 2 SD + mean across all the Autism Brain Imaging Data Exchange (ABIDE) samples and with mean framewise displacement (FD) below 2 SD + mean were included.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"Only subjects with FIQ within 2 SD + mean across all the Autism Brain Imaging Data Exchange (ABIDE) samples and with mean framewise displacement (FD) below 2 SD + mean were included.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Yes | quote: \"Only subjects with FIQ within 2 SD + mean across all the Autism Brain Imaging Data Exchange (ABIDE) samples and with mean framewise displacement (FD) below 2 SD + mean were included.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"All the preprocessing of resting state-fMRI was performed using the Statistical Parameter Mapping 8 (SPM8)\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"it was based on the automated anatomical labeling (AAL) template extract the averaged fMRI time series\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "N/A | quote: \"we performed, respectively, two-tail two-sample t-tests for fractional occupancy, lifetimes, and interval times of HMM states between patients with subjects with ASD and HCs.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes | quote: \"we ﬁrst applied a data-driven algorithm that maximized the p-values of the group diﬀerence of age, FIQ, and mean FD (using two-sample t-tests). Then, to exclude the inﬂuence of the site interaction eﬀect, we\"",
+      "CL7 Code and/or participant list available?": "No | quote: \"Publicly available datasets were analyzed in this study. This data can be found here: http://fcon_1000.projects.nitrc.org/\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"Speciﬁcally, the 507 subjects included 209 subjects with ASD and 298 well-matched health controls across 14 sites from the Autism Brain Imaging Data Exchange (ABIDE).\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-044",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Yes",
+          "notes": "209 ASD, 298 controls, 14 sites, FIQ-matched, male-only, with explicit inclusion thresholds."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "Yes",
+          "notes": "Mean FD within 2 SD of ABIDE-wide mean; high-motion-timepoint counts reported and compared between groups."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Pipeline and version reported?",
+          "rating": "Yes",
+          "notes": "SPM8 and DPARSF toolbox named with preprocessing steps enumerated."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "Yes",
+          "notes": "AAL template used for ROI time-series extraction."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Yes",
+          "notes": "ADI-R and ADOS subscale scores reported for the ASD group from the ABIDE phenotypic data."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "N/A",
+          "notes": "Associational group-comparison study, not a predictive/classification analysis."
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "Yes",
+          "notes": "Explicit site x group interaction testing and a data-driven subject-matching algorithm to minimise site confounding; results also reported with site regressed out."
+        },
+        {
+          "item_text": "CL7 Code/participant list available?",
+          "rating": "No",
+          "notes": "Only the general public ABIDE repository link is given; no study-specific code or participant-ID list."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-044",
+    "study_design_sample_dataset": "Group-difference (associational); ABIDE I; 507 male subjects (209 ASD, 298 controls) from 14 sites, FIQ- and motion-matched",
+    "methods": "SPM8/DPARSF preprocessing with AAL-atlas time series; Hidden Markov Model identifying 19 recurring whole-brain states; fractional occupancy, lifetime, interval-time and transition-probability statistics compared between groups with Bonferroni-corrected two-sample t-tests, with and without regressing out site and FIQ",
+    "outcomes": "ASD subjects showed significantly decreased fractional occupancy in HMM states 4, 8, 9, 10 and increased occupancy in states 2, 3, 14, 17 relative to controls; transition-map community structure differed between ASD-related and HC-related modules",
+    "key_limitations": "Male-only sample limits generalisability; site effects addressed via subject matching and covariate regression rather than formal harmonisation (e.g. ComBat)",
+    "relevance_notes": "A dynamic (HMM-based) rather than static connectivity analysis of a well-documented, site-matched ABIDE I subset, with explicit motion/FIQ inclusion thresholds and site-interaction checks",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnhum.2022.774921",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "507 male subjects (209 ASD, 298 typically developing controls) from 14 ABIDE sites, with FIQ and mean framewise displacement each within 2 SD of the ABIDE-wide mean",
+    "n_by_dx": {
+      "ASD": 209,
+      "TD": 298,
+      "total": 507
+    },
+    "sites": "14",
+    "pipeline": "SPM8 / DPARSF",
+    "atlas": "AAL (Automated Anatomical Labeling)",
+    "claim_type": "associational",
+    "finding": "ASD subjects show significantly decreased fractional occupancy in Hidden-Markov-Model brain states 4, 8, 9 and 10, and significantly increased occupancy in states 2, 3, 14 and 17, relative to matched controls (Bonferroni-corrected).",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "Speciﬁcally, the 507 subjects included 209 subjects with ASD and 298 well-matched health controls across 14 sites from the Autism Brain Imaging Data Exchange (ABIDE).",
+      "compared to HCs, we found that fractional occupancies of HMM states 4, 8, 9, and 10 for ASD subjects were signiﬁcantly decreased"
+    ]
+  }
+}

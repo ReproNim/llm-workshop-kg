@@ -1,0 +1,32 @@
+{
+  "source_id": "S-031",
+  "pmid": "local_41ea9f4e",
+  "doi": "10.3389/fncom.2019.00009",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 3: phenotype-only use — the paper classifies ASD using only personal characteristic data (age, sex, handedness, IQ measures) from ABIDE, with no resting-state fMRI or structural imaging analysis performed.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.3389/fncom.2019.00009",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {
+      "ASD": null,
+      "TD": null,
+      "total": null
+    },
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "",
+    "evidence_quotes": [
+      "We extracted six personal characteristics (age, sex, handedness, and three\nindividual measures of IQ) from 851 subjects in the Autism Brain Imaging Data Exchange\n(ABIDE) database. ABIDE is an international collaborative project that collected data from\na large number of ASD patients and typical non-ASD controls from 17 research and\nclinical institu"
+    ]
+  }
+}

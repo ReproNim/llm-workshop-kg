@@ -1,0 +1,282 @@
+{
+  "source_id": "S-001",
+  "pmid": "local_b363d94a",
+  "doi": "10.1038/sdata.2017.10",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 3: describes the ABIDE II release itself (cohort composition, sites, diagnosis determination, QC metrics, access).",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "a new multi-site open data resource containing 1,044 independent datasets (ASD N = 487;\nControls N = 557)",
+      "section": "abstract",
+      "claim": "ABIDE II aggregates 1,044 datasets: 487 ASD and 557 controls.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "The current ABIDE II dataset encompasses 17 collections of unique independent datasets (i.e., from\nindividuals whose data were not previously shared in ABIDE I) yielding 487 datasets classiﬁed as ASD\nand 557 as controls (Fig. 1a, Table 1). These represent previously collected datasets across 16 sites,\nincluding nine charter ABIDE I institutions and seven new members",
+      "section": "results",
+      "claim": "ABIDE II comprises 17 collections across 16 sites (9 ABIDE I charter sites plus 7 new sites).",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "ASD classiﬁcation was determined by either 1) combining clinical judgment with ‘gold standard’\ndiagnostic instruments—Autism Diagnostic Observation Scale34,35 and/or Autism Diagnostic Interview-\nRevised36 [ADOS, ADI-R]; (n = 12 data collections; 368 ASD datasets) or 2) by using these ‘gold\nstandard’ diagnostic instruments only (n = 4 collections; 92 ASD datasets)",
+      "section": "methods",
+      "claim": "ASD diagnosis across collections was based on clinical judgment plus ADOS/ADI-R, or ADOS/ADI-R alone, varying by collection.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "we used the Preprocessed Connectome Project quality assurance protocol49\n(http://preprocessed-connectomes-project.github.io)",
+      "section": "methods",
+      "claim": "Data quality was assessed using the Preprocessed Connectomes Project QA protocol, including mean framewise displacement.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "users regardless of data quality27. The rationale of this decision includes the lack of consensus on optimal\nquality criteria in regards to speciﬁc measures or their combinations and cutoffs.",
+      "section": "discussion",
+      "claim": "ABIDE II releases all datasets regardless of QC metric values, with no enforced exclusion threshold, because there is no consensus on quality cutoffs.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "All ABIDE II datasets can be accessed, after establishing a login and user password, through FCP/INDI\nat the Neuroimaging Informatics Tools and Resources Clearinghouse (NITRC; http://fcon_1000.projects.\nnitrc.org/indi/abide/). The datasets are organized by data collection and stored in.tar ﬁles, each\ncontaining imaging and phenotypic data.",
+      "section": "methods",
+      "claim": "ABIDE II data (imaging and phenotypic) are openly accessible via NITRC after registration.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The ABIDE II sample has increased the number of available datasets from females with\nASD from 65 in ABIDE I to 138 when ABIDE I+II are combined.",
+      "section": "discussion",
+      "claim": "ABIDE II substantially increases the number of female ASD datasets available (65 to 138 combined with ABIDE I).",
+      "relevance_score": 0.6
+    },
+    {
+      "text": "Finally, to facilitate replications among studies using ABIDE data, we encourage users to provide\nthe ID list utilized for their published manuscripts in the manuscript section of the ABIDE\nwebsite (http://fcon_1000.projects.nitrc.org/indi/abide/manusc",
+      "section": "discussion",
+      "claim": "The authors encourage publishing the exact participant ID list used, to support reconstructibility of analysed cohorts.",
+      "relevance_score": 0.7
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Low",
+        "support": "Per-collection inclusion/exclusion criteria (IQ range, first-degree relative with ASD, absence of seizure/genetic syndromes) are documented per collection narrative, though they vary across collections: \"Other speciﬁc inclusion/exclusion criteria used for selecting controls (e.g., IQ range, ﬁrst degree relative with ASD) or ASD (e.g., absence of reported seizure and genetic syndromes) varied across collections.\""
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Demographics, sites, scanners, and collection-level N are tabulated (Table 1, Fig. 1)."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Unclear",
+        "support": "No connectivity pipeline is applied in this descriptor; raw/minimally processed acquisition parameters only."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Low",
+        "support": "ASD classification basis (ADOS/ADI-R and/or clinical judgment) reported per collection group with Ns."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Low",
+        "support": "Age, sex, site, handedness and motion (mean FD etc.) are reported and released per dataset."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Unclear",
+        "support": "QC metrics are released but deliberately not used to exclude or adjust data: \"users regardless of data quality\"."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "N/A",
+        "support": "No connectivity outcome analysed; this is a data-release descriptor."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "N/A",
+        "support": "No inferential group analysis beyond basic demographic comparisons (e.g., handedness) is the focus."
+      }
+    ],
+    "overall": "Low",
+    "summary": "As a data descriptor, cohort composition, diagnosis basis and QC metrics are transparently reported per collection; analytical domains are not applicable since no connectivity analysis is performed."
+  },
+  "charting": {
+    "source_id": "S-001",
+    "title": "Enhancing studies of the connectome in autism using the autism brain imaging data exchange II",
+    "authors": "Adriana Di Martino; David A. O'Connor; Bosi Chen; et al.",
+    "year": "2017",
+    "journal_conference": "Scientific Data",
+    "doi": "10.1038/sdata.2017.10",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE II)",
+    "primary_focus": "Data descriptor / cohort and release description",
+    "primary_goal": "",
+    "study_design": "Data descriptor",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state (eyes open/closed, varies by site)",
+    "study_setting": "",
+    "country_region": "Multi-site, international (16 sites)",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "ADOS and/or ADI-R combined with clinical judgment (n=12 collections, 368 ASD datasets), or ADOS/ADI-R alone (n=4 collections, 92 ASD datasets); EMC_1 based on prior medical records",
+    "n_disordered": "487",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "true",
+    "healthy_status_confirmed": "absence of ASD diagnosis and absence of history of other major neurodevelopmental disorders for 546/557 (98%) control datasets",
+    "n_controls": "557",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI, structural MRI, diffusion-weighted imaging (subset N=284), phenotypic data",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "true — ABIDE II (17 collections, 16 sites)",
+    "dataset_openly_available": "Yes — via NITRC/FCP-INDI after registration (login and password)",
+    "dataset_available_request": "No request needed beyond NITRC login",
+    "sensitive_data_anonymized": "Yes — HIPAA de-identification, facial information removed from structural images",
+    "feature_types": "",
+    "specific_features": "",
+    "feature_extraction_tools": "",
+    "feature_importance_reported": "",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "Describes the ABIDE II release (1,044 datasets: 487 ASD, 557 controls across 17 collections/16 sites), diagnosis basis, phenotypic measures, and QC metrics (Preprocessed Connectomes Project protocol) released without an exclusion threshold.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "",
+    "reviewer_notes": "Pure data descriptor; no autism-vs-control connectivity analysis performed in this paper itself.",
+    "custom_fields": {
+      "RQ1": "descriptor — ABIDE II release: 1,044 datasets (ASD N=487, Controls N=557) across 17 collections/16 sites; no QC-based exclusion applied, all data released regardless of quality | quote: \"users regardless of data quality27. The rationale of this decision includes the lack of consensus on optimal quality criteria in regards to speciﬁc measures or their combinations and cutoffs.\"",
+      "RQ2": "Not applicable — raw/minimally processed data release, no connectivity pipeline or atlas applied by this paper | quote: \"\"",
+      "RQ3": "descriptor — this paper describes the ABIDE II data release itself rather than performing a group-difference or predictive analysis | quote: \"a new multi-site open data resource containing 1,044 independent datasets (ASD N = 487; Controls N = 557)\"",
+      "RQ4": "Not applicable — no hypothesis test or classifier is evaluated in this descriptor | quote: \"\"",
+      "RQ5": "Not applicable — no connectivity or diagnostic-prediction finding is reported; only cohort/QC description | quote: \"\"",
+      "RQ6": "yes — exact rules | quote: \"The current ABIDE II dataset encompasses 17 collections of unique independent datasets (i.e., from individuals whose data were not previously shared in ABIDE I) yielding 487 datasets classiﬁed as ASD and 557 as controls (Fig. 1a, Table 1).\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"The current ABIDE II dataset encompasses 17 collections of unique independent datasets (i.e., from individuals whose data were not previously shared in ABIDE I) yielding 487 datasets classiﬁed as ASD and 557 as controls (Fig. 1a, Table 1).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — QC metrics (including mean FD) are computed and released, but no exclusion threshold is applied | quote: \"users regardless of data quality27. The rationale of this decision includes the lack of consensus on optimal quality criteria in regards to speciﬁc measures or their combinations and cutoffs.\"",
+      "CL3 Preprocessing pipeline and version reported?": "No — raw/minimally processed data release; no connectivity preprocessing pipeline is applied in this paper | quote: \"\"",
+      "CL4 Atlas/parcellation reported?": "No | quote: \"\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not applicable, no predictive model | quote: \"\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly — multisite heterogeneity (scanner, acquisition, inclusion/exclusion) is discussed as a factor users must account for, no harmonisation is performed by this paper | quote: \"As data aggregation followed independent data collections across multiple sites, various sources of heterogeneity exist between collections.\"",
+      "CL7 Code and/or participant list available?": "Yes — full dataset and phenotypic files openly available via NITRC after registration | quote: \"All ABIDE II datasets can be accessed, after establishing a login and user password, through FCP/INDI at the Neuroimaging Informatics Tools and Resources Clearinghouse (NITRC; http://fcon_1000.projects. nitrc.org/indi/abide/).\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "describes-release | quote: \"a new multi-site open data resource containing 1,044 independent datasets (ASD N = 487; Controls N = 557)\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-001",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "17 collections, 16 sites, N=487 ASD / 557 controls, per-collection diagnosis criteria documented."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Partial",
+          "notes": "QC metrics computed and released (PCP protocol) but deliberately no exclusion threshold applied."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline reported",
+          "rating": "N/A",
+          "notes": "No connectivity preprocessing performed; raw/minimally processed data release."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "N/A",
+          "notes": "Not applicable."
+        }
+      ],
+      "overall_concern": "N/A"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition reported",
+          "rating": "Yes",
+          "notes": "ADOS/ADI-R and/or clinical judgment, with Ns per basis, documented per collection."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "N/A",
+          "notes": "No predictive model in this paper."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "Partial",
+          "notes": "Multisite heterogeneity discussed; no harmonisation applied by the authors."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "Yes",
+          "notes": "Full release openly accessible via NITRC with registration."
+        }
+      ],
+      "overall_concern": "Low"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-001",
+    "study_design_sample_dataset": "Data descriptor; ABIDE II release; N=487 ASD, N=557 controls (1,044 datasets total) across 17 collections and 16 sites (9 ABIDE I charter sites + 7 new).",
+    "methods": "Describes data contribution, anonymization, and aggregation procedures across sites; diagnosis basis per collection (ADOS/ADI-R and/or clinical judgment); QC assessed with the Preprocessed Connectomes Project protocol (spatial and temporal metrics including mean FD) but not used to exclude data.",
+    "outcomes": "Cohort composition, demographic and phenotypic variable availability (SRS, RBS-R, ADOS/ADI-R), and QC metric distributions by collection are reported; no group-difference or classification analysis is performed.",
+    "key_limitations": "Heterogeneity across sites in inclusion/exclusion criteria, scanners and acquisition parameters; no consensus QC threshold is applied, so users must select/exclude data themselves.",
+    "relevance_notes": "Defines the ABIDE II release structure (collections, sites, Ns, diagnosis basis, QC metrics) that downstream analysis papers subset from; central for linking any ABIDE II-using publication to its data provenance.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1038/sdata.2017.10",
+    "dataset": "ABIDE II",
+    "relation": "describes-release",
+    "cohort_description": "ABIDE II release: 17 independent data collections across 16 sites (9 ABIDE I charter + 7 new), with ASD classification via ADOS/ADI-R and/or clinical judgment, varying inclusion/exclusion criteria per collection.",
+    "n_by_dx": {
+      "ASD": 487,
+      "TD": 557,
+      "total": 1044
+    },
+    "sites": "16",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "descriptor",
+    "finding": "ABIDE II aggregates 1,044 datasets (487 ASD, 557 controls) from 17 collections across 16 sites, with phenotypic and QC metrics (Preprocessed Connectomes Project protocol) released for all datasets without quality-based exclusion.",
+    "reconstructible": "yes — exact rules",
+    "evidence_quotes": [
+      "a new multi-site open data resource containing 1,044 independent datasets (ASD N = 487;\nControls N = 557)",
+      "The current ABIDE II dataset encompasses 17 collections of unique independent datasets (i.e., from\nindividuals whose data were not previously shared in ABIDE I) yielding 487 datasets classiﬁed as ASD\nand 557 as controls (Fig. 1a, Table 1). These represent previously collected datasets across 16 sites,\nincluding nine charter ABIDE I institutions and seven new members",
+      "users regardless of data quality27. The rationale of this decision includes the lack of consensus on optimal\nquality criteria in regards to speciﬁc measures or their combinations and cutoffs."
+    ]
+  }
+}

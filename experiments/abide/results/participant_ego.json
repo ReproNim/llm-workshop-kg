@@ -1,0 +1,903 @@
+{
+ "participant": "MaxMun_c_0051332",
+ "query_seconds": 0.027,
+ "construct_triples": 239,
+ "rows": {
+  "phenotype": [
+   {
+    "var": "urn:repronim:abide:variable/anat_cnr",
+    "label": "anat_cnr",
+    "value": "8.896032",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/func_efc",
+    "label": "func_efc",
+    "value": "0.6339326",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/EYE_STATUS_AT_SCAN",
+    "label": "EYE_STATUS_AT_SCAN",
+    "value": "2",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/func_dvars",
+    "label": "func_dvars",
+    "value": "1.023302",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/FIQ",
+    "label": "FIQ",
+    "value": "125",
+    "about": "http://uri.interlex.org/base/ilx_0739365",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/func_quality",
+    "label": "func_quality",
+    "value": "0.01847",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/DX_GROUP",
+    "label": "diagnostic group",
+    "value": "2",
+    "about": "http://ncitt.ncit.nih.gov/Diagnosis",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/anat_efc",
+    "label": "anat_efc",
+    "value": "0.8374629",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/subject",
+    "label": "subject",
+    "value": "51332",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/CURRENT_MED_STATUS",
+    "label": "CURRENT_MED_STATUS",
+    "value": "0",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/SITE_ID",
+    "label": "site identifier",
+    "value": "MAX_MUN",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/SUB_IN_SMP",
+    "label": "SUB_IN_SMP",
+    "value": "1",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/DSM_IV_TR",
+    "label": "DSM_IV_TR",
+    "value": "0",
+    "about": "http://ncitt.ncit.nih.gov/Diagnosis",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/func_outlier",
+    "label": "func_outlier",
+    "value": "0.002174333",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/PIQ_TEST_TYPE",
+    "label": "PIQ_TEST_TYPE",
+    "value": "RAVENS",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/anat_fwhm",
+    "label": "anat_fwhm",
+    "value": "3.224878",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/SEX",
+    "label": "SEX",
+    "value": "1",
+    "about": "http://uri.interlex.org/base/ilx_0101292",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/func_fber",
+    "label": "func_fber",
+    "value": "52.91712",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/qc_anat_rater_2",
+    "label": "qc_anat_rater_2",
+    "value": "OK",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/func_fwhm",
+    "label": "func_fwhm",
+    "value": "1.7499",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/qc_func_notes_rater_2",
+    "label": "qc_func_notes_rater_2",
+    "value": "ic-cerebellum",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/SUB_ID",
+    "label": "SUB_ID",
+    "value": "51332",
+    "about": "https://ndar.nih.gov/api/datadictionary/v2/dataelement/src_subject_id",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/func_num_fd",
+    "label": "func_num_fd",
+    "value": "8",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/qc_anat_rater_3",
+    "label": "qc_anat_rater_3",
+    "value": "OK",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/func_mean_fd",
+    "label": "func_mean_fd",
+    "value": "0.06442546",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/qc_rater_1",
+    "label": "qc_rater_1",
+    "value": "OK",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/AGE_AT_SCAN",
+    "label": "age at scan",
+    "value": "23",
+    "about": "http://uri.interlex.org/ilx_0100400",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/PIQ",
+    "label": "PIQ",
+    "value": "126",
+    "about": "http://uri.interlex.org/base/ilx_0739363",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/FILE_ID",
+    "label": "file identifier",
+    "value": "MaxMun_c_0051332",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/anat_snr",
+    "label": "anat_snr",
+    "value": "31.02507",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/func_perc_fd",
+    "label": "func_perc_fd",
+    "value": "6.61157",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/anat_fber",
+    "label": "anat_fber",
+    "value": "379.1943",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/qc_func_rater_3",
+    "label": "qc_func_rater_3",
+    "value": "OK",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/HANDEDNESS_CATEGORY",
+    "label": "handedness",
+    "value": "R",
+    "about": "http://purl.obolibrary.org/obo/PATO_0002201",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/qc_func_rater_2",
+    "label": "qc_func_rater_2",
+    "value": "maybe",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/FIQ_TEST_TYPE",
+    "label": "FIQ_TEST_TYPE",
+    "value": "WST",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/anat_qi1",
+    "label": "anat_qi1",
+    "value": "0.09108072",
+    "row": "1003"
+   },
+   {
+    "var": "urn:repronim:abide:variable/func_gsr",
+    "label": "func_gsr",
+    "value": "0.07083806",
+    "row": "1003"
+   }
+  ],
+  "missing": [
+   {
+    "n": "65"
+   }
+  ],
+  "scans": [
+   {
+    "img": "urn:repronim:abide:raw/MaxMun_c_0051332/rest",
+    "kind": "http://purl.org/nidash/nidm#Functional",
+    "url": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/RawDataBIDS/MaxMun_c/sub-0051332/func/sub-0051332_task-rest_run-1_bold.nii.gz"
+   },
+   {
+    "img": "urn:repronim:abide:raw/MaxMun_c_0051332/T1w",
+    "kind": "http://purl.org/nidash/nidm#Anatomical",
+    "url": "https://s3.amazonaws.com/fcp-indi/data/Projects/ABIDE_Initiative/RawDataBIDS/MaxMun_c/sub-0051332/anat/sub-0051332_T1w.nii.gz"
+   }
+  ],
+  "derived": [
+   {
+    "ent": "urn:repronim:abide:idp/MaxMun_c_0051332/roi_thickness",
+    "type": "idp",
+    "act": "urn:repronim:abide:ants_thickness/MaxMun_c_0051332",
+    "agentLabel": "ANTs cortical thickness (ABIDE Preprocessed release)",
+    "sha": "0a429d84040ea8af38623c52bef993b17442151ced021584385f828941f43d4d"
+   },
+   {
+    "ent": "urn:repronim:abide:timeseries/MaxMun_c_0051332",
+    "type": "timeseries",
+    "act": "urn:repronim:abide:preprocess/MaxMun_c_0051332",
+    "agentLabel": "C-PAC (ABIDE Preprocessed release)",
+    "sha": "a5b1b91a013f32bbab5635ac9d6c8cbca4db26ec8b476b7dec08867fca337acb"
+   },
+   {
+    "ent": "urn:repronim:abide:connectivity/MaxMun_c_0051332",
+    "type": "connectivity",
+    "act": "urn:repronim:abide:connectivity_activity/MaxMun_c_0051332",
+    "agentLabel": "common.py",
+    "sha": "6282fca418ea78520ab7929eb29d67a7a32539c9c44f29e18933b958e7a7a5f8"
+   }
+  ],
+  "cohorts": [
+   {
+    "cohort": "urn:repronim:abide:cohort/abraham2017_reconstructed"
+   },
+   {
+    "cohort": "urn:repronim:abide:cohort/B_v1"
+   },
+   {
+    "cohort": "urn:repronim:abide:cohort/A_v1"
+   },
+   {
+    "cohort": "urn:repronim:abide:cohort/B_v2"
+   }
+  ],
+  "folds": [
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/MAX_MUN",
+    "site": "MAX_MUN",
+    "role": "held out (test)"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/MAX_MUN",
+    "site": "MAX_MUN",
+    "role": "held out (test)"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/CALTECH",
+    "site": "CALTECH",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/STANFORD",
+    "site": "STANFORD",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/SBL",
+    "site": "SBL",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/KKI",
+    "site": "KKI",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/UM_2",
+    "site": "UM_2",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/OLIN",
+    "site": "OLIN",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/YALE",
+    "site": "YALE",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/YALE",
+    "site": "YALE",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/OLIN",
+    "site": "OLIN",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/LEUVEN_2",
+    "site": "LEUVEN_2",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/UCLA_1",
+    "site": "UCLA_1",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/CMU",
+    "site": "CMU",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/CALTECH",
+    "site": "CALTECH",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/UCLA_1",
+    "site": "UCLA_1",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/OHSU",
+    "site": "OHSU",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/OHSU",
+    "site": "OHSU",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/LEUVEN_2",
+    "site": "LEUVEN_2",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/UCLA_2",
+    "site": "UCLA_2",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/PITT",
+    "site": "PITT",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/LEUVEN_1",
+    "site": "LEUVEN_1",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/SBL",
+    "site": "SBL",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/USM",
+    "site": "USM",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/KKI",
+    "site": "KKI",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/PITT",
+    "site": "PITT",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/UM_1",
+    "site": "UM_1",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/STANFORD",
+    "site": "STANFORD",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/CMU",
+    "site": "CMU",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/SDSU",
+    "site": "SDSU",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/USM",
+    "site": "USM",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/NYU",
+    "site": "NYU",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/TRINITY",
+    "site": "TRINITY",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/LEUVEN_1",
+    "site": "LEUVEN_1",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/UCLA_2",
+    "site": "UCLA_2",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/SDSU",
+    "site": "SDSU",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/UM_2",
+    "site": "UM_2",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/NYU",
+    "site": "NYU",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v1/UM_1",
+    "site": "UM_1",
+    "role": "training"
+   },
+   {
+    "fold": "urn:repronim:abide:fold/B_v2/TRINITY",
+    "site": "TRINITY",
+    "role": "training"
+   }
+  ],
+  "results": [
+   {
+    "result": "urn:repronim:abide:connectivity/MaxMun_c_0051332"
+   },
+   {
+    "result": "urn:repronim:abide:result/A_v1",
+    "label": "Analyst A result v1"
+   },
+   {
+    "result": "urn:repronim:abide:result/B_v2/MAX_MUN/correlation"
+   },
+   {
+    "result": "urn:repronim:abide:result/B_v2/MAX_MUN/tangent"
+   },
+   {
+    "result": "urn:repronim:abide:result/B_v2/MAX_MUN/demographic"
+   },
+   {
+    "result": "urn:repronim:abide:result/B_v2/MAX_MUN/demographic_fd"
+   },
+   {
+    "result": "urn:repronim:abide:result/B_v1/MAX_MUN/correlation"
+   },
+   {
+    "result": "urn:repronim:abide:result/B_v1/MAX_MUN/demographic_fd"
+   },
+   {
+    "result": "urn:repronim:abide:result/B_v1/MAX_MUN/demographic"
+   },
+   {
+    "result": "urn:repronim:abide:result/B_v1/MAX_MUN/tangent"
+   }
+  ],
+  "paper": [
+   {
+    "paper": "urn:repronim:abide:paper/abraham2017",
+    "title": "Deriving reproducible biomarkers from multi-site resting-state data: An Autism-based example",
+    "cohortNode": "urn:repronim:abide:cohort/abraham2017_reconstructed"
+   }
+  ],
+  "volumes": [
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "n": "101",
+    "graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "n": "18",
+    "graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "n": "62",
+    "graph": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl"
+   }
+  ],
+  "hippocampus": [
+   {
+    "tool": "http://purl.org/nidash/fsl#",
+    "v": "4116.0586"
+   },
+   {
+    "tool": "https://surfer.nmr.mgh.harvard.edu/",
+    "v": "4597.9"
+   },
+   {
+    "tool": "http://stnava.github.io/ANTs/",
+    "v": "4406.929"
+   }
+  ],
+  "external_ids": [
+   {
+    "g": "urn:repronim:abide:graph/pynidm_phenotype",
+    "person": "http://iri.nidash.org/a77c2bcc-c8ac-11f1-b8c8-2ff1eb723d2a"
+   },
+   {
+    "g": "urn:repronim:simple2:datasets.datalad.org/abide/RawDataBIDS/MaxMun_c/nidm.ttl",
+    "person": "http://iri.nidash.org/b40c3cc4-a168-11ec-8c1d-003ee1ce9545"
+   }
+  ],
+  "scope": [
+   {
+    "scope": "urn:repronim:abide:scope/pond",
+    "level": "lab",
+    "consent": "broad-sharing",
+    "egress": "permitted",
+    "lake": "http://preprocessed-connectomes-project.org/abide/",
+    "policy": "never-promote: the lake already holds the authoritative public release; link to it instead of copying"
+   }
+  ]
+ },
+ "figure_nodes": 30,
+ "figure_edges": 31,
+ "nodes": [
+  {
+   "id": "P",
+   "layer": "participant",
+   "label": "MaxMun_c_0051332\nndar:src_subject_id 51332"
+  },
+  {
+   "id": "ph:demographics",
+   "layer": "phenotype",
+   "label": "demographics\nAGE_AT_SCAN=23\nSEX=1\nDX_GROUP=2\nSITE_ID=MAX_MUN\n..."
+  },
+  {
+   "id": "ph:IQ",
+   "layer": "phenotype",
+   "label": "IQ\nFIQ=125\nPIQ=126"
+  },
+  {
+   "id": "ph:motion & rater QC",
+   "layer": "phenotype",
+   "label": "motion & rater QC\nfunc_mean_fd=0.0644\nfunc_perc_fd=6.61\nqc_rater_1=OK\nqc_func_rater_2=maybe\n..."
+  },
+  {
+   "id": "ph:other",
+   "layer": "phenotype",
+   "label": "23 other phenotype values\n65 recorded as missing"
+  },
+  {
+   "id": "scan:Functional",
+   "layer": "scan",
+   "label": "raw rest BOLD\n(S3 pointer, not downloaded)"
+  },
+  {
+   "id": "scan:Anatomical",
+   "layer": "scan",
+   "label": "raw T1w\n(S3 pointer, not downloaded)"
+  },
+  {
+   "id": "der:idp",
+   "layer": "derived",
+   "label": "ANTs ROI thickness\nsha256 0a429d8404"
+  },
+  {
+   "id": "sw:ANTs cortical thickness (ABIDE Preprocessed release)",
+   "layer": "derived",
+   "label": "ANTs cortical thickness\n(ABIDE Preprocessed release)"
+  },
+  {
+   "id": "der:timeseries",
+   "layer": "derived",
+   "label": "CC200 time series\nsha256 a5b1b91a01"
+  },
+  {
+   "id": "sw:C-PAC (ABIDE Preprocessed release)",
+   "layer": "derived",
+   "label": "C-PAC\n(ABIDE Preprocessed release)"
+  },
+  {
+   "id": "der:connectivity",
+   "layer": "derived",
+   "label": "connectivity\n(19,900 Fisher-z edges)\nsha256 6282fca418"
+  },
+  {
+   "id": "sw:common.py",
+   "layer": "derived",
+   "label": "common.py"
+  },
+  {
+   "id": "vol:ANTs",
+   "layer": "idp",
+   "label": "ANTs volumes (101)\nL hippocampus 4,407 mm\u00b3"
+  },
+  {
+   "id": "vol:FSL",
+   "layer": "idp",
+   "label": "FSL volumes (18)\nL hippocampus 4,116 mm\u00b3"
+  },
+  {
+   "id": "vol:FreeSurfer",
+   "layer": "idp",
+   "label": "FreeSurfer volumes (62)\nL hippocampus 4,598 mm\u00b3"
+  },
+  {
+   "id": "ext:ex:graph/pynidm_phenotype",
+   "layer": "external",
+   "label": "PyNIDM csv2nidm person"
+  },
+  {
+   "id": "ext:simple2:MaxMun_c/nidm.ttl",
+   "layer": "external",
+   "label": "ReproNim simple2 person\nsimple2:MaxMun_c"
+  },
+  {
+   "id": "coh:abraham2017_reconstructed",
+   "layer": "cohort",
+   "label": "cohort abraham2017_reconstructed"
+  },
+  {
+   "id": "coh:B_v1",
+   "layer": "cohort",
+   "label": "cohort B_v1"
+  },
+  {
+   "id": "coh:A_v1",
+   "layer": "cohort",
+   "label": "cohort A_v1"
+  },
+  {
+   "id": "coh:B_v2",
+   "layer": "cohort",
+   "label": "cohort B_v2"
+  },
+  {
+   "id": "coh:A_v2",
+   "layer": "cohort",
+   "label": "cohort A_v2: NOT a member\n(site MAX_MUN < 10 per group)"
+  },
+  {
+   "id": "fold:B_v2",
+   "layer": "analysis",
+   "label": "B B_v2 fold: held-out site MAX_MUN"
+  },
+  {
+   "id": "fold:B_v1",
+   "layer": "analysis",
+   "label": "B B_v1 fold: held-out site MAX_MUN"
+  },
+  {
+   "id": "train:B_v1",
+   "layer": "analysis",
+   "label": "B B_v1: training in 19 other folds"
+  },
+  {
+   "id": "train:B_v2",
+   "layer": "analysis",
+   "label": "B B_v2: training in 19 other folds"
+  },
+  {
+   "id": "results",
+   "layer": "analysis",
+   "label": "10 results used this\nparticipant (A edgewise GLM,\nB per-fold metrics)"
+  },
+  {
+   "id": "paper",
+   "layer": "paper",
+   "label": "Abraham et al. 2017\n(reconstructed cohort, N=873\nvs 871 reported)"
+  },
+  {
+   "id": "scope",
+   "layer": "scope",
+   "label": "pond:lab copy\nconsent broad-sharing, egress permitted\nlake copy: ABIDE Preprocessed"
+  }
+ ],
+ "edges": [
+  {
+   "from": "P",
+   "to": "ph:demographics",
+   "label": "phenotype record (source row 1003)"
+  },
+  {
+   "from": "P",
+   "to": "ph:IQ",
+   "label": "phenotype record (source row 1003)"
+  },
+  {
+   "from": "P",
+   "to": "ph:motion & rater QC",
+   "label": "phenotype record (source row 1003)"
+  },
+  {
+   "from": "P",
+   "to": "ph:other",
+   "label": "phenotype record"
+  },
+  {
+   "from": "P",
+   "to": "scan:Functional",
+   "label": "subject of acquisition"
+  },
+  {
+   "from": "P",
+   "to": "scan:Anatomical",
+   "label": "subject of acquisition"
+  },
+  {
+   "from": "P",
+   "to": "ext:ex:graph/pynidm_phenotype",
+   "label": "same src_subject_id"
+  },
+  {
+   "from": "P",
+   "to": "ext:simple2:MaxMun_c/nidm.ttl",
+   "label": "same src_subject_id"
+  },
+  {
+   "from": "P",
+   "to": "fold:B_v2",
+   "label": "test participant"
+  },
+  {
+   "from": "P",
+   "to": "fold:B_v1",
+   "label": "test participant"
+  },
+  {
+   "from": "P",
+   "to": "train:B_v1",
+   "label": "training participant"
+  },
+  {
+   "from": "P",
+   "to": "train:B_v2",
+   "label": "training participant"
+  },
+  {
+   "from": "P",
+   "to": "results",
+   "label": "input to"
+  },
+  {
+   "from": "P",
+   "to": "scope",
+   "label": "record family scope"
+  },
+  {
+   "from": "scan:Functional",
+   "to": "der:timeseries",
+   "label": "wasDerivedFrom"
+  },
+  {
+   "from": "der:idp",
+   "to": "P",
+   "label": "ex:participant"
+  },
+  {
+   "from": "sw:ANTs cortical thickness (ABIDE Preprocessed release)",
+   "to": "der:idp",
+   "label": "generated"
+  },
+  {
+   "from": "der:timeseries",
+   "to": "P",
+   "label": "ex:participant"
+  },
+  {
+   "from": "der:timeseries",
+   "to": "der:connectivity",
+   "label": "wasDerivedFrom"
+  },
+  {
+   "from": "sw:C-PAC (ABIDE Preprocessed release)",
+   "to": "der:timeseries",
+   "label": "generated"
+  },
+  {
+   "from": "der:connectivity",
+   "to": "P",
+   "label": "ex:participant"
+  },
+  {
+   "from": "sw:common.py",
+   "to": "der:connectivity",
+   "label": "generated"
+  },
+  {
+   "from": "vol:ANTs",
+   "to": "P",
+   "label": "via shared ndar:src_subject_id"
+  },
+  {
+   "from": "vol:FSL",
+   "to": "P",
+   "label": "via shared ndar:src_subject_id"
+  },
+  {
+   "from": "vol:FreeSurfer",
+   "to": "P",
+   "label": "via shared ndar:src_subject_id"
+  },
+  {
+   "from": "coh:abraham2017_reconstructed",
+   "to": "P",
+   "label": "hadMember"
+  },
+  {
+   "from": "coh:abraham2017_reconstructed",
+   "to": "paper",
+   "label": "reconstructs reported cohort"
+  },
+  {
+   "from": "coh:B_v1",
+   "to": "P",
+   "label": "hadMember"
+  },
+  {
+   "from": "coh:A_v1",
+   "to": "P",
+   "label": "hadMember"
+  },
+  {
+   "from": "coh:B_v2",
+   "to": "P",
+   "label": "hadMember"
+  },
+  {
+   "from": "coh:A_v2",
+   "to": "P",
+   "label": "excluded by site rule"
+  }
+ ]
+}

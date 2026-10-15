@@ -1,0 +1,154 @@
+{
+  "source_id": "S-064",
+  "pmid": "local_730ab177",
+  "doi": "10.3389/frai.2025.1594372",
+  "screening": {
+    "decision": "include",
+    "reason": "Meets inclusion 2/3: analyses ABIDE I rs-fMRI connectivity data for a deep-learning-based ASD vs typical-control diagnostic classification.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "The rs-fMRI data used in this study were sourced from\nthe ABIDE I dataset, comprising 505 autistic individuals and\n530 typical controls (TCs).",
+      "section": "methods",
+      "claim": "Dataset was ABIDE I with 505 ASD and 530 TC subjects.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "The data is preprocessed using the Conﬁgurable Pipeline for\nthe Analysis of Connectomes (CPAC) pipeline, which includes\nessential steps such as slice timing correction, voxel intensity\nnormalization, motion correction, nuisance signal removal, global\nsignal regression, band-pass ﬁltering, and spatial registration.",
+      "section": "methods",
+      "claim": "Preprocessing used the CPAC pipeline with standard steps including motion correction.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "After preprocessing and quality control, the ﬁnal dataset consists\nof 1,035 samples distributed as follows: 623 samples for the\ntraining set, 308 samples for the validation set, and 104 samples\nfor the test set.",
+      "section": "methods",
+      "claim": "After QC, 1,035 subjects were split into a single train/validation/test partition (623/308/104), with no cross-validation or site handling described.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Functional connectivity matrices are derived from three brain\natlases (AAL, CC, EZ) using Pearson correlation coeﬃcients, which\nare ﬂattened into one-dimensional vectors.",
+      "section": "methods",
+      "claim": "Features are Pearson-correlation connectivity matrices from three atlases (AAL, CC, EZ).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "Results: The proposed model is evaluated using multiple ASD datasets. The\nperformance metrics include an average accuracy of 0.735, sensitivity of 0.765,\nand speciﬁcity of 0.752, surpassing the results of existing state-of-the-art\nmethods.",
+      "section": "abstract",
+      "claim": "Average performance across the three atlas-based datasets: accuracy 0.735, sensitivity 0.765, specificity 0.752.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "our developed\nMHOA based on the SSDAE model has accuracy 66.35%, 70.19%,\nand 83.82% for EZ, AAL, and CC, respectively.",
+      "section": "results",
+      "claim": "Per-atlas accuracy: EZ 66.35%, AAL 70.19%, CC 83.82%.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Data availability statement\nPublicly available datasets were analyzed in this study. This data\ncan be found here: https://www.nature.com/articles/s41598-022-\n09821-6.",
+      "section": "methods",
+      "claim": "Data-availability statement links only to a general ABIDE-derived dataset reference, not a study-specific participant list or code.",
+      "relevance_score": 0.5
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Unclear", "support": "N by diagnosis given (505 ASD/530 TC) and a post-QC total of 1,035 stated, but no explicit inclusion/exclusion rule or motion/QC threshold is described: \"The rs-fMRI data used in this study were sourced from the ABIDE I dataset, comprising 505 autistic individuals and 530 typical controls (TCs).\""},
+      {"domain": "Predictors", "judgment": "Low", "support": "CPAC pipeline and three named atlases (AAL, CC, EZ) with Pearson-correlation connectivity matrices clearly described."},
+      {"domain": "Outcome", "judgment": "Low", "support": "ASD/TC labels are the ABIDE phenotypic diagnosis, assigned independently of the imaging-derived predictors."},
+      {"domain": "Analysis", "judgment": "High", "support": "Single fixed train/validation/test split with no cross-validation or leave-site-out evaluation, and only point-estimate accuracy/sensitivity/specificity with no uncertainty reported: \"the ﬁnal dataset consists of 1,035 samples distributed as follows: 623 samples for the training set, 308 samples for the validation set, and 104 samples for the test set.\""}
+    ],
+    "overall": "High",
+    "summary": "Pipeline and atlas choices are clearly reported, but cohort QC/exclusion detail is thin and evaluation relies on a single random train/validation/test split with no cross-validation or site handling."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "505",
+    "n_controls": "530",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (CPAC)",
+    "specific_features": "Pearson-correlation functional connectivity matrices using AAL, Craddock (CC) and EZ atlases",
+    "model_category": "Deep learning hybrid (Stacked Sparse Denoising Autoencoder + Multi-Layer Perceptron) with metaheuristic feature selection",
+    "specific_algorithms": "SSDAE-MLP hybrid with modified Hiking Optimization Algorithm (HOA with Dynamic Opposites Learning and Double Attractors) for feature selection",
+    "validation_methodology": "Single fixed train/validation/test split (623/308/104 of 1,035 samples); no cross-validation or leave-site-out evaluation reported",
+    "performance_metrics": "Accuracy, sensitivity, specificity",
+    "key_performance_results": "Average accuracy 0.735, sensitivity 0.765, specificity 0.752; per-atlas accuracy EZ 66.35%, AAL 70.19%, CC 83.82%",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "No study-specific participant list or code; data-availability statement only links to a general dataset reference",
+    "custom_fields": {
+      "RQ1": "ABIDE I, 505 autistic individuals and 530 typical controls; after preprocessing and quality control the final analysed dataset was 1,035 samples; no explicit exclusion-rule text beyond mentioning QC. | quote: \"The rs-fMRI data used in this study were sourced from the ABIDE I dataset, comprising 505 autistic individuals and 530 typical controls (TCs).\"",
+      "RQ2": "CPAC pipeline (slice timing, motion correction, nuisance regression, band-pass filtering); three atlases (AAL, CC, EZ) used to build Pearson-correlation connectivity matrices. | quote: \"The data is preprocessed using the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) pipeline, which includes essential steps such as slice timing correction, voxel intensity normalization, motion correction, nuisance signal removal, global signal regression, band-pass ﬁltering, and spatial registration.\"",
+      "RQ3": "predictive — SSDAE+MLP hybrid deep-learning classifier for ASD vs TC. | quote: \"Results: The proposed model is evaluated using multiple ASD datasets. The performance metrics include an average accuracy of 0.735, sensitivity of 0.765, and speciﬁcity of 0.752, surpassing the results of existing state-of-the-art methods.\"",
+      "RQ4": "Single fixed train/validation/test split (623/308/104); no cross-validation, no leave-site-out, no statistical correction reported. | quote: \"the ﬁnal dataset consists of 1,035 samples distributed as follows: 623 samples for the training set, 308 samples for the validation set, and 104 samples for the test set.\"",
+      "RQ5": "Average accuracy 0.735 (sensitivity 0.765, specificity 0.752) across three atlas-based datasets; best per-atlas accuracy 83.82% (CC atlas); no AUC or CI reported. | quote: \"our developed MHOA based on the SSDAE model has accuracy 66.35%, 70.19%, and 83.82% for EZ, AAL, and CC, respectively.\"",
+      "RQ6": "no — only aggregate N and split sizes are given; data-availability statement links to a general dataset reference, not a study-specific participant list or code. | quote: \"Publicly available datasets were analyzed in this study. This data can be found here:\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — N by diagnosis given (505/530) and a post-QC total (1,035) stated, but no explicit inclusion/exclusion criteria text. | quote: \"The rs-fMRI data used in this study were sourced from the ABIDE I dataset, comprising 505 autistic individuals and 530 typical controls (TCs).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — motion correction and \"quality control\" are mentioned but no specific metric or threshold is given. | quote: \"After preprocessing and quality control, the ﬁnal dataset consists of 1,035 samples distributed as follows\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — CPAC pipeline with its processing steps named. | quote: \"The data is preprocessed using the Conﬁgurable Pipeline for the Analysis of Connectomes (CPAC) pipeline\"",
+      "CL4 Atlas/parcellation reported?": "Yes — three named atlases (AAL, CC, EZ). | quote: \"Functional connectivity matrices are derived from three brain atlases (AAL, CC, EZ) using Pearson correlation coeﬃcients\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — the feature-selection (HOA) and autoencoder pre-training steps are described without stating whether they were fit on the training split only. | quote: \"The SSDAE comprises two autoencoder layers: the ﬁrst encoding layer has 1,000 units, and the second reduces the representation to 600 units.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — no site covariate, harmonisation or leave-site-out evaluation is reported; evaluation is a pooled random split. | quote: \"the ﬁnal dataset consists of 1,035 samples distributed as follows: 623 samples for the training set, 308 samples for the validation set, and 104 samples for the test set.\"",
+      "CL7 Code and/or participant list available?": "No — data-availability statement only links to a general dataset reference, no code repository or participant list for this study. | quote: \"Publicly available datasets were analyzed in this study. This data can be found here:\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"The rs-fMRI data used in this study were sourced from the ABIDE I dataset, comprising 505 autistic individuals and 530 typical controls (TCs).\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "items": [
+        {"item": "CL1", "rating": "Partial", "support": "N by diagnosis and post-QC total given, but no explicit inclusion/exclusion criteria text."},
+        {"item": "CL2", "rating": "Partial", "support": "QC mentioned generically, no metric/threshold given."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_predictors_features": {
+      "items": [
+        {"item": "CL3", "rating": "Yes", "support": "CPAC pipeline named with its steps."},
+        {"item": "CL4", "rating": "Yes", "support": "Three named atlases (AAL, CC, EZ)."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_outcome_labels": {
+      "items": [
+        {"item": "diagnosis source", "rating": "Unclear", "support": "ASD/TC labels are the ABIDE phenotypic diagnosis; this paper does not restate the diagnostic criteria used by ABIDE sites."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "items": [
+        {"item": "CL5", "rating": "No", "support": "No statement that feature selection/autoencoder pre-training was confined to training data."},
+        {"item": "CL6", "rating": "No", "support": "No site handling or leave-site-out evaluation; single pooled split."},
+        {"item": "CL7", "rating": "No", "support": "No study-specific participant list or code."}
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I, 505 ASD and 530 TC, post-QC total 1,035, split 623/308/104 train/validation/test, sites not itemised.",
+    "methods": "CPAC-preprocessed rs-fMRI; Pearson-correlation connectivity matrices from AAL, CC and EZ atlases; SSDAE+MLP hybrid deep-learning classifier with a modified Hiking Optimization Algorithm for feature selection.",
+    "outcomes": "Average accuracy 0.735, sensitivity 0.765, specificity 0.752 across the three atlas-based datasets; best per-atlas accuracy 83.82% (CC atlas).",
+    "key_limitations": "Single fixed train/validation/test split with no cross-validation or site handling; no explicit leakage-control statement for feature selection/pre-training; no study-specific participant list or code.",
+    "relevance_notes": "Illustrates a deep-learning feature-selection approach on ABIDE I benchmarked against a prior published split strategy (Liu et al., 2024), but with limited reproducibility detail.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/frai.2025.1594372",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "505 autistic individuals and 530 typical controls from ABIDE I, ages 10.0-35.0 (ASD) and 10.0-33.7 (TC); after preprocessing and quality control, final dataset of 1,035 samples.",
+    "n_by_dx": {"ASD": 505, "TD": 530, "total": 1035},
+    "sites": "",
+    "pipeline": "CPAC (Configurable Pipeline for the Analysis of Connectomes)",
+    "atlas": "AAL, Craddock (CC), EZ",
+    "claim_type": "predictive",
+    "finding": "SSDAE+MLP hybrid with modified Hiking Optimization Algorithm feature selection achieved average accuracy 0.735 (sensitivity 0.765, specificity 0.752) across three atlas-based ABIDE I datasets, best per-atlas accuracy 83.82% (CC atlas).",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "The rs-fMRI data used in this study were sourced from\nthe ABIDE I dataset, comprising 505 autistic individuals and\n530 typical controls (TCs).",
+      "Results: The proposed model is evaluated using multiple ASD datasets. The\nperformance metrics include an average accuracy of 0.735, sensitivity of 0.765,\nand speciﬁcity of 0.752, surpassing the results of existing state-of-the-art\nmethods."
+    ]
+  }
+}

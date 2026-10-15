@@ -1,0 +1,26 @@
+{
+  "source_id": "S-084",
+  "pmid": "local_1f1ffdd7",
+  "doi": "10.3389/fnins.2016.00108",
+  "screening": {
+    "decision": "exclude",
+    "reason": "Exclusion 4 (no autism-vs-control analysis): this is primarily a statistical-methods paper (mixed-effects models for resampled network statistics) demonstrated on ABIDE UCLA and Michigan autism subjects only, relating ADOS symptom-severity covariates to connectivity density within the autism group. No autism-vs-typically-developing group-difference analysis or diagnostic classification is performed; the only mention of healthy subjects (n=90, Michigan) is used to construct a baseline network for a methods illustration/simulation, not as a compared control group.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2016.00108",
+    "dataset": "ABIDE I",
+    "relation": "mentions",
+    "cohort_description": "",
+    "n_by_dx": {"ASD": null, "TD": null, "total": null},
+    "sites": "",
+    "pipeline": "",
+    "atlas": "",
+    "claim_type": "",
+    "finding": "",
+    "reconstructible": "",
+    "evidence_quotes": []
+  }
+}

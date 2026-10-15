@@ -1,0 +1,274 @@
+{
+  "source_id": "S-014",
+  "pmid": "local_96f7c89f",
+  "doi": "10.1016/j.compbiomed.2024.109083",
+  "screening": {
+    "decision": "include",
+    "reason": "Inclusion 2-3: a multi-atlas deep ensemble classifier is trained on ABIDE I rs-fMRI functional connectivity to diagnose ASD vs TC.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "We use rs-fMRI and demographic data from ABIDE I [11], the first phase of ABIDE, with\n505 autistic individuals and 530 Typical Controls (TCs).",
+      "section": "methods",
+      "claim": "ABIDE I rs-fMRI and demographic data were used: 505 autistic individuals and 530 typical controls.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We, therefore,\nleverage the CPAC pipeline, hereinafter referred to as the ABIDE I CPAC data.",
+      "section": "methods",
+      "claim": "The CPAC pipeline from the Preprocessed Connectomes Project was used (ABIDE I CPAC data).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "Although Di Martino et al. [11] released the ABIDE I dataset with 1,112 samples, prepro-\ncessing and quality control reduced this number to 1,035",
+      "section": "methods",
+      "claim": "The released ABIDE I dataset of 1,112 samples was reduced to 1,035 after preprocessing and quality control.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "Whole dataset\n1,035\n75.20\n82.90\n69.70\nProposed subset\n645\n88.71\n81.82\n92.50\nNYU subset\n175\n96.40\n91.00\n99.50",
+      "section": "results",
+      "claim": "MADE-for-ASD achieved 75.20% accuracy (82.90% sensitivity, 69.70% specificity) on the whole dataset (N=1035), 88.71% on a proposed subset (N=645), and 96.40% on the NYU subset (N=175).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "",
+      "section": "methods",
+      "claim": "10-fold cross-validation was used to evaluate the model and mitigate overfitting.",
+      "relevance_score": 0.85
+    },
+    {
+      "text": "We, therefore, train our model on the NYU dataset using the CC atlas, save this model and\nrepurpose it as a selector. We apply this pretrained model to classify ASD/TC instances across\nthe whole ABIDE I dataset, which correctly classifies 645 out of 1,035 samples (around 62.3%).",
+      "section": "methods",
+      "claim": "A model trained on the NYU subset was repurposed as a selector, applied to the whole ABIDE I dataset to pick out correctly-classified ('high quality') samples as the proposed subset.",
+      "relevance_score": 0.95
+    },
+    {
+      "text": "",
+      "section": "methods",
+      "claim": "F-score feature selection was computed using all features in the dataset.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The Automated Anatomical Labelling (AAL) atlas, with 116 ROIs, is widely\nused in ASD diagnosis studies [16, 35, 36, 37] due to its ability to provide precise anatomical lo-\ncations essential for identifying structural abnormalities caused by ASD. The Craddock 200 atlas\n[38], with 200 ROIs, is based on functional connectivity and is particularly useful for analysing\nresting-state fMRI data [39, 9, 36, 37], as it clusters the brain into functionally homogeneous\nregions.\nRecent studies have leveraged multiple atlases to capture diverse patterns related to ASD.\nFor instance, Mahler et al. [37] proposed a multi-atlas framework for ASD classification using\nresting-state fMRI data, employing three atlases, including AAL and Craddock 200. Similarly,\nDeng et al. [9] utilised the AAL, Craddock 200 and Craddock 400 atlases. Their experiment in-\ndicates that Craddock 200 can outperform Craddock 400 in fMRI-based ASD diagnosis. Hence,\nwe selected the Craddock 200 atlas, hereinafter referred to as the CC atlas.\nTo further enhance the analysis, we leverage the Eickhoff-Zilles (EZ) atlas with 116 ROIs,\nwhich has also been utilised in recent ASD diagnosis studies [40, 41]. Derived from cytoarchi-\ntectonic mapping, the EZ atlas combines anatomical and functional data, offering a nuanced view\nthat bridges structural and functional aspects of brain regions",
+      "section": "methods",
+      "claim": "Three atlases were used: AAL (116 ROIs), Craddock 200 (CC), and Eickhoff-Zilles (EZ).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "",
+      "section": "abstract",
+      "claim": "Code and evaluations are publicly released on GitHub.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Our model achieved an ac-\ncuracy score of 75.20%, which is a boost of 4.4 percentage points over the best prior work [20]\non 1,035 samples.",
+      "section": "results",
+      "claim": "The model improved accuracy by 4.4 percentage points over the best prior work on the same 1,035-sample ABIDE I CPAC dataset.",
+      "relevance_score": 0.9
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "Raw (1,112) and post-QC (1,035: 505 ASD, 530 TC) Ns, plus NYU subset (182->175) and demographic feature availability, are explicitly reported."
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "CPAC pipeline (one of four Preprocessed Connectomes Project pipelines) and three named atlases (AAL, CC200, EZ) are explicitly reported."
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD vs TC labels are taken directly from the ABIDE I release; the diagnostic-instrument source is not independently restated in the main text."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "Two leakage-relevant practices: (1) F-score feature selection is described as computed 'for all features in the dataset' rather than confined to training folds; (2) the 'proposed subset' (N=645, accuracy 88.71%) is defined by a pretrained selector model's own correct classifications on the whole dataset, so performance on that subset is tautologically inflated by construction rather than reflecting genuine held-out generalisation."
+      }
+    ],
+    "overall": "High",
+    "summary": "Transparent, code-released, multi-atlas predictive study on ABIDE I with reported 10-fold CV and SOTA whole-dataset accuracy (75.20%), but the 'proposed subset' evaluation (88.71% accuracy) is constructed by selecting samples the classifier itself got right, and F-score feature selection is described as using the whole dataset rather than training folds only — both raise PROBAST Analysis-domain leakage concerns."
+  },
+  "charting": {
+    "source_id": "S-014",
+    "title": "MADE-for-ASD: A multi-atlas deep ensemble network for diagnosing Autism Spectrum Disorder",
+    "authors": "Xuehan Liu; Md Rakibul Hasan; et al.",
+    "year": "2024",
+    "journal_conference": "Computers in Biology and Medicine",
+    "doi": "10.1016/j.compbiomed.2024.109083",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "Diagnose ASD vs typical controls from ABIDE I rs-fMRI functional connectivity plus demographic data using a weighted deep ensemble network",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "",
+    "country_region": "Multi-site (ABIDE I, 17 international sites)",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "505",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "true",
+    "healthy_status_confirmed": "",
+    "n_controls": "530",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI, demographic data (age, sex, handedness, FIQ)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "",
+    "dataset_openly_available": "Code and evaluations publicly available at https://github.com/hasan-rakibul/MADE-for-ASD",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Functional connectivity (multi-atlas) + demographic features",
+    "specific_features": "Functional connectivity matrices from AAL (116 ROIs), Craddock 200 (CC), and Eickhoff-Zilles (EZ) atlases; top features selected via F-score",
+    "feature_extraction_tools": "CPAC pipeline (Preprocessed Connectomes Project)",
+    "feature_importance_reported": "true",
+    "importance_method": "F-score ranking",
+    "top_features_identified": "Top 10 ROIs via F-score, e.g. precuneus and anterior cingulate/ventromedial prefrontal cortex",
+    "feature_change_direction": "",
+    "model_category": "Deep ensemble (stacked sparse denoising autoencoder + MLP, weighted voting)",
+    "specific_algorithms": "SSDAE+MLP ensemble (MADE-for-ASD)",
+    "validation_methodology": "10-fold cross-validation; evaluated on whole ABIDE I CPAC dataset, a data-selector-defined 'proposed subset', and the NYU site subset",
+    "performance_metrics": "Accuracy, sensitivity, specificity",
+    "key_performance_results": "Whole dataset (N=1035): 75.20% accuracy, 82.90% sensitivity, 69.70% specificity. Proposed subset (N=645): 88.71% accuracy. NYU subset (N=175): 96.40% accuracy, 91.00% sensitivity, 99.50% specificity.",
+    "summary_key_findings": "MADE-for-ASD achieves 75.20% accuracy on the whole ABIDE I CPAC dataset (N=1035), a 4.4-percentage-point improvement over prior SOTA on the same data, with higher accuracy (88.71%, 96.40%) on a self-selected 'proposed subset' and the NYU site subset respectively; demographic information and multi-atlas fusion are reported to improve performance.",
+    "features_associated_disorder": "",
+    "future_directions_recommended": "Improve interpretation of fMRI-derived features relative to autism symptoms; extend interpretability and clinical correlation of deep learning outputs.",
+    "reviewer_notes": "The 'proposed subset' (645/1035, 88.71% accuracy) is defined as samples a pretrained selector model itself classified correctly — this is a circularity/leakage concern when reporting that subset's accuracy as a performance result.",
+    "custom_fields": {
+      "RQ1": "predictive — ABIDE I only, raw N=1112 reduced to 1,035 after preprocessing/QC (505 ASD, 530 TC); no explicit FD/motion threshold given in the extracted main text (QC described generically as reducing N to 1035, consistent with prior studies) | quote: \"Although Di Martino et al. [11] released the ABIDE I dataset with 1,112 samples, prepro- cessing and quality control reduced this number to 1,035\"",
+      "RQ2": "CPAC pipeline (one of four Preprocessed Connectomes Project pipelines); three atlases: AAL (116 ROIs), Craddock 200 (CC), Eickhoff-Zilles (EZ) | quote: \"We, therefore, leverage the CPAC pipeline, hereinafter referred to as the ABIDE I CPAC data.\"",
+      "RQ3": "predictive — ASD vs TC diagnostic classification using a weighted deep ensemble network | quote: \"We use rs-fMRI and demographic data from ABIDE I [11], the first phase of ABIDE, with 505 autistic individuals and 530 Typical Controls (TCs).\"",
+      "RQ4": "10-fold cross-validation on each of three dataset variants (whole ABIDE I, a selector-defined 'proposed subset', and the NYU site subset); F-score feature selection described as computed on all features in the dataset rather than confined to training folds; no leave-site-out evaluation | quote: \"\"",
+      "RQ5": "predictive — 75.20% accuracy (82.90% sensitivity, 69.70% specificity) on whole ABIDE I (N=1035); 88.71% on the proposed subset (N=645); 96.40% on the NYU subset (N=175); 4.4-percentage-point improvement over prior best on the same whole-dataset benchmark | quote: \"Whole dataset 1,035 75.20 82.90 69.70 Proposed subset 645 88.71 81.82 92.50 NYU subset 175 96.40 91.00 99.50\"",
+      "RQ6": "yes — exact rules — sample sizes, the CPAC/atlas pipeline, and the selector-based subset-construction procedure are fully described, and code/evaluations are released on GitHub | quote: \"\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"We use rs-fMRI and demographic data from ABIDE I [11], the first phase of ABIDE, with 505 autistic individuals and 530 Typical Controls (TCs).\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — preprocessing/QC is stated to reduce N from 1,112 to 1,035 (and NYU 182 to 175), consistent with prior studies, but no specific motion metric/threshold value is given in the extracted main text | quote: \"Although Di Martino et al. [11] released the ABIDE I dataset with 1,112 samples, prepro- cessing and quality control reduced this number to 1,035\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes — CPAC pipeline (Preprocessed Connectomes Project) | quote: \"We, therefore, leverage the CPAC pipeline, hereinafter referred to as the ABIDE I CPAC data.\"",
+      "CL4 Atlas/parcellation reported?": "Yes — AAL, Craddock 200 (CC), and Eickhoff-Zilles (EZ) atlases | quote: \"The Automated Anatomical Labelling (AAL) atlas, with 116 ROIs, is widely used in ASD diagnosis studies [16, 35, 36, 37] due to its ability to provide precise anatomical lo- cations essential for identifying structural abnormalities caused by ASD. The Craddock 200 atlas [38], with 200 ROIs, is based on functional connectivity and is particularly useful for analysing resting-state fMRI data [39, 9, 36, 37], as it clusters the brain into functionally homogeneous regions. Recent studies have leveraged multiple atlases to capture diverse patterns related to ASD. For instance, Mahler et al. [37] proposed a multi-atlas framework for ASD classification using resting-state fMRI data, employing three atlases, including AAL and Craddock 200. Similarly, Deng et al. [9] utilised the AAL, Craddock 200 and Craddock 400 atlases. Their experiment in- dicates that Craddock 200 can outperform Craddock 400 in fMRI-based ASD diagnosis. Hence, we selected the Craddock 200 atlas, hereinafter referred to as the CC atlas. To further enhance the analysis, we leverage the Eickhoff-Zilles (EZ) atlas with 116 ROIs, which has also been utilised in recent ASD diagnosis studies [40, 41]. Derived from cytoarchi- tectonic mapping, the EZ atlas combines anatomical and functional data, offering a nuanced view that bridges structural and functional aspects of brain regions\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — F-score feature selection is described as computed on all features in the dataset, and the 'proposed subset' is defined by a pretrained selector model's own correct classifications on the whole dataset rather than training-fold-only data | quote: \"\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — no site covariate, harmonisation, or leave-site-out evaluation is reported; the NYU subset is analysed separately as a single-site benchmark, not as a held-out generalisation test | quote: \"\"",
+      "CL7 Code and/or participant list available?": "Yes — code and evaluations publicly released on GitHub | quote: \"\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"We use rs-fMRI and demographic data from ABIDE I [11], the first phase of ABIDE, with 505 autistic individuals and 530 Typical Controls (TCs).\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-014",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Yes",
+          "notes": "Raw and post-QC Ns by diagnosis, plus NYU subset, fully reported."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Partial",
+          "notes": "QC stated to reduce sample count but no specific motion metric/threshold given."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline reported",
+          "rating": "Yes",
+          "notes": "CPAC pipeline explicitly named."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "Three named atlases (AAL, CC200, EZ)."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source reported",
+          "rating": "Unclear",
+          "notes": "Labels taken from ABIDE I release; diagnostic-instrument source not independently restated."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "No",
+          "notes": "F-score computed on all data; 'proposed subset' defined by the selector's own correct classifications — a circularity concern."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "No",
+          "notes": "No site covariate/harmonisation/leave-site-out; NYU treated as a separate single-site benchmark only."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "Yes",
+          "notes": "Code publicly released on GitHub."
+        }
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-014",
+    "study_design_sample_dataset": "Diagnostic prediction (deep ensemble); ABIDE I CPAC data, N=1035 (505 ASD, 530 TC) from 17 sites; NYU subset N=175 (78 ASD, 104 TC); self-selected 'proposed subset' N=645.",
+    "methods": "Functional connectivity computed via CPAC pipeline across three atlases (AAL, CC200, EZ), F-score feature selection, and a stacked sparse denoising autoencoder + MLP ensemble with demographic features, fused by weighted voting; evaluated with 10-fold cross-validation.",
+    "outcomes": "75.20% accuracy on the whole ABIDE I dataset (SOTA, +4.4 points over prior best); 88.71% on a selector-defined 'proposed subset'; 96.40% on the NYU site subset.",
+    "key_limitations": "F-score feature selection described as using the whole dataset rather than training folds only; the 'proposed subset' is defined by the selector model's own correct classifications, a circularity that inflates its reported accuracy; no site harmonisation or leave-site-out evaluation; diagnosis-source instrument not independently restated.",
+    "relevance_notes": "A fully reproducible (code-released), multi-atlas ABIDE I predictive study illustrating both best practice (open code, multiple atlases, demographic fusion) and a clear leakage pattern (selector-defined subset) relevant to the review's Analysis-domain checklist.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1016/j.compbiomed.2024.109083",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "ABIDE I CPAC-preprocessed data, N=1035 (505 ASD, 530 TC) after QC from the 1,112-sample raw release; NYU single-site subset N=175 (78 ASD, 104 TC); a 'proposed subset' N=645 selected by a pretrained classifier's own correct predictions.",
+    "n_by_dx": {
+      "ASD": 505,
+      "TD": 530,
+      "total": 1035
+    },
+    "sites": "17",
+    "pipeline": "CPAC (Preprocessed Connectomes Project)",
+    "atlas": "AAL (116 ROIs), Craddock 200 (CC200), Eickhoff-Zilles (EZ)",
+    "claim_type": "predictive",
+    "finding": "A multi-atlas weighted deep ensemble (MADE-for-ASD) achieves 75.20% accuracy (82.90% sensitivity, 69.70% specificity) on the whole ABIDE I dataset, outperforming prior SOTA by 4.4 percentage points, with higher accuracy (88.71%, 96.40%) on a self-selected subset and the NYU site subset respectively.",
+    "reconstructible": "yes — exact rules",
+    "evidence_quotes": [
+      "We use rs-fMRI and demographic data from ABIDE I [11], the first phase of ABIDE, with\n505 autistic individuals and 530 Typical Controls (TCs).",
+      "Whole dataset\n1,035\n75.20\n82.90\n69.70\nProposed subset\n645\n88.71\n81.82\n92.50\nNYU subset\n175\n96.40\n91.00\n99.50",
+      "We, therefore, train our model on the NYU dataset using the CC atlas, save this model and\nrepurpose it as a selector. We apply this pretrained model to classify ASD/TC instances across\nthe whole ABIDE I dataset, which correctly classifies 645 out of 1,035 samples (around 62.3%)."
+    ]
+  }
+}

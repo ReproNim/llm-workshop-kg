@@ -1,0 +1,148 @@
+{
+  "source_id": "S-076",
+  "pmid": "local_696781dc",
+  "doi": "10.1186/s12859-023-05495-7",
+  "screening": {
+    "decision": "include",
+    "reason": "Meets inclusion 2/3: analyses ABIDE I resting-state fMRI connectivity with a heterogeneous graph convolutional attention network for ASD vs control classification.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "This paper carries out research on the challenging public ABIDE I dataset [31], which \naggregates data from 17 different international collection sites, sharing neuroimaging \nand phenotype data of 1112 subjects. In the experiment, 871 subjects (including 403 \nASD patients and 468 healthy controls) who meet the imaging quality and atypical \ninformation criteria were used.",
+      "section": "methods",
+      "claim": "Cohort was the commonly-used 871-subject ABIDE I subset (403 ASD, 468 HC) meeting imaging-quality and phenotypic-completeness criteria.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Data preprocessing was performed using the configurable pipeline for the analysis of con- \nnectomes. According to the Harvard-Oxford atlas, there are 111 ROIs in the brain \n[32].",
+      "section": "methods",
+      "claim": "Preprocessing used CPAC; functional connectivity used the Harvard-Oxford atlas (111 ROIs).",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "a 10-fold cross-validation schema that mixes data from all 17 sites while keeping",
+      "section": "methods",
+      "claim": "Primary evaluation was a pooled 10-fold cross-validation mixing all sites in fixed proportion, not a leave-site-out scheme.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The proposed method is assessed on the autism brain imaging data \nexchange (ABIDE) repository. In total, 871 subjects in the ABIDE I dataset are used \nfor the classification task. The best classification accuracy of 82.9% is achieved.",
+      "section": "abstract",
+      "claim": "The proposed HCAN method achieved a best classification accuracy of 82.9% on 871 ABIDE I subjects.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "The proposed HCAN method achieves an average ACC of 82.9%, \nSEN of 76.7%, SPE of 86.6% and AUC of 84.6%.",
+      "section": "results",
+      "claim": "10-fold CV performance: ACC 82.9%, sensitivity 76.7%, specificity 86.6%, AUC 84.6%.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "Availability of data and materials\nThe datasets analysed during the current study are available from a world-wide multi-site database Autism Brain Imaging \nData Exchange (ABIDE I) (http://\u200bprepr\u200bocess\u200bed-\u200bconne\u200bctomes-\u200bproje\u200bct.\u200borg/).",
+      "section": "methods",
+      "claim": "Data-availability statement points only to the general ABIDE/Preprocessed Connectomes Project resource, not a study-specific participant list or code.",
+      "relevance_score": 0.5
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {"domain": "Participants", "judgment": "Unclear", "support": "N by diagnosis given (403 ASD/468 HC) with a stated selection basis (\"imaging quality and atypical information criteria\"), but no specific motion/QC metric or threshold is defined: \"871 subjects (including 403 ASD patients and 468 healthy controls) who meet the imaging quality and atypical information criteria were used.\""},
+      {"domain": "Predictors", "judgment": "Low", "support": "CPAC pipeline and Harvard-Oxford atlas (111 ROIs) clearly named, with distance-correlation connectivity described."},
+      {"domain": "Outcome", "judgment": "Low", "support": "ASD/HC labels are the ABIDE phenotypic diagnosis, independent of the connectivity-derived predictors."},
+      {"domain": "Analysis", "judgment": "High", "support": "Primary evaluation pools all 17 sites in a single 10-fold cross-validation preserving site proportions rather than a leave-site-out scheme: \"a 10-fold cross-validation schema that mixes data from all 17 sites while keeping\""}
+    ],
+    "overall": "High",
+    "summary": "Cohort and pipeline/atlas are clearly specified, but the main evaluation is a pooled 10-fold cross-validation across sites rather than leave-site-out, and no leakage-control statement is given for the graph-construction or feature steps."
+  },
+  "charting": {
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "study_design": "Diagnostic prediction",
+    "n_disordered": "403",
+    "n_controls": "468",
+    "data_types": "resting-state fMRI",
+    "feature_extraction_tools": "Configurable Pipeline for the Analysis of Connectomes (CPAC), via the Preprocessed Connectomes Project",
+    "specific_features": "Distance-correlation functional connectivity using the Harvard-Oxford atlas (111 ROIs), structured as a heterogeneous graph",
+    "model_category": "Graph neural network",
+    "specific_algorithms": "Heterogeneous graph convolutional attention network (HCAN) with MLP classification head",
+    "validation_methodology": "Pooled 10-fold cross-validation across all 17 sites (site-proportion preserving, not leave-site-out); supplementary per-site 5-fold cross-validation also reported",
+    "performance_metrics": "Accuracy (ACC), sensitivity (SEN), specificity (SPE), area under the ROC curve (AUC)",
+    "key_performance_results": "Average ACC 82.9%, SEN 76.7%, SPE 86.6%, AUC 84.6% (10-fold CV); per-site 5-fold CV mean ACC/SEN/SPE/AUC = 75.6%/72.6%/77.3%/83.0%",
+    "features_associated_disorder": "",
+    "feature_change_direction": "",
+    "dataset_openly_available": "No study-specific participant list or code; data-availability statement only links to the general ABIDE/Preprocessed Connectomes Project resource",
+    "custom_fields": {
+      "RQ1": "ABIDE I, the commonly-used 871-subject subset (403 ASD, 468 HC) from 17 sites, selected by \"imaging quality and atypical information criteria\" (no specific metric/threshold given). | quote: \"In the experiment, 871 subjects (including 403 \nASD patients and 468 healthy controls) who meet the imaging quality and atypical \ninformation criteria were used.\"",
+      "RQ2": "CPAC pipeline via the Preprocessed Connectomes Project; Harvard-Oxford atlas (111 ROIs), distance-correlation connectivity. | quote: \"Data preprocessing was performed using the configurable pipeline for the analysis of con- \nnectomes. According to the Harvard-Oxford atlas, there are 111 ROIs in the brain \n[32].\"",
+      "RQ3": "predictive \u2014 a heterogeneous graph convolutional attention network (HCAN) classifies ASD vs healthy controls. | quote: \"The best classification accuracy of 82.9% is achieved.\"",
+      "RQ4": "Pooled 10-fold cross-validation mixing all 17 sites in fixed proportion (not leave-site-out); supplementary per-site 5-fold cross-validation also reported; no statistical correction stated. | quote: \"a 10-fold cross-validation schema that mixes data from all 17 sites while keeping\"",
+      "RQ5": "HCAN achieved ACC 82.9%, SEN 76.7%, SPE 86.6%, AUC 84.6% on pooled 10-fold CV; per-site 5-fold CV mean ACC/SEN/SPE/AUC = 75.6%/72.6%/77.3%/83.0%. | quote: \"The proposed HCAN method achieves an average ACC of 82.9%, \nSEN of 76.7%, SPE of 86.6% and AUC of 84.6%.\"",
+      "RQ6": "no \u2014 reuses a commonly-cited 871-subject ABIDE I subset with only a general qualitative selection criterion; data-availability statement links only to the general ABIDE resource, no participant-ID list or code. | quote: \"The datasets analysed during the current study are available from a world-wide multi-site database Autism Brain Imaging \nData Exchange (ABIDE I)\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly \u2014 N by diagnosis given (403/468) with a general selection basis stated, but no precise exclusion rule or threshold. | quote: \"871 subjects (including 403 \nASD patients and 468 healthy controls) who meet the imaging quality and atypical \ninformation criteria were used.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No \u2014 \"imaging quality\" is mentioned generically with no specific motion metric or threshold. | quote: \"who meet the imaging quality and atypical \ninformation criteria were used.\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes \u2014 CPAC named via the Preprocessed Connectomes Project. | quote: \"Data preprocessing was performed using the configurable pipeline for the analysis of con- \nnectomes.\"",
+      "CL4 Atlas/parcellation reported?": "Yes \u2014 Harvard-Oxford atlas, 111 ROIs. | quote: \"According to the Harvard-Oxford atlas, there are 111 ROIs in the brain \n[32].\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No \u2014 no statement that graph-construction or feature steps were confined to training folds. | quote: \"a 10-fold cross-validation schema that mixes data from all 17 sites while keeping\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Partly \u2014 the primary evaluation pools sites in proportion (not leave-site-out), though a supplementary per-site 5-fold cross-validation is also reported. | quote: \"Then, 5-fold cross-validation on each site is performed separately.\"",
+      "CL7 Code and/or participant list available?": "No \u2014 data-availability statement only links to the general ABIDE/Preprocessed Connectomes Project resource; no study-specific code or participant list. | quote: \"The datasets analysed during the current study are available from a world-wide multi-site database Autism Brain Imaging \nData Exchange (ABIDE I)\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"This paper carries out research on the challenging public ABIDE I dataset [31]\""
+    }
+  },
+  "critical_appraisal": {
+    "domain_1_participant_quality": {
+      "items": [
+        {"item": "CL1", "rating": "Partial", "support": "N by diagnosis given with a general selection basis, no precise exclusion rule."},
+        {"item": "CL2", "rating": "No", "support": "No specific motion/QC metric or threshold given."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_predictors_features": {
+      "items": [
+        {"item": "CL3", "rating": "Yes", "support": "CPAC pipeline named."},
+        {"item": "CL4", "rating": "Yes", "support": "Harvard-Oxford atlas (111 ROIs) named."}
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_outcome_labels": {
+      "items": [
+        {"item": "diagnosis source", "rating": "Unclear", "support": "ASD/HC labels are the ABIDE phenotypic diagnosis; diagnostic criteria not restated here."}
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "items": [
+        {"item": "CL5", "rating": "No", "support": "No leakage-control statement for graph construction or features."},
+        {"item": "CL6", "rating": "Partial", "support": "Primary result is pooled 10-fold CV across sites; a supplementary per-site 5-fold CV is also reported."},
+        {"item": "CL7", "rating": "No", "support": "No study-specific code or participant list; only the general ABIDE resource link."}
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I, a commonly-cited 871-subject subset (403 ASD, 468 HC) from 17 sites.",
+    "methods": "CPAC-preprocessed rs-fMRI; Harvard-Oxford atlas (111 ROIs) distance-correlation connectivity structured as a heterogeneous graph; heterogeneous graph convolutional attention network (HCAN) with MLP classification, evaluated with pooled 10-fold cross-validation and supplementary per-site 5-fold cross-validation.",
+    "outcomes": "Average ACC 82.9%, SEN 76.7%, SPE 86.6%, AUC 84.6% (10-fold CV), exceeding compared methods on the same 871-subject subset; per-site 5-fold CV mean ACC/SEN/SPE/AUC = 75.6%/72.6%/77.3%/83.0%, with performance varying notably by site (e.g. CMU n=11).",
+    "key_limitations": "No specific motion/QC threshold; primary evaluation pools sites rather than leave-site-out; no leakage-control statement; no study-specific code or participant list.",
+    "relevance_notes": "A graph-neural-network approach on the widely-reused 871-subject ABIDE I subset, directly comparable to several prior published methods on the same subjects.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1186/s12859-023-05495-7",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "871 subjects (403 ASD, 468 HC) from ABIDE I's 17 sites, meeting imaging-quality and phenotypic-completeness criteria.",
+    "n_by_dx": {"ASD": 403, "TD": 468, "total": 871},
+    "sites": "17",
+    "pipeline": "CPAC (Configurable Pipeline for the Analysis of Connectomes)",
+    "atlas": "Harvard-Oxford (111 ROIs)",
+    "claim_type": "predictive",
+    "finding": "The proposed HCAN method achieved average ACC 82.9%, SEN 76.7%, SPE 86.6% and AUC 84.6% on pooled 10-fold cross-validation across the 871-subject ABIDE I subset.",
+    "reconstructible": "partly",
+    "evidence_quotes": [
+      "In the experiment, 871 subjects (including 403 \nASD patients and 468 healthy controls) who meet the imaging quality and atypical \ninformation criteria were used.",
+      "The proposed HCAN method achieves an average ACC of 82.9%, \nSEN of 76.7%, SPE of 86.6% and AUC of 84.6%."
+    ]
+  }
+}

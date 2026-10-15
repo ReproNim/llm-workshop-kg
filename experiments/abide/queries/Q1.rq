@@ -1,0 +1,11 @@
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT ?cohort ?dx (COUNT(DISTINCT ?p) AS ?n) WHERE {
+  VALUES ?cohort { <urn:repronim:abide:cohort/B_v1> <urn:repronim:abide:cohort/B_v2> <urn:repronim:abide:cohort/abraham2017_reconstructed> }
+  GRAPH <urn:repronim:abide:graph/core> { ?cohort prov:hadMember ?p }
+  GRAPH <urn:repronim:abide:graph/view/phenotype_matrix> { ?p <urn:repronim:abide:variable/DX_GROUP> ?dx }
+} GROUP BY ?cohort ?dx ORDER BY ?cohort ?dx

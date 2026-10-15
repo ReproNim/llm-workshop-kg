@@ -1,0 +1,281 @@
+{
+  "source_id": "S-086",
+  "pmid": "local_1f08c2f9",
+  "doi": "10.3389/fnins.2015.00316",
+  "screening": {
+    "decision": "include",
+    "reason": "Applies a novel empirical-Bayes connectivity normalization method to ABIDE (UCLA site) resting-state fMRI data in an ASD-vs-TC group-difference analysis, satisfying inclusion 2-3; not purely a methods paper since it performs and reports an autism-vs-control connectivity comparison.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "This data set was collected at Brain Mapping Center in University of California, Los Angles (UCLA), one of the data collecting sites in the Autism Brain Imaging Data Exchange (ABIDE)",
+      "section": "methods",
+      "claim": "Data example is the UCLA site of ABIDE.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "initially 33 participants (typical controls, TC) and 49 patients with the Autism spectrum disorders (ASD) were asked to lie as still as possible",
+      "section": "methods",
+      "claim": "Initial sample was 33 TC and 49 ASD before motion exclusion.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "Participants with large motions were removed from the dataset, resulting in 32 participants in the TC group and 41 in the ASD group.",
+      "section": "methods",
+      "claim": "After motion-based exclusion, final sample was 32 TC and 41 ASD.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "We then use the ﬁrst 90 AAL ROIs as nodes, and take the average of all voxels’ temporal proﬁles within each ROI as region level signal for all subjects",
+      "section": "methods",
+      "claim": "Used the first 90 AAL ROIs as connectivity nodes.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "the analysis based on empirical Bayes normalized connectivity metrics shows signiﬁcant connectivity diﬀerences between the ASD and TC groups , and 44 connectivity features have fdr q- values less than 0.1.",
+      "section": "results",
+      "claim": "After empirical-Bayes normalization, 44 connectivity features differed significantly between ASD and TC (fdr q<0.1), whereas raw correlations found none.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "No signiﬁcant feature or network is identiﬁed after the correction for the original correlations (q-value 0.1 as threshold for local fdr and permutation p-value 0.05 for NBS).",
+      "section": "results",
+      "claim": "Raw (non-normalized) connectivity metrics found no significant group differences with the same correction thresholds.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The ASD group show higher function connectivity between pairs of ROIs for all",
+      "section": "results",
+      "claim": "The 44 significant features showed higher (hyper-) connectivity in ASD relative to TC.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "These results suggest that hyper-connectivity in ASD spans multiple functional subsystems of the human brain.",
+      "section": "discussion",
+      "claim": "Main interpretive finding: hyper-connectivity in ASD across multiple functional subsystems.",
+      "relevance_score": 0.8
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Inclusion criteria defined",
+        "judgment": "Unclear",
+        "support": "Diagnostic inclusion criteria for ASD/TC groups are not detailed beyond citing the ABIDE/UCLA site source."
+      },
+      {
+        "domain": "Subjects and setting described",
+        "judgment": "Low",
+        "support": "Single site (UCLA), scanner and acquisition parameters, and N before/after motion exclusion given."
+      },
+      {
+        "domain": "Exposure measured validly (rs-fMRI pipeline)",
+        "judgment": "Unclear",
+        "support": "Slice-time/motion correction, MNI registration, bandpass filter and smoothing described, but no named pipeline/software or version given."
+      },
+      {
+        "domain": "Condition measured (diagnosis source)",
+        "judgment": "Unclear",
+        "support": "ASD/TC diagnosis labels are taken from the ABIDE/UCLA data without the diagnostic instrument being restated in this paper."
+      },
+      {
+        "domain": "Confounders identified (age, sex, site, motion)",
+        "judgment": "Unclear",
+        "support": "Motion-based exclusion applied ('large motions' removed) but no quantitative FD threshold; age/sex are not reported as covariates in the sections read."
+      },
+      {
+        "domain": "Confounders handled",
+        "judgment": "Unclear",
+        "support": "Only a qualitative motion-exclusion criterion is given; no explicit covariate adjustment for age/sex/site (single site, so no site covariate needed)."
+      },
+      {
+        "domain": "Outcomes measured validly (connectivity metric)",
+        "judgment": "Low",
+        "support": "Standard Pearson correlation among 90 AAL ROIs, Fisher z-transformed, is a conventional connectivity metric; the paper's own contribution is a normalization layer on top of it."
+      },
+      {
+        "domain": "Appropriate statistical analysis (multiple comparisons)",
+        "judgment": "Low",
+        "support": "Both local fdr (q=0.1) and Network Based Statistics (permutation p=0.05) multiple-comparison corrections applied and compared between normalized and raw metrics."
+      }
+    ],
+    "overall": "Unclear",
+    "summary": "A methods-focused paper whose real-data illustration is a single-site (UCLA) ABIDE analysis with adequate multiple-comparison correction but under-specified diagnostic/motion-threshold detail, since the primary contribution is the normalization method rather than the clinical finding."
+  },
+  "charting": {
+    "source_id": "S-086",
+    "title": "An empirical Bayes normalization method for connectivity metrics in resting state fMRI",
+    "authors": "",
+    "year": "2015",
+    "journal_conference": "Frontiers in Neuroscience",
+    "doi": "10.3389/fnins.2015.00316",
+    "database_retrieved": "openalex",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "",
+    "study_design": "Group-difference (associational)",
+    "duration_frequency": "",
+    "subject_model": "",
+    "task_type": "resting-state",
+    "study_setting": "Brain Mapping Center, UCLA",
+    "country_region": "United States",
+    "disorder_diagnosis": "Autism Spectrum Disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "41",
+    "age_mean_sd": "",
+    "age_range": "",
+    "gender_distribution": "",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "32",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "",
+    "gender_distribution_controls": "",
+    "age_matched": "",
+    "gender_matched": "",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI",
+    "tasks_performed": "",
+    "equipment_tools": "Siemens magneto Trio scanner",
+    "new_dataset_contributed": "no — contributes a normalization method, applied to public ABIDE (UCLA) data",
+    "dataset_openly_available": "Uses the publicly shared ABIDE data; no new dataset or code repository link found in text",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "functional connectivity",
+    "specific_features": "Pearson correlation (Fisher z-transformed) among the first 90 AAL ROIs, re-expressed via a novel empirical-Bayes local-fdr normalization function g(z)",
+    "feature_extraction_tools": "AAL atlas (first 90 ROIs); custom empirical-Bayes normalization (R package locfdr)",
+    "feature_importance_reported": "",
+    "importance_method": "",
+    "top_features_identified": "",
+    "feature_change_direction": "Higher (hyper-)connectivity in ASD vs TC for 44 ROI-pair features detected only after empirical-Bayes normalization (not detectable with raw correlations)",
+    "model_category": "",
+    "specific_algorithms": "",
+    "validation_methodology": "",
+    "performance_metrics": "",
+    "key_performance_results": "",
+    "summary_key_findings": "An empirical-Bayes normalization of pairwise AAL-ROI connectivity metrics revealed 44 significantly different (fdr q<0.1) connectivity features between ASD (n=41) and TC (n=32) in a single ABIDE (UCLA) site, all showing hyper-connectivity in ASD across distant functional subsystems; the same analysis on raw (non-normalized) correlations found no significant features with equivalent correction.",
+    "features_associated_disorder": "Hyper-connectivity between distant ROI pairs across multiple functional subsystems in ASD",
+    "future_directions_recommended": "",
+    "reviewer_notes": "Primarily a statistical-methods paper; the ABIDE analysis is a real-data illustration of the method, not the paper's main contribution.",
+    "custom_fields": {
+      "RQ1": "ABIDE I, UCLA site only: initially 49 ASD/33 TC, after removing participants with large head motion, final n=41 ASD/32 TC. | quote: \"Participants with large motions were removed from the dataset, resulting in 32 participants in the TC group and 41 in the ASD group.\"",
+      "RQ2": "Slice-time and motion correction, MNI registration, bandpass filter (0.009-0.08Hz), 6mm FWHM smoothing (no named pipeline/version given); first 90 AAL ROIs as nodes. | quote: \"We then use the ﬁrst 90 AAL ROIs as nodes, and take the average of all voxels’ temporal proﬁles within each ROI as region level signal for all subjects\"",
+      "RQ3": "associational — group-difference analysis of ASD vs TC connectivity using the proposed normalization method. | quote: \"the analysis based on empirical Bayes normalized connectivity metrics shows signiﬁcant connectivity diﬀerences between the ASD and TC groups\"",
+      "RQ4": "Pairwise Pearson correlations (4005 pairs) tested with local false-discovery-rate (fdr q=0.1) and Network Based Statistics (permutation p=0.05) multiple-comparison correction; single site, no cross-validation or leave-site-out (not a predictive study). | quote: \"the multiple testing correction methods including local fdr and Network Based Statistics (NBS) performed for both empirical Bayes normalized correlations and original correlations\"",
+      "RQ5": "44 connectivity features differed significantly (fdr q<0.1) between ASD and TC after empirical-Bayes normalization, all showing ASD hyper-connectivity across distant functional subsystems; no significant features found with raw correlations. | quote: \"44 connectivity features have fdr q- values less than 0.1\"",
+      "RQ6": "no — reuses public ABIDE data with only a qualitative motion-exclusion description; no participant list or code repository link is given.",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Partly — initial and final N by group given, but diagnostic inclusion criteria for ASD/TC are not detailed. | quote: \"Participants with large motions were removed from the dataset, resulting in 32 participants in the TC group and 41 in the ASD group.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "Partly — motion exclusion stated qualitatively (\"large motions\") with no quantitative threshold given.",
+      "CL3 Preprocessing pipeline and version reported?": "Partly — processing steps (slice-timing, motion correction, MNI registration, bandpass, smoothing) are listed without naming a pipeline/software version.",
+      "CL4 Atlas/parcellation reported?": "Yes — first 90 AAL ROIs used as nodes. | quote: \"We then use the ﬁrst 90 AAL ROIs as nodes\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "No — not a predictive/ML study; no train/test split.",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "No — single-site (UCLA) analysis; no multi-site harmonisation or leave-site-out evaluation.",
+      "CL7 Code and/or participant list available?": "No — no code repository or participant list link found in the text.",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data"
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-086",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported",
+          "rating": "Partial",
+          "notes": "N before/after given, diagnostic criteria not detailed."
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported",
+          "rating": "Partial",
+          "notes": "Qualitative only."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported",
+          "rating": "Partial",
+          "notes": "Steps listed, no pipeline name/version."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported",
+          "rating": "Yes",
+          "notes": "First 90 AAL ROIs."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "Relies on ABIDE/UCLA labels, not restated in this paper."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control",
+          "rating": "N/A",
+          "notes": "Not a predictive/ML study."
+        },
+        {
+          "item_text": "CL6 Site handling",
+          "rating": "N/A",
+          "notes": "Single-site study."
+        },
+        {
+          "item_text": "CL7 Code/participant list available",
+          "rating": "No",
+          "notes": "No link found."
+        }
+      ],
+      "overall_concern": "Some"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-086",
+    "study_design_sample_dataset": "Group-difference (associational), methods-illustration; ABIDE I, UCLA site only; n=41 ASD / 32 TC after motion exclusion.",
+    "methods": "Standard rs-fMRI preprocessing (slice-timing, motion correction, MNI registration, bandpass, smoothing); Pearson connectivity among first 90 AAL ROIs; novel empirical-Bayes local-fdr normalization applied before group comparison with fdr and NBS correction.",
+    "outcomes": "44 connectivity features differed significantly (fdr q<0.1) between ASD and TC after normalization (none with raw correlations), all showing ASD hyper-connectivity across distant functional subsystems.",
+    "key_limitations": "Single site; diagnostic criteria and motion threshold not quantitatively specified; paper's primary contribution is the statistical method, with the ABIDE analysis as one illustrative example.",
+    "relevance_notes": "Illustrates how a connectivity-normalization method changes group-difference detection on a single-site ABIDE I subset; relevant for methodological/processing comparisons in the knowledge graph rather than as a standalone clinical finding.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.3389/fnins.2015.00316",
+    "dataset": "ABIDE I",
+    "relation": "uses-data",
+    "cohort_description": "UCLA site of ABIDE I; initially 49 ASD/33 TC, after removing participants with large head motion final n=41 ASD/32 TC.",
+    "n_by_dx": {
+      "ASD": 41,
+      "TD": 32,
+      "total": 73
+    },
+    "sites": "1 (UCLA)",
+    "pipeline": "slice-time/motion correction, MNI registration, bandpass 0.009-0.08Hz, 6mm FWHM smoothing (no named pipeline/version)",
+    "atlas": "AAL (first 90 ROIs)",
+    "claim_type": "associational",
+    "finding": "After empirical-Bayes normalization of connectivity metrics, 44 ROI-pair connectivity features differed significantly (fdr q<0.1) between ASD and TC, all showing hyper-connectivity in ASD across distant functional subsystems; raw correlations found no significant features with the same correction.",
+    "reconstructible": "no",
+    "evidence_quotes": [
+      "Participants with large motions were removed from the dataset, resulting in 32 participants in the TC group and 41 in the ASD group.",
+      "the analysis based on empirical Bayes normalized connectivity metrics shows signiﬁcant connectivity diﬀerences between the ASD and TC groups , and 44 connectivity features have fdr q- values less than 0.1."
+    ]
+  }
+}

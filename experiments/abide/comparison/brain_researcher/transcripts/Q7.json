@@ -1,0 +1,97 @@
+{
+ "id": "Q7",
+ "question": "Who made each review assessment, and on what evidence?",
+ "date": "2026-10-15",
+ "client": "Claude Code 2.1.282 subagent (model sonnet)",
+ "tool_calls": [
+  {
+   "seq": 1,
+   "tool": "kg_search_datasets",
+   "arguments": {
+    "text": "ABIDE",
+    "limit": 10
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"dataset_id\":\"ds:manual:abide\",\"title\":\"ABIDE (I & II)\",\"tasks\":[\"resting state\",\"reading span task\"],\"modalities\":[\"MRI\"],\"n_subjects\":2226,\"species\":[\"human\"],\"kg_id\":\"4:61f2a6e6-9289-4db3-a996-562b57f61fe1:489281\"},{\"dataset_id\":\"4:61f2a6e6-9289-4db3-a996-562b57f61fe1:497343\",\"title\":\"abide1: CMU_b\",...}",
+   "response_chars": 1400,
+   "ok": true,
+   "note": "Located the ABIDE dataset node (ds:manual:abide) as an anchor to look for any attached review/assessment provenance."
+  },
+  {
+   "seq": 2,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "review assessment ABIDE quality control motion",
+    "limit": 15
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"ds:manual:abide\",...,\"node_type\":\"Dataset\",...},{\"kg_id\":\"trm_5585c83d15fad\",...,\"label\":\"Pittsburgh Sleep Quality Index\",\"node_type\":\"Concept\"},{\"kg_id\":\"neurostore_task:eJXbjLfzK7MB:behavioral:2\",...,\"label\":\"Quality of Life Assessment\",\"node_type\":\"Task\"},...]}",
+   "response_chars": 2600,
+   "ok": true,
+   "note": "Free-text search for review/assessment/QC terms returned only generic cognitive-task/concept nodes (e.g. 'Quality of Life Assessment', 'motion detection') -- nothing resembling a reviewer identity or a review-verdict record."
+  },
+  {
+   "seq": 3,
+   "tool": "kg_neighbors",
+   "arguments": {
+    "kg_id": "ds:manual:abide",
+    "direction": "both",
+    "limit": 25
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[{\"kg_id\":\"consortium:abide\",...,\"relation\":\"PART_OF\"},{\"kg_id\":\"ONVOC_0000184\",\"label\":\"Down Syndrome\",...,\"relation\":\"ABOUT\"},{\"kg_id\":\"modality:mri\",...,\"relation\":\"HAS_MODALITY\"},{\"kg_id\":\"repo:nitrc_/_indi\",...,\"relation\":\"HOSTED_AT\"},{\"kg_id\":\"ONVOC_0000005\",\"label\":\"Psychological Concepts\",...,\"relation\":\"IN_ONVOC\"},{\"kg_id\":\"species:human\",...},{\"kg_id\":\"trm_4c40d168898db\",\"label\":\"reading span task\",...},{\"kg_id\":\"task__resting_state\",...}]}",
+   "response_chars": 4200,
+   "ok": true,
+   "note": "Direct neighbors of the ABIDE dataset node are consortium/repository/modality/species/task/ontology links only -- no edges of type REVIEWED_BY, HAS_VERDICT, ASSESSED_BY or similar, and no analyst/reviewer-identity nodes attached."
+  },
+  {
+   "seq": 4,
+   "tool": "kg_multihop_qa",
+   "arguments": {
+    "question": "Who made each review assessment of the ABIDE I collaboration experiment scenario (Analyst A connectivity group differences, Analyst B leave-site-out diagnosis prediction, motion QC threshold tightening), and on what evidence?",
+    "max_hops": 3,
+    "max_results": 25
+   },
+   "response_truncated": "{\"ok\":false,\"error\":\"kg_query_degraded\",\"message\":\"kg_multihop_qa produced a degraded result (batched_seed_lookup_timeout) but degraded responses are disabled by default. Re-run with allow_degraded=True.\",\"degraded_result_available\":true,\"degraded_reason\":\"batched_seed_lookup_timeout\",\"query_time_s\":0,\"execution_trace\":[\"kg_query_started\",\"kg_degraded_blocked\"],\"diagnostics\":{\"summary\":{...,\"n_seed_entities\":0,\"n_paths\":0,\"n_nodes_traversed\":0,...},\"warnings\":[\"Batched seed lookup failed: {neo4j_code: Neo.ClientError.Transaction.TransactionTimedOutClientConfiguration}...\"],\"provenance\":[{\"stage\":\"seed_search\",\"search_terms\":[\"Who made each review assessment of the ABIDE\"],\"seed_hits_by_term\":[{\"term\":\"Who made each review assessment of the ABIDE\",\"direct_hits\":0,\"search_hits\":0}],...}]}}",
+   "response_chars": 1850,
+   "ok": false,
+   "note": "Direct multi-hop question-answering failed: 0 seed entities matched the question text (the scenario's 'Analyst A/B', 'review assessment', 'motion QC tightening' phrasing has no corresponding KG entities), and the underlying Neo4j batched-seed-lookup transaction timed out (45s budget) before any traversal began."
+  },
+  {
+   "seq": 5,
+   "tool": "kg_search_nodes",
+   "arguments": {
+    "query": "peer review verdict analyst reviewer",
+    "node_types": [
+     "Review",
+     "Verdict",
+     "Person",
+     "Analyst"
+    ],
+    "limit": 15
+   },
+   "response_truncated": "{\"ok\":true,\"items\":[]}",
+   "response_chars": 22,
+   "ok": true,
+   "note": "Confirmed no nodes of type Review/Verdict/Person/Analyst exist in BR-KG matching these terms -- the KG has no schema for reviewer identity or review-verdict provenance at all."
+  }
+ ],
+ "final_answer": "Brain Researcher could not answer this question. Across a dataset search, a free-text node search, a direct-neighbor traversal of the ABIDE dataset node, a multi-hop QA attempt (which failed with 0 matched seed entities and a backend timeout), and a typed node search for Review/Verdict/Person/Analyst nodes, BR-KG returned no entity, edge, or record representing 'Analyst A', 'Analyst B', a review assessment, or any reviewer identity/evidence trail for this scenario. BR-KG models ABIDE only as a Dataset/Consortium node with links to repository (NITRC/INDI), modality (MRI), species (human), and task concepts -- it carries no schema for who performed a review or what evidence a review verdict rested on.",
+ "evidence": [
+  {
+   "claim": "ABIDE is modeled in BR-KG as a Dataset node (ds:manual:abide) linked only to consortium, repository, modality, species, and task nodes",
+   "source": "kg_neighbors(ds:manual:abide)"
+  },
+  {
+   "claim": "No BR-KG node type for Review, Verdict, Person, or Analyst matches any query text tried",
+   "source": "kg_search_nodes(node_types=[Review,Verdict,Person,Analyst])"
+  },
+  {
+   "claim": "Multi-hop QA over this question text finds 0 seed entities and times out before traversal",
+   "source": "kg_multihop_qa(question=...) -> kg_query_degraded/batched_seed_lookup_timeout"
+  }
+ ],
+ "br_limitations": "BR-KG has no representation of reviewer/analyst identity, review assessments, or review-verdict evidence for this illustrative ABIDE collaboration scenario (or in general, no node types surfaced for Review/Verdict/Person/Analyst). It cannot join to participant-level phenotype rows, per-analyst QC decisions, or any provenance trail of who reviewed what. The multi-hop QA tool also failed outright on this question (0 seeds, Neo4j batched-seed-lookup timeout), rather than returning a partial/degraded structural answer.",
+ "confidence": "high",
+ "computation_phase": {
+  "source": "none",
+  "reason": "not computable from ABIDE data (needs paper text / review provenance BR does not hold)"
+ }
+}

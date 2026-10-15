@@ -1,0 +1,9 @@
+PREFIX ex: <urn:repronim:abide:>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT ?var ?label ?value ?about ?row WHERE { GRAPH <urn:repronim:abide:graph/core> {
+        ?rec ex:participant <urn:repronim:abide:participant/MaxMun_c_0051332> ; a nidm:AcquisitionObject ; ex:sourceRow ?row ; ?var ?value .
+        ?var a nidm:DataElement ; rdfs:label ?label . OPTIONAL { ?var nidm:isAbout ?about } } }

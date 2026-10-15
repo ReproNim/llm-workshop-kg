@@ -1,0 +1,269 @@
+{
+  "source_id": "S-016",
+  "pmid": "local_45051796",
+  "doi": "10.1186/s40708-023-00217-4",
+  "screening": {
+    "decision": "include",
+    "reason": "Reports an ABIDE I+II structural+resting-state fMRI joint-fusion deep-learning classifier for ASD vs TD with nested 10-fold cross-validated AUC; satisfies inclusion 1-4.",
+    "stage": "full_text",
+    "assessed_on": "full_text",
+    "full_text_source": "unpaywall_pdf"
+  },
+  "evidence_spans": [
+    {
+      "text": "we obtained a final sample of 1383 subjects (680 ASD and 703 TD) from 35 sites.",
+      "section": "methods",
+      "claim": "Final analysed sample was 1383 subjects (680 ASD, 703 TD) from 35 ABIDE I+II sites.",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "To allow the reproducibility of the analysis, the identification numbers (IDs) of the participants selected in the final sample are reported in Additional file 1.",
+      "section": "methods",
+      "claim": "Participant IDs of the final sample are published in supplementary material for reproducibility.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The rs-fMRI scans selected from ABIDE I and ABIDE II cohorts were processed with the Configurable Pipe- line for the Analysis of Connectomes (C-PAC) [20]",
+      "section": "methods",
+      "claim": "rs-fMRI preprocessed with C-PAC; structural data with Freesurfer.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The Harvard-Oxford (HO) atlas was used to extract time series from brain regions, obtaining 110 timeseries for each subject.",
+      "section": "methods",
+      "claim": "Harvard-Oxford atlas used for functional connectivity (110 regions, 103 after exclusion).",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "62 structures (31 per hemisphere) from the Desikan-Killiany- Tourville Atlas",
+      "section": "methods",
+      "claim": "Structural features used the Desikan-Killiany-Tourville atlas.",
+      "relevance_score": 0.7
+    },
+    {
+      "text": "We esti- mated the NeuroHarmonize model parameters on the entire cohort of control subjects, by specifying the age as a covariate, whose effect is to be preserved during the harmonization process. Finally, we applied the esti- mated model on the entire sample of subjects with ASD and TD controls.",
+      "section": "methods",
+      "claim": "NeuroHarmonize (ComBat-based) site harmonization parameters were estimated on the entire cohort (controls, then applied to all subjects) rather than within CV folds.",
+      "relevance_score": 0.9
+    },
+    {
+      "text": "The model was trained to distinguish subjects with ASD from TD according to a nested 10-fold cross-validation scheme.",
+      "section": "methods",
+      "claim": "Classification performance evaluated via nested 10-fold cross-validation.",
+      "relevance_score": 0.8
+    },
+    {
+      "text": "The AUC values of 0.66\u00b10.05 and of 0.76\u00b10.04 were obtained in the ASD vs. TD discrimination when only structural or functional features are considered, respectively. The joint fusion approach led to an AUC of 0.78\u00b10.04.",
+      "section": "results",
+      "claim": "AUC 0.66\u00b10.05 (structural only), 0.76\u00b10.04 (functional only), 0.78\u00b10.04 (joint fusion).",
+      "relevance_score": 1.0
+    },
+    {
+      "text": "brain changes tend to occur in individuals with ASD in regions belonging to the Default Mode Network and to the Social Brain.",
+      "section": "results",
+      "claim": "Most important discriminative features localize to the Default Mode Network and the Social Brain.",
+      "relevance_score": 0.8
+    }
+  ],
+  "risk_of_bias": {
+    "assessments": [
+      {
+        "domain": "Participants",
+        "judgment": "Low",
+        "support": "we obtained a final sample of 1383 subjects (680 ASD and 703 TD) from 35 sites. we restricted our analysis to male subjects, due to both the limited rep- resentation of female subjects in the ABIDE collection"
+      },
+      {
+        "domain": "Predictors",
+        "judgment": "Low",
+        "support": "The rs-fMRI scans selected from ABIDE I and ABIDE II cohorts were processed with the Configurable Pipe- line for the Analysis of Connectomes (C-PAC) [20] The Harvard-Oxford (HO) atlas was used to extract time series from brain regions, obtaining 110 timeseries for each subject. 62 structures (31 per hemisphere) from the Desikan-Killiany- Tourville Atlas"
+      },
+      {
+        "domain": "Outcome",
+        "judgment": "Unclear",
+        "support": "ASD/TD diagnosis is the underlying ABIDE site diagnosis; ADOS/ADI-R cited only in references, not described as an operational criterion applied here."
+      },
+      {
+        "domain": "Analysis",
+        "judgment": "High",
+        "support": "We esti- mated the NeuroHarmonize model parameters on the entire cohort of control subjects, by specifying the age as a covariate, whose effect is to be preserved during the harmonization process. Finally, we applied the esti- mated model on the entire sample of subjects with ASD and TD controls. This harmonization of structural and functional features was fit on the full cohort before the nested cross-validation split, so test-fold information informed the harmonization model, even though RobustScaler feature scaling and SHAP were confined to the inner CV loop."
+      }
+    ],
+    "overall": "High",
+    "summary": "Well-documented multimodal pipeline (Freesurfer + C-PAC, named atlases) with nested CV and participant-ID release, but NeuroHarmonize site harmonization was estimated on the entire dataset (including what becomes test folds) prior to cross-validation, a leakage risk per PROBAST Analysis domain."
+  },
+  "charting": {
+    "source_id": "S-016",
+    "title": "Deep learning based joint fusion approach to exploit anatomical and functional brain information in autism spectrum disorders",
+    "authors": "",
+    "year": "2024",
+    "journal_conference": "Brain Informatics",
+    "doi": "10.1186/s40708-023-00217-4",
+    "database_retrieved": "ABIDE I+II",
+    "disorder_cohort": "Autism spectrum disorder (ABIDE I+II)",
+    "primary_focus": "Diagnosis",
+    "primary_goal": "Classify ASD vs. TD using a deep-learning joint fusion of structural (Freesurfer) and functional (C-PAC) MRI features from ABIDE.",
+    "study_design": "Diagnostic prediction",
+    "duration_frequency": "",
+    "subject_model": "Human",
+    "task_type": "Resting-state",
+    "study_setting": "Multi-site (35 sites)",
+    "country_region": "",
+    "disorder_diagnosis": "Autism spectrum disorder",
+    "diagnosis_assessment": "",
+    "n_disordered": "680",
+    "age_mean_sd": "",
+    "age_range": "5-40 years",
+    "gender_distribution": "Male only",
+    "comorbidities_included_excluded": "",
+    "medications_therapies": "",
+    "severity_levels": "",
+    "healthy_controls_included": "Yes",
+    "healthy_status_confirmed": "",
+    "n_controls": "703",
+    "age_mean_sd_controls": "",
+    "age_range_controls": "5-40 years",
+    "gender_distribution_controls": "Male only",
+    "age_matched": "",
+    "gender_matched": "Yes (male only by design)",
+    "neurodevelopmentally_typical": "",
+    "data_types": "resting-state fMRI, structural MRI (T1)",
+    "tasks_performed": "",
+    "equipment_tools": "",
+    "new_dataset_contributed": "No",
+    "dataset_openly_available": "To allow the reproducibility of the analysis, the identification numbers (IDs) of the participants selected in the final sample are reported in Additional file 1.",
+    "dataset_available_request": "",
+    "sensitive_data_anonymized": "",
+    "feature_types": "Structural morphometry (221 Freesurfer features) and functional connectivity (5253 Fisher-z FC features)",
+    "specific_features": "Freesurfer aseg/aparc morphometric features (Desikan-Killiany-Tourville atlas) and pairwise Pearson functional connectivity (Harvard-Oxford atlas, 103 regions)",
+    "feature_extraction_tools": "Freesurfer v6.0 (recon-all) for structural; C-PAC for functional",
+    "feature_importance_reported": "Yes",
+    "importance_method": "SHAP (Gradient SHAP) applied within the inner CV loop, averaged over 100 folds; features above the 99th percentile selected as most important",
+    "top_features_identified": "brain changes tend to occur in individuals with ASD in regions belonging to the Default Mode Network and to the Social Brain.",
+    "feature_change_direction": "",
+    "model_category": "Deep learning (joint-fusion neural network)",
+    "specific_algorithms": "Feature-reduction neural network + classification neural network joint-fusion model, compared to single-modality (structural-only, functional-only) neural networks",
+    "validation_methodology": "Nested 10-fold cross-validation (inner loop for training/feature scaling/SHAP, outer loop for performance evaluation); site harmonization (NeuroHarmonize/ComBat) performed on the full cohort prior to CV",
+    "performance_metrics": "AUC, accuracy (mean \u00b1 SD across outer folds)",
+    "key_performance_results": "The AUC values of 0.66\u00b10.05 and of 0.76\u00b10.04 were obtained in the ASD vs. TD discrimination when only structural or functional features are considered, respectively. The joint fusion approach led to an AUC of 0.78\u00b10.04.",
+    "summary_key_findings": "A multimodal deep-learning joint fusion of structural and functional MRI features (AUC 0.78\u00b10.04) outperformed single-modality models (structural AUC 0.66\u00b10.05; functional AUC 0.76\u00b10.04) for ASD vs TD discrimination, with the most discriminative features localizing to the Default Mode Network and Social Brain regions.",
+    "features_associated_disorder": "brain changes tend to occur in individuals with ASD in regions belonging to the Default Mode Network and to the Social Brain.",
+    "future_directions_recommended": "",
+    "reviewer_notes": "",
+    "custom_fields": {
+      "RQ1": "ABIDE I+II, 35 sites, 1383 males aged 5-40 (680 ASD/703 TD) after excluding subjects with missing multimodal data | quote: \"we obtained a final sample of 1383 subjects (680 ASD and 703 TD) from 35 sites.\"",
+      "RQ2": "Freesurfer v6.0 recon-all (Desikan-Killiany-Tourville atlas) for structural; C-PAC for functional with Harvard-Oxford atlas (103 regions after exclusion) | quote: \"The rs-fMRI scans selected from ABIDE I and ABIDE II cohorts were processed with the Configurable Pipe- line for the Analysis of Connectomes (C-PAC) [20]\"",
+      "RQ3": "predictive \u2014 deep-learning ASD vs TD classification | quote: \"The AUC values of 0.66\u00b10.05 and of 0.76\u00b10.04 were obtained in the ASD vs. TD discrimination when only structural or functional features are considered, respectively. The joint fusion approach led to an AUC of 0.78\u00b10.04.\"",
+      "RQ4": "Nested 10-fold cross-validation (training in inner loop, AUC/accuracy evaluated in outer loop); SHAP feature importance computed within the inner loop; site harmonization via NeuroHarmonize fit on the whole cohort before CV | quote: \"The model was trained to distinguish subjects with ASD from TD according to a nested 10-fold cross-validation scheme.\"",
+      "RQ5": "Joint structural+functional fusion achieved AUC 0.78\u00b10.04, exceeding structural-only (0.66\u00b10.05) and functional-only (0.76\u00b10.04) models; top features in Default Mode Network and Social Brain regions | quote: \"The AUC values of 0.66\u00b10.05 and of 0.76\u00b10.04 were obtained in the ASD vs. TD discrimination when only structural or functional features are considered, respectively. The joint fusion approach led to an AUC of 0.78\u00b10.04.\"",
+      "RQ6": "yes \u2014 participant list \u2014 participant IDs of the final analysed sample are published in supplementary material | quote: \"To allow the reproducibility of the analysis, the identification numbers (IDs) of the participants selected in the final sample are reported in Additional file 1.\"",
+      "CL1 Cohort definition reported (inclusion/exclusion rules and resulting N by diagnosis)?": "Yes | quote: \"we obtained a final sample of 1383 subjects (680 ASD and 703 TD) from 35 sites.\"",
+      "CL2 Motion/QC rule reported (metric and threshold, e.g. mean FD cut-off; rater QC)?": "No | quote: \"\"",
+      "CL3 Preprocessing pipeline and version reported?": "Yes | quote: \"The rs-fMRI scans selected from ABIDE I and ABIDE II cohorts were processed with the Configurable Pipe- line for the Analysis of Connectomes (C-PAC) [20]\"",
+      "CL4 Atlas/parcellation reported?": "Yes | quote: \"The Harvard-Oxford (HO) atlas was used to extract time series from brain regions, obtaining 110 timeseries for each subject.\"",
+      "CL5 Leakage control reported (feature selection/scaling/harmonisation confined to training folds)?": "Partly | quote: \"We esti- mated the NeuroHarmonize model parameters on the entire cohort of control subjects, by specifying the age as a covariate, whose effect is to be preserved during the harmonization process. Finally, we applied the esti- mated model on the entire sample of subjects with ASD and TD controls.\"",
+      "CL6 Site handling reported (site covariate, harmonisation e.g. ComBat, or leave-site-out evaluation)?": "Yes | quote: \"We esti- mated the NeuroHarmonize model parameters on the entire cohort of control subjects, by specifying the age as a covariate, whose effect is to be preserved during the harmonization process. Finally, we applied the esti- mated model on the entire sample of subjects with ASD and TD controls.\"",
+      "CL7 Code and/or participant list available?": "Yes | quote: \"To allow the reproducibility of the analysis, the identification numbers (IDs) of the participants selected in the final sample are reported in Additional file 1.\"",
+      "CL8 ABIDE relation of this paper: uses-data | describes-release | mentions": "uses-data | quote: \"we obtained a final sample of 1383 subjects (680 ASD and 703 TD) from 35 sites.\""
+    },
+    "section_outputs": {}
+  },
+  "critical_appraisal": {
+    "source_id": "S-016",
+    "domain_1_participant_quality": {
+      "domain_name": "Participants and cohort definition (PROBAST domain 1 / checklist CL1-CL2)",
+      "items": [
+        {
+          "item_text": "CL1 Cohort definition reported?",
+          "rating": "Yes",
+          "notes": "quote: \"we obtained a final sample of 1383 subjects (680 ASD and 703 TD) from 35 sites.\""
+        },
+        {
+          "item_text": "CL2 Motion/QC rule reported?",
+          "rating": "No",
+          "notes": "No explicit motion/FD threshold reported; only multimodal-data-completeness exclusion described."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_2_data_collection_quality": {
+      "domain_name": "Predictors and features: preprocessing and parcellation (PROBAST domain 2 / CL3-CL4)",
+      "items": [
+        {
+          "item_text": "CL3 Preprocessing pipeline and version reported?",
+          "rating": "Yes",
+          "notes": "Freesurfer v6.0 and C-PAC named."
+        },
+        {
+          "item_text": "CL4 Atlas/parcellation reported?",
+          "rating": "Yes",
+          "notes": "Desikan-Killiany-Tourville (structural) and Harvard-Oxford (functional)."
+        }
+      ],
+      "overall_concern": "Low"
+    },
+    "domain_3_feature_model_quality": {
+      "domain_name": "Outcome: diagnostic labels and their source (PROBAST domain 3)",
+      "items": [
+        {
+          "item_text": "Diagnosis source and label definition",
+          "rating": "Unclear",
+          "notes": "Relies on ABIDE's own site-level diagnosis; ADOS/ADI-R only cited as references."
+        }
+      ],
+      "overall_concern": "Some"
+    },
+    "domain_4_bias_transparency": {
+      "domain_name": "Analysis: validation, leakage and site handling (PROBAST domain 4 / CL5-CL7)",
+      "items": [
+        {
+          "item_text": "CL5 Leakage control reported?",
+          "rating": "Partial",
+          "notes": "RobustScaler/SHAP confined to inner CV loop, but NeuroHarmonize site harmonization parameters were estimated on the full cohort before the nested CV split. | quote: \"We esti- mated the NeuroHarmonize model parameters on the entire cohort of control subjects, by specifying the age as a covariate, whose effect is to be preserved during the harmonization process. Finally, we applied the esti- mated model on the entire sample of subjects with ASD and TD controls.\""
+        },
+        {
+          "item_text": "CL6 Site handling reported?",
+          "rating": "Yes",
+          "notes": "NeuroHarmonize (ComBat-based) harmonization applied across 35 sites."
+        },
+        {
+          "item_text": "CL7 Code and/or participant list available?",
+          "rating": "Yes",
+          "notes": "Participant IDs published. | quote: \"To allow the reproducibility of the analysis, the identification numbers (IDs) of the participants selected in the final sample are reported in Additional file 1.\""
+        }
+      ],
+      "overall_concern": "High"
+    }
+  },
+  "narrative_row": {
+    "source_id": "S-016",
+    "study_design_sample_dataset": "Diagnostic prediction; ABIDE I+II, 35 sites, 1383 males aged 5-40 (680 ASD/703 TD)",
+    "methods": "Freesurfer v6.0 structural morphometry (Desikan-Killiany-Tourville) and C-PAC functional connectivity (Harvard-Oxford, 103 regions), NeuroHarmonize site harmonization, deep-learning joint-fusion feature-reduction + classification network, nested 10-fold CV, SHAP feature importance.",
+    "outcomes": "Joint fusion AUC 0.78\u00b10.04 outperformed structural-only (0.66\u00b10.05, p<0.001 vs functional) and functional-only (0.76\u00b10.04) models; top discriminative features in Default Mode Network and Social Brain regions.",
+    "key_limitations": "Male-only sample; site harmonization (NeuroHarmonize) fit on the entire cohort prior to the nested CV split, risking leakage of test-fold information into the harmonization model.",
+    "relevance_notes": "Participant ID list published for reproducibility; demonstrates a multimodal structural+functional ABIDE classification pipeline with named atlases for both modalities.",
+    "review_specific_questions": ""
+  },
+  "kg_link": {
+    "doi": "10.1186/s40708-023-00217-4",
+    "dataset": "ABIDE I+II",
+    "relation": "uses-data",
+    "cohort_description": "we obtained a final sample of 1383 subjects (680 ASD and 703 TD) from 35 sites.",
+    "n_by_dx": {
+      "ASD": 680,
+      "TD": 703,
+      "total": 1383
+    },
+    "sites": "35",
+    "pipeline": "Freesurfer v6.0 (structural); C-PAC (functional); NeuroHarmonize site harmonization",
+    "atlas": "Desikan-Killiany-Tourville (structural); Harvard-Oxford (functional)",
+    "claim_type": "predictive",
+    "finding": "The AUC values of 0.66\u00b10.05 and of 0.76\u00b10.04 were obtained in the ASD vs. TD discrimination when only structural or functional features are considered, respectively. The joint fusion approach led to an AUC of 0.78\u00b10.04.",
+    "reconstructible": "yes \u2014 participant list",
+    "evidence_quotes": [
+      "we obtained a final sample of 1383 subjects (680 ASD and 703 TD) from 35 sites.",
+      "To allow the reproducibility of the analysis, the identification numbers (IDs) of the participants selected in the final sample are reported in Additional file 1.",
+      "The AUC values of 0.66\u00b10.05 and of 0.76\u00b10.04 were obtained in the ASD vs. TD discrimination when only structural or functional features are considered, respectively. The joint fusion approach led to an AUC of 0.78\u00b10.04.",
+      "brain changes tend to occur in individuals with ASD in regions belonging to the Default Mode Network and to the Social Brain."
+    ]
+  }
+}
