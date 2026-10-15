@@ -1,0 +1,10 @@
+node_modules/
+.venv/
+__pycache__/
+.DS_Store
+~$*
+*.pyc
+experiments/abide/data/Outputs/
+experiments/abide/data/raw/
+experiments/abide/literature_review/pdfs/
+experiments/abide/store/
