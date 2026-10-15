@@ -23,7 +23,7 @@ run_deck() {
   (cd slides && npm ci --silent)
   datalad run -m "Build the deck (pptx) and its slide provenance (talk_provenance.ttl)" \
     --input slides/build_deck.js --input slides/values.js --input slides/values_map.json \
-    --input slides/apply_theme.js --input slides/old_deck_v3.md --input "slides/figs_slide/*.png" \
+    --input slides/apply_theme.js --input slides/old_deck_v3.md --input "slides/figs_slide/*.png" --input "slides/demo/*.md" \
     --output slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pptx --output slides/talk_provenance.ttl \
     "cd slides && node build_deck.js"
 }
@@ -38,7 +38,7 @@ run_pdf() {
 
 run_values() {
   datalad run -m "Check every mapped slide value against its result file" \
-    --input slides/values_map.json --input slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pptx \
+    --input slides/values_map.json --input slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pptx --input "slides/demo/*.md" \
     --output provenance/slide_value_check.txt \
     "mkdir -p provenance && uv run scripts/check_slide_values.py > provenance/slide_value_check.txt"
 }
