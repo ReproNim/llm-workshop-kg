@@ -50,7 +50,8 @@ run_graphs() {
   datalad run -m "ABIDE graph: SHACL validation and mutation tests" \
     --input "$ABIDE/graph/*.ttl" --input "$ABIDE/code/shapes.ttl" \
     --output "$ABIDE/results/shacl_report.txt" --output "$ABIDE/results/shacl_summary.json" \
-    "cd $ABIDE && uv run --frozen python code/validate.py"
+    --output "$ABIDE/SHA256SUMS" --output "$ABIDE/SHA256SUMS.json" \
+    "(cd $ABIDE && uv run --frozen python code/validate.py) && uv run scripts/refresh_checksums.py $ABIDE results/shacl_report.txt results/shacl_summary.json"
   datalad run -m "ds000030 graph: SHACL validation and missing-source mutation" \
     --input "$DS/results/combined_graph.ttl" --input "$DS/shapes.ttl" \
     --output "$DS/results/shacl_report.txt" --output "$DS/results/shacl_report.ttl" \
