@@ -1,0 +1,53 @@
+{
+  "scope": "Actual SPARQL execution. No LLM-only comparison performed.",
+  "queries": {
+    "participants": {
+      "query": "PREFIX ex: <urn:repronim:cnp:expanded:> PREFIX nidm: <http://purl.org/nidash/nidm#> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT (COUNT(?p) AS ?n) WHERE { ?p a prov:Person }",
+      "rows": [
+        {
+          "n": "272"
+        }
+      ],
+      "seconds": 0.0767
+    },
+    "barratt_source_lineage": {
+      "query": "PREFIX ex: <urn:repronim:cnp:expanded:> PREFIX nidm: <http://purl.org/nidash/nidm#> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?output ?source ?activity WHERE { VALUES ?output { <urn:repronim:cnp:expanded:derived/parcel1/sub-10159> } ?output prov:wasGeneratedBy ?activity; prov:wasDerivedFrom ?source . ?activity prov:used ?source }",
+      "rows": [
+        {
+          "output": "urn:repronim:cnp:expanded:derived/parcel1/sub-10159",
+          "source": "urn:repronim:cnp:expanded:record/barratt/sub-10159",
+          "activity": "urn:repronim:cnp:expanded:recompute/parcel1/sub-10159"
+        }
+      ],
+      "seconds": 0.0037
+    },
+    "claims_addressing_transfer": {
+      "query": "PREFIX ex: <urn:repronim:cnp:expanded:> PREFIX nidm: <http://purl.org/nidash/nidm#> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?claim ?scope WHERE { ?claim ex:addresses ex:Q2; ex:scope ?scope }",
+      "rows": [
+        {
+          "claim": "urn:repronim:cnp:expanded:C2",
+          "scope": "train UCLA; test COBRE; decreased"
+        }
+      ],
+      "seconds": 0.0022
+    },
+    "counterevidence_on_transfer": {
+      "query": "PREFIX ex: <urn:repronim:cnp:expanded:> PREFIX nidm: <http://purl.org/nidash/nidm#> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?claim WHERE { ?claim ex:qualifies ex:Q2 }",
+      "rows": [
+        {
+          "claim": "urn:repronim:cnp:expanded:C3"
+        }
+      ],
+      "seconds": 0.0017
+    },
+    "phenotype_columns": {
+      "query": "PREFIX ex: <urn:repronim:cnp:expanded:> PREFIX nidm: <http://purl.org/nidash/nidm#> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT (COUNT(?v) AS ?n) WHERE { ?v a nidm:DataElement }",
+      "rows": [
+        {
+          "n": "1983"
+        }
+      ],
+      "seconds": 0.0146
+    }
+  }
+}

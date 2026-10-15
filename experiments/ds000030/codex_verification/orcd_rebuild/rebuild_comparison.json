@@ -1,0 +1,502 @@
+{
+  "summary": {
+    "matched": 24,
+    "differed": 5,
+    "could-not-run": 0
+  },
+  "checks": [
+    {
+      "check": "participants (SPARQL count)",
+      "slide_value": 272,
+      "original": 272,
+      "rebuilt": 272,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "competency_queries.json",
+      "error": null
+    },
+    {
+      "check": "phenotype tables",
+      "slide_value": 52,
+      "original": 52,
+      "rebuilt": 52,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "coverage.json",
+      "error": null
+    },
+    {
+      "check": "table columns",
+      "slide_value": 1983,
+      "original": 1983,
+      "rebuilt": 1983,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "coverage.json",
+      "error": null
+    },
+    {
+      "check": "observed cells",
+      "slide_value": 411584,
+      "original": 411584,
+      "rebuilt": 411584,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "coverage.json",
+      "error": null
+    },
+    {
+      "check": "missing cells",
+      "slide_value": 127792,
+      "original": 127792,
+      "rebuilt": 127792,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "coverage.json",
+      "error": null
+    },
+    {
+      "check": "image inventory pointers",
+      "slide_value": 2531,
+      "original": 2531,
+      "rebuilt": 2531,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "coverage.json",
+      "error": null
+    },
+    {
+      "check": "NIDM triples",
+      "slide_value": 834327,
+      "original": 834327,
+      "rebuilt": 834327,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "coverage.json",
+      "error": null
+    },
+    {
+      "check": "combined graph triples",
+      "slide_value": 1113959,
+      "original": 1113959,
+      "rebuilt": 1113959,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "combined_summary.json",
+      "error": null
+    },
+    {
+      "check": "Barratt parcel1 matches (n)",
+      "slide_value": 272,
+      "original": 272,
+      "rebuilt": 272,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "derivative_validation.json",
+      "error": null
+    },
+    {
+      "check": "Barratt parcel1 checked (n)",
+      "slide_value": 272,
+      "original": 272,
+      "rebuilt": 272,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "derivative_validation.json",
+      "error": null
+    },
+    {
+      "check": "embedding participants",
+      "slide_value": 272,
+      "original": 272,
+      "rebuilt": 272,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "embedding_assessment.json",
+      "error": null
+    },
+    {
+      "check": "embedding features",
+      "slide_value": 10,
+      "original": 10,
+      "rebuilt": 10,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "embedding_assessment.json",
+      "error": null
+    },
+    {
+      "check": "imputed cells",
+      "slide_value": 3,
+      "original": 3,
+      "rebuilt": 3,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "embedding_assessment.json",
+      "error": null
+    },
+    {
+      "check": "UMAP trustworthiness seed42 k15",
+      "slide_value": 0.874,
+      "original": 0.8739,
+      "rebuilt": 0.8792,
+      "status": "differed",
+      "delta_vs_slide": 0.005199999999999982,
+      "file": "embedding_assessment.json",
+      "error": null
+    },
+    {
+      "check": "PCA trustworthiness k15",
+      "slide_value": 0.805,
+      "original": 0.8047,
+      "rebuilt": 0.8047,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "embedding_assessment.json",
+      "error": null
+    },
+    {
+      "check": "UMAP trustworthiness seed43",
+      "slide_value": 0.868,
+      "original": 0.8676,
+      "rebuilt": 0.8779,
+      "status": "differed",
+      "delta_vs_slide": 0.00990000000000002,
+      "file": "embedding_assessment.json",
+      "error": null
+    },
+    {
+      "check": "UMAP trustworthiness seed44",
+      "slide_value": 0.879,
+      "original": 0.8793,
+      "rebuilt": 0.8701,
+      "status": "differed",
+      "delta_vs_slide": -0.008900000000000019,
+      "file": "embedding_assessment.json",
+      "error": null
+    },
+    {
+      "check": "UMAP trustworthiness 30 neighbours",
+      "slide_value": 0.867,
+      "original": 0.8669,
+      "rebuilt": 0.8603,
+      "status": "differed",
+      "delta_vs_slide": -0.006700000000000039,
+      "file": "embedding_assessment.json",
+      "error": null
+    },
+    {
+      "check": "15-NN overlap seed43 vs 42 (~74%)",
+      "slide_value": 0.74,
+      "original": 0.7358,
+      "rebuilt": 0.7515,
+      "status": "differed",
+      "delta_vs_slide": 0.011499999999999955,
+      "file": "embedding_assessment.json",
+      "error": null
+    },
+    {
+      "check": "15-NN overlap seed44 vs 42 (~74%)",
+      "slide_value": 0.74,
+      "original": 0.7382,
+      "rebuilt": 0.7331,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "embedding_assessment.json",
+      "error": null
+    },
+    {
+      "check": "SHACL conforms",
+      "slide_value": true,
+      "original": true,
+      "rebuilt": true,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "shacl_summary.json",
+      "error": null
+    },
+    {
+      "check": "SHACL mutation (missing source) rejected",
+      "slide_value": true,
+      "original": true,
+      "rebuilt": true,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "shacl_summary.json",
+      "error": null
+    },
+    {
+      "check": "JSON Schema valid",
+      "slide_value": true,
+      "original": true,
+      "rebuilt": true,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "skill/schema_validation.json",
+      "error": null
+    },
+    {
+      "check": "JSON Schema wrong numeric type rejected",
+      "slide_value": true,
+      "original": true,
+      "rebuilt": true,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "skill/schema_validation.json",
+      "error": null
+    },
+    {
+      "check": "collaboration SHACL conforms",
+      "slide_value": true,
+      "original": true,
+      "rebuilt": true,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "collaboration_query.json",
+      "error": null
+    },
+    {
+      "check": "collaboration missing reviewer rejected",
+      "slide_value": true,
+      "original": true,
+      "rebuilt": true,
+      "status": "matched",
+      "delta_vs_slide": null,
+      "file": "collaboration_query.json",
+      "error": null
+    },
+    {
+      "check": "T1w entries (recomputed from pinned Git tree)",
+      "slide_value": 265,
+      "original": 265,
+      "rebuilt": 265,
+      "status": "matched",
+      "delta_vs_slide": 0,
+      "file": "research/tree.txt",
+      "error": null
+    },
+    {
+      "check": "resting BOLD entries (recomputed from pinned Git tree)",
+      "slide_value": 268,
+      "original": 268,
+      "rebuilt": 268,
+      "status": "matched",
+      "delta_vs_slide": 0,
+      "file": "research/tree.txt",
+      "error": null
+    },
+    {
+      "check": "T1w + rest candidates (recomputed from pinned Git tree)",
+      "slide_value": 261,
+      "original": 261,
+      "rebuilt": 261,
+      "status": "matched",
+      "delta_vs_slide": 0,
+      "file": "research/tree.txt",
+      "error": null
+    }
+  ],
+  "files": {
+    "identical": 22,
+    "total": 32,
+    "detail": [
+      {
+        "file": "claims_and_questions.ttl",
+        "original_sha256": "2f38f9f498690b4ab51baedf5bcd887d191f665bd011f2b18a81e89efc9dc91b",
+        "rebuilt_sha256": "2f38f9f498690b4ab51baedf5bcd887d191f665bd011f2b18a81e89efc9dc91b",
+        "identical": true
+      },
+      {
+        "file": "collaboration_query.json",
+        "original_sha256": "8d9b23079b8461cdffde11ac2844cfa60c742ada6ed1fe1b1f1b03575640e94b",
+        "rebuilt_sha256": "8d9b23079b8461cdffde11ac2844cfa60c742ada6ed1fe1b1f1b03575640e94b",
+        "identical": true
+      },
+      {
+        "file": "collaboration_shapes.ttl",
+        "original_sha256": "8649625dcd963be6a73ea110602f9fbaa47b8d677c4b7b60c2c44a2314576b58",
+        "rebuilt_sha256": "8649625dcd963be6a73ea110602f9fbaa47b8d677c4b7b60c2c44a2314576b58",
+        "identical": true
+      },
+      {
+        "file": "collaborative_example.ttl",
+        "original_sha256": "2a21385a57ff74c3a550dda63cd5d2e3a4b01ee6d0bde6f75c4dfe1dbf0baa2c",
+        "rebuilt_sha256": "2a21385a57ff74c3a550dda63cd5d2e3a4b01ee6d0bde6f75c4dfe1dbf0baa2c",
+        "identical": true
+      },
+      {
+        "file": "combined_graph.ttl",
+        "original_sha256": "30e014345d34f8f22841f0e95b17f4c5cb946463cd57848591d664b9b9642f15",
+        "rebuilt_sha256": "4d35751fd76313c34a5e2f5250179c5fae0388bb1ad39c599105928789b3b86a",
+        "identical": false
+      },
+      {
+        "file": "combined_summary.json",
+        "original_sha256": "a592392554ea10ca13115919d5730ea3ee192eab9f82fcb1f04fa13b9abff94d",
+        "rebuilt_sha256": "a592392554ea10ca13115919d5730ea3ee192eab9f82fcb1f04fa13b9abff94d",
+        "identical": true
+      },
+      {
+        "file": "competency_queries.json",
+        "original_sha256": "62960c7712f9edaf4ee19605cfa221312f73d3e5270d6b21e0f230e7c5e58eed",
+        "rebuilt_sha256": "04576d0947371e8691b9b5df29a7c3b96bc5e4e173f6b8fafa471b67645fc8ad",
+        "identical": false
+      },
+      {
+        "file": "coverage.json",
+        "original_sha256": "9ed5dacf8f10e103f98a7eda3e81bc87b0e96862f941e7de80f3be235b042aa3",
+        "rebuilt_sha256": "9ed5dacf8f10e103f98a7eda3e81bc87b0e96862f941e7de80f3be235b042aa3",
+        "identical": true
+      },
+      {
+        "file": "derivative_validation.json",
+        "original_sha256": "821627049571cd3e24d01fd25194dce18f0362740918bdaee506cedc5d340e89",
+        "rebuilt_sha256": "821627049571cd3e24d01fd25194dce18f0362740918bdaee506cedc5d340e89",
+        "identical": true
+      },
+      {
+        "file": "embedding_assessment.json",
+        "original_sha256": "0a4703443fa5d786f8d83ef78d8bb73482f0045035d32f8a5422e9eb22f87d1d",
+        "rebuilt_sha256": "c791649cd61808455f6cc2286dc4f3ae7680ea3505cbe7838b53f38cf31bb1fe",
+        "identical": false
+      },
+      {
+        "file": "embedding_input.json",
+        "original_sha256": "d5b0310916f8e65fcbc1c30a38ee2dcd7fe1d7c0b6702f9aaab480f68397c668",
+        "rebuilt_sha256": "d5b0310916f8e65fcbc1c30a38ee2dcd7fe1d7c0b6702f9aaab480f68397c668",
+        "identical": true
+      },
+      {
+        "file": "embedding_provenance.ttl",
+        "original_sha256": "489b0f202de0ad95f7caffe4dae88a072a805c6e7eec4856f1370e11443bbe14",
+        "rebuilt_sha256": "001515af275458f49068b608d87a09d94e739a1ff9e7a2f164d40c811b3e64a0",
+        "identical": false
+      },
+      {
+        "file": "manifest.json",
+        "original_sha256": "83a0f4fcc12bec47c34a65ece1192b4a8dfdfc7856d5cd19d0e653e17469c884",
+        "rebuilt_sha256": "83a0f4fcc12bec47c34a65ece1192b4a8dfdfc7856d5cd19d0e653e17469c884",
+        "identical": true
+      },
+      {
+        "file": "matrix_from_graph.json",
+        "original_sha256": "99b2fd9a4c4ca021a763d1e71b33550c7fcdeee15bc4a00a085a98dca371b104",
+        "rebuilt_sha256": "99b2fd9a4c4ca021a763d1e71b33550c7fcdeee15bc4a00a085a98dca371b104",
+        "identical": true
+      },
+      {
+        "file": "matrix_query.sparql",
+        "original_sha256": "8986409803f6fc96cbdf023839aff1578dba071ebccbf34777ac7e08df11bd7f",
+        "rebuilt_sha256": "8986409803f6fc96cbdf023839aff1578dba071ebccbf34777ac7e08df11bd7f",
+        "identical": true
+      },
+      {
+        "file": "nidm_phenotypes.ttl",
+        "original_sha256": "334c2435f6f123068544f19800fadc6570af04fb1f26ff9a1ec1a9f5cffb1f1e",
+        "rebuilt_sha256": "297ecaee120508eea0d1fe0637f5aa6ee0b2749becbc384e2978e20b28d4ad65",
+        "identical": false
+      },
+      {
+        "file": "participant_embedding.csv",
+        "original_sha256": "19e068fa44f466c79b7917615cfae0cbc0278b8bfaf61caaffe7228338a0767e",
+        "rebuilt_sha256": "0de9760c3cf3f569bbf9fd5832db18a2312ee3d9ff4feb7b8ae3ef3814c021d9",
+        "identical": false
+      },
+      {
+        "file": "phenotype_embedding.pdf",
+        "original_sha256": "9288c4d8f71e2ae4a3ef685763031281f589605edfcd38ca81a085172d26140d",
+        "rebuilt_sha256": "b6928b8c0e50fda4fd3547f3e40a492042f39ed58a2e5d98f25e6b30000aa55c",
+        "identical": false
+      },
+      {
+        "file": "phenotype_embedding.png",
+        "original_sha256": "90435186b2c515f8d28b48dc60432e423369b5cab2d09cc8f499ed30f07707ae",
+        "rebuilt_sha256": "6d878cdc917bfdef670666691b174ef2770627a66c8383f29ed9e383f537f2fc",
+        "identical": false
+      },
+      {
+        "file": "shacl_mutation_report.txt",
+        "original_sha256": "8109adc8e7dbe77979009ab29577f9aa7b1a6fb9c74ccf992594a546fa406810",
+        "rebuilt_sha256": "8109adc8e7dbe77979009ab29577f9aa7b1a6fb9c74ccf992594a546fa406810",
+        "identical": true
+      },
+      {
+        "file": "shacl_report.ttl",
+        "original_sha256": "4a53a3befd9bcdb7273ef3d6e47a83be519927771faee49ef0d2a44ee23be2be",
+        "rebuilt_sha256": "4a53a3befd9bcdb7273ef3d6e47a83be519927771faee49ef0d2a44ee23be2be",
+        "identical": true
+      },
+      {
+        "file": "shacl_report.txt",
+        "original_sha256": "77debc800e6c973b66475968bdf71e2e667df8f4108e7f5299fe1651e6606dc9",
+        "rebuilt_sha256": "77debc800e6c973b66475968bdf71e2e667df8f4108e7f5299fe1651e6606dc9",
+        "identical": true
+      },
+      {
+        "file": "shacl_summary.json",
+        "original_sha256": "4b6d941e96e609fb49d9abe322a3ce3fe318fc7d00671069ec950bdd91bf1490",
+        "rebuilt_sha256": "ac473752cd29b3110aa1ebf3e7cff5dc93c2ea476d357d01f581bd504eda145f",
+        "identical": false
+      },
+      {
+        "file": "skill/00_extraction.json",
+        "original_sha256": "e8021838514c7ff5bc54e177d9c8a815c4f518173745531a0aaef62be2230e60",
+        "rebuilt_sha256": "e8021838514c7ff5bc54e177d9c8a815c4f518173745531a0aaef62be2230e60",
+        "identical": true
+      },
+      {
+        "file": "skill/01_alignment.json",
+        "original_sha256": "6c1b3a2b8ee8cee0367b6c8667e9dd2e3b5f78f8453d1af6a41de405355c3194",
+        "rebuilt_sha256": "6c1b3a2b8ee8cee0367b6c8667e9dd2e3b5f78f8453d1af6a41de405355c3194",
+        "identical": true
+      },
+      {
+        "file": "skill/02_judge.json",
+        "original_sha256": "5c0aadca80447f8bcebb26f53fe7087296fc7c15e92c4e23587e1ad138a09839",
+        "rebuilt_sha256": "5c0aadca80447f8bcebb26f53fe7087296fc7c15e92c4e23587e1ad138a09839",
+        "identical": true
+      },
+      {
+        "file": "skill/pilot_report.json",
+        "original_sha256": "ed012836c875ac0a20353e0c14d16e721eeaabacaf47b7248b5d5947d7f6ac0f",
+        "rebuilt_sha256": "ed012836c875ac0a20353e0c14d16e721eeaabacaf47b7248b5d5947d7f6ac0f",
+        "identical": true
+      },
+      {
+        "file": "skill/prompt.txt",
+        "original_sha256": "7ef798413436d6081eb7797e1a8c2907bb34fe42b896e4e6b7d7b6e2ad340f65",
+        "rebuilt_sha256": "7ef798413436d6081eb7797e1a8c2907bb34fe42b896e4e6b7d7b6e2ad340f65",
+        "identical": true
+      },
+      {
+        "file": "skill/schema.json",
+        "original_sha256": "952e289d2a4b3a6024aa87608afa74c1b3cedabd9641983f853d6009cf10586f",
+        "rebuilt_sha256": "952e289d2a4b3a6024aa87608afa74c1b3cedabd9641983f853d6009cf10586f",
+        "identical": true
+      },
+      {
+        "file": "skill/schema_validation.json",
+        "original_sha256": "5510910054985961e667230e885ae5769acbf1fc9626c71f512dd63ce1184162",
+        "rebuilt_sha256": "5510910054985961e667230e885ae5769acbf1fc9626c71f512dd63ce1184162",
+        "identical": true
+      },
+      {
+        "file": "umap_runs.json",
+        "original_sha256": "6e58c2c2485a7b33b24f735701a43ed4fba33a3a480787e9951b8424ab4a6da1",
+        "rebuilt_sha256": "dfb735e0aeef33a27d2658f6a971aaa9bc38c424ab88e2c26951dcd5a369390d",
+        "identical": false
+      },
+      {
+        "file": "variable_catalog.json",
+        "original_sha256": "25dfc8153fd48efa51343b26489a644a5faba5103a7dbf29d4aebc957b5000e2",
+        "rebuilt_sha256": "25dfc8153fd48efa51343b26489a644a5faba5103a7dbf29d4aebc957b5000e2",
+        "identical": true
+      }
+    ]
+  },
+  "not_rerun": [
+    "skill_pilot.py extraction (frozen host-model artifacts; needs original web snapshots)",
+    "claims_and_questions.ttl (frozen input)",
+    "make_report.py (HTML report)"
+  ]
+}

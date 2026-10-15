@@ -1,0 +1,38 @@
+[
+  {
+    "id": "C1",
+    "mode": "host_sequential",
+    "faithfulness": "pass",
+    "qualification": "Numeric/name span grounded; statement and scope reviewed against surrounding source section."
+  },
+  {
+    "id": "C2",
+    "mode": "host_sequential",
+    "faithfulness": "pass",
+    "qualification": "Numeric/name span grounded; statement and scope reviewed against surrounding source section."
+  },
+  {
+    "id": "C3",
+    "mode": "host_sequential",
+    "faithfulness": "pass",
+    "qualification": "Numeric/name span grounded; statement and scope reviewed against surrounding source section."
+  },
+  {
+    "id": "M1",
+    "mode": "host_sequential",
+    "faithfulness": "pass",
+    "qualification": "Numeric/name span grounded; statement and scope reviewed against surrounding source section."
+  },
+  {
+    "id": "D1",
+    "mode": "host_sequential",
+    "faithfulness": "pass",
+    "qualification": "Numeric/name span grounded; statement and scope reviewed against surrounding source section."
+  },
+  {
+    "id": "G1",
+    "mode": "host_sequential",
+    "faithfulness": "pass",
+    "qualification": "Surface anchors the variable only; absence of Units verified by dictionary-key inspection."
+  }
+]

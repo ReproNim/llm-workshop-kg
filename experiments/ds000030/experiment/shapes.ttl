@@ -1,0 +1,24 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix nidm: <http://purl.org/nidash/nidm#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ex: <urn:repronim:cnp:expanded:> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+ex:AcquisitionShape a sh:NodeShape; sh:targetClass nidm:Acquisition;
+ sh:property [ sh:path dct:isPartOf; sh:minCount 1; sh:maxCount 1; sh:class nidm:Session ];
+ sh:property [ sh:path prov:qualifiedAssociation; sh:minCount 1; sh:class prov:Association ] .
+ex:AssociationShape a sh:NodeShape; sh:targetClass prov:Association;
+ sh:property [ sh:path prov:agent; sh:minCount 1; sh:maxCount 1; sh:class prov:Person ];
+ sh:property [ sh:path prov:hadRole; sh:minCount 1 ] .
+ex:ObjectShape a sh:NodeShape; sh:targetClass nidm:AcquisitionObject;
+ sh:property [ sh:path prov:wasGeneratedBy; sh:minCount 1; sh:maxCount 1; sh:class nidm:Acquisition ];
+ sh:property [ sh:path ex:participant; sh:minCount 1; sh:maxCount 1; sh:class prov:Person ] .
+ex:VariableShape a sh:NodeShape; sh:targetClass nidm:DataElement;
+ sh:property [ sh:path nidm:sourceVariable; sh:minCount 1; sh:maxCount 1 ];
+ sh:property [ sh:path prov:wasDerivedFrom; sh:minCount 1; sh:class prov:Entity ] .
+ex:DerivativeShape a sh:NodeShape; sh:targetClass nidm:Derivative;
+ sh:property [ sh:path prov:used; sh:minCount 1; sh:class prov:Entity ];
+ sh:property [ sh:path prov:wasAssociatedWith; sh:minCount 1; sh:class prov:SoftwareAgent ] .
+ex:DerivativeObjectShape a sh:NodeShape; sh:targetClass nidm:DerivativeObject;
+ sh:property [ sh:path prov:wasGeneratedBy; sh:minCount 1; sh:maxCount 1; sh:class nidm:Derivative ];
+ sh:property [ sh:path prov:wasDerivedFrom; sh:minCount 1; sh:class prov:Entity ] .

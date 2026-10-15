@@ -1,0 +1,3 @@
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ex: <urn:repronim:cnp:expanded:>
+SELECT ?pid ?variable ?value WHERE { VALUES ?variable { <urn:repronim:cnp:expanded:variable/barratt/bis_2attimp> <urn:repronim:cnp:expanded:variable/barratt/bis_2motimp> <urn:repronim:cnp:expanded:variable/barratt/bis_2npimp> <urn:repronim:cnp:expanded:variable/wais/voc_totalraw> <urn:repronim:cnp:expanded:variable/wais/lns_totalraw> <urn:repronim:cnp:expanded:variable/wais/mr_totalraw> <urn:repronim:cnp:expanded:variable/stopsignal/sst_ses_ssrt_quant> <urn:repronim:cnp:expanded:variable/ant/ant_conflict_rt_effect> <urn:repronim:cnp:expanded:variable/cpt/cpt_hits> <urn:repronim:cnp:expanded:variable/cpt/cpt_fa> } ?r ?variable ?value ; ex:participant ?pid . }

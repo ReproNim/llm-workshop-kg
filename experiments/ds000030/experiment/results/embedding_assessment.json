@@ -1,0 +1,45 @@
+{
+  "n_participants": 272,
+  "n_features": 10,
+  "imputed_cells": 3,
+  "umap": [
+    {
+      "seed": 42,
+      "nNeighbors": 15,
+      "minDist": 0.1,
+      "nEpochs": 500,
+      "metric": "euclidean",
+      "trustworthiness_k15": 0.8739,
+      "mean_neighbor_overlap_with_seed42": 1.0
+    },
+    {
+      "seed": 43,
+      "nNeighbors": 15,
+      "minDist": 0.1,
+      "nEpochs": 500,
+      "metric": "euclidean",
+      "trustworthiness_k15": 0.8676,
+      "mean_neighbor_overlap_with_seed42": 0.7358
+    },
+    {
+      "seed": 44,
+      "nNeighbors": 15,
+      "minDist": 0.1,
+      "nEpochs": 500,
+      "metric": "euclidean",
+      "trustworthiness_k15": 0.8793,
+      "mean_neighbor_overlap_with_seed42": 0.7382
+    },
+    {
+      "seed": 42,
+      "nNeighbors": 30,
+      "minDist": 0.1,
+      "nEpochs": 500,
+      "metric": "euclidean",
+      "trustworthiness_k15": 0.8669,
+      "mean_neighbor_overlap_with_seed42": 0.7206
+    }
+  ],
+  "pca_trustworthiness_k15": 0.8047,
+  "caveat": "Exploratory unsupervised geometry, no subtype or causal inference; missingness, instrument weighting, demographics and scanner effects remain relevant."
+}

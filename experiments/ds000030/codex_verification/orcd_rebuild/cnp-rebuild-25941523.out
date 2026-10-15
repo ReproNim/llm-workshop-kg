@@ -1,0 +1,137 @@
+=== 2026-10-15T11:54:08-04:00 host node2803 job 25941523 node=/home/satra/.local/share/pi-node/node-v22.22.3-linux-x64/bin/node v22.22.3
+=== 2026-10-15T11:54:08-04:00 STEP uv sync
+=== 2026-10-15T11:55:02-04:00 STEP build_nidm.py
+{
+  "tables": 52,
+  "dictionary_variables": 1984,
+  "table_variables": 1983,
+  "rows": 14144,
+  "observed_cells": 411584,
+  "missing_cells": 127792,
+  "missing_dictionary_columns": [],
+  "unknown_participants": [],
+  "duplicate_ids": [],
+  "image_inventory": 2531,
+  "parcel1_check": {
+    "n": 272,
+    "matches": 272
+  },
+  "triples": 834327
+}
+=== 2026-10-15T11:55:31-04:00 STEP prepare_embedding.py
+272 ['barratt/bis_2attimp', 'barratt/bis_2motimp', 'barratt/bis_2npimp', 'wais/voc_totalraw', 'wais/lns_totalraw', 'wais/mr_totalraw', 'stopsignal/sst_ses_ssrt_quant', 'ant/ant_conflict_rt_effect', 'cpt/cpt_hits', 'cpt/cpt_fa'] {'barratt/bis_2attimp': 1.0, 'barratt/bis_2motimp': 1.0, 'barratt/bis_2npimp': 1.0, 'wais/voc_totalraw': 1.0, 'wais/lns_totalraw': 1.0, 'wais/mr_totalraw': 1.0, 'stopsignal/sst_ses_ssrt_quant': 0.9926470588235294, 'ant/ant_conflict_rt_effect': 0.9963235294117647, 'cpt/cpt_hits': 1.0, 'cpt/cpt_fa': 1.0}
+=== 2026-10-15T11:56:07-04:00 STEP embed.cjs
+[
+  { seed: 42, n: 272, neighbors: 15 },
+  { seed: 43, n: 272, neighbors: 15 },
+  { seed: 44, n: 272, neighbors: 15 },
+  { seed: 42, n: 272, neighbors: 30 }
+]
+=== 2026-10-15T11:56:10-04:00 STEP assess_embedding.py
+{
+  "n_participants": 272,
+  "n_features": 10,
+  "imputed_cells": 3,
+  "umap": [
+    {
+      "seed": 42,
+      "nNeighbors": 15,
+      "minDist": 0.1,
+      "nEpochs": 500,
+      "metric": "euclidean",
+      "trustworthiness_k15": 0.8792,
+      "mean_neighbor_overlap_with_seed42": 1.0
+    },
+    {
+      "seed": 43,
+      "nNeighbors": 15,
+      "minDist": 0.1,
+      "nEpochs": 500,
+      "metric": "euclidean",
+      "trustworthiness_k15": 0.8779,
+      "mean_neighbor_overlap_with_seed42": 0.7515
+    },
+    {
+      "seed": 44,
+      "nNeighbors": 15,
+      "minDist": 0.1,
+      "nEpochs": 500,
+      "metric": "euclidean",
+      "trustworthiness_k15": 0.8701,
+      "mean_neighbor_overlap_with_seed42": 0.7331
+    },
+    {
+      "seed": 42,
+      "nNeighbors": 30,
+      "minDist": 0.1,
+      "nEpochs": 500,
+      "metric": "euclidean",
+      "trustworthiness_k15": 0.8603,
+      "mean_neighbor_overlap_with_seed42": 0.698
+    }
+  ],
+  "pca_trustworthiness_k15": 0.8047,
+  "caveat": "Exploratory unsupervised geometry, no subtype or causal inference; missingness, instrument weighting, demographics and scanner effects remain relevant."
+}
+=== 2026-10-15T11:56:26-04:00 STEP validate_schema.cjs
+{ valid: true, errors: null, wrong_numeric_type_rejected: true }
+=== 2026-10-15T11:56:26-04:00 STEP integrate_graph.py
+1113959
+=== 2026-10-15T11:57:06-04:00 STEP validate_graph.py
+True True
+=== 2026-10-15T11:57:33-04:00 STEP query_case_study.py
+{
+  "participants": {
+    "query": "PREFIX ex: <urn:repronim:cnp:expanded:> PREFIX nidm: <http://purl.org/nidash/nidm#> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT (COUNT(?p) AS ?n) WHERE { ?p a prov:Person }",
+    "rows": [
+      {
+        "n": "272"
+      }
+    ],
+    "seconds": 0.1735
+  },
+  "barratt_source_lineage": {
+    "query": "PREFIX ex: <urn:repronim:cnp:expanded:> PREFIX nidm: <http://purl.org/nidash/nidm#> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?output ?source ?activity WHERE { VALUES ?output { <urn:repronim:cnp:expanded:derived/parcel1/sub-10159> } ?output prov:wasGeneratedBy ?activity; prov:wasDerivedFrom ?source . ?activity prov:used ?source }",
+    "rows": [
+      {
+        "output": "urn:repronim:cnp:expanded:derived/parcel1/sub-10159",
+        "source": "urn:repronim:cnp:expanded:record/barratt/sub-10159",
+        "activity": "urn:repronim:cnp:expanded:recompute/parcel1/sub-10159"
+      }
+    ],
+    "seconds": 0.0027
+  },
+  "claims_addressing_transfer": {
+    "query": "PREFIX ex: <urn:repronim:cnp:expanded:> PREFIX nidm: <http://purl.org/nidash/nidm#> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?claim ?scope WHERE { ?claim ex:addresses ex:Q2; ex:scope ?scope }",
+    "rows": [
+      {
+        "claim": "urn:repronim:cnp:expanded:C2",
+        "scope": "train UCLA; test COBRE; decreased"
+      }
+    ],
+    "seconds": 0.0017
+  },
+  "counterevidence_on_transfer": {
+    "query": "PREFIX ex: <urn:repronim:cnp:expanded:> PREFIX nidm: <http://purl.org/nidash/nidm#> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT ?claim WHERE { ?claim ex:qualifies ex:Q2 }",
+    "rows": [
+      {
+        "claim": "urn:repronim:cnp:expanded:C3"
+      }
+    ],
+    "seconds": 0.0015
+  },
+  "phenotype_columns": {
+    "query": "PREFIX ex: <urn:repronim:cnp:expanded:> PREFIX nidm: <http://purl.org/nidash/nidm#> PREFIX prov: <http://www.w3.org/ns/prov#> SELECT (COUNT(?v) AS ?n) WHERE { ?v a nidm:DataElement }",
+    "rows": [
+      {
+        "n": "1983"
+      }
+    ],
+    "seconds": 0.012
+  }
+}
+=== 2026-10-15T11:57:49-04:00 STEP collaborative_example.py
+True True 3
+=== 2026-10-15T11:57:50-04:00 STEP compare
+{"matched": 24, "differed": 5, "could-not-run": 0}
+=== 2026-10-15T11:57:51-04:00 DONE

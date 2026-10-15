@@ -1,0 +1,26 @@
+{
+  "status": "Illustrative collaboration model, separate from factual dataset graph",
+  "conforms": true,
+  "missing_reviewer_rejected": true,
+  "query": "PREFIX ex:<urn:repronim:illustrative:> PREFIX prov:<http://www.w3.org/ns/prov#> SELECT ?person ?role ?question ?input WHERE { ?activity ex:addresses ?question; prov:used ?input; prov:qualifiedAssociation ?association. ?association prov:agent ?person; prov:hadRole ?role. }",
+  "results": [
+    {
+      "person": "urn:repronim:illustrative:analystA",
+      "role": "urn:repronim:illustrative:Analyst",
+      "question": "urn:repronim:cnp:expanded:Q1",
+      "input": "urn:repronim:cnp:expanded:C1"
+    },
+    {
+      "person": "urn:repronim:illustrative:analystB",
+      "role": "urn:repronim:illustrative:Analyst",
+      "question": "urn:repronim:cnp:expanded:Q3",
+      "input": "urn:repronim:cnp:p2"
+    },
+    {
+      "person": "urn:repronim:illustrative:reviewerC",
+      "role": "urn:repronim:illustrative:Reviewer",
+      "question": "urn:repronim:cnp:expanded:Q1",
+      "input": "urn:repronim:cnp:p2"
+    }
+  ]
+}

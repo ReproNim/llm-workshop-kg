@@ -1,0 +1,342 @@
+{
+  "checked_on": "2026-10-15",
+  "old_deck": "Knowledge_Graphs_Skills_and_Collaborative_Research.pptx (v3, Codex-produced)",
+  "counts": {
+    "confirmed": 39,
+    "could not access": 1
+  },
+  "claims": [
+    {
+      "claim": "Kim 2023: UCLA both-direction LOOCV accuracy 70.2%",
+      "slides": "12,15,18",
+      "source": "https://doi.org/10.3389/fpsyt.2023.1232015 Results",
+      "verdict": "confirmed",
+      "quote_found": "Dataset 1: accuracy = 70.2%, permutation test p = 0.001",
+      "note": ""
+    },
+    {
+      "claim": "Kim 2023: train UCLA, test COBRE, decreased connectivity 61.5%",
+      "slides": "12",
+      "source": "https://doi.org/10.3389/fpsyt.2023.1232015 Results",
+      "verdict": "confirmed",
+      "quote_found": "decreased rsFC: accuracy = 61.5%, permutation p = 0.003, sign test p = 0.009",
+      "note": ""
+    },
+    {
+      "claim": "Kim 2023: reverse transfer not above chance",
+      "slides": "12",
+      "source": "https://doi.org/10.3389/fpsyt.2023.1232015 Results",
+      "verdict": "confirmed",
+      "quote_found": "None of the CPM-SVM prediction models trained with Dataset 2 and tested on Dataset 1 could make predictions above chance",
+      "note": ""
+    },
+    {
+      "claim": "Kim 2023: UCLA 47+47; COBRE 62+73",
+      "slides": "12,34",
+      "source": "https://doi.org/10.3389/fpsyt.2023.1232015 Results",
+      "verdict": "confirmed",
+      "quote_found": "Overall, 47 patients and 47 controls from Dataset 1 and 62 patients and 73 controls from Dataset 2 were analyzed.",
+      "note": ""
+    },
+    {
+      "claim": "Kim 2023: CPM with linear SVM",
+      "slides": "12",
+      "source": "https://doi.org/10.3389/fpsyt.2023.1232015 Materials and Methods",
+      "verdict": "confirmed",
+      "quote_found": "We modified the CPM approach by replacing its core learning algorithm with a linear support vector machine (SVM)",
+      "note": ""
+    },
+    {
+      "claim": "Kim 2023: GRETNA / SPM12 preprocessing",
+      "slides": "13,35",
+      "source": "https://doi.org/10.3389/fpsyt.2023.1232015 Materials and Methods",
+      "verdict": "confirmed",
+      "quote_found": "analyzed using the GRETNA software package in SPM12",
+      "note": ""
+    },
+    {
+      "claim": "Kim 2023: sensitivity analysis changes GSR and scrubbing together",
+      "slides": "12",
+      "source": "https://doi.org/10.3389/fpsyt.2023.1232015 Results",
+      "verdict": "confirmed",
+      "quote_found": "we conducted preprocessing without global signal regression and head motion scrubbing and checked the results are similar.",
+      "note": "Both removed in one analysis, so neither effect is isolated."
+    },
+    {
+      "claim": "Kim 2023: tests whether increased connectivity adds information beyond decreased",
+      "slides": "11",
+      "source": "https://doi.org/10.3389/fpsyt.2023.1232015",
+      "verdict": "could not access",
+      "quote_found": "",
+      "note": "Framing not quoted in the fetched passages; title is 'Bidirectional connectivity alterations in schizophrenia: a multivariate, machine-learning approach'. Not checked verbatim."
+    },
+    {
+      "claim": "Gorgolewski 2017 v2: FreeSurfer 6.0.0 BBR 9 DOF",
+      "slides": "33",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5664981/ Preprocessing",
+      "verdict": "confirmed",
+      "quote_found": "coregistered to the corresponding T1 weighted volume using boundary based registration with 9 degrees of freedom - implemented in FreeSurfer v6.0.0",
+      "note": ""
+    },
+    {
+      "claim": "Gorgolewski 2017 v2: ANTs 2.1.0 SyN to MNI152NLin2009cAsym",
+      "slides": "33",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5664981/ Preprocessing",
+      "verdict": "confirmed",
+      "quote_found": "skullstripped ICBM 152 Nonlinear Asymmetrical template version 2009c...using symmetric image normalization method (SyN) nonlinear transformation with affine initialization implemented in ANTs v2.1.0",
+      "note": ""
+    },
+    {
+      "claim": "Gorgolewski 2017 v2: single-step Lanczos resampling",
+      "slides": "33",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5664981/ Preprocessing",
+      "verdict": "confirmed",
+      "quote_found": "Motion correcting transformations, transformation to T1 weighted space and MNI template warp were applied in a single step using antsApplyTransformations v2.1.0 with Lanczos interpolation.",
+      "note": ""
+    },
+    {
+      "claim": "Gorgolewski 2017 v2: 255 in stop-signal model",
+      "slides": "34",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5664981/",
+      "verdict": "confirmed",
+      "quote_found": "255 subjects were included the STOPSIGNAL task analysis",
+      "note": ""
+    },
+    {
+      "claim": "Gorgolewski 2017 v2: T1w TR/TE 1.9 s / 2.26 ms in methods",
+      "slides": "43",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5664981/ Participants and procedures",
+      "verdict": "confirmed",
+      "quote_found": "TR=1.9s, TE=2.26ms",
+      "note": ""
+    },
+    {
+      "claim": "Gorgolewski 2017 v2: missing-T1 IDs 10299,10428,10501,10971,11121,70035,70036",
+      "slides": "35",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5664981/ Table 1",
+      "verdict": "confirmed",
+      "quote_found": "10971, 10501, 70036, 70035, 11121, 10299, 10428",
+      "note": "Same set, different order."
+    },
+    {
+      "claim": "Gorgolewski 2017 v2: FMRIPREP version 0.4.4 (StructSense record M1)",
+      "slides": "15",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5664981/",
+      "verdict": "confirmed",
+      "quote_found": "Results included in this manuscript come from preprocessing performed using FMRIPREP version 0.4.4",
+      "note": ""
+    },
+    {
+      "claim": "ds000030 dataset_description group counts 138/58/49/45 (=290)",
+      "slides": "3,4,34",
+      "source": "https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/dataset_description.json",
+      "verdict": "confirmed",
+      "quote_found": "healthy individuals from the community (138 subjects), as well as samples of individuals diagnosed with schizoprenia (58), bipolar disorder (49), and ADHD (45)",
+      "note": ""
+    },
+    {
+      "claim": "ds000030 participants.tsv 130/50/49/43 (=272)",
+      "slides": "3,4,34",
+      "source": "https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/participants.tsv",
+      "verdict": "confirmed",
+      "quote_found": "CONTROL 130, SCHZ 50, BIPOLAR 49, ADHD 43 (counted)",
+      "note": "Poldrack 2016 reports the same 130/50/49/43."
+    },
+    {
+      "claim": "sub-10159 rest BOLD: TR 2 s, TE 0.03 s, 3 T, serial 35343, j-, 34 slice times",
+      "slides": "30",
+      "source": "https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/sub-10159/func/sub-10159_task-rest_bold.json",
+      "verdict": "confirmed",
+      "quote_found": "RepetitionTime 2, EchoTime 0.03, MagneticFieldStrength 3, DeviceSerialNumber 35343, PhaseEncodingDirection j-, SliceTiming n=34",
+      "note": ""
+    },
+    {
+      "claim": "task-rest instruction: eyes open, relaxed, remain awake",
+      "slides": "30",
+      "source": "https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/task-rest_bold.json",
+      "verdict": "confirmed",
+      "quote_found": "keep your eyes open and remain relaxed. It is still important that you remain still and do not fall asleep",
+      "note": "'remain awake' paraphrases 'do not fall asleep'."
+    },
+    {
+      "claim": "sub-10159 T1w JSON 2.53 s / 3.31 ms",
+      "slides": "43",
+      "source": "https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/sub-10159/anat/sub-10159_T1w.json",
+      "verdict": "confirmed",
+      "quote_found": "RepetitionTime 2.53, EchoTime 0.00331",
+      "note": ""
+    },
+    {
+      "claim": "stop-signal events: 256 rows, 96 GO / 32 STOP / 128 NULL",
+      "slides": "31",
+      "source": "https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/sub-10159/func/sub-10159_task-stopsignal_events.tsv",
+      "verdict": "confirmed",
+      "quote_found": "trial_type counts NULL 128, GO 96, STOP 32 (counted)",
+      "note": ""
+    },
+    {
+      "claim": "stop outcomes 17 SuccessfulStop / 15 UnsuccessfulStop; 94 SuccessfulGo; 2 'UnuccessfulGo'",
+      "slides": "31",
+      "source": "https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/sub-10159/func/sub-10159_task-stopsignal_events.tsv",
+      "verdict": "confirmed",
+      "quote_found": "SuccessfulGo 94, SuccessfulStop 17, UnsuccessfulStop 15, UnuccessfulGo 2 (counted)",
+      "note": "Source spelling 'UnuccessfulGo' confirmed."
+    },
+    {
+      "claim": "sub-10159 sst_ses_ssrt_quant 200.125; sst_ses_ssrt 216.625",
+      "slides": "32",
+      "source": "https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/phenotype/stopsignal.tsv",
+      "verdict": "confirmed",
+      "quote_found": "200.125 / 216.625",
+      "note": ""
+    },
+    {
+      "claim": "stopsignal dictionary: two distinct SSRT definitions, no Units field (record G1)",
+      "slides": "32",
+      "source": "https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/phenotype/stopsignal.json",
+      "verdict": "confirmed",
+      "quote_found": "Quantile RT minus SSD50 ... Recommended SSRT value to use. / median RT ... alternative, though less optimal",
+      "note": "No Units key on either variable."
+    },
+    {
+      "claim": "barratt bis_parcel1 = mean of items 19 and 17 (record D1)",
+      "slides": "7",
+      "source": "https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/phenotype/barratt.json",
+      "verdict": "confirmed",
+      "quote_found": "1. Acts impulsively (mean of item 19 and 17)",
+      "note": ""
+    },
+    {
+      "claim": "T1w + rest candidates 261 (265 T1w, 268 rest)",
+      "slides": "29",
+      "source": "https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/ Git tree",
+      "verdict": "confirmed",
+      "quote_found": "recomputed from pinned tree: 265 / 268 / 261",
+      "note": ""
+    },
+    {
+      "claim": "Poldrack 2016: data descriptor enabling dimensional study across diagnoses",
+      "slides": "11",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5139672/",
+      "verdict": "confirmed",
+      "quote_found": "dimensional approach ... across healthy individuals and those with neuropsychiatric conditions; data descriptor",
+      "note": "Summarised by fetch tool, not a verbatim sentence."
+    },
+    {
+      "claim": "Brain Researcher preprint: Chen et al., v1 20 Aug 2026",
+      "slides": "40",
+      "source": "https://arxiv.org/html/2608.19902v1",
+      "verdict": "confirmed",
+      "quote_found": "Zijiao Chen, ... Russell A. Poldrack; submitted 20 Aug 2026",
+      "note": ""
+    },
+    {
+      "claim": "Brain Researcher: 23.3% -> 93.6% first-choice route/tool selection, 60 tasks, 7 models",
+      "slides": "40",
+      "source": "https://arxiv.org/html/2608.19902v1 Results",
+      "verdict": "confirmed",
+      "quote_found": "Across 60 tool-calling tasks and seven models, scores without versus with Brain Researcher were 23.3% versus 93.6% for first-action correct route/tool selection",
+      "note": ""
+    },
+    {
+      "claim": "Brain Researcher: grounding 4.6% -> 22.0% on separate 50-question benchmark",
+      "slides": "40",
+      "source": "https://arxiv.org/html/2608.19902v1 Results",
+      "verdict": "confirmed",
+      "quote_found": "A separate 50-question benchmark ... verified-groundedness rate rose from 4.6% to 22.0%",
+      "note": ""
+    },
+    {
+      "claim": "Brain Researcher: no-direct-KG ablation uses a different exact-label endpoint",
+      "slides": "40",
+      "source": "https://arxiv.org/html/2608.19902v1 Results",
+      "verdict": "confirmed",
+      "quote_found": "without direct KG calls selected an acceptable exact top-1 route in 362 of 420 episodes (86.2%)",
+      "note": "Different endpoint (exact top-1 route), so not subtractable, as the note said."
+    },
+    {
+      "claim": "sensein/agent_skills PR #33: shared LinkML extraction records; targets #34 branch; open",
+      "slides": "38",
+      "source": "https://github.com/sensein/agent_skills/pull/33",
+      "verdict": "confirmed",
+      "quote_found": "base=judge-feedback-loop; state OPEN (checked 2026-10-15)",
+      "note": "Still open."
+    },
+    {
+      "claim": "sensein/agent_skills PR #34: judge + correction loop; open",
+      "slides": "38",
+      "source": "https://github.com/sensein/agent_skills/pull/34",
+      "verdict": "confirmed",
+      "quote_found": "'Judge feedback loop + concept mapping'; base=main; OPEN",
+      "note": "Still open."
+    },
+    {
+      "claim": "sensein/agent_skills PR #36: MeSH-grounded search; only mesh_only tested",
+      "slides": "38",
+      "source": "https://github.com/sensein/agent_skills/pull/36",
+      "verdict": "confirmed",
+      "quote_found": "mesh_only mode with a live PubMed count ... closure, hybrid, and llm modes were not run here",
+      "note": "Still open."
+    },
+    {
+      "claim": "K-Dense PR #227 merged; acknowledges Brent McPherson's datalad-cli",
+      "slides": "39,41",
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills/pull/227",
+      "verdict": "confirmed",
+      "quote_found": "MERGED 2026-09-10; body mentions McPherson/datalad-cli",
+      "note": ""
+    },
+    {
+      "claim": "K-Dense PR #265 open; adapts datalad-cli evidence map",
+      "slides": "39,41",
+      "source": "https://github.com/K-Dense-AI/scientific-agent-skills/pull/265",
+      "verdict": "confirmed",
+      "quote_found": "OPEN; body mentions McPherson/datalad-cli",
+      "note": "Still open 2026-10-15."
+    },
+    {
+      "claim": "StructSense 0.12.0 at dde54251",
+      "slides": "3,14",
+      "source": "https://github.com/sensein/agent_skills/blob/dde54251a5a70f55d0b9bbbaab0dd21013b1bbfc/skills/structsense/SKILL.md",
+      "verdict": "confirmed",
+      "quote_found": "version: \"0.12.0\"; Skill version 0.12.0; ontology 2.5.0",
+      "note": ""
+    },
+    {
+      "claim": "AbstractAtlas claims.py independently checks source quotations",
+      "slides": "19",
+      "source": "https://github.com/sensein/abstractatlas/blob/181652e2be0902a4926d292d9ec0e230dfd97b96/src/ohbm2026/enrich/claims.py",
+      "verdict": "confirmed",
+      "quote_found": "if claim.source not in manuscript: dropped_unverified += 1 ... continue",
+      "note": "Code re-checks substring regardless of the model's flag."
+    },
+    {
+      "claim": "AbstractAtlas claims.py filters off-vocabulary ECO codes",
+      "slides": "19",
+      "source": "https://github.com/sensein/abstractatlas/blob/181652e2be0902a4926d292d9ec0e230dfd97b96/src/ohbm2026/enrich/claims.py",
+      "verdict": "confirmed",
+      "quote_found": "(kept_codes if code in vocab_ids else off_codes).append(code)",
+      "note": "Claim kept, codes filtered. The function docstring says such claims are DROPPED, which contradicts the code; the deck's wording matches the code."
+    },
+    {
+      "claim": "AbstractAtlas authors.py dedup by normalised name + primary affiliation; corpus-local sorted numeric IDs",
+      "slides": "21",
+      "source": "https://github.com/sensein/abstractatlas/blob/181652e2be0902a4926d292d9ec0e230dfd97b96/src/ohbm2026/ui_data/authors.py",
+      "verdict": "confirmed",
+      "quote_found": "De-dup key is (lower(name), lower(primary_affiliation)); assign stable, sorted author_ids (sorted by (name, primary_aff)) ... author_id: index",
+      "note": ""
+    }
+  ],
+  "structsense_records": {
+    "checked": 6,
+    "confirmed": 6,
+    "ids": [
+      "C1",
+      "C2",
+      "C3",
+      "M1",
+      "D1",
+      "G1"
+    ]
+  }
+}

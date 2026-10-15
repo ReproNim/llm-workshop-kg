@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "records"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "source",
+          "kind",
+          "statement",
+          "quote",
+          "start",
+          "end",
+          "value",
+          "unit",
+          "scope",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source": {
+            "enum": [
+              "kim2023",
+              "preprocessing2017",
+              "barratt",
+              "stopsignal"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "result",
+              "method",
+              "derivation",
+              "metadata_gap"
+            ]
+          },
+          "statement": {
+            "type": "string"
+          },
+          "quote": {
+            "type": "string"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "scope": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "paper_reported",
+              "dictionary_reported",
+              "not_reported"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

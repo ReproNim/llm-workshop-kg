@@ -1,0 +1,67 @@
+{
+  "skill": "StructSense 0.12.0",
+  "commit": "dde54251a5a70f55d0b9bbbaab0dd21013b1bbfc",
+  "mode": "host-model structured subset plus upstream span_validator.py",
+  "records": 6,
+  "grounding": [
+    {
+      "id": "C1",
+      "passes_exact_span": true
+    },
+    {
+      "id": "C2",
+      "passes_exact_span": true
+    },
+    {
+      "id": "C3",
+      "passes_exact_span": true
+    },
+    {
+      "id": "M1",
+      "passes_exact_span": true
+    },
+    {
+      "id": "D1",
+      "passes_exact_span": true
+    },
+    {
+      "id": "G1",
+      "passes_exact_span": true
+    }
+  ],
+  "code_tests": [
+    {
+      "test": "correct span accepted",
+      "passed": true
+    },
+    {
+      "test": "wrong offsets repaired and disclosed",
+      "passed": true
+    },
+    {
+      "test": "fabricated surface dropped",
+      "passed": true
+    },
+    {
+      "test": "causal overclaim can pass span validation",
+      "passed": true,
+      "interpretation": "Expected limitation. Semantic reviewer rejects; lexical validator cannot establish entailment."
+    }
+  ],
+  "skill_validation": "bounded smoke and adversarial unit tests; no held-out recall benchmark or multi-model comparison",
+  "output_validation": "JSON Schema, exact spans, separate host faithfulness review, scoped graph assertions",
+  "independence": "same host model; procedural review, not independent process/model",
+  "source_sha256": {
+    "kim2023": "05c0130db40bbb5d40db26b023e930cf96a921c76020f319f5affc2d398b52b8",
+    "preprocessing2017": "54dea80fd4c5e6a6c0f48cd5878397ab2f8988d7a792fdbcb58cfec2729ef8f8",
+    "barratt": "ed8ddfd7263bb2a6e62e254800402163805c04780b41c1f1a9320b8f6489125c",
+    "stopsignal": "3efea81afbeab388db96de9e18a2e9a00f75a79de045b2cfac484cd0dd3a5717"
+  },
+  "schema_sha256": "952e289d2a4b3a6024aa87608afa74c1b3cedabd9641983f853d6009cf10586f",
+  "limitations": [
+    "Schema and span compliance do not prove entailment.",
+    "Paper cohort IDs and actual image lineage unavailable.",
+    "No exhaustive extraction or validated skill-wide performance claim."
+  ],
+  "source_model": "host:Codex; exact model identifier unavailable"
+}

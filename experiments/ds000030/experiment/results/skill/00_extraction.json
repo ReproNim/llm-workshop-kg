@@ -1,0 +1,82 @@
+{
+  "records": [
+    {
+      "id": "C1",
+      "source": "kim2023",
+      "kind": "result",
+      "statement": "UCLA within-dataset classification using both connectivity directions reports 70.2% accuracy.",
+      "quote": "70.2%",
+      "start": 8407,
+      "end": 8412,
+      "value": 70.2,
+      "unit": "percent",
+      "scope": "UCLA; both directions; leave-one-out",
+      "status": "paper_reported"
+    },
+    {
+      "id": "C2",
+      "source": "kim2023",
+      "kind": "result",
+      "statement": "Training on UCLA and testing on COBRE using decreased connectivity reports 61.5% accuracy.",
+      "quote": "61.5%",
+      "start": 24777,
+      "end": 24782,
+      "value": 61.5,
+      "unit": "percent",
+      "scope": "train UCLA; test COBRE; decreased",
+      "status": "paper_reported"
+    },
+    {
+      "id": "C3",
+      "source": "kim2023",
+      "kind": "result",
+      "statement": "The reverse transfer direction did not predict above chance.",
+      "quote": "None of the CPM-SVM prediction models",
+      "start": 24908,
+      "end": 24945,
+      "value": null,
+      "unit": null,
+      "scope": "train COBRE; test UCLA",
+      "status": "paper_reported"
+    },
+    {
+      "id": "M1",
+      "source": "preprocessing2017",
+      "kind": "method",
+      "statement": "The preprocessing descriptor reports FMRIPREP version 0.4.4.",
+      "quote": "FMRIPREP version 0.4.4",
+      "start": 23147,
+      "end": 23169,
+      "value": null,
+      "unit": null,
+      "scope": "2017 preprocessing descriptor; not Kim 2023 pipeline",
+      "status": "paper_reported"
+    },
+    {
+      "id": "D1",
+      "source": "barratt",
+      "kind": "derivation",
+      "statement": "Barratt parcel 1 is the mean of items 19 and 17.",
+      "quote": "mean of item 19 and 17",
+      "start": 2989,
+      "end": 3011,
+      "value": null,
+      "unit": null,
+      "scope": "barratt/bis_parcel1",
+      "status": "dictionary_reported"
+    },
+    {
+      "id": "G1",
+      "source": "stopsignal",
+      "kind": "metadata_gap",
+      "statement": "The inspected stopsignal dictionary does not specify a Units field for sst_ses_ssrt_quant.",
+      "quote": "sst_ses_ssrt_quant",
+      "start": 6029,
+      "end": 6047,
+      "value": null,
+      "unit": null,
+      "scope": "stopsignal/sst_ses_ssrt_quant; unit unknown",
+      "status": "not_reported"
+    }
+  ]
+}

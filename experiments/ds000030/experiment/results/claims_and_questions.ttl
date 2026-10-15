@@ -1,0 +1,649 @@
+@prefix ex: <urn:repronim:cnp:expanded:> .
+@prefix old: <urn:repronim:cnp:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:C1 a prov:Entity,
+        ex:Claim ;
+    rdfs:label "UCLA within-dataset classification using both connectivity directions reports 70.2% accuracy." ;
+    prov:wasDerivedFrom old:p3 ;
+    prov:wasGeneratedBy ex:skillRun ;
+    ex:addresses ex:Q1 ;
+    ex:end 8412 ;
+    ex:evidenceQuote "70.2%" ;
+    ex:scope "UCLA; both directions; leave-one-out" ;
+    ex:start 8407 ;
+    ex:status "paper_reported" ;
+    ex:supportedBy old:eval-ucla-loo .
+
+ex:C2 a prov:Entity,
+        ex:Claim ;
+    rdfs:label "Training on UCLA and testing on COBRE using decreased connectivity reports 61.5% accuracy." ;
+    prov:wasDerivedFrom old:p3 ;
+    prov:wasGeneratedBy ex:skillRun ;
+    ex:addresses ex:Q2 ;
+    ex:end 24782 ;
+    ex:evidenceQuote "61.5%" ;
+    ex:scope "train UCLA; test COBRE; decreased" ;
+    ex:start 24777 ;
+    ex:status "paper_reported" ;
+    ex:supportedBy old:eval-ucla-cobre-dec .
+
+ex:C3 a prov:Entity,
+        ex:Claim ;
+    rdfs:label "The reverse transfer direction did not predict above chance." ;
+    prov:wasDerivedFrom old:p3 ;
+    prov:wasGeneratedBy ex:skillRun ;
+    ex:end 24945 ;
+    ex:evidenceQuote "None of the CPM-SVM prediction models" ;
+    ex:qualifies ex:Q2 ;
+    ex:scope "train COBRE; test UCLA" ;
+    ex:start 24908 ;
+    ex:status "paper_reported" .
+
+ex:D1 a prov:Entity,
+        ex:Claim ;
+    rdfs:label "Barratt parcel 1 is the mean of items 19 and 17." ;
+    prov:wasDerivedFrom <urn:repronim:cnp:expanded:source/barratt.json> ;
+    prov:wasGeneratedBy ex:skillRun ;
+    ex:end 3011 ;
+    ex:evidenceQuote "mean of item 19 and 17" ;
+    ex:scope "barratt/bis_parcel1" ;
+    ex:start 2989 ;
+    ex:status "dictionary_reported" .
+
+ex:G1 a prov:Entity,
+        ex:Claim ;
+    rdfs:label "The inspected stopsignal dictionary does not specify a Units field for sst_ses_ssrt_quant." ;
+    prov:wasDerivedFrom <urn:repronim:cnp:expanded:source/stopsignal.json> ;
+    prov:wasGeneratedBy ex:skillRun ;
+    ex:end 6047 ;
+    ex:evidenceQuote "sst_ses_ssrt_quant" ;
+    ex:scope "stopsignal/sst_ses_ssrt_quant; unit unknown" ;
+    ex:start 6029 ;
+    ex:status "not_reported" .
+
+ex:M1 a prov:Entity,
+        ex:Claim ;
+    rdfs:label "The preprocessing descriptor reports FMRIPREP version 0.4.4." ;
+    prov:wasDerivedFrom old:p2 ;
+    prov:wasGeneratedBy ex:skillRun ;
+    ex:addresses ex:Q3 ;
+    ex:end 23169 ;
+    ex:evidenceQuote "FMRIPREP version 0.4.4" ;
+    ex:scope "2017 preprocessing descriptor; not Kim 2023 pipeline" ;
+    ex:start 23147 ;
+    ex:status "paper_reported" .
+
+ex:Q4 a ex:ResearchQuestion ;
+    rdfs:label "Can dimensional cognitive and neural measures be studied across diagnoses?" ;
+    ex:posedBy old:p1 ;
+    ex:resolution "Data resource enables investigation; descriptor does not resolve all biological hypotheses." .
+
+old:p3-ucla-cohort ex:membershipStatus "not reconstructed; no participant-level manifest retrieved" .
+
+old:sub-10159 ex:describesPerson ex:sub-10159 .
+
+old:sub-10171 ex:describesPerson ex:sub-10171 .
+
+old:sub-10189 ex:describesPerson ex:sub-10189 .
+
+old:sub-10193 ex:describesPerson ex:sub-10193 .
+
+old:sub-10206 ex:describesPerson ex:sub-10206 .
+
+old:sub-10217 ex:describesPerson ex:sub-10217 .
+
+old:sub-10225 ex:describesPerson ex:sub-10225 .
+
+old:sub-10227 ex:describesPerson ex:sub-10227 .
+
+old:sub-10228 ex:describesPerson ex:sub-10228 .
+
+old:sub-10235 ex:describesPerson ex:sub-10235 .
+
+old:sub-10249 ex:describesPerson ex:sub-10249 .
+
+old:sub-10269 ex:describesPerson ex:sub-10269 .
+
+old:sub-10271 ex:describesPerson ex:sub-10271 .
+
+old:sub-10273 ex:describesPerson ex:sub-10273 .
+
+old:sub-10274 ex:describesPerson ex:sub-10274 .
+
+old:sub-10280 ex:describesPerson ex:sub-10280 .
+
+old:sub-10290 ex:describesPerson ex:sub-10290 .
+
+old:sub-10292 ex:describesPerson ex:sub-10292 .
+
+old:sub-10299 ex:describesPerson ex:sub-10299 .
+
+old:sub-10304 ex:describesPerson ex:sub-10304 .
+
+old:sub-10316 ex:describesPerson ex:sub-10316 .
+
+old:sub-10321 ex:describesPerson ex:sub-10321 .
+
+old:sub-10325 ex:describesPerson ex:sub-10325 .
+
+old:sub-10329 ex:describesPerson ex:sub-10329 .
+
+old:sub-10339 ex:describesPerson ex:sub-10339 .
+
+old:sub-10340 ex:describesPerson ex:sub-10340 .
+
+old:sub-10345 ex:describesPerson ex:sub-10345 .
+
+old:sub-10347 ex:describesPerson ex:sub-10347 .
+
+old:sub-10356 ex:describesPerson ex:sub-10356 .
+
+old:sub-10361 ex:describesPerson ex:sub-10361 .
+
+old:sub-10365 ex:describesPerson ex:sub-10365 .
+
+old:sub-10376 ex:describesPerson ex:sub-10376 .
+
+old:sub-10377 ex:describesPerson ex:sub-10377 .
+
+old:sub-10388 ex:describesPerson ex:sub-10388 .
+
+old:sub-10428 ex:describesPerson ex:sub-10428 .
+
+old:sub-10429 ex:describesPerson ex:sub-10429 .
+
+old:sub-10438 ex:describesPerson ex:sub-10438 .
+
+old:sub-10440 ex:describesPerson ex:sub-10440 .
+
+old:sub-10448 ex:describesPerson ex:sub-10448 .
+
+old:sub-10455 ex:describesPerson ex:sub-10455 .
+
+old:sub-10460 ex:describesPerson ex:sub-10460 .
+
+old:sub-10471 ex:describesPerson ex:sub-10471 .
+
+old:sub-10478 ex:describesPerson ex:sub-10478 .
+
+old:sub-10487 ex:describesPerson ex:sub-10487 .
+
+old:sub-10492 ex:describesPerson ex:sub-10492 .
+
+old:sub-10501 ex:describesPerson ex:sub-10501 .
+
+old:sub-10506 ex:describesPerson ex:sub-10506 .
+
+old:sub-10517 ex:describesPerson ex:sub-10517 .
+
+old:sub-10523 ex:describesPerson ex:sub-10523 .
+
+old:sub-10524 ex:describesPerson ex:sub-10524 .
+
+old:sub-10525 ex:describesPerson ex:sub-10525 .
+
+old:sub-10527 ex:describesPerson ex:sub-10527 .
+
+old:sub-10530 ex:describesPerson ex:sub-10530 .
+
+old:sub-10557 ex:describesPerson ex:sub-10557 .
+
+old:sub-10565 ex:describesPerson ex:sub-10565 .
+
+old:sub-10570 ex:describesPerson ex:sub-10570 .
+
+old:sub-10575 ex:describesPerson ex:sub-10575 .
+
+old:sub-10624 ex:describesPerson ex:sub-10624 .
+
+old:sub-10629 ex:describesPerson ex:sub-10629 .
+
+old:sub-10631 ex:describesPerson ex:sub-10631 .
+
+old:sub-10638 ex:describesPerson ex:sub-10638 .
+
+old:sub-10668 ex:describesPerson ex:sub-10668 .
+
+old:sub-10672 ex:describesPerson ex:sub-10672 .
+
+old:sub-10674 ex:describesPerson ex:sub-10674 .
+
+old:sub-10678 ex:describesPerson ex:sub-10678 .
+
+old:sub-10680 ex:describesPerson ex:sub-10680 .
+
+old:sub-10686 ex:describesPerson ex:sub-10686 .
+
+old:sub-10692 ex:describesPerson ex:sub-10692 .
+
+old:sub-10696 ex:describesPerson ex:sub-10696 .
+
+old:sub-10697 ex:describesPerson ex:sub-10697 .
+
+old:sub-10704 ex:describesPerson ex:sub-10704 .
+
+old:sub-10707 ex:describesPerson ex:sub-10707 .
+
+old:sub-10708 ex:describesPerson ex:sub-10708 .
+
+old:sub-10719 ex:describesPerson ex:sub-10719 .
+
+old:sub-10724 ex:describesPerson ex:sub-10724 .
+
+old:sub-10746 ex:describesPerson ex:sub-10746 .
+
+old:sub-10762 ex:describesPerson ex:sub-10762 .
+
+old:sub-10779 ex:describesPerson ex:sub-10779 .
+
+old:sub-10785 ex:describesPerson ex:sub-10785 .
+
+old:sub-10788 ex:describesPerson ex:sub-10788 .
+
+old:sub-10844 ex:describesPerson ex:sub-10844 .
+
+old:sub-10855 ex:describesPerson ex:sub-10855 .
+
+old:sub-10871 ex:describesPerson ex:sub-10871 .
+
+old:sub-10877 ex:describesPerson ex:sub-10877 .
+
+old:sub-10882 ex:describesPerson ex:sub-10882 .
+
+old:sub-10891 ex:describesPerson ex:sub-10891 .
+
+old:sub-10893 ex:describesPerson ex:sub-10893 .
+
+old:sub-10912 ex:describesPerson ex:sub-10912 .
+
+old:sub-10934 ex:describesPerson ex:sub-10934 .
+
+old:sub-10940 ex:describesPerson ex:sub-10940 .
+
+old:sub-10948 ex:describesPerson ex:sub-10948 .
+
+old:sub-10949 ex:describesPerson ex:sub-10949 .
+
+old:sub-10958 ex:describesPerson ex:sub-10958 .
+
+old:sub-10963 ex:describesPerson ex:sub-10963 .
+
+old:sub-10968 ex:describesPerson ex:sub-10968 .
+
+old:sub-10971 ex:describesPerson ex:sub-10971 .
+
+old:sub-10975 ex:describesPerson ex:sub-10975 .
+
+old:sub-10977 ex:describesPerson ex:sub-10977 .
+
+old:sub-10987 ex:describesPerson ex:sub-10987 .
+
+old:sub-10998 ex:describesPerson ex:sub-10998 .
+
+old:sub-11019 ex:describesPerson ex:sub-11019 .
+
+old:sub-11030 ex:describesPerson ex:sub-11030 .
+
+old:sub-11044 ex:describesPerson ex:sub-11044 .
+
+old:sub-11050 ex:describesPerson ex:sub-11050 .
+
+old:sub-11052 ex:describesPerson ex:sub-11052 .
+
+old:sub-11059 ex:describesPerson ex:sub-11059 .
+
+old:sub-11061 ex:describesPerson ex:sub-11061 .
+
+old:sub-11062 ex:describesPerson ex:sub-11062 .
+
+old:sub-11066 ex:describesPerson ex:sub-11066 .
+
+old:sub-11067 ex:describesPerson ex:sub-11067 .
+
+old:sub-11068 ex:describesPerson ex:sub-11068 .
+
+old:sub-11077 ex:describesPerson ex:sub-11077 .
+
+old:sub-11082 ex:describesPerson ex:sub-11082 .
+
+old:sub-11088 ex:describesPerson ex:sub-11088 .
+
+old:sub-11090 ex:describesPerson ex:sub-11090 .
+
+old:sub-11097 ex:describesPerson ex:sub-11097 .
+
+old:sub-11098 ex:describesPerson ex:sub-11098 .
+
+old:sub-11104 ex:describesPerson ex:sub-11104 .
+
+old:sub-11105 ex:describesPerson ex:sub-11105 .
+
+old:sub-11106 ex:describesPerson ex:sub-11106 .
+
+old:sub-11108 ex:describesPerson ex:sub-11108 .
+
+old:sub-11112 ex:describesPerson ex:sub-11112 .
+
+old:sub-11121 ex:describesPerson ex:sub-11121 .
+
+old:sub-11122 ex:describesPerson ex:sub-11122 .
+
+old:sub-11128 ex:describesPerson ex:sub-11128 .
+
+old:sub-11131 ex:describesPerson ex:sub-11131 .
+
+old:sub-11142 ex:describesPerson ex:sub-11142 .
+
+old:sub-11143 ex:describesPerson ex:sub-11143 .
+
+old:sub-11149 ex:describesPerson ex:sub-11149 .
+
+old:sub-11156 ex:describesPerson ex:sub-11156 .
+
+old:sub-50004 ex:describesPerson ex:sub-50004 .
+
+old:sub-50005 ex:describesPerson ex:sub-50005 .
+
+old:sub-50006 ex:describesPerson ex:sub-50006 .
+
+old:sub-50007 ex:describesPerson ex:sub-50007 .
+
+old:sub-50008 ex:describesPerson ex:sub-50008 .
+
+old:sub-50010 ex:describesPerson ex:sub-50010 .
+
+old:sub-50013 ex:describesPerson ex:sub-50013 .
+
+old:sub-50014 ex:describesPerson ex:sub-50014 .
+
+old:sub-50015 ex:describesPerson ex:sub-50015 .
+
+old:sub-50016 ex:describesPerson ex:sub-50016 .
+
+old:sub-50020 ex:describesPerson ex:sub-50020 .
+
+old:sub-50021 ex:describesPerson ex:sub-50021 .
+
+old:sub-50022 ex:describesPerson ex:sub-50022 .
+
+old:sub-50023 ex:describesPerson ex:sub-50023 .
+
+old:sub-50025 ex:describesPerson ex:sub-50025 .
+
+old:sub-50027 ex:describesPerson ex:sub-50027 .
+
+old:sub-50029 ex:describesPerson ex:sub-50029 .
+
+old:sub-50032 ex:describesPerson ex:sub-50032 .
+
+old:sub-50033 ex:describesPerson ex:sub-50033 .
+
+old:sub-50034 ex:describesPerson ex:sub-50034 .
+
+old:sub-50035 ex:describesPerson ex:sub-50035 .
+
+old:sub-50036 ex:describesPerson ex:sub-50036 .
+
+old:sub-50038 ex:describesPerson ex:sub-50038 .
+
+old:sub-50043 ex:describesPerson ex:sub-50043 .
+
+old:sub-50047 ex:describesPerson ex:sub-50047 .
+
+old:sub-50048 ex:describesPerson ex:sub-50048 .
+
+old:sub-50049 ex:describesPerson ex:sub-50049 .
+
+old:sub-50050 ex:describesPerson ex:sub-50050 .
+
+old:sub-50051 ex:describesPerson ex:sub-50051 .
+
+old:sub-50052 ex:describesPerson ex:sub-50052 .
+
+old:sub-50053 ex:describesPerson ex:sub-50053 .
+
+old:sub-50054 ex:describesPerson ex:sub-50054 .
+
+old:sub-50055 ex:describesPerson ex:sub-50055 .
+
+old:sub-50056 ex:describesPerson ex:sub-50056 .
+
+old:sub-50058 ex:describesPerson ex:sub-50058 .
+
+old:sub-50059 ex:describesPerson ex:sub-50059 .
+
+old:sub-50060 ex:describesPerson ex:sub-50060 .
+
+old:sub-50061 ex:describesPerson ex:sub-50061 .
+
+old:sub-50064 ex:describesPerson ex:sub-50064 .
+
+old:sub-50066 ex:describesPerson ex:sub-50066 .
+
+old:sub-50067 ex:describesPerson ex:sub-50067 .
+
+old:sub-50069 ex:describesPerson ex:sub-50069 .
+
+old:sub-50073 ex:describesPerson ex:sub-50073 .
+
+old:sub-50075 ex:describesPerson ex:sub-50075 .
+
+old:sub-50076 ex:describesPerson ex:sub-50076 .
+
+old:sub-50077 ex:describesPerson ex:sub-50077 .
+
+old:sub-50080 ex:describesPerson ex:sub-50080 .
+
+old:sub-50081 ex:describesPerson ex:sub-50081 .
+
+old:sub-50083 ex:describesPerson ex:sub-50083 .
+
+old:sub-50085 ex:describesPerson ex:sub-50085 .
+
+old:sub-60001 ex:describesPerson ex:sub-60001 .
+
+old:sub-60005 ex:describesPerson ex:sub-60005 .
+
+old:sub-60006 ex:describesPerson ex:sub-60006 .
+
+old:sub-60008 ex:describesPerson ex:sub-60008 .
+
+old:sub-60010 ex:describesPerson ex:sub-60010 .
+
+old:sub-60011 ex:describesPerson ex:sub-60011 .
+
+old:sub-60012 ex:describesPerson ex:sub-60012 .
+
+old:sub-60014 ex:describesPerson ex:sub-60014 .
+
+old:sub-60015 ex:describesPerson ex:sub-60015 .
+
+old:sub-60016 ex:describesPerson ex:sub-60016 .
+
+old:sub-60017 ex:describesPerson ex:sub-60017 .
+
+old:sub-60020 ex:describesPerson ex:sub-60020 .
+
+old:sub-60021 ex:describesPerson ex:sub-60021 .
+
+old:sub-60022 ex:describesPerson ex:sub-60022 .
+
+old:sub-60028 ex:describesPerson ex:sub-60028 .
+
+old:sub-60030 ex:describesPerson ex:sub-60030 .
+
+old:sub-60033 ex:describesPerson ex:sub-60033 .
+
+old:sub-60036 ex:describesPerson ex:sub-60036 .
+
+old:sub-60037 ex:describesPerson ex:sub-60037 .
+
+old:sub-60038 ex:describesPerson ex:sub-60038 .
+
+old:sub-60042 ex:describesPerson ex:sub-60042 .
+
+old:sub-60043 ex:describesPerson ex:sub-60043 .
+
+old:sub-60045 ex:describesPerson ex:sub-60045 .
+
+old:sub-60046 ex:describesPerson ex:sub-60046 .
+
+old:sub-60048 ex:describesPerson ex:sub-60048 .
+
+old:sub-60049 ex:describesPerson ex:sub-60049 .
+
+old:sub-60051 ex:describesPerson ex:sub-60051 .
+
+old:sub-60052 ex:describesPerson ex:sub-60052 .
+
+old:sub-60053 ex:describesPerson ex:sub-60053 .
+
+old:sub-60055 ex:describesPerson ex:sub-60055 .
+
+old:sub-60056 ex:describesPerson ex:sub-60056 .
+
+old:sub-60057 ex:describesPerson ex:sub-60057 .
+
+old:sub-60060 ex:describesPerson ex:sub-60060 .
+
+old:sub-60062 ex:describesPerson ex:sub-60062 .
+
+old:sub-60065 ex:describesPerson ex:sub-60065 .
+
+old:sub-60066 ex:describesPerson ex:sub-60066 .
+
+old:sub-60068 ex:describesPerson ex:sub-60068 .
+
+old:sub-60070 ex:describesPerson ex:sub-60070 .
+
+old:sub-60072 ex:describesPerson ex:sub-60072 .
+
+old:sub-60073 ex:describesPerson ex:sub-60073 .
+
+old:sub-60074 ex:describesPerson ex:sub-60074 .
+
+old:sub-60076 ex:describesPerson ex:sub-60076 .
+
+old:sub-60077 ex:describesPerson ex:sub-60077 .
+
+old:sub-60078 ex:describesPerson ex:sub-60078 .
+
+old:sub-60079 ex:describesPerson ex:sub-60079 .
+
+old:sub-60080 ex:describesPerson ex:sub-60080 .
+
+old:sub-60084 ex:describesPerson ex:sub-60084 .
+
+old:sub-60087 ex:describesPerson ex:sub-60087 .
+
+old:sub-60089 ex:describesPerson ex:sub-60089 .
+
+old:sub-70001 ex:describesPerson ex:sub-70001 .
+
+old:sub-70002 ex:describesPerson ex:sub-70002 .
+
+old:sub-70004 ex:describesPerson ex:sub-70004 .
+
+old:sub-70007 ex:describesPerson ex:sub-70007 .
+
+old:sub-70010 ex:describesPerson ex:sub-70010 .
+
+old:sub-70015 ex:describesPerson ex:sub-70015 .
+
+old:sub-70017 ex:describesPerson ex:sub-70017 .
+
+old:sub-70020 ex:describesPerson ex:sub-70020 .
+
+old:sub-70021 ex:describesPerson ex:sub-70021 .
+
+old:sub-70022 ex:describesPerson ex:sub-70022 .
+
+old:sub-70026 ex:describesPerson ex:sub-70026 .
+
+old:sub-70029 ex:describesPerson ex:sub-70029 .
+
+old:sub-70033 ex:describesPerson ex:sub-70033 .
+
+old:sub-70034 ex:describesPerson ex:sub-70034 .
+
+old:sub-70035 ex:describesPerson ex:sub-70035 .
+
+old:sub-70036 ex:describesPerson ex:sub-70036 .
+
+old:sub-70037 ex:describesPerson ex:sub-70037 .
+
+old:sub-70040 ex:describesPerson ex:sub-70040 .
+
+old:sub-70046 ex:describesPerson ex:sub-70046 .
+
+old:sub-70048 ex:describesPerson ex:sub-70048 .
+
+old:sub-70049 ex:describesPerson ex:sub-70049 .
+
+old:sub-70051 ex:describesPerson ex:sub-70051 .
+
+old:sub-70052 ex:describesPerson ex:sub-70052 .
+
+old:sub-70055 ex:describesPerson ex:sub-70055 .
+
+old:sub-70057 ex:describesPerson ex:sub-70057 .
+
+old:sub-70058 ex:describesPerson ex:sub-70058 .
+
+old:sub-70060 ex:describesPerson ex:sub-70060 .
+
+old:sub-70061 ex:describesPerson ex:sub-70061 .
+
+old:sub-70065 ex:describesPerson ex:sub-70065 .
+
+old:sub-70068 ex:describesPerson ex:sub-70068 .
+
+old:sub-70069 ex:describesPerson ex:sub-70069 .
+
+old:sub-70070 ex:describesPerson ex:sub-70070 .
+
+old:sub-70072 ex:describesPerson ex:sub-70072 .
+
+old:sub-70073 ex:describesPerson ex:sub-70073 .
+
+old:sub-70074 ex:describesPerson ex:sub-70074 .
+
+old:sub-70075 ex:describesPerson ex:sub-70075 .
+
+old:sub-70076 ex:describesPerson ex:sub-70076 .
+
+old:sub-70077 ex:describesPerson ex:sub-70077 .
+
+old:sub-70079 ex:describesPerson ex:sub-70079 .
+
+old:sub-70080 ex:describesPerson ex:sub-70080 .
+
+old:sub-70081 ex:describesPerson ex:sub-70081 .
+
+old:sub-70083 ex:describesPerson ex:sub-70083 .
+
+old:sub-70086 ex:describesPerson ex:sub-70086 .
+
+ex:Q1 a ex:ResearchQuestion ;
+    rdfs:label "Does increased connectivity add predictive information?" ;
+    ex:resolution "Support within the evaluated datasets; causal mechanism and clinical utility unresolved." .
+
+ex:Q3 a ex:ResearchQuestion ;
+    rdfs:label "Can public CNP data support reusable standardized preprocessing?" .
+
+ex:hostAgent a prov:SoftwareAgent .
+
+ex:Q2 a ex:ResearchQuestion ;
+    rdfs:label "Do predictive connectivity features generalize across datasets?" ;
+    ex:resolution "Partial, direction-dependent support; reverse transfer and preprocessing sensitivity limit generalization." .
+
+old:p3 ex:derivativeReuseStatus "No verified reuse of 2017 derivative outputs; paper reports GRETNA/SPM12." .
+
+ex:skillRun a prov:Activity ;
+    prov:wasAssociatedWith ex:hostAgent ;
+    ex:skillCommit "dde54251a5a70f55d0b9bbbaab0dd21013b1bbfc" ;
+    ex:validationReport "skill/pilot_report.json" .
+

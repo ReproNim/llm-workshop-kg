@@ -1,0 +1,10 @@
+{
+  "triples": 1113959,
+  "components": [
+    "original graph",
+    "NIDM phenotype and image inventory",
+    "claims/questions bridge",
+    "embedding provenance"
+  ],
+  "qualification": "complete pinned phenotype-table representation; partial image and historical execution provenance"
+}

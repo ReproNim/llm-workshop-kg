@@ -1,0 +1,70 @@
+@prefix cnp: <urn:repronim:cnp:expanded:> .
+@prefix ex: <urn:repronim:illustrative:> .
+@prefix old: <urn:repronim:cnp:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:analysisA a prov:Activity ;
+    rdfs:label "analysisA" ;
+    prov:qualifiedAssociation ex:analysisAassociation ;
+    prov:used cnp:C1 ;
+    ex:addresses cnp:Q1 ;
+    ex:scenarioStatus "illustrative; not a historical attribution" .
+
+ex:analysisB a prov:Activity ;
+    rdfs:label "analysisB" ;
+    prov:qualifiedAssociation ex:analysisBassociation ;
+    prov:used old:p2 ;
+    ex:addresses cnp:Q3 ;
+    ex:scenarioStatus "illustrative; not a historical attribution" .
+
+ex:comparability a prov:Entity,
+        ex:EvidenceAssessment ;
+    rdfs:label "Cross-paper processing comparability remains unresolved" ;
+    prov:wasAttributedTo ex:reviewerC ;
+    prov:wasDerivedFrom old:p2,
+        old:p3 ;
+    prov:wasGeneratedBy ex:reviewC ;
+    ex:relatedQuestion cnp:Q3 ;
+    ex:relationStatus "candidate relevance; not established support or contradiction" ;
+    ex:scenarioStatus "illustrative; not a historical attribution" ;
+    ex:target cnp:C1 ;
+    ex:verdict "requires_source_manifest" .
+
+ex:analysisAassociation a prov:Association ;
+    rdfs:label "analysisA role" ;
+    prov:agent ex:analystA ;
+    prov:hadRole ex:Analyst ;
+    ex:scenarioStatus "illustrative; not a historical attribution" .
+
+ex:analysisBassociation a prov:Association ;
+    rdfs:label "analysisB role" ;
+    prov:agent ex:analystB ;
+    prov:hadRole ex:Analyst ;
+    ex:scenarioStatus "illustrative; not a historical attribution" .
+
+ex:analystA a prov:Person ;
+    rdfs:label "Hypothetical analyst A" ;
+    ex:scenarioStatus "illustrative; not a historical attribution" .
+
+ex:analystB a prov:Person ;
+    rdfs:label "Hypothetical analyst B" ;
+    ex:scenarioStatus "illustrative; not a historical attribution" .
+
+ex:reviewC a prov:Activity ;
+    rdfs:label "reviewC" ;
+    prov:qualifiedAssociation ex:reviewCassociation ;
+    prov:used old:p2 ;
+    ex:addresses cnp:Q1 ;
+    ex:scenarioStatus "illustrative; not a historical attribution" .
+
+ex:reviewCassociation a prov:Association ;
+    rdfs:label "reviewC role" ;
+    prov:agent ex:reviewerC ;
+    prov:hadRole ex:Reviewer ;
+    ex:scenarioStatus "illustrative; not a historical attribution" .
+
+ex:reviewerC a prov:Person ;
+    rdfs:label "Hypothetical reviewer C" ;
+    ex:scenarioStatus "illustrative; not a historical attribution" .
+

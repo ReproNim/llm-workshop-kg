@@ -1,0 +1,17 @@
+{
+  "tables": 52,
+  "dictionary_variables": 1984,
+  "table_variables": 1983,
+  "rows": 14144,
+  "observed_cells": 411584,
+  "missing_cells": 127792,
+  "missing_dictionary_columns": [],
+  "unknown_participants": [],
+  "duplicate_ids": [],
+  "image_inventory": 2531,
+  "parcel1_check": {
+    "n": 272,
+    "matches": 272
+  },
+  "triples": 834327
+}

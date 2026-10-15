@@ -1,0 +1,10 @@
+{
+  "job": "25941523",
+  "summary": {
+    "matched": 24,
+    "differed": 5,
+    "could-not-run": 0
+  },
+  "files_identical": 22,
+  "files_total": 32
+}

@@ -1,0 +1,18 @@
+{
+  "derivation": {
+    "iri": "http://purl.org/nidash/nidm#Derivative",
+    "lookup": "class_uri: nidm:Derivative"
+  },
+  "result": {
+    "iri": "http://www.w3.org/ns/prov#Entity",
+    "lookup": "PROV-O Entity; local claim subtype"
+  },
+  "method": {
+    "iri": "http://www.w3.org/ns/prov#Plan",
+    "lookup": "PROV-O Plan; reported method"
+  },
+  "metadata_gap": {
+    "iri": "http://www.w3.org/ns/prov#Entity",
+    "lookup": "local evidence gap record"
+  }
+}

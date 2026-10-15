@@ -1,0 +1,15 @@
+[project]
+name = "cnp-rebuild"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "rdflib==7.1.4",
+  "pyshacl==0.30.1",
+  "numpy",
+  "scipy",
+  "scikit-learn",
+  "matplotlib",
+]
+
+[tool.uv]
+package = false

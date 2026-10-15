@@ -1,0 +1,1634 @@
+[
+  {
+    "participant_id": "sub-10159",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10171",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10189",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10193",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10206",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10217",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10225",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10227",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10228",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10235",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10249",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10269",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10271",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10273",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10274",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10280",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10290",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10292",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10299",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10304",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10316",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10321",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10325",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10329",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10339",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10340",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10345",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10347",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10356",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10361",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10365",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10376",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10377",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10388",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10428",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10429",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10438",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10440",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10448",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10455",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10460",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10471",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10478",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10487",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10492",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10501",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10506",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10517",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10523",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10524",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10525",
+    "reported": 3.5,
+    "recomputed": 3.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10527",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10530",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10557",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10565",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10570",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10575",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10624",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10629",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10631",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10638",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10668",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10672",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10674",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10678",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10680",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10686",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10692",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10696",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10697",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10704",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10707",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10708",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10719",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10724",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10746",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10762",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10779",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10785",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10788",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10844",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10855",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10871",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10877",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10882",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10891",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10893",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10912",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10934",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10940",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10948",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10949",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10958",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10963",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10968",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10971",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10975",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10977",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10987",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-10998",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11019",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11030",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11044",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11050",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11052",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11059",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11061",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11062",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11066",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11067",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11068",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11077",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11082",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11088",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11090",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11097",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11098",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11104",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11105",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11106",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11108",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11112",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11121",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11122",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11128",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11131",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11142",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11143",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11149",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-11156",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50004",
+    "reported": 3.5,
+    "recomputed": 3.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50005",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50006",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50007",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50008",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50010",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50013",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50014",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50015",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50016",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50020",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50021",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50022",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50023",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50025",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50027",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50029",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50032",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50033",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50034",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50035",
+    "reported": 3.5,
+    "recomputed": 3.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50036",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50038",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50043",
+    "reported": 4.0,
+    "recomputed": 4.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50047",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50048",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50049",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50050",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50051",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50052",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50053",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50054",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50055",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50056",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50058",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50059",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50060",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50061",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50064",
+    "reported": 4.0,
+    "recomputed": 4.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50066",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50067",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50069",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50073",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50075",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50076",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50077",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50080",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50081",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50083",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-50085",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60001",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60005",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60006",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60008",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60010",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60011",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60012",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60014",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60015",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60016",
+    "reported": 4.0,
+    "recomputed": 4.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60017",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60020",
+    "reported": 4.0,
+    "recomputed": 4.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60021",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60022",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60028",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60030",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60033",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60036",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60037",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60038",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60042",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60043",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60045",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60046",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60048",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60049",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60051",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60052",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60053",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60055",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60056",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60057",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60060",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60062",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60065",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60066",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60068",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60070",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60072",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60073",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60074",
+    "reported": 4.0,
+    "recomputed": 4.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60076",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60077",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60078",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60079",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60080",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60084",
+    "reported": 1.0,
+    "recomputed": 1.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60087",
+    "reported": 3.5,
+    "recomputed": 3.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-60089",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70001",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70002",
+    "reported": 4.0,
+    "recomputed": 4.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70004",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70007",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70010",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70015",
+    "reported": 3.5,
+    "recomputed": 3.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70017",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70020",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70021",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70022",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70026",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70029",
+    "reported": 4.0,
+    "recomputed": 4.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70033",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70034",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70035",
+    "reported": 3.5,
+    "recomputed": 3.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70036",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70037",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70040",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70046",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70048",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70049",
+    "reported": 3.5,
+    "recomputed": 3.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70051",
+    "reported": 4.0,
+    "recomputed": 4.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70052",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70055",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70057",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70058",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70060",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70061",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70065",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70068",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70069",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70070",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70072",
+    "reported": 1.5,
+    "recomputed": 1.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70073",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70074",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70075",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70076",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70077",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70079",
+    "reported": 4.0,
+    "recomputed": 4.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70080",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70081",
+    "reported": 2.5,
+    "recomputed": 2.5,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70083",
+    "reported": 3.0,
+    "recomputed": 3.0,
+    "matches": true
+  },
+  {
+    "participant_id": "sub-70086",
+    "reported": 2.0,
+    "recomputed": 2.0,
+    "matches": true
+  }
+]
