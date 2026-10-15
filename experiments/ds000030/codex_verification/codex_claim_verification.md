@@ -46,3 +46,17 @@ Checked 2026-10-15 against primary sources. Counts: {'confirmed': 39, 'could not
 | 40 | AbstractAtlas authors.py dedup by normalised name + primary affiliation; corpus-local sorted numeric IDs | 21 | confirmed | De-dup key is (lower(name), lower(primary_affiliation)); assign stable, sorted author_ids (sorted by (name, primary_aff)) ... author_id: index |  |
 
 Sources: https://arxiv.org/html/2608.19902v1, https://doi.org/10.3389/fpsyt.2023.1232015, https://github.com/K-Dense-AI/scientific-agent-skills/pull/227, https://github.com/K-Dense-AI/scientific-agent-skills/pull/265, https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/, https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/dataset_description.json, https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/participants.tsv, https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/phenotype/barratt.json, https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/phenotype/stopsignal.json, https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/phenotype/stopsignal.tsv, https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/sub-10159/anat/sub-10159_T1w.json, https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/sub-10159/func/sub-10159_task-rest_bold.json, https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/sub-10159/func/sub-10159_task-stopsignal_events.tsv, https://github.com/OpenNeuroDatasets/ds000030/blob/4070b6eea231517bfeff42527a46d9d166ac4e13/task-rest_bold.json, https://github.com/sensein/abstractatlas/blob/181652e2be0902a4926d292d9ec0e230dfd97b96/src/ohbm2026/enrich/claims.py, https://github.com/sensein/abstractatlas/blob/181652e2be0902a4926d292d9ec0e230dfd97b96/src/ohbm2026/ui_data/authors.py, https://github.com/sensein/agent_skills/blob/dde54251a5a70f55d0b9bbbaab0dd21013b1bbfc/skills/structsense/SKILL.md, https://github.com/sensein/agent_skills/pull/33, https://github.com/sensein/agent_skills/pull/34, https://github.com/sensein/agent_skills/pull/36, https://pmc.ncbi.nlm.nih.gov/articles/PMC5139672/, https://pmc.ncbi.nlm.nih.gov/articles/PMC5664981/
+
+
+## Corrections after review (2026-10-15)
+
+- **Kim et al. 2023 research question.** The ds000030 package (produced by an earlier agentic system) records
+  question `ex:Q1` as "Does increased connectivity add predictive information?", and a later deck revision
+  paraphrased it as "Do decreased and increased connectivity predict diagnosis?". Neither is the paper's question.
+  The abstract states (verbatim): "we aimed to determine the direction of the connectivity alteration associated
+  with schizophrenia using a multivariate, data-driven approach." The "added information" wording is closer to a
+  result: "combining information from both increased and decreased rsFC substantially improved prediction
+  accuracy". Source: https://www.frontiersin.org/articles/10.3389/fpsyt.2023.1232015/full .
+  The package graph is left as produced; this erratum records the correction. Caught by the speaker.
+- **ds000030 has no full-scale IQ.** Its WAIS table holds raw subtest scores only (voc_totalraw, lns_totalraw,
+  lns_llns, mr_totalraw); a deck query example that used full-scale IQ on ds000030 was corrected. Caught by the speaker.
