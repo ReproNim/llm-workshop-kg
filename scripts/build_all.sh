@@ -29,15 +29,11 @@ run_deck() {
 }
 
 run_pdf() {
-  # Host step: needs Microsoft PowerPoint on macOS (LibreOffice is an alternative where installed).
-  if command -v soffice >/dev/null; then
-    cmd="soffice --headless --convert-to pdf --outdir slides slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pptx"
-  else
-    cmd="osascript scripts/export_pdf.applescript \"\$PWD/slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pptx\" \"\$PWD/slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pdf\""
-  fi
+  # Host step: LibreOffice where installed, otherwise Microsoft PowerPoint on macOS.
   datalad run -m "Export the deck to PDF (host step)" \
     --input slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pptx \
-    --output slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pdf "$cmd"
+    --output slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pdf \
+    "scripts/export_pdf.sh slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pptx slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pdf"
 }
 
 run_values() {
