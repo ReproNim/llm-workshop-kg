@@ -8,3 +8,7 @@ experiments/abide/data/Outputs/
 experiments/abide/data/raw/
 experiments/abide/literature_review/pdfs/
 experiments/abide/store/
+experiments/*/.venv/
+slides/node_modules/
+**/store/
+**/.pytest_cache/
