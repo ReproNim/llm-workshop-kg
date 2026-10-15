@@ -1,0 +1,49 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  deck-and-graphs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: slides/package-lock.json
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Slide figures
+        run: uv run slides/figs_slide/make_slide_figs.py
+
+      - name: Build the deck
+        working-directory: slides
+        run: |
+          npm ci
+          node build_deck.js
+
+      - name: Slide values match their result files
+        run: uv run scripts/check_slide_values.py
+
+      - name: Every Turtle file parses
+        run: uv run scripts/parse_all_ttl.py
+
+      - name: ABIDE graph SHACL validation and mutation tests
+        working-directory: experiments/abide
+        run: uv run --frozen python code/validate.py
+
+      - name: ds000030 graph SHACL validation
+        run: uv run --with rdflib==7.1.4 --with pyshacl==0.30.1 python experiments/ds000030/experiment/validate_graph.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deck
+          path: |
+            slides/Knowledge_Graphs_Skills_Neuroimaging_v4.pptx
+            slides/talk_provenance.ttl
