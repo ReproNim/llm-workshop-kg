@@ -46,7 +46,7 @@
   },
   {
    "mutation": "activity snapshot without timestamp",
-   "focus": "urn:repronim:abide:snapshot/simple2_nidm_examples/20261015T145737Z",
+   "focus": "urn:repronim:abide:snapshot/fsl_seg_to_nidm/20261015T145547Z",
    "rejected": true,
    "messages": [
     "Message: snapshot needs prov:generatedAtTime"
@@ -73,5 +73,5 @@
  ],
  "all_mutations_rejected": true,
  "scope": "local profile for this experiment; not NIDM certification and not a check of scientific correctness",
- "seconds": 5.7
+ "seconds": 5.6
 }
