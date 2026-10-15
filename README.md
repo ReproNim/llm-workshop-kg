@@ -22,7 +22,7 @@ By the end of the talk you should be able to:
 | `slides/` | Deck sources (`build_deck.js`, `values.js`, `values_map.json`, `apply_theme.js`), slide-size figures (`figs_slide/`), the built `.pptx` and `.pdf`, the talk plan, and `talk_provenance.ttl` (W3C PROV record of every slide) |
 | `experiments/abide/` | ABIDE I worked example: two simulated analysts (group difference, leave-site-out prediction), a QC revision traced through the graph, NIDM/PROV graph conformed to the PyNIDM v4.5.5 LinkML schema, joins to ReproNim simple2 NIDM, AbstractAtlas and OpenAlex, a SynthScholar literature review of 74 ABIDE studies, competency questions with gold answers, and a Brain Researcher (MCP) comparison. See its `README.txt` |
 | `experiments/ds000030/` | ds000030 (UCLA CNP) worked example produced in an earlier agentic session, plus `codex_verification/`: an independent claim check (39 confirmed, 0 contradicted) and an ORCD rebuild comparison |
-| `scripts/` | `build_all.sh` (all steps under `datalad run`), `check_slide_values.py`, `parse_all_ttl.py`, `strip_fulltext.py`, `sync_from_workspace.sh`, `export_pdf.applescript` |
+| `scripts/` | `build_all.sh` (all steps under `datalad run`), `check_slide_values.py`, `check_pdf_text.py`, `parse_all_ttl.py`, `refresh_checksums.py`, `strip_fulltext.py`, `sync_from_workspace.sh` + `port_build_deck.py` (bring in a workspace deck), `export_pdf.sh` |
 | `provenance/` | Outputs of the recorded check steps |
 
 The two packaged experiments are also attached to the
@@ -58,7 +58,7 @@ is `experiments/abide/rebuild.sh`; a clean-room run from a fresh download reprod
 key numbers (the other three are run times) and all 15 gold answers
 (`experiments/abide/results/clean_room_verify.json`).
 
-The PDF export is a host step: it uses LibreOffice where installed, otherwise Microsoft PowerPoint
+The PDF export is a host step, and `scripts/check_pdf_text.py` confirms the PDF carries the deck's text slide by slide: it uses LibreOffice where installed, otherwise Microsoft PowerPoint
 on macOS through `scripts/export_pdf.applescript`.
 
 ## How provenance is recorded
@@ -102,12 +102,16 @@ Each slide's bottom-left badge combines production letters and a checking status
 - ABIDE clean-room rebuild: 2,108/2,108 input hashes, 215/218 key numbers, 15/15 gold answers.
 - Literature review: 1,735 of 1,743 quotes verified against source text (the 8 dropped were
   empty); charting was done by AI agents and individual decisions were not checked by a human.
-- Still open: comparing the ABIDE run on ORCD (Slurm job 25939932) with the local run.
+- ABIDE run on ORCD (Slurm job 25939932) compared with the local run: `experiments/abide/results/orcd_vs_local.json`.
 
 ## Related
 
-- Skill for building such a graph: `neuroimaging-kg` in
-  [sensein/agent_skills](https://github.com/sensein/agent_skills) (pull request in progress).
+- Skill for building such a graph: `neuroimaging-kg` in sensein/agent_skills,
+  [pull request #49](https://github.com/sensein/agent_skills/pull/49) (branch `neuroimaging-kg`).
+  The live-demo slides use its tested Claude Code demo: steps in `slides/demo/claude_code_demo.md`,
+  the headless test run in `slides/demo/claude_code_demo_transcript.md` (copied from commit 2bf966c;
+  see `slides/demo/SOURCE.md`). `scripts/check_slide_values.py` checks every quoted demo output
+  against that transcript.
 - [AbstractAtlas](https://abstractatlas.brainkb.org) — OHBM 2026 abstracts and their extracted claims.
 - ReproNim: [ReproPond and ReproLake](https://www.repronim.org/resources/tutorials/pond-lake/),
   [simple2_NIDM_examples](https://github.com/ReproNim/simple2_NIDM_examples), [PyNIDM](https://github.com/INCF-NIDASH/PyNIDM).
