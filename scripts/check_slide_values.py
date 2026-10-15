@@ -4,6 +4,8 @@
 # ///
 """Check that every mapped slide value matches its experiment result file.
 
+Also checks that every quoted demo output on a slide appears verbatim in its transcript.
+
 For each entry in slides/values_map.json the value is recomputed from its source file
 (same formats as slides/values.js) and must appear in the text of the named slide in the
 built deck. Exits non-zero on any mismatch. Run from the repository root:
@@ -46,7 +48,20 @@ FORMATS = {
 }
 
 
+def count_rows(entry):
+    """Row count of a CSV/TSV, optionally where one column equals a value (same rule as values.js)."""
+    sep = "," if entry["source"].endswith(".csv") else "\t"
+    lines = [ln for ln in (ROOT / entry["source"]).read_text().splitlines() if ln]
+    header, rows = lines[0].split(sep), [ln.split(sep) for ln in lines[1:]]
+    if "column" not in entry:
+        return len(rows)
+    i = header.index(entry["column"])
+    return sum(r[i] == str(entry["equals"]) for r in rows)
+
+
 def expected(entry, cache):
+    if entry["format"] == "count":
+        return FORMATS["int"](count_rows(entry))
     src = entry["source"]
     if src not in cache:
         cache[src] = json.loads((ROOT / src).read_text())
@@ -85,6 +100,14 @@ def main(pptx_path):
         checked += 1
         if not any(value in t for t in slides):
             failures.append(f"{entry['id']}: '{value}' (from {entry['source']}:{entry['path']}) not on '{entry['slide']}'")
+    for quote in json.loads((ROOT / "slides/values_map.json").read_text()).get("quotes", []):
+        source_text = (ROOT / quote["source"]).read_text()
+        slides = [t for t in texts if quote["slide"] in t]
+        checked += 1
+        if quote["text"] not in source_text:
+            failures.append(f"quote not in {quote['source']}: {quote['text']!r}")
+        elif not any(quote["text"] in t for t in slides):
+            failures.append(f"quote not on '{quote['slide']}': {quote['text']!r}")
     for line in failures:
         print("MISMATCH", line)
     print(f"{checked} mapped values checked, {len(failures)} problems")

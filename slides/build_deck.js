@@ -67,7 +67,7 @@ const ABIDE = {
     { icon: "FaBook", name: "AbstractAtlas", src: "OHBM 2026 abstracts", key: "dataset name in abstract text", result: `${V("pubs.abstracts")} abstracts · ${V("pubs.statedUse")} state data use · 15 / ${V("pubs.statedUse")} correct on hand check` },
     { icon: "FaGlobe", name: "OpenAlex", src: "open catalogue of papers", key: "DOI and citation", result: `${V("pubs.openalex")} works cite Di Martino 2014 and name ABIDE` },
     { icon: "FaBrain", name: "Brain Researcher KG", src: "an external AI assistant's graph", key: "dataset node", result: "one aggregate ABIDE node (2,226 subjects); neither paper present" },
-    { icon: "FaSearch", name: "Literature review", src: "systematic review (SynthScholar)", key: "DOI and cohort description", result: `9 of ${V("pubs.reviewed")} reviewed studies reuse the 871-participant ABIDE I subset, incl. Abraham 2017, Parisot 2018, Ktena 2017` },
+    { icon: "FaSearch", name: "Literature review", src: "systematic review (SynthScholar)", key: "DOI and cohort description", result: "9 of 74 reviewed studies reuse the 871-participant ABIDE I subset, incl. Abraham 2017, Parisot 2018, Ktena 2017" },
   ],
   cohorts: { aN: V("cohort.aN"), bN: V("cohort.bN"), both: V("cohort.aN"), aOnly: "0", bOnly: V("cohort.bOnly"), aRemoved: V("cohort.aRemoved"), bRemoved: V("cohort.bRemoved") }, // results/key_numbers.json cohort.*
   results: {
@@ -146,10 +146,10 @@ const SLIDE_PROV = {
   "Connecting neuroimaging knowledge graphs across data, publications and labs": prov(["H", "L"], "reviewed", PLAN),
   "Components of a dataset and a publication": prov(["P", "R", "A"], "re-run · validated", CNP_ZIP, "experiments/abide/literature_review/results_synthesis.json"),
   "Joining graphs through shared identifiers": prov(["A", "R"], "re-run · validated", "experiments/abide/results/simple2.json", "experiments/abide/results/simple2_tool_agreement.csv", "experiments/abide/results/publications.json"),
-  "A knowledge graph in three statements": prov(["H", "L", "P"], "re-run · reviewed", PLAN, CNP_ZIP),
-  "Exercise: write the chain for your own last result": prov(["H", "L"], "reviewed", PLAN),
-  "Live demo: building a graph in Claude Code": prov(["A", "L"], "unverified", DEMO_SOURCE_REL),
-  "Live demo: querying and using the graph": prov(["A", "L"], "unverified", DEMO_SOURCE_REL),
+  "The two example datasets": prov(["P", "A", "R"], "re-run · validated", CNP_ZIP, ABIDE_KEY, "experiments/abide/results/element_coverage.json"),
+  "A knowledge graph in four statements": prov(["H", "L", "P"], "re-run · reviewed", PLAN, CNP_ZIP),
+  "Live demo: building a graph in Claude Code": prov(["A", "L"], "validated", DEMO_SOURCE_REL, "agent_skills: skills/neuroimaging-kg/examples/claude_code_demo_transcript.md"),
+  "Live demo: querying and using the graph": prov(["A", "L"], "validated", DEMO_SOURCE_REL, "agent_skills: skills/neuroimaging-kg/examples/claude_code_demo_transcript.md"),
   "Glossary": prov(["H", "L", "R"], "reviewed", PLAN),
   "Learning objectives": prov(["H", "L"], "reviewed", PLAN),
   "Poll: participant count in ds000030": prov(["P", "R"], "re-run · validated", CNP_ZIP),
@@ -168,13 +168,13 @@ const SLIDE_PROV = {
   "ABIDE I: group differences and site-held-out prediction": prov(["A", "R"], "re-run · validated", ABIDE_KEY),
   "Exercise: consequences of a stricter motion threshold": prov(["A"], "re-run · validated", ABIDE_KEY),
   "Dependency tracing after a QC revision": prov(["A"], "re-run · validated", ABIDE_KEY),
-  "Phenotype embedding linked to image-derived phenotypes": prov(["A"], "re-run · validated", ABIDE_KEY),
+  "Phenotype embedding linked to image-derived phenotypes": prov(["A"], "re-run (UMAP-derived values differ slightly across machines)", ABIDE_KEY),
   "Linking datasets, publications and abstracts": prov(["A", "R"], "re-run · validated", ABIDE_KEY, "https://abstractatlas.brainkb.org/"),
   "Evaluation schemes in 74 ABIDE studies": prov(["A", "R"], "validated", "experiments/abide/literature_review/results_synthesis.json", "experiments/abide/literature_review/synthesis.md"),
   "Resource discovery with dated activity records": prov(["A", "R"], "re-run · validated", ABIDE_KEY),
   "Checking agent outputs against the graph": prov(["P", "R"], "re-run · validated", CNP_ZIP),
   "Graph, search and Brain Researcher: a small comparison": prov(["M", "A"], "reviewed", "experiments/abide/comparison/"),
-  "How this lecture was produced": prov(["H", "L"], "reviewed", PLAN, "slides/talk_provenance.ttl"),
+  "How this lecture was produced": prov(["H", "L"], "reviewed", PLAN, "talk_provenance.ttl"),
   "Practices to adopt now": prov(["H", "L"], "reviewed", PLAN),
   "Discussion": prov(["H", "L"], "reviewed", PLAN),
   // backup
@@ -210,7 +210,10 @@ const evidenceFor = (title, pv) => {
   const abide = pv.sources.some((x) => x.startsWith("experiments/abide") || x === ABIDE_KEY);
   const cnp = pv.sources.includes(CNP_ZIP);
   if (pv.checking.includes("re-run")) {
-    if (abide) ev.push({ status: "re-run", file: "experiments/abide/results/clean_room_verify.json", activity: "talk:abide-clean-room-rebuild", agent: "talk:IndependentRebuild" });
+    if (abide) {
+      ev.push({ status: "re-run", file: "experiments/abide/results/clean_room_verify.json", activity: "talk:abide-clean-room-rebuild", agent: "talk:IndependentRebuild" });
+      ev.push({ status: "re-run", file: "experiments/abide/results/orcd_vs_local.json", activity: "talk:orcd-job-25939932", agent: "talk:IndependentRebuild" });
+    }
     if (cnp || !abide) ev.push({ status: "re-run", file: REBUILD, activity: "talk:orcd-job-25941523", agent: "talk:IndependentRebuild" });
   }
   if (pv.checking.includes("validated")) ev.push(ds ? { status: "validated", file: VERIFY, activity: "talk:claim-verification-2026-10-15", agent: "talk:IndependentVerifier" } : { status: "validated", file: null, activity: null, agent: "talk:AutomatedChecks" });
@@ -235,21 +238,73 @@ const CHECK_DEF = [
 
 // ---------------------------------------------------------------- live demo content
 // Filled from skills/neuroimaging-kg/examples/claude_code_demo.md once that file exists and has been run; placeholders until then.
-const DEMO_SOURCE = process.env.NEUROIMAGING_KG_DEMO || path.join(ROOT, "demo/claude_code_demo.md");
+const DEMO_SOURCE = path.join(__dirname, "demo/claude_code_demo.md");
 const DEMO = {
-  filled: false,
-  repo_branch: "[placeholder: repository and branch]",
-  transcript_path: null,
-  install: ["[placeholder] install the neuroimaging-kg skill"],
-  prompts: [
-    { text: "[placeholder] prompt 1: build a graph from one ABIDE site", expected: "[placeholder] expected output excerpt", duration: "[placeholder]" },
-    { text: "[placeholder] prompt 2: validate the graph", expected: "[placeholder] expected output excerpt", duration: "[placeholder]" },
-    { text: "[placeholder] prompt 3: cohort join and trace", expected: "[placeholder] expected output excerpt", duration: "[placeholder]" },
-    { text: "[placeholder] prompt 4: impact of a QC change", expected: "[placeholder] expected output excerpt", duration: "[placeholder]" },
+  filled: true,
+  repo_branch: "github.com/sensein/agent_skills, branch neuroimaging-kg (PR #49)",
+  transcript_path: "agent_skills/skills/neuroimaging-kg/examples/claude_code_demo_transcript.md",
+  install: [
+    "git clone https://github.com/sensein/agent_skills.git",
+    "cd agent_skills && git checkout neuroimaging-kg && cd ..",
+    "mkdir abide-kg-demo && cd abide-kg-demo",
+    "python ../agent_skills/scripts/install_skills.py --agent claude --scope project --skills neuroimaging-kg",
+    "claude",
   ],
-  note: "Demo content is a placeholder until the tested demo file exists.",
+  prompts: [
+    { label: "Prompt 1", text: "Use the neuroimaging-kg skill to build a knowledge graph for ABIDE I site Caltech — the phenotype table plus ReproNim's NIDM file with brain volumes — validate it, and load it into Oxigraph. Tell me in plain words what is in the graph.",
+      expected: ["“Done — the graph built, validated, and loaded cleanly, with all 5 gated questions passing.”", "“38 participants from the Caltech site of ABIDE I”"], duration: "34 s" },
+    { label: "Prompt 2", text: "How many Caltech participants have both a full-scale IQ (FIQ) score and a FreeSurfer hippocampal volume, by diagnostic group? Show the SPARQL query you used and explain it briefly.",
+      expected: ["“18 autism-group participants (dx_group=1) and 19 control-group participants (dx_group=2)”"], duration: "14 s" },
+    { label: "Prompt 3", text: "Trace participant 51456's left-hippocampus volume from FreeSurfer back to the scan and the software it came from. Say which links are recorded in the graph and which are only inferred.",
+      expected: ["“fs:fs_003343 = 4513.9”", "“T1w scan ↔ FreeSurfer activity … Not recorded.”"], duration: "162 s" },
+    { label: "Prompt 4", text: "If we tightened the head-motion rule to mean framewise displacement below 0.15 mm, which participants would be excluded, and which results in our graph depend on them?",
+      expected: ["“51456 | autism | 0.1862 mm”", "“51469 | autism | 0.1559 mm”", "“17 autism / 19 control”"], duration: "55 s" },
+  ],
+  note: "Prompts and outputs are from a headless test (Claude Sonnet, 2026-10-15) recorded in the transcript; if the live run is slow (prompt 3 took 162 s), show the transcript instead.",
 };
-if (fs.existsSync(DEMO_SOURCE)) console.warn("NOTE: " + DEMO_SOURCE + " exists; fill DEMO from it and set filled: true.");
+
+
+// ---------------------------------------------------------------- dataset footnotes
+const D_CNP = "ds000030 (UCLA CNP), OpenNeuro, commit 4070b6e", D_CNPs = "ds000030 (UCLA CNP, commit 4070b6e)";
+const D_AB = "ABIDE I (ABIDE Preprocessed, C-PAC)", D_S2 = "ReproNim simple2 NIDM (commit e0dff17)";
+const D_REV = "74 ABIDE studies (SynthScholar review, 2026-10-15)", D_REVs = "74-study review (2026-10-15)";
+const D_PUB = "AbstractAtlas (OHBM 2026), OpenAlex", D_KIM = "Kim et al. 2023 (UCLA cohort from ds000030)";
+const DATA = {
+  "The two example datasets": ["ds000030 (OpenNeuro, commit 4070b6e)", "ABIDE I (ABIDE Preprocessed)"],
+  "A knowledge graph in four statements": [D_CNP],
+  "Components of a dataset and a publication": [D_CNPs, D_AB, D_REVs],
+  "Knowledge graph around a single participant": [D_AB, D_S2],
+  "Linking a claim to its evaluation and cohort": [D_CNPs, D_KIM],
+  "Exercise: evaluating claims against a source": [D_KIM],
+  "Quotation checks and scientific entailment": [D_KIM],
+  "Joining graphs through shared identifiers": ["ABIDE I", "simple2 NIDM (e0dff17)", "AbstractAtlas (OHBM 2026)", "OpenAlex", "Brain Researcher KG", D_REVs],
+  "Participant coverage by data element": [D_AB, D_S2],
+  "ABIDE I: two analyses, two research questions": [D_AB],
+  "ABIDE I: group differences and site-held-out prediction": [D_AB],
+  "Exercise: consequences of a stricter motion threshold": [D_AB],
+  "Dependency tracing after a QC revision": [D_AB],
+  "Linking datasets, publications and abstracts": [D_PUB, D_REV],
+  "Evaluation schemes in 74 ABIDE studies": [D_REV],
+  "Live demo: building a graph in Claude Code": ["ABIDE I, Caltech site (ABIDE Preprocessed; ReproNim simple2 NIDM, commit e0dff17)"],
+  "Live demo: querying and using the graph": ["ABIDE I, Caltech site (ABIDE Preprocessed; ReproNim simple2 NIDM, commit e0dff17)"],
+  // backup
+  "Poll: participant count in ds000030": [D_CNP],
+  "Participant counts in ds000030 by scope": [D_CNPs, "Gorgolewski 2017 and Kim 2023 cohorts"],
+  "Recomputing a derived score from source items": [D_CNP],
+  "Checking agent outputs against the graph": [D_CNP],
+  "Graph, search and Brain Researcher: a small comparison": [D_AB, "Brain Researcher KG"],
+  "Scope of the ds000030 extraction": [D_CNP],
+  "NIDM and PROV roles for each record": [D_CNP],
+  "Requirements for joining behaviour to image-derived measures": [D_CNP],
+  "Research questions and results of the three papers": [D_CNPs, "Poldrack 2016, Gorgolewski 2017, Kim 2023"],
+  "StructSense extraction pilot": [D_CNPs, "Gorgolewski 2017, Kim 2023"],
+  "Scan, events and phenotype details": [D_CNP],
+  "Registration and cross-source joins": [D_CNPs, "Gorgolewski 2017"],
+  "Provenance of a single phenotype measurement": [D_CNP],
+  "AbstractAtlas: building blocks": ["AbstractAtlas (OHBM 2026)"],
+  "Phenotype embedding linked to image-derived phenotypes": [D_AB],
+  "ds000030 phenotype embedding from a graph query": [D_CNP],
+};
 
 // ---------------------------------------------------------------- kinds of knowledge
 // [group, kind, tile line, full standards line, populated in worked examples]
@@ -298,7 +353,7 @@ const TYPES = [
 // ---------------------------------------------------------------- old deck notes
 const OLD = fs.readFileSync(path.join(__dirname, "old_deck_v3.md"), "utf8").replace(
   "Kim tests whether increased connectivity adds information beyond decreased connectivity, and whether predictive features transfer.",
-  "Kim compares decreased- and increased-connectivity prediction models and tests cross-dataset transfer. [Corrected 2026-10-15: the earlier framing 'adds information beyond decreased connectivity' could not be confirmed verbatim in the source; see codex_verification/codex_claim_verification.md, claim 8.]");
+  "Kim asks which direction of connectivity change is associated with schizophrenia (aim, verbatim: 'we aimed to determine the direction of the connectivity alteration associated with schizophrenia using a multivariate, data-driven approach') and tests transfer across datasets. [Corrected 2026-10-15 after checking the source, https://www.frontiersin.org/articles/10.3389/fpsyt.2023.1232015/full: earlier paraphrases ('adds information beyond decreased connectivity', then 'do decreased and increased connectivity predict diagnosis') did not match the paper's stated aim.]");
 function oldNotes(n) {
   const parts = OLD.split(/<!-- Slide number: (\d+) -->/);
   for (let i = 1; i < parts.length; i += 2) {
@@ -486,8 +541,6 @@ async function main() {
     s.addText("Connecting neuroimaging knowledge graphs across data, publications and labs", { placeholder: "title" });
     s.addText([
       { text: "Worked examples on ds000030 and ABIDE I", options: { breakLine: true } },
-      { text: "ds000030: UCLA CNP; schizophrenia, bipolar, ADHD, controls", options: { breakLine: true, fontSize: 14, color: "C9D3D7" } },
-      { text: "ABIDE I: autism, 1,112 participants at 17 sites", options: { breakLine: true, fontSize: 14, color: "C9D3D7" } },
       { text: " ", options: { breakLine: true, fontSize: 12 } },
       { text: "Satrajit Ghosh", options: { breakLine: true, bold: true, fontSize: 18 } },
       { text: "ReproNim / LLM symposium · 25 minutes + discussion", options: { fontSize: 18 } },
@@ -534,37 +587,65 @@ async function main() {
   }
 
 
+  // N0 The two example datasets
+  {
+    const s = addSlide("CONTENT", MAIN);
+    s.addText("The two example datasets", { placeholder: "title" });
+    const panel = (x, fill, accent, name, full, facts, papers, used) => {
+      shp(s, pres.shapes.ROUNDED_RECTANGLE, x, 1.4, 6.05, 5.55, fill, null, { rectRadius: 0.3 });
+      text(s, [{ text: name, options: { bold: true, fontSize: 26, color: accent, breakLine: true } }, { text: full, options: { fontSize: 16, color: C.text1 } }], x + 0.3, 1.55, 5.5, 1.0, { valign: "top" });
+      s.addText(facts.map((t, i) => ({ text: t, options: { bullet: true, breakLine: i < facts.length - 1 } })), { x: x + 0.3, y: 2.65, w: 5.5, h: 2.15, fontSize: 16, color: C.text1, valign: "top", paraSpaceAfter: 4, margin: 0, isTextBox: true, objectName: `dsFacts${x}` });
+      text(s, "Papers used here", x + 0.3, 4.85, 5.5, 0.35, { fontSize: 15, bold: true, color: accent });
+      s.addText(papers.map((t, i) => ({ text: t, options: { breakLine: i < papers.length - 1 } })), { x: x + 0.3, y: 5.2, w: 5.5, h: 1.0, fontSize: 15, color: C.text1, valign: "top", margin: 0, isTextBox: true, objectName: `dsPapers${x}` });
+      shp(s, pres.shapes.ROUNDED_RECTANGLE, x + 0.3, 6.3, 5.45, 0.45, C.background1, used, { fontSize: 15, bold: true, color: accent, rectRadius: 0.5 });
+    };
+    panel(0.5, C.accent4, C.accent1, "ds000030", "UCLA Consortium for Neuropsychiatric Phenomics · OpenNeuro, commit 4070b6e, CC0",
+      [`${V("ds.total")} adults: ${V("ds.control")} controls, ${V("ds.schz")} schizophrenia, ${V("ds.bipolar")} bipolar disorder, ${V("ds.adhd")} ADHD`, "structural MRI, resting and task fMRI (e.g. stop-signal)", "52 questionnaire and phenotype tables"],
+      ["Poldrack et al. 2016: data descriptor", "Gorgolewski et al. 2017: preprocessed derivatives", "Kim et al. 2023: prediction across UCLA and COBRE"],
+      "Used in Part 1: representing a result");
+    panel(6.8, C.accent5, C.accent2, "ABIDE I", "Autism Brain Imaging Data Exchange · ABIDE Preprocessed (C-PAC), CC BY-NC-SA",
+      [`${V("abide.total")} participants (${V("abide.asd")} autistic, ${V("abide.td")} typically developing) from 17 sites`, "resting-state fMRI; phenotypes incl. IQ, ADOS, SRS", `200-region time series for ${V("abide.timeseries")} participants`],
+      ["Di Martino et al. 2014: group differences", "Abraham et al. 2017: site-held-out prediction", "a 74-study literature review"],
+      "Used in Part 2 and the live demo (one site)");
+    s.addNotes("0:45. Two public datasets carry every example. ds000030 is the UCLA Consortium for Neuropsychiatric Phenomics dataset on OpenNeuro (commit 4070b6e, CC0 licence): 272 adults, 130 healthy controls, 50 with schizophrenia, 49 with bipolar disorder and 43 with ADHD, with structural MRI, resting and task fMRI such as the stop-signal task, and 52 questionnaire and phenotype tables. We use it with three papers: the data descriptor (Poldrack et al. 2016), the preprocessed derivatives (Gorgolewski et al. 2017) and a prediction study across the UCLA and COBRE cohorts (Kim et al. 2023). It carries Part 1, representing a result. ABIDE I is the Autism Brain Imaging Data Exchange: 1,112 participants, 539 autistic and 573 typically developing, from 17 sites (20 site codes in the data), with resting-state fMRI and phenotypes including IQ, the ADOS clinician assessment and the Social Responsiveness Scale. ABIDE Preprocessed provides C-PAC-processed 200-region time series for 1,035 of them (CC BY-NC-SA licence). We use it with Di Martino et al. 2014 (group differences), Abraham et al. 2017 (prediction at held-out sites) and a review of 74 ABIDE studies; it carries Part 2, connecting graphs, and the live demo uses one site. Counts are from the ds000030 package (rebuilt and matched) and ABIDE results/key_numbers.json and element_coverage.json.");
+  }
+
   // N1 Knowledge graph primer
   {
     const s = addSlide("CONTENT", MAIN);
-    s.addText("A knowledge graph in three statements", { placeholder: "title" });
-    const node = (x, y, w, h, fill, t, col) => shp(s, pres.shapes.OVAL, x, y, w, h, fill, t, { fontSize: 18, bold: true, color: col || C.text2, margin: 4 });
-    node(0.6, 2.0, 1.75, 1.75, C.text2, "sub-10159", C.background1);
-    node(4.5, 1.4, 2.9, 1.05, C.accent4, [{ text: "'acts impulsively' = 2.0", options: { breakLine: true } }, { text: "bis_parcel1", options: { fontSize: 14, bold: false, color: C.accent3 } }]);
-    node(9.1, 1.4, 3.6, 1.05, C.background2, [{ text: "barratt.tsv, row 2", options: { breakLine: true } }, { text: "Barratt Impulsiveness Scale answers", options: { fontSize: 14, bold: false, color: C.accent3 } }]);
-    node(4.5, 3.25, 4.3, 1.05, C.accent4, [{ text: "ds000030 (commit 4070b6e)", options: { breakLine: true } }, { text: "UCLA CNP dataset", options: { fontSize: 14, bold: false, color: C.accent3 } }]);
-    curve(s, 2.35, 2.55, 4.5, 1.95, { arrow: true, width: 2.5, color: C.accent1 });
-    curve(s, 7.4, 1.92, 9.1, 1.92, { arrow: true, width: 2.5, color: C.accent1 });
-    curve(s, 2.35, 3.2, 4.5, 3.8, { arrow: true, width: 2.5, color: C.accent1 });
-    edgeLabel(s, "has value", 2.6, 1.75, 1.7, { color: C.accent1 });
-    edgeLabel(s, "was derived from", 7.3, 1.45, 1.9, { color: C.accent1 });
-    edgeLabel(s, "participated in", 2.55, 3.7, 1.9, { color: C.accent1 });
-    text(s, "subject", 0.6, 3.8, 1.75, 0.35, { fontSize: 14, italic: true, color: C.accent2, align: "center" });
-    text(s, "relation", 2.6, 2.35, 1.7, 0.35, { fontSize: 14, italic: true, color: C.accent2, align: "center" });
-    text(s, "object", 4.5, 2.47, 2.9, 0.35, { fontSize: 14, italic: true, color: C.accent2, align: "center" });
-    text(s, "Barratt items 17 'I act on impulse' and 19 'I act on the spur of the moment' were each answered 2 (occasionally); their mean is the 'acts impulsively' score.", 9.1, 2.6, 3.75, 1.75, { fontSize: 14, color: C.accent3, valign: "top" });
-    // query pattern
-    text(s, "A query", 0.6, 4.75, 1.6, 0.6, { fontSize: 18, bold: true, color: C.text2, valign: "middle" });
-    shp(s, pres.shapes.OVAL, 2.2, 4.7, 2.3, 0.7, C.background1, "?participant", { fontSize: 18, italic: true, color: C.accent2, line: C.accent2, dash: "dash" });
-    arrow(s, 4.5, 5.05, 6.0, 5.05, { color: C.accent1, width: 2.5 });
-    edgeLabel(s, "has full-scale IQ", 4.3, 4.6, 1.9, { color: C.accent1 });
-    shp(s, pres.shapes.OVAL, 6.0, 4.7, 1.3, 0.7, C.background1, "?x", { fontSize: 18, italic: true, color: C.accent2, line: C.accent2, dash: "dash" });
-    text(s, "fill the blanks: every participant and IQ value that match", 7.5, 4.7, 5.3, 0.7, { fontSize: 16, color: C.text1, valign: "middle" });
+    s.addText("A knowledge graph in four statements", { placeholder: "title" });
+    const node = (x, y, w, h, fill, main, sub, col) => shp(s, pres.shapes.OVAL, x, y, w, h, fill, [
+      { text: main, options: { bold: true, fontSize: 18, breakLine: !!sub } }, ...(sub ? [{ text: sub, options: { fontSize: 13, bold: false, color: col ? C.accent4 : C.accent3 } }] : []),
+    ], { color: col || C.text2, margin: 4 });
+    const lab = (t, sub, x, y, w, align = "center") => text(s, [{ text: t, options: { italic: true, fontSize: 16, color: C.accent1, breakLine: true } }, { text: sub, options: { fontSize: 12, color: C.accent3 } }], x, y, w, 0.62, { align, valign: "middle" });
+    node(0.55, 2.0, 1.75, 1.15, C.accent4, "2.0", "‘acts impulsively’");
+    node(4.45, 2.0, 3.1, 1.15, C.accent4, "questionnaire record", "nidm:AcquisitionObject");
+    node(9.05, 1.4, 3.8, 1.15, C.accent4, "Barratt questionnaire session", "nidm:Acquisition");
+    node(10.25, 3.3, 1.5, 1.2, C.text2, "sub-10159", "participant", C.background1);
+    shp(s, pres.shapes.ROUNDED_RECTANGLE, 4.6, 3.65, 2.8, 0.78, C.background2, [{ text: "barratt.tsv, row 2", options: { bold: true, fontSize: 16, breakLine: true } }, { text: "Barratt Impulsiveness Scale answers", options: { fontSize: 12, color: C.accent3 } }], { line: "C9D3D7", rectRadius: 0.2 });
+    arrow(s, 4.45, 2.57, 2.3, 2.57, { color: C.accent1, width: 2.5 });
+    lab("‘acts impulsively’ score", "bis_parcel1", 2.25, 1.55, 2.3);
+    curve(s, 7.55, 2.3, 9.05, 1.97, { arrow: true, width: 2.5, color: C.accent1 });
+    lab("was generated by", "prov:wasGeneratedBy", 7.2, 1.3, 2.0);
+    arrow(s, 11.0, 2.55, 11.0, 3.3, { color: C.accent1, width: 2.5 });
+    lab("with participant", "prov:qualifiedAssociation · agent, role: subject", 7.55, 2.65, 3.35, "right");
+    arrow(s, 6.0, 3.15, 6.0, 3.65, { color: C.accent3, width: 1.5 });
+    text(s, [{ text: "was derived from ", options: { italic: true, fontSize: 14, color: C.accent3 } }, { text: "prov:wasDerivedFrom", options: { fontSize: 12, color: C.accent3 } }], 6.1, 3.22, 3.0, 0.35, { valign: "middle" });
+    text(s, "Barratt items 17 ‘I act on impulse’ and 19 ‘I act on the spur of the moment’ were each answered 2 (occasionally); their mean is the ‘acts impulsively’ score.", 0.55, 3.35, 3.85, 1.1, { fontSize: 13, color: C.accent3, valign: "top" });
+    // query pattern along the same path
+    text(s, "A query", 0.55, 4.7, 1.2, 0.6, { fontSize: 18, bold: true, color: C.text2, valign: "middle" });
+    const blank = (x, w, t) => shp(s, pres.shapes.OVAL, x, 4.68, w, 0.64, C.background1, t, { fontSize: 16, italic: true, color: C.accent2, line: C.accent2, dash: "dash" });
+    blank(1.75, 0.9, "?x"); blank(3.6, 1.55, "?record"); blank(6.45, 1.55, "?session"); blank(9.3, 1.9, "?participant");
+    arrow(s, 3.6, 5.0, 2.65, 5.0, { color: C.accent1, width: 2 }); arrow(s, 5.15, 5.0, 6.45, 5.0, { color: C.accent1, width: 2 }); arrow(s, 8.0, 5.0, 9.3, 5.0, { color: C.accent1, width: 2 });
+    text(s, "score", 2.6, 4.45, 1.05, 0.3, { fontSize: 13, italic: true, color: C.accent1, align: "center" });
+    text(s, "generated by", 5.05, 4.45, 1.5, 0.3, { fontSize: 13, italic: true, color: C.accent1, align: "center" });
+    text(s, "with participant", 7.85, 4.45, 1.6, 0.3, { fontSize: 13, italic: true, color: C.accent1, align: "center" });
+    text(s, `→ ${V("ds.total")} participants and their scores`, 11.25, 4.6, 1.75, 0.8, { fontSize: 14, color: C.text1, valign: "middle" });
     const gl = [["Triple", "one statement: subject, relation, object"], ["Identifier", "a name that means one thing everywhere (sub-10159, a DOI)"], ["Vocabulary", "agreed names for relations and types (NIDM, PROV)"], ["Query", "a statement pattern with blanks (SPARQL)"]];
     gl.forEach(([k, v], i) => shp(s, pres.shapes.ROUNDED_RECTANGLE, 0.5 + i * 3.1, 5.75, 2.95, 1.15, C.background2, [
       { text: k, options: { bold: true, fontSize: 16, color: C.text2, breakLine: true } }, { text: v, options: { fontSize: 14, color: C.text1 } },
     ], { align: "left", margin: 8, line: "C9D3D7", rectRadius: 0.2 }));
-    s.addNotes("1:15. Before any technology: a knowledge graph is a set of statements, each with three parts, a subject, a relation and an object; that unit is called a triple. Read the three here: participant sub-10159 has the value 2 for the Barratt score bis_parcel1; that value was derived from row 2 of barratt.tsv; and sub-10159 participated in ds000030 at commit 4070b6e. They become a graph because they share nodes: the same sub-10159 appears in two statements, and the same value in two. An identifier is a name that means the same thing everywhere, such as a participant ID or a DOI; a vocabulary is an agreed set of names for relations and types, such as NIDM for neuroimaging records and PROV for where things came from. A query is a statement pattern with blanks: '?participant has FIQ ?x' asks the graph to fill in every participant and value that match; SPARQL is the standard language for writing such patterns. Everything else in the talk is built from these pieces. The facts shown are from the ds000030 package, which was rebuilt and matched.");
+    s.addNotes("1:15. A knowledge graph is a set of statements, each with three parts: a subject, a relation and an object; that unit is called a triple. This is how the ds000030 graph actually records one questionnaire score, in four statements. A questionnaire record has the 'acts impulsively' score 2.0 (the variable bis_parcel1). The record was generated by a Barratt questionnaire session (in NIDM, an acquisition). That session was carried out with participant sub-10159, who has the role of subject (in PROV, a qualified association with an agent). And the record was derived from row 2 of barratt.tsv. The participant is two steps away from the score, not attached to it directly: that is how the graph keeps the measurement, the session it came from and the person separate. An identifier is a name that means the same thing everywhere, such as a participant ID or a DOI; a vocabulary is an agreed set of names for relations and types, such as NIDM for neuroimaging records and PROV for where things came from. A query is the same path with blanks: find any record with an 'acts impulsively' score ?x, generated by some session ?session, carried out with some participant ?participant. Run on the ds000030 graph (results/nidm_phenotypes.ttl) it returns all 272 participants and their scores; for sub-10159 it returns 2.0 from barratt.tsv row 2. SPARQL is the standard language for writing such patterns.");
   }
 
   // 4c2 Components of a dataset and a publication
@@ -572,7 +653,7 @@ async function main() {
     const s = addSlide("CONTENT", MAIN);
     s.addText("Components of a dataset and a publication", { placeholder: "title" });
     const DS = [
-      ["Participants and phenotypes", "272 participants; 52 tables, 1,983 columns"],
+      ["Participants and phenotypes", `${V("ds.total")} participants; 52 tables, 1,983 columns`],
       ["Data dictionary", "'acts impulsively' = mean of Barratt items 17 and 19"],
       ["Scan sidecars", "sub-10159 BOLD: TR 2 s, TE 0.03 s, 3 T, scanner 35343"],
       ["Task events", "stop-signal task: 96 go, 32 stop trials, 128 rest intervals"],
@@ -581,7 +662,7 @@ async function main() {
       ["Release and version", "ds000030 commit 4070b6e; ABIDE Preprocessed"],
     ];
     const PUB = [
-      ["Research question", "Kim 2023: do decreased and increased connectivity predict diagnosis?"],
+      ["Research question", "Kim 2023: which direction of connectivity change is associated with schizophrenia?"],
       ["Cohort and exclusions", "Kim 2023: 47 patients + 47 controls; Abraham 2017: 871 of 1,112"],
       ["Preprocessing and versions", "fMRIPrep: fMRI to anatomy (FreeSurfer 6.0.0), anatomy to MNI template (ANTs 2.1.0)"],
       ["Analysis and evaluation", "linear classifier; leave-one-participant-out, leave-site-out"],
@@ -608,7 +689,7 @@ async function main() {
     text(s, "Linked by", 5.68, 2.8, 1.95, 0.4, { fontSize: 16, bold: true, color: C.background1, align: "center" });
     ["participant IDs", "accession and version", "cohort definition"].forEach((t, i) =>
       shp(s, pres.shapes.ROUNDED_RECTANGLE, 5.82, 3.3 + i * 0.78, 1.67, 0.64, C.background1, t, { fontSize: 14, bold: true, color: C.text2, margin: 4 }));
-    s.addNotes("1:15. Terms: ds000030 is the UCLA Consortium for Neuropsychiatric Phenomics dataset on OpenNeuro; the Barratt Impulsiveness Scale is a 30-item impulsivity questionnaire; a scan sidecar is the BIDS JSON file of acquisition parameters; C-PAC and fMRIPrep are preprocessing pipelines; BBR and ANTs SyN are registration methods to anatomy and to the MNI template. Concrete components, each with an example already in this talk. A dataset is more than its images: participant and phenotype tables (272 participants; 52 tables and 1,983 columns in ds000030), a data dictionary that defines derived scores (bis_parcel1 is the mean of items 19 and 17), scan sidecars (sub-10159's resting BOLD: TR 2 s, TE 0.03 s, 3 T, scanner 35343), task event files (256 rows), a file inventory (2,531 pointers), derivatives (Barratt scores; CC200 time series from C-PAC) and a release version (commit 4070b6e; ABIDE Preprocessed). A publication has its own components: the research question, the cohort and its exclusions (Kim 2023, 47 + 47; Abraham 2017, 871 of ABIDE I's 1,112), preprocessing with versions (Gorgolewski 2017: FMRIPREP with FreeSurfer 6.0.0 BBR and ANTs 2.1.0 SyN to MNI152NLin2009cAsym), the analysis and evaluation scheme, scoped results (70.2% UCLA leave-one-out) and data and code availability; in our review, only 17 of 74 ABIDE studies had reconstructible cohorts. What links the two sides is participant IDs, the dataset accession and version, and the cohort definition, which is what the joining slide uses. Details are in the backup slides on the ds000030 extraction, the papers' research questions, and scan, event and phenotype details.");
+    s.addNotes("1:15. Terms: ds000030 is the UCLA Consortium for Neuropsychiatric Phenomics dataset on OpenNeuro; the Barratt Impulsiveness Scale is a 30-item impulsivity questionnaire; a scan sidecar is the BIDS JSON file of acquisition parameters; C-PAC and fMRIPrep are preprocessing pipelines; BBR and ANTs SyN are registration methods to anatomy and to the MNI template. Concrete components, each with an example already in this talk. A dataset is more than its images: participant and phenotype tables (272 participants; 52 tables and 1,983 columns in ds000030), a data dictionary that defines derived scores (the 'acts impulsively' score bis_parcel1 is the mean of Barratt items 17 and 19, stored on each participant's questionnaire record), scan sidecars (sub-10159's resting BOLD: TR 2 s, TE 0.03 s, 3 T, scanner 35343), task event files (256 rows), a file inventory (2,531 pointers), derivatives (Barratt scores; CC200 time series from C-PAC) and a release version (commit 4070b6e; ABIDE Preprocessed). A publication has its own components: the research question, the cohort and its exclusions (Kim 2023, 47 + 47; Abraham 2017, 871 of ABIDE I's 1,112), preprocessing with versions (Gorgolewski 2017: FMRIPREP with FreeSurfer 6.0.0 BBR and ANTs 2.1.0 SyN to MNI152NLin2009cAsym), the analysis and evaluation scheme, scoped results (70.2% UCLA leave-one-out) and data and code availability; in our review, only 17 of 74 ABIDE studies had reconstructible cohorts. What links the two sides is participant IDs, the dataset accession and version, and the cohort definition, which is what the joining slide uses. Details are in the backup slides on the ds000030 extraction, the papers' research questions, and scan, event and phenotype details.");
   }
 
   // 4b What a neuroimaging graph can hold
@@ -689,8 +770,8 @@ async function main() {
       { text: v, options: { fontSize: 18, color: hl ? C.background1 : C.text1, bold: !!hl } },
     ], { margin: 4 });
     const P = [[0.45, 1.5], [3.55, 2.45], [6.65, 1.5], [9.75, 2.45]];
-    node(...P[0], "Question", "Do decreased and increased connectivity predict diagnosis?");
-    node(...P[1], "Claim", "70.2% accuracy", true);
+    node(...P[0], "Question (Kim et al. 2023)", "Which direction of connectivity change is associated with schizophrenia?");
+    node(...P[1], "Claim", "70.2% accuracy (UCLA, leave one participant out)", true);
     node(...P[2], "Evaluation", "UCLA cohort, leave one participant out, linear classifier");
     node(...P[3], "Cohort", "47 + 47 people, as reported");
     for (let i = 0; i < 3; i++) curve(s, P[i][0] + w - 0.05, P[i][1] + h * 0.62, P[i + 1][0] + 0.1, P[i + 1][1] + h * 0.42, { arrow: true, width: 2.5 });
@@ -700,26 +781,9 @@ async function main() {
     curve(s, 8.5, 5.55, 6.4, 5.85, { color: C.accent2, width: 2.5, dash: "dash", arrow: true });
     shp(s, pres.shapes.OVAL, 8.75, 5.05, 0.7, 0.7, C.accent2, "?", { fontSize: 28, bold: true, color: C.background1 });
     text(s, [{ text: "Missing link: ", options: { bold: true, color: C.accent2 } }, { text: "which 94 participants, and how each file was processed" }], 9.7, 5.15, 3.2, 1.4, { fontSize: 18, color: C.text1, valign: "middle" });
-    s.addNotes("1:30. Terms: Kim et al. 2023 classified schizophrenia patients versus controls from resting-state connectivity; CPM is connectome-based predictive modelling, here with a linear support vector machine (a standard linear classifier); leave-one-out cross-validation trains on all participants but one and tests on the one left out, repeated for each person. The question node is worded as confirmed in the source (decreased- and increased-connectivity models; cross-dataset transfer); an earlier 'adds information beyond' framing could not be confirmed verbatim (codex_verification, claim 8). Say: the paper tells us which dataset, but not which 94 people from it, so we cannot rebuild the cohort. Kim et al. 2023 (Front Psychiatry, doi 10.3389/fpsyt.2023.1232015). The claim is scoped: 70.2% is the within-UCLA leave-one-out accuracy for both connectivity directions; transfer to COBRE was 61.5% for decreased connectivity and the reverse direction was not above chance. The paper names ds000030, but not the 94 participants or per-file processing, and reports GRETNA/SPM12, so reuse of the 2017 fMRIPrep derivatives is not asserted. Lesson: save the participant manifest with every analysis.\n\n" + fromOld(13, 12));
+    s.addNotes("1:30. Terms: Kim et al. 2023 classified schizophrenia patients versus controls from resting-state connectivity; CPM is connectome-based predictive modelling, here with a linear support vector machine (a standard linear classifier); leave-one-out cross-validation trains on all participants but one and tests on the one left out, repeated for each person. The question is the paper's own aim, verbatim from the abstract: 'we aimed to determine the direction of the connectivity alteration associated with schizophrenia using a multivariate, data-driven approach' (Kim et al. 2023, 'Bidirectional connectivity alterations in schizophrenia: a multivariate, machine-learning approach', https://www.frontiersin.org/articles/10.3389/fpsyt.2023.1232015/full). The results add a second claim: 'combining information from both increased and decreased rsFC substantially improved prediction accuracy', and 'When tested across datasets, the prediction model using decreased rsFC performed best.' Note for the speaker: earlier drafts of this slide paraphrased the question as 'do decreased and increased connectivity predict diagnosis?', which turns a question about the direction of an association into a prediction question; it was corrected after checking the source, and is itself an example of the scope error this talk warns about. Say: the paper tells us which dataset, but not which 94 people from it, so we cannot rebuild the cohort. Kim et al. 2023 (Front Psychiatry, doi 10.3389/fpsyt.2023.1232015). The claim is scoped: 70.2% is the within-UCLA leave-one-out accuracy for both connectivity directions; transfer to COBRE was 61.5% for decreased connectivity and the reverse direction was not above chance. The paper names ds000030, but not the 94 participants or per-file processing, and reports GRETNA/SPM12, so reuse of the 2017 fMRIPrep derivatives is not asserted. Lesson: save the participant manifest with every analysis.\n\n" + fromOld(13, 12));
   }
 
-
-  // N2 Exercise: write the chain
-  {
-    const s = addSlide("CONTENT", MAIN);
-    s.addText("Exercise: write the chain for your own last result", { placeholder: "title" });
-    const steps = ["Question", "Claim, with its scope", "Cohort", "Derived measure", "Source data"];
-    steps.forEach((t, i) => {
-      const x = 0.5 + i * 2.5, y = i % 2 ? 2.55 : 1.55;
-      shp(s, pres.shapes.ROUNDED_RECTANGLE, x, y, 2.3, 3.3, C.background1, null, { line: C.accent1, lineWidth: 2, dash: "dash", rectRadius: 0.15 });
-      shp(s, pres.shapes.OVAL, x + 0.82, y - 0.33, 0.66, 0.66, C.accent1, String(i + 1), { fontSize: 20, bold: true, color: C.background1 });
-      text(s, t, x + 0.1, y + 0.45, 2.1, 0.75, { fontSize: 18, bold: true, color: C.text2, align: "center", valign: "top" });
-      [1.45, 2.05, 2.65].forEach((dy) => s.addShape(pres.shapes.LINE, { x: x + 0.25, y: y + dy, w: 1.8, h: 0, line: { color: "C9D3D7", width: 1 } }));
-      if (i < 4) curve(s, x + 2.3, y + 1.65, x + 2.5, (i + 1) % 2 ? y + 2.65 : y + 0.65, { arrow: true, width: 2, color: C.accent3 });
-    });
-    text(s, "In pairs, 60 seconds", 0.5, 6.35, 6, 0.5, { fontSize: 22, italic: true, color: C.accent2 });
-    s.addNotes("1:30. Take a result from your own recent work. In pairs, for 60 seconds, fill the five boxes: the question you asked; the claim, with its scope (which population, which measure, which contrast, which evaluation); the cohort, meaning exactly which participants and the rule that selected them; the derived measure, such as a FreeSurfer volume or a connectivity edge, and the software and version that produced it; and the source data, such as the BIDS dataset and its version. Then ask one or two volunteers which box was hardest to fill. Usually it is the cohort: that is the missing link on the previous slide, and it is what a knowledge graph keeps.");
-  }
 
   // 8a Spot the error
   const statements = [
@@ -1005,34 +1069,35 @@ async function main() {
   }
 
 
-  // N3 Live demo 3
-  {
+  // N3 Live demos
+  for (const [di, title, ps, inst, extra] of [
+    [1, "Live demo: building a graph in Claude Code", [0, 1], true, "assistant overstated: 2 tools, not 3"],
+    [2, "Live demo: querying and using the graph", [2, 3], false, null],
+  ]) {
     const s = addSlide("CONTENT", MAIN);
-    s.addText("Live demo: building a graph in Claude Code", { placeholder: "title" });
-    const steps = [...DEMO.install, ...DEMO.prompts.slice(0, 2).map((p) => p.text)];
-    shp(s, pres.shapes.ROUNDED_RECTANGLE, 0.5, 1.45, 7.5, 5.45, C.text2, null, { rectRadius: 0.06 });
-    s.addText(steps.map((t, i) => ({ text: `${i + 1}  ${t}`, options: { breakLine: i < steps.length - 1 } })), { x: 0.75, y: 1.65, w: 7.0, h: 5.1, fontFace: "Courier New", fontSize: 16, color: "E8F1F2", valign: "top", paraSpaceAfter: 10, margin: 0, isTextBox: true, objectName: "demoSteps3" });
-    text(s, "Expected output", 8.3, 1.45, 4.5, 0.45, { fontSize: 18, bold: true, color: C.text2 });
-    const outs = DEMO.prompts.slice(0, 2).map((p) => p.expected);
-    shp(s, pres.shapes.ROUNDED_RECTANGLE, 8.3, 1.95, 4.55, 3.95, C.background2, null, { line: "C9D3D7", rectRadius: 0.06 });
-    s.addText(outs.map((t, i) => ({ text: t, options: { breakLine: i < outs.length - 1 } })), { x: 8.45, y: 2.05, w: 4.25, h: 3.75, fontFace: "Courier New", fontSize: 16, color: C.text1, valign: "top", paraSpaceAfter: 6, margin: 0, isTextBox: true, objectName: "demoOut3" });
-    shp(s, pres.shapes.ROUNDED_RECTANGLE, 8.3, 6.1, 4.55, 0.75, C.accent4, "Expected duration: " + DEMO.prompts.slice(0, 2).map((p) => p.duration).join(" + "), { fontSize: 16, bold: true, color: C.text2 });
-    s.addNotes("1:45. " + "Install the skill and build a small graph from one ABIDE site with an AI assistant in the terminal. Repository and branch: " + DEMO.repo_branch + ". If the live demo fails, show the recorded transcript: " + (DEMO.transcript_path || "[placeholder: transcript not yet recorded]") + ". " + DEMO.note);
-  }
-
-  // N4 Live demo 4
-  {
-    const s = addSlide("CONTENT", MAIN);
-    s.addText("Live demo: querying and using the graph", { placeholder: "title" });
-    const steps = DEMO.prompts.slice(2, 4).map((p) => p.text);
-    shp(s, pres.shapes.ROUNDED_RECTANGLE, 0.5, 1.45, 7.5, 5.45, C.text2, null, { rectRadius: 0.06 });
-    s.addText(steps.map((t, i) => ({ text: `${i + 1}  ${t}`, options: { breakLine: i < steps.length - 1 } })), { x: 0.75, y: 1.65, w: 7.0, h: 5.1, fontFace: "Courier New", fontSize: 16, color: "E8F1F2", valign: "top", paraSpaceAfter: 10, margin: 0, isTextBox: true, objectName: "demoSteps4" });
-    text(s, "Expected output", 8.3, 1.45, 4.5, 0.45, { fontSize: 18, bold: true, color: C.text2 });
-    const outs = DEMO.prompts.slice(2, 4).map((p) => p.expected);
-    shp(s, pres.shapes.ROUNDED_RECTANGLE, 8.3, 1.95, 4.55, 3.95, C.background2, null, { line: "C9D3D7", rectRadius: 0.06 });
-    s.addText(outs.map((t, i) => ({ text: t, options: { breakLine: i < outs.length - 1 } })), { x: 8.45, y: 2.05, w: 4.25, h: 3.75, fontFace: "Courier New", fontSize: 16, color: C.text1, valign: "top", paraSpaceAfter: 6, margin: 0, isTextBox: true, objectName: "demoOut4" });
-    shp(s, pres.shapes.ROUNDED_RECTANGLE, 8.3, 6.1, 4.55, 0.75, C.accent4, "Expected duration: " + DEMO.prompts.slice(2, 4).map((p) => p.duration).join(" + "), { fontSize: 16, bold: true, color: C.text2 });
-    s.addNotes("1:45. " + "Ask the assistant to answer questions from the graph it just built: a cohort join, a trace from a derived value back to its source, and the effect of a QC change. Each answer should cite the statements it used. " + DEMO.note);
+    s.addText(title, { placeholder: "title" });
+    const lines = [];
+    if (inst) DEMO.install.forEach((c) => lines.push({ text: "$ " + c, options: { color: "9FD3D4", breakLine: true } }));
+    ps.forEach((k, j) => {
+      const P = DEMO.prompts[k];
+      lines.push({ text: P.label, options: { bold: true, color: "FFFFFF", breakLine: true } });
+      lines.push({ text: "> " + P.text, options: { color: "E8F1F2", breakLine: j < ps.length - 1 } });
+    });
+    shp(s, pres.shapes.ROUNDED_RECTANGLE, 0.45, 1.35, 8.35, 5.6, C.text2, null, { rectRadius: 0.04 });
+    s.addText(lines, { x: 0.6, y: 1.45, w: 8.05, h: 5.4, fontFace: "Courier New", fontSize: 16, valign: "top", paraSpaceAfter: 3, margin: 0, isTextBox: true, objectName: `demoCode${di}` });
+    text(s, "Expected output (tested)", 9.0, 1.35, 3.9, 0.4, { fontSize: 18, bold: true, color: C.text2 });
+    const outs = [];
+    ps.forEach((k, j) => {
+      const P = DEMO.prompts[k];
+      outs.push({ text: P.label + " · " + P.duration, options: { bold: true, fontFace: "Calibri", color: C.accent1, breakLine: true } });
+      P.expected.forEach((e, m) => outs.push({ text: e, options: { breakLine: !(j === ps.length - 1 && m === P.expected.length - 1) } }));
+    });
+    shp(s, pres.shapes.ROUNDED_RECTANGLE, 9.0, 1.8, 3.9, extra ? 4.25 : 5.15, C.background2, null, { line: "C9D3D7", rectRadius: 0.05 });
+    s.addText(outs, { x: 9.12, y: 1.9, w: 3.66, h: extra ? 4.05 : 4.95, fontFace: "Courier New", fontSize: 16, color: C.text1, valign: "top", paraSpaceAfter: 4, margin: 0, isTextBox: true, objectName: `demoOut${di}` });
+    if (extra) shp(s, pres.shapes.ROUNDED_RECTANGLE, 9.0, 6.2, 3.9, 0.75, C.accent5, extra, { fontSize: 16, bold: true, color: C.accent2, line: C.accent2, rectRadius: 0.3 });
+    s.addNotes(di === 1
+      ? "2:00. Install the skill into this project only, then build a graph for one ABIDE I site (Caltech, 38 participants) from the phenotype table and ReproNim's NIDM file of brain volumes. Prompt 1 took 34 s in testing: the graph built, its checks passed, and a deliberately deleted 'derived from' link was caught. The assistant also said the volumes came from three tools (FreeSurfer, FSL, ANTs); Caltech's file has FreeSurfer and FSL only. That is a real check-against-the-graph moment: ask the room how we would verify it, and point out that one query over the software agents in the graph answers it. Prompt 2 (14 s) joins IQ from our table with FreeSurfer hippocampal volume from ReproNim's file through the shared participant ID: 18 autistic and 19 control participants. Repository and branch: " + DEMO.repo_branch + ". " + DEMO.note
+      : "2:00. Prompt 3 (162 s, the slow one) traces participant 51456's left-hippocampus volume to its FreeSurfer run and the T1-weighted scan. The volume (4513.9 mm³) and its meaning are recorded; the link 'FreeSurfer ran on this scan' is not recorded, only implied by the subject ID appearing in a command line, and the FreeSurfer version appears only inside a path string. The graph shows where provenance is missing. Prompt 4 (55 s) applies the stricter motion rule, mean FD below 0.15 mm: participants 51456 and 51469 drop out, so the cohort becomes 17 autistic and 19 control, and the assistant flags two queries that ignore the cohort. " + DEMO.note);
   }
 
   // 14b How this lecture was produced
@@ -1066,11 +1131,11 @@ async function main() {
     // corrections
     text(s, "Caught by the speaker", 0.55, 4.7, 5.9, 0.42, { fontSize: 18, bold: true, color: C.accent2 });
     text(s, "Caught by automated checks", 6.85, 4.7, 5.9, 0.42, { fontSize: 18, bold: true, color: C.accent1 });
-    ["Consent wording: scoped consent, not “no consent”", "Slow query → triplestore and query optimisation", "AbstractAtlas links dropped, then restored", "LLM-style footers and titles removed"].forEach((t, i) =>
+    ["Consent wording: scoped consent, not “no consent”", "Kim 2023 question paraphrased wrongly; fixed from source", "AbstractAtlas links dropped, then restored", "LLM-style footers and titles removed"].forEach((t, i) =>
       shp(s, pres.shapes.ROUNDED_RECTANGLE, 0.55, 5.15 + i * 0.47, 5.95, 0.4, C.accent5, t, { fontSize: 16, align: "left", margin: 8 }));
-    ["Failed ORCD job: invalid p-values", "Clean rebuild caught a blocked download (HTTP 403)", "Two agents reconstructed the same cohorts differently", "Seeded UMAP not identical on re-run (≤ 0.011)"].forEach((t, i) =>
+    ["Failed ORCD job: invalid p-values", "Clean rebuild caught a blocked download (HTTP 403)", "Two agents reconstructed the same cohorts differently", "UMAP values drift across machines; all else matched"].forEach((t, i) =>
       shp(s, pres.shapes.ROUNDED_RECTANGLE, 6.85, 5.15 + i * 0.47, 5.95, 0.4, C.accent4, t, { fontSize: 16, align: "left", margin: 8 }));
-    s.addNotes("0:45. How the lecture itself was produced, with checks deciding what was used. The speaker gave instructions; an orchestrating agent delegated to sub-agents that built the deck and the ABIDE experiment, and a second session queried Brain Researcher through MCP. The agents used Python, the Oxigraph triplestore, pySHACL, PowerPoint rendering and Slurm jobs on ORCD. Automated checks ran on every output, and the speaker reviewed every slide. The badge in the bottom-left corner of each slide records how it was produced (H speaker, L LLM draft, A agent computed, R agent retrieved, M external agent via MCP, P earlier agentic session) and how it was checked (re-run, validated, reviewed, unverified); the key is in backup, and the same records are exported as PROV in talk_provenance.ttl. Corrections came from both directions. The speaker caught the consent wording, slow graph queries, AbstractAtlas links that had been dropped, and LLM-style footers and titles. Automated checks caught an ORCD job that produced invalid p-values, a clean rebuild from a fresh download that failed because one host blocked the default download client (HTTP 403), now fixed, two agents that reconstructed the same ABIDE cohorts differently, and a seeded UMAP that was not identical when re-run on ORCD (trustworthiness within 0.011; conclusion unchanged).");
+    s.addNotes("0:45. How the lecture itself was produced, with checks deciding what was used. The speaker gave instructions; an orchestrating agent delegated to sub-agents that built the deck and the ABIDE experiment, and a second session queried Brain Researcher through MCP. The agents used Python, the Oxigraph triplestore, pySHACL, PowerPoint rendering and Slurm jobs on ORCD. Automated checks ran on every output, and the speaker reviewed every slide. The badge in the bottom-left corner of each slide records how it was produced (H speaker, L LLM draft, A agent computed, R agent retrieved, M external agent via MCP, P earlier agentic session) and how it was checked (re-run, validated, reviewed, unverified); the key is in backup, and the same records are exported as PROV in talk_provenance.ttl. Corrections came from both directions. The speaker caught the consent wording, a paraphrase of Kim et al. 2023's research question that changed an association question into a prediction question (corrected from the paper's stated aim), AbstractAtlas links that had been dropped, and LLM-style footers and titles. Automated checks caught an ORCD job that produced invalid p-values, a clean rebuild from a fresh download that failed because one host blocked the default download client (HTTP 403), now fixed, two agents that reconstructed the same ABIDE cohorts differently, and UMAP embedding values that drift slightly when re-run on another machine while every other number matched (ds000030: trustworthiness within 0.011; ABIDE: 196 of 218 key numbers within 1%, the differences being run times, dates and UMAP-derived values).");
   }
 
   // 15 Five things this week
@@ -1122,7 +1187,7 @@ async function main() {
       { text: "ABIDE_Collaboration_Knowledge_Graph.zip", options: { breakLine: true, fontSize: 20 } },
       { text: "github.com/sensein/agent_skills · abstractatlas.brainkb.org", options: { fontSize: 20 } },
     ], { placeholder: "body" });
-    s.addNotes("0:30 + discussion. Main-route total: 24:00 (opening: 0:20 title, 0:40 objectives, 1:15 three-statement primer; objective 1: 1:15 dataset and publication components, 0:45 entities, 1:00 participant graph, 1:30 claim chain, 1:30 write-your-chain exercise, 1:00 claim exercise, 0:45 quotation checks; objective 2: 1:30 joining graphs, 0:45 coverage, 0:45 ABIDE design, 1:00 ABIDE results, 0:30 QC exercise, 0:45 dependency tracing, 0:45 publications and abstracts, 0:45 evaluation schemes, 1:00 ReproPond and ReproLake; with an assistant: 0:30 capabilities, 1:45 demo 1, 1:45 demo 2, 0:45 how this lecture was produced; close: 1:00 practices, 0:30 discussion). Open the floor: which link in the chain (manifest, scope, derivative lineage, review) would your lab require before an agent's change is accepted? Offer a live look at the HTML experiment report if time allows.\n\n" + fromOld(28));
+    s.addNotes("0:45 + discussion. Main-route total: 24:00 (opening: 0:20 title, 0:40 objectives, 0:45 the two datasets, 1:15 three-statement primer; objective 1: 1:15 dataset and publication components, 0:45 entities, 1:00 participant graph, 1:30 claim chain, 1:00 claim exercise, 0:45 quotation checks; objective 2: 1:30 joining graphs, 0:45 coverage, 0:45 ABIDE design, 1:00 ABIDE results, 0:30 QC exercise, 0:45 dependency tracing, 0:45 publications and abstracts, 0:45 evaluation schemes, 1:00 ReproPond and ReproLake; with an assistant: 0:30 capabilities, 2:00 demo 1, 2:00 demo 2, 0:45 how this lecture was produced; close: 1:00 practices, 0:45 discussion). Open the floor: which link in the chain (manifest, scope, derivative lineage, review) would your lab require before an agent's change is accepted? Offer a live look at the HTML experiment report if time allows.\n\n" + fromOld(28));
   }
 
   // ---------------------------------------------------------------- backup
@@ -1257,7 +1322,7 @@ async function main() {
     ["Scope of the ds000030 extraction", [["Layer", "Completed work"], ["Phenotype tables", "52 tables, 1,983 columns, 272 participants"], ["Observed / missing cells", "411,584 values / 127,792 missing cells"], ["MRI inventory", "2,531 file pointers, plus selected metadata"], ["Papers", "Three related papers, selected claims and methods"], ["Graph size", "834,327 NIDM triples before the claim bridge"]], [4], [3.5, 8.6]],
     ["NIDM and PROV roles for each record", [["Record", "NIDM / PROV representation"], ["Participant and visit", "prov:Person and nidm:Session"], ["Questionnaire or scan", "nidm:Acquisition activity"], ["Variable definition and value", "nidm:DataElement on an AcquisitionObject"], ["Processing and its output", "nidm:Derivative and DerivativeObject"]], [5], [4.5, 7.6]],
     ["Requirements for joining behaviour to image-derived measures", [["Link required", "State in ds000030"], ["Same participant and visit", "Participant IDs available; time alignment unresolved"], ["Imaging measure definition", "Region, atlas, laterality, units and method required"], ["Derived value to original image", "Stats file, processing record and source image required"], ["Example future join", "SSRT with thickness or regional volume"]], [8], [4.5, 7.6]],
-    ["Research questions and results of the three papers", [["Paper / result", "Question, result and scope"], ["Poldrack 2016", "Data descriptor: enables dimensional study across diagnoses"], ["Gorgolewski 2017", "Reusable preprocessing and QC outputs"], ["Kim 2023", "Decreased- vs increased-connectivity models; cross-dataset transfer"], ["Kim 70.2%", "UCLA, both directions, leave-one-out"], ["Kim 61.5%", "Train UCLA, test COBRE, decreased connectivity"], ["Kim reverse transfer", "No above-chance predictions reported"]], [11, 12], [3.5, 8.6]],
+    ["Research questions and results of the three papers", [["Paper / result", "Question, result and scope"], ["Poldrack 2016", "Data descriptor: enables dimensional study across diagnoses"], ["Gorgolewski 2017", "Reusable preprocessing and QC outputs"], ["Kim 2023", "Which direction of connectivity change is associated with schizophrenia; cross-dataset transfer"], ["Kim 70.2%", "UCLA, both directions, leave-one-out"], ["Kim 61.5%", "Train UCLA, test COBRE, decreased connectivity"], ["Kim reverse transfer", "No above-chance predictions reported"]], [11, 12], [3.5, 8.6]],
     ["StructSense extraction pilot", [["Stage", "What actually ran"], ["Contract", "Frozen schema for claims, scope and evidence"], ["Extraction", "Host-model extraction of six bounded records"], ["Alignment and review", "Explicit vocabulary lookup and source review"], ["Validation", "Upstream span code, Ajv schema, RDF checks"], ["Example record", "Statement, scope, exact span + hash, open gap"]], [14, 15], [3.5, 8.6]],
     ["Attribution across collaborators", [["Question the graph can answer", "Required records and constraints"], ["Who worked on this question?", "Person → activity → question, claim and outputs"], ["Which claims inform another question?", "Reviewed relevance or support relation with scope"], ["Who disagrees, and on what basis?", "Separate assessments, evidence and reviewer roles"], ["What changes when evidence is corrected?", "Traverse affected claims, questions and work items"], ["AbstractAtlas building blocks", "Semantic search, extracted claims with ECO codes, author records, cached provenance"]], [19, 20, 21], [4.5, 7.6]],
     ["Design for a graph-versus-search comparison", [["Controlled factor", "Proposed experiment"], ["Same corpus, model and tool budget", "Search only; skill only; graph only; both"], ["Held-out questions", "Single fact, cohort join, lineage and contradiction"], ["Scoring", "Correctness, evidence completeness, false claims"], ["Longer agent sessions", "Constraint violations and recovery"]], [22, 23], [4.5, 7.6]],
@@ -1323,17 +1388,17 @@ async function main() {
     const d = 2.4;
     const node = (x, y, fill, title, sub, light) => shp(s, pres.shapes.OVAL, x, y, d, d, fill, [
       ...title.split("\n").map((t) => ({ text: t, options: { bold: true, fontSize: 18, breakLine: true } })),
-      { text: sub, options: { fontSize: 18, color: light ? C.accent4 : C.accent3 } },
-    ], { color: light ? C.background1 : C.text1, margin: 6 });
+      { text: sub, options: { fontSize: 12, color: light ? C.accent4 : C.accent3 } },
+    ], { color: light ? C.background1 : C.text1, margin: 2 });
     node(0.5, 1.5, C.text2, "sub-10159", "participant", true);
-    node(3.6, 3.25, C.accent4, "Barratt\nassessment", "acquisition");
-    node(6.75, 1.5, C.accent4, "Questionnaire\nrecord", "acquisition object");
-    node(10.1, 3.25, C.accent1, "bis_parcel1\n= 2.0", "recorded value", true);
-    curve(s, 3.75, 4.1, 2.6, 3.4, { arrow: true, width: 2.5 }); edgeLabel(s, "subject", 2.0, 4.0, 1.6);
-    curve(s, 6.9, 3.2, 5.75, 3.85, { arrow: true, width: 2.5 }); edgeLabel(s, "generated by", 5.0, 2.75, 2.0);
-    curve(s, 9.0, 3.2, 10.25, 3.85, { arrow: true, width: 2.5 }); edgeLabel(s, "has value", 9.2, 2.75, 1.7);
+    node(3.6, 3.25, C.accent4, "Barratt\nquestionnaire\nsession", "nidm:Acquisition");
+    node(6.75, 1.5, C.accent4, "Questionnaire\nrecord", "nidm:AcquisitionObject");
+    node(10.1, 3.25, C.accent1, "‘acts\nimpulsively’\n= 2.0", "bis_parcel1", true);
+    curve(s, 3.75, 4.1, 2.6, 3.4, { arrow: true, width: 2.5 }); edgeLabel(s, "with participant (role: subject)", 0.6, 4.35, 3.0);
+    curve(s, 6.9, 3.2, 5.75, 3.85, { arrow: true, width: 2.5 }); edgeLabel(s, "was generated by", 4.9, 2.75, 2.2);
+    curve(s, 9.0, 3.2, 10.25, 3.85, { arrow: true, width: 2.5 }); edgeLabel(s, "‘acts impulsively’ score", 8.9, 2.75, 2.6);
     shp(s, pres.shapes.ROUNDED_RECTANGLE, 6.45, 5.75, 3.0, 1.1, C.background2, [{ text: "barratt.tsv", options: { bold: true, fontSize: 20, breakLine: true } }, { text: "source row 2", options: { fontSize: 18, color: C.accent3 } }], { line: "B8C4C9", rectRadius: 0.25 });
-    arrow(s, 7.95, 3.9, 7.95, 5.75); edgeLabel(s, "derived from", 8.05, 4.65, 2.0);
+    arrow(s, 7.95, 3.9, 7.95, 5.75); edgeLabel(s, "was derived from", 8.05, 4.65, 2.2);
     s.addNotes("Backup (was main-route slide). NIDM gives each record its neuroimaging role; PROV records where each value came from. A real record from the pinned ds000030 graph. The participant joins through a PROV qualified association with a subject role; the questionnaire record is generated by the assessment activity and derived from a specific row of a specific file; the value is a data element defined by the dataset dictionary. You do not need the vocabulary to adopt the habit: every value should point to its participant and its source row.\n\n" + fromOld(6, 5));
   }
 
@@ -1459,9 +1524,8 @@ async function main() {
   // ---------------------------------------------------------------- section tags (main slides)
   const O1 = "Objective 1", O2 = "Objective 2", AS = "With an assistant";
   const TAGS = {
-    "A knowledge graph in three statements": O1, "Components of a dataset and a publication": O1, "Entities in a neuroimaging knowledge graph": O1,
-    "Knowledge graph around a single participant": O1, "Linking a claim to its evaluation and cohort": O1, "Exercise: write the chain for your own last result": O1,
-    "Exercise: evaluating claims against a source": O1, "Quotation checks and scientific entailment": O1,
+    "The two example datasets": "Objectives 1 and 2", "A knowledge graph in four statements": O1, "Components of a dataset and a publication": O1, "Entities in a neuroimaging knowledge graph": O1,
+    "Knowledge graph around a single participant": O1, "Linking a claim to its evaluation and cohort": O1, "Exercise: evaluating claims against a source": O1, "Quotation checks and scientific entailment": O1,
     "Joining graphs through shared identifiers": O2, "Participant coverage by data element": O2, "ABIDE I: two analyses, two research questions": O2,
     "ABIDE I: group differences and site-held-out prediction": O2, "Exercise: consequences of a stricter motion threshold": O2, "Dependency tracing after a QC revision": O2,
     "Linking datasets, publications and abstracts": O2, "Evaluation schemes in 74 ABIDE studies": O2, "ReproPond and ReproLake: local and shared knowledge": O2,
@@ -1486,7 +1550,13 @@ async function main() {
     pv.production.forEach((L, k) => {
       rec.slide.addText(L, { shape: pres.shapes.OVAL, x: 0.3 + k * 0.33, y: 7.1, w: 0.29, h: 0.29, fill: { color: fill }, line: { type: "none" }, fontSize: 11, bold: true, color: fg, align: "center", valign: "middle", margin: 0, isTextBox: true, objectName: `badge${i}_${L}` });
     });
-    rec.slide.addText(pv.checking, { x: 0.36 + pv.production.length * 0.33, y: 7.08, w: 3.4, h: 0.33, fontSize: 11, italic: true, color: word, valign: "middle", margin: 0, isTextBox: true, objectName: `badge${i}_check` });
+    const wordX = 0.36 + pv.production.length * 0.33, wordW = 0.08 * pv.checking.length + 0.1;
+    const data = DATA[rec.title];
+    if (data) {
+      const fx = wordX + wordW + 0.15;
+      rec.slide.addText("Data: " + data.join("; "), { x: fx, y: 7.08, w: 12.2 - fx, h: 0.33, fontSize: 11, color: dark ? "C9D3D7" : "5E7A88", valign: "middle", margin: 0, isTextBox: true, objectName: `data${i}` });
+    }
+    rec.slide.addText(pv.checking, { x: wordX, y: 7.08, w: wordW, h: 0.33, fontSize: 11, italic: true, color: word, valign: "middle", margin: 0, isTextBox: true, objectName: `badge${i}_check` });
   });
   if (missing.length) { console.error("No SLIDE_PROV entry for:", missing); process.exit(2); }
   const esc = (t) => String(t).replace(/\\/g, "\\\\").replace(/"/g, '\\"');
@@ -1498,6 +1568,7 @@ async function main() {
   ttl += `talk:AutomatedChecks a prov:Agent, prov:SoftwareAgent ; rdfs:label "Automated checks (SHACL, schema, tests, render QA)" .\ntalk:IndependentRebuild a prov:Agent, prov:SoftwareAgent ; rdfs:label "Independent rebuild (ORCD)" .\ntalk:IndependentVerifier a prov:Agent, prov:SoftwareAgent ; rdfs:label "Independent agent checking claims against primary sources" .\n`;
   ttl += `talk:orcd-job-25941523 a prov:Activity ; rdfs:label "Clean rebuild of the ds000030 package on ORCD" ; talk:slurmJobId "25941523" ; prov:wasAssociatedWith talk:IndependentRebuild ; prov:used ${iri(CNP_ZIP)} .\n`;
   ttl += `talk:abide-clean-room-rebuild a prov:Activity ; rdfs:label "Clean-room rebuild of the ABIDE package from a fresh download" ; rdfs:comment "Ran in segments; 2,108/2,108 input hashes matched; 215/218 key numbers reproduced (the other 3 are run times); all 15 gold answers identical." ; prov:wasAssociatedWith talk:IndependentRebuild .\n`;
+  ttl += `talk:orcd-job-25939932 a prov:Activity ; rdfs:label "ABIDE package run on a second machine (ORCD Linux node2803)" ; talk:slurmJobId "25939932" ; rdfs:comment "196/218 shared key numbers match within 1%; 15 differ only in run times or dates; 7 UMAP-derived values differ slightly; 9/12 shared gold answers identical (the rest differ in a snapshot timestamp or later wording)." ; prov:wasAssociatedWith talk:IndependentRebuild .\n`;
   ttl += `talk:claim-verification-2026-10-15 a prov:Activity ; rdfs:label "Claim verification against primary sources (39 confirmed, 0 contradicted, 1 could not access)" ; prov:wasAssociatedWith talk:IndependentVerifier .\n\n`;
   const sources = new Set();
   SLIDES.forEach((rec, i) => {

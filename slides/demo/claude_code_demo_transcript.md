@@ -1,0 +1,125 @@
+# Headless test of claude_code_demo.md (2026-10-15T22:22Z, model: sonnet)
+
+## Prompt 1 (34 s, 7 turns, $0.11)
+
+> Use the neuroimaging-kg skill to build a knowledge graph for ABIDE I site Caltech — the phenotype table plus ReproNim's NIDM file with brain volumes — validate it, and load it into Oxigraph. Tell me in plain words what is in the graph.
+
+Done — the graph built, validated, and loaded cleanly, with all 5 gated questions passing. Here's what it contains, in plain terms.
+
+**The data**
+
+38 participants from the Caltech site of ABIDE I (the Autism Brain Imaging Data Exchange), each with:
+- **Phenotype information** (demographics, diagnosis group, IQ scores, clinical assessments — 75 columns) converted into NIDM format, so each variable is tied to a shared, citable concept (e.g. "FIQ" → full-scale IQ in a standard terminology) rather than just a column name.
+- **Brain volumes** from ReproNim's NIDM file for Caltech — structural measurements (like hippocampal volume) computed by three different tools (FreeSurfer, FSL, ANTs).
+- Our 38 participants were matched 1:1 against ReproNim's 38, and age/sex/diagnosis agreed for all of them — no conflicts.
+
+**Derived facts recorded on top of that data**
+
+- A **head-motion cohort**: everyone at Caltech moved less than 0.2mm on average during scanning (the strictest motion cutoff kept all 38 people), with the exact rule, software version, and input file (by fingerprint) recorded so it can be reproduced or challenged.
+- One **published claim** attached: Abraham et al. 2017 reported 67% prediction accuracy using 871 of the 1,112 ABIDE I participants — stored with its exact scope (which participants, what kind of claim) and a verbatim quote, not just a citation.
+- A **consent/sharing scope** marking this as public, de-identified, broadly shareable data.
+
+**What the validation showed**
+
+- The parts we authored (provenance, identity links, cohort definition, claims) satisfy the required structural rules, and a deliberate sabotage test (deleting a "derived from" link) was correctly caught as a violation — proving the checks aren't rubber stamps.
+- The NIDM file produced by the standard conversion tool (PyNIDM) doesn't fully conform to its own schema (176 warnings, e.g. some fields have multiple values where one was expected) — this is reported as a known finding, not a blocking error.
+
+**What you can now ask it**
+
+Loaded into Oxigraph as separate named graphs, it already answers questions like: how many participants are autism vs. control (19/19), how many have both an IQ score and a FreeSurfer hippocampal volume (18/19 — one autistic participant lacks an IQ score), and how a single participant's left-hippocampus volume differs between tools (FSL: 3,766 mm³ vs. FreeSurfer: 4,514 mm³ — about 20% apart, illustrating that different measurement tools don't agree exactly even on the same brain).
+
+All files (`phenotype.ttl`, `identity_links.ttl`, `cohort.ttl`, `dataset_claims.ttl`, `provenance.ttl`, validation reports, gold answers, and query results) are in `<demo dir>/abide-caltech/graph/`.
+
+## Prompt 2 (14 s, 2 turns, $0.15)
+
+> How many Caltech participants have both a full-scale IQ (FIQ) score and a FreeSurfer hippocampal volume, by diagnostic group? Show the SPARQL query you used and explain it briefly.
+
+**Answer:** 18 autism-group participants (dx_group=1) and 19 control-group participants (dx_group=2) — 37 of the 38 Caltech participants total. One autism-group participant has no recorded FIQ score.
+
+**The query:**
+
+```sparql
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX nidm: <http://purl.org/nidash/nidm#>
+PREFIX ndar: <https://ndar.nih.gov/api/datadictionary/v2/dataelement/>
+SELECT ?dx_group (COUNT(DISTINCT ?id) AS ?n) WHERE {
+  GRAPH <urn:g:phenotype> {
+    ?p ndar:src_subject_id ?id . ?acq prov:qualifiedAssociation/prov:agent ?p .
+    ?ao prov:wasGeneratedBy ?acq ; ?fe ?fiq ; ?de ?dx .
+    ?fe nidm:sourceVariable "FIQ" . ?de nidm:sourceVariable "DX_GROUP" .
+    FILTER (?fiq > 0)    # missing values are NaN (or -9999 in the source table)
+  }
+  GRAPH <urn:g:repronim> {
+    ?s ndar:src_subject_id ?id2 .
+    ?act prov:qualifiedAssociation ?a1 , ?a2 .
+    ?a1 prov:agent ?sw . ?sw nidm:NIDM_0000164 <https://surfer.nmr.mgh.harvard.edu/> .
+    ?a2 prov:agent ?s .
+    ?ent prov:wasGeneratedBy ?act ; ?m ?vol .
+  }
+  ?m nidm:isAbout <http://purl.obolibrary.org/obo/UBERON_0001954> ; nidm:hasUnit "mm^3" .
+  FILTER (STR(?id) = STR(?id2))
+  BIND (STR(?dx) AS ?dx_group)
+} GROUP BY ?dx_group ORDER BY ?dx_group
+```
+
+**How it works, in plain words:**
+
+1. **First half (our phenotype graph):** for each participant, find the assessment that recorded their FIQ score and their diagnosis group, and throw out anyone whose FIQ is missing (missing values are encoded as NaN/‑9999, not just absent — hence `?fiq > 0`).
+2. **Second half (ReproNim's NIDM graph):** for each participant, find a measurement that was specifically generated by FreeSurfer (identified by its software agent IRI, `surfer.nmr.mgh.harvard.edu`) rather than FSL or ANTs.
+3. **The volume filter:** the hippocampus concept (UBERON:0001954) tags more than one kind of FreeSurfer output (voxel counts, volume, etc.), so the query narrows to the measure whose unit is `mm^3` — that's what makes it specifically the *volume*, not some other hippocampus-related number.
+4. **The join:** the two halves are connected only by matching `src_subject_id` across the two named graphs (`FILTER (STR(?id) = STR(?id2))`) — this is the same reviewable identity link used elsewhere in the graph, not an assumption that the IDs are the same object.
+5. Finally it counts distinct participants per diagnosis group (1 = autism, 2 = control).
+
+## Prompt 3 (162 s, 17 turns, $0.65)
+
+> Trace participant 51456's left-hippocampus volume from FreeSurfer back to the scan and the software it came from. Say which links are recorded in the graph and which are only inferred.
+
+Here's the trace, built directly from the ReproNim NIDM file (`data/Caltech_nidm.ttl`) plus its FreeSurfer term file (`data/freesurfer_cde.ttl`).
+
+**The chain, as recorded (explicit triples):**
+
+1. **Participant → scan.** `niiri:ea07af80` (the PROV person agent whose `ndar:src_subject_id` is `"51456"`) is `prov:qualifiedAssociation`'d to an acquisition activity, which `prov:wasGeneratedBy`'d the T1-weighted scan entity `niiri:f5e00780` — recorded with its S3 location, SHA-512 checksum, scanner details (Siemens 3T, MPRAGE, TR 1.59s, etc.).
+2. **Participant + software → FreeSurfer run.** The *same* person agent is also `prov:qualifiedAssociation`'d to a separate activity (`niiri:e28200be`, "Freesurfer segmentation statistics"), which is *also* associated with a software agent (`niiri:f9a18e08`) typed `prov:SoftwareAgent` and identified as `https://surfer.nmr.mgh.harvard.edu/` — i.e., FreeSurfer.
+3. **FreeSurfer run → stats entity.** That activity `prov:wasGeneratedBy`'d one entity, `niiri:ffe733a6`, typed `nidm:FSStatsCollection`, which carries hundreds of measurement properties, including `fs:fs_003343 = 4513.9`.
+4. **Measurement meaning.** `fs:fs_003343` is itself an IRI defined in the separate FreeSurfer term file (loaded as its own named graph): `rdfs:label "Left-Hippocampus Volume_mm3 (mm^3)"`, `nidm:isAbout UBERON_0001954` (hippocampus), `nidm:hasUnit "mm^3"`, `nidm:hasLaterality "Left"`. That shared IRI is what lets a query join the raw number in the site file to its real-world meaning in the term file — this is what Q6 used.
+5. **Tool version, as text.** The activity also carries literal (non-linked) strings: `cmdline` (`mri_segstats ... --subject sub-0051456`), `SUBJECTS_DIR`, and a FreeSurfer install path containing `freesurfer-6.0.0-min` — so the specific version (6.0.0) is recorded, but only inside free-text arguments, not as a structured version field.
+
+**What is recorded vs. only inferred:**
+
+| Link | Status |
+|---|---|
+| Participant 51456 ↔ FreeSurfer activity | **Recorded** (`prov:qualifiedAssociation`) |
+| FreeSurfer activity ↔ software agent "FreeSurfer" | **Recorded** (`prov:qualifiedAssociation` + `nidm:NIDM_0000164`) |
+| FreeSurfer activity ↔ hippocampus-volume entity | **Recorded** (`prov:wasGeneratedBy`) |
+| Volume number (`fs_003343`) ↔ "left hippocampus, mm³" | **Recorded**, but via a second file (term definitions), joined only by shared IRI |
+| Participant 51456 ↔ T1w scan | **Recorded** (separate acquisition activity, same person agent) |
+| **T1w scan ↔ FreeSurfer activity (i.e., "FreeSurfer actually ran on *this* scan")** | **Not recorded.** There is no `prov:used` edge from the FreeSurfer activity to the scan entity. The only evidence they belong together is that both independently mention the string `sub-0051456` (the scan's filename vs. the activity's `subjectname`/`cmdline` fields) — a human/pipeline convention, not a graph edge. |
+| FreeSurfer's internal processing steps (T1w → `norm.mgz` → `aseg.mgz` → `mri_segstats` → volume table) | **Not recorded as graph nodes.** These intermediate files appear only as plain-text filenames (`InVolFile`, `SegVolFile`) on the activity, not as linked entities, so the internal pipeline isn't traceable step-by-step in the graph. |
+| FreeSurfer version 6.0.0 | **Not a structured field** — only recoverable by pattern-matching the `cmdline`/path literal. |
+
+In short: the graph solidly answers *"who, which tool, which output, what does the output mean"* — but the actual *"this tool ran on this specific input file"* link has to be inferred from matching subject IDs in free text, since ReproNim's conversion didn't emit a `prov:used` edge for it.
+
+## Prompt 4 (55 s, 5 turns, $0.85)
+
+> If we tightened the head-motion rule to mean framewise displacement below 0.15 mm, which participants would be excluded, and which results in our graph depend on them?
+
+Confirmed Q2 explicitly joins against `urn:g:cohort`, so it's directly gated by cohort membership. Now I have everything needed.
+
+**Who would be excluded:** Two Caltech participants exceed 0.15 mm mean FD — both are in the autism group (DX_GROUP=1):
+
+| Participant | DX group | mean FD |
+|---|---|---|
+| 51456 | autism | 0.1862 mm |
+| 51469 | autism | 0.1559 mm |
+
+Everyone else stays under 0.15 mm (next-highest is 51481 at 0.1286 mm, in the control group). So the cohort would shrink from 38 (19/19) to 36, with the autism group losing both its drops: **17 autism / 19 control**.
+
+**Which recorded results depend on this:**
+
+- **Q2 (cohort by diagnosis group)** is directly gated on cohort membership — its query joins `GRAPH <urn:g:cohort> { ?c prov:hadMember ?p }` against the phenotype graph. Its answer would change from 19/19 to **17/19**.
+- **Q4 (cohort provenance)** *is* the record of this rule: `cohort.ttl` stores `ns1:rule "func_mean_fd < 0.2 (mm)"`, `ns1:n 38`, and `provenance.ttl` records the activity's parameter `mean_fd_max_mm = 0.2`. Tightening the threshold means rewriting this entity and re-deriving it from `Caltech_motion.csv` (fingerprint `c4c86580…`) — the graph is built so this is a one-step, auditable edit.
+- **Q6 (hippocampus volume by tool)** has a hidden dependency worth flagging: its query picks "the first participant by ID" via `MIN(?pid)` across all ReproNim subject IDs — and that happens to resolve to **51456**, the single worst-motion participant. The query doesn't filter by cohort membership at all, so it would keep reporting results for someone who'd now fail the motion cutoff. That's a real inconsistency: Q6's descriptive example isn't actually cohort-gated, even though it reads as if it's describing "a typical analysis-ready participant."
+- **Q3 (FIQ + FreeSurfer hippocampus volume, by group)** turns out **not** to be cohort-gated either — its query only checks that FIQ and a FreeSurfer hippocampal volume both exist, with no join to `urn:g:cohort`. Since 51456 has both (FIQ=126, hippocampus volume recorded) and 51469 likely does too, its current count of 18/19 (autism) would **not change** automatically — but that's arguably a gap: if the intent is "IQ-vs-volume relationship in motion-passing participants," this query is silently including high-motion participants.
+- **Q1 (participant linking)** and **Q5 (published claims)** are unaffected — neither depends on the motion cohort.
+
+**Bottom line:** only Q2 and the cohort-provenance record (Q4) are explicitly, correctly gated by the motion cutoff in this graph. Q3 and Q6 both report on individual participants' derived measures without checking cohort membership — so tightening the rule wouldn't automatically propagate to them, which is a real modeling gap rather than a computed consequence.

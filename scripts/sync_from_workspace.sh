@@ -9,8 +9,14 @@ plan="${2:-$src/../talk_plan.md}"
 root="$(cd "$(dirname "$0")/.." && pwd)"
 cp "$src/apply_theme.js" "$src/old_deck_v3.md" "$root/slides/"
 cp "$src/figs_slide/make_slide_figs.py" "$root/slides/figs_slide/"
+# repo-relative paths in the figure script
+sed -i.bak -e 's#^SRC = Path(".*")\.expanduser()#SRC = Path(__file__).resolve().parents[2] / "experiments" / "abide"#' \
+  -e 's#^OUT = Path(".*")\.expanduser()#OUT = Path(__file__).resolve().parent#' "$root/slides/figs_slide/make_slide_figs.py"
+rm -f "$root/slides/figs_slide/make_slide_figs.py.bak"
+grep -q "/// script" "$root/slides/figs_slide/make_slide_figs.py" || \
+  { printf '# /// script\n# requires-python = ">=3.11"\n# dependencies = ["matplotlib>=3.9", "networkx>=3.3", "pandas>=2.2"]\n# ///\n'; cat "$root/slides/figs_slide/make_slide_figs.py"; } > "$root/slides/figs_slide/m.tmp" && mv "$root/slides/figs_slide/m.tmp" "$root/slides/figs_slide/make_slide_figs.py"
 [ -f "$plan" ] && cp "$plan" "$root/slides/talk_plan.md"
 echo "Copied apply_theme.js, old_deck_v3.md, make_slide_figs.py and talk_plan.md."
-echo "build_deck.js is NOT overwritten: merge workspace changes into slides/build_deck.js by hand,"
-echo "keeping V() lookups for mapped values, e.g.  diff -u slides/build_deck.js $src/build_deck.js"
+uv run "$root/scripts/port_build_deck.py" "$src/build_deck.js"
+echo "build_deck.js ported (paths made relative, mapped numbers routed through V()); fix any NOT FOUND lines by hand."
 echo "Then rebuild with provenance:  scripts/build_all.sh"

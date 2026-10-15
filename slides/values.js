@@ -26,7 +26,20 @@ const FORMATS = {
   signed2: (x) => (x < 0 ? MINUS : "") + Math.abs(x).toFixed(2),
 };
 
+// Row count of a CSV/TSV, optionally where one column equals a value (simple files only: no quoted delimiters).
+function countRows(entry) {
+  const lines = fs.readFileSync(path.join(ROOT, entry.source), "utf8").split(/\r?\n/).filter((l) => l.length);
+  const sep = entry.source.endsWith(".csv") ? "," : "\t";
+  const header = lines[0].split(sep);
+  const rows = lines.slice(1).map((l) => l.split(sep));
+  if (!entry.column) return rows.length;
+  const i = header.indexOf(entry.column);
+  if (i < 0) throw new Error(`no column '${entry.column}' in ${entry.source}`);
+  return rows.filter((r) => r[i] === String(entry.equals)).length;
+}
+
 function value(entry) {
+  if (entry.format === "count") return FORMATS.int(countRows(entry));
   const data = load(entry.source);
   if (entry.format === "sub") return FORMATS.int(get(data, entry.path) - get(data, entry.path2));
   const fmt = FORMATS[entry.format];

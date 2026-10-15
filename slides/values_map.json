@@ -1,60 +1,453 @@
 {
-  "_doc": "Every number on a slide that comes from an experiment result. build_deck.js formats each entry with slides/values.js; scripts/check_slide_values.py recomputes it from the source and checks it appears on the named slide. Paths are relative to the repository root; 'path' is a dot path into JSON (keys may contain spaces). Formats: int (thousands separator), round (nearest integer), dec2, dec3, pct0 / pct1 (fraction shown as percent), signed2 (two decimals, Unicode minus), sub (path minus path2, int).",
-  "values": [
-    {"id": "cohort.aN", "slide": "ABIDE I: two analyses, two research questions", "source": "experiments/abide/results/key_numbers.json", "path": "cohort.A_v1.n", "format": "int"},
-    {"id": "cohort.bOnly", "slide": "ABIDE I: two analyses, two research questions", "source": "experiments/abide/results/key_numbers.json", "path": "cohort.B_v1.n", "path2": "cohort.overlap.A_v1_and_B_v1", "format": "sub"},
-    {"id": "cohort.bN", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "cohort.B_v1.n", "format": "int"},
-    {"id": "cohort.aRemoved", "slide": null, "source": "experiments/abide/results/key_numbers.json", "path": "cohort.overlap.A_v1_removed_by_v2", "format": "int"},
-    {"id": "cohort.bRemoved", "slide": "Dependency tracing after a QC revision", "source": "experiments/abide/results/key_numbers.json", "path": "cohort.overlap.B_v1_removed_by_v2", "format": "int"},
-
-    {"id": "a.edges", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "A_v1.n_fdr_significant", "format": "int"},
-    {"id": "a.hypo", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "A_v1.hypo_fraction", "format": "pct1"},
-    {"id": "a.hypoLow", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "A_v1.hypo_fraction_ci_low", "format": "pct1"},
-    {"id": "a.hypoHigh", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "A_v1.hypo_fraction_ci_high", "format": "pct1"},
-    {"id": "a.interhem", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "A_v1.interhemispheric_fraction_hypo_edges", "format": "pct0"},
-    {"id": "a.medianD", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "A_v1.median_abs_d_significant", "format": "dec2"},
-    {"id": "a.sites", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "A_v1.sites", "format": "int"},
-    {"id": "b.auc", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "B_v1.tangent.auc", "format": "dec2"},
-    {"id": "b.aucLow", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "B_v1.tangent.auc_ci_low", "format": "dec2"},
-    {"id": "b.aucHigh", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "B_v1.tangent.auc_ci_high", "format": "dec2"},
-    {"id": "b.corr", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "B_v1.correlation.auc", "format": "dec2"},
-    {"id": "b.demofd", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "B_v1.demographic_fd.auc", "format": "dec2"},
-    {"id": "b.demo", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "B_v1.demographic.auc", "format": "dec2"},
-    {"id": "b.acc", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "B_v1.tangent.accuracy", "format": "pct1"},
-    {"id": "b.sites", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "B_v1.folds", "format": "int"},
-    {"id": "rev.overlap", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "review_v1.A_of_B.overlap", "format": "int"},
-    {"id": "rev.expected", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "review_v1.A_of_B.expected", "format": "round"},
-    {"id": "rev.d", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "review_v1.B_of_A.pooled_d", "format": "signed2"},
-    {"id": "rev.dLow", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "review_v1.B_of_A.pooled_d_ci_low", "format": "signed2"},
-    {"id": "rev.dHigh", "slide": "ABIDE I: group differences and site-held-out prediction", "source": "experiments/abide/results/key_numbers.json", "path": "review_v1.B_of_A.pooled_d_ci_high", "format": "signed2"},
-
-    {"id": "reveal.foldsAffected", "slide": "Dependency tracing after a QC revision", "source": "experiments/abide/results/key_numbers.json", "path": "revision.folds_with_affected_test", "format": "int"},
-    {"id": "reveal.folds", "slide": "Dependency tracing after a QC revision", "source": "experiments/abide/results/key_numbers.json", "path": "B_v1.folds", "format": "int"},
-    {"id": "reveal.changed", "slide": "Dependency tracing after a QC revision", "source": "experiments/abide/results/revision_impact.json", "path": "n_material_changes", "format": "int"},
-    {"id": "reveal.families", "slide": "Dependency tracing after a QC revision", "source": "experiments/abide/results/revision_impact.json", "path": "n_result_families_compared", "format": "int"},
-
-    {"id": "elements.participants", "slide": "Participant coverage by data element", "source": "experiments/abide/results/element_coverage.json", "path": "participants", "format": "int"},
-    {"id": "elements.analystB", "slide": "Participant coverage by data element", "source": "experiments/abide/results/element_coverage.json", "path": "analysis_requirements.Analyst B (age, FD, CC200).n", "format": "int"},
-    {"id": "elements.iqVolumes", "slide": "Participant coverage by data element", "source": "experiments/abide/results/element_coverage.json", "path": "analysis_requirements.UMAP + FreeSurfer IDP join.n", "format": "int"},
-    {"id": "elements.srs", "slide": "Participant coverage by data element", "source": "experiments/abide/results/element_coverage.json", "path": "analysis_requirements.UMAP + SRS.n", "format": "int"},
-
-    {"id": "pubs.openalex", "slide": "Linking datasets, publications and abstracts", "source": "experiments/abide/results/publications.json", "path": "openalex.dimartino2014.count", "format": "int"},
-    {"id": "pubs.abstracts", "slide": "Linking datasets, publications and abstracts", "source": "experiments/abide/results/publications.json", "path": "abstractatlas.by_dataset.abide.abstracts_matching", "format": "int"},
-    {"id": "pubs.claims", "slide": "Linking datasets, publications and abstracts", "source": "experiments/abide/results/publications.json", "path": "abstractatlas.by_dataset.abide.claims", "format": "int"},
-    {"id": "pubs.reviewed", "slide": "Linking datasets, publications and abstracts", "source": "experiments/abide/literature_review/results_synthesis.json", "path": "screening.included", "format": "int"},
-    {"id": "pubs.reconstructible", "slide": "Linking datasets, publications and abstracts", "source": "experiments/abide/literature_review/results_synthesis.json", "path": "reconstructibility_RQ6.summary.yes", "format": "int"},
-    {"id": "pubs.statedUse", "slide": "Joining graphs through shared identifiers", "source": "experiments/abide/results/publications.json", "path": "abstractatlas.by_dataset.abide.uses_data_stated", "format": "int"},
-
-    {"id": "joins.matched", "slide": "Joining graphs through shared identifiers", "source": "experiments/abide/results/key_numbers.json", "path": "simple2.identity_matched", "format": "int"},
-    {"id": "joins.timeseries", "slide": "Joining graphs through shared identifiers", "source": "experiments/abide/results/key_numbers.json", "path": "cohort.with_timeseries.n", "format": "int"},
-    {"id": "joins.inB", "slide": "Joining graphs through shared identifiers", "source": "experiments/abide/results/key_numbers.json", "path": "simple2.matched_in_B_v1", "format": "int"},
-    {"id": "joins.sites", "slide": "Joining graphs through shared identifiers", "source": "experiments/abide/results/key_numbers.json", "path": "simple2.named_graphs", "format": "int"},
-
-    {"id": "umap.trust", "slide": "Phenotype embedding linked to image-derived phenotypes", "source": "experiments/abide/results/key_numbers.json", "path": "umap_primary.trustworthiness_umap", "format": "dec3"},
-    {"id": "umap.pca", "slide": "Phenotype embedding linked to image-derived phenotypes", "source": "experiments/abide/results/key_numbers.json", "path": "umap_primary.trustworthiness_pca", "format": "dec3"},
-    {"id": "umap.seed1", "slide": "Phenotype embedding linked to image-derived phenotypes", "source": "experiments/abide/results/key_numbers.json", "path": "umap_primary.trustworthiness_seed1", "format": "dec3"},
-    {"id": "umap.seed2", "slide": "Phenotype embedding linked to image-derived phenotypes", "source": "experiments/abide/results/key_numbers.json", "path": "umap_primary.trustworthiness_seed2", "format": "dec3"},
-    {"id": "umap.n", "slide": "Phenotype embedding linked to image-derived phenotypes", "source": "experiments/abide/results/key_numbers.json", "path": "umap_primary.n_complete_cases", "format": "int"},
-    {"id": "umap.sites", "slide": "Phenotype embedding linked to image-derived phenotypes", "source": "experiments/abide/results/key_numbers.json", "path": "umap_primary.n_sites", "format": "int"}
-  ]
+ "_doc": "Every number on a slide that comes from an experiment result. build_deck.js formats each entry with slides/values.js; scripts/check_slide_values.py recomputes it from the source and checks it appears on the named slide. Paths are relative to the repository root; 'path' is a dot path into JSON (keys may contain spaces). Formats: int (thousands separator), round (nearest integer), dec2, dec3, pct0 / pct1 (fraction shown as percent), signed2 (two decimals, Unicode minus), sub (path minus path2, int). Format 'count' counts rows of a CSV/TSV (optionally column == equals). 'quotes' lists demo outputs that must appear verbatim in their transcript and on the slide.",
+ "values": [
+  {
+   "id": "cohort.aN",
+   "slide": "ABIDE I: two analyses, two research questions",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "cohort.A_v1.n",
+   "format": "int"
+  },
+  {
+   "id": "cohort.bOnly",
+   "slide": "ABIDE I: two analyses, two research questions",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "cohort.B_v1.n",
+   "path2": "cohort.overlap.A_v1_and_B_v1",
+   "format": "sub"
+  },
+  {
+   "id": "cohort.bN",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "cohort.B_v1.n",
+   "format": "int"
+  },
+  {
+   "id": "cohort.aRemoved",
+   "slide": null,
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "cohort.overlap.A_v1_removed_by_v2",
+   "format": "int"
+  },
+  {
+   "id": "cohort.bRemoved",
+   "slide": "Dependency tracing after a QC revision",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "cohort.overlap.B_v1_removed_by_v2",
+   "format": "int"
+  },
+  {
+   "id": "a.edges",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "A_v1.n_fdr_significant",
+   "format": "int"
+  },
+  {
+   "id": "a.hypo",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "A_v1.hypo_fraction",
+   "format": "pct1"
+  },
+  {
+   "id": "a.hypoLow",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "A_v1.hypo_fraction_ci_low",
+   "format": "pct1"
+  },
+  {
+   "id": "a.hypoHigh",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "A_v1.hypo_fraction_ci_high",
+   "format": "pct1"
+  },
+  {
+   "id": "a.interhem",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "A_v1.interhemispheric_fraction_hypo_edges",
+   "format": "pct0"
+  },
+  {
+   "id": "a.medianD",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "A_v1.median_abs_d_significant",
+   "format": "dec2"
+  },
+  {
+   "id": "a.sites",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "A_v1.sites",
+   "format": "int"
+  },
+  {
+   "id": "b.auc",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "B_v1.tangent.auc",
+   "format": "dec2"
+  },
+  {
+   "id": "b.aucLow",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "B_v1.tangent.auc_ci_low",
+   "format": "dec2"
+  },
+  {
+   "id": "b.aucHigh",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "B_v1.tangent.auc_ci_high",
+   "format": "dec2"
+  },
+  {
+   "id": "b.corr",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "B_v1.correlation.auc",
+   "format": "dec2"
+  },
+  {
+   "id": "b.demofd",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "B_v1.demographic_fd.auc",
+   "format": "dec2"
+  },
+  {
+   "id": "b.demo",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "B_v1.demographic.auc",
+   "format": "dec2"
+  },
+  {
+   "id": "b.acc",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "B_v1.tangent.accuracy",
+   "format": "pct1"
+  },
+  {
+   "id": "b.sites",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "B_v1.folds",
+   "format": "int"
+  },
+  {
+   "id": "rev.overlap",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "review_v1.A_of_B.overlap",
+   "format": "int"
+  },
+  {
+   "id": "rev.expected",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "review_v1.A_of_B.expected",
+   "format": "round"
+  },
+  {
+   "id": "rev.d",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "review_v1.B_of_A.pooled_d",
+   "format": "signed2"
+  },
+  {
+   "id": "rev.dLow",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "review_v1.B_of_A.pooled_d_ci_low",
+   "format": "signed2"
+  },
+  {
+   "id": "rev.dHigh",
+   "slide": "ABIDE I: group differences and site-held-out prediction",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "review_v1.B_of_A.pooled_d_ci_high",
+   "format": "signed2"
+  },
+  {
+   "id": "reveal.foldsAffected",
+   "slide": "Dependency tracing after a QC revision",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "revision.folds_with_affected_test",
+   "format": "int"
+  },
+  {
+   "id": "reveal.folds",
+   "slide": "Dependency tracing after a QC revision",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "B_v1.folds",
+   "format": "int"
+  },
+  {
+   "id": "reveal.changed",
+   "slide": "Dependency tracing after a QC revision",
+   "source": "experiments/abide/results/revision_impact.json",
+   "path": "n_material_changes",
+   "format": "int"
+  },
+  {
+   "id": "reveal.families",
+   "slide": "Dependency tracing after a QC revision",
+   "source": "experiments/abide/results/revision_impact.json",
+   "path": "n_result_families_compared",
+   "format": "int"
+  },
+  {
+   "id": "elements.participants",
+   "slide": "Participant coverage by data element",
+   "source": "experiments/abide/results/element_coverage.json",
+   "path": "participants",
+   "format": "int"
+  },
+  {
+   "id": "elements.analystB",
+   "slide": "Participant coverage by data element",
+   "source": "experiments/abide/results/element_coverage.json",
+   "path": "analysis_requirements.Analyst B (age, FD, CC200).n",
+   "format": "int"
+  },
+  {
+   "id": "elements.iqVolumes",
+   "slide": "Participant coverage by data element",
+   "source": "experiments/abide/results/element_coverage.json",
+   "path": "analysis_requirements.UMAP + FreeSurfer IDP join.n",
+   "format": "int"
+  },
+  {
+   "id": "elements.srs",
+   "slide": "Participant coverage by data element",
+   "source": "experiments/abide/results/element_coverage.json",
+   "path": "analysis_requirements.UMAP + SRS.n",
+   "format": "int"
+  },
+  {
+   "id": "pubs.openalex",
+   "slide": "Linking datasets, publications and abstracts",
+   "source": "experiments/abide/results/publications.json",
+   "path": "openalex.dimartino2014.count",
+   "format": "int"
+  },
+  {
+   "id": "pubs.abstracts",
+   "slide": "Linking datasets, publications and abstracts",
+   "source": "experiments/abide/results/publications.json",
+   "path": "abstractatlas.by_dataset.abide.abstracts_matching",
+   "format": "int"
+  },
+  {
+   "id": "pubs.claims",
+   "slide": "Linking datasets, publications and abstracts",
+   "source": "experiments/abide/results/publications.json",
+   "path": "abstractatlas.by_dataset.abide.claims",
+   "format": "int"
+  },
+  {
+   "id": "pubs.reviewed",
+   "slide": "Linking datasets, publications and abstracts",
+   "source": "experiments/abide/literature_review/results_synthesis.json",
+   "path": "screening.included",
+   "format": "int"
+  },
+  {
+   "id": "pubs.reconstructible",
+   "slide": "Linking datasets, publications and abstracts",
+   "source": "experiments/abide/literature_review/results_synthesis.json",
+   "path": "reconstructibility_RQ6.summary.yes",
+   "format": "int"
+  },
+  {
+   "id": "pubs.statedUse",
+   "slide": "Joining graphs through shared identifiers",
+   "source": "experiments/abide/results/publications.json",
+   "path": "abstractatlas.by_dataset.abide.uses_data_stated",
+   "format": "int"
+  },
+  {
+   "id": "joins.matched",
+   "slide": "Joining graphs through shared identifiers",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "simple2.identity_matched",
+   "format": "int"
+  },
+  {
+   "id": "joins.timeseries",
+   "slide": "Joining graphs through shared identifiers",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "cohort.with_timeseries.n",
+   "format": "int"
+  },
+  {
+   "id": "joins.inB",
+   "slide": "Joining graphs through shared identifiers",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "simple2.matched_in_B_v1",
+   "format": "int"
+  },
+  {
+   "id": "joins.sites",
+   "slide": "Joining graphs through shared identifiers",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "simple2.named_graphs",
+   "format": "int"
+  },
+  {
+   "id": "umap.trust",
+   "slide": "Phenotype embedding linked to image-derived phenotypes",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "umap_primary.trustworthiness_umap",
+   "format": "dec3"
+  },
+  {
+   "id": "umap.pca",
+   "slide": "Phenotype embedding linked to image-derived phenotypes",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "umap_primary.trustworthiness_pca",
+   "format": "dec3"
+  },
+  {
+   "id": "umap.seed1",
+   "slide": "Phenotype embedding linked to image-derived phenotypes",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "umap_primary.trustworthiness_seed1",
+   "format": "dec3"
+  },
+  {
+   "id": "umap.seed2",
+   "slide": "Phenotype embedding linked to image-derived phenotypes",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "umap_primary.trustworthiness_seed2",
+   "format": "dec3"
+  },
+  {
+   "id": "umap.n",
+   "slide": "Phenotype embedding linked to image-derived phenotypes",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "umap_primary.n_complete_cases",
+   "format": "int"
+  },
+  {
+   "id": "umap.sites",
+   "slide": "Phenotype embedding linked to image-derived phenotypes",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "umap_primary.n_sites",
+   "format": "int"
+  },
+  {
+   "id": "ds.total",
+   "slide": "The two example datasets",
+   "source": "experiments/ds000030/research/participants.txt",
+   "format": "count"
+  },
+  {
+   "id": "ds.control",
+   "slide": "The two example datasets",
+   "source": "experiments/ds000030/research/participants.txt",
+   "format": "count",
+   "column": "diagnosis",
+   "equals": "CONTROL"
+  },
+  {
+   "id": "ds.schz",
+   "slide": "The two example datasets",
+   "source": "experiments/ds000030/research/participants.txt",
+   "format": "count",
+   "column": "diagnosis",
+   "equals": "SCHZ"
+  },
+  {
+   "id": "ds.bipolar",
+   "slide": "The two example datasets",
+   "source": "experiments/ds000030/research/participants.txt",
+   "format": "count",
+   "column": "diagnosis",
+   "equals": "BIPOLAR"
+  },
+  {
+   "id": "ds.adhd",
+   "slide": "The two example datasets",
+   "source": "experiments/ds000030/research/participants.txt",
+   "format": "count",
+   "column": "diagnosis",
+   "equals": "ADHD"
+  },
+  {
+   "id": "abide.total",
+   "slide": "The two example datasets",
+   "source": "experiments/abide/data/Phenotypic_V1_0b_preprocessed1.csv",
+   "format": "count"
+  },
+  {
+   "id": "abide.asd",
+   "slide": "The two example datasets",
+   "source": "experiments/abide/data/Phenotypic_V1_0b_preprocessed1.csv",
+   "format": "count",
+   "column": "DX_GROUP",
+   "equals": "1"
+  },
+  {
+   "id": "abide.td",
+   "slide": "The two example datasets",
+   "source": "experiments/abide/data/Phenotypic_V1_0b_preprocessed1.csv",
+   "format": "count",
+   "column": "DX_GROUP",
+   "equals": "2"
+  },
+  {
+   "id": "abide.timeseries",
+   "slide": "The two example datasets",
+   "source": "experiments/abide/results/key_numbers.json",
+   "path": "cohort.with_timeseries.n",
+   "format": "int"
+  }
+ ],
+ "quotes": [
+  {
+   "slide": "Live demo: building a graph in Claude Code",
+   "source": "slides/demo/claude_code_demo_transcript.md",
+   "text": "38 participants from the Caltech site of ABIDE I"
+  },
+  {
+   "slide": "Live demo: building a graph in Claude Code",
+   "source": "slides/demo/claude_code_demo_transcript.md",
+   "text": "Done — the graph built, validated, and loaded cleanly, with all 5 gated questions passing."
+  },
+  {
+   "slide": "Live demo: building a graph in Claude Code",
+   "source": "slides/demo/claude_code_demo_transcript.md",
+   "text": "18 autism-group participants (dx_group=1) and 19 control-group participants (dx_group=2)"
+  },
+  {
+   "slide": "Live demo: querying and using the graph",
+   "source": "slides/demo/claude_code_demo_transcript.md",
+   "text": "fs:fs_003343 = 4513.9"
+  },
+  {
+   "slide": "Live demo: querying and using the graph",
+   "source": "slides/demo/claude_code_demo_transcript.md",
+   "text": "51456 | autism | 0.1862 mm"
+  },
+  {
+   "slide": "Live demo: querying and using the graph",
+   "source": "slides/demo/claude_code_demo_transcript.md",
+   "text": "51469 | autism | 0.1559 mm"
+  },
+  {
+   "slide": "Live demo: querying and using the graph",
+   "source": "slides/demo/claude_code_demo_transcript.md",
+   "text": "17 autism / 19 control"
+  }
+ ]
 }
