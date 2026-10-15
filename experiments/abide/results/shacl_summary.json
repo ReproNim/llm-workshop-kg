@@ -1,6 +1,6 @@
 {
  "graph": "graph/abide_kg.ttl + embedding_provenance.ttl + resources.ttl + resource_activity.ttl + scope.ttl",
- "triples": 296763,
+ "triples": 297963,
  "n_shapes": 17,
  "conforms": true,
  "mutations": [
@@ -46,7 +46,7 @@
   },
   {
    "mutation": "activity snapshot without timestamp",
-   "focus": "urn:repronim:abide:snapshot/mriqc-nidm_bidsapp/20261015T145547Z",
+   "focus": "urn:repronim:abide:snapshot/simple2_nidm_examples/20261015T145737Z",
    "rejected": true,
    "messages": [
     "Message: snapshot needs prov:generatedAtTime"
@@ -73,5 +73,5 @@
  ],
  "all_mutations_rejected": true,
  "scope": "local profile for this experiment; not NIDM certification and not a check of scientific correctness",
- "seconds": 5.8
+ "seconds": 5.7
 }
