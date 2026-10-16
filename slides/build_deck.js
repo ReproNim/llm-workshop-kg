@@ -573,10 +573,7 @@ async function main() {
     const s = addSlide("TITLE_DARK", MAIN);
     s.addText("Connecting neuroimaging knowledge graphs across data, publications and labs", { placeholder: "title" });
     s.addText([
-      { text: "Worked examples on ds000030 and ABIDE I", options: { breakLine: true } },
-      { text: " ", options: { breakLine: true, fontSize: 12 } },
-      { text: "Satrajit Ghosh", options: { breakLine: true, bold: true, fontSize: 18 } },
-      { text: "ReproNim / LLM symposium · 25 minutes + discussion", options: { fontSize: 18 } },
+      { text: "Satrajit Ghosh", options: { bold: true, fontSize: 18 } },
     ], { placeholder: "body" });
     // badge key
     const LX = 6.95, CX = 10.75;
