@@ -58,7 +58,7 @@ is `experiments/abide/rebuild.sh`; a clean-room run from a fresh download reprod
 key numbers (the other three are run times) and all 15 gold answers
 (`experiments/abide/results/clean_room_verify.json`).
 
-The PDF export is a host step (`scripts/build_all.sh pdf`, then `scripts/build_all.sh pdftext`, where `scripts/check_pdf_text.py` confirms the PDF carries the deck's text slide by slide). For v0.2 no PDF matching the final deck could be exported (PowerPoint automation failed with error -9074), so the release carries the `.pptx` and the PDF will be added once exported: it uses LibreOffice where installed, otherwise Microsoft PowerPoint
+The PDF export is a host step (`scripts/build_all.sh pdf`, then `scripts/build_all.sh pdftext`, where `scripts/check_pdf_text.py` confirms the PDF carries the deck's text slide by slide). For v0.2 the PDF was exported by Microsoft PowerPoint from the v0.2 `.pptx` (outside `datalad run`) and its text check was recorded with `datalad run`; it uses LibreOffice where installed, otherwise Microsoft PowerPoint
 on macOS through `scripts/export_pdf.applescript`.
 
 ## How provenance is recorded
