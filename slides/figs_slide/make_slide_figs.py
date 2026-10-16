@@ -106,16 +106,22 @@ def _check_text_artists(fig, dpi: float, width_px: int, height_px: int) -> list[
                 continue
             bb = t.get_window_extent(renderer)
             boxes.append((t.get_text(), bb.x0, bb.y0, bb.x1, bb.y1))
+    # The legend's own outer box and its colour-swatch handles are checked for canvas bounds
+    # only, separately from `boxes`: the box necessarily contains its own text/handles, and each
+    # handle sits deliberately flush against its own label (handletextpad), so pairwise-overlap
+    # checking either against the rest of `boxes` produces nothing but expected false positives.
+    bounds_only = []
+    for leg in fig.legends + [a.get_legend() for a in fig.axes if a.get_legend()]:
+        bb = leg.get_window_extent(renderer)
+        bounds_only.append(("<legend box>", bb.x0, bb.y0, bb.x1, bb.y1))
         handles = getattr(leg, "legend_handles", None) or getattr(leg, "legendHandles", [])
         for h in handles:
             if h is None or not h.get_visible():
                 continue
             bb = h.get_window_extent(renderer)
-            boxes.append(("<legend handle>", bb.x0, bb.y0, bb.x1, bb.y1))
-        bb = leg.get_window_extent(renderer)
-        boxes.append(("<legend box>", bb.x0, bb.y0, bb.x1, bb.y1))
+            bounds_only.append(("<legend handle>", bb.x0, bb.y0, bb.x1, bb.y1))
     problems = []
-    for label, x0, y0, x1, y1 in boxes:
+    for label, x0, y0, x1, y1 in boxes + bounds_only:
         if x0 < -0.5 or y0 < -0.5 or x1 > width_px + 0.5 or y1 > height_px + 0.5:
             problems.append(f"OUT OF CANVAS: {label!r} ({x0:.1f},{y0:.1f},{x1:.1f},{y1:.1f})")
     for i in range(len(boxes)):
@@ -348,17 +354,20 @@ def element_coverage_slide() -> None:
     # This is a fixed-pixel canvas (no tight-bbox crop), so every margin below is reserved by
     # hand for a specific piece of overflow: y-tick labels and x-labels draw OUTSIDE their axes'
     # box, and at a 46px-floor font size that overflow is wide enough to need real inches, not
-    # the few points matplotlib's own default margins assume.
-    bottom_strip = 0.6   # xlabel + x tick numbers, shared by both axes
-    top_strip = 0.65     # legend, above the right-hand axes only
-    axes_bottom = bottom_strip
-    axes_height = HEIGHT_IN - bottom_strip - top_strip
+    # the few points matplotlib's own default margins assume. The legend lives in its own strip
+    # at the very bottom, full figure width, rather than above the (narrower) right panel - a
+    # single-row, 4-category legend at this font size is wider than that panel.
+    legend_strip = 0.55   # the legend's own row, full figure width
+    xlabel_strip = 0.65   # x tick numbers + xlabel, shared by both axes
+    top_margin = 0.6      # headroom for "Phenotype" above row 0
+    axes_bottom = legend_strip + xlabel_strip
+    axes_height = HEIGHT_IN - axes_bottom - top_margin
 
     left_margin_funnel = 2.35   # room for funnel row labels ("Analyst B inputs", ...)
     funnel_width = 3.05         # the axes itself: bars + the two-line annotation past each bar
     gap = 0.15
     right_label_margin = 2.3    # room for the longest element row label ("fMRI time series")
-    right_margin = 0.35
+    right_margin = 0.55         # room for the last x tick label ("20") to overflow past the axes
 
     # --- LEFT: the requirement funnel (same 4 bars/numbers as the matrix backup slide) ---
     axf = fig.add_axes([left_margin_funnel / WIDTH_IN, axes_bottom / HEIGHT_IN, funnel_width / WIDTH_IN,
@@ -427,17 +436,12 @@ def element_coverage_slide() -> None:
     ax.text(n_sites_total / 2, len(phenotype_keys) - 1 + gap / 2 + 0.5, "Imaging-derived", ha="center", va="center",
             fontsize=BODY, color=GREY_DARK, clip_on=False, style="italic")
 
-    # Figure-fraction placement (not axes-fraction): the legend's own height is fixed in inches
-    # by its font size, so anchoring it to the axes' data/fraction system creates a feedback loop
-    # with top_strip (shrink top_strip to give the axes more room and the legend, now a BIGGER
-    # fraction of a smaller axes, promptly grows back into the same space). Figure coordinates
-    # have no such loop: the legend's centre sits at a fixed inch position in the fixed top_strip.
+    # Figure-fraction placement (not axes-fraction): a fixed inch position in the dedicated
+    # legend_strip at the very bottom, centred on the full figure width so a legend wider than
+    # the (narrower) right-hand panel still has room either side.
     legend_handles = [plt.Rectangle((0, 0), 1, 1, fc=cat_colors[c], ec=GREY_DARK, lw=0.8) for c in cat_order]
-    # Centred on the whole figure, not just the (narrower) right-hand panel: at this font size
-    # the 4-category legend is wider than the bar panel itself, so anchoring to the panel's own
-    # centre would push it past the right edge of a fixed 2400px canvas.
     legend_cx = 0.5
-    legend_cy = (axes_bottom + axes_height + top_strip * 0.72) / HEIGHT_IN
+    legend_cy = (legend_strip / 2) / HEIGHT_IN
     fig.legend(legend_handles, [cat_names[c] for c in cat_order], loc="center", bbox_to_anchor=(legend_cx, legend_cy),
               ncol=4, frameon=False, fontsize=BODY, handlelength=1.3, handletextpad=0.5, columnspacing=1.4)
 

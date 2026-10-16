@@ -42,10 +42,6 @@ PATHS = [
 
 # Experiment numbers -> V() lookups (ids in slides/values_map.json).
 VALUES = [
-    ('{ value: "1,112", label: "participants with phenotype records" }', '{ value: V("elements.participants"), label: "participants with phenotype records" }'),
-    ('{ value: "988", label:', '{ value: V("elements.analystB"), label:'),
-    ('{ value: "746", label:', '{ value: V("elements.iqVolumes"), label:'),
-    ('{ value: "330", label:', '{ value: V("elements.srs"), label:'),
     ('publications: "598",', 'publications: V("pubs.openalex"),'),
     ('abstracts: "35",', 'abstracts: V("pubs.abstracts"),'),
     ('claims: "541",', 'claims: V("pubs.claims"),'),
@@ -57,7 +53,7 @@ VALUES = [
     ('"FDR-corrected (false discovery rate); 99.6% weaker in ASD (95% CI 90.2–99.8%)"',
      '`FDR-corrected (false discovery rate); ${V("a.hypo")}% weaker in ASD (95% CI ${V("a.hypoLow")}–${V("a.hypoHigh")}%)`'),
     ('"52% of the weaker connections link the two hemispheres"', '`${V("a.interhem")}% of the weaker connections link the two hemispheres`'),
-    ('"median effect size d = 0.30 · n = 441, 9 sites"', '`median effect size d = ${V("a.medianD")} · n = ${V("cohort.aN")}, ${V("a.sites")} sites`'),
+    ('"median effect size d = 0.30 (difference in SD units) · n = 441, 9 sites"', '`median effect size d = ${V("a.medianD")} (difference in SD units) · n = ${V("cohort.aN")}, ${V("a.sites")} sites`'),
     ('"Reviewed by B: not established in held-out participants (pooled d −0.08, −0.31 to 0.15)"',
      '`Reviewed by B: not established in held-out participants (pooled d ${V("rev.d")}, ${V("rev.dLow")} to ${V("rev.dHigh")})`'),
     ('headline: "AUC 0.74 (0.70–0.77)"', 'headline: `AUC ${V("b.auc")} (${V("b.aucLow")}–${V("b.aucHigh")})`'),
@@ -65,7 +61,7 @@ VALUES = [
      '`AUC: 0.5 = chance, 1 = perfect · tangent-space connectivity · tested on held-out sites, n = ${V("cohort.bN")}, ${V("b.sites")} sites`'),
     ('"correlation 0.72 · demographic + head motion 0.59 · demographic only 0.48"',
      '`correlation ${V("b.corr")} · demographic + head motion ${V("b.demofd")} · demographic only ${V("b.demo")}`'),
-    ('"accuracy 66.9%"', '`accuracy ${V("b.acc")}%`'),
+    ('"accuracy 66.9%; Abraham 2017 reported 66.8% on its own 871-participant cohort"', '`accuracy ${V("b.acc")}%; Abraham 2017 reported 66.8% on its own 871-participant cohort`'),
     ('"Reviewed by A: top edges overlap A\'s 90 vs 54 expected (p ≈ 4e−8)"',
      '`Reviewed by A: top edges overlap A\'s ${V("rev.overlap")} vs ${V("rev.expected")} expected (p ≈ 4e−8)`'),
     ('{ value: "63", label: "of B\'s 767 participants excluded" }', '{ value: V("cohort.bRemoved"), label: `of B\'s ${V("cohort.bN")} participants excluded` }'),
@@ -81,8 +77,8 @@ VALUES = [
     # dataset counts (source tables)
     ('"272 adults: 130 controls, 50 schizophrenia, 49 bipolar disorder, 43 ADHD"',
      '`${V("ds.total")} adults: ${V("ds.control")} controls, ${V("ds.schz")} schizophrenia, ${V("ds.bipolar")} bipolar disorder, ${V("ds.adhd")} ADHD`'),
-    ('"1,112 participants (539 autistic, 573 typically developing) from 17 sites"',
-     '`${V("abide.total")} participants (${V("abide.asd")} autistic, ${V("abide.td")} typically developing) from 17 sites`'),
+    ('"1,112 participants (539 autistic, 573 typically developing) from 17 sites (20 site codes in the data)"',
+     '`${V("abide.total")} participants (${V("abide.asd")} autistic, ${V("abide.td")} typically developing) from 17 sites (20 site codes in the data)`'),
     ('"200-region time series for 1,035 participants"', '`200-region time series for ${V("abide.timeseries")} participants`'),
     ('"→ 272 participants and their scores"', '`→ ${V("ds.total")} participants and their scores`'),
     ('["Participants and phenotypes", "272 participants; 52 tables, 1,983 columns"]', '["Participants and phenotypes", `${V("ds.total")} participants; 52 tables, 1,983 columns`]'),

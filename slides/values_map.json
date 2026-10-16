@@ -206,34 +206,6 @@
    "format": "int"
   },
   {
-   "id": "elements.participants",
-   "slide": "Participant coverage by data element",
-   "source": "experiments/abide/results/element_coverage.json",
-   "path": "participants",
-   "format": "int"
-  },
-  {
-   "id": "elements.analystB",
-   "slide": "Participant coverage by data element",
-   "source": "experiments/abide/results/element_coverage.json",
-   "path": "analysis_requirements.Analyst B (age, FD, CC200).n",
-   "format": "int"
-  },
-  {
-   "id": "elements.iqVolumes",
-   "slide": "Participant coverage by data element",
-   "source": "experiments/abide/results/element_coverage.json",
-   "path": "analysis_requirements.UMAP + FreeSurfer IDP join.n",
-   "format": "int"
-  },
-  {
-   "id": "elements.srs",
-   "slide": "Participant coverage by data element",
-   "source": "experiments/abide/results/element_coverage.json",
-   "path": "analysis_requirements.UMAP + SRS.n",
-   "format": "int"
-  },
-  {
    "id": "pubs.openalex",
    "slide": "Linking datasets, publications and abstracts",
    "source": "experiments/abide/results/publications.json",
