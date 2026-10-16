@@ -156,13 +156,22 @@ talk:slide-07-check-3 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "v
 talk:slide-08 a prov:Entity ; rdfs:label "Linking a claim to its evaluation and cohort" ; talk:section "Main talk" ; talk:position 8 ;
   prov:wasGeneratedBy talk:slide-08-gen-P ;
   prov:wasGeneratedBy talk:slide-08-gen-R ;
+  prov:wasGeneratedBy talk:slide-08-gen-A ;
   prov:wasDerivedFrom talk:file-experiments_2Fds000030 ;
-  prov:wasDerivedFrom <https://doi.org/10.3389/fpsyt.2023.1232015> .
+  prov:wasDerivedFrom <https://doi.org/10.3389/fpsyt.2023.1232015> ;
+  prov:wasDerivedFrom <https://osf.io/agqtn/> ;
+  prov:wasDerivedFrom talk:file-slides_2Fdemo_2Frerun_ucla_cpm.json .
 talk:slide-08-gen-P a prov:Activity, talk:Production_P ; prov:wasAssociatedWith talk:EarlierAgenticSession .
 talk:slide-08-gen-R a prov:Activity, talk:Production_R ; prov:wasAssociatedWith talk:RetrievalAgent .
-talk:slide-08-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-08 ; talk:checkingLabel "validated" ;
-  talk:hasEvidence talk:slide-08-check-1 .
-talk:slide-08-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "validated" ;
+talk:slide-08-gen-A a prov:Activity, talk:Production_A ; prov:wasAssociatedWith talk:CodingAgent .
+talk:slide-08-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-08 ; talk:checkingLabel "re-run · validated" ;
+  talk:hasEvidence talk:slide-08-check-1 ;
+  talk:hasEvidence talk:slide-08-check-2 .
+talk:slide-08-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "re-run" ;
+  prov:wasAttributedTo talk:IndependentRebuild ;
+  prov:wasGeneratedBy talk:orcd-job-25941523 ;
+  prov:wasDerivedFrom talk:file-experiments_2Fds000030_2Fcodex_verification_2Forcd_rebuild_2Frebuild_comparison.md .
+talk:slide-08-check-2 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "validated" ;
   prov:wasAttributedTo talk:IndependentVerifier ;
   prov:wasGeneratedBy talk:claim-verification-2026-10-15 ;
   prov:wasDerivedFrom talk:file-experiments_2Fds000030_2Fcodex_verification_2Fcodex_claim_verification.md .
@@ -878,6 +887,8 @@ talk:file-experiments_2Fds000030_2Fcodex_verification_2Forcd_rebuild_2Frebuild_c
 talk:file-experiments_2Fds000030_2Fcodex_verification_2Fcodex_claim_verification.md a prov:Entity ; rdfs:label "experiments/ds000030/codex_verification/codex_claim_verification.md" .
 talk:file-experiments_2Fabide_2Fliterature_review_2Fresults_synthesis.json a prov:Entity ; rdfs:label "experiments/abide/literature_review/results_synthesis.json" .
 <https://doi.org/10.3389/fpsyt.2023.1232015> a prov:Entity ; rdfs:label "https://doi.org/10.3389/fpsyt.2023.1232015" .
+<https://osf.io/agqtn/> a prov:Entity ; rdfs:label "https://osf.io/agqtn/" .
+talk:file-slides_2Fdemo_2Frerun_ucla_cpm.json a prov:Entity ; rdfs:label "slides/demo/rerun_ucla_cpm.json" .
 talk:file-experiments_2Fabide_2Fresults_2Fsimple2.json a prov:Entity ; rdfs:label "experiments/abide/results/simple2.json" .
 talk:file-experiments_2Fabide_2Fresults_2Fsimple2_tool_agreement.csv a prov:Entity ; rdfs:label "experiments/abide/results/simple2_tool_agreement.csv" .
 talk:file-experiments_2Fabide_2Fresults_2Fpublications.json a prov:Entity ; rdfs:label "experiments/abide/results/publications.json" .
