@@ -6,12 +6,12 @@
    "n": 16
   },
   {
-   "status": "reviewed",
+   "status": "validated",
    "n": 15
   },
   {
-   "status": "validated",
-   "n": 14
+   "status": "reviewed",
+   "n": 15
   },
   {
    "status": "unverified",
@@ -34,5 +34,5 @@
    "n": 1
   }
  ],
- "triples": 1691
+ "triples": 1727
 }
