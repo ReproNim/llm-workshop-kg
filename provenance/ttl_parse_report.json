@@ -1,6 +1,6 @@
 {
  "files": 28,
- "triples": 2852950,
+ "triples": 2852967,
  "counts": {
   "experiments/abide/code/shapes.ttl": 207,
   "experiments/abide/data/vocab/nidm/nidm_linkml_shapes_closed.ttl": 641,
@@ -29,7 +29,7 @@
   "experiments/ds000030/experiment/results/shacl_report.ttl": 2,
   "experiments/ds000030/experiment/shapes.ttl": 64,
   "experiments/ds000030/output/cnp_graph/knowledge_graph.ttl": 267738,
-  "slides/talk_provenance.ttl": 1643
+  "slides/talk_provenance.ttl": 1660
  },
  "failures": {}
 }
