@@ -1,0 +1,73 @@
+{
+  "head" : {
+    "vars" : [ "r", "rLabel", "nn" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "r" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2205433"
+      },
+      "rLabel" : {
+        "type" : "literal",
+        "value" : "Q2205433"
+      }
+    }, {
+      "r" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2860196"
+      },
+      "rLabel" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "archicortex"
+      },
+      "nn" : {
+        "type" : "literal",
+        "value" : "170"
+      }
+    }, {
+      "r" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q18676"
+      },
+      "rLabel" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "auditory cortex"
+      },
+      "nn" : {
+        "type" : "literal",
+        "value" : "1354"
+      }
+    }, {
+      "r" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q2603645"
+      },
+      "rLabel" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "entorhinal cortex"
+      },
+      "nn" : {
+        "type" : "literal",
+        "value" : "168"
+      }
+    }, {
+      "r" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q48360"
+      },
+      "rLabel" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "hippocampus"
+      },
+      "nn" : {
+        "type" : "literal",
+        "value" : "3157"
+      }
+    } ]
+  }
+}

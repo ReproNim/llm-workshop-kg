@@ -1,0 +1,359 @@
+{
+ "qid": "Q48360",
+ "label": "hippocampus",
+ "description": "brain region that is part of the limbic system",
+ "sitelinks": 62,
+ "enwiki": "Hippocampus",
+ "modified": "2026-07-13T00:06:13Z",
+ "lastrevid": 2516828778,
+ "statements": [
+  [
+   "external-id",
+   "P1323",
+   "Terminologia Anatomica 98 ID",
+   "A14.1.09.321"
+  ],
+  [
+   "string",
+   "P373",
+   "Commons category",
+   "Hippocampus (anatomy)"
+  ],
+  [
+   "wikibase-item",
+   "P361",
+   "part of",
+   "temporal lobe"
+  ],
+  [
+   "external-id",
+   "P227",
+   "GND ID",
+   "4642127-0"
+  ],
+  [
+   "external-id",
+   "P646",
+   "Freebase ID",
+   "/m/0f3js"
+  ],
+  [
+   "external-id",
+   "P1402",
+   "Foundational Model of Anatomy ID",
+   "275020"
+  ],
+  [
+   "external-id",
+   "P696",
+   "Interlex ID",
+   "birnlex_721"
+  ],
+  [
+   "string",
+   "P935",
+   "Commons gallery",
+   "Hippocampus"
+  ],
+  [
+   "external-id",
+   "P1417",
+   "Encyclop\u00e6dia Britannica Online ID",
+   "science/hippocampus"
+  ],
+  [
+   "commonsMedia",
+   "P18",
+   "image",
+   "Gray739-emphasizing-hippocampus.png"
+  ],
+  [
+   "commonsMedia",
+   "P18",
+   "image",
+   "Gray739-emphasizing-hippocampus-ar.png"
+  ],
+  [
+   "external-id",
+   "P3417",
+   "Quora topic ID",
+   "Hippocampus-1"
+  ],
+  [
+   "external-id",
+   "P508",
+   "BNCF Thesaurus ID",
+   "51458"
+  ],
+  [
+   "external-id",
+   "P3827",
+   "JSTOR topic ID (archived)",
+   "hippocampus"
+  ],
+  [
+   "external-id",
+   "P3982",
+   "TA98 Latin term",
+   "hippocampus"
+  ],
+  [
+   "external-id",
+   "P2581",
+   "BabelNet ID",
+   "00044220n"
+  ],
+  [
+   "external-id",
+   "P4229",
+   "ICD-10-CM",
+   "C71"
+  ],
+  [
+   "wikibase-item",
+   "P910",
+   "topic's main category",
+   "Category:Hippocampus (anatomy)"
+  ],
+  [
+   "external-id",
+   "P244",
+   "Library of Congress Authorities ID",
+   "sh85060982"
+  ],
+  [
+   "external-id",
+   "P486",
+   "MeSH descriptor ID",
+   "D006624"
+  ],
+  [
+   "external-id",
+   "P672",
+   "MeSH tree code",
+   "A08.186.211.180.405"
+  ],
+  [
+   "external-id",
+   "P672",
+   "MeSH tree code",
+   "A08.186.211.200.885.287.500.345"
+  ],
+  [
+   "external-id",
+   "P7173",
+   "TA2 ID",
+   "5518"
+  ],
+  [
+   "external-id",
+   "P1245",
+   "OmegaWiki Defined Meaning",
+   "1450538"
+  ],
+  [
+   "external-id",
+   "P6366",
+   "Microsoft Academic ID (discontinued)",
+   "2781161787"
+  ],
+  [
+   "external-id",
+   "P6366",
+   "Microsoft Academic ID (discontinued)",
+   "2909834013"
+  ],
+  [
+   "external-id",
+   "P2347",
+   "YSO ID",
+   "21117"
+  ],
+  [
+   "external-id",
+   "P4394",
+   "NeuroNames ID (plain mode)",
+   "3157"
+  ],
+  [
+   "external-id",
+   "P8408",
+   "KBpedia ID",
+   "Hippocampus"
+  ],
+  [
+   "wikibase-item",
+   "P4843",
+   "development of anatomical structure",
+   "hippocampus development"
+  ],
+  [
+   "wikibase-item",
+   "P31",
+   "instance of",
+   "brain region type"
+  ],
+  [
+   "wikibase-item",
+   "P279",
+   "subclass of",
+   "brain region"
+  ],
+  [
+   "external-id",
+   "P7329",
+   "ICD-11 ID (MMS)",
+   "XA7BD1"
+  ],
+  [
+   "external-id",
+   "P7807",
+   "ICD-11 ID (Foundation)",
+   "392893591"
+  ],
+  [
+   "external-id",
+   "P2892",
+   "UMLS CUI",
+   "C0019564"
+  ],
+  [
+   "external-id",
+   "P2892",
+   "UMLS CUI",
+   "C3887642"
+  ],
+  [
+   "external-id",
+   "P2892",
+   "UMLS CUI",
+   "C0152316"
+  ],
+  [
+   "external-id",
+   "P1296",
+   "Gran Enciclop\u00e8dia Catalana ID (former scheme)",
+   "0114543"
+  ],
+  [
+   "external-id",
+   "P9526",
+   "Scholarpedia article ID",
+   "Hippocampus"
+  ],
+  [
+   "external-id",
+   "P268",
+   "Biblioth\u00e8que nationale de France ID",
+   "11983242q"
+  ],
+  [
+   "external-id",
+   "P2004",
+   "NALT ID",
+   "19223"
+  ],
+  [
+   "external-id",
+   "P8189",
+   "J9U entity ID",
+   "987007560445205171"
+  ],
+  [
+   "external-id",
+   "P10283",
+   "OpenAlex ID",
+   "C2781161787"
+  ],
+  [
+   "external-id",
+   "P1748",
+   "NCI Thesaurus ID",
+   "C12444"
+  ],
+  [
+   "external-id",
+   "P8313",
+   "Lex ID",
+   "hippocampus"
+  ],
+  [
+   "external-id",
+   "P9272",
+   "DeCS ID",
+   "6783"
+  ],
+  [
+   "external-id",
+   "P691",
+   "NL CR AUT ID",
+   "ph1149966"
+  ],
+  [
+   "external-id",
+   "P8814",
+   "WordNet 3.1 Synset ID",
+   "05503912-n"
+  ],
+  [
+   "external-id",
+   "P10565",
+   "Encyclopedia of China (Third Edition) old ID (2021)",
+   "69157"
+  ],
+  [
+   "external-id",
+   "P11514",
+   "Great Russian Encyclopedia portal ID",
+   "gippokamp-b14aab"
+  ],
+  [
+   "external-id",
+   "P12385",
+   "Gran Enciclop\u00e8dia Catalana ID",
+   "hipocamp"
+  ],
+  [
+   "external-id",
+   "P10380",
+   "Springer Nature Subjects Taxonomy ID",
+   "hippocampus"
+  ],
+  [
+   "external-id",
+   "P13591",
+   "\u200eYale LUX ID",
+   "concept/e62d408c-91cc-43fc-8f7a-6fc6b6568592"
+  ],
+  [
+   "commonsMedia",
+   "P989",
+   "spoken text audio",
+   "Hippocampus.ogg"
+  ],
+  [
+   "external-id",
+   "P1036",
+   "Dewey Decimal Classification",
+   "612.825"
+  ],
+  [
+   "external-id",
+   "P1036",
+   "Dewey Decimal Classification",
+   "573.86"
+  ],
+  [
+   "external-id",
+   "P13613",
+   "Enciclopedia Galega Universal ID",
+   "135226"
+  ],
+  [
+   "external-id",
+   "P14541",
+   "Encyclopedia of China (Third Edition) ID (2026)",
+   "4MQCB8"
+  ]
+ ]
+}
