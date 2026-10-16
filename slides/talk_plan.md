@@ -309,3 +309,26 @@ ReproPond/ReproLake → scope and consent as attributes on graph records.
    Examples: "CSF" under one UBERON term is total CSF in FSL but ventricles in ANTs/FreeSurfer (~200×);
    two agents reconstructed the ABIDE cohorts differently (871-based vs 767).
 6. Federation instead of copying — Neurobagel sends the query to each pond.
+
+## Who/what produced each part: named skill vs general agent work (speaker direction 2026-10-16)
+
+Badge letters: add **S = followed a named skill** (name it on the slide: e.g. "Skill: SynthScholar").
+Keep **A = general agent work** (Claude Code / sub-agents writing and running their own code, no skill).
+
+| Part of the talk | Named skill used | General agent work |
+|---|---|---|
+| ds000030 package (NIDM graph, UMAP, claims) | StructSense skill subset for the claim pilot (run by Codex) | Codex built the rest (P) |
+| ds000030 re-run on ORCD; claim verification | none (sbatch written by a sub-agent from a brief; not the orcd-remote skill) | sub-agents |
+| Kim 2023 re-run from OSF | none | main session (Python port) |
+| ABIDE experiment: graph, cohorts, analysts A/B, QC revision, ReproNim join, resources, publications (AbstractAtlas/OpenAlex), coverage, participant graph | none | sub-agents (experiment builder + finisher) |
+| Review of 74 ABIDE studies | SynthScholar skill: protocol validation, open-access retrieval script, corpus build, review schema check and export | sub-agents: OpenAlex search and selection, screening/charting (8 agents), quote checks, synthesis, figures, literature graph |
+| Harmonisation numbers (Caltech) | neuroimaging-kg skill (compare_graphs.py) | — |
+| neuroimaging-kg skill itself | written by a sub-agent following writing-skills, refined with WikiSkill | — |
+| Live demo slides | neuroimaging-kg skill in Claude Code | — |
+| "Asking Claude about the literature graph" | none | Claude Code alone with pyoxigraph |
+| Brain Researcher comparison | Brain Researcher MCP (M) | another session |
+| Wikipedia/Wikidata slide | none | main session (Wikidata API + SPARQL) |
+| The deck | pptx skill (pptxgenjs) | deck-builder sub-agents |
+
+The speaker will NOT use speaker notes: every slide must carry its own meaning on the slide — purpose, plain-language
+definitions, the key number and its scope, and any caveat that matters — without aphoristic takeaway footers.

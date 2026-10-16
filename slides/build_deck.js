@@ -32,23 +32,18 @@ const ABIDE = {
       { name: "Phenotype", count: "38 values" },
       { name: "Scans and QC", count: "2 scans; head motion 0.064 mm" },
       { name: "Derived data", count: "regional time series, connectivity" },
-      { name: "Brain volumes by tool", count: "ANTs 101 · FSL 18 · FreeSurfer 62" },
-      { name: "Cohorts and folds", count: "4 cohorts; dropped from one" },
-      { name: "Results", count: "10 results" },
+      { name: "Brain volumes by tool", count: "ANTs 101 · FSL 18 · FreeSurfer 62 values" },
+      { name: "Cohorts and folds", count: "in 4 cohorts; out of A's stricter one (site too small)" },
+      { name: "Results", count: "input to 10 results" },
       { name: "Publication", count: "Abraham 2017 cohort" },
-      { name: "Consent scope", count: "broad sharing" },
+      { name: "Consent scope", count: "broad sharing permitted" },
     ],
     notes: "Source: results/participant_ego.json and figures/participant_ego.png (239 triples within two hops, 30 nodes; one query, 0.027 s). MaxMun_c_0051332: 38 phenotype values from source row 1003, mean FD 0.0644 mm; two raw scans held as S3 pointers; CC200 time series and 19,900-edge connectivity with hashes; brain volumes from ANTs (101), FSL (18) and FreeSurfer (62) joined from ReproNim simple2 through ndar:src_subject_id; member of the reconstructed Abraham cohort, B_v1, A_v1 and B_v2, but not A_v2, because the MAX_MUN site falls below the 10-per-group minimum under the stricter motion rule; input to 10 results; record scope broad sharing, egress permitted.",
   },
   elements: {
-    title: "Participant coverage by data element",
+    title: "Analyses supported by the joined data",
     figure: slideFig("element_coverage_slide.png", EXP + "/figures/element_coverage.png"),
-    callouts: [
-      { value: V("elements.participants"), label: "participants with phenotype records" },
-      { value: V("elements.analystB"), label: "meet Analyst B's inputs (time series limit it)" },
-      { value: V("elements.iqVolumes"), label: "IQ scores + FreeSurfer volumes" },
-      { value: V("elements.srs"), label: "with Social Responsiveness Scale (4 sites)" },
-    ],
+    lead: "Left: participants left as each analysis adds a required element, and what limits it. Right: sites holding each element.",
     notes: "Source: results/element_coverage.json (query Q14, 0.24 s) and figures/element_coverage.png. 1,112 participants; CC200 time series for 989; Analyst B's inputs (age, FD, CC200) for 988 at 20 sites; age + FIQ/VIQ/PIQ + FreeSurfer hippocampus for 746 at 15 sites (VIQ limits it); adding SRS leaves 330 at 4 sites. Missing elements cluster by site, not at random: SRS is missing at 15 sites, VIQ at 4.",
   },
   pubs: {
@@ -60,20 +55,20 @@ const ABIDE = {
     reviewed: V("pubs.reviewed"),
     reconstructible: V("pubs.reconstructible"),
     subset: "9",
-    notes: "Sources: results/publications.json and literature_review/synthesis.md. OpenAlex (pulled 2026-10-15): 598 works cite Di Martino 2014 and name ABIDE in title or abstract; 220 do so for Abraham 2017; status candidate. AbstractAtlas OHBM 2026 (commit 181652e2): 35 abstracts mention ABIDE, 17 state data use (15 of 17 correct on hand check), 18 mention it only; they carry 541 extracted claims. SynthScholar review: 994 records identified, 99 assessed, 74 included; cohorts reconstructible exactly for 17 (participant lists published for 4); 9 studies reuse the 871-participant ABIDE I subset, which our graph reconstructs as 873.",
+    notes: "Sources: results/publications.json and literature_review/synthesis.md. OpenAlex (pulled 2026-10-15): 598 works cite Di Martino 2014 and name ABIDE in title or abstract; 220 do so for Abraham 2017; status candidate. AbstractAtlas OHBM 2026 (commit 181652e2): 35 abstracts mention ABIDE, 17 state data use (15 of 17 correct on hand check), 18 mention it only; they carry 541 extracted claims. Systematic review (SynthScholar skill for protocol validation, open-access retrieval, corpus build and export; OpenAlex search, screening and charting by sub-agents): 994 records identified, 99 assessed, 74 included; cohorts reconstructible exactly for 17 (participant lists published for 4); 9 studies reuse the 871-participant ABIDE I subset, which our graph reconstructs as 873.",
   },
   joins: [
     { icon: "FaDatabase", name: "ReproNim simple2 NIDM", src: `ReproNim's ABIDE records, ${V("joins.sites")} sites`, key: "participant ID", result: `${V("joins.matched")} / ${V("elements.participants")} matched, none left over · ${V("joins.timeseries")} with time series · ${V("joins.inB")} in B's cohort (reviewed link, not declared identical)` },
     { icon: "FaBook", name: "AbstractAtlas", src: "OHBM 2026 abstracts", key: "dataset name in abstract text", result: `${V("pubs.abstracts")} abstracts · ${V("pubs.statedUse")} state data use · 15 / ${V("pubs.statedUse")} correct on hand check` },
     { icon: "FaGlobe", name: "OpenAlex", src: "open catalogue of papers", key: "DOI and citation", result: `${V("pubs.openalex")} works cite Di Martino 2014 and name ABIDE` },
     { icon: "FaBrain", name: "Brain Researcher KG", src: "an external AI assistant's graph", key: "dataset node", result: "one aggregate ABIDE node (2,226 subjects); neither paper present" },
-    { icon: "FaSearch", name: "Literature review", src: "systematic review (SynthScholar)", key: "DOI and cohort description", result: "9 of 74 reviewed studies reuse the 871-participant ABIDE I subset, incl. Abraham 2017, Parisot 2018, Ktena 2017" },
+    { icon: "FaSearch", name: "Literature review", src: "systematic review (SynthScholar skill + sub-agents)", key: "DOI and cohort description", result: "9 of 74 reviewed studies reuse the 871-participant ABIDE I subset, incl. Abraham 2017, Parisot 2018, Ktena 2017" },
   ],
   cohorts: { aN: V("cohort.aN"), bN: V("cohort.bN"), both: V("cohort.aN"), aOnly: "0", bOnly: V("cohort.bOnly"), aRemoved: V("cohort.aRemoved"), bRemoved: V("cohort.bRemoved") }, // results/key_numbers.json cohort.*
   results: {
     title: "ABIDE I: group differences and site-held-out prediction",
-    a: { headline: `${V("a.edges")} connections differ`, lines: [`FDR-corrected (false discovery rate); ${V("a.hypo")}% weaker in ASD (95% CI ${V("a.hypoLow")}–${V("a.hypoHigh")}%)`, `${V("a.interhem")}% of the weaker connections link the two hemispheres`, `median effect size d = ${V("a.medianD")} · n = ${V("cohort.aN")}, ${V("a.sites")} sites`, `Reviewed by B: not established in held-out participants (pooled d ${V("rev.d")}, ${V("rev.dLow")} to ${V("rev.dHigh")})`], caption: "Association in this cohort" },
-    b: { headline: `AUC ${V("b.auc")} (${V("b.aucLow")}–${V("b.aucHigh")})`, lines: [`AUC: 0.5 = chance, 1 = perfect · tangent-space connectivity · tested on held-out sites, n = ${V("cohort.bN")}, ${V("b.sites")} sites`, `correlation ${V("b.corr")} · demographic + head motion ${V("b.demofd")} · demographic only ${V("b.demo")}`, `accuracy ${V("b.acc")}%`, `Reviewed by A: top edges overlap A's ${V("rev.overlap")} vs ${V("rev.expected")} expected (p ≈ 4e−8)`], caption: "Prediction at held-out sites" },
+    a: { headline: `${V("a.edges")} connections differ`, lines: [`FDR-corrected (false discovery rate); ${V("a.hypo")}% weaker in ASD (95% CI ${V("a.hypoLow")}–${V("a.hypoHigh")}%)`, `${V("a.interhem")}% of the weaker connections link the two hemispheres`, "median effect size d = 0.30 (difference in SD units) · n = 441, 9 sites", "Caveat: the pattern tracks whole-brain mean connectivity (r = 0.98), so it may be a global difference", `Reviewed by B: not established in held-out participants (pooled d ${V("rev.d")}, ${V("rev.dLow")} to ${V("rev.dHigh")})`], caption: "Association in this cohort" },
+    b: { headline: `AUC ${V("b.auc")} (${V("b.aucLow")}–${V("b.aucHigh")})`, lines: [`AUC: 0.5 = chance, 1 = perfect · tangent-space connectivity · tested on held-out sites, n = ${V("cohort.bN")}, ${V("b.sites")} sites`, `correlation ${V("b.corr")} · demographic + head motion ${V("b.demofd")} · demographic only ${V("b.demo")}`, "accuracy 66.9%; Abraham 2017 reported 66.8% on its own 871-participant cohort", `Reviewed by A: top edges overlap A's ${V("rev.overlap")} vs ${V("rev.expected")} expected (p ≈ 4e−8)`], caption: "Prediction at held-out sites" },
     figure: null,
     notes: "Source: results/key_numbers.json. Analyst A (n = 441, 9 sites): 5,428 FDR-significant edges, 5,407 hypoconnected and 21 hyperconnected (99.6%, 95% CI 90.2–99.8%), 52% of hypoconnected edges interhemispheric, median |d| 0.30. Analyst B (n = 767, 20 leave-site-out folds): AUC tangent 0.74 (0.70–0.77), correlation 0.72 (0.69–0.76), demographic + FD 0.59 (0.54–0.62), demographic 0.48 (0.44–0.52); tangent accuracy 66.9%. Reviews: A finds 90 of B's top predictive edges among its significant edges against 54 expected (p ≈ 4e−8); B finds A's effect not established in the 326 participants outside A's cohort (pooled d −0.08, −0.31 to 0.15; 8 of 14 sites in the same direction). Abraham et al. 2017 reported 66.8% leave-site-out accuracy, against our B's 66.9%, on a different cohort definition (871 versus 767); rater QC alone gives 873 here against Abraham's reported 871 (cohort.rater_qc_pass.n). Caveat on A: its hypoconnectivity pattern correlates 0.98 with whole-brain mean connectivity (key_numbers.json: review_v1.B_of_A.signature_global_r), so much of it may reflect a global difference rather than specific edges. Figures in the package: figures/analyst_b_sites.png, figures/review_b_of_a_forest.png.",
   },
@@ -135,7 +130,7 @@ const ABIDE = {
 };
 
 // ---------------------------------------------------------------- slide provenance (AI-involvement badges)
-// production: H speaker · L LLM draft, speaker-edited · A agent computed · R agent retrieved · M external agent via MCP · P earlier agentic session
+// production: H speaker · L LLM draft, speaker-edited · S followed a named skill · A general agent work (no skill) · R agent retrieved · M external agent via MCP · P earlier agentic session
 // checking: re-run · validated · reviewed · unverified
 const CNP_ZIP = "experiments/ds000030";
 const ABIDE_KEY = "experiments/abide/results/key_numbers.json";
@@ -146,12 +141,12 @@ const SLIDE_PROV = {
   "Connecting neuroimaging knowledge graphs across data, publications and labs": prov(["H", "L"], "reviewed", PLAN),
   "Building knowledge graphs from datasets and papers": prov(["H", "L", "R"], "unverified", "https://sandbox.brainkb.org/", "https://github.com/sensein/brainkb-ui/tree/a4815a3", "https://github.com/sensein/agent_skills"),
   "Components of a dataset and a publication": prov(["P", "R", "A"], "re-run · validated", CNP_ZIP, "experiments/abide/literature_review/results_synthesis.json"),
-  "Harmonising graphs built by different people": prov(["H", "L", "A", "R"], "re-run · reviewed", PLAN, "experiments/abide/results/simple2.json", "experiments/abide/results/simple2_tool_agreement.csv", "agent_skills: skills/neuroimaging-kg/examples/abide_one_site/demo_output.txt", "agent_skills: skills/neuroimaging-kg/scripts/compare_graphs.py"),
-  "Joining graphs through shared identifiers": prov(["A", "R"], "re-run · validated", "experiments/abide/results/simple2.json", "experiments/abide/results/simple2_tool_agreement.csv", "experiments/abide/results/publications.json"),
+  "Harmonising graphs built by different people": prov(["H", "L", "S", "A", "R"], "re-run · reviewed", PLAN, "experiments/abide/results/simple2.json", "experiments/abide/results/simple2_tool_agreement.csv", "agent_skills: skills/neuroimaging-kg/examples/abide_one_site/demo_output.txt", "agent_skills: skills/neuroimaging-kg/scripts/compare_graphs.py"),
+  "Joining graphs through shared identifiers": prov(["A", "R", "S"], "re-run · validated", "experiments/abide/results/simple2.json", "experiments/abide/results/simple2_tool_agreement.csv", "experiments/abide/results/publications.json"),
   "The two example datasets": prov(["P", "A", "R"], "re-run · validated", CNP_ZIP, ABIDE_KEY, "experiments/abide/results/element_coverage.json"),
   "A knowledge graph in four statements": prov(["H", "L", "P"], "re-run · reviewed", PLAN, CNP_ZIP),
-  "Live demo: building a graph in Claude Code": prov(["A", "L"], "validated", DEMO_SOURCE_REL, "agent_skills: skills/neuroimaging-kg/examples/claude_code_demo_transcript.md"),
-  "Live demo: querying and using the graph": prov(["A", "L"], "validated", DEMO_SOURCE_REL, "agent_skills: skills/neuroimaging-kg/examples/claude_code_demo_transcript.md"),
+  "Example: building a graph in Claude Code": prov(["S", "L"], "validated", DEMO_SOURCE_REL, "agent_skills: skills/neuroimaging-kg/examples/claude_code_demo_transcript.md"),
+  "Example: querying and using the graph": prov(["S", "L"], "validated", DEMO_SOURCE_REL, "agent_skills: skills/neuroimaging-kg/examples/claude_code_demo_transcript.md"),
   "Glossary": prov(["H", "L", "R"], "reviewed", PLAN),
   "Wikipedia and Wikidata: prose and a structured graph": prov(["R", "A"], "validated", "slides/demo/wikidata_SOURCE.md", "slides/demo/wikidata_Q48360_summary.json", "slides/demo/wikidata_temporal_lobe_parts.json", "https://www.wikidata.org/wiki/Q48360", "https://en.wikipedia.org/wiki/Hippocampus"),
   "Learning objectives": prov(["H", "L"], "reviewed", PLAN),
@@ -161,23 +156,23 @@ const SLIDE_PROV = {
   "Types of knowledge and where they are recorded": prov(["H", "L", "R"], "reviewed", PLAN),
   "ReproPond and ReproLake as attributes on graph records": prov(["H", "L", "R"], "reviewed", PLAN, "https://www.repronim.org/resources/tutorials/pond-lake/"),
   "Knowledge graph around a single participant": prov(["A"], "re-run · validated", ABIDE_KEY),
-  "Participant coverage by data element": prov(["A"], "re-run · validated", ABIDE_KEY),
+  "Analyses supported by the joined data": prov(["A"], "re-run · validated", ABIDE_KEY),
   "Recomputing a derived score from source items": prov(["P", "R"], "re-run", CNP_ZIP),
-  "Linking a claim to its evaluation and cohort": prov(["P", "R", "A"], "re-run · validated", CNP_ZIP, "https://doi.org/10.3389/fpsyt.2023.1232015", "https://osf.io/agqtn/", "slides/demo/rerun_ucla_cpm.json"),
-  "Exercise: evaluating claims against a source": prov(["P", "R", "L"], "validated", CNP_ZIP, "https://doi.org/10.3389/fpsyt.2023.1232015"),
-  "Quotation checks and scientific entailment": prov(["P", "R"], "validated", CNP_ZIP),
+  "Linking a claim to its evaluation and cohort": prov(["P", "S", "R", "A"], "re-run · validated", CNP_ZIP, "https://doi.org/10.3389/fpsyt.2023.1232015", "https://osf.io/agqtn/", "slides/demo/rerun_ucla_cpm.json"),
+  "Exercise: evaluating claims against a source": prov(["P", "S", "R", "L"], "validated", CNP_ZIP, "https://doi.org/10.3389/fpsyt.2023.1232015"),
+  "Quotation checks and scientific entailment": prov(["P", "S", "R"], "validated", CNP_ZIP),
   "ABIDE I: two analyses, two research questions": prov(["A", "R"], "re-run · validated", ABIDE_KEY),
   "ABIDE I: group differences and site-held-out prediction": prov(["A", "R"], "re-run · validated", ABIDE_KEY),
   "Exercise: consequences of a stricter motion threshold": prov(["A"], "re-run · validated", ABIDE_KEY),
   "Dependency tracing after a QC revision": prov(["A"], "re-run · validated", ABIDE_KEY),
   "Phenotype embedding linked to image-derived phenotypes": prov(["A"], "re-run (UMAP-derived values differ slightly across machines)", ABIDE_KEY),
-  "Linking datasets, publications and abstracts": prov(["A", "R"], "re-run · validated", ABIDE_KEY, "https://abstractatlas.brainkb.org/"),
+  "Linking datasets, publications and abstracts": prov(["A", "R", "S"], "re-run · validated", ABIDE_KEY, "https://abstractatlas.brainkb.org/"),
   "Asking Claude about the literature graph": prov(["A"], "validated", "slides/demo/literature_query_answer.md", "experiments/abide/literature_review/literature_kg.ttl", "experiments/abide/literature_review/synthesis.md"),
-  "Evaluation schemes in 74 ABIDE studies": prov(["A", "R"], "validated", "experiments/abide/literature_review/results_synthesis.json", "experiments/abide/literature_review/synthesis.md"),
+  "Evaluation schemes in 74 ABIDE studies": prov(["S", "A", "R"], "validated", "experiments/abide/literature_review/results_synthesis.json", "experiments/abide/literature_review/synthesis.md"),
   "Resource discovery with dated activity records": prov(["A", "R"], "re-run · validated", ABIDE_KEY),
-  "Checking agent outputs against the graph": prov(["P", "R"], "re-run · validated", CNP_ZIP),
+  "Checking agent outputs against the graph": prov(["P", "S", "R"], "re-run · validated", CNP_ZIP),
   "Graph, search and Brain Researcher: a small comparison": prov(["M", "A"], "reviewed", "experiments/abide/comparison/"),
-  "The lecture's own provenance graph": prov(["H", "L"], "reviewed", PLAN, "talk_provenance.ttl"),
+  "The lecture's own provenance graph": prov(["H", "L", "S", "A"], "reviewed", PLAN, "talk_provenance.ttl"),
   "Practices to adopt now": prov(["H", "L"], "reviewed", PLAN),
   "Discussion": prov(["H", "L"], "reviewed", PLAN),
   // backup
@@ -185,7 +180,7 @@ const SLIDE_PROV = {
   "NIDM and PROV roles for each record": prov(["P", "R"], "re-run", CNP_ZIP),
   "Requirements for joining behaviour to image-derived measures": prov(["P"], "unverified", CNP_ZIP),
   "Research questions and results of the three papers": prov(["P", "R"], "validated", CNP_ZIP),
-  "StructSense extraction pilot": prov(["P"], "validated", CNP_ZIP),
+  "StructSense extraction pilot": prov(["P", "S"], "validated", CNP_ZIP),
   "Attribution across collaborators": prov(["P", "R"], "unverified", CNP_ZIP),
   "Design for a graph-versus-search comparison": prov(["P"], "unverified", CNP_ZIP),
   "Forms of drift and corresponding checks": prov(["P"], "unverified", CNP_ZIP),
@@ -202,6 +197,7 @@ const SLIDE_PROV = {
   "Provenance of a single phenotype measurement": prov(["P", "R"], "re-run · validated", CNP_ZIP),
   "AbstractAtlas: building blocks": prov(["P", "R"], "validated", "https://github.com/sensein/abstractatlas"),
   "ds000030 phenotype embedding from a graph query": prov(["P"], "re-run (UMAP differed ≤ 0.011)", CNP_ZIP),
+  "Site coverage of each data element (ABIDE I)": prov(["A"], "validated", ABIDE_KEY, "experiments/abide/results/element_coverage.json"),
   "Key to the AI-involvement badges": prov(["H", "L"], "reviewed", PLAN),
 };
 const REBUILD = "experiments/ds000030/codex_verification/orcd_rebuild/rebuild_comparison.md";
@@ -227,7 +223,8 @@ const evidenceFor = (title, pv) => {
 const PROD_DEF = [
   ["H", "Speaker", "written or decided by the speaker"],
   ["L", "LLM draft", "drafted by an LLM from the speaker's instructions, then edited by the speaker"],
-  ["A", "Agent computed", "computed by an agent writing and running code (Python, SPARQL, Slurm on ORCD)"],
+  ["S", "Named skill", "an agent followed a named skill (named on the slide: SynthScholar, StructSense, neuroimaging-kg, pptx)"],
+  ["A", "General agent work", "Claude Code or its sub-agents writing and running their own code (Python, SPARQL, Slurm on ORCD), no skill"],
   ["R", "Agent retrieved", "retrieved by an agent from cited sources; quotes checked against the source"],
   ["M", "External agent (MCP)", "answered by an external agent system through MCP (Brain Researcher)"],
   ["P", "Earlier agentic session", "produced in an earlier session by a different agentic system, reused"],
@@ -239,7 +236,7 @@ const CHECK_DEF = [
   ["unverified", "not independently checked; stated as such"],
 ];
 
-// ---------------------------------------------------------------- live demo content
+// ---------------------------------------------------------------- Claude Code example content
 // Filled from skills/neuroimaging-kg/examples/claude_code_demo.md once that file exists and has been run; placeholders until then.
 const DEMO_SOURCE = path.join(__dirname, "demo/claude_code_demo.md");
 const DEMO = {
@@ -263,14 +260,14 @@ const DEMO = {
     { label: "Prompt 4", text: "If we tightened the head-motion rule to mean framewise displacement below 0.15 mm, which participants would be excluded, and which results in our graph depend on them?",
       expected: ["“51456 | autism | 0.1862 mm”", "“51469 | autism | 0.1559 mm”", "“17 autism / 19 control”"], duration: "55 s" },
   ],
-  note: "Prompts and outputs are from a headless test (Claude Sonnet, 2026-10-15) recorded in the transcript; if the live run is slow (prompt 3 took 162 s), show the transcript instead.",
+  note: "Prompts and outputs are from a headless test run (Claude Sonnet, 2026-10-15) recorded in the transcript; the slides show those actual responses.",
 };
 
 
 // ---------------------------------------------------------------- dataset footnotes
 const D_CNP = "ds000030 (UCLA CNP), OpenNeuro, commit 4070b6e", D_CNPs = "ds000030 (UCLA CNP, commit 4070b6e)";
 const D_AB = "ABIDE I (ABIDE Preprocessed, C-PAC)", D_S2 = "ReproNim simple2 NIDM (commit e0dff17)";
-const D_REV = "74 ABIDE studies (SynthScholar review, 2026-10-15)", D_REVs = "74-study review (2026-10-15)";
+const D_REV = "74 ABIDE studies (systematic review, 2026-10-15)", D_REVs = "74-study review (2026-10-15)";
 const D_PUB = "AbstractAtlas (OHBM 2026), OpenAlex", D_KIM = "Kim et al. 2023 (UCLA cohort from ds000030)";
 const DATA = {
   "Wikipedia and Wikidata: prose and a structured graph": ["Wikidata Q48360 (rev. 2516828778) and English Wikipedia ‘Hippocampus’ (rev. 1374836959), retrieved 2026-10-16"],
@@ -284,7 +281,7 @@ const DATA = {
   "Quotation checks and scientific entailment": [D_KIM],
   "Joining graphs through shared identifiers": ["ABIDE I", "simple2 NIDM (e0dff17)", "AbstractAtlas (OHBM 2026)", "OpenAlex", "Brain Researcher KG", D_REVs],
   "Harmonising graphs built by different people": [D_AB, D_S2],
-  "Participant coverage by data element": [D_AB, D_S2],
+  "Analyses supported by the joined data": [D_AB, D_S2],
   "ABIDE I: two analyses, two research questions": [D_AB],
   "ABIDE I: group differences and site-held-out prediction": [D_AB],
   "Exercise: consequences of a stricter motion threshold": [D_AB],
@@ -292,8 +289,8 @@ const DATA = {
   "Linking datasets, publications and abstracts": [D_PUB, D_REV],
   "Asking Claude about the literature graph": [D_REV],
   "Evaluation schemes in 74 ABIDE studies": [D_REV],
-  "Live demo: building a graph in Claude Code": ["ABIDE I, Caltech site (ABIDE Preprocessed; ReproNim simple2 NIDM, commit e0dff17)"],
-  "Live demo: querying and using the graph": ["ABIDE I, Caltech site (ABIDE Preprocessed; ReproNim simple2 NIDM, commit e0dff17)"],
+  "Example: building a graph in Claude Code": ["ABIDE I, Caltech site (ABIDE Preprocessed; ReproNim simple2 NIDM, commit e0dff17)"],
+  "Example: querying and using the graph": ["ABIDE I, Caltech site (ABIDE Preprocessed; ReproNim simple2 NIDM, commit e0dff17)"],
   // backup
   "Poll: participant count in ds000030": [D_CNP],
   "Participant counts in ds000030 by scope": [D_CNPs, "Gorgolewski 2017 and Kim 2023 cohorts"],
@@ -311,6 +308,7 @@ const DATA = {
   "AbstractAtlas: building blocks": ["AbstractAtlas (OHBM 2026)"],
   "Phenotype embedding linked to image-derived phenotypes": [D_AB],
   "ds000030 phenotype embedding from a graph query": [D_CNP],
+  "Site coverage of each data element (ABIDE I)": ["ABIDE I"],
 };
 
 // ---------------------------------------------------------------- "In the graph" strips (verified against the experiment code)
@@ -318,27 +316,27 @@ const STRIP = {
   "Wikipedia and Wikidata: prose and a structured graph": "Not our graph: Wikidata's public graph (query.wikidata.org SPARQL); same pattern as the graphs in this talk",
   "The two example datasets": "Counts read by SPARQL: ds000030 graph (combined_graph.ttl, 1,113,959 triples); ABIDE graph/core (queries/Q14.rq)",
   "A knowledge graph in four statements": "Path query over ds000030 nidm_phenotypes.ttl: record → bis_parcel1; wasGeneratedBy → session → qualifiedAssociation/agent → participant: 272 rows",
-  "Building knowledge graphs from datasets and papers": "Pages listed from sensein/brainkb-ui source (commit a4815a3) for sandbox.brainkb.org; skills in sensein/agent_skills",
+  "Building knowledge graphs from datasets and papers": "Sandbox page names read from the brainkb-ui source (commit a4815a3), not exercised in this session; skills in sensein/agent_skills",
   "Components of a dataset and a publication": "Dataset side: ds000030 graph and ABIDE graph/core · publication side: claims_and_questions.ttl, literature_kg.ttl (17 / 74 reconstructible)",
   "Entities in a neuroimaging knowledge graph": "Node and edge types; teal = types used in our ds000030 and ABIDE graphs (assigned in the plan, not computed by a query)",
   "Knowledge graph around a single participant": "13 SPARQL queries (queries/Q13_*.rq) over graph/core, scope, view/volumes → 239 triples → figure: code/participant_ego.py",
-  "Linking a claim to its evaluation and cohort": "ds000030 claims_and_questions.ttl: question → claim → evaluation → cohort; evidence re-run from the authors' OSF data (osf.io/agqtn) by kim2023_rerun/rerun_ucla_cpm.py",
-  "Exercise: evaluating claims against a source": "Statement A is a claim record with its evidence span (claims_and_questions.ttl); B and C were written for this exercise and are not in the graph",
-  "Quotation checks and scientific entailment": "Span and schema checks ran on the extracted records (results/skill/pilot_report.json); entailment is a human judgement, not in the graph",
+  "Linking a claim to its evaluation and cohort": "claims_and_questions.ttl (StructSense skill pilot, run by Codex): question → claim → evaluation → cohort; evidence re-run by kim2023_rerun/rerun_ucla_cpm.py",
+  "Exercise: evaluating claims against a source": "Statement A is a claim record with its evidence span (claims_and_questions.ttl, StructSense skill pilot); B and C were written for this exercise, not in the graph",
+  "Quotation checks and scientific entailment": "StructSense skill's span and schema checks on the extracted records (results/skill/pilot_report.json); entailment is a human judgement, not in the graph",
   "Joining graphs through shared identifiers": "queries/simple2_identity.rq over graph/link + 27 simple2 site graphs; graph/publications.ttl (Q15.rq); literature_kg.ttl; Brain Researcher via MCP, not in our store",
-  "Harmonising graphs built by different people": "Store with one named graph per source plus derived views with PROV (code/store.py); SHACL shapes code/shapes.ttl; LinkML check results/linkml_validation.json",
-  "Participant coverage by data element": "SPARQL (queries/Q14.rq) over graph/core + view/volumes + ReproNim simple2 graphs → counts by site and diagnosis → figure: code/element_coverage.py",
+  "Harmonising graphs built by different people": "One named graph per source + PROV (code/store.py); SHACL code/shapes.ttl; LinkML check · Caltech numbers: neuroimaging-kg skill, compare_graphs.py",
+  "Analyses supported by the joined data": "SPARQL (queries/Q14.rq) over graph/core + view/volumes + ReproNim simple2 graphs → counts by site and diagnosis (code/element_coverage.py → results/element_coverage.json) → figure: figs_slide/make_slide_figs.py",
   "ABIDE I: two analyses, two research questions": "Cohorts are prov:hadMember sets in graph/core (built by code/cohorts.py); overlap by queries/Q2.rq",
   "ABIDE I: group differences and site-held-out prediction": "Result, claim and review nodes in graph/core (code/analyst_a.py, analyst_b.py, reviews.py); reviews read by queries/Q6.rq, Q7.rq",
   "Exercise: consequences of a stricter motion threshold": "The motion rule is stored on each cohort definition in graph/core (ex:threshold 0.2 for v1, 0.15 for v2)",
   "Dependency tracing after a QC revision": "4 SPARQL queries (queries/revision_*.rq) over graph/core_v1 before recomputation (code/revision.py); after rerun: results/revision_impact.json",
-  "Linking datasets, publications and abstracts": "graph/publications.ttl + publication_links_activity.ttl (queries/Q15.rq, Q15b.rq; code/publications.py); review counts from literature_kg.ttl",
-  "Asking Claude about the literature graph": "literature_kg.ttl — ex:reportsPerformance, ex:evaluationScheme, ex:EvidenceQuote; query written and run by Claude Code",
+  "Linking datasets, publications and abstracts": "graph/publications.ttl + publication_links_activity.ttl (Q15.rq, Q15b.rq; code/publications.py); review counts: literature_kg.ttl (SynthScholar skill + sub-agents)",
+  "Asking Claude about the literature graph": "literature_kg.ttl: ex:reportsPerformance, ex:evaluationScheme, ex:EvidenceQuote; query written and run by Claude Code, no skill",
   "Evaluation schemes in 74 ABIDE studies": "literature_review/literature_kg.ttl (10,779 triples); phase3/s5_sparql_checks.py confirms each count → figure: phase3/s6_figures.py",
   "ReproPond and ReproLake as attributes on graph records": "graph/scope.ttl: knowledgeScope and accessLevel on 83 records; consentScope, egressPermitted on 3 profiles; 48 gate assessments (Q11.rq, Q12.rq)",
-  "Live demo: building a graph in Claude Code": "Demo graph: abide-caltech/graph/*.ttl (phenotype, identity links, cohort, claims, provenance) loaded into Oxigraph, validated",
-  "Live demo: querying and using the graph": "SPARQL over the demo store's named graphs (urn:g:phenotype, urn:g:repronim, urn:g:cohort), as in the tested transcript",
-  "The lecture's own provenance graph": "talk_provenance.ttl, written by slides/build_deck.js; query run with pyoxigraph (slides/prov_query.py)",
+  "Example: building a graph in Claude Code": "Skill: neuroimaging-kg (agent_skills PR #49), followed by Claude Code · example graph abide-caltech/graph/*.ttl, validated, loaded into Oxigraph",
+  "Example: querying and using the graph": "Skill: neuroimaging-kg · SPARQL over the example store's named graphs (urn:g:phenotype, urn:g:repronim, urn:g:cohort), as in the tested transcript",
+  "The lecture's own provenance graph": "talk_provenance.ttl, written by slides/build_deck.js (pptx skill, deck-builder sub-agents); query run with pyoxigraph (prov_query.py)",
   "Practices to adopt now": "Each practice adds a record: dataset version, cohort membership list, claim scope, derivation activity, shared identifiers",
 };
 
@@ -587,18 +585,18 @@ async function main() {
     ], 2.7, 5.0, 4.2, 0.95, { valign: "middle" });
     // badge key
     const LX = 6.95, CX = 10.75;
-    text(s, "How each slide was made", LX, 4.35, 5.9, 0.4, { fontSize: 15, bold: true, color: "FFFFFF", valign: "middle" });
-    text(s, "Production", LX, 4.8, 3.5, 0.3, { fontSize: 12, bold: true, color: "C9D3D7", valign: "middle" });
-    const prodGloss = { H: "written by the speaker", L: "drafted by an LLM, edited by the speaker", A: "computed by an agent running code", R: "retrieved by an agent from cited sources", M: "answered by an external agent via MCP (Brain Researcher)", P: "produced earlier by a different agentic system" };
-    let py = 5.12;
-    for (const L of ["H", "L", "A", "R", "M", "P"]) {
-      const h = L === "M" ? 0.42 : 0.3;
+    text(s, "How each slide was made", LX, 4.05, 5.9, 0.4, { fontSize: 15, bold: true, color: "FFFFFF", valign: "middle" });
+    text(s, "Production", LX, 4.5, 3.5, 0.3, { fontSize: 12, bold: true, color: "C9D3D7", valign: "middle" });
+    const prodGloss = { H: "written by the speaker", L: "drafted by an LLM, edited by the speaker", S: "an agent followed a named skill (named on slide)", A: "general agent work: own code, no skill", R: "retrieved by an agent from cited sources", M: "answered by an external agent via MCP", P: "produced earlier by a different agentic system" };
+    let py = 4.82;
+    for (const L of ["H", "L", "S", "A", "R", "M", "P"]) {
+      const h = 0.3;
       s.addText(L, { shape: pres.shapes.OVAL, x: LX, y: py + 0.02, w: 0.26, h: 0.26, fill: { color: "2F4A57" }, line: { type: "none" }, fontSize: 11, bold: true, color: "FFFFFF", align: "center", valign: "middle", margin: 0, isTextBox: true, objectName: `keyChip${L}` });
       text(s, prodGloss[L], LX + 0.34, py - 0.02, 3.35, h, { fontSize: 12, color: "DCEEEC", valign: "top" });
       py += h;
     }
-    text(s, "Checking", CX, 4.8, 2.2, 0.3, { fontSize: 12, bold: true, color: "C9D3D7", valign: "middle" });
-    let cy = 5.12;
+    text(s, "Checking", CX, 4.5, 2.2, 0.3, { fontSize: 12, bold: true, color: "C9D3D7", valign: "middle" });
+    let cy = 4.82;
     [["re-run", "recomputed independently", 0.47], ["validated", "passed automated checks", 0.47], ["reviewed", "read and corrected by the speaker", 0.64], ["unverified", "not independently checked", 0.47]].forEach(([w, g, h]) => {
       text(s, [{ text: w, options: { italic: true, bold: true, color: "FFFFFF", breakLine: true } }, { text: g, options: { color: "DCEEEC" } }], CX, cy, 2.3, h, { fontSize: 12, valign: "top" });
       cy += h;
@@ -635,7 +633,7 @@ async function main() {
       else text(s, rel, 9.72, y + (y < 2.9 ? 0.02 : 0.3), 1.3, 0.3, { fontSize: 14, italic: true, color: C.accent1, align: "center", valign: "middle" });
     });
     curve(s, 8.5, 3.77, 9.6, 4.5, { width: 1.5, color: C.accent3, dash: "dash" });
-    text(s, "external identifiers", 6.3, 4.1, 2.3, 0.35, { fontSize: 14, italic: true, color: C.accent3, valign: "middle" });
+    text(s, "48 external identifiers: keys for joining graphs", 4.45, 4.1, 4.15, 0.35, { fontSize: 14, italic: true, color: C.accent3, valign: "middle", align: "right" });
     const IDS = ["InterLex birnlex_721", "NeuroNames 3157", "FMA 275020", "MeSH D006624", "OpenAlex C2781161787", "+ 43 more identifiers"];
     IDS.forEach((t, k) => shp(s, pres.shapes.ROUNDED_RECTANGLE, 6.3 + (k % 3) * 2.22, 4.52 + Math.floor(k / 3) * 0.52, 2.12, 0.42, k === 5 ? C.background1 : C.background2, t,
       { fontSize: 14, color: k === 5 ? C.accent3 : C.text2, line: k === 5 ? C.accent3 : "C9D3D7", dash: k === 5 ? "dash" : "solid", rectRadius: 0.5, margin: 2 }));
@@ -644,7 +642,7 @@ async function main() {
     s.addText([{ text: "Query: ", options: { bold: true, fontFace: "Calibri", color: "FFFFFF" } }, { text: "?region —part of→ temporal lobe", options: { color: "9FD3D4" } }],
       { x: 0.65, y: 5.76, w: 8.0, h: 0.38, fontFace: "Courier New", fontSize: 16, valign: "middle", margin: 0, isTextBox: true, objectName: "wikiQuery" });
     text(s, "→ 5 recorded: archicortex, auditory cortex, entorhinal cortex, hippocampus, and one unlabelled item", 0.65, 6.14, 12.0, 0.38, { fontSize: 16, color: "E8F1F2", valign: "middle" });
-    text(s, "returns only items with a ‘part of: temporal lobe’ statement", 0.65, 6.52, 12.0, 0.33, { fontSize: 14, italic: true, color: "C9D3D7", valign: "middle" });
+    text(s, "returns only what someone recorded · Wikidata has no UBERON ID for the hippocampus, so a UBERON join would miss it", 0.65, 6.52, 12.1, 0.33, { fontSize: 14, italic: true, color: "C9D3D7", valign: "middle" });
     s.addNotes("1:00. One topic, two forms. The Wikipedia article on the hippocampus is written for people: it opens by calling the hippocampus “a major component of the brain of humans and many other vertebrates”, and it exists in 62 languages. Wikidata holds the same topic as one item, Q48360, linked to all 62 articles by sitelinks, and says it as statements a program can use: part of the temporal lobe, subclass of brain region, instance of brain region type. A person reads the article; a program or an AI assistant needs statements with identifiers. Those identifiers matter most: the item carries 48 external identifiers, including InterLex birnlex_721, NeuroNames 3157, FMA 275020, MeSH D006624 and OpenAlex C2781161787, and they are what let one graph be joined to another, which is exactly what this talk does with datasets and papers. Two limits carry over to our own graphs. Wikidata has no UBERON identifier for the hippocampus, so a join on UBERON would miss it: it is not recorded. And the query at the bottom, which regions are part of the temporal lobe, returns five items, archicortex, auditory cortex, entorhinal cortex, hippocampus and one item with no English label, because the answer holds only what someone has recorded, not what anatomy says. Sources: slides/demo/wikidata_SOURCE.md (Q48360 revision 2516828778; English Wikipedia revision 1374836959; query run on query.wikidata.org on 2026-10-16).");
   }
 
@@ -686,10 +684,10 @@ async function main() {
       ["Poldrack et al. 2016: data descriptor", "Gorgolewski et al. 2017: preprocessed derivatives", "Kim et al. 2023: prediction across UCLA and COBRE"],
       "Used in Part 1: representing a result");
     panel(6.8, C.accent5, C.accent2, "ABIDE I", "Autism Brain Imaging Data Exchange · ABIDE Preprocessed (C-PAC), CC BY-NC-SA",
-      [`${V("abide.total")} participants (${V("abide.asd")} autistic, ${V("abide.td")} typically developing) from 17 sites`, "resting-state fMRI; phenotypes incl. IQ, ADOS, SRS", `200-region time series for ${V("abide.timeseries")} participants`],
+      ["1,112 participants (539 autistic, 573 typically developing) from 17 sites (20 site codes in the data)", "resting-state fMRI; phenotypes incl. IQ, ADOS, SRS", `200-region time series for ${V("abide.timeseries")} participants`],
       ["Di Martino et al. 2014: group differences", "Abraham et al. 2017: site-held-out prediction", "a 74-study literature review"],
-      "Used in Part 2 and the live demo (one site)");
-    s.addNotes("0:30. Two public datasets carry every example. ds000030 is the UCLA Consortium for Neuropsychiatric Phenomics dataset on OpenNeuro (commit 4070b6e, CC0 licence): 272 adults, 130 healthy controls, 50 with schizophrenia, 49 with bipolar disorder and 43 with ADHD, with structural MRI, resting and task fMRI such as the stop-signal task, and 52 questionnaire and phenotype tables. We use it with three papers: the data descriptor (Poldrack et al. 2016), the preprocessed derivatives (Gorgolewski et al. 2017) and a prediction study across the UCLA and COBRE cohorts (Kim et al. 2023). It carries Part 1, representing a result. ABIDE I is the Autism Brain Imaging Data Exchange: 1,112 participants, 539 autistic and 573 typically developing, from 17 sites (20 site codes in the data), with resting-state fMRI and phenotypes including IQ, the ADOS clinician assessment and the Social Responsiveness Scale. ABIDE Preprocessed provides C-PAC-processed 200-region time series for 1,035 of them (CC BY-NC-SA licence). We use it with Di Martino et al. 2014 (group differences), Abraham et al. 2017 (prediction at held-out sites) and a review of 74 ABIDE studies; it carries Part 2, connecting graphs, and the live demo uses one site. Counts are from the ds000030 package (rebuilt and matched) and ABIDE results/key_numbers.json and element_coverage.json.");
+      "Used in Part 2 and the Claude Code examples");
+    s.addNotes("0:30. Two public datasets carry every example. ds000030 is the UCLA Consortium for Neuropsychiatric Phenomics dataset on OpenNeuro (commit 4070b6e, CC0 licence): 272 adults, 130 healthy controls, 50 with schizophrenia, 49 with bipolar disorder and 43 with ADHD, with structural MRI, resting and task fMRI such as the stop-signal task, and 52 questionnaire and phenotype tables. We use it with three papers: the data descriptor (Poldrack et al. 2016), the preprocessed derivatives (Gorgolewski et al. 2017) and a prediction study across the UCLA and COBRE cohorts (Kim et al. 2023). It carries Part 1, representing a result. ABIDE I is the Autism Brain Imaging Data Exchange: 1,112 participants, 539 autistic and 573 typically developing, from 17 sites (20 site codes in the data), with resting-state fMRI and phenotypes including IQ, the ADOS clinician assessment and the Social Responsiveness Scale. ABIDE Preprocessed provides C-PAC-processed 200-region time series for 1,035 of them (CC BY-NC-SA licence). We use it with Di Martino et al. 2014 (group differences), Abraham et al. 2017 (prediction at held-out sites) and a review of 74 ABIDE studies; it carries Part 2, connecting graphs, and the Claude Code examples use one site. Counts are from the ds000030 package (rebuilt and matched) and ABIDE results/key_numbers.json and element_coverage.json.");
   }
 
   // N1 Knowledge graph primer
@@ -749,7 +747,7 @@ async function main() {
       ["Preprocessing and versions", "fMRIPrep: fMRI to anatomy (FreeSurfer 6.0.0), anatomy to MNI template (ANTs 2.1.0)"],
       ["Analysis and evaluation", "linear classifier; leave-one-participant-out, leave-site-out"],
       ["Results and claims, with scope", "both directions altered; evidence 70.2% accuracy, UCLA, leave-one-out"],
-      ["Data and code availability", "cohorts reconstructible for only 17 of 74 ABIDE studies"],
+      ["Data and code availability", "cohorts reconstructible for 17 of 74 ABIDE studies (our review)"],
     ];
     text(s, "Dataset", 0.5, 1.3, 4.9, 0.4, { fontSize: 20, bold: true, color: C.text2 });
     text(s, "Publication", 8.0, 1.3, 4.85, 0.4, { fontSize: 20, bold: true, color: C.accent2, align: "right" });
@@ -781,13 +779,13 @@ async function main() {
     const LANES = [
       [fa.FaDatabase, C.accent4, C.accent1, "A dataset", "BIDS + phenotype tables",
         "neuroimaging-kg skill (agent_skills PR #49)", "PyNIDM bidsmri2nidm / csv2nidm; ReproNim NIDM BIDS apps (FreeSurfer, ANTs, MRIQC → NIDM)",
-        "NIDM / PROV dataset graph", "ABIDE I graph; one-site demo (Caltech)"],
+        "NIDM / PROV dataset graph", "ABIDE graph by general sub-agents, no skill; this skill was written from that work afterwards → Claude Code examples"],
       [fa.FaFileAlt, C.accent6, C.text2, "One publication", "PDF or DOI",
         "StructSense skill", "sandbox: Neuroscientific Named Entity Extraction; Structured Resource Extraction (BrainKB Resource Ontology)",
-        "claims, entities, datasets and tools, with evidence spans", "Kim 2023 claims (StructSense pilot)"],
+        "claims, entities, datasets and tools, with evidence spans", "Kim 2023 claims from a StructSense skill pilot, run by Codex"],
       [fa.FaBook, C.accent5, C.accent2, "A body of publications", "a topic or question",
         "SynthScholar skill", "sandbox: SynthScholar — protocol → search strategy → screening and charting",
-        "review graph (SLR ontology)", "74 ABIDE studies"],
+        "review graph (SLR ontology)", "74 ABIDE studies: SynthScholar skill for protocol, retrieval, export; screening and charting by sub-agents"],
     ];
     const KBX = 10.3, KBY = 1.5, KBW = 2.65, KBH = 4.55;
     blob(s, KBX, KBY, KBW, KBH, "BFE0E0", 7);
@@ -808,7 +806,7 @@ async function main() {
       curve(s, 7.55, cy, 7.8, cy, { arrow: true, width: 2, color: col });
       shp(s, pres.shapes.ROUNDED_RECTANGLE, 7.8, y, 2.2, 1.1, col, out, { fontSize: 15, bold: true, color: C.background1, rectRadius: 0.5, margin: 6 });
       curve(s, 10.0, cy, KBX + 0.2, KBY + KBH / 2, { arrow: true, width: 2, color: col });
-      text(s, [{ text: "Used in this talk: ", options: { bold: true } }, { text: used }], 2.8, y + 1.14, 7.2, 0.35, { fontSize: 14, italic: true, color: C.accent1, valign: "middle" });
+      text(s, [{ text: "Used here: ", options: { bold: true } }, { text: used }], 0.5, y + 1.13, 9.65, 0.36, { fontSize: 14, italic: true, color: C.accent1, valign: "middle" });
     }
     text(s, [
       { text: "Ingest into BrainKB", options: { bold: true, fontSize: 20, color: C.text2, breakLine: true } },
@@ -821,7 +819,7 @@ async function main() {
       { text: "Questionnaires: ", options: { bold: true } }, { text: "sandbox ReproSchema Extraction (PDF → ReproSchema assessments)" },
     ], { fontSize: 15, color: C.text2, line: C.accent3, dash: "dash", rectRadius: 0.5, margin: 6 });
     text(s, "sandbox.brainkb.org", KBX, 6.35, KBW, 0.45, { fontSize: 16, bold: true, color: C.accent1, align: "center", valign: "middle" });
-    s.addNotes("1:00. Before the worked examples, where a graph comes from. There are three starting points, and which lane you start in depends on what you have. If you have your own data, start with the dataset lane: PyNIDM's bidsmri2nidm and csv2nidm turn a BIDS dataset and its phenotype tables into NIDM, ReproNim's NIDM BIDS apps add FreeSurfer, ANTs and MRIQC outputs as NIDM, and the neuroimaging-kg skill (sensein/agent_skills PR #49) wraps these steps with validation and provenance. If you want what one paper reports, StructSense extracts named entities and resources such as datasets and tools, with the span of text each came from. If your question spans a literature, SynthScholar runs a systematic review from a protocol through search, screening and charting, and writes the result as a review graph. Questionnaires have their own route: ReproSchema Extraction turns a PDF questionnaire into ReproSchema assessments. All three lanes end as graphs that carry shared identifiers (participant IDs, dataset accessions, DOIs, ORCIDs), so they can be ingested into BrainKB (the sandbox's Ingest Knowledge Graph page, with a job-status page), queried with the brainkb skill or the BrainKB MCP server, and joined to each other: that is Objective 2. How this slide was checked: the sandbox page names were identified from the brainkb-ui source code (commit a4815a3) and were not exercised in this session, because the browser was unavailable, hence 'unverified'. The three 'used in this talk' examples were run: the ABIDE I graph (Knowledge graph around a single participant; Joining graphs through shared identifiers), the Caltech one-site build (the two live-demo slides), the Kim 2023 claims from the StructSense pilot (Linking a claim to its evaluation and cohort; backup: StructSense extraction pilot), and the 74-study SynthScholar review (Evaluation schemes in 74 ABIDE studies; Asking Claude about the literature graph).");
+    s.addNotes("1:00. Before the worked examples, where a graph comes from. There are three starting points, and which lane you start in depends on what you have. If you have your own data, start with the dataset lane: PyNIDM's bidsmri2nidm and csv2nidm turn a BIDS dataset and its phenotype tables into NIDM, ReproNim's NIDM BIDS apps add FreeSurfer, ANTs and MRIQC outputs as NIDM, and the neuroimaging-kg skill (sensein/agent_skills PR #49) wraps these steps with validation and provenance. If you want what one paper reports, StructSense extracts named entities and resources such as datasets and tools, with the span of text each came from. If your question spans a literature, SynthScholar runs a systematic review from a protocol through search, screening and charting, and writes the result as a review graph. Questionnaires have their own route: ReproSchema Extraction turns a PDF questionnaire into ReproSchema assessments. All three lanes end as graphs that carry shared identifiers (participant IDs, dataset accessions, DOIs, ORCIDs), so they can be ingested into BrainKB (the sandbox's Ingest Knowledge Graph page, with a job-status page), queried with the brainkb skill or the BrainKB MCP server, and joined to each other: that is Objective 2. How this slide was checked: the sandbox page names were identified from the brainkb-ui source code (commit a4815a3) and were not exercised in this session, because the browser was unavailable, hence 'unverified'. What was actually done for the 'used here' examples: the ABIDE I graph (Knowledge graph around a single participant; Joining graphs through shared identifiers) was built by general sub-agents without a skill, and the neuroimaging-kg skill was written afterwards from that work and used for the Caltech one-site build (the two Claude Code example slides); the Kim 2023 claims came from a StructSense skill pilot run by Codex (Linking a claim to its evaluation and cohort; backup: StructSense extraction pilot), and the 74-study systematic review (SynthScholar skill for protocol, retrieval and export; screening and charting by sub-agents) (Evaluation schemes in 74 ABIDE studies; Asking Claude about the literature graph).");
   }
 
   // 4b What a neuroimaging graph can hold
@@ -883,11 +881,11 @@ async function main() {
       });
       shp(s, pres.shapes.OVAL, cx - 0.9, cy - 0.9, 1.8, 1.8, C.background1, [{ text: "participant", options: { fontSize: 16, breakLine: true } }, { text: PA.id, options: { fontSize: 18, bold: true } }], { color: C.text2, line: C.text2, lineWidth: 2 });
     }
-    text(s, "Layers", 9.5, 1.45, 3.3, 0.45, { fontSize: 20, bold: true, color: C.text2 });
+    text(s, [{ text: "One ABIDE participant, " + PA.id, options: { bold: true, breakLine: true } }, { text: "everything within two steps: 239 statements, one query (0.03 s)" }], 9.5, 1.38, 3.45, 0.85, { fontSize: 15, color: C.text2, valign: "top" });
     PA.layers.forEach((L, i) => {
-      const y = 2.0 + i * 0.62;
+      const y = 2.3 + i * 0.585;
       shp(s, pres.shapes.OVAL, 9.5, y + 0.1, 0.34, 0.34, LCOL[i]);
-      text(s, [{ text: L.name, options: { bold: true, color: C.text2 } }, { text: "  " + L.count, options: { color: C.accent3 } }], 9.95, y, 3.0, 0.55, { fontSize: 16, valign: "middle" });
+      text(s, [{ text: L.name, options: { bold: true, color: C.text2 } }, { text: "  " + L.count, options: { color: C.accent3 } }], 9.95, y, 3.05, 0.56, { fontSize: 15, valign: "middle" });
     });
     s.addNotes("1:00. Terms: an image-derived phenotype is a measurement computed from images, such as a regional brain volume; a cross-validation fold is one train/test split. One ABIDE participant, with every layer the graph holds about them: phenotype values, acquisition and QC records, derivatives, image-derived phenotypes by tool, membership in each analyst's cohort and cross-validation folds, the results that depend on them, the publication that used the cohort, and the consent scope that governs what can be shared. This replaces the single-measurement view from ds000030, which is in backup. " + PA.notes);
   }
@@ -909,6 +907,12 @@ async function main() {
     node(...P[3], "Cohort", "47 + 47, matched for age, sex, scanner");
     for (let i = 0; i < 3; i++) curve(s, P[i][0] + w - 0.05, P[i][1] + h * 0.62, P[i + 1][0] + 0.1, P[i + 1][1] + h * 0.42, { arrow: true, width: 2.5 });
     node(3.55, 4.95, "Data", "ds000030 (UCLA CNP), versioned");
+    shp(s, pres.shapes.ROUNDED_RECTANGLE, 0.35, 4.05, 3.0, 2.9, C.background2, [
+      { text: "Leave-one-out", options: { bold: true, color: C.text2, breakLine: true } },
+      { text: "train on 93, predict the 94th, repeat for all; chance = 50%", options: { breakLine: true } },
+      { text: "Re-run here", options: { bold: true, color: C.text2, breakLine: true } },
+      { text: "authors' OSF data and code give 70.2% again; also 52.1% decreased alone, 61.7% increased alone (not in the paper)" },
+    ], { fontSize: 14, color: C.text1, align: "left", valign: "top", margin: 8, line: "C9D3D7", rectRadius: 0.1 });
     // broken link from cohort to data
     curve(s, 10.8, 4.3, 9.6, 5.25, { color: C.accent2, width: 2.5, dash: "dash" });
     curve(s, 8.5, 5.55, 6.4, 5.85, { color: C.accent2, width: 2.5, dash: "dash", arrow: true });
@@ -948,6 +952,7 @@ async function main() {
     const s = addSlide("CONTENT", MAIN);
     s.addText("Quotation checks and scientific entailment", { placeholder: "title" });
     stmtCards(s, true);
+    text(s, "All three quote the same span, and an exact-quote check passes all three: it confirms the words are in the source, not that the statement follows from them. C passed the StructSense skill’s span validator; a human reading rejected it.", 0.6, 6.42, 12.2, 0.62, { fontSize: 16, color: C.text2, valign: "middle" });
     s.addNotes("0:30. Reveal. Say: a graph will store B and C just as faithfully as A, so someone still has to check scope and whether the statement follows from the source. Exact-span checking is lexical: it confirms that the words exist in the source, not that the statement follows from them. In the pilot, C passes the upstream span validator; separate semantic review rejects it. This is a demonstrated limit of lexical validation, not a demonstrated autonomous semantic gate.\n\n" + fromOld(18, 15));
   }
 
@@ -981,7 +986,7 @@ async function main() {
       { text: "CSF (UBERON:0001359)", options: { bold: true, fontSize: 14, breakLine: true } },
       { text: "FSL total CSF vs ANTs ventricles: ~200× apart, r 0.23", options: { fontSize: 14 } },
     ], 0.5, 4.1, 2.75, 2.75, { color: C.text1, valign: "top", paraSpaceAfter: 2 });
-    s.addNotes("1:30. Terms: ABIDE I is the Autism Brain Imaging Data Exchange, resting-state fMRI from 17 sites; NIDM is a vocabulary for neuroimaging records; simple2 is ReproNim's set of ABIDE records written in NIDM, one graph per site; OpenAlex is an open catalogue of scholarly papers; a DOI is a persistent identifier for a paper. Our ABIDE graph joined to five others, each through a different key, with what the join actually returned. ReproNim's simple2 NIDM graphs (27 site graphs, commit e0dff17) join on ndar:src_subject_id = SUB_ID: all 1,112 participants matched with no orphans, 1,035 have CC200 files, and 767 are in Analyst B's cohort; the link is a reviewed correspondence, not owl:sameAs. AbstractAtlas (OHBM 2026, commit 181652e2) joins only on the dataset name in abstract text: 35 abstracts, 17 of which state data use, and 15 of those 17 were correct on a hand check. OpenAlex joins on DOI and citation: 598 works cite Di Martino 2014 and name ABIDE. Brain Researcher's graph has one aggregate ABIDE node (2,226 subjects) and neither paper. A SynthScholar literature review joining on DOI plus cohort description found three papers sharing the 871-participant ABIDE I subset (Abraham 2017, Parisot 2018, Ktena 2017). The inset is the caution: a shared concept term (UBERON:0000956, cortical grey matter) let us join volumes across tools, but ANTs and FreeSurfer agree well (r = 0.85, median ratio 1.01), ANTs and FSL less (r = 0.72, ratio 0.84), and under 'CSF' (UBERON:0001359) FSL reports total CSF while ANTs and FreeSurfer report ventricles, so values differ about 200-fold (ANTs/FSL median ratio 0.005, r = 0.23; FSL/FreeSurfer 224): the term matched, the measurement definition did not. Sources: ABIDE_Collaboration_Experiment/results/simple2.json, simple2_tool_agreement.csv, publications.json.");
+    s.addNotes("1:30. Terms: ABIDE I is the Autism Brain Imaging Data Exchange, resting-state fMRI from 17 sites; NIDM is a vocabulary for neuroimaging records; simple2 is ReproNim's set of ABIDE records written in NIDM, one graph per site; OpenAlex is an open catalogue of scholarly papers; a DOI is a persistent identifier for a paper. Our ABIDE graph joined to five others, each through a different key, with what the join actually returned. ReproNim's simple2 NIDM graphs (27 site graphs, commit e0dff17) join on ndar:src_subject_id = SUB_ID: all 1,112 participants matched with no orphans, 1,035 have CC200 files, and 767 are in Analyst B's cohort; the link is a reviewed correspondence, not owl:sameAs. AbstractAtlas (OHBM 2026, commit 181652e2) joins only on the dataset name in abstract text: 35 abstracts, 17 of which state data use, and 15 of those 17 were correct on a hand check. OpenAlex joins on DOI and citation: 598 works cite Di Martino 2014 and name ABIDE. Brain Researcher's graph has one aggregate ABIDE node (2,226 subjects) and neither paper. The systematic review of 74 ABIDE studies (SynthScholar skill for protocol, retrieval and export; screening and charting by sub-agents), joining on DOI plus cohort description, found 9 studies reusing the 871-participant ABIDE I subset, including Abraham 2017, Parisot 2018 and Ktena 2017. The inset is the caution: a shared concept term (UBERON:0000956, cortical grey matter) let us join volumes across tools, but ANTs and FreeSurfer agree well (r = 0.85, median ratio 1.01), ANTs and FSL less (r = 0.72, ratio 0.84), and under 'CSF' (UBERON:0001359) FSL reports total CSF while ANTs and FreeSurfer report ventricles, so values differ about 200-fold (ANTs/FSL median ratio 0.005, r = 0.23; FSL/FreeSurfer 224): the term matched, the measurement definition did not. Sources: ABIDE_Collaboration_Experiment/results/simple2.json, simple2_tool_agreement.csv, publications.json.");
   }
 
   // 4f Harmonising graphs
@@ -1017,17 +1022,9 @@ async function main() {
     const EL = ABIDE.elements;
     const s = addSlide("CONTENT", MAIN);
     s.addText(EL.title, { placeholder: "title" });
-    if (EL.figure) {
-      await fitImage(s, EL.figure, 0.4, 1.35, 8.55, 5.65);
-    } else {
-      shp(s, pres.shapes.ROUNDED_RECTANGLE, 0.5, 1.45, 8.3, 5.6, C.background2, [{ text: "[pending]", options: { breakLine: true } }, { text: "data element × site, with totals", options: { fontSize: 16 } }], { color: C.accent3, line: "B8C4C9", dash: "dash", rectRadius: 0.1 });
-    }
-    EL.callouts.forEach((c, i) => {
-      const x = 9.15 + (i % 2) * 1.9, y = 1.5 + Math.floor(i / 2) * 2.85;
-      shp(s, pres.shapes.OVAL, x, y, 1.75, 1.75, i === 0 ? C.accent1 : C.accent4, c.value, { fontSize: c.value.includes("pending") ? 14 : 32, bold: true, color: i === 0 ? C.background1 : C.accent1 });
-      text(s, c.label, x - 0.1, y + 1.8, 1.95, 0.9, { fontSize: 16, align: "center", color: C.text1 });
-    });
-    s.addNotes("0:45. Terms: FIQ, VIQ and PIQ are full-scale, verbal and performance IQ; ADOS is a clinician-administered autism assessment; SRS is the Social Responsiveness Scale; mean FD is average head movement between fMRI volumes; CC200 is a 200-region brain parcellation. The same graph read the other way: for each data element, how many participants have it, by site. The callouts are joins the graph answers directly, for example how many participants have phenotype, time series and image-derived phenotypes together. " + EL.notes);
+    text(s, EL.lead, 0.6, 1.36, 12.3, 0.36, { fontSize: 16, color: C.text2, valign: "middle" });
+    await fitImage(s, EL.figure, 0.3, 1.84, 12.75, 5.2);
+    s.addNotes("0:45. Terms: FIQ, VIQ and PIQ are full-scale, verbal and performance IQ; ADOS is a clinician-administered autism assessment; SRS is the Social Responsiveness Scale; mean FD is average head movement between fMRI volumes; CC200 is a 200-region brain parcellation. Which analyses the joined graph can support: the left panel adds one required data element at a time (Analyst B's prediction inputs; then IQ and FreeSurfer volumes, as for the phenotype embedding; then SRS, for a symptom-severity analysis) and shows how many participants remain and which element limits each step; the right panel shows, per site, the share of participants with each element. " + EL.notes);
   }
 
   // 9 ABIDE design
@@ -1039,17 +1036,17 @@ async function main() {
     text(s, [{ text: "ABIDE I", options: { bold: true, fontSize: 22, breakLine: true } }, { text: "autism; 1,112 participants, 17 sites; 200-region time series", options: { fontSize: 16 } }], 4.45, 1.7, 4.4, 0.85, { color: C.text2, align: "center" });
     shp(s, pres.shapes.OVAL, 4.55, 2.6, 4.2, 3.45, C.accent2, null, { transparency: 35 });
     shp(s, pres.shapes.OVAL, 4.85, 3.05, 2.55, 2.55, C.accent1, null, { transparency: 25 });
-    text(s, [{ text: CO.both, options: { bold: true, fontSize: 32, breakLine: true } }, { text: "A, all also in B", options: { fontSize: 16 } }], 4.9, 3.75, 2.45, 1.2, { color: C.text2, align: "center", valign: "middle" });
-    text(s, [{ text: CO.bOnly, options: { bold: true, fontSize: 32, breakLine: true } }, { text: "B only", options: { fontSize: 16 } }], 7.3, 3.75, 1.35, 1.2, { color: C.text2, align: "center", valign: "middle" });
-    text(s, "Shared graph: cohorts, derivatives, results and reviews, with who made each", 4.2, 6.15, 4.95, 0.7, { fontSize: 16, color: C.text2, align: "center", valign: "middle" });
+    text(s, [{ text: CO.both, options: { bold: true, fontSize: 32, breakLine: true } }, { text: "A (9 sites), all also in B", options: { fontSize: 16 } }], 4.9, 3.7, 2.45, 1.3, { color: C.text2, align: "center", valign: "middle" });
+    text(s, [{ text: CO.bOnly, options: { bold: true, fontSize: 32, breakLine: true } }, { text: "B only", options: { fontSize: 16, breakLine: true } }, { text: "B = 767, 20 sites", options: { fontSize: 14 } }], 7.3, 3.55, 1.4, 1.6, { color: C.text2, align: "center", valign: "middle" });
+    text(s, "Same dataset, different participants and questions: each claim keeps its own scope", 4.2, 6.1, 4.95, 0.7, { fontSize: 16, color: C.text2, align: "center", valign: "middle" });
     text(s, [
-      { text: "Analyst A (illustrative)", options: { bold: true, fontSize: 16, color: C.accent3, breakLine: true } },
+      { text: "Analyst A (simulated agent)", options: { bold: true, fontSize: 16, color: C.accent3, breakLine: true } },
       { text: "Do autistic and non-autistic groups differ in connectivity?", options: { bold: true, fontSize: 22, color: C.accent1, breakLine: true } },
       { text: "group difference · association", options: { fontSize: 18, breakLine: true } },
       { text: "after Di Martino et al. 2014", options: { fontSize: 16, italic: true, color: C.accent3 } },
     ], 0.5, 2.6, 2.75, 3.4, { valign: "middle", paraSpaceAfter: 6 });
     text(s, [
-      { text: "Analyst B (illustrative)", options: { bold: true, fontSize: 16, color: C.accent3, breakLine: true } },
+      { text: "Analyst B (simulated agent)", options: { bold: true, fontSize: 16, color: C.accent3, breakLine: true } },
       { text: "Does connectivity predict diagnosis at unseen sites?", options: { bold: true, fontSize: 22, color: C.accent2, breakLine: true } },
       { text: "prediction · leave-site-out", options: { fontSize: 18, breakLine: true } },
       { text: "after Abraham et al. 2017", options: { fontSize: 16, italic: true, color: C.accent3 } },
@@ -1073,7 +1070,7 @@ async function main() {
           { text: d.headline, options: { bold: true, fontSize: 30, color: C.text2, breakLine: true } },
           ...d.lines.map((l, j) => ({ text: l, options: { fontSize: 18, italic: j === d.lines.length - 1, color: j === d.lines.length - 1 ? C.accent3 : C.text1, breakLine: j < d.lines.length - 1 } })),
         ], { valign: "top", margin: 16 });
-        text(s, d.caption, x + 0.3, 6.1, 5.3, 0.45, { fontSize: 16, italic: true, color: C.accent3 });
+        text(s, d.caption, x + 0.3, 6.15, 5.3, 0.45, { fontSize: 16, italic: true, bold: true, color: C.accent3 });
       });
     }
     s.addNotes("1:00. Terms: FDR (false discovery rate) correction controls the share of false positives among the many connections tested; Cohen's d is the group difference in standard-deviation units; AUC is the area under the ROC curve, 0.5 is chance and 1 is perfect; tangent-space connectivity is a way of comparing whole connectivity matrices that respects their geometry; leave-site-out trains on all sites but one and tests on the held-out site. Say: these answer different questions, so neither result confirms or refutes the other. " + R.notes);
@@ -1085,9 +1082,10 @@ async function main() {
     const s = addSlide("CONTENT", MAIN);
     s.addText(P.title, { placeholder: "title" });
     card(s, 0.7, 1.5, 12.0, 1.3, C.text2, P.change, { fontSize: 24, color: C.background1, bold: true });
+    text(s, "Before the change: B's cohort is 767 participants, tested in 20 leave-site-out folds; A's 441 participants all lie inside it.", 0.7, 2.9, 12.0, 0.45, { fontSize: 18, color: C.text2, valign: "middle" });
     P.questions.forEach((q, i) => {
-      card(s, 0.7, 3.15 + i * 1.1, 0.95, 0.95, C.accent2, String(i + 1), { fontSize: 28, bold: true, color: C.background1, align: "center" });
-      text(s, q, 1.95, 3.15 + i * 1.1, 10.7, 0.95, { fontSize: 26, valign: "middle" });
+      card(s, 0.7, 3.5 + i * 1.0, 0.85, 0.85, C.accent2, String(i + 1), { fontSize: 28, bold: true, color: C.background1, align: "center" });
+      text(s, q, 1.85, 3.5 + i * 1.0, 10.8, 0.85, { fontSize: 26, valign: "middle" });
     });
     text(s, "Write down your guesses.", 0.7, 6.5, 11, 0.5, { fontSize: 22, italic: true, color: C.accent2 });
     s.addNotes("0:30. Ask the room to guess before the reveal. " + P.notes);
@@ -1097,8 +1095,8 @@ async function main() {
     const R = ABIDE.reveal;
     const s = addSlide("CONTENT", MAIN);
     s.addText(R.title, { placeholder: "title" });
-    const cx = 0.55, cy = 4.2;
-    const rings = [[3.9, 1.7], [5.9, 2.2], [7.9, 2.65]];
+    const cx = 0.55, cy = 4.0;
+    const rings = [[3.9, 1.55], [5.9, 2.0], [7.9, 2.4]];
     rings.slice().reverse().forEach(([rx, ry], i) => shp(s, pres.shapes.BLOCK_ARC, cx - rx, cy - ry, 2 * rx, 2 * ry, [C.accent4, C.accent6, C.background2][i], null, { angleRange: [270, 90], arcThicknessRatio: 0.995 }));
     rings.forEach(([rx, ry]) => shp(s, pres.shapes.BLOCK_ARC, cx - rx, cy - ry, 2 * rx, 2 * ry, C.accent3, null, { angleRange: [270, 90], arcThicknessRatio: 0.012 }));
     shp(s, pres.shapes.PIE, cx - 1.9, cy - 1.25, 3.8, 2.5, C.text2, null, { angleRange: [270, 90] });
@@ -1108,15 +1106,24 @@ async function main() {
       text(s, [
         { text: st.value, options: { bold: true, fontSize: isPending(st.value) ? 18 : 40, color: C.accent1, breakLine: true } },
         { text: st.label, options: { fontSize: 18, color: C.text1 } },
-      ], bands[i][0], cy - 0.8, bands[i][1], 1.6, { align: "center", valign: "middle" });
+      ], bands[i][0], cy - 1.0, bands[i][1], 2.0, { align: "center", valign: "middle" });
     });
     const last = R.stats[3];
-    shp(s, pres.shapes.OVAL, 9.55, 2.35, 3.2, 3.2, C.accent5, [
-      { text: last.value, options: { bold: true, fontSize: isPending(last.value) ? 18 : 48, color: C.accent2, breakLine: true } },
-      { text: last.label, options: { fontSize: 18, color: C.text1 } },
+    shp(s, pres.shapes.OVAL, 9.85, 1.4, 2.75, 2.75, C.accent5, [
+      { text: last.value, options: { bold: true, fontSize: isPending(last.value) ? 18 : 44, color: C.accent2, breakLine: true } },
+      { text: last.label, options: { fontSize: 16, color: C.text1 } },
     ], { line: C.accent2, lineWidth: 2, margin: 10 });
-    curve(s, 8.5, 4.3, 9.55, 3.95, { color: C.accent2, width: 2.5, arrow: true });
-    text(s, "after targeted rerun", 9.55, 5.7, 3.2, 0.45, { fontSize: 16, italic: true, color: C.accent2, align: "center" });
+    curve(s, 8.5, 3.6, 9.85, 2.9, { color: C.accent2, width: 2.5, arrow: true });
+    text(s, [
+      { text: "After rerunning only the flagged results: ", options: { bold: true, color: C.accent2 } },
+      { text: "values shifted (A: 441 → 372 people, 5,428 → 5,119 significant connections; B: tangent AUC 0.739 → 0.734), but every new estimate stayed inside its earlier 95% interval and no review verdict changed. " },
+      { text: "2 of the 9 are claims regenerated from the new results.", options: { italic: true, color: C.accent3 } },
+    ], 8.75, 4.25, 4.2, 2.1, { fontSize: 14, color: C.text1, valign: "top" });
+    text(s, [
+      { text: "Flagged ", options: { bold: true, color: C.text2 } }, { text: "= depends on an excluded participant (traversal 0.05 s). " },
+      { text: "Changed materially ", options: { bold: true, color: C.text2 } }, { text: "= new estimate outside the old 95% interval, or a review verdict changes. " },
+      { text: "Caveat: ", options: { bold: true, color: C.accent2 } }, { text: "the rule removes 23% of autistic but 14% of non-autistic participants, up to 88% at one site." },
+    ], 0.5, 6.42, 12.4, 0.62, { fontSize: 15, color: C.text1, valign: "middle" });
     s.addNotes("0:45. Reveal. The sequence is: traverse the graph, flag the dependent results, rerun only those, record what changed. Say: a flagged result needs a second look; only the rerun tells us whether it actually changed. " + R.notes);
   }
 
@@ -1128,21 +1135,22 @@ async function main() {
     s.addText(PB.title, { placeholder: "title" });
     const num = (v) => ({ text: v, options: { bold: true, fontSize: v.includes("pending") ? 16 : 30, breakLine: true } });
     shp(s, pres.shapes.OVAL, 0.5, 2.9, 2.3, 2.3, C.text2, [{ text: "ABIDE I", options: { bold: true, fontSize: 24, breakLine: true } }, { text: "dataset", options: { fontSize: 16 } }], { color: C.background1 });
-    shp(s, pres.shapes.OVAL, 3.9, 1.45, 2.3, 2.3, C.accent4, [num(PB.publications), { text: "publications", options: { fontSize: 16, breakLine: true } }, { text: "OpenAlex", options: { fontSize: 14, color: C.accent3 } }], { color: C.text2 });
-    shp(s, pres.shapes.OVAL, 3.9, 4.25, 2.3, 2.3, C.accent6, [num(PB.abstracts), { text: "abstracts", options: { fontSize: 16, breakLine: true } }, { text: "AbstractAtlas", options: { fontSize: 14, color: C.accent3 } }], { color: C.text2 });
-    shp(s, pres.shapes.OVAL, 7.15, 1.4, 2.45, 2.45, C.accent5, [num(PB.reviewed), { text: "studies reviewed", options: { fontSize: 16, breakLine: true } }, { text: "SynthScholar", options: { fontSize: 14, color: C.accent3 } }], { color: C.text2 });
-    shp(s, pres.shapes.OVAL, 7.15, 4.2, 2.45, 2.45, C.accent5, [num(PB.claims), { text: "extracted claims", options: { fontSize: 16, breakLine: true } }, { text: "evidence types (ECO)", options: { fontSize: 14, color: C.accent3 } }], { color: C.text2 });
-    shp(s, pres.shapes.OVAL, 10.5, 2.95, 2.45, 2.45, C.accent1, [{ text: PB.reconstructible + " / " + PB.reviewed, options: { bold: true, fontSize: 28, breakLine: true } }, { text: "cohorts", options: { fontSize: 16, breakLine: true } }, { text: "reconstructible", options: { fontSize: 16 } }], { color: C.background1 });
+    shp(s, pres.shapes.OVAL, 3.9, 1.45, 2.3, 2.3, C.accent4, [num(PB.publications), { text: "papers cite + name ABIDE", options: { fontSize: 15, breakLine: true } }, { text: "OpenAlex", options: { fontSize: 14, color: C.accent3 } }], { color: C.text2 });
+    shp(s, pres.shapes.OVAL, 3.9, 4.25, 2.3, 2.3, C.accent6, [num(PB.abstracts), { text: "abstracts", options: { fontSize: 16, breakLine: true } }, { text: "17 state data use", options: { fontSize: 14, breakLine: true } }, { text: "AbstractAtlas", options: { fontSize: 14, color: C.accent3 } }], { color: C.text2 });
+    shp(s, pres.shapes.OVAL, 7.15, 1.4, 2.45, 2.45, C.accent5, [num(PB.reviewed), { text: "studies included", options: { fontSize: 16, breakLine: true } }, { text: "of 994 records, systematic review", options: { fontSize: 14, color: C.accent3 } }], { color: C.text2 });
+    shp(s, pres.shapes.OVAL, 7.15, 4.2, 2.45, 2.45, C.accent5, [num(PB.claims), { text: "claims extracted", options: { fontSize: 16, breakLine: true } }, { text: "from the 35, with evidence types", options: { fontSize: 14, color: C.accent3 } }], { color: C.text2 });
+    shp(s, pres.shapes.OVAL, 10.5, 2.95, 2.45, 2.45, C.accent1, [{ text: PB.reconstructible + " / " + PB.reviewed, options: { bold: true, fontSize: 28, breakLine: true } }, { text: "cohorts rebuilt", options: { fontSize: 16, breakLine: true } }, { text: "participant by participant", options: { fontSize: 14 } }], { color: C.background1 });
     curve(s, 2.75, 3.6, 3.9, 2.65, { arrow: true, width: 2.5, dash: "sysDot" });
     curve(s, 2.75, 4.5, 3.95, 5.4, { arrow: true, width: 2.5 });
     curve(s, 6.2, 2.6, 7.15, 2.6, { arrow: true, width: 2.5 });
     curve(s, 6.2, 5.4, 7.15, 5.4, { arrow: true, width: 2.5 });
     curve(s, 9.6, 2.65, 10.6, 3.6, { arrow: true, width: 2.5 });
-    text(s, PB.subset + " reuse the 871-participant subset", 10.25, 5.5, 2.95, 0.7, { fontSize: 16, italic: true, color: C.accent1, align: "center" });
+    text(s, PB.subset + " reuse the 871-participant subset; lists published for 4", 10.25, 5.45, 2.95, 0.8, { fontSize: 16, italic: true, color: C.accent1, align: "center" });
+    text(s, "Review: SynthScholar skill + sub-agent screening and charting", 6.95, 6.66, 6.0, 0.42, { fontSize: 14, italic: true, color: C.accent3, valign: "middle" });
     // relation status legend
     text(s, "Relation status", 0.5, 6.65, 2.0, 0.45, { fontSize: 16, bold: true, color: C.text2, valign: "middle" });
     [["mentions", "sysDot"], ["uses data", "solid"], ["candidate", "dash"]].forEach(([t, d], i) => {
-      shp(s, pres.shapes.ROUNDED_RECTANGLE, 2.55 + i * 1.75, 6.68, 1.6, 0.4, C.background1, t, { fontSize: 14, line: C.accent3, dash: d });
+      shp(s, pres.shapes.ROUNDED_RECTANGLE, 2.5 + i * 1.45, 6.68, 1.35, 0.4, C.background1, t, { fontSize: 14, line: C.accent3, dash: d });
     });
     shp(s, pres.shapes.OVAL, 11.3, 1.25, 1.7, 1.45, C.background1, [{ text: "as of", options: { fontSize: 14, breakLine: true } }, { text: PB.asOf, options: { fontSize: 15, bold: true } }], { color: C.accent2, line: C.accent2, lineWidth: 2.5, rotate: -8, margin: 0 });
     s.addNotes("0:30. Start from the dataset and follow it outward: publications that cite and name ABIDE (counted from OpenAlex), a systematic review of those studies, abstracts in AbstractAtlas and the claims extracted from them with ECO evidence codes, and how many study cohorts can be rebuilt and so linked back to our graph. Each link carries a status: mentions, uses the data, or only a candidate. The counts are a dated snapshot, so the refresh date is part of the record. AbstractAtlas: abstractatlas.brainkb.org, code at github.com/sensein/abstractatlas. Two cautions: its author IDs are corpus-local, deduplicated by name and affiliation, so they should not be treated as global identities; and semantic similarity only proposes candidate relations, it does not verify support. " + PB.notes);
@@ -1213,8 +1221,17 @@ async function main() {
   {
     const s = addSlide("CONTENT", MAIN);
     s.addText("Evaluation schemes in 74 ABIDE studies", { placeholder: "title" });
-    await fitImage(s, EXP + "/literature_review/figures/accuracy_by_evaluation.png", 0.6, 1.35, 12.1, 5.6);
-    s.addNotes("0:30. Terms: pooled k-fold cross-validation mixes participants from all sites in training and test folds; leave-site-out holds out whole sites; leakage means information from the test data reached training (for example, harmonising sites before splitting). From a SynthScholar (v0.3.0) review: 994 records identified, 99 assessed, 74 studies included. Of 53 studies with a predictive claim, 26 use cross-validation that mixes sites across train and test folds and only 6 hold whole sites out. Median best accuracy is 73% under pooled k-fold cross-validation (23 studies; 70.9% without the 8 leakage-flagged ones) and 67% under leave-site-out (5 studies). These are different studies, models and subsets, so the gap is descriptive, not a controlled comparison; one study that reports both schemes for the same model drops from 64% to 56% balanced accuracy when sites are held out. Charting was done by AI agents with mechanical checks that each quoted value appears in the paper's full text; individual charting decisions were not verified by a person. Source: literature_review/synthesis.md, results_synthesis.json, figures/accuracy_by_evaluation.png.");
+    await fitImage(s, EXP + "/literature_review/figures/accuracy_by_evaluation.png", 0.35, 1.4, 8.75, 4.95, "left");
+    text(s, "Review: 994 records → 99 assessed → 74 included · of 53 with a predictive claim, 26 mix sites across folds and 6 hold whole sites out", 0.45, 6.4, 8.6, 0.6, { fontSize: 15, color: C.text2, valign: "middle" });
+    const side = [
+      ["Pooled k-fold", "sites mixed across training and test folds"],
+      ["Leave-site-out", "whole sites held out for testing"],
+      ["Descriptive, not controlled", "different studies, models and subsets; best reported result per paper. Same model, both schemes: S-030 64% → 56% (balanced accuracy); S-072 ~60% → ~62%"],
+      ["How it was made", "Skill: SynthScholar (protocol, retrieval, export); screening and charting by 8 sub-agents; each quoted value checked against full text, not by a person"],
+    ];
+    s.addText(side.map(([k, v], i) => [{ text: k, options: { bold: true, color: i === 2 ? C.accent2 : C.text2, breakLine: true } }, { text: v, options: { breakLine: i < side.length - 1 } }]).flat(),
+      { x: 9.3, y: 1.45, w: 3.65, h: 5.55, fontSize: 15, color: C.text1, valign: "top", paraSpaceAfter: 6, margin: 0, isTextBox: true, objectName: "evalSide" });
+    s.addNotes("0:30. Terms: pooled k-fold cross-validation mixes participants from all sites in training and test folds; leave-site-out holds out whole sites; leakage means information from the test data reached training (for example, harmonising sites before splitting). From a systematic review (SynthScholar skill v0.3.0 for protocol validation, open-access retrieval, corpus build, schema check and export; OpenAlex search and selection, screening and charting by eight sub-agents, quote checks and synthesis by sub-agents): 994 records identified, 99 assessed, 74 studies included. Of 53 studies with a predictive claim, 26 use cross-validation that mixes sites across train and test folds and only 6 hold whole sites out. Median best accuracy is 73% under pooled k-fold cross-validation (23 studies; 70.9% without the 8 leakage-flagged ones) and 67% under leave-site-out (5 studies). These are different studies, models and subsets, so the gap is descriptive, not a controlled comparison; one study that reports both schemes for the same model drops from 64% to 56% balanced accuracy when sites are held out. Charting was done by AI agents with mechanical checks that each quoted value appears in the paper's full text; individual charting decisions were not verified by a person. Source: literature_review/synthesis.md, results_synthesis.json, figures/accuracy_by_evaluation.png.");
   }
 
   // 4d ReproPond and ReproLake
@@ -1224,9 +1241,9 @@ async function main() {
     const WATER = "BFE0E0", LAKE = "8CC7C8";
     // ponds
     blob(s, 0.4, 1.4, 3.7, 1.35, WATER, 3);
-    text(s, [{ text: "Site pond", options: { bold: true, breakLine: true } }, { text: "scanner B quirk; motion profile" }], 0.7, 1.55, 3.1, 1.05, { fontSize: 16, color: C.text2, align: "center", valign: "middle" });
+    text(s, [{ text: "Site ReproPond", options: { bold: true, breakLine: true } }, { text: "scanner B quirk; motion profile" }], 0.7, 1.55, 3.1, 1.05, { fontSize: 16, color: C.text2, align: "center", valign: "middle" });
     blob(s, 0.4, 2.85, 3.7, 1.35, WATER, 7);
-    text(s, [{ text: "Lab pond", options: { bold: true, breakLine: true } }, { text: "FD rule, cohorts, reviews, skills" }], 0.7, 3.0, 3.1, 1.05, { fontSize: 16, color: C.text2, align: "center", valign: "middle" });
+    text(s, [{ text: "Lab ReproPond", options: { bold: true, breakLine: true } }, { text: "FD rule, cohorts, reviews, skills" }], 0.7, 3.0, 3.1, 1.05, { fontSize: 16, color: C.text2, align: "center", valign: "middle" });
     blob(s, 0.25, 4.25, 5.0, 3.0, WATER, 11);
     n += 1;
     shp(s, pres.shapes.OVAL, 0.85, 4.6, 0.55, 0.55, C.accent2);
@@ -1237,9 +1254,9 @@ async function main() {
     ].map((t, i, a) => ({ text: t, options: { bullet: true, breakLine: i < a.length - 1 } })), { x: 0.75, y: 5.15, w: 4.3, h: 1.75, fontSize: 16, color: C.text1, valign: "top", margin: 0, isTextBox: true, objectName: "staysList" });
     // lake
     blob(s, 8.45, 2.35, 4.5, 4.4, LAKE, 5);
-    text(s, "ReproLake (shared)", 8.9, 2.75, 3.6, 0.45, { fontSize: 20, bold: true, color: C.text2, align: "center", valign: "middle" });
+    text(s, [{ text: "ReproLake", options: { bold: true, fontSize: 20, breakLine: true } }, { text: "ReproNim's shared store of public dataset metadata", options: { fontSize: 14 } }], 8.9, 2.6, 3.6, 0.85, { color: C.text2, align: "center", valign: "middle" });
     s.addText(["BIDS spec and conventions", "published guidelines", "dataset records, scoped claims", "shared skills, variable definitions"].map((t, i, a) => ({ text: t, options: { breakLine: i < a.length - 1 } })),
-      { x: 8.95, y: 3.25, w: 3.5, h: 1.9, fontSize: 16, color: C.text1, align: "center", valign: "middle", paraSpaceAfter: 4, isTextBox: true, objectName: "lakeList" });
+      { x: 8.95, y: 3.45, w: 3.5, h: 1.85, fontSize: 16, color: C.text1, align: "center", valign: "middle", paraSpaceAfter: 4, isTextBox: true, objectName: "lakeList" });
     shp(s, pres.shapes.ROUNDED_RECTANGLE, 9.35, 5.45, 2.7, 0.4, C.background1, "Deprecation / revision", { fontSize: 14, color: C.accent2, line: C.accent2, dash: "dash" });
     // streams with gates
     curve(s, 4.05, 2.1, 8.6, 3.35, { color: LAKE, width: 7 });
@@ -1262,15 +1279,15 @@ async function main() {
     s.addImage({ data: await icon(fa.FaSearch), x: 4.69, y: 1.49, w: 0.27, h: 0.27, objectName: `query${n}` });
     curve(s, 4.55, 1.62, 3.85, 1.9, { color: C.text2, width: 1.5, dash: "dash", arrow: true });
     curve(s, 4.6, 1.85, 3.9, 3.2, { color: C.text2, width: 1.5, dash: "dash", arrow: true });
-    text(s, [{ text: "Federated query (Neurobagel): ", options: { bold: true } }, { text: "the query goes to the pond; only permitted results return." }], 5.25, 1.3, 7.6, 0.7, { fontSize: 16, color: C.text2, valign: "middle" });
+    text(s, [{ text: "Federated query (Neurobagel): ", options: { bold: true } }, { text: "the query goes to each ReproPond (a lab's local metadata store); only permitted results return." }], 5.25, 1.3, 7.6, 0.7, { fontSize: 16, color: C.text2, valign: "middle" });
     s.addNotes("1:00. ReproNim's terms, from the repronim.org tutorial 'Sharing and Searching Metadata Using a ReproPond and the ReproLake' (resources/tutorials/pond-lake). A ReproPond is a local FAIR metadata store, NIDM Turtle served by a Neurobagel node; ponds can be federated across sites. The ReproLake is a semantically aligned store of public datasets maintained by ReproNim. Neurobagel queries search across ponds and the lake. In our examples, ds000030 and ABIDE I are public, de-identified releases, so they are lake-eligible; the analysts' reviews, local QC rules and the illustrative collaboration records start in a pond. Example of what a global graph lacks: Brain Researcher's knowledge graph holds a single ABIDE node (2,226 subjects across ABIDE I and II) and neither Di Martino 2014 nor Abraham 2017. Our local graph holds the exact cohorts, for example the 871 participants in Analyst B's cohort, which matches Abraham's reported N; those cohort definitions and scoped claims are candidates to move from pond to lake, subject to the gates: generality beyond one site, review, consent that covers broad sharing (DUO), licence, a persistent identifier with a version, and provenance. Lake to pond: a template such as MNI152NLin2009cAsym is pinned to a version, local parameters are recorded, and it still needs per-participant registration QC. Some things stay in the pond: data whose consent is scoped to the study or to named uses rather than broad sharing (DUO-restricted, or limited by a DUA such as NDA or ABCD), direct identifiers and full dates, undefaced images, quasi-identifier combinations and small cells, restricted fields, and the keys that link pseudonymous IDs to people. Federated query lets the question travel to the pond so that only permitted answers come back.");
   }
 
 
-  // N3 Live demos
+  // N3 Claude Code examples
   for (const [di, title, ps, inst, extra] of [
-    [1, "Live demo: building a graph in Claude Code", [0, 1], true, "assistant overstated: 2 tools, not 3"],
-    [2, "Live demo: querying and using the graph", [2, 3], false, null],
+    [1, "Example: building a graph in Claude Code", [0, 1], true, "Error in response 1: it said three tools produced the volumes; Caltech's file has two (FreeSurfer, FSL)"],
+    [2, "Example: querying and using the graph", [2, 3], false, "Gap in response 3: which scan FreeSurfer ran on is not recorded in the graph"],
   ]) {
     const s = addSlide("CONTENT", MAIN);
     s.addText(title, { placeholder: "title" });
@@ -1283,16 +1300,16 @@ async function main() {
     });
     shp(s, pres.shapes.ROUNDED_RECTANGLE, 0.45, 1.35, 8.35, 5.6, C.text2, null, { rectRadius: 0.04 });
     s.addText(lines, { x: 0.6, y: 1.45, w: 8.05, h: 5.4, fontFace: "Courier New", fontSize: 16, valign: "top", paraSpaceAfter: 3, margin: 0, isTextBox: true, objectName: `demoCode${di}` });
-    text(s, "Expected output (tested)", 9.0, 1.35, 3.9, 0.4, { fontSize: 18, bold: true, color: C.text2 });
+    text(s, "Output of a test run, 2026-10-15", 9.0, 1.35, 3.9, 0.4, { fontSize: 18, bold: true, color: C.text2 });
     const outs = [];
     ps.forEach((k, j) => {
       const P = DEMO.prompts[k];
       outs.push({ text: P.label + " · " + P.duration, options: { bold: true, fontFace: "Calibri", color: C.accent1, breakLine: true } });
       P.expected.forEach((e, m) => outs.push({ text: e, options: { breakLine: !(j === ps.length - 1 && m === P.expected.length - 1) } }));
     });
-    shp(s, pres.shapes.ROUNDED_RECTANGLE, 9.0, 1.8, 3.9, extra ? 4.25 : 5.15, C.background2, null, { line: "C9D3D7", rectRadius: 0.05 });
-    s.addText(outs, { x: 9.12, y: 1.9, w: 3.66, h: extra ? 4.05 : 4.95, fontFace: "Courier New", fontSize: 16, color: C.text1, valign: "top", paraSpaceAfter: 4, margin: 0, isTextBox: true, objectName: `demoOut${di}` });
-    if (extra) shp(s, pres.shapes.ROUNDED_RECTANGLE, 9.0, 6.2, 3.9, 0.75, C.accent5, extra, { fontSize: 16, bold: true, color: C.accent2, line: C.accent2, rectRadius: 0.3 });
+    shp(s, pres.shapes.ROUNDED_RECTANGLE, 9.0, 1.8, 3.9, extra ? 4.0 : 5.15, C.background2, null, { line: "C9D3D7", rectRadius: 0.05 });
+    s.addText(outs, { x: 9.12, y: 1.9, w: 3.66, h: extra ? 3.8 : 4.95, fontFace: "Courier New", fontSize: 16, color: C.text1, valign: "top", paraSpaceAfter: 4, margin: 0, isTextBox: true, objectName: `demoOut${di}` });
+    if (extra) shp(s, pres.shapes.ROUNDED_RECTANGLE, 9.0, 5.95, 3.9, 1.0, C.accent5, extra, { fontSize: 16, bold: true, color: C.accent2, line: C.accent2, rectRadius: 0.2, margin: 6 });
     s.addNotes(di === 1
       ? "1:15. Install the skill into this project only, then build a graph for one ABIDE I site (Caltech, 38 participants) from the phenotype table and ReproNim's NIDM file of brain volumes. Prompt 1 took 34 s in testing: the graph built, its checks passed, and a deliberately deleted 'derived from' link was caught. The assistant also said the volumes came from three tools (FreeSurfer, FSL, ANTs); Caltech's file has FreeSurfer and FSL only. That is a real check-against-the-graph moment: ask the room how we would verify it, and point out that one query over the software agents in the graph answers it. Prompt 2 (14 s) joins IQ from our table with FreeSurfer hippocampal volume from ReproNim's file through the shared participant ID: 18 autistic and 19 control participants. Repository and branch: " + DEMO.repo_branch + ". " + DEMO.note
       : "1:15. Prompt 3 (162 s, the slow one) traces participant 51456's left-hippocampus volume to its FreeSurfer run and the T1-weighted scan. The volume (4513.9 mm³) and its meaning are recorded; the link 'FreeSurfer ran on this scan' is not recorded, only implied by the subject ID appearing in a command line, and the FreeSurfer version appears only inside a path string. The graph shows where provenance is missing. Prompt 4 (55 s) applies the stricter motion rule, mean FD below 0.15 mm: participants 51456 and 51469 drop out, so the cohort becomes 17 autistic and 19 control, and the assistant flags two queries that ignore the cohort. " + DEMO.note);
@@ -1305,7 +1322,7 @@ async function main() {
     const PQ = fs.existsSync(path.join(__dirname, "provenance_query.json")) ? JSON.parse(fs.readFileSync(path.join(__dirname, "provenance_query.json"), "utf8")) : { rows: [], triples: 0 };
     const nd = (x, y, w, h, fill, t, sub, col) => shp(s, pres.shapes.ROUNDED_RECTANGLE, x, y, w, h, fill, [{ text: t, options: { bold: true, fontSize: 15, breakLine: true } }, { text: sub, options: { fontSize: 12, color: col ? C.accent4 : C.accent3 } }], { color: col || C.text2, rectRadius: 0.4, margin: 4 });
     nd(0.5, 2.25, 2.3, 0.95, C.text2, "a slide", "“Joining graphs …”", C.background1);
-    nd(3.6, 1.62, 2.6, 0.78, C.accent4, "production activity", "A: agent ran code");
+    nd(3.6, 1.62, 2.6, 0.78, C.accent4, "production activity", "A: general agent ran code");
     nd(6.65, 1.62, 2.15, 0.78, C.accent4, "agent", "coding agent");
     nd(3.6, 2.55, 2.6, 0.85, C.background2, "results/simple2.json", "a result file");
     nd(3.6, 3.65, 2.6, 0.85, C.accent5, "assessment", "re-run · validated");
@@ -1321,12 +1338,21 @@ async function main() {
     s.addText("SELECT ?status (COUNT(?slide) AS ?n)\nWHERE { ?a talk:assesses ?slide ;\n           talk:checkingLabel ?status }\nGROUP BY ?status", { x: 9.05, y: 1.43, w: 3.8, h: 1.02, fontFace: "Courier New", fontSize: 12, color: "E8F1F2", valign: "top", margin: 0, isTextBox: true, objectName: "provQuery" });
     shp(s, pres.shapes.ROUNDED_RECTANGLE, 8.95, 2.58, 3.95, 2.1, C.background2, null, { line: "C9D3D7", rectRadius: 0.05 });
     s.addText(PQ.rows.map((r, i) => ({ text: `${r.n}  ${r.status}`, options: { breakLine: i < PQ.rows.length - 1 } })), { x: 9.05, y: 2.63, w: 3.8, h: 2.0, fontFace: "Courier New", fontSize: 12, color: C.text1, valign: "top", margin: 0, isTextBox: true, objectName: "provAnswer" });
+    // who produced the lecture: named skills vs general agent work
+    shp(s, pres.shapes.ROUNDED_RECTANGLE, 0.45, 4.72, 12.45, 0.95, C.accent6, [
+      { text: "Who produced it: ", options: { bold: true, color: C.text2 } },
+      { text: "speaker instructions → orchestrating Claude Code session → " },
+      { text: "general sub-agents (A) ", options: { bold: true, color: C.text2 } },
+      { text: "built the experiments, deck and figures; " },
+      { text: "named skills (S) ", options: { bold: true, color: C.text2 } },
+      { text: "only where stated: pptx (deck), SynthScholar (review retrieval), StructSense (claim pilot, Codex), neuroimaging-kg (examples, harmonisation); Brain Researcher via MCP (M) → checks → speaker review" },
+    ], { fontSize: 14, color: C.text1, align: "left", valign: "middle", margin: 8, rectRadius: 0.15 });
     // caught-by, compact
-    text(s, "Caught by the speaker", 0.55, 4.75, 5.9, 0.35, { fontSize: 16, bold: true, color: C.accent2 });
-    text(s, "Caught by automated checks", 6.85, 4.75, 5.9, 0.35, { fontSize: 16, bold: true, color: C.accent1 });
-    s.addText(["Consent wording: scoped consent, not “no consent”", "Kim 2023 question paraphrased wrongly; fixed from source", "AbstractAtlas links dropped, then restored", "LLM-style footers and titles removed"].map((t, i, a) => ({ text: t, options: { bullet: true, breakLine: i < a.length - 1 } })), { x: 0.55, y: 5.15, w: 6.0, h: 1.8, fontSize: 15, color: C.text1, valign: "top", paraSpaceAfter: 3, margin: 0, isTextBox: true, objectName: "caughtSpeaker" });
-    s.addText(["Failed ORCD job: invalid p-values", "Clean rebuild caught a blocked download (HTTP 403)", "Two agents reconstructed the same cohorts differently", "UMAP values drift across machines; all else matched"].map((t, i, a) => ({ text: t, options: { bullet: true, breakLine: i < a.length - 1 } })), { x: 6.85, y: 5.15, w: 6.0, h: 1.8, fontSize: 15, color: C.text1, valign: "top", paraSpaceAfter: 3, margin: 0, isTextBox: true, objectName: "caughtChecks" });
-    s.addNotes("0:45. The lecture has its own provenance graph, talk_provenance.ttl, written by the deck build from a table of how each slide was made. Each slide is a node; it was generated by one or more production activities, each associated with an agent (the speaker, an LLM drafting from the speaker's instructions, an agent running code, an agent retrieving from sources, an external agent through MCP, or an earlier agentic session); it was derived from the result files it shows; and an assessment records how it was checked, derived from the evidence for that check (a rebuild comparison, a claim verification). The query on the right counts slides by checking status; it was run with pyoxigraph over the file (" + PQ.triples + " triples) and the answer is shown as returned. The badge in the corner of every slide is the same record. Corrections came from both directions: the speaker caught the consent wording, a paraphrase of Kim et al. 2023's research question that turned an association question into a prediction question, AbstractAtlas links that had been dropped, and LLM-style footers and titles; automated checks caught an ORCD job with invalid p-values, a clean rebuild that failed on a blocked download (HTTP 403), two agents that reconstructed the same ABIDE cohorts differently, and UMAP values that drift between machines while everything else matched.");
+    text(s, "Errors found by the speaker", 0.55, 5.78, 5.9, 0.35, { fontSize: 16, bold: true, color: C.accent2 });
+    text(s, "Errors found by automated checks", 6.85, 5.78, 5.9, 0.35, { fontSize: 16, bold: true, color: C.accent1 });
+    s.addText(["Consent wording: scoped consent, not “no consent”", "Kim 2023 question paraphrased wrongly; fixed from source", "AbstractAtlas links dropped, then restored"].map((t, i, a) => ({ text: t, options: { bullet: true, breakLine: i < a.length - 1 } })), { x: 0.55, y: 6.12, w: 6.0, h: 0.92, fontSize: 15, color: C.text1, valign: "top", paraSpaceAfter: 3, margin: 0, isTextBox: true, objectName: "caughtSpeaker" });
+    s.addText(["Failed ORCD job: invalid p-values", "Clean rebuild caught a blocked download (HTTP 403)", "Two agents reconstructed the same cohorts differently"].map((t, i, a) => ({ text: t, options: { bullet: true, breakLine: i < a.length - 1 } })), { x: 6.85, y: 6.12, w: 6.0, h: 0.92, fontSize: 15, color: C.text1, valign: "top", paraSpaceAfter: 3, margin: 0, isTextBox: true, objectName: "caughtChecks" });
+    s.addNotes("0:45. The lecture has its own provenance graph, talk_provenance.ttl, written by the deck build from a table of how each slide was made. Each slide is a node; it was generated by one or more production activities, each associated with an agent (the speaker, an LLM drafting from the speaker's instructions, an agent running code, an agent retrieving from sources, an external agent through MCP, or an earlier agentic session); it was derived from the result files it shows; and an assessment records how it was checked, derived from the evidence for that check (a rebuild comparison, a claim verification). The query on the right counts slides by checking status; it was run with pyoxigraph over the file (" + PQ.triples + " triples) and the answer is shown as returned. The badge in the corner of every slide is the same record. Who produced what: an orchestrating Claude Code session briefed general sub-agents (badge A) that built the ABIDE experiment, the deck and the figures with their own code; named skills (badge S) were used only where a slide says so: the pptx skill for the deck, SynthScholar for the review's protocol, retrieval and export, StructSense for the Kim 2023 claim pilot (run by Codex), and neuroimaging-kg for the Claude Code examples and the Caltech harmonisation numbers; Brain Researcher was reached through MCP (badge M). Corrections came from both directions: the speaker caught the consent wording, a paraphrase of Kim et al. 2023's research question that turned an association question into a prediction question, AbstractAtlas links that had been dropped, and LLM-style footers and titles; automated checks caught an ORCD job with invalid p-values, a clean rebuild that failed on a blocked download (HTTP 403), two agents that reconstructed the same ABIDE cohorts differently, and UMAP values that drift between machines while everything else matched.");
   }
 
   // 15 Five things this week
@@ -1378,7 +1404,7 @@ async function main() {
       { text: "ABIDE_Collaboration_Knowledge_Graph.zip", options: { breakLine: true, fontSize: 20 } },
       { text: "github.com/sensein/agent_skills · abstractatlas.brainkb.org", options: { fontSize: 20 } },
     ], { placeholder: "body" });
-    s.addNotes("0:45 + discussion. Main-route total: 24:00 (opening: 0:20 title, 1:00 Wikipedia and Wikidata, 0:40 objectives, 0:30 the two datasets, 1:00 four-statement primer; objective 1: 1:00 dataset and publication components, 1:00 building a graph from a dataset, a paper or a set of papers, 0:30 entities, 1:00 participant graph, 1:30 claim chain, 0:45 claim exercise, 0:30 quotation checks; objective 2: 1:30 joining graphs, 1:00 harmonising graphs, 0:45 coverage, 0:45 ABIDE design, 1:00 ABIDE results, 0:30 QC exercise, 0:45 dependency tracing, 0:30 publications and abstracts, 1:00 asking Claude about the literature graph, 0:30 evaluation schemes, 1:00 ReproPond and ReproLake; with an assistant: 1:15 demo 1, 1:15 demo 2, 0:45 the lecture's provenance graph; close: 1:00 practices, 0:45 discussion). Open the floor: which link in the chain (manifest, scope, derivative lineage, review) would your lab require before an agent's change is accepted? Offer a live look at the HTML experiment report if time allows.\n\n" + fromOld(28));
+    s.addNotes("0:45 + discussion. Main-route total: 24:00 (opening: 0:20 title, 1:00 Wikipedia and Wikidata, 0:40 objectives, 0:30 the two datasets, 1:00 four-statement primer; objective 1: 1:00 dataset and publication components, 1:00 building a graph from a dataset, a paper or a set of papers, 0:30 entities, 1:00 participant graph, 1:30 claim chain, 0:45 claim exercise, 0:30 quotation checks; objective 2: 1:30 joining graphs, 1:00 harmonising graphs, 0:45 analyses supported by the joined data, 0:45 ABIDE design, 1:00 ABIDE results, 0:30 QC exercise, 0:45 dependency tracing, 0:30 publications and abstracts, 1:00 asking Claude about the literature graph, 0:30 evaluation schemes, 1:00 ReproPond and ReproLake; with an assistant: 1:15 example: building a graph in Claude Code, 1:15 example: querying and using the graph, 0:45 the lecture's provenance graph; close: 1:00 practices, 0:45 discussion). Open the floor: which link in the chain (manifest, scope, derivative lineage, review) would your lab require before an agent's change is accepted? Offer a look at the HTML experiment report if time allows.\n\n" + fromOld(28));
   }
 
   // ---------------------------------------------------------------- backup
@@ -1687,14 +1713,14 @@ async function main() {
     s.addText("Key to the AI-involvement badges", { placeholder: "title" });
     text(s, "How it was produced", 0.6, 1.3, 7.4, 0.45, { fontSize: 20, bold: true, color: C.text2 });
     PROD_DEF.forEach(([L, name, def], i) => {
-      shp(s, pres.shapes.OVAL, 0.6, 1.9 + i * 0.75, 0.55, 0.55, C.accent6, L, { fontSize: 18, bold: true, color: C.text2 });
-      text(s, [{ text: name + ": ", options: { bold: true } }, { text: def }], 1.35, 1.82 + i * 0.75, 6.6, 0.7, { fontSize: 16, color: C.text1, valign: "middle" });
+      shp(s, pres.shapes.OVAL, 0.6, 1.88 + i * 0.68, 0.5, 0.5, C.accent6, L, { fontSize: 18, bold: true, color: C.text2 });
+      text(s, [{ text: name + ": ", options: { bold: true } }, { text: def }], 1.3, 1.8 + i * 0.68, 6.9, 0.66, { fontSize: 16, color: C.text1, valign: "middle" });
     });
     text(s, "How it was checked", 8.4, 1.3, 4.4, 0.45, { fontSize: 20, bold: true, color: C.text2 });
     CHECK_DEF.forEach(([w, def], i) => {
       text(s, [{ text: w, options: { bold: true, italic: true, color: C.accent3, breakLine: true } }, { text: def }], 8.4, 1.85 + i * 1.1, 4.4, 1.0, { fontSize: 16, color: C.text1 });
     });
-    text(s, "Per-slide records are also exported as W3C PROV in talk_provenance.ttl.", 0.6, 6.55, 12, 0.4, { fontSize: 16, color: C.accent3 });
+    text(s, "Per-slide records are also exported as W3C PROV in talk_provenance.ttl.", 0.6, 6.62, 12, 0.4, { fontSize: 16, color: C.accent3 });
     s.addNotes("Badge key from talk_plan.md. Each slide's production letters and checking status are set in SLIDE_PROV in slides/build_deck.js and exported to talk_provenance.ttl (slides as prov:Entity, production activities associated with agent types, sources via prov:wasDerivedFrom, checking status as an attributed assessment).");
   }
 
@@ -1712,23 +1738,32 @@ async function main() {
     s.addNotes("Original and re-run (ORCD job 25941523) side by side. Same seeds, different machine: UMAP is not bit-identical across platforms, and trustworthiness moved by at most 0.011; PCA matched exactly. The conclusion is unchanged: useful local structure with material layout and neighbourhood variation. Seeding alone does not make a stochastic method reproducible across environments; see ReproNim/reproseed (github.com/ReproNim/reproseed) for recording and propagating seeds. Source: codex_verification/orcd_rebuild/rebuild_comparison.md.\n\n" + fromOld(9, 10));
   }
 
+  // Site coverage matrix (backup companion to "Analyses supported by the joined data")
+  {
+    const s = addSlide("BACKUP", BACK);
+    s.addText("Site coverage of each data element (ABIDE I)", { placeholder: "title" });
+    await fitImage(s, slideFig("element_coverage_matrix_backup.png", EXP + "/figures/element_coverage.png"), 0.5, 1.45, 12.3, 5.55);
+    s.addNotes("Backup for 'Analyses supported by the joined data': the share of each ABIDE I site's participants with a value for each data element, from results/element_coverage.json (query Q14). " + ABIDE.elements.notes);
+  }
+
   // ---------------------------------------------------------------- section tags (main slides)
   const O1 = "Objective 1", O2 = "Objective 2", AS = "With an assistant";
   const TAGS = {
     "The two example datasets": "Objectives 1 and 2", "A knowledge graph in four statements": O1, "Components of a dataset and a publication": O1, "Building knowledge graphs from datasets and papers": O1, "Entities in a neuroimaging knowledge graph": O1,
     "Knowledge graph around a single participant": O1, "Linking a claim to its evaluation and cohort": O1, "Exercise: evaluating claims against a source": O1, "Quotation checks and scientific entailment": O1,
-    "Joining graphs through shared identifiers": O2, "Harmonising graphs built by different people": O2, "Participant coverage by data element": O2, "ABIDE I: two analyses, two research questions": O2,
+    "Joining graphs through shared identifiers": O2, "Harmonising graphs built by different people": O2, "Analyses supported by the joined data": O2, "ABIDE I: two analyses, two research questions": O2,
     "ABIDE I: group differences and site-held-out prediction": O2, "Exercise: consequences of a stricter motion threshold": O2, "Dependency tracing after a QC revision": O2,
     "Linking datasets, publications and abstracts": O2, "Asking Claude about the literature graph": O2, "Evaluation schemes in 74 ABIDE studies": O2, "ReproPond and ReproLake as attributes on graph records": O2,
-    "Live demo: building a graph in Claude Code": AS, "Live demo: querying and using the graph": AS, "The lecture's own provenance graph": AS,
+    "Example: building a graph in Claude Code": AS, "Example: querying and using the graph": AS, "The lecture's own provenance graph": AS,
     "Practices to adopt now": "Objectives 1 and 2",
   };
+  const BACKUP_STRIP = { "Site coverage of each data element (ABIDE I)": "Analyses supported by the joined data" };
   for (const [i, rec] of SLIDES.entries()) {
-    const st = rec.section === MAIN ? STRIP[rec.title] : null;
+    const st = rec.section === MAIN ? STRIP[rec.title] : BACKUP_STRIP[rec.title] ? STRIP[BACKUP_STRIP[rec.title]] : null;
     if (!st) continue;
     n += 1;
-    rec.slide.addImage({ data: await icon(fa.FaProjectDiagram, "#0F7B7B", 128), x: 0.6, y: 1.06, w: 0.2, h: 0.2, objectName: `stripIcon${i}` });
-    rec.slide.addText([{ text: "In the graph: ", options: { bold: true, color: C.accent1 } }, { text: st, options: { color: C.accent3 } }], { x: 0.88, y: 1.0, w: 12.0, h: 0.32, fontSize: 12, valign: "middle", margin: 0, isTextBox: true, objectName: `strip${i}` });
+    rec.slide.addImage({ data: await icon(fa.FaProjectDiagram, "#0F7B7B", 128), x: 0.6, y: 1.06 + (rec.section === MAIN ? 0 : 0.1), w: 0.2, h: 0.2, objectName: `stripIcon${i}` });
+    rec.slide.addText([{ text: "In the graph: ", options: { bold: true, color: C.accent1 } }, { text: st, options: { color: C.accent3 } }], { x: 0.88, y: 1.0 + (rec.section === MAIN ? 0 : 0.1), w: 12.0, h: 0.32, fontSize: 12, valign: "middle", margin: 0, isTextBox: true, objectName: `strip${i}` });
   }
   SLIDES.forEach((rec, i) => {
     const tag = rec.section === MAIN ? TAGS[rec.title] : null;
@@ -1761,7 +1796,7 @@ async function main() {
   if (noStrip.length) console.warn("Main slides without an In-the-graph strip:", noStrip);
   const esc = (t) => String(t).replace(/\\/g, "\\\\").replace(/"/g, '\\"');
   const iri = (src) => /^https?:/.test(src) ? `<${src}>` : `talk:file-${encodeURIComponent(src).replace(/%/g, "_")}`;
-  const agentOf = { H: "talk:Speaker", L: "talk:LLMDrafter", A: "talk:CodingAgent", R: "talk:RetrievalAgent", M: "talk:BrainResearcherMCP", P: "talk:EarlierAgenticSession" };
+  const agentOf = { H: "talk:Speaker", L: "talk:LLMDrafter", S: "talk:SkillFollowingAgent", A: "talk:CodingAgent", R: "talk:RetrievalAgent", M: "talk:BrainResearcherMCP", P: "talk:EarlierAgenticSession" };
   let ttl = `@prefix prov: <http://www.w3.org/ns/prov#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix talk: <https://repronim.org/talks/kg-skills-2026#> .\n\n`;
   ttl += `talk:Speaker a prov:Agent, prov:Person ; rdfs:label "Speaker" .\n`;
   for (const [L, name, def] of PROD_DEF) ttl += `${agentOf[L]} a prov:Agent ; rdfs:label "${esc(name)}" ; rdfs:comment "${esc(def)}" .\n`;

@@ -71,12 +71,23 @@ def save_fixed_canvas(fig, stem: str, width_in: float, height_in: float, dpi: fl
 
 
 def _check_text_artists(fig, dpi: float, width_px: int, height_px: int) -> list[str]:
-    """Pixel-bounds + pairwise-overlap check for every Text artist, for a hard-canvas figure."""
+    """Pixel-bounds + pairwise-overlap check for every Text artist, for a hard-canvas figure.
+
+    dpi > 0 sets the figure to that dpi before measuring, so bbox pixels are commensurate with
+    width_px/height_px (a figure's default dpi is 100; checking at 100 while comparing against a
+    e.g. 218dpi target silently passes clipping that only shows up at the real resolution).
+    dpi == 0 means "bounds don't apply yet" (e.g. a tight-bbox figure not pinned to a final size);
+    callers in that mode filter this function's output down to the OVERLAP lines only.
+    """
+    if dpi:
+        fig.set_dpi(dpi)
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
     boxes = []
     for ax in fig.axes:
-        for t in ax.texts + list(ax.get_xticklabels()) + list(ax.get_yticklabels()):
+        texts = ax.texts + list(ax.get_xticklabels()) + list(ax.get_yticklabels())
+        texts += [ax.xaxis.label, ax.yaxis.label, ax.title]  # set_xlabel/set_ylabel/set_title live here, not in ax.texts
+        for t in texts:
             if not t.get_text() or not t.get_visible():
                 continue
             bb = t.get_window_extent(renderer)
@@ -86,13 +97,23 @@ def _check_text_artists(fig, dpi: float, width_px: int, height_px: int) -> list[
             continue
         bb = t.get_window_extent(renderer)
         boxes.append((t.get_text(), bb.x0, bb.y0, bb.x1, bb.y1))
-    # legend entries too
+    # legend entries, their colour-swatch handles, and the legend's own frame/box too - a legend
+    # that is wide enough can clip at a handle or at its outer box before any single text label
+    # bbox would show it.
     for leg in fig.legends + [a.get_legend() for a in fig.axes if a.get_legend()]:
         for t in leg.get_texts():
             if not t.get_visible():
                 continue
             bb = t.get_window_extent(renderer)
             boxes.append((t.get_text(), bb.x0, bb.y0, bb.x1, bb.y1))
+        handles = getattr(leg, "legend_handles", None) or getattr(leg, "legendHandles", [])
+        for h in handles:
+            if h is None or not h.get_visible():
+                continue
+            bb = h.get_window_extent(renderer)
+            boxes.append(("<legend handle>", bb.x0, bb.y0, bb.x1, bb.y1))
+        bb = leg.get_window_extent(renderer)
+        boxes.append(("<legend box>", bb.x0, bb.y0, bb.x1, bb.y1))
     problems = []
     for label, x0, y0, x1, y1 in boxes:
         if x0 < -0.5 or y0 < -0.5 or x1 > width_px + 0.5 or y1 > height_px + 0.5:
@@ -257,64 +278,303 @@ def participant_ego_slide() -> None:
 
 
 # ---------------------------------------------------------------------------
-# Figure 2: element_coverage_slide
+# Figure 2: element_coverage_slide (+ a sites x elements matrix kept as a backup slide)
 # ---------------------------------------------------------------------------
 
-def element_coverage_slide() -> None:
-    """8 key elements x 20 sites, fraction present (dot/heat matrix) + per-element participant totals."""
+ELEMENT_ORDER = ["AGE_AT_SCAN", "FIQ", "VIQ", "PIQ", "ADOS_TOTAL", "SRS_RAW_TOTAL", "func_mean_fd", "CC200_timeseries"]
+ELEMENT_PLAIN_LABEL = {
+    "AGE_AT_SCAN": "Age at scan",
+    "FIQ": "Full-scale IQ",
+    "VIQ": "Verbal IQ",
+    "PIQ": "Performance IQ",
+    "ADOS_TOTAL": "ADOS rating",
+    "SRS_RAW_TOTAL": "SRS total",
+    "func_mean_fd": "Head motion",
+    "CC200_timeseries": "fMRI time series",
+}
+LIMITING_LABEL = {
+    "CC200_timeseries": "time series limits",
+    "VIQ": "verbal IQ limits",
+    "SRS_RAW_TOTAL": "SRS limits",
+}
+
+
+def _element_site_category_counts() -> dict:
+    """{element: {none,rare,partial,high: n_sites}} using the same thresholds as the matrix."""
     d = json.loads((RESULTS / "element_coverage.json").read_text())
     els_all = d["elements"]
+    sites = sorted(els_all["AGE_AT_SCAN"]["by_site"])
+    site_totals = {s: els_all["AGE_AT_SCAN"]["by_site"][s] for s in sites}
+    counts = {}
+    for k in ELEMENT_ORDER:
+        by_site = els_all[k]["by_site"]
+        c = {"none": 0, "rare": 0, "partial": 0, "high": 0}
+        for s in sites:
+            f = by_site.get(s, 0) / site_totals[s]
+            if f <= 0:
+                c["none"] += 1
+            elif f < 0.10:
+                c["rare"] += 1
+            elif f < 0.90:
+                c["partial"] += 1
+            else:
+                c["high"] += 1
+        counts[k] = c
+    return counts, len(sites)
+
+
+def element_coverage_slide() -> None:
+    """Landscape, exact 2400x1070px canvas (the slide's figure area is ~11x4.9in, so fitting by
+    height like the matrix version shrinks text to ~4pt - this one is sized to fit by width
+    instead). Left: the requirement funnel. Right: one stacked bar per element, segments = number
+    of sites (of 20) in each coverage category, grouped Phenotype / Imaging-derived.
+    """
+    WIDTH_IN = 11.0
+    HEIGHT_IN = 1070 / 2400 * WIDTH_IN
+    DPI = 2400 / WIDTH_IN
+    BODY = 46 * 72 / DPI
+    HEAD = 52 * 72 / DPI
+
+    d = json.loads((RESULTS / "element_coverage.json").read_text())
+    req = d["analysis_requirements"]
+    counts, n_sites_total = _element_site_category_counts()
+
+    cat_order = ["none", "rare", "partial", "high"]
+    cat_colors = {"none": GREY_LIGHT, "rare": TERRACOTTA, "partial": NAVY, "high": TEAL}
+    cat_names = {"none": "none (0%)", "rare": "rare (<10%)", "partial": "partial (10–90%)", "high": "high (≥90%)"}
+
+    fig = plt.figure(figsize=(WIDTH_IN, HEIGHT_IN))
+
+    # This is a fixed-pixel canvas (no tight-bbox crop), so every margin below is reserved by
+    # hand for a specific piece of overflow: y-tick labels and x-labels draw OUTSIDE their axes'
+    # box, and at a 46px-floor font size that overflow is wide enough to need real inches, not
+    # the few points matplotlib's own default margins assume.
+    bottom_strip = 0.6   # xlabel + x tick numbers, shared by both axes
+    top_strip = 0.65     # legend, above the right-hand axes only
+    axes_bottom = bottom_strip
+    axes_height = HEIGHT_IN - bottom_strip - top_strip
+
+    left_margin_funnel = 2.35   # room for funnel row labels ("Analyst B inputs", ...)
+    funnel_width = 3.05         # the axes itself: bars + the two-line annotation past each bar
+    gap = 0.15
+    right_label_margin = 2.3    # room for the longest element row label ("fMRI time series")
+    right_margin = 0.35
+
+    # --- LEFT: the requirement funnel (same 4 bars/numbers as the matrix backup slide) ---
+    axf = fig.add_axes([left_margin_funnel / WIDTH_IN, axes_bottom / HEIGHT_IN, funnel_width / WIDTH_IN,
+                       axes_height / HEIGHT_IN])
+    funnel = [
+        ("All participants", d["participants"], n_sites_total, "baseline"),
+        ("Analyst B inputs", req["Analyst B (age, FD, CC200)"]["n"], req["Analyst B (age, FD, CC200)"]["n_sites"],
+         LIMITING_LABEL[req["Analyst B (age, FD, CC200)"]["limiting_element"]]),
+        ("+ IQ + FreeSurfer", req["UMAP + FreeSurfer IDP join"]["n"], req["UMAP + FreeSurfer IDP join"]["n_sites"],
+         LIMITING_LABEL[req["UMAP + FreeSurfer IDP join"]["limiting_element"]]),
+        ("+ SRS", req["UMAP + SRS"]["n"], req["UMAP + SRS"]["n_sites"], LIMITING_LABEL[req["UMAP + SRS"]["limiting_element"]]),
+    ]
+    y = np.arange(len(funnel))[::-1]
+    ns = [f[1] for f in funnel]
+    axf.barh(y, ns, color=NAVY, height=0.52, zorder=3)
+    text_x = max(ns) * 1.04
+    axf.set_xlim(0, max(ns) * 1.95)
+    for yi, (_label, n, n_sites, note) in zip(y, funnel):
+        axf.text(text_x, yi, f"{n:,} at {n_sites} sites\n{note}", ha="left", va="center", fontsize=BODY, color=GREY_DARK)
+    axf.set_yticks(y, [f[0] for f in funnel], fontsize=BODY)
+    axf.set_xticks([])
+    axf.set_xlabel("participants retained", fontsize=BODY)
+    for sp in ("top", "right", "bottom"):
+        axf.spines[sp].set_visible(False)
+    axf.tick_params(length=0)
+    axf.set_ylim(-0.65, len(funnel) - 0.35)
+
+    # --- RIGHT: one stacked bar per element, segments = n sites in each category ---
+    right_left = left_margin_funnel + funnel_width + gap + right_label_margin
+    right_right = WIDTH_IN - right_margin
+    ax = fig.add_axes([right_left / WIDTH_IN, axes_bottom / HEIGHT_IN, (right_right - right_left) / WIDTH_IN,
+                       axes_height / HEIGHT_IN])
+
+    phenotype_keys = ELEMENT_ORDER[:6]
+    imaging_keys = ELEMENT_ORDER[6:]
+    gap = 1.3
+    y_pos = list(range(len(phenotype_keys))) + [len(phenotype_keys) - 1 + gap + 1 + i for i in range(len(imaging_keys))]
+    row_order = phenotype_keys + imaging_keys
+
+    for yi, k in zip(y_pos, row_order):
+        left = 0.0
+        c = counts[k]
+        for cat in cat_order:
+            n = c[cat]
+            if n == 0:
+                continue
+            ax.barh(yi, n, left=left, color=cat_colors[cat], height=0.62, edgecolor="white", linewidth=0.8, zorder=3)
+            if n >= 2:  # print the count only where the segment is wide enough to hold it legibly
+                txt_color = "white" if cat in ("partial", "high") else GREY_DARK
+                ax.text(left + n / 2, yi, str(n), ha="center", va="center", fontsize=BODY * 0.78, color=txt_color, zorder=4)
+            left += n
+    ax.set_yticks(y_pos, [ELEMENT_PLAIN_LABEL[k] for k in row_order], fontsize=BODY)
+    ax.invert_yaxis()
+    ax.set_xlim(0, n_sites_total)
+    ax.set_xticks([0, 5, 10, 15, 20])
+    ax.tick_params(axis="x", labelsize=BODY)
+    ax.set_xlabel(f"number of sites (of {n_sites_total})", fontsize=BODY)
+    for sp in ("top", "right", "left"):
+        ax.spines[sp].set_visible(False)
+    ax.tick_params(length=0)
+
+    # Group headers: plain, centred, no rotation - "Phenotype" sits in the top margin above row 0,
+    # "Imaging-derived" sits in the gap row deliberately left between the two groups.
+    ax.text(n_sites_total / 2, -0.55, "Phenotype", ha="center", va="bottom", fontsize=BODY, color=GREY_DARK,
+            clip_on=False, style="italic")
+    ax.text(n_sites_total / 2, len(phenotype_keys) - 1 + gap / 2 + 0.5, "Imaging-derived", ha="center", va="center",
+            fontsize=BODY, color=GREY_DARK, clip_on=False, style="italic")
+
+    # Figure-fraction placement (not axes-fraction): the legend's own height is fixed in inches
+    # by its font size, so anchoring it to the axes' data/fraction system creates a feedback loop
+    # with top_strip (shrink top_strip to give the axes more room and the legend, now a BIGGER
+    # fraction of a smaller axes, promptly grows back into the same space). Figure coordinates
+    # have no such loop: the legend's centre sits at a fixed inch position in the fixed top_strip.
+    legend_handles = [plt.Rectangle((0, 0), 1, 1, fc=cat_colors[c], ec=GREY_DARK, lw=0.8) for c in cat_order]
+    # Centred on the whole figure, not just the (narrower) right-hand panel: at this font size
+    # the 4-category legend is wider than the bar panel itself, so anchoring to the panel's own
+    # centre would push it past the right edge of a fixed 2400px canvas.
+    legend_cx = 0.5
+    legend_cy = (axes_bottom + axes_height + top_strip * 0.72) / HEIGHT_IN
+    fig.legend(legend_handles, [cat_names[c] for c in cat_order], loc="center", bbox_to_anchor=(legend_cx, legend_cy),
+              ncol=4, frameon=False, fontsize=BODY, handlelength=1.3, handletextpad=0.5, columnspacing=1.4)
+
+    problems = _check_text_artists(fig, DPI, round(WIDTH_IN * DPI), round(HEIGHT_IN * DPI))
+    if problems:
+        raise RuntimeError("element_coverage_slide text layout failed verification:\n" + "\n".join(problems))
+
+    save_fixed_canvas(fig, "element_coverage_slide", WIDTH_IN, HEIGHT_IN, DPI)
+
+
+def element_coverage_matrix_backup_slide() -> None:
+    """Backup slide: the full sites x elements categorical matrix. Portrait (2400x3229), so it
+    is not the primary slide (that needs a landscape ~11x4.9in figure area) but is kept for
+    anyone who wants the per-site, per-element detail instead of the aggregated bar view.
+    """
+    # Deck places this image at ~11in wide; every font size below is chosen so that, once the
+    # fixed 2400px-wide PNG is displayed at that width, the physical text is >=14pt (we target
+    # 46px body / 52px headings at generation dpi = 2400/11 = 218.18, i.e. ~15.3pt / ~17.3pt).
+    WIDTH_IN = 11.0
+    GEN_DPI = 2400 / WIDTH_IN
+    BODY = 46 * 72 / GEN_DPI
+    HEAD = 52 * 72 / GEN_DPI
+
+    d = json.loads((RESULTS / "element_coverage.json").read_text())
+    els_all = d["elements"]
+    req = d["analysis_requirements"]
     keep = ["AGE_AT_SCAN", "FIQ", "VIQ", "PIQ", "ADOS_TOTAL", "SRS_RAW_TOTAL", "func_mean_fd", "CC200_timeseries"]
     plain_label = {
         "AGE_AT_SCAN": "Age at scan",
         "FIQ": "Full-scale IQ",
         "VIQ": "Verbal IQ",
         "PIQ": "Performance IQ",
-        "ADOS_TOTAL": "ADOS total (clinician autism rating)",
-        "SRS_RAW_TOTAL": "SRS total (social responsiveness)",
-        "func_mean_fd": "Head motion (mean FD)",
-        "CC200_timeseries": "fMRI time series (200 regions)",
+        "ADOS_TOTAL": "ADOS (clinician rating)",
+        "SRS_RAW_TOTAL": "SRS (social responsiveness)",
+        "func_mean_fd": "Head motion (FD)",
+        "CC200_timeseries": "fMRI time series",
+    }
+    limiting_label = {
+        "CC200_timeseries": "time series limits it",
+        "VIQ": "verbal IQ limits it",
+        "SRS_RAW_TOTAL": "SRS only at 4 sites",
+    }
+    site_code = {  # 2-3 letter codes, so a 45-degree rotation stays within a narrow column
+        "CALTECH": "CAL", "CMU": "CMU", "KKI": "KKI", "LEUVEN_1": "LE1", "LEUVEN_2": "LE2",
+        "MAX_MUN": "MUN", "NYU": "NYU", "OHSU": "OHS", "OLIN": "OLN", "PITT": "PIT", "SBL": "SBL",
+        "SDSU": "SDS", "STANFORD": "STF", "TRINITY": "TRI", "UCLA_1": "UC1", "UCLA_2": "UC2",
+        "UM_1": "UM1", "UM_2": "UM2", "USM": "USM", "YALE": "YAL",
     }
     sites = sorted(els_all["AGE_AT_SCAN"]["by_site"])  # element present for every participant -> complete site list
     site_totals = {s: els_all["AGE_AT_SCAN"]["by_site"][s] for s in sites}
+    n_sites_total = len(sites)
 
-    frac = np.zeros((len(keep), len(sites)))
-    for i, k in enumerate(keep):
-        by_site = els_all[k]["by_site"]
-        for j, s in enumerate(sites):
-            frac[i, j] = by_site.get(s, 0) / site_totals[s]
+    # --- category thresholds for the matrix: coverage fraction per (element, site) ---
+    # >=90%: near-complete for that site; 10-90%: partial; 0-10%: rare; 0%: none at that site.
+    cat_colors = [GREY_LIGHT, TERRACOTTA, NAVY, TEAL]  # none, rare (<10%), partial (10-90%), high (>=90%)
+    cat_names = ["none (0%)", "rare (<10%)", "partial (10–90%)", "high (≥90%)"]
 
-    cmap = matplotlib.colors.LinearSegmentedColormap.from_list("white_teal", ["#FFFFFF", TEAL])
+    # Sites as ROWS, elements as COLUMNS: 20 short row labels need no rotation at all, and a
+    # phenotype/imaging group bracket over 8 columns is a plain horizontal span - both sidestep
+    # the rotated-label and vertical-bracket crowding a (elements x sites) layout runs into once
+    # every label has to be >=46px tall. The extra rows are exactly where "height may grow" helps.
+    cats = np.zeros((len(sites), len(keep)), dtype=int)
+    for i, s in enumerate(sites):
+        for j, k in enumerate(keep):
+            f = els_all[k]["by_site"].get(s, 0) / site_totals[s]
+            if f <= 0:
+                cats[i, j] = 0
+            elif f < 0.10:
+                cats[i, j] = 1
+            elif f < 0.90:
+                cats[i, j] = 2
+            else:
+                cats[i, j] = 3
 
-    fig = plt.figure(figsize=(7.5, 4.6))
-    gs = fig.add_gridspec(1, 2, width_ratios=[4.6, 1.2], wspace=0.08)
-    ax = fig.add_subplot(gs[0, 0])
-    im = ax.imshow(frac, cmap=cmap, vmin=0, vmax=1, aspect="auto")
-    ax.set_yticks(range(len(keep)), [plain_label.get(k, k) for k in keep], fontsize=11.5)
-    ax.set_xticks(range(len(sites)), sites, fontsize=8.5, rotation=90)
-    ax.set_xlabel("ABIDE I sites", fontsize=10, labelpad=6)
+    cmap = matplotlib.colors.ListedColormap(cat_colors)
+    norm = matplotlib.colors.BoundaryNorm([-0.5, 0.5, 1.5, 2.5, 3.5], cmap.N)
+
+    fig = plt.figure(figsize=(WIDTH_IN, 14.5))
+    gs = fig.add_gridspec(2, 1, height_ratios=[1.42, 4.1], hspace=0.4)
+
+    # --- TOP: the requirement funnel for four concrete analyses (the point of the slide), full width ---
+    axf = fig.add_subplot(gs[0, 0])
+    funnel = [
+        ("All participants", d["participants"], n_sites_total, "starting population"),
+        ("Analyst B inputs", req["Analyst B (age, FD, CC200)"]["n"], req["Analyst B (age, FD, CC200)"]["n_sites"],
+         limiting_label[req["Analyst B (age, FD, CC200)"]["limiting_element"]]),
+        ("+ IQ + FreeSurfer", req["UMAP + FreeSurfer IDP join"]["n"], req["UMAP + FreeSurfer IDP join"]["n_sites"],
+         limiting_label[req["UMAP + FreeSurfer IDP join"]["limiting_element"]]),
+        ("+ SRS", req["UMAP + SRS"]["n"], req["UMAP + SRS"]["n_sites"], limiting_label[req["UMAP + SRS"]["limiting_element"]]),
+    ]
+    row_pitch = 2.3  # generous: each bar's label is two BODY-sized lines, so rows need real room
+    y = np.arange(len(funnel))[::-1] * row_pitch
+    ns = [f[1] for f in funnel]
+    axf.barh(y, ns, color=NAVY, height=row_pitch * 0.5, zorder=3)
+    text_x = max(ns) * 1.04
+    axf.set_xlim(0, max(ns) * 1.85)  # fixed room to the right of every bar for its (short) label
+    for yi, (_label, n, n_sites, note) in zip(y, funnel):
+        axf.text(text_x, yi, f"{n:,} at {n_sites} sites\n{note}", ha="left", va="center", fontsize=BODY, color=GREY_DARK)
+    axf.set_yticks(y, [f[0] for f in funnel], fontsize=BODY)
+    axf.set_xticks([])
+    axf.set_xlabel("participants retained", fontsize=BODY)
+    for sp in ("top", "right", "bottom"):
+        axf.spines[sp].set_visible(False)
+    axf.tick_params(length=0)
+    axf.set_ylim(-row_pitch * 0.9, (len(funnel) - 1) * row_pitch + row_pitch * 0.9)
+
+    # --- BOTTOM: per-site coverage of each element, as discrete categories, not a continuous scale ---
+    ax = fig.add_subplot(gs[1, 0])
+    ax.imshow(cats, cmap=cmap, norm=norm, aspect="auto")
+    ax.set_yticks(range(len(sites)), [site_code[s] for s in sites], fontsize=BODY)
+    ax.set_xticks(range(len(keep)), [plain_label.get(k, k) for k in keep], fontsize=BODY, rotation=75, ha="right",
+                  rotation_mode="anchor")
+    ax.set_ylabel("ABIDE I sites (short codes)", fontsize=BODY, labelpad=10)
     for sp in ("top", "right", "left", "bottom"):
         ax.spines[sp].set_visible(False)
     ax.tick_params(length=0)
-    cbar = fig.colorbar(im, ax=ax, fraction=0.035, pad=0.02, location="top", shrink=0.7)
-    cbar.set_label("Share of each site's participants with a value", fontsize=9.5, labelpad=4)
-    cbar.ax.tick_params(labelsize=8)
 
-    axb = fig.add_subplot(gs[0, 1], sharey=ax)
-    tot_asd = [els_all[k]["by_dx"].get("ASD", 0) for k in keep]
-    tot_td = [els_all[k]["by_dx"].get("TD", 0) for k in keep]
-    axb.barh(range(len(keep)), tot_asd, color=TERRACOTTA, label="ASD")
-    axb.barh(range(len(keep)), tot_td, left=tot_asd, color=NAVY, label="TD")
-    for i, (a, b) in enumerate(zip(tot_asd, tot_td)):
-        axb.text(a + b + 15, i, str(a + b), va="center", fontsize=9.5)
-    axb.set_xlim(0, max(a + b for a, b in zip(tot_asd, tot_td)) * 1.22)
-    axb.legend(frameon=False, fontsize=9, loc="lower center", bbox_to_anchor=(0.5, 1.01), ncol=2)
-    plt.setp(axb.get_yticklabels(), visible=False)
-    axb.tick_params(axis="x", labelsize=8)
-    axb.set_xlabel("participants", fontsize=9.5)
-    for sp in ("top", "right", "left"):
-        axb.spines[sp].set_visible(False)
-    save(fig, "element_coverage_slide", width_in=7.5)
+    # Column group bracket (phenotype: cols 0-5; imaging-derived: cols 6-7), drawn above row 0.
+    bracket_y = -1.6
+    for x0, x1, label in [(-0.5, 5.5, "Phenotype"), (5.5, 7.5, "Imaging-derived")]:
+        ax.plot([x0 + 0.08, x0 + 0.08, x1 - 0.08, x1 - 0.08], [bracket_y + 0.35, bracket_y, bracket_y, bracket_y + 0.35],
+                color=GREY_DARK, lw=1.3, clip_on=False)
+        ax.text((x0 + x1) / 2, bracket_y - 0.35, label, ha="center", va="bottom", fontsize=BODY, color=GREY_DARK,
+                clip_on=False)
+
+    legend_handles = [plt.Rectangle((0, 0), 1, 1, fc=c, ec=GREY_DARK, lw=0.8) for c in cat_colors]
+    ax.text(0.5, 1.12, "Share of site participants with a value", fontsize=HEAD, ha="center", va="bottom",
+            transform=ax.transAxes, color="black")
+    ax.legend(legend_handles, cat_names, loc="lower center", bbox_to_anchor=(0.5, 1.045), ncol=4,
+             frameon=False, fontsize=BODY, handlelength=1.3, handletextpad=0.5, columnspacing=1.5,
+             bbox_transform=ax.transAxes)
+
+    problems = [p for p in _check_text_artists(fig, 0, 10**9, 10**9) if p.startswith("OVERLAP")]
+    if problems:
+        raise RuntimeError("element_coverage_matrix_backup_slide text layout failed verification:\n" + "\n".join(problems))
+
+    save(fig, "element_coverage_matrix_backup", width_in=WIDTH_IN)
 
 
 # ---------------------------------------------------------------------------
@@ -479,5 +739,6 @@ def resource_map_slide() -> None:
 if __name__ == "__main__":
     participant_ego_slide()
     element_coverage_slide()
+    element_coverage_matrix_backup_slide()
     resource_map_slide()
     print("wrote:", sorted(p.name for p in OUT.iterdir()))
