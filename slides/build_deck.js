@@ -161,7 +161,7 @@ const SLIDE_PROV = {
   "Knowledge graph around a single participant": prov(["A"], "re-run · validated", ABIDE_KEY),
   "Participant coverage by data element": prov(["A"], "re-run · validated", ABIDE_KEY),
   "Recomputing a derived score from source items": prov(["P", "R"], "re-run", CNP_ZIP),
-  "Linking a claim to its evaluation and cohort": prov(["P", "R"], "validated", CNP_ZIP, "https://doi.org/10.3389/fpsyt.2023.1232015"),
+  "Linking a claim to its evaluation and cohort": prov(["P", "R", "A"], "re-run · validated", CNP_ZIP, "https://doi.org/10.3389/fpsyt.2023.1232015", "https://osf.io/agqtn/", "slides/demo/rerun_ucla_cpm.json"),
   "Exercise: evaluating claims against a source": prov(["P", "R", "L"], "validated", CNP_ZIP, "https://doi.org/10.3389/fpsyt.2023.1232015"),
   "Quotation checks and scientific entailment": prov(["P", "R"], "validated", CNP_ZIP),
   "ABIDE I: two analyses, two research questions": prov(["A", "R"], "re-run · validated", ABIDE_KEY),
@@ -316,7 +316,7 @@ const STRIP = {
   "Components of a dataset and a publication": "Dataset side: ds000030 graph and ABIDE graph/core · publication side: claims_and_questions.ttl, literature_kg.ttl (17 / 74 reconstructible)",
   "Entities in a neuroimaging knowledge graph": "Node and edge types; teal = types used in our ds000030 and ABIDE graphs (assigned in the plan, not computed by a query)",
   "Knowledge graph around a single participant": "13 SPARQL queries (queries/Q13_*.rq) over graph/core, scope, view/volumes → 239 triples → figure: code/participant_ego.py",
-  "Linking a claim to its evaluation and cohort": "ds000030 claims_and_questions.ttl: question → claim → evaluation → cohort; the cohort's membershipStatus is recorded as “not reconstructed”",
+  "Linking a claim to its evaluation and cohort": "ds000030 claims_and_questions.ttl: question → claim → evaluation → cohort; evidence re-run from the authors' OSF data (osf.io/agqtn) by kim2023_rerun/rerun_ucla_cpm.py",
   "Exercise: evaluating claims against a source": "Statement A is a claim record with its evidence span (claims_and_questions.ttl); B and C were written for this exercise and are not in the graph",
   "Quotation checks and scientific entailment": "Span and schema checks ran on the extracted records (results/skill/pilot_report.json); entailment is a human judgement, not in the graph",
   "Joining graphs through shared identifiers": "queries/simple2_identity.rq over graph/link + 27 simple2 site graphs; graph/publications.ttl (Q15.rq); literature_kg.ttl; Brain Researcher via MCP, not in our store",
@@ -800,24 +800,25 @@ async function main() {
       { text: v, options: { fontSize: 18, color: hl ? C.background1 : C.text1, bold: !!hl } },
     ], { margin: 4 });
     const P = [[0.45, 1.5], [3.55, 2.45], [6.65, 1.5], [9.75, 2.45]];
-    node(...P[0], "Question · Kim 2023", "Which direction of connectivity change is associated with schizophrenia?");
-    node(...P[1], "Claim", "Both directions are altered; combining them predicts best", true);
-    node(...P[2], "Evidence", "70.2% accuracy: UCLA, leave one participant out, both directions");
-    node(...P[3], "Cohort", "47 + 47 people, as reported");
+    node(...P[0], "Question · Kim 2023", "Does increased connectivity add information about schizophrenia?");
+    text(s, "resting-state fMRI · 268-region atlas · patients vs controls", 0.3, 3.4, 3.2, 0.5, { fontSize: 14, italic: true, color: C.text2, align: "center" });
+    node(...P[1], "Claim", "Yes: increased + decreased together classify best", true);
+    node(...P[2], "Evidence", "66 of 94 correct (70.2%); decreased alone 52%");
+    node(...P[3], "Cohort", "47 + 47, matched for age, sex, scanner");
     for (let i = 0; i < 3; i++) curve(s, P[i][0] + w - 0.05, P[i][1] + h * 0.62, P[i + 1][0] + 0.1, P[i + 1][1] + h * 0.42, { arrow: true, width: 2.5 });
     node(3.55, 4.95, "Data", "ds000030 (UCLA CNP), versioned");
     // broken link from cohort to data
     curve(s, 10.8, 4.3, 9.6, 5.25, { color: C.accent2, width: 2.5, dash: "dash" });
     curve(s, 8.5, 5.55, 6.4, 5.85, { color: C.accent2, width: 2.5, dash: "dash", arrow: true });
     shp(s, pres.shapes.OVAL, 8.75, 5.05, 0.7, 0.7, C.accent2, "?", { fontSize: 28, bold: true, color: C.background1 });
-    text(s, [{ text: "Missing link: ", options: { bold: true, color: C.accent2 } }, { text: "which 94 participants, and how each file was processed" }], 9.7, 5.15, 3.2, 1.4, { fontSize: 18, color: C.text1, valign: "middle" });
-    s.addNotes("1:30. Terms: Kim et al. 2023 classified schizophrenia patients versus controls from resting-state connectivity; CPM is connectome-based predictive modelling, here with a linear support vector machine (a standard linear classifier); leave-one-out cross-validation trains on all participants but one and tests on the one left out, repeated for each person. The question is the paper's own aim, verbatim from the abstract: 'we aimed to determine the direction of the connectivity alteration associated with schizophrenia using a multivariate, data-driven approach' (Kim et al. 2023, 'Bidirectional connectivity alterations in schizophrenia: a multivariate, machine-learning approach', https://www.frontiersin.org/articles/10.3389/fpsyt.2023.1232015/full). The claim node answers that question with the paper's own result: 'combining information from both increased and decreased rsFC substantially improved prediction accuracy', and 'When tested across datasets, the prediction model using decreased rsFC performed best.' Note for the speaker: earlier drafts of this slide paraphrased the question as 'do decreased and increased connectivity predict diagnosis?', which turns a question about the direction of an association into a prediction question; it was corrected after checking the source, and is itself an example of the scope error this talk warns about. Say: the paper tells us which dataset, but not which 94 people from it, so we cannot rebuild the cohort. Kim et al. 2023 (Front Psychiatry, doi 10.3389/fpsyt.2023.1232015). The 70.2% is the evidence for the claim, not the claim itself: it is the within-UCLA leave-one-out accuracy for both connectivity directions; transfer to COBRE was 61.5% for decreased connectivity and the reverse direction was not above chance. The paper names ds000030, but not the 94 participants or per-file processing, and reports GRETNA/SPM12, so reuse of the 2017 fMRIPrep derivatives is not asserted. Lesson: save the participant manifest with every analysis.\n\n" + fromOld(13, 12));
+    text(s, [{ text: "Partial link: ", options: { bold: true, color: C.accent2 } }, { text: "authors' OSF data + code reproduce 66/94; not given: which ds000030 participant each matrix is" }], 9.7, 5.15, 3.2, 1.4, { fontSize: 18, color: C.text1, valign: "middle" });
+    s.addNotes("1:30. Terms: Kim et al. 2023 classified schizophrenia patients versus controls from resting-state connectivity between 268 brain regions (Shen atlas). Leave-one-out means: train on 93 people, predict the 94th, repeat for every person; 70.2% means 66 of the 94 predictions were right (50% is chance for a 47/47 sample; permutation p = 0.001). The question is the paper's own, verbatim from the end of its Introduction: 'Does increased connectivity add information regarding schizophrenia?' (the abstract frames the same aim as the direction of the connectivity alteration). The claim answers it: within a cohort, adding increased to decreased connections improves classification ('combining information from both increased and decreased rsFC substantially improved prediction accuracy'); across cohorts, 'the prediction model using decreased rsFC performed best' (UCLA to COBRE 61.5%), with decreased connections mostly 'within and between the motor networks'. Evidence, re-run here: the authors' OSF project (https://osf.io/agqtn/) has UCLA_data.mat — the 94 connectivity matrices and labels — and their MATLAB code; a Python port gives exactly 70.2% (66/94) with both directions, and also the two numbers the paper does not report: 52.1% with decreased connections alone and 61.7% with increased alone. Cohort: 50 patients and 120 controls in ds000030, motion exclusions (excluded IDs in the supplementary material), then propensity-score matching on age, sex and scanner to 47 + 47. So the link is partial, not missing: the data and code to reproduce the result are public; what is not given is which ds000030 participant each matrix is. Speaker note: earlier drafts paraphrased the question twice and stated the cohort link as missing; both were corrected after reading the paper and its OSF project. Lesson: record the participant manifest with every analysis.\n\n" + fromOld(13, 12));
   }
 
 
   // 8a Spot the error
   const statements = [
-    ["A", "UCLA leave-one-out accuracy was 70.2%."],
+    ["A", "Each UCLA participant left out once: 66 of 94 (70.2%) classified correctly."],
     ["B", "Connectivity predicts schizophrenia with 70.2% accuracy in any cohort."],
     ["C", "70.2% proves a causal disease mechanism."],
   ];
