@@ -144,6 +144,7 @@ const prov = (production, checking, ...sources) => ({ production, checking, sour
 const DEMO_SOURCE_REL = "agent_skills: skills/neuroimaging-kg/examples/claude_code_demo.md";
 const SLIDE_PROV = {
   "Connecting neuroimaging knowledge graphs across data, publications and labs": prov(["H", "L"], "reviewed", PLAN),
+  "Building knowledge graphs from datasets and papers": prov(["H", "L", "R"], "unverified", "https://sandbox.brainkb.org/", "https://github.com/sensein/brainkb-ui/tree/a4815a3", "https://github.com/sensein/agent_skills"),
   "Components of a dataset and a publication": prov(["P", "R", "A"], "re-run · validated", CNP_ZIP, "experiments/abide/literature_review/results_synthesis.json"),
   "Harmonising graphs built by different people": prov(["H", "L", "A", "R"], "re-run · reviewed", PLAN, "experiments/abide/results/simple2.json", "experiments/abide/results/simple2_tool_agreement.csv", "agent_skills: skills/neuroimaging-kg/examples/abide_one_site/demo_output.txt", "agent_skills: skills/neuroimaging-kg/scripts/compare_graphs.py"),
   "Joining graphs through shared identifiers": prov(["A", "R"], "re-run · validated", "experiments/abide/results/simple2.json", "experiments/abide/results/simple2_tool_agreement.csv", "experiments/abide/results/publications.json"),
@@ -274,6 +275,7 @@ const DATA = {
   "The two example datasets": ["ds000030 (OpenNeuro, commit 4070b6e)", "ABIDE I (ABIDE Preprocessed)"],
   "A knowledge graph in four statements": [D_CNP],
   "Components of a dataset and a publication": [D_CNPs, D_AB, D_REVs],
+  "Building knowledge graphs from datasets and papers": ["ABIDE I", "Kim et al. 2023", "74 ABIDE studies"],
   "Knowledge graph around a single participant": [D_AB, D_S2],
   "Linking a claim to its evaluation and cohort": [D_CNPs, D_KIM],
   "Exercise: evaluating claims against a source": [D_KIM],
@@ -313,6 +315,7 @@ const DATA = {
 const STRIP = {
   "The two example datasets": "Counts read by SPARQL: ds000030 graph (combined_graph.ttl, 1,113,959 triples); ABIDE graph/core (queries/Q14.rq)",
   "A knowledge graph in four statements": "Path query over ds000030 nidm_phenotypes.ttl: record → bis_parcel1; wasGeneratedBy → session → qualifiedAssociation/agent → participant: 272 rows",
+  "Building knowledge graphs from datasets and papers": "Pages listed from sensein/brainkb-ui source (commit a4815a3) for sandbox.brainkb.org; skills in sensein/agent_skills",
   "Components of a dataset and a publication": "Dataset side: ds000030 graph and ABIDE graph/core · publication side: claims_and_questions.ttl, literature_kg.ttl (17 / 74 reconstructible)",
   "Entities in a neuroimaging knowledge graph": "Node and edge types; teal = types used in our ds000030 and ABIDE graphs (assigned in the plan, not computed by a query)",
   "Knowledge graph around a single participant": "13 SPARQL queries (queries/Q13_*.rq) over graph/core, scope, view/volumes → 239 triples → figure: code/participant_ego.py",
@@ -720,6 +723,56 @@ async function main() {
     ["participant IDs", "accession and version", "cohort definition"].forEach((t, i) =>
       shp(s, pres.shapes.ROUNDED_RECTANGLE, 5.82, 3.3 + i * 0.78, 1.67, 0.64, C.background1, t, { fontSize: 14, bold: true, color: C.text2, margin: 4 }));
     s.addNotes("1:15. Terms: ds000030 is the UCLA Consortium for Neuropsychiatric Phenomics dataset on OpenNeuro; the Barratt Impulsiveness Scale is a 30-item impulsivity questionnaire; a scan sidecar is the BIDS JSON file of acquisition parameters; C-PAC and fMRIPrep are preprocessing pipelines; BBR and ANTs SyN are registration methods to anatomy and to the MNI template. Concrete components, each with an example already in this talk. A dataset is more than its images: participant and phenotype tables (272 participants; 52 tables and 1,983 columns in ds000030), a data dictionary that defines derived scores (the 'acts impulsively' score bis_parcel1 is the mean of Barratt items 17 and 19, stored on each participant's questionnaire record), scan sidecars (sub-10159's resting BOLD: TR 2 s, TE 0.03 s, 3 T, scanner 35343), task event files (256 rows), a file inventory (2,531 pointers), derivatives (Barratt scores; CC200 time series from C-PAC) and a release version (commit 4070b6e; ABIDE Preprocessed). A publication has its own components: the research question, the cohort and its exclusions (Kim 2023, 47 + 47; Abraham 2017, 871 of ABIDE I's 1,112), preprocessing with versions (Gorgolewski 2017: FMRIPREP with FreeSurfer 6.0.0 BBR and ANTs 2.1.0 SyN to MNI152NLin2009cAsym), the analysis and evaluation scheme, scoped results (70.2% UCLA leave-one-out) and data and code availability; in our review, only 17 of 74 ABIDE studies had reconstructible cohorts. What links the two sides is participant IDs, the dataset accession and version, and the cohort definition, which is what the joining slide uses. Details are in the backup slides on the ds000030 extraction, the papers' research questions, and scan, event and phenotype details.");
+  }
+
+  // 4c3 Building knowledge graphs from datasets and papers
+  {
+    const s = addSlide("CONTENT", MAIN);
+    s.addText("Building knowledge graphs from datasets and papers", { placeholder: "title" });
+    const LANES = [
+      [fa.FaDatabase, C.accent4, C.accent1, "A dataset", "BIDS + phenotype tables",
+        "neuroimaging-kg skill (agent_skills PR #49)", "PyNIDM bidsmri2nidm / csv2nidm; ReproNim NIDM BIDS apps (FreeSurfer, ANTs, MRIQC → NIDM)",
+        "NIDM / PROV dataset graph", "ABIDE I graph; one-site demo (Caltech)"],
+      [fa.FaFileAlt, C.accent6, C.text2, "One publication", "PDF or DOI",
+        "StructSense skill", "sandbox: Neuroscientific Named Entity Extraction; Structured Resource Extraction (BrainKB Resource Ontology)",
+        "claims, entities, datasets and tools, with evidence spans", "Kim 2023 claims (StructSense pilot)"],
+      [fa.FaBook, C.accent5, C.accent2, "A body of publications", "a topic or question",
+        "SynthScholar skill", "sandbox: SynthScholar — protocol → search strategy → screening and charting",
+        "review graph (SLR ontology)", "74 ABIDE studies"],
+    ];
+    const KBX = 10.3, KBY = 1.5, KBW = 2.65, KBH = 4.55;
+    blob(s, KBX, KBY, KBW, KBH, "BFE0E0", 7);
+    for (const [i, [Ic, fill, col, inp, inpSub, skill, detail, out, used]] of LANES.entries()) {
+      const y = 1.5 + i * 1.55, cy = y + 0.55;
+      shp(s, pres.shapes.ROUNDED_RECTANGLE, 0.5, y, 2.05, 1.1, fill, [
+        { text: inp, options: { bold: true, fontSize: 17, color: col, breakLine: true } },
+        { text: inpSub, options: { fontSize: 14, color: C.text1 } },
+      ], { align: "left", margin: 8, rectRadius: 0.5 });
+      shp(s, pres.shapes.OVAL, 0.02, y + 0.33, 0.42, 0.42, col);
+      n += 1;
+      s.addImage({ data: await icon(Ic), x: 0.12, y: y + 0.43, w: 0.22, h: 0.22, objectName: `buildIcon${n}` });
+      curve(s, 2.55, cy, 2.8, cy, { arrow: true, width: 2, color: col });
+      shp(s, pres.shapes.ROUNDED_RECTANGLE, 2.8, y, 4.75, 1.1, C.background2, [
+        { text: skill, options: { bold: true, fontSize: 16, color: C.text2, breakLine: true } },
+        { text: detail, options: { fontSize: 14, color: C.text1 } },
+      ], { align: "left", margin: 6, line: "C9D3D7", rectRadius: 0.3 });
+      curve(s, 7.55, cy, 7.8, cy, { arrow: true, width: 2, color: col });
+      shp(s, pres.shapes.ROUNDED_RECTANGLE, 7.8, y, 2.2, 1.1, col, out, { fontSize: 15, bold: true, color: C.background1, rectRadius: 0.5, margin: 6 });
+      curve(s, 10.0, cy, KBX + 0.2, KBY + KBH / 2, { arrow: true, width: 2, color: col });
+      text(s, [{ text: "Used in this talk: ", options: { bold: true } }, { text: used }], 2.8, y + 1.14, 7.2, 0.35, { fontSize: 14, italic: true, color: C.accent1, valign: "middle" });
+    }
+    text(s, [
+      { text: "Ingest into BrainKB", options: { bold: true, fontSize: 20, color: C.text2, breakLine: true } },
+      { text: "sandbox: Ingest Knowledge Graph, then job status", options: { fontSize: 14, breakLine: true } },
+      { text: " ", options: { fontSize: 8, breakLine: true } },
+      { text: "Query it", options: { bold: true, fontSize: 16, color: C.text2, breakLine: true } },
+      { text: "brainkb skill · BrainKB MCP", options: { fontSize: 14 } },
+    ], KBX + 0.25, KBY + 1.05, KBW - 0.5, 2.5, { color: C.text1, align: "center", valign: "middle" });
+    shp(s, pres.shapes.ROUNDED_RECTANGLE, 0.4, 6.3, 7.15, 0.58, C.background1, [
+      { text: "Questionnaires: ", options: { bold: true } }, { text: "sandbox ReproSchema Extraction (PDF → ReproSchema assessments)" },
+    ], { fontSize: 15, color: C.text2, line: C.accent3, dash: "dash", rectRadius: 0.5, margin: 6 });
+    text(s, "sandbox.brainkb.org", KBX, 6.35, KBW, 0.45, { fontSize: 16, bold: true, color: C.accent1, align: "center", valign: "middle" });
+    s.addNotes("1:00. Before the worked examples, where a graph comes from. There are three starting points, and which lane you start in depends on what you have. If you have your own data, start with the dataset lane: PyNIDM's bidsmri2nidm and csv2nidm turn a BIDS dataset and its phenotype tables into NIDM, ReproNim's NIDM BIDS apps add FreeSurfer, ANTs and MRIQC outputs as NIDM, and the neuroimaging-kg skill (sensein/agent_skills PR #49) wraps these steps with validation and provenance. If you want what one paper reports, StructSense extracts named entities and resources such as datasets and tools, with the span of text each came from. If your question spans a literature, SynthScholar runs a systematic review from a protocol through search, screening and charting, and writes the result as a review graph. Questionnaires have their own route: ReproSchema Extraction turns a PDF questionnaire into ReproSchema assessments. All three lanes end as graphs that carry shared identifiers (participant IDs, dataset accessions, DOIs, ORCIDs), so they can be ingested into BrainKB (the sandbox's Ingest Knowledge Graph page, with a job-status page), queried with the brainkb skill or the BrainKB MCP server, and joined to each other: that is Objective 2. How this slide was checked: the sandbox page names were identified from the brainkb-ui source code (commit a4815a3) and were not exercised in this session, because the browser was unavailable, hence 'unverified'. The three 'used in this talk' examples were run: the ABIDE I graph (Knowledge graph around a single participant; Joining graphs through shared identifiers), the Caltech one-site build (the two live-demo slides), the Kim 2023 claims from the StructSense pilot (Linking a claim to its evaluation and cohort; backup: StructSense extraction pilot), and the 74-study SynthScholar review (Evaluation schemes in 74 ABIDE studies; Asking Claude about the literature graph).");
   }
 
   // 4b What a neuroimaging graph can hold
@@ -1192,8 +1245,8 @@ async function main() {
     s.addText(outs, { x: 9.12, y: 1.9, w: 3.66, h: extra ? 4.05 : 4.95, fontFace: "Courier New", fontSize: 16, color: C.text1, valign: "top", paraSpaceAfter: 4, margin: 0, isTextBox: true, objectName: `demoOut${di}` });
     if (extra) shp(s, pres.shapes.ROUNDED_RECTANGLE, 9.0, 6.2, 3.9, 0.75, C.accent5, extra, { fontSize: 16, bold: true, color: C.accent2, line: C.accent2, rectRadius: 0.3 });
     s.addNotes(di === 1
-      ? "1:45. Install the skill into this project only, then build a graph for one ABIDE I site (Caltech, 38 participants) from the phenotype table and ReproNim's NIDM file of brain volumes. Prompt 1 took 34 s in testing: the graph built, its checks passed, and a deliberately deleted 'derived from' link was caught. The assistant also said the volumes came from three tools (FreeSurfer, FSL, ANTs); Caltech's file has FreeSurfer and FSL only. That is a real check-against-the-graph moment: ask the room how we would verify it, and point out that one query over the software agents in the graph answers it. Prompt 2 (14 s) joins IQ from our table with FreeSurfer hippocampal volume from ReproNim's file through the shared participant ID: 18 autistic and 19 control participants. Repository and branch: " + DEMO.repo_branch + ". " + DEMO.note
-      : "1:45. Prompt 3 (162 s, the slow one) traces participant 51456's left-hippocampus volume to its FreeSurfer run and the T1-weighted scan. The volume (4513.9 mm³) and its meaning are recorded; the link 'FreeSurfer ran on this scan' is not recorded, only implied by the subject ID appearing in a command line, and the FreeSurfer version appears only inside a path string. The graph shows where provenance is missing. Prompt 4 (55 s) applies the stricter motion rule, mean FD below 0.15 mm: participants 51456 and 51469 drop out, so the cohort becomes 17 autistic and 19 control, and the assistant flags two queries that ignore the cohort. " + DEMO.note);
+      ? "1:15. Install the skill into this project only, then build a graph for one ABIDE I site (Caltech, 38 participants) from the phenotype table and ReproNim's NIDM file of brain volumes. Prompt 1 took 34 s in testing: the graph built, its checks passed, and a deliberately deleted 'derived from' link was caught. The assistant also said the volumes came from three tools (FreeSurfer, FSL, ANTs); Caltech's file has FreeSurfer and FSL only. That is a real check-against-the-graph moment: ask the room how we would verify it, and point out that one query over the software agents in the graph answers it. Prompt 2 (14 s) joins IQ from our table with FreeSurfer hippocampal volume from ReproNim's file through the shared participant ID: 18 autistic and 19 control participants. Repository and branch: " + DEMO.repo_branch + ". " + DEMO.note
+      : "1:15. Prompt 3 (162 s, the slow one) traces participant 51456's left-hippocampus volume to its FreeSurfer run and the T1-weighted scan. The volume (4513.9 mm³) and its meaning are recorded; the link 'FreeSurfer ran on this scan' is not recorded, only implied by the subject ID appearing in a command line, and the FreeSurfer version appears only inside a path string. The graph shows where provenance is missing. Prompt 4 (55 s) applies the stricter motion rule, mean FD below 0.15 mm: participants 51456 and 51469 drop out, so the cohort becomes 17 autistic and 19 control, and the assistant flags two queries that ignore the cohort. " + DEMO.note);
   }
 
   // 14b The lecture's own provenance graph
@@ -1276,7 +1329,7 @@ async function main() {
       { text: "ABIDE_Collaboration_Knowledge_Graph.zip", options: { breakLine: true, fontSize: 20 } },
       { text: "github.com/sensein/agent_skills · abstractatlas.brainkb.org", options: { fontSize: 20 } },
     ], { placeholder: "body" });
-    s.addNotes("0:45 + discussion. Main-route total: 24:00 (opening: 0:20 title, 0:40 objectives, 0:45 the two datasets, 1:15 four-statement primer; objective 1: 1:15 dataset and publication components, 0:45 entities, 1:00 participant graph, 1:30 claim chain, 0:45 claim exercise, 0:30 quotation checks; objective 2: 1:30 joining graphs, 1:00 harmonising graphs, 0:45 coverage, 0:45 ABIDE design, 1:00 ABIDE results, 0:30 QC exercise, 0:45 dependency tracing, 0:30 publications and abstracts, 1:00 asking Claude about the literature graph, 0:30 evaluation schemes, 1:00 ReproPond and ReproLake; with an assistant: 1:45 demo 1, 1:45 demo 2, 0:45 the lecture's provenance graph; close: 1:00 practices, 0:45 discussion). Open the floor: which link in the chain (manifest, scope, derivative lineage, review) would your lab require before an agent's change is accepted? Offer a live look at the HTML experiment report if time allows.\n\n" + fromOld(28));
+    s.addNotes("0:45 + discussion. Main-route total: 24:00 (opening: 0:20 title, 0:40 objectives, 0:45 the two datasets, 1:15 four-statement primer; objective 1: 1:15 dataset and publication components, 1:00 building a graph from a dataset, a paper or a set of papers, 0:45 entities, 1:00 participant graph, 1:30 claim chain, 0:45 claim exercise, 0:30 quotation checks; objective 2: 1:30 joining graphs, 1:00 harmonising graphs, 0:45 coverage, 0:45 ABIDE design, 1:00 ABIDE results, 0:30 QC exercise, 0:45 dependency tracing, 0:30 publications and abstracts, 1:00 asking Claude about the literature graph, 0:30 evaluation schemes, 1:00 ReproPond and ReproLake; with an assistant: 1:15 demo 1, 1:15 demo 2, 0:45 the lecture's provenance graph; close: 1:00 practices, 0:45 discussion). Open the floor: which link in the chain (manifest, scope, derivative lineage, review) would your lab require before an agent's change is accepted? Offer a live look at the HTML experiment report if time allows.\n\n" + fromOld(28));
   }
 
   // ---------------------------------------------------------------- backup
@@ -1613,7 +1666,7 @@ async function main() {
   // ---------------------------------------------------------------- section tags (main slides)
   const O1 = "Objective 1", O2 = "Objective 2", AS = "With an assistant";
   const TAGS = {
-    "The two example datasets": "Objectives 1 and 2", "A knowledge graph in four statements": O1, "Components of a dataset and a publication": O1, "Entities in a neuroimaging knowledge graph": O1,
+    "The two example datasets": "Objectives 1 and 2", "A knowledge graph in four statements": O1, "Components of a dataset and a publication": O1, "Building knowledge graphs from datasets and papers": O1, "Entities in a neuroimaging knowledge graph": O1,
     "Knowledge graph around a single participant": O1, "Linking a claim to its evaluation and cohort": O1, "Exercise: evaluating claims against a source": O1, "Quotation checks and scientific entailment": O1,
     "Joining graphs through shared identifiers": O2, "Harmonising graphs built by different people": O2, "Participant coverage by data element": O2, "ABIDE I: two analyses, two research questions": O2,
     "ABIDE I: group differences and site-held-out prediction": O2, "Exercise: consequences of a stricter motion threshold": O2, "Dependency tracing after a QC revision": O2,
