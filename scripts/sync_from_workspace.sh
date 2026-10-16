@@ -9,6 +9,7 @@ plan="${2:-$src/../talk_plan.md}"
 root="$(cd "$(dirname "$0")/.." && pwd)"
 cp "$src/apply_theme.js" "$src/old_deck_v3.md" "$root/slides/"
 cp "$src/figs_slide/make_slide_figs.py" "$root/slides/figs_slide/"
+[ -f "$src/figs_slide/make_qr.py" ] && cp "$src/figs_slide/make_qr.py" "$root/slides/figs_slide/"
 # repo-relative paths in the figure script
 sed -i.bak -e 's#^SRC = Path(".*")\.expanduser()#SRC = Path(__file__).resolve().parents[2] / "experiments" / "abide"#' \
   -e 's#^OUT = Path(".*")\.expanduser()#OUT = Path(__file__).resolve().parent#' "$root/slides/figs_slide/make_slide_figs.py"

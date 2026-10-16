@@ -575,6 +575,13 @@ async function main() {
     s.addText([
       { text: "Satrajit Ghosh", options: { bold: true, fontSize: 18 } },
     ], { placeholder: "body" });
+    // repository link and QR code
+    s.addImage({ path: path.join(__dirname, "figs_slide", "repo_qr.png"), x: 0.8, y: 4.65, w: 1.7, h: 1.7, objectName: "repoQR",
+      hyperlink: { url: "https://github.com/ReproNim/llm-workshop-kg", tooltip: "github.com/ReproNim/llm-workshop-kg" } });
+    text(s, [
+      { text: "Slides, code, graphs and provenance", options: { breakLine: true, fontSize: 14, color: "C9D3D7" } },
+      { text: "github.com/ReproNim/llm-workshop-kg", options: { fontSize: 16, bold: true, color: "FFFFFF", hyperlink: { url: "https://github.com/ReproNim/llm-workshop-kg" } } },
+    ], 2.7, 5.0, 4.2, 0.95, { valign: "middle" });
     // badge key
     const LX = 6.95, CX = 10.75;
     text(s, "How each slide was made", LX, 4.35, 5.9, 0.4, { fontSize: 15, bold: true, color: "FFFFFF", valign: "middle" });
