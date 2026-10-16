@@ -1,5 +1,5 @@
 {
- "_doc": "Every number on a slide that comes from an experiment result. build_deck.js formats each entry with slides/values.js; scripts/check_slide_values.py recomputes it from the source and checks it appears on the named slide. Paths are relative to the repository root; 'path' is a dot path into JSON (keys may contain spaces). Formats: int (thousands separator), round (nearest integer), dec2, dec3, pct0 / pct1 (fraction shown as percent), signed2 (two decimals, Unicode minus), sub (path minus path2, int). Format 'count' counts rows of a CSV/TSV (optionally column == equals). 'quotes' lists demo outputs that must appear verbatim in their transcript and on the slide.",
+ "_doc": "Every number on a slide that comes from an experiment result. build_deck.js formats each entry with slides/values.js; scripts/check_slide_values.py recomputes it from the source and checks it appears on the named slide. Paths are relative to the repository root; 'path' is a dot path into JSON (keys may contain spaces). Formats: int (thousands separator), round (nearest integer), dec2, dec3, pct0 / pct1 (fraction shown as percent), signed2 (two decimals, Unicode minus), sub (path minus path2, int). Format 'count' counts rows of a CSV/TSV (optionally column == equals). 'quotes' lists demo outputs that must appear verbatim in their transcript and on the slide. A quote may give 'slide_text' when the slide words it differently from the source; both must match verbatim.",
  "values": [
   {
    "id": "cohort.aN",
@@ -448,6 +448,60 @@
    "slide": "Live demo: querying and using the graph",
    "source": "slides/demo/claude_code_demo_transcript.md",
    "text": "17 autism / 19 control"
+  },
+  {
+   "slide": "Asking Claude about the literature graph",
+   "source": "slides/demo/literature_query_answer.md",
+   "text": "**66.8%**",
+   "slide_text": "66.8%"
+  },
+  {
+   "slide": "Asking Claude about the literature graph",
+   "source": "slides/demo/literature_query_answer.md",
+   "text": "**56% balanced accuracy**",
+   "slide_text": "56% balanced accuracy"
+  },
+  {
+   "slide": "Asking Claude about the literature graph",
+   "source": "slides/demo/literature_query_answer.md",
+   "text": "**71% ± 6%**",
+   "slide_text": "71% ± 6%"
+  },
+  {
+   "slide": "Asking Claude about the literature graph",
+   "source": "slides/demo/literature_query_answer.md",
+   "text": "**73.4%** (CC200 atlas",
+   "slide_text": "73.4% (CC200 atlas)"
+  },
+  {
+   "slide": "Asking Claude about the literature graph",
+   "source": "slides/demo/literature_query_answer.md",
+   "text": "**~62%**",
+   "slide_text": "S-072 ~62%"
+  },
+  {
+   "slide": "Harmonising graphs built by different people",
+   "source": "slides/demo/abide_one_site_demo_output.txt",
+   "text": "| participants | 38 | 0 | 0 |",
+   "slide_text": "38 / 38 participants matched"
+  },
+  {
+   "slide": "Harmonising graphs built by different people",
+   "source": "slides/demo/abide_one_site_README.md",
+   "text": "12 concepts are shared",
+   "slide_text": "12 concepts shared"
+  },
+  {
+   "slide": "Harmonising graphs built by different people",
+   "source": "slides/demo/abide_one_site_README.md",
+   "text": "28 variables (e.g. the ADOS and",
+   "slide_text": "28 variables"
+  },
+  {
+   "slide": "Harmonising graphs built by different people",
+   "source": "slides/demo/abide_one_site_demo_output.txt",
+   "text": "282 participant×concept values compared; 0 differ",
+   "slide_text": "0 of 282 participant × concept values conflict"
   }
  ]
 }

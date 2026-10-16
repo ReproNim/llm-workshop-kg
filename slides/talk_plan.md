@@ -284,3 +284,28 @@ Standards and vocabularies
 - AbstractAtlas — searchable map of OHBM 2026 abstracts and their extracted claims. OpenAlex — open catalogue of
   scholarly works. SynthScholar — systematic-review tool (PRISMA). StructSense — claim/entity extraction tool.
   Brain Researcher — an external AI research assistant reached through MCP (a standard plug-in interface for tools).
+
+## Every slide relates to the knowledge graph (speaker direction, 2026-10-15)
+
+Each main slide carries a small "In the graph" strip: what the slide reads from the graph (named graph(s),
+node/edge types, query file) and what produced any figure (script path). If a slide does not relate to the graph,
+reframe or cut it. Example — Participant coverage by data element: "8 SPARQL queries (queries/Q14.rq) over
+graph/core + view/volumes + ReproNim simple2 graphs → counts by site and diagnosis → figure by
+code/element_coverage.py". The data are in the graph; the figure is a script output.
+
+Reframes: Capabilities and limits → "What an assistant can read from a graph, and what it cannot";
+How this lecture was produced → "The lecture's own provenance graph" (talk_provenance.ttl) with one query;
+ReproPond/ReproLake → scope and consent as attributes on graph records.
+
+## Harmonising graphs built by different people (new main slide, Objective 2)
+
+1. Shared identifiers — dataset IRI + version, participant ID, DOI, ORCID, RRID.
+   Example: ReproNim simple2 ↔ ours via ndar:src_subject_id = SUB_ID, 1,112/1,112.
+2. Shared vocabularies — nidm:isAbout concepts (InterLex/nidm-terms), UBERON regions, Cognitive Atlas tasks.
+3. Shared schema and validation — PyNIDM LinkML schema → SHACL; the same checks for every contributor.
+4. Reviewed mapping links where vocabularies differ — skos:exactMatch / closeMatch, attributed to a reviewer;
+   never a silent owl:sameAs.
+5. One named graph per contributor, with PROV — conflicts stay visible instead of being overwritten.
+   Examples: "CSF" under one UBERON term is total CSF in FSL but ventricles in ANTs/FreeSurfer (~200×);
+   two agents reconstructed the ABIDE cohorts differently (871-based vs 767).
+6. Federation instead of copying — Neurobagel sends the query to each pond.

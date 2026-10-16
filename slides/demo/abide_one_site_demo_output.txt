@@ -1,0 +1,104 @@
+
+### Step 1 — fetch pinned public inputs for Caltech and check their SHA-256
+ok           Phenotypic_V1_0b_preprocessed1.csv  (0.4 MB)
+ok           abide_terms.json  (0.0 MB)
+ok           ants_cde.ttl  (0.1 MB)
+ok           fsl_cde.ttl  (0.0 MB)
+ok           freesurfer_cde.ttl  (1.8 MB)
+ok           nidm_schema.yaml  (0.0 MB)
+ok           Caltech_nidm.ttl  (1.0 MB)
+
+### Steps 2–6 — build the graph (subset table, csv2nidm, identity join, cohort, claim, provenance)
+
+== 1/6 subset the ABIDE phenotype table to site CALTECH
+   38 participants, 75 mapped columns (0.0 s)
+
+== 2/6 convert phenotype rows to NIDM with PyNIDM csv2nidm (non-interactive)
+   4468 triples (6.2 s)
+
+== 3/6 join our participants to ReproNim's site NIDM (reviewable identity links)
+   matched 38, only in our table 0, only in ReproNim 0, conflicts 0 (1.6 s)
+
+== 4/6 define the head-motion cohort (mean FD < 0.2 mm) and record how
+   38 of 38 participants kept (0.0 s)
+
+== 5/6 add the dataset record (consent scope) and a scoped claim from Abraham et al. 2017
+   dataset record + 1 claim (0.0 s)
+
+== 6/6 write the provenance graph
+   131 triples (0.0 s)
+
+### Step 7a — validate the layers we authored with the skill's core rules, and prove a removed derivation edge is caught
+{
+ "triples": 429,
+ "conforms": true,
+ "results": 0,
+ "messages": [],
+ "mutation_test": {
+  "baseline_conforms": true,
+  "baseline_results": 0,
+  "removed_triples": 11,
+  "mutated_conforms": false,
+  "mutated_results": 6,
+  "mutated_messages": [
+   "output of an activity that used inputs has no prov:wasDerivedFrom (derivation edge missing)"
+  ],
+  "caught": true
+ }
+}
+
+### Step 7b — validate the NIDM layer against SHACL generated from PyNIDM's LinkML schema (findings, not a gate)
+phenotype.ttl (written by PyNIDM csv2nidm) vs PyNIDM's own LinkML schema: conforms=False, 176 results; first messages:
+    More than 1 values on niiri:ADI_R_RSRCH_RELIABLE_44nvpm-><http://schema.repronim.org/choices>
+    More than 1 values on niiri:ADOS_RSRCH_RELIABLE_1bidqik-><http://schema.repronim.org/choices>
+    More than 1 values on niiri:CURRENT_MED_STATUS_1vc6meg-><http://schema.repronim.org/choices>
+
+### Step 8 — compute gold answers from the source files (not from the graph store)
+gold answers for 5 questions -> graph/gold.json
+
+### Step 9 — load every layer into Oxigraph as named graphs and answer the competency questions
+PASS  Q1_participants
+PASS  Q2_cohort_by_diagnosis
+PASS  Q3_fiq_and_freesurfer_hippocampus
+PASS  Q4_cohort_provenance
+PASS  Q5_claims_using_dataset
+
+# Q1_participants
+  in_phenotype=38, linked_to_repronim=38
+
+# Q2_cohort_by_diagnosis
+  dx_group=1, n=19
+  dx_group=2, n=19
+
+# Q3_fiq_and_freesurfer_hippocampus
+  dx_group=1, n=18
+  dx_group=2, n=19
+
+# Q4_cohort_provenance
+  step=Keep participants with mean FD < 0.2 mm, software=neuroimaging-kg/build_site.py, version=0.1, parameter=mean_fd_max_mm, value=0.2, input_file=Caltech_motion.csv, input_sha256=c4c8658096653fa6c03afebfd3ff3063e291866e36a1bb4ff1dbd6a2b9b43938
+
+# Q5_claims_using_dataset
+  claim_type=predictive, population=ABIDE I, 871 of 1,112 participants after quality control, all sites, value=0.67, quote=Good choices of methods for the various steps of the pipeline lead to 67% prediction accuracy on the full ABIDE data, paper=https://doi.org/10.1016/j.neuroimage.2016.10.045, consent_scope=broad-sharing
+
+# Q6_hippocampus_by_tool
+  participant=51456, tool=http://purl.org/nidash/fsl#, measure=Left-Hippocampus (mm^3), volume_mm3=3766
+  participant=51456, tool=https://surfer.nmr.mgh.harvard.edu/, measure=Left-Hippocampus Volume_mm3 (mm^3), volume_mm3=4513.9
+
+### Step 10 — compare our graph with ReproNim's graph for Caltech as two contributors (identifiers, vocabulary, conflicts)
+# Comparison of contributors' graphs
+
+- **ours**: 38 participants, 75 data elements, 3 file(s)
+- **repronim**: 38 participants, 454 data elements, 4 file(s)
+
+## ours vs repronim
+
+| Identifiers | Matched | Only in ours | Only in repronim |
+|---|---|---|---|
+| participants | 38 | 0 | 0 |
+| datasets | 0 | 1 | 0 |
+| publications (DOI) | 0 | 1 | 0 |
+
+
+**Conflicts.** 282 participant×concept values compared; 0 differ beyond rtol=0.01; 0 not compared because one side has several elements for the same concept; 0 cohorts with different members.
+
+### Done in 15 s — graph files are in ./graph, answers in graph/answers.json

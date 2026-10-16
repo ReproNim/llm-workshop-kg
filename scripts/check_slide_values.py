@@ -104,10 +104,11 @@ def main(pptx_path):
         source_text = (ROOT / quote["source"]).read_text()
         slides = [t for t in texts if quote["slide"] in t]
         checked += 1
+        on_slide = quote.get("slide_text", quote["text"])
         if quote["text"] not in source_text:
             failures.append(f"quote not in {quote['source']}: {quote['text']!r}")
-        elif not any(quote["text"] in t for t in slides):
-            failures.append(f"quote not on '{quote['slide']}': {quote['text']!r}")
+        elif not any(on_slide in t.replace("\u00a0", " ") for t in slides):
+            failures.append(f"quote not on '{quote['slide']}': {on_slide!r}")
     for line in failures:
         print("MISMATCH", line)
     print(f"{checked} mapped values checked, {len(failures)} problems")

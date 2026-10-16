@@ -99,6 +99,7 @@ def port(text):
     text = text.replace('"ABIDE_Collaboration_Experiment/', '"experiments/abide/')
     text = text.replace('x.startsWith("ABIDE_Collaboration_Experiment")', 'x.startsWith("experiments/abide")')
     text = text.replace("deck_build/build_deck.js", "slides/build_deck.js")
+    text = text.replace("deck_build/demo/", "slides/demo/").replace("deck_build/prov_query.py", "slides/prov_query.py")
     text = re.sub(r'const DEMO_SOURCE = "[^"]*";', 'const DEMO_SOURCE = path.join(__dirname, "demo/claude_code_demo.md");', text)
     return text, misses
 
