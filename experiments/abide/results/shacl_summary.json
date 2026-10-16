@@ -46,7 +46,7 @@
   },
   {
    "mutation": "activity snapshot without timestamp",
-   "focus": "urn:repronim:abide:snapshot/reproseed/20261015T145737Z",
+   "focus": "urn:repronim:abide:snapshot/pyoxigraph/20261015T145737Z",
    "rejected": true,
    "messages": [
     "Message: snapshot needs prov:generatedAtTime"
