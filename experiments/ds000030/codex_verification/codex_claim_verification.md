@@ -50,13 +50,20 @@ Sources: https://arxiv.org/html/2608.19902v1, https://doi.org/10.3389/fpsyt.2023
 
 ## Corrections after review (2026-10-15)
 
-- **Kim et al. 2023 research question.** The ds000030 package (produced by an earlier agentic system) records
-  question `ex:Q1` as "Does increased connectivity add predictive information?", and a later deck revision
-  paraphrased it as "Do decreased and increased connectivity predict diagnosis?". Neither is the paper's question.
-  The abstract states (verbatim): "we aimed to determine the direction of the connectivity alteration associated
-  with schizophrenia using a multivariate, data-driven approach." The "added information" wording is closer to a
-  result: "combining information from both increased and decreased rsFC substantially improved prediction
-  accuracy". Source: https://www.frontiersin.org/articles/10.3389/fpsyt.2023.1232015/full .
-  The package graph is left as produced; this erratum records the correction. Caught by the speaker.
+- **Kim et al. 2023 research question (corrected 2026-10-16; supersedes the 2026-10-15 note).** The paper states
+  its question verbatim at the end of the Introduction: "Does increased connectivity add information regarding
+  schizophrenia?"; the abstract frames the aim as "to determine the direction of the connectivity alteration
+  associated with schizophrenia using a multivariate, data-driven approach." The package's `ex:Q1`
+  ("Does increased connectivity add predictive information?") therefore matches the paper's stated question; the
+  2026-10-15 note that called it wrong was itself wrong, having checked only the abstract. The deck paraphrase
+  "Do decreased and increased connectivity predict diagnosis?" was not the paper's question; the deck now uses the
+  Introduction's wording. Source: https://www.frontiersin.org/articles/10.3389/fpsyt.2023.1232015/full .
+- **Kim et al. 2023 cohort link is partial, not missing.** The Data Availability Statement points to
+  https://osf.io/agqtn/ ("The preprocessed data and analysis code presented in the study are publicly available"),
+  which holds UCLA_data.mat (94 connectivity matrices, Shen 268 regions, plus labels) and MATLAB code; excluded
+  participants' IDs are in the supplementary material. A Python port of UCLA_code.m reproduces 70.2% (66/94) and
+  adds unreported values: decreased-only 52.1%, increased-only 61.7%. Not given: which ds000030 participant each
+  matrix is (the 47 + 47 sample is propensity-score matched). The package's "membership not reconstructed" status
+  understates what is public.
 - **ds000030 has no full-scale IQ.** Its WAIS table holds raw subtest scores only (voc_totalraw, lns_totalraw,
   lns_llns, mr_totalraw); a deck query example that used full-scale IQ on ds000030 was corrected. Caught by the speaker.

@@ -1,0 +1,12 @@
+{
+ "n": 94,
+ "patients": 47,
+ "controls": 47,
+ "accuracy": {
+  "increased": 0.6170212765957447,
+  "decreased": 0.5212765957446809,
+  "both": 0.7021276595744681
+ },
+ "correct_both": 66,
+ "reported_both": 0.702
+}

@@ -411,6 +411,27 @@
    "source": "experiments/abide/results/key_numbers.json",
    "path": "cohort.with_timeseries.n",
    "format": "int"
+  },
+  {
+   "id": "kim.correctBoth",
+   "slide": "Linking a claim to its evaluation and cohort",
+   "source": "experiments/ds000030/kim2023_rerun/rerun_ucla_cpm.json",
+   "path": "correct_both",
+   "format": "int"
+  },
+  {
+   "id": "kim.accBoth",
+   "slide": "Linking a claim to its evaluation and cohort",
+   "source": "experiments/ds000030/kim2023_rerun/rerun_ucla_cpm.json",
+   "path": "accuracy.both",
+   "format": "pct1"
+  },
+  {
+   "id": "kim.accDecreased",
+   "slide": "Linking a claim to its evaluation and cohort",
+   "source": "experiments/ds000030/kim2023_rerun/rerun_ucla_cpm.json",
+   "path": "accuracy.decreased",
+   "format": "pct0"
   }
  ],
  "quotes": [
@@ -422,7 +443,7 @@
   {
    "slide": "Live demo: building a graph in Claude Code",
    "source": "slides/demo/claude_code_demo_transcript.md",
-   "text": "Done — the graph built, validated, and loaded cleanly, with all 5 gated questions passing."
+   "text": "Done \u2014 the graph built, validated, and loaded cleanly, with all 5 gated questions passing."
   },
   {
    "slide": "Live demo: building a graph in Claude Code",
@@ -464,8 +485,8 @@
   {
    "slide": "Asking Claude about the literature graph",
    "source": "slides/demo/literature_query_answer.md",
-   "text": "**71% ± 6%**",
-   "slide_text": "71% ± 6%"
+   "text": "**71% \u00b1 6%**",
+   "slide_text": "71% \u00b1 6%"
   },
   {
    "slide": "Asking Claude about the literature graph",
@@ -500,8 +521,8 @@
   {
    "slide": "Harmonising graphs built by different people",
    "source": "slides/demo/abide_one_site_demo_output.txt",
-   "text": "282 participant×concept values compared; 0 differ",
-   "slide_text": "0 of 282 participant × concept values conflict"
+   "text": "282 participant\u00d7concept values compared; 0 differ",
+   "slide_text": "0 of 282 participant \u00d7 concept values conflict"
   }
  ]
 }
