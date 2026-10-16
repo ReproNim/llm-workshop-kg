@@ -25,7 +25,7 @@
    "focus": "urn:repronim:abide:claim/A_v1",
    "rejected": true,
    "messages": [
-    "Message: Value Literal(\"causal\") not in list ['Literal(\"predictive\")', 'Literal(\"associational\")']"
+    "Message: Value Literal(\"causal\") not in list ['Literal(\"associational\")', 'Literal(\"predictive\")']"
    ]
   },
   {
@@ -46,7 +46,7 @@
   },
   {
    "mutation": "activity snapshot without timestamp",
-   "focus": "urn:repronim:abide:snapshot/neurobagel-bagel-cli/20261015T152823Z",
+   "focus": "urn:repronim:abide:snapshot/nidm-experiment/20261015T152823Z",
    "rejected": true,
    "messages": [
     "Message: snapshot needs prov:generatedAtTime"
@@ -73,5 +73,5 @@
  ],
  "all_mutations_rejected": true,
  "scope": "local profile for this experiment; not NIDM certification and not a check of scientific correctness",
- "seconds": 5.5
+ "seconds": 5.6
 }
