@@ -415,37 +415,37 @@
  ],
  "quotes": [
   {
-   "slide": "Live demo: building a graph in Claude Code",
+   "slide": "Example: building a graph in Claude Code",
    "source": "slides/demo/claude_code_demo_transcript.md",
    "text": "38 participants from the Caltech site of ABIDE I"
   },
   {
-   "slide": "Live demo: building a graph in Claude Code",
+   "slide": "Example: building a graph in Claude Code",
    "source": "slides/demo/claude_code_demo_transcript.md",
    "text": "Done \u2014 the graph built, validated, and loaded cleanly, with all 5 gated questions passing."
   },
   {
-   "slide": "Live demo: building a graph in Claude Code",
+   "slide": "Example: building a graph in Claude Code",
    "source": "slides/demo/claude_code_demo_transcript.md",
    "text": "18 autism-group participants (dx_group=1) and 19 control-group participants (dx_group=2)"
   },
   {
-   "slide": "Live demo: querying and using the graph",
+   "slide": "Example: querying and using the graph",
    "source": "slides/demo/claude_code_demo_transcript.md",
    "text": "fs:fs_003343 = 4513.9"
   },
   {
-   "slide": "Live demo: querying and using the graph",
+   "slide": "Example: querying and using the graph",
    "source": "slides/demo/claude_code_demo_transcript.md",
    "text": "51456 | autism | 0.1862 mm"
   },
   {
-   "slide": "Live demo: querying and using the graph",
+   "slide": "Example: querying and using the graph",
    "source": "slides/demo/claude_code_demo_transcript.md",
    "text": "51469 | autism | 0.1559 mm"
   },
   {
-   "slide": "Live demo: querying and using the graph",
+   "slide": "Example: querying and using the graph",
    "source": "slides/demo/claude_code_demo_transcript.md",
    "text": "17 autism / 19 control"
   },
