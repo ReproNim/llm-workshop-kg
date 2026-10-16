@@ -5,7 +5,8 @@
 talk:Speaker a prov:Agent, prov:Person ; rdfs:label "Speaker" .
 talk:Speaker a prov:Agent ; rdfs:label "Speaker" ; rdfs:comment "written or decided by the speaker" .
 talk:LLMDrafter a prov:Agent ; rdfs:label "LLM draft" ; rdfs:comment "drafted by an LLM from the speaker's instructions, then edited by the speaker" .
-talk:CodingAgent a prov:Agent ; rdfs:label "Agent computed" ; rdfs:comment "computed by an agent writing and running code (Python, SPARQL, Slurm on ORCD)" .
+talk:SkillFollowingAgent a prov:Agent ; rdfs:label "Named skill" ; rdfs:comment "an agent followed a named skill (named on the slide: SynthScholar, StructSense, neuroimaging-kg, pptx)" .
+talk:CodingAgent a prov:Agent ; rdfs:label "General agent work" ; rdfs:comment "Claude Code or its sub-agents writing and running their own code (Python, SPARQL, Slurm on ORCD), no skill" .
 talk:RetrievalAgent a prov:Agent ; rdfs:label "Agent retrieved" ; rdfs:comment "retrieved by an agent from cited sources; quotes checked against the source" .
 talk:BrainResearcherMCP a prov:Agent ; rdfs:label "External agent (MCP)" ; rdfs:comment "answered by an external agent system through MCP (Brain Researcher)" .
 talk:EarlierAgenticSession a prov:Agent ; rdfs:label "Earlier agentic session" ; rdfs:comment "produced in an earlier session by a different agentic system, reused" .
@@ -184,6 +185,7 @@ talk:slide-09-check-3 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "v
 
 talk:slide-10 a prov:Entity ; rdfs:label "Linking a claim to its evaluation and cohort" ; talk:section "Main talk" ; talk:position 10 ;
   prov:wasGeneratedBy talk:slide-10-gen-P ;
+  prov:wasGeneratedBy talk:slide-10-gen-S ;
   prov:wasGeneratedBy talk:slide-10-gen-R ;
   prov:wasGeneratedBy talk:slide-10-gen-A ;
   prov:wasDerivedFrom talk:file-experiments_2Fds000030 ;
@@ -191,6 +193,7 @@ talk:slide-10 a prov:Entity ; rdfs:label "Linking a claim to its evaluation and 
   prov:wasDerivedFrom <https://osf.io/agqtn/> ;
   prov:wasDerivedFrom talk:file-slides_2Fdemo_2Frerun_ucla_cpm.json .
 talk:slide-10-gen-P a prov:Activity, talk:Production_P ; prov:wasAssociatedWith talk:EarlierAgenticSession .
+talk:slide-10-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
 talk:slide-10-gen-R a prov:Activity, talk:Production_R ; prov:wasAssociatedWith talk:RetrievalAgent .
 talk:slide-10-gen-A a prov:Activity, talk:Production_A ; prov:wasAssociatedWith talk:CodingAgent .
 talk:slide-10-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-10 ; talk:checkingLabel "re-run · validated" ;
@@ -207,11 +210,13 @@ talk:slide-10-check-2 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "v
 
 talk:slide-11 a prov:Entity ; rdfs:label "Exercise: evaluating claims against a source" ; talk:section "Main talk" ; talk:position 11 ;
   prov:wasGeneratedBy talk:slide-11-gen-P ;
+  prov:wasGeneratedBy talk:slide-11-gen-S ;
   prov:wasGeneratedBy talk:slide-11-gen-R ;
   prov:wasGeneratedBy talk:slide-11-gen-L ;
   prov:wasDerivedFrom talk:file-experiments_2Fds000030 ;
   prov:wasDerivedFrom <https://doi.org/10.3389/fpsyt.2023.1232015> .
 talk:slide-11-gen-P a prov:Activity, talk:Production_P ; prov:wasAssociatedWith talk:EarlierAgenticSession .
+talk:slide-11-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
 talk:slide-11-gen-R a prov:Activity, talk:Production_R ; prov:wasAssociatedWith talk:RetrievalAgent .
 talk:slide-11-gen-L a prov:Activity, talk:Production_L ; prov:wasAssociatedWith talk:LLMDrafter .
 talk:slide-11-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-11 ; talk:checkingLabel "validated" ;
@@ -223,9 +228,11 @@ talk:slide-11-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "v
 
 talk:slide-12 a prov:Entity ; rdfs:label "Quotation checks and scientific entailment" ; talk:section "Main talk" ; talk:position 12 ;
   prov:wasGeneratedBy talk:slide-12-gen-P ;
+  prov:wasGeneratedBy talk:slide-12-gen-S ;
   prov:wasGeneratedBy talk:slide-12-gen-R ;
   prov:wasDerivedFrom talk:file-experiments_2Fds000030 .
 talk:slide-12-gen-P a prov:Activity, talk:Production_P ; prov:wasAssociatedWith talk:EarlierAgenticSession .
+talk:slide-12-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
 talk:slide-12-gen-R a prov:Activity, talk:Production_R ; prov:wasAssociatedWith talk:RetrievalAgent .
 talk:slide-12-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-12 ; talk:checkingLabel "validated" ;
   talk:hasEvidence talk:slide-12-check-1 .
@@ -237,11 +244,13 @@ talk:slide-12-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "v
 talk:slide-13 a prov:Entity ; rdfs:label "Joining graphs through shared identifiers" ; talk:section "Main talk" ; talk:position 13 ;
   prov:wasGeneratedBy talk:slide-13-gen-A ;
   prov:wasGeneratedBy talk:slide-13-gen-R ;
+  prov:wasGeneratedBy talk:slide-13-gen-S ;
   prov:wasDerivedFrom talk:file-experiments_2Fabide_2Fresults_2Fsimple2.json ;
   prov:wasDerivedFrom talk:file-experiments_2Fabide_2Fresults_2Fsimple2_tool_agreement.csv ;
   prov:wasDerivedFrom talk:file-experiments_2Fabide_2Fresults_2Fpublications.json .
 talk:slide-13-gen-A a prov:Activity, talk:Production_A ; prov:wasAssociatedWith talk:CodingAgent .
 talk:slide-13-gen-R a prov:Activity, talk:Production_R ; prov:wasAssociatedWith talk:RetrievalAgent .
+talk:slide-13-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
 talk:slide-13-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-13 ; talk:checkingLabel "re-run · validated" ;
   talk:hasEvidence talk:slide-13-check-1 ;
   talk:hasEvidence talk:slide-13-check-2 ;
@@ -260,6 +269,7 @@ talk:slide-13-check-3 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "v
 talk:slide-14 a prov:Entity ; rdfs:label "Harmonising graphs built by different people" ; talk:section "Main talk" ; talk:position 14 ;
   prov:wasGeneratedBy talk:slide-14-gen-H ;
   prov:wasGeneratedBy talk:slide-14-gen-L ;
+  prov:wasGeneratedBy talk:slide-14-gen-S ;
   prov:wasGeneratedBy talk:slide-14-gen-A ;
   prov:wasGeneratedBy talk:slide-14-gen-R ;
   prov:wasDerivedFrom talk:file-slides_2Ftalk_plan.md ;
@@ -269,6 +279,7 @@ talk:slide-14 a prov:Entity ; rdfs:label "Harmonising graphs built by different 
   prov:wasDerivedFrom talk:file-agent_skills_3A_20skills_2Fneuroimaging-kg_2Fscripts_2Fcompare_graphs.py .
 talk:slide-14-gen-H a prov:Activity, talk:Production_H ; prov:wasAssociatedWith talk:Speaker .
 talk:slide-14-gen-L a prov:Activity, talk:Production_L ; prov:wasAssociatedWith talk:LLMDrafter .
+talk:slide-14-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
 talk:slide-14-gen-A a prov:Activity, talk:Production_A ; prov:wasAssociatedWith talk:CodingAgent .
 talk:slide-14-gen-R a prov:Activity, talk:Production_R ; prov:wasAssociatedWith talk:RetrievalAgent .
 talk:slide-14-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-14 ; talk:checkingLabel "re-run · reviewed" ;
@@ -286,7 +297,7 @@ talk:slide-14-check-2 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "r
 talk:slide-14-check-3 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "reviewed" ;
   prov:wasAttributedTo talk:Speaker .
 
-talk:slide-15 a prov:Entity ; rdfs:label "Participant coverage by data element" ; talk:section "Main talk" ; talk:position 15 ;
+talk:slide-15 a prov:Entity ; rdfs:label "Analyses supported by the joined data" ; talk:section "Main talk" ; talk:position 15 ;
   prov:wasGeneratedBy talk:slide-15-gen-A ;
   prov:wasDerivedFrom talk:file-experiments_2Fabide_2Fresults_2Fkey_numbers.json .
 talk:slide-15-gen-A a prov:Activity, talk:Production_A ; prov:wasAssociatedWith talk:CodingAgent .
@@ -388,10 +399,12 @@ talk:slide-19-check-3 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "v
 talk:slide-20 a prov:Entity ; rdfs:label "Linking datasets, publications and abstracts" ; talk:section "Main talk" ; talk:position 20 ;
   prov:wasGeneratedBy talk:slide-20-gen-A ;
   prov:wasGeneratedBy talk:slide-20-gen-R ;
+  prov:wasGeneratedBy talk:slide-20-gen-S ;
   prov:wasDerivedFrom talk:file-experiments_2Fabide_2Fresults_2Fkey_numbers.json ;
   prov:wasDerivedFrom <https://abstractatlas.brainkb.org/> .
 talk:slide-20-gen-A a prov:Activity, talk:Production_A ; prov:wasAssociatedWith talk:CodingAgent .
 talk:slide-20-gen-R a prov:Activity, talk:Production_R ; prov:wasAssociatedWith talk:RetrievalAgent .
+talk:slide-20-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
 talk:slide-20-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-20 ; talk:checkingLabel "re-run · validated" ;
   talk:hasEvidence talk:slide-20-check-1 ;
   talk:hasEvidence talk:slide-20-check-2 ;
@@ -421,10 +434,12 @@ talk:slide-21-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "v
   prov:wasAttributedTo talk:AutomatedChecks .
 
 talk:slide-22 a prov:Entity ; rdfs:label "Evaluation schemes in 74 ABIDE studies" ; talk:section "Main talk" ; talk:position 22 ;
+  prov:wasGeneratedBy talk:slide-22-gen-S ;
   prov:wasGeneratedBy talk:slide-22-gen-A ;
   prov:wasGeneratedBy talk:slide-22-gen-R ;
   prov:wasDerivedFrom talk:file-experiments_2Fabide_2Fliterature_review_2Fresults_synthesis.json ;
   prov:wasDerivedFrom talk:file-experiments_2Fabide_2Fliterature_review_2Fsynthesis.md .
+talk:slide-22-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
 talk:slide-22-gen-A a prov:Activity, talk:Production_A ; prov:wasAssociatedWith talk:CodingAgent .
 talk:slide-22-gen-R a prov:Activity, talk:Production_R ; prov:wasAssociatedWith talk:RetrievalAgent .
 talk:slide-22-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-22 ; talk:checkingLabel "validated" ;
@@ -446,12 +461,12 @@ talk:slide-23-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-23
 talk:slide-23-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "reviewed" ;
   prov:wasAttributedTo talk:Speaker .
 
-talk:slide-24 a prov:Entity ; rdfs:label "Live demo: building a graph in Claude Code" ; talk:section "Main talk" ; talk:position 24 ;
-  prov:wasGeneratedBy talk:slide-24-gen-A ;
+talk:slide-24 a prov:Entity ; rdfs:label "Example: building a graph in Claude Code" ; talk:section "Main talk" ; talk:position 24 ;
+  prov:wasGeneratedBy talk:slide-24-gen-S ;
   prov:wasGeneratedBy talk:slide-24-gen-L ;
   prov:wasDerivedFrom talk:file-agent_skills_3A_20skills_2Fneuroimaging-kg_2Fexamples_2Fclaude_code_demo.md ;
   prov:wasDerivedFrom talk:file-agent_skills_3A_20skills_2Fneuroimaging-kg_2Fexamples_2Fclaude_code_demo_transcript.md .
-talk:slide-24-gen-A a prov:Activity, talk:Production_A ; prov:wasAssociatedWith talk:CodingAgent .
+talk:slide-24-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
 talk:slide-24-gen-L a prov:Activity, talk:Production_L ; prov:wasAssociatedWith talk:LLMDrafter .
 talk:slide-24-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-24 ; talk:checkingLabel "validated" ;
   talk:hasEvidence talk:slide-24-check-1 .
@@ -460,12 +475,12 @@ talk:slide-24-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "v
   prov:wasGeneratedBy talk:claim-verification-2026-10-15 ;
   prov:wasDerivedFrom talk:file-experiments_2Fds000030_2Fcodex_verification_2Fcodex_claim_verification.md .
 
-talk:slide-25 a prov:Entity ; rdfs:label "Live demo: querying and using the graph" ; talk:section "Main talk" ; talk:position 25 ;
-  prov:wasGeneratedBy talk:slide-25-gen-A ;
+talk:slide-25 a prov:Entity ; rdfs:label "Example: querying and using the graph" ; talk:section "Main talk" ; talk:position 25 ;
+  prov:wasGeneratedBy talk:slide-25-gen-S ;
   prov:wasGeneratedBy talk:slide-25-gen-L ;
   prov:wasDerivedFrom talk:file-agent_skills_3A_20skills_2Fneuroimaging-kg_2Fexamples_2Fclaude_code_demo.md ;
   prov:wasDerivedFrom talk:file-agent_skills_3A_20skills_2Fneuroimaging-kg_2Fexamples_2Fclaude_code_demo_transcript.md .
-talk:slide-25-gen-A a prov:Activity, talk:Production_A ; prov:wasAssociatedWith talk:CodingAgent .
+talk:slide-25-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
 talk:slide-25-gen-L a prov:Activity, talk:Production_L ; prov:wasAssociatedWith talk:LLMDrafter .
 talk:slide-25-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-25 ; talk:checkingLabel "validated" ;
   talk:hasEvidence talk:slide-25-check-1 .
@@ -477,10 +492,14 @@ talk:slide-25-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "v
 talk:slide-26 a prov:Entity ; rdfs:label "The lecture's own provenance graph" ; talk:section "Main talk" ; talk:position 26 ;
   prov:wasGeneratedBy talk:slide-26-gen-H ;
   prov:wasGeneratedBy talk:slide-26-gen-L ;
+  prov:wasGeneratedBy talk:slide-26-gen-S ;
+  prov:wasGeneratedBy talk:slide-26-gen-A ;
   prov:wasDerivedFrom talk:file-slides_2Ftalk_plan.md ;
   prov:wasDerivedFrom talk:file-talk_provenance.ttl .
 talk:slide-26-gen-H a prov:Activity, talk:Production_H ; prov:wasAssociatedWith talk:Speaker .
 talk:slide-26-gen-L a prov:Activity, talk:Production_L ; prov:wasAssociatedWith talk:LLMDrafter .
+talk:slide-26-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
+talk:slide-26-gen-A a prov:Activity, talk:Production_A ; prov:wasAssociatedWith talk:CodingAgent .
 talk:slide-26-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-26 ; talk:checkingLabel "reviewed" ;
   talk:hasEvidence talk:slide-26-check-1 .
 talk:slide-26-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "reviewed" ;
@@ -573,9 +592,11 @@ talk:slide-32-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "r
 
 talk:slide-33 a prov:Entity ; rdfs:label "Checking agent outputs against the graph" ; talk:section "Backup" ; talk:position 33 ;
   prov:wasGeneratedBy talk:slide-33-gen-P ;
+  prov:wasGeneratedBy talk:slide-33-gen-S ;
   prov:wasGeneratedBy talk:slide-33-gen-R ;
   prov:wasDerivedFrom talk:file-experiments_2Fds000030 .
 talk:slide-33-gen-P a prov:Activity, talk:Production_P ; prov:wasAssociatedWith talk:EarlierAgenticSession .
+talk:slide-33-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
 talk:slide-33-gen-R a prov:Activity, talk:Production_R ; prov:wasAssociatedWith talk:RetrievalAgent .
 talk:slide-33-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-33 ; talk:checkingLabel "re-run · validated" ;
   talk:hasEvidence talk:slide-33-check-1 ;
@@ -647,8 +668,10 @@ talk:slide-38-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "v
 
 talk:slide-39 a prov:Entity ; rdfs:label "StructSense extraction pilot" ; talk:section "Backup" ; talk:position 39 ;
   prov:wasGeneratedBy talk:slide-39-gen-P ;
+  prov:wasGeneratedBy talk:slide-39-gen-S ;
   prov:wasDerivedFrom talk:file-experiments_2Fds000030 .
 talk:slide-39-gen-P a prov:Activity, talk:Production_P ; prov:wasAssociatedWith talk:EarlierAgenticSession .
+talk:slide-39-gen-S a prov:Activity, talk:Production_S ; prov:wasAssociatedWith talk:SkillFollowingAgent .
 talk:slide-39-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-39 ; talk:checkingLabel "validated" ;
   talk:hasEvidence talk:slide-39-check-1 .
 talk:slide-39-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "validated" ;
@@ -905,6 +928,16 @@ talk:slide-59-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "r
   prov:wasAttributedTo talk:IndependentRebuild ;
   prov:wasGeneratedBy talk:orcd-job-25941523 ;
   prov:wasDerivedFrom talk:file-experiments_2Fds000030_2Fcodex_verification_2Forcd_rebuild_2Frebuild_comparison.md .
+
+talk:slide-60 a prov:Entity ; rdfs:label "Site coverage of each data element (ABIDE I)" ; talk:section "Backup" ; talk:position 60 ;
+  prov:wasGeneratedBy talk:slide-60-gen-A ;
+  prov:wasDerivedFrom talk:file-experiments_2Fabide_2Fresults_2Fkey_numbers.json ;
+  prov:wasDerivedFrom talk:file-experiments_2Fabide_2Fresults_2Felement_coverage.json .
+talk:slide-60-gen-A a prov:Activity, talk:Production_A ; prov:wasAssociatedWith talk:CodingAgent .
+talk:slide-60-check a prov:Entity, talk:Assessment ; talk:assesses talk:slide-60 ; talk:checkingLabel "validated" ;
+  talk:hasEvidence talk:slide-60-check-1 .
+talk:slide-60-check-1 a prov:Entity, talk:CheckEvidence ; talk:checkingStatus "validated" ;
+  prov:wasAttributedTo talk:AutomatedChecks .
 
 talk:file-slides_2Ftalk_plan.md a prov:Entity ; rdfs:label "slides/talk_plan.md" .
 talk:file-slides_2Fdemo_2Fwikidata_SOURCE.md a prov:Entity ; rdfs:label "slides/demo/wikidata_SOURCE.md" .

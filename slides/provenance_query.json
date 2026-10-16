@@ -2,12 +2,12 @@
  "query": "PREFIX talk: <https://repronim.org/talks/kg-skills-2026#>\nSELECT ?status (COUNT(?slide) AS ?n) WHERE {\n  ?a talk:assesses ?slide ; talk:checkingLabel ?status .\n} GROUP BY ?status ORDER BY DESC(?n)",
  "rows": [
   {
-   "status": "re-run \u00b7 validated",
+   "status": "validated",
    "n": 16
   },
   {
-   "status": "validated",
-   "n": 15
+   "status": "re-run \u00b7 validated",
+   "n": 16
   },
   {
    "status": "reviewed",
@@ -34,5 +34,5 @@
    "n": 1
   }
  ],
- "triples": 1727
+ "triples": 1793
 }
