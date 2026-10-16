@@ -404,6 +404,13 @@
    "source": "experiments/ds000030/kim2023_rerun/rerun_ucla_cpm.json",
    "path": "accuracy.decreased",
    "format": "pct0"
+  },
+  {
+   "id": "elements.participants",
+   "slide": "Joining graphs through shared identifiers",
+   "source": "experiments/abide/results/element_coverage.json",
+   "path": "participants",
+   "format": "int"
   }
  ],
  "quotes": [

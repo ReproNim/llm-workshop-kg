@@ -458,16 +458,17 @@ def element_coverage_matrix_backup_slide() -> None:
     anyone who wants the per-site, per-element detail instead of the aggregated bar view.
     """
     # Deck places this image at ~11in wide; every font size below is chosen so that, once the
-    # fixed 2400px-wide PNG is displayed at that width, the physical text is >=14pt (we target
-    # 46px body / 52px headings at generation dpi = 2400/11 = 218.18, i.e. ~15.3pt / ~17.3pt).
+    # fixed 2400px-wide PNG is displayed at that width, the physical text is comfortably >=14pt.
+    # With the funnel panel removed, this slide is matrix-only, so it gets the whole figure
+    # height to itself - sized up from the 46/52px floor used elsewhere, since "larger on the
+    # backup slide" was specifically requested now that there is room for it.
     WIDTH_IN = 11.0
     GEN_DPI = 2400 / WIDTH_IN
-    BODY = 46 * 72 / GEN_DPI
-    HEAD = 52 * 72 / GEN_DPI
+    BODY = 60 * 72 / GEN_DPI
+    HEAD = 68 * 72 / GEN_DPI
 
     d = json.loads((RESULTS / "element_coverage.json").read_text())
     els_all = d["elements"]
-    req = d["analysis_requirements"]
     keep = ["AGE_AT_SCAN", "FIQ", "VIQ", "PIQ", "ADOS_TOTAL", "SRS_RAW_TOTAL", "func_mean_fd", "CC200_timeseries"]
     plain_label = {
         "AGE_AT_SCAN": "Age at scan",
@@ -478,11 +479,6 @@ def element_coverage_matrix_backup_slide() -> None:
         "SRS_RAW_TOTAL": "SRS (social responsiveness)",
         "func_mean_fd": "Head motion (FD)",
         "CC200_timeseries": "fMRI time series",
-    }
-    limiting_label = {
-        "CC200_timeseries": "time series limits it",
-        "VIQ": "verbal IQ limits it",
-        "SRS_RAW_TOTAL": "SRS only at 4 sites",
     }
     site_code = {  # 2-3 letter codes, so a 45-degree rotation stays within a narrow column
         "CALTECH": "CAL", "CMU": "CMU", "KKI": "KKI", "LEUVEN_1": "LE1", "LEUVEN_2": "LE2",
@@ -519,40 +515,13 @@ def element_coverage_matrix_backup_slide() -> None:
     cmap = matplotlib.colors.ListedColormap(cat_colors)
     norm = matplotlib.colors.BoundaryNorm([-0.5, 0.5, 1.5, 2.5, 3.5], cmap.N)
 
-    fig = plt.figure(figsize=(WIDTH_IN, 14.5))
-    gs = fig.add_gridspec(2, 1, height_ratios=[1.42, 4.1], hspace=0.4)
+    fig = plt.figure(figsize=(WIDTH_IN, 17.5))
 
-    # --- TOP: the requirement funnel for four concrete analyses (the point of the slide), full width ---
-    axf = fig.add_subplot(gs[0, 0])
-    funnel = [
-        ("All participants", d["participants"], n_sites_total, "starting population"),
-        ("Analyst B inputs", req["Analyst B (age, FD, CC200)"]["n"], req["Analyst B (age, FD, CC200)"]["n_sites"],
-         limiting_label[req["Analyst B (age, FD, CC200)"]["limiting_element"]]),
-        ("+ IQ + FreeSurfer", req["UMAP + FreeSurfer IDP join"]["n"], req["UMAP + FreeSurfer IDP join"]["n_sites"],
-         limiting_label[req["UMAP + FreeSurfer IDP join"]["limiting_element"]]),
-        ("+ SRS", req["UMAP + SRS"]["n"], req["UMAP + SRS"]["n_sites"], limiting_label[req["UMAP + SRS"]["limiting_element"]]),
-    ]
-    row_pitch = 2.3  # generous: each bar's label is two BODY-sized lines, so rows need real room
-    y = np.arange(len(funnel))[::-1] * row_pitch
-    ns = [f[1] for f in funnel]
-    axf.barh(y, ns, color=NAVY, height=row_pitch * 0.5, zorder=3)
-    text_x = max(ns) * 1.04
-    axf.set_xlim(0, max(ns) * 1.85)  # fixed room to the right of every bar for its (short) label
-    for yi, (_label, n, n_sites, note) in zip(y, funnel):
-        axf.text(text_x, yi, f"{n:,} at {n_sites} sites\n{note}", ha="left", va="center", fontsize=BODY, color=GREY_DARK)
-    axf.set_yticks(y, [f[0] for f in funnel], fontsize=BODY)
-    axf.set_xticks([])
-    axf.set_xlabel("participants retained", fontsize=BODY)
-    for sp in ("top", "right", "bottom"):
-        axf.spines[sp].set_visible(False)
-    axf.tick_params(length=0)
-    axf.set_ylim(-row_pitch * 0.9, (len(funnel) - 1) * row_pitch + row_pitch * 0.9)
-
-    # --- BOTTOM: per-site coverage of each element, as discrete categories, not a continuous scale ---
-    ax = fig.add_subplot(gs[1, 0])
+    # --- Matrix only (the funnel moved to the separate landscape element_coverage_slide) ---
+    ax = fig.add_subplot(111)
     ax.imshow(cats, cmap=cmap, norm=norm, aspect="auto")
     ax.set_yticks(range(len(sites)), [site_code[s] for s in sites], fontsize=BODY)
-    ax.set_xticks(range(len(keep)), [plain_label.get(k, k) for k in keep], fontsize=BODY, rotation=75, ha="right",
+    ax.set_xticks(range(len(keep)), [plain_label.get(k, k) for k in keep], fontsize=BODY, rotation=88, ha="right",
                   rotation_mode="anchor")
     ax.set_ylabel("ABIDE I sites (short codes)", fontsize=BODY, labelpad=10)
     for sp in ("top", "right", "left", "bottom"):
