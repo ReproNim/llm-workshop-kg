@@ -19,7 +19,7 @@ By the end of the talk you should be able to:
 
 | Path | Contents |
 |---|---|
-| `slides/` | Deck sources (`build_deck.js`, `values.js`, `values_map.json`, `apply_theme.js`), slide-size figures (`figs_slide/`), the built `.pptx` and `.pdf`, the talk plan, and `talk_provenance.ttl` (W3C PROV record of every slide) |
+| `slides/` | Deck sources (`build_deck.js`, `values.js`, `values_map.json`, `apply_theme.js`), slide-size figures (`figs_slide/`), the built `.pptx` (PDF: see below), the talk plan, and `talk_provenance.ttl` (W3C PROV record of every slide) |
 | `experiments/abide/` | ABIDE I worked example: two simulated analysts (group difference, leave-site-out prediction), a QC revision traced through the graph, NIDM/PROV graph conformed to the PyNIDM v4.5.5 LinkML schema, joins to ReproNim simple2 NIDM, AbstractAtlas and OpenAlex, a SynthScholar literature review of 74 ABIDE studies, competency questions with gold answers, and a Brain Researcher (MCP) comparison. See its `README.txt` |
 | `experiments/ds000030/` | ds000030 (UCLA CNP) worked example produced in an earlier agentic session, plus `codex_verification/`: an independent claim check (39 confirmed, 0 contradicted) and an ORCD rebuild comparison |
 | `scripts/` | `build_all.sh` (all steps under `datalad run`), `check_slide_values.py`, `check_pdf_text.py`, `parse_all_ttl.py`, `refresh_checksums.py`, `strip_fulltext.py`, `sync_from_workspace.sh` + `port_build_deck.py` (bring in a workspace deck), `export_pdf.sh` |
@@ -58,7 +58,7 @@ is `experiments/abide/rebuild.sh`; a clean-room run from a fresh download reprod
 key numbers (the other three are run times) and all 15 gold answers
 (`experiments/abide/results/clean_room_verify.json`).
 
-The PDF export is a host step, and `scripts/check_pdf_text.py` confirms the PDF carries the deck's text slide by slide: it uses LibreOffice where installed, otherwise Microsoft PowerPoint
+The PDF export is a host step (`scripts/build_all.sh pdf`, then `scripts/build_all.sh pdftext`, where `scripts/check_pdf_text.py` confirms the PDF carries the deck's text slide by slide). For v0.2 no PDF matching the final deck could be exported (PowerPoint automation failed with error -9074), so the release carries the `.pptx` and the PDF will be added once exported: it uses LibreOffice where installed, otherwise Microsoft PowerPoint
 on macOS through `scripts/export_pdf.applescript`.
 
 ## How provenance is recorded
