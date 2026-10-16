@@ -46,7 +46,7 @@
   },
   {
    "mutation": "activity snapshot without timestamp",
-   "focus": "urn:repronim:abide:snapshot/nidm-experiment/20261015T152823Z",
+   "focus": "urn:repronim:abide:snapshot/reprostim/20261015T145737Z",
    "rejected": true,
    "messages": [
     "Message: snapshot needs prov:generatedAtTime"
